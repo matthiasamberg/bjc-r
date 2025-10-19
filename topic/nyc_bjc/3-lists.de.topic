@@ -1,0 +1,51 @@
+title: Einheit 3: Datenstrukturen
+
+{
+
+heading: Labor 1: Mit Komplexit&auml;t umgehen
+	raw-html: <img class="imageRight noshadow" src="/bjc-r/img/2-complexity/ttt-x-win.png" alt="Beendetes Tic-Tac-Toe-Spiel, bei dem X gewinnt" title="Beendetes Tic-Tac-Toe-Spiel, bei dem X gewinnt">
+    quiz: Roboter im Labyrinth [/bjc-r/cur/programming/3-lists/1-abstraction/1-robot-in-a-maze.de.html]
+	resource: Fraktalkunst [/bjc-r/cur/programming/3-lists/1-abstraction/2-fractal-art.de.html]
+	resource: Abstraktion nutzen, um Dreiecke zu verschachteln [/bjc-r/cur/programming/3-lists/1-abstraction/3-fractal-art-recursive.de.html]
+    resource: Ziegelmauer [/bjc-r/cur/programming/3-lists/1-abstraction/4-brick-wall.de.html]
+	resource: Ein Tic-Tac-Toe-Brett bauen [/bjc-r/cur/programming/3-lists/1-abstraction/5-building-tic-tac-toe.de.html]
+	resource: Debugging-Zusammenfassung [/bjc-r/cur/programming/3-lists/1-abstraction/6-debugging-recap.de.html]
+
+heading: Labor 2: Kontaktliste
+	raw-html: <img class="imageRight" src="/bjc-r/img/3-lists/contact-list-list-view.png" alt="Kontaktliste im Listenmodus" title="Kontaktliste im Listenmodus" />
+
+	resource: Das Kontakt-ADT erstellen [/bjc-r/cur/programming/3-lists/2-contact-list/1-build-the-list.de.html]
+	resource: Kontaktdaten hinzuf&uuml;gen [/bjc-r/cur/programming/3-lists/2-contact-list/2-adding-contact.de.html]
+    resource: Geburtstage erg&auml;nzen [/bjc-r/cur/programming/3-lists/2-contact-list/3-modifying-adt.de.html]
+	resource: Bestimmte Daten ausw&auml;hlen [/bjc-r/cur/programming/3-lists/2-contact-list/4-looking-up-data.de.html]
+	quiz: Jeden Listeneintrag transformieren [/bjc-r/cur/programming/3-lists/2-contact-list/5-mapping-over-list.de.html]
+
+
+heading: Labor 3: Tic-Tac-Toe
+	resource: Z&uuml;ge und m&ouml;gliche Siege merken [/bjc-r/cur/programming/3-lists/3-tic-tac-toe/1-find-ties.de.html]
+	resource: Einen Sieg erkennen [/bjc-r/cur/programming/3-lists/3-tic-tac-toe/2-checking-for-a-win.de.html]
+	resource: Auf Unentschieden pr&uuml;fen [/bjc-r/cur/programming/3-lists/3-tic-tac-toe/3-checking-for-ties.de.html]
+
+heading: Labor 4: Roboter und K&uuml;nstliche Intelligenz
+	resource: Was ist KI? [/bjc-r/cur/programming/3-lists/4-robots-ai/1-what-is-ai.de.html]
+	resource: Roboter und Menschen [/bjc-r/cur/programming/3-lists/4-robots-ai/2-robots-and-humans.de.html]
+	resource: Auswirkungen von KI [/bjc-r/cur/programming/3-lists/4-robots-ai/3-implications.de.html]
+	resource: Neueste Durchbr&uuml;che [/bjc-r/cur/programming/3-lists/4-robots-ai/4-breakthroughs-possibilities.de.html]
+
+heading: Labor 5: Computer und Arbeit
+	resource: Vergangenheit und Zukunft [/bjc-r/cur/programming/3-lists/5-work/1-past-and-future.de.html]
+	resource: Arbeitsbedingungen [/bjc-r/cur/programming/3-lists/5-work/2-working-conditions.de.html]
+	resource: Arbeiten aus der Ferne [/bjc-r/cur/programming/3-lists/5-work/3-working-remotely.de.html]
+
+heading: Optionale Projekte
+	resource: Kurvensticherei [/bjc-r/cur/programming/3-lists/optional-projects/1-astrid.de.html]
+	resource: Animationsstudio [/bjc-r/cur/programming/3-lists/optional-projects/2-animation-studio.de.html]
+	resource: Op Art [/bjc-r/cur/programming/3-lists/optional-projects/3-op-art.de.html]
+	resource: Musikprojekt [/bjc-r/cur/programming/3-lists/optional-projects/4-music-project.de.html]
+
+
+heading: Wiederholung zu Einheit 3
+	resource: Wortschatz [/bjc-r/cur/programming/summaries/vocab3.de.html]
+	resource: Auf der AP-Pr&uuml;fung [/bjc-r/cur/programming/summaries/exam3.de.html]
+	resource: Selbsttest-Fragen [/bjc-r/cur/programming/summaries/assessment-data3.de.html]
+}

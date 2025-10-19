@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <title>Einheit 2, Optionale Projekte, Seite 4</title>
+    </head>
+
+    <body>
+		<h2>Sprache modellieren: Plurale, Teil 1</h2>
+        <div class="todo">
+            <p>PG: Dieses Projekt <em>hat</em> ein Lernziel. Auch wenn es hier als optional steht: Es geht um maschinelle Sprachgenerierung, &Uuml;ben von Bekanntem, Neues lernen und Vorausdeuten auf sp&auml;tere Inhalte. Der entscheidende Schritt ist Problemzerlegung und Abstraktion: Ohne Struktur zerf&auml;llt die Aufgabe, mit Struktur ist sie gut l&ouml;sbar – und sogar auf andere Sprachen &uuml;bertragbar.</p>
+            <p>Brian und Mary denken dar&uuml;ber nach, diese beiden Seiten irgendwann als regul&auml;res Labor (vor oder nach Labor&nbsp;4) einzusetzen. --MF, 02.01.21</p>
+        </div>
+
+        <div class="learn">
+            Siri und andere Systeme sind so programmiert, dass sie Sprache erzeugen – Siri spricht, einige Roboter schreiben. Mit <code>gossip</code> hast du bereits ein Programm gebaut, das Texte erstellt. <b>In diesem Projekt</b> erweiterst du die Sprachf&auml;higkeiten des Computers, indem du einen Reporterblock <code>plural</code> entwickelst. Er erh&auml;lt ein Substantiv als Eingabe und liefert die korrekte Mehrzahlform.<br />
+            <img class="indent" src="/bjc-r/img/2-complexity/plural-day-with-result.png" alt="plural (day) reporting (days)" title="plural (day) reporting (days)" />
+            <img src="/bjc-r/img/2-complexity/plural-boss-with-result.png" alt="plural (boss) reporting (bosses)" title="plural (boss) reporting (bosses)" /> <br />F&uuml;r Menschen wirkt das Bilden des Plurals oft automatisch, aber f&uuml;r den Computer braucht es einen Algorithmus.
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <div class="sidenote">In diesem Projekt verwendest du Bl&ouml;cke aus der Snap<em>!</em>-Bibliothek &bdquo;Words, sentences&ldquo;, die f&uuml;r dich geladen wurde. Bibliotheken findest du im Snap<em>!</em>-Dateimen&uuml; <img src="/bjc-r/img/1-introduction/file_button.png" style="height:1.6em;" alt="Snap!-Dateimen&uuml;-Button" title="Snap!-Dateimen&uuml;-Button"/> unter &bdquo;Libraries…&ldquo;.</div>
+            <ol>
+                <li>
+                    Du brauchst die neuen Bl&ouml;cke <img src="/bjc-r/img/2-complexity/last-letter-of-169x27.png" alt="last letter of ()" title="last letter of ()" /> und <img src="/bjc-r/img/2-complexity/all-but-last-letter-of-231x27 pixels.png" alt="all but last letter of ()" title="all but last letter of ()" />. Au&szlig;erdem <img src="/bjc-r/img/2-complexity/(list-of-items)-contains-(some-item)-predicate.png" alt="(list () () () ()) contains ()" title="(list () () () ()) contains ()"> und <img src="/bjc-r/img/2-complexity/join-117x27.png" alt="join () ()" title="join () ()" />, die du in Einheit&nbsp;1, Labor&nbsp;2 (&bdquo;Gossip and Greet&ldquo;) verwendet hast.<br />
+                    <a class="run" href="/bjc-r/prog/2-complexity/U2-plural.xml"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Klicke hier, um ein Startprojekt zu laden, und speichere es anschließend." title="Klicke hier, um ein Startprojekt zu laden, und speichere es anschließend."></a><br />
+                    Probiere alle Ausdr&uuml;cke (die neun Einzeiler) aus und experimentiere mit verschiedenen Eingaben, bis du genau wei&szlig;t, was sie tun. Beschreibe f&uuml;r jeden Ausdruck <em>allgemein</em>, was er macht – nicht nur f&uuml;r dieses Beispiel. (Beispiel: <img src="/bjc-r/img/2-complexity/last-letter-of-butterfly-with-result-y.png" alt="last letter of (butterfly) reporting 'y'" title="last letter of (butterfly) reporting 'y'" > liefert &bdquo;y&ldquo;, aber du solltest beschreiben, was <code>last letter of</code> bei beliebigen W&ouml;rtern oder Zeichenketten liefert.)
+                </li>
+                <div class="endnote">Den Block <img src="/bjc-r/img/2-complexity/join-t-all-but-first-letter-of-when-343x33.png" alt="join (t) (all but first letter of (when))" title="join (t) (all but first letter of (when))" /> brauchst du im Projekt nicht, aber vielleicht findest du es spannend, ihn mit &bdquo;when&ldquo;, &bdquo;where&ldquo;, &bdquo;what&ldquo; oder &bdquo;wherefore&ldquo; auszuprobieren. Linguistinnen nutzen solche Beobachtungen, um Sprachgeschichte zu rekonstruieren.</div>
+                <div class="sidenote">
+                    W&auml;hle beim Erstellen von <code>plural</code> die Option <em>Reporter</em>.<br />
+                    <img src="/bjc-r/img/building-blocks/make-a-reporter.png" alt="Dialog &bdquo;Make a block&ldquo; mit ausgew&auml;hltem Reporter" title="Dialog &bdquo;Make a block&ldquo; mit ausgew&auml;hltem Reporter">
+                </div>
+                <li>
+                    Entwickle eine Strategie, um das Problem in Teilprobleme zu zerlegen. Einige Ideen:
+                    <ul>
+                        <li>Klassifiziere W&ouml;rter nach Endungen (z. B. auf &bdquo;s&ldquo;, &bdquo;sh&ldquo;, &bdquo;x&ldquo; oder &bdquo;y&ldquo; endend) und behandle jede Gruppe getrennt.</li>
+                        <li>Lege eine Liste unregelm&auml;&szlig;iger Plurale an (z. B. &bdquo;mouse&ldquo; → &bdquo;mice&ldquo;).</li>
+                        <li>Schreibe Helfer-Bl&ouml;cke f&uuml;r wiederkehrende Aufgaben, z. B. &bdquo;endet mit einem Vokal?&ldquo; oder &bdquo;ersetze letztes Zeichen durch ...&ldquo;.</li>
+                    </ul>
+                </li>
+                <li>Implementiere den Block <code>plural</code>, teste ihn mit vielen Beispielen (Regelf&auml;lle und Ausnahmen) und verbessere ihn schrittweise.</li>
+            </ol>
+        </div>
+
+        <div class="ifTime">
+            <ol start="3">
+                <li>Erweitere deine Liste um weitere unregelm&auml;&szlig;ige Formen (&bdquo;tooth&ldquo; → &bdquo;teeth&ldquo;, &bdquo;child&ldquo; → &bdquo;children&ldquo; usw.).</li>
+                <li>Schreibe Tests, die automatisch &uuml;berpr&uuml;fen, ob dein Block f&uuml;r bestimmte W&ouml;rter die korrekte Antwort liefert.</li>
+            </ol>
+        </div>
+
+    </body>
+</html>

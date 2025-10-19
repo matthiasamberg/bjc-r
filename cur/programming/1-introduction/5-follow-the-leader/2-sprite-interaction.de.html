@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1, Labor 5: Folge dem Anführer, Seite 2</title>
+	</head>
+
+	<body>
+    	<h2>Sprite folgt einem Sprite</h2>
+
+		<div class="learn">
+	        <p><strong>Auf dieser Seite</strong> stoppst du die Bewegung, sobald sich beide Sprites berühren, und lässt den Verfolger tatsächlich hinterherlaufen.</p>
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+				<li>
+                    Ändere den Code von <strong>Follower</strong>, sodass er nur solange auf <strong>Leader</strong> zeigt, bis er ihn berührt.
+					  <ol>
+                    	<li>Wähle <strong>Follower</strong> in der Sprite-Liste.</li>
+                        <li>Ersetze <code>forever</code> durch <code>repeat until</code>.</li>
+                        <li>
+                        	Ziehe <img src="/bjc-r/img/blocks/touching.png" alt="touching ()?" title="touching ()?"> in das sechseckige Feld und wähle <strong>Leader</strong> aus.<br />
+                            <div class="endnote">
+                                <a href="#hint-touching" data-toggle="collapse" title="Video ansehen">Video ansehen</a>
+                                <div id="hint-touching" class="collapse">
+                                    <img src="/bjc-r/img/1-introduction/replacing-code.gif" alt="Animation zum Ersetzen des Codes" title="Animation zum Ersetzen des Codes" />
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </li>
+				<li>Übernimm dieselbe Idee für <strong>Leader</strong>: Er folgt der Maus nur bis zur Berührung mit <strong>Follower</strong>.</li>
+                <li>Teste:
+                	<ul>
+                    	<li>Nach Klick auf <img src="/bjc-r/img/1-introduction/green-flag_button.png" style="height:1.6em;" alt="grüne Flagge" title="grüne Flagge"/> folgt <strong>Leader</strong> deiner Maus.</li>
+                        <li><strong>Follower</strong> dreht sich zu <strong>Leader</strong>.</li>
+                        <li>Wenn sie sich berühren, bleiben beide stehen.</li>
+                    </ul>
+                </li>
+                <li>
+                	Bisher richtet sich <strong>Follower</strong> nur aus – jetzt soll er auch <em>laufen</em>.
+                    <ol>
+                        <li>
+                            Ergänze <code>move</code> mit einer kleinen Schrittweite.<br />
+                            <div class="sidenote">Wähle einen kleinen Wert, damit <strong>Follower</strong> nicht zu schnell aufholt.</div>
+                            <img class="indent" src="/bjc-r/img/1-introduction/move-tiny.png" alt="move () steps" title="move () steps" />
+                        </li>
+                    </ol>
+                </li>
+                <li>Teste erneut. Bewegt sich <strong>Follower</strong> jetzt Richtung <strong>Leader</strong>, bis sie sich treffen?</li>
+                <li>
+                    Erzeuge ein Gespräch, wenn sie sich berühren. Gestalte die Dialoge in verschiedenen Sprachen.<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/U1L5p2-DialogueWithCostume.png" alt="Beispielskript für ein Gespräch" title="Beispielskript für ein Gespräch" />
+                </li>
+            </ol>
+            <div class="endnote">
+                Damit sie sich nach der Szene wieder trennen und ein neues Spiel starten können, setze ihre Positionen oder füge Pausen ein.<br />
+                <img class="indent" src="/bjc-r/img/1-introduction/U1L5p2-PuppySeparation_1.png" alt="go to x:(-200) y:(-50); wait (1) secs" title="go to x:(-200) y:(-50); wait (1) secs"/>
+                <img class="indent" src="/bjc-r/img/1-introduction/U1L5p2-PuppySeparation_2.png" alt="go to x:(200) y:(-50); wait (1) secs" title="go to x:(200) y:(-50); wait (1) secs"/>
+            </div>
+            <img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Speichern" title="Speichern" />
+    	</div>
+
+        <div class="ifTime">
+            <ol start="7">
+                <li>Gib den Sprites Kostüme.</li>
+	            <li>Ändere den Bühnenhintergrund (Hinweise dazu auf <a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/3-customizing.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Labor 2, Seite 3">Labor 2, Seite 3</a>).</li>
+            </ol>
+        </div>
+    
+        <div class="forYouToDo">
+            <ol start="9">
+                <li>
+                    <!-- Frage 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="When the code below is executed, how many times will the sprite move 10 steps?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="false">
+                        <div class="prompt">
+                            <div class="ap-standard">AAP-2.K.4</div>
+                            Wie oft bewegt sich der Sprite 10 Schritte?<br />
+                            <img class="indent" src="/bjc-r/img/1-introduction/1-5-2-less-than.png" alt="repeat until ((x position)<(0)) {move (10) steps}" title="repeat until ((x position)<(0)) {move (10) steps}" />
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">0-mal</div>
+                            <div class="feedback"><code>repeat until</code> wiederholt, bis die Bedingung <em>wahr</em> ist.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">1-mal</div>
+                            <div class="feedback">Die Abfrage nutzt <code>&lt;</code>, nicht <code>&gt;</code>.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">10-mal</div>
+                            <div class="feedback">Die x-Position wird nie kleiner als Null.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Unendlich oft</div>
+                            <div class="feedback">Richtig – die Bedingung wird nie wahr, also läuft die Schleife weiter.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c4"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <!-- Frage 2 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="When the code below is executed, how many times does the sprite move 10 steps?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="false">
+                        <div class="prompt">
+                            <div class="ap-standard">AAP-2.K.5</div>
+                            Und hier?<br />
+                            <img class="indent" src="/bjc-r/img/1-introduction/1-5-2-greater-than.png" alt="repeat until ((x position)>(0)) {move (10) steps}" title="repeat until ((x position)>(0)) {move (10) steps}" />
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">0-mal</div>
+                            <div class="feedback">Richtig: Die Bedingung ist von Anfang an erfüllt, also läuft der Körper nie.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">1-mal</div>
+                            <div class="feedback"><code>repeat until</code> prüft die Bedingung vor der Schleife.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">10-mal</div>
+                            <div class="feedback">Der Sprite bewegt sich gar nicht.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Unendlich oft</div>
+                            <div class="feedback">Die Schleife startet nicht.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+    </body>
+</html>

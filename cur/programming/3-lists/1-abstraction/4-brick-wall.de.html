@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 3, Labor 1: Mit Komplexit&auml;t umgehen, Seite 4</title>
+    </head>
+
+    <body>
+        <h2>Ziegelmauer</h2>
+        <div class="learn">
+            <img class="imageRight" src="/bjc-r/img/2-complexity/humpty-dumpty-tenniel.png" alt="Humpty Dumpty auf einer Ziegelmauer" title="Humpty Dumpty auf einer Ziegelmauer">
+            <p><strong>In diesem Projekt</strong> nutzt du Abstraktion, um eine Ziegelmauer zu zeichnen.</p>
+			<img border="0" class="indent" title="Beispiel einer Ziegelmauer" alt="Beispiel einer Ziegelmauer" src="/bjc-r/img/abstraction/new-brickwall/wall.png" />
+        </div>
+
+        <h3>Einen Ziegel zeichnen</h3>
+        <p>
+            Ein Ziegel ist im Grunde ein Rechteck in Ziegelfarbe. In <span class="snap">snap</span> gibt es jedoch keinen Block <code>draw rectangle</code>. Du kannst ein Rechteck zeichnen, indem du dir eine sehr dicke Linie vorstellst:<br />
+            <div class="sidenoteBig">Programmiersprachen bieten viele Zeichen- und Bewegungswerkzeuge, aber kaum speziell f&uuml;r Ziegel – solche Spezialwerkzeuge erstellst du selbst, wenn du sie brauchst.</div>
+            <img class="indent" src="/bjc-r/img/2-complexity/U2ImageVideoAddendum_img/simpleBrickCode.png" alt="draw brick, length:(length) width:(width){set pen size to(width); move(length) steps}" title="draw brick, length:(length) width:(width){set pen size to(width); move(length) steps}"/>
+        </p>
+        <div class="forYouToDo" id="first">
+        	<ol>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" />Der folgende Code enth&auml;lt mehr Details als die Skizze oben. Schau ihn dir an und finde heraus, was er tut.<br />
+					<img class="indent" src="/bjc-r/img/3-lists/drawBrickCode.png"  alt="draw brick, length:(length#) width:(width#){set pen color to (red); set flat line ends to (true); set pen size to (width); pen down; move(length) steps; pen up}" title="draw brick, length:(length#) width:(width#){set pen color to (red); set flat line ends to (true); set pen size to (width); pen down; move(length) steps; pen up}"/><br />
+					<a class="run" href="/bjc-r/prog/3-lists/U3L1-brickwall.xml"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Projektvorlage laden" title="Projektvorlage laden"></a> F&uuml;hre den Code aus. Passiert das, was du erwartet hast?
+				</li>
+                <div class="endnote">
+                    <p>Standardm&auml;&szlig;ig zeichnet Snap<em>!</em> bei dicken Linien runde Enden: <img class="nopadtb" src="/bjc-r/img/2-complexity/U2ImageVideoAddendum_img/round-ends.png" alt="Linie mit runden Enden" title="Linie mit runden Enden">. Das ist oft sinnvoll, wie man rechts sieht. F&uuml;r Ziegel brauchen wir jedoch <em>flache</em> Enden: <img class="nopadtb" src="/bjc-r/img/2-complexity/U2ImageVideoAddendum_img/flat-ends.png" alt="Linie mit flachen Enden" title="Linie mit flachen Enden">, daher setzen wir <img src="/bjc-r/img/blocks/set-flat-line-ends.png" alt="set (flat line ends) to ()" title="set (flat line ends) to ()"> auf <code>true</code>.</p>
+                    <div style="display: grid; grid-template-columns: auto auto;" class="center">
+                        <div class="pseudop center"><img src="/bjc-r/img/2-complexity/flat-line-ends-why.jpg" alt="Quadrat mit flachen vs. runden Linienden" title="Quadrat mit flachen vs. runden Linienden" /><br /><strong>flache</strong> vs. <strong>runde</strong> Enden</div>
+                        <div><img class="inline" src="/bjc-r/img/blocks/set-video-with-menu.png" alt="Men&uuml; mit Option „flat line ends“" title="Men&uuml; mit Option „flat line ends“" /></div>
+                    </div>
+                </div>
+            </ol>
+        </div>
+
+        <div class="vocabFullWidth">: <strong>Abstraktion</strong>
+            <div class="ap-standard">AAP-3.B.1, AAP-3.B.5</div>
+            <p>Wie du in <a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/2-gossip.de.html?topic=nyc_bjc/1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 1, Labor 2, Seite 2">Einheit 1, Labor 2</a> gelernt hast, bedeutet <strong>prozedurale Abstraktion</strong>, ein gro&szlig;es Problem in kleinere Teilprobleme zu zerlegen.</p>
+            <p>Ein Block <code>draw brick</code> erlaubt dir, in Begriffen des eigentlichen Problems zu denken. Sobald der Block funktioniert, kannst du ihn verwenden, ohne &uuml;ber die Details nachzudenken – das macht den Code verst&auml;ndlicher.</p>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="2">
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" /> Passe <code>draw brick</code> so an, dass er zwei Eingaben <var>length</var> und <var>width</var> verwendet, und stelle die Pen-Einstellungen am Ende wieder zur&uuml;ck (z. B. <code>set flat line ends to false</code>).
+                </li>
+                <li><img class="inline" src="/bjc-r/img/icons/save-mini.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />Testet euren Block mit mehreren Werten und speichert.</li>
+            </ol>
+        </div>
+
+        <h3>Eine Reihe von Ziegeln</h3>
+        <p>Eine Ziegelreihe ist eine Wiederholung desselben Blocks mit Versatz:</p>
+        <div class="forYouToDo">
+            <ol start="4">
+                <li>Erstellt einen Block <code>row of bricks</code>, der eine bestimmte Anzahl Ziegel nebeneinander zeichnet (z.&nbsp;B. mit einem <code>repeat</code>-Block).</li>
+                <li>Experimentiert mit L&auml;nge und Breite, bis der Block eine saubere Reihe ergibt.</li>
+            </ol>
+        </div>
+
+        <h3>Die ganze Mauer</h3>
+        <div class="forYouToDo">
+            <ol start="6">
+                <li>
+                    Baut einen Block <code>brick wall</code>, der mehrere Reihen zeichnet und jede zweite Reihe versetzt startet, sodass die Fugen versetzt sind.
+                </li>
+                <li>Teste unterschiedliche Parameter (Ziegelbreite/-h&ouml;he, Anzahl Reihen).</li>
+                <li><img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" /></li>
+            </ol>
+        </div>
+
+        <div class="examFullWidth">
+            <p>
+                Auf der AP-Pr&uuml;fung kannst du gefragt werden, wie prozedurale Abstraktion den Code verbessert. Wenn du etwa eine Funktion <pre class="inline">calculate_tax</pre> nutzt, musst du nicht die interne Berechnung kennen, um sie einzusetzen – genau das ist Abstraktion.
+            </p>
+        </div>
+
+    </body>
+</html>

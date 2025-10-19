@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <title>Einheit 2, Optionale Projekte, Seite 5</title>
+    </head>
+
+    <body>
+		<h2>Sprache modellieren: Plurale, Teil 2</h2>
+        <div class="todo">KEEP-Grafiken neu erstellen. --MF, 27.06.20</div>
+        <div class="todo">
+            <ul>
+                <li>Revision: Lernende erweitern ihre <strong>Liste</strong> von Substantiven bei Bedarf. Nach jedem Testschritt sollen sie ihren Spezialblock bzw. den <strong>plural</strong>-Block &uuml;ber die gesamte Liste <strong>mappen</strong> und notieren, welche W&ouml;rter korrekt pluralisiert werden.</li>
+                <li>Bilder ohne wei&szlig;en Hintergrund neu erstellen. --MF</li>
+            </ul>
+		</div>
+
+        <p>Du kannst <code>plural</code> so erweitern, dass er f&uuml;r mehr W&ouml;rter korrekt funktioniert. Falls das Projekt nicht ge&ouml;ffnet ist, lade es erneut (Dateiname: <code>U2-Plural</code>).</p>
+
+        <div class="forYouToDo" id="first">
+			<ol>
+				<li>
+                    <strong>Abstraktion:</strong> Erstelle einen Block <img src="/bjc-r/img/2-complexity/plural_h.png" alt="plural-h ()" title="plural-h ()">, der sich auf eine Kategorie spezialisiert – W&ouml;rter, die auf &bdquo;h&ldquo; enden.
+                    <ul>
+                    	<li>Beginne mit einer <code>list</code> von W&ouml;rtern, f&uuml;r die der Block funktionieren soll.</li>
+                        <li>Der Spezialblock soll f&uuml;r seine Kategorie korrekt arbeiten
+                            <img src="/bjc-r/img/2-complexity/plural_h-crutch-with-result.png" alt="plural-h (crutch) reporting 'crutches'" title="plural-h (crutch) reporting 'crutches'">
+                            <img src="/bjc-r/img/2-complexity/plural_h-moth-with-result.png" alt="plural-h (moth) reporting 'moths'" title="plural-h (moth) reporting 'moths'">, <img src="/bjc-r/img/2-complexity/plural_h-bush-with-result.png" alt="plural-h (bush) reporting 'bushes'" title="plural-h (bush) reporting 'bushes'">. Er darf v&ouml;llig falsche Ergebnisse liefern, wenn ein Wort nicht zu seiner Kategorie geh&ouml;rt <img src="/bjc-r/img/2-complexity/plural_h-mouse-with-(wrong)result.png" alt="plural-h (mouse) reporting 'mousees'" title="plural-h (mouse) reporting 'mousees'">, denn der Block <code>plural</code> sollte nur W&ouml;rter an <code>plural-h</code> weitergeben, die tats&auml;chlich auf &bdquo;h&ldquo; enden.</li>
+                        <li>
+                            Teste <img src="/bjc-r/img/2-complexity/plural_h.png" alt="plural-h ()" title="plural-h ()" > mit vielen W&ouml;rtern und verwende anschlie&szlig;end <code>map</code>, um ihn auf die gesamte Liste anzuwenden.
+                            <div class="endnote">
+                                <a href="#hint-just-hwords" data-toggle="collapse" title="Tipp: Testliste f&uuml;r W&ouml;rter mit Endung „h“">Tipp f&uuml;r eine Testliste mit Endung &bdquo;h&ldquo;</a>
+                                <div id="hint-just-hwords" class="collapse">
+                                    Du wei&szlig;t, was <img src="/bjc-r/img/2-complexity/keep-items-such-that-(last-letter-of-(input)-equals-h)-from-test-list.png" alt="keep-items-such-that-(last-letter-of-(input)-equals-h)-from-test-list" title="keep-items-such-that-(last-letter-of-(input)-equals-h)-from-test-list"> tut. Daher kannst du dessen Ausgabe als Eingabe f&uuml;r einen Test von <code>plural</code> oder <code>plural-h</code> verwenden:<br />
+                                    <img class="indent" src="/bjc-r/img/2-complexity/map-plural(with-input)-over-(keep-items-such-that-(last-letter-of-(input)-equals-h)-from-test-list).png" alt="map plural …" title="map plural …">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <div class="takeNote">
+                    <p><strong>Abstraktion:</strong> Sprache steckt voller Sonderf&auml;lle. Manche Plurale enden auf &bdquo;s&ldquo;, manche auf &bdquo;es&ldquo;, W&ouml;rter wie &bdquo;calf&ldquo; und &bdquo;fly&ldquo; werden zu &bdquo;calves&ldquo; und &bdquo;flies&ldquo;. Um solch komplexe Aufgaben zu l&ouml;sen, zerlegt man sie am besten in Teilprobleme. Jede Variante erh&auml;lt ihren eigenen Block, und der &bdquo;Top-Level&ldquo;-Block (<code>plural</code>) ruft diese Spezialistinnen auf. Statt alle Details direkt in <code>plural</code> zu codieren, bleibt der Code &uuml;bersichtlich und erweiterbar, wenn <code>plural</code> so aussieht:<br />
+                        <img class="indent noshadow" src="/bjc-r/img/2-complexity/plural-abstract-definition.png" alt="Abstrakte Definition von plural" title="Abstrakte Definition von plural">
+                    </p>
+                </div>
+                <li>
+                    <p>Erstelle weitere Spezialbl&ouml;cke f&uuml;r andere Regeln (z. B. Endung &bdquo;y&ldquo;, unregelm&auml;&szlig;ige Plurale). Teste jeden Block mithilfe von <code>map</code> auf deinen Wortlisten.</p>
+                </li>
+                <li>
+                    <p>Erg&auml;nze deinen <code>plural</code>-Block um eine Logik, die das passende Spezialmodul ausw&auml;hlt. Nutze Listen und bedingte Ausdr&uuml;cke, um zu pr&uuml;fen, welche Regel passt.</p>
+                </li>
+                <li>
+                    <p>Teste dein Gesamtsystem erneut mit vielen W&ouml;rtern – auch solchen, die du noch nicht ber&uuml;cksichtigt hast – und erweitere die Spezialbl&ouml;cke nach Bedarf.</p>
+                </li>
+            </ol>
+            <img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+        </div>
+
+
+    </body>
+</html>

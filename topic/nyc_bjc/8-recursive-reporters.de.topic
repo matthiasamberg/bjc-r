@@ -1,0 +1,40 @@
+title: Einheit 8: Rekursive Funktionen
+
+{
+
+	raw-html:<p>Nach der Create Task hast du den gesamten AP-CSP-Lehrplan behandelt. Die Einheiten 6&ndash;8 enthalten weitere, f&uuml;r die Informatik wichtige Themen, die teilweise erst nach der AP-Pr&uuml;fung behandelt werden.</p>
+    raw-html: <div class="todo">BRIAN: Du wolltest alles in L3 (Labs und TG) &uuml;berarbeiten und dann die L&ouml;sungen erstellen, bevor ich es in vier Mini-Labs aufteile (damit wir sicher sind, dass es geteilt werden soll, bevor wir es tun). Dann wurde klar, dass die gesamte Einheit gr&uuml;ndlich &uuml;berarbeitet werden muss. Viel Erfolg und sag mir bitte, wie ich helfen kann. --MF, 23.5.20</div>
+
+heading: Labor 1: Rekursive Reporter
+    raw-html: <div class="todo">Mary soll Seite&nbsp;2 in Seite&nbsp;1 integrieren (mit L&ouml;sungshinweis) --MF, 17.6.20<p>&bdquo;Ein Reporter darf nur einmal berichten, daher brauchst du bei rekursiven Befehlen eine Hilfsfunktion.&ldquo;</p><p>Was? Nein. Ein Reporter darf nur einmal berichten, also musst du bei einem rekursiven Reporter eine <em>kombinierende</em> Funktion verwenden, um die rekursiven Aufrufe mit den nicht rekursiven Schritten zu verbinden. -bh</p></div>
+	resource: B&auml;ume z&auml;hlen [/bjc-r/cur/programming/8-recursive-reporters/1-recursive-reporters/1-counting-trees.de.html]
+	resource: Rekursive Reporter schreiben [/bjc-r/cur/programming/8-recursive-reporters/1-recursive-reporters/2-writing-recursive-reporters.de.html]
+
+heading: Labor 2: Basisumwandlung
+    raw-html: <div class="todo">Mary soll &uuml;berarbeiten. --MF, 17.6.20</div>
+    resource: Bin&auml;re Umwandlung [/bjc-r/cur/programming/8-recursive-reporters/2-base-conversion/1-binary-conversion.de.html]
+	resource: Basisumwandlung [/bjc-r/cur/programming/8-recursive-reporters/2-base-conversion/2-base-conversion.de.html]
+
+heading: Labor 3: Teilmengen
+    raw-html: <div class="todo">TG: &bdquo;Wirklich schwierig.&ldquo; Brian hat zugestimmt, dies als <b>&uuml;berspringbar</b> zu kennzeichnen. Mary soll Labor- und Seitennamen entsprechend diesem Topic anpassen. --MF, 17.6.20</div>
+	resource: Eisbecher z&auml;hlen [/bjc-r/cur/programming/8-recursive-reporters/3-subsets/1-ice-cream-bowls.de.html]
+	resource: Die Teilmengen auflisten [/bjc-r/cur/programming/8-recursive-reporters/3-subsets/2-subsets.de.html]
+
+heading: Labor 4: H&ouml;here Funktionen aufbauen
+	resource: Eine Liste entlanggehen [/bjc-r/cur/programming/8-recursive-reporters/4-building-higher-order-functions/1-plurals-and-other-recursions.de.html]
+	resource: Das <code>Map</code>-Muster verallgemeinern [/bjc-r/cur/programming/8-recursive-reporters/4-building-higher-order-functions/2-generalizing-the-map-pattern.de.html]
+	resource: Gerade Zahlen und <code>Behalten</code> [/bjc-r/cur/programming/8-recursive-reporters/4-building-higher-order-functions/3-even-number-filter.de.html]
+
+heading: Optionales Projekt: Pascalsches Dreieck
+    raw-html: <div class="todo">Mary soll dies als optionales Projekt ausarbeiten. --MF, 17.6.20</div>
+	resource: Pascalsches Dreieck [/bjc-r/cur/programming/8-recursive-reporters/optional-project-pascals-triangle/1-pascals-triangle.de.html]
+	resource: Pascalsches Dreieck und Effizienz [/bjc-r/cur/programming/8-recursive-reporters/optional-project-pascals-triangle/2-pascal-efficiency.de.html]
+
+heading: Optionales Projekt: Sortieren
+	resource: Eine Liste sortieren [/bjc-r/cur/programming/8-recursive-reporters/optional-project-sorting/1-sorting-a-list.de.html]
+	resource: Sortieren durch Auswahl [/bjc-r/cur/programming/8-recursive-reporters/optional-project-sorting/2-selection-sort.de.html]
+	resource: Sortieren durch Partitionierung [/bjc-r/cur/programming/8-recursive-reporters/optional-project-sorting/3-partition-sort.de.html]
+
+heading: Wiederholung zu Einheit 8
+	resource: Wortschatz [/bjc-r/cur/programming/summaries/vocab8.de.html]
+}

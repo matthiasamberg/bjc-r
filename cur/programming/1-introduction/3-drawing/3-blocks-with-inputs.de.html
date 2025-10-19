@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1, Labor 3: Moderne Kunst mit Polygonen, Seite 3</title>
+	</head>
+
+	<body>
+        <h2>Blöcke mit Eingaben</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> lernst du, wie ein Block dank Eingaben viele Varianten desselben Problems lösen kann.</p>
+        </div>
+
+		<p>Auf der letzten Seite hast du die Blöcke <code>asterisk</code> und <code>pinwheel</code> verwendet, die wir für dich vorbereitet haben – jeweils mit einer Eingabe für die Zahl der Speichen. Jetzt lernst du, eigene Blöcke mit Eingaben zu erstellen.</p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>
+                    <a href="/bjc-r/prog/1-introduction/U1L3-Pinwheel.xml" class="run"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Starterprojekt laden und speichern" title="Starterprojekt laden und speichern"></a><br />
+                    Lege fünf Kopien des Skripts an und passe jede so an, dass sie ein Windrad mit 3, 4, 5, 6 beziehungsweise 12 Speichen zeichnet.<br />
+                    <img class="noshadow" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/3.png"  height="120" alt="Windrad mit drei Speichen" title="Windrad mit drei Speichen" />
+                    <img class="noshadow" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/4.png"  height="120" alt="Windrad mit vier Speichen" title="Windrad mit vier Speichen" />
+                    <img class="noshadow" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/5.png"  height="120" alt="Windrad mit fünf Speichen" title="Windrad mit fünf Speichen" />
+                    <img class="noshadow" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/6.png"  height="120" alt="Windrad mit sechs Speichen" title="Windrad mit sechs Speichen" />
+                    <img class="noshadow" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/12.png" height="120" alt="Windrad mit zwölf Speichen" title="Windrad mit zwölf Speichen" />
+                </li>
+                <li>Sieh dir zwei deiner Skripte an und notiere alle Unterschiede.</li>
+            </ol>
+        </div>
+
+		<div class="ap-standard">CRD-2.B.3</div>
+        <p>Die Skripte sind im Grunde gleich – nur einige <em>Eingabewerte</em> unterscheiden sich. Statt viele Skripte zu verwalten, kannst du einen allgemeinen Block <img src="/bjc-r/img/1-introduction/pinwheel-block.png" alt="pinwheel, branches:()" title="pinwheel, branches:()"> erstellen, der alle Varianten zeichnet. Der Block muss also mit unterschiedlichen Eingaben funktionieren.</p>
+
+		<div class="forYouToDo">
+            <img class="imageRight" src="/bjc-r/img/icons/pair-programming-swap.png" alt="Paarprogrammierung: Wechsel" title="Paarprogrammierung: Wechsel" />
+            <ol start="3">
+                <li>
+                    Erstelle einen Block <code>pinwheel</code> mit einer Eingabe für die <var>Zahl der Speichen</var>. Lies die Anleitung unten oder sieh dir das Video darunter an.
+                    <div class="narrower">
+                        <h3 class="box-head">Einen Block mit Eingabe erstellen</h3>
+                        <ol type="a">
+                            <li>
+                                <strong>Lege einen neuen Block an, vergib Blockname und Beschriftung der Eingabe und klicke OK.</strong> Für dieses Projekt: <code>pinwheel, branches:</code>.
+                                <div class="endnote">
+                                    <a href="#hint-new-block" data-toggle="collapse" title="Bild zur Benennung anzeigen.">Bild zur Benennung anzeigen.</a>
+                                    <div id="hint-new-block" class="collapse">
+                                        <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/category.png" height="300" alt="Neuen Block erstellen" title="Neuen Block erstellen"/>
+                                        <p>Weil der Block den Sprite bewegt, passt die blaue Bewegungs-Palette gut.</p>
+                                        <p>Komma und Doppelpunkt sind optional; sie sorgen nur für Lesbarkeit.</p>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Klicke auf das Pluszeichen hinter „<code>branches:</code>“, gib den Eingabenamen ein und bestätige.</strong> Für dieses Projekt klickst du auf das Plus hinter „<code>branches:</code>“ und nennst die Eingabe <var>number of branches</var>.
+                                <div class="endnote">
+                                    <a href="#hint-input" data-toggle="collapse" title="Bild zur Benennung der Eingabe anzeigen.">Bild zur Benennung der Eingabe anzeigen.</a>
+                                    <div id="hint-input" class="collapse">
+                                        <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/plusSign.png" height="75" alt="Pluszeichen für Eingabe" title="Pluszeichen für Eingabe"/>
+                                        <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/blockP.png" height="240" alt="Dialog zur Eingabedefinition" title="Dialog zur Eingabedefinition"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Verwende die Eingabe im Block-Editor.</strong> Ziehe deine vorhandenen Skriptblöcke hinein und ersetze die Werte für Speichen, Winkel und Farben durch die Eingabe.
+                                <div class="endnote">
+                                    <a href="#hint-script" data-toggle="collapse" title="Bild des vollständigen Codes anzeigen.">Bild des vollständigen Codes anzeigen.</a>
+                                    <div id="hint-script" class="collapse">
+                                        <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/blockScript.png" height="230" alt="Fertiger pinwheel-Block mit Eingabe" title="Fertiger pinwheel-Block mit Eingabe"/>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><strong>Klicke auf OK</strong>, um den Block zu speichern.</li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="note">
+            <p>Wenn du in Snap<em>!</em> irgendwo eine Eingabe nutzen kannst, bedeutet das, dass du denselben Block vielseitig einsetzen kannst, statt für jede Variante einen neuen Block zu schreiben.</p>
+        </div>
+
+        <div class="video">
+            <p><strong>Video:</strong> „Create pinwheel with input“</p>
+            <video controls="" src="/bjc-r/img/1-introduction/video/Blockswith-Inputs.mp4"></video>
+        </div>
+
+        <div class="takeNote">
+            <div class="ap-standard">AAP-3.A.3</div>
+            <p>Eingaben für eine Prozedur (auch „Parameter“) sorgen dafür, dass derselbe Block verschiedenste Aufgaben lösen kann.</p>
+        </div>
+
+		<div class="forYouToDo">
+            <ol start="4">
+                <li>
+                    Zeichne mehrere Windräder mit deinem neuen Block, indem du ihm unterschiedliche Werte übergibst. Teile mit deiner Partnerin oder deinem Partner, welche Eingaben welche Muster erzeugen.
+                </li>
+				<li><img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" /></li>
+            </ol>
+        </div>
+
+        <div class="takeNote">
+            <div class="ap-standard">CRD-2.G</div>
+            <p><strong>Kommentare</strong> helfen, komplizierte Stellen im Code zu erklären. Besonders sinnvoll sind sie, wenn du mit anderen zusammenarbeitest.</p>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="6">
+                <li>
+                    Öffne den Block-Editor und füge einen Kommentar hinzu, der erklärt, wie dein Block <code>pinwheel</code> funktioniert.
+                    <div class="narrower">
+                        <h3 class="box-head">Kommentar hinzufügen</h3>
+                        <ol type="a">
+                            <li>Klicke mit Rechtsklick (Mac: Ctrl-Klick) in ein leeres Feld des Editors und wähle „add comment“.</li>
+                            <li>Beschreibe kurz, was der Block tut und was die Eingabe bedeutet.</li>
+                        </ol>
+                        <div class="endnote">
+                            <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/comment.png" alt="Snap!-Kommentar" title="Snap!-Kommentar" />
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="note">
+            <p>Lange, aussagekräftige Block- und Eingabenamen sind in Snap<em>!</em> problemlos möglich. Zusammen mit kurzen Kommentaren macht das deinen Code fast selbsterklärend.</p>
+        </div>
+
+        <h3>Mehr über Programmdokumentation</h3>
+
+		<div class="ap-standard">CRD-2.G.1, CRD-2.G.5</div>
+		<p>Kommentare sind nur eine Form der Dokumentation. Sie erklären zwar gezielt einzelne Stellen, aber nicht unbedingt das Zusammenspiel mehrerer Programmteile.</p>
+		<p>Dokumentation kann <em>extern</em> (für Anwender*innen) oder <em>intern</em> (für Entwickler*innen) sein. Beide Arten sind wichtig und sollten getrennt geführt werden – ein weiterer Grund, warum Kommentare allein nicht ausreichen.</p>
+		<div class="ap-standard">CRD-2.G.4</div>
+		<p>Selbst wenn du allein programmierst, ist Dokumentation hilfreich. Monate später weißt du vielleicht nicht mehr, warum der Code so aufgebaut ist.</p>
+		<div class="ap-standard">CRD-2.G.3</div>
+		<p>Idealerweise entsteht eine erste Dokumentation bereits vor dem Programmieren. Sie beschreibt gewünschtes Verhalten (extern) und die geplante Struktur (intern) und dient später auch zum Testen.</p>
+
+		<div class="forYouToDo">
+			<div class="ap-standard">AAP-3.A Teil a</div>
+            <ol start="5">
+                <li>Schreibe ein Skript, das zwei Windräder mit unterschiedlichen Speichenzahlen zeichnet.</li>
+            </ol>
+        </div>
+
+        <div class="ap-standard">AAP-3.A.4</div>
+        <p>Wenn ein Skript eine Prozedur (z.&nbsp;B. <code>pinwheel</code>) aufruft, wird diese vollständig ausgeführt, bevor das aufrufende Skript weiterläuft.</p>
+
+        <div class="forYouToDo">
+            <ol start="6">
+                <li>
+                    <!-- Question 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Compare and contrast the two scripts shown here."
+                        hasinlinefeedback="true" maxchoices="4" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">
+                            <div class="ap-standard">CRD-2.G.2</div>
+                            Vergleiche diese beiden Skripte. Kreuze alle zutreffenden Aussagen an.<br />
+                            <img class="indent" src="/bjc-r/img/1-introduction/1-3-3-compare-script-1.png" alt="pen down; repeat (10) {move (10) steps; turn right (15) degrees}" title="pen down; repeat (10) {move (10) steps; turn right (15) degrees}" />
+                            <img style="margin-left:20px" src="/bjc-r/img/1-introduction/1-3-3-compare-script-2.png" alt="pen down (mit Kommentar: set pen color to green); repeat (10) {move (10) steps; turn right (15) degrees}" title="pen down (mit Kommentar: set pen color to green); repeat (10) {move (10) steps; turn right (15) degrees}" />
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Beide Skripte verhalten sich gleich.</div>
+                            <div class="feedback">
+                                Richtig – der Kommentar ändert nichts am Ergebnis.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Nur eines der Skripte hat einen Kommentar, aber das beeinflusst den Ablauf nicht.</div>
+                            <div class="feedback">
+                                Genau. Kommentare dienen nur der Erklärung.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Der Kommentar sorgt dafür, dass der Stift grün wird.</div>
+                            <div class="feedback">
+                                Nein. Ein Kommentar ändert den Code nicht.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Die Skripte unterscheiden sich in der Art, wie sie drehen.</div>
+                            <div class="feedback">
+                                Beide drehen sich auf dieselbe Weise.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                          <div class="correctResponse" identifier="c1"></div>
+                          <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+	</body>
+</html>

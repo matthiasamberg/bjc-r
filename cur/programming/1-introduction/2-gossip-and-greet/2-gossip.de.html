@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1, Labor 2: Tratsch, Seite 2</title>
+	</head>
+
+	<body>
+		<h2>Programme sprechen lassen</h2>
+        <div class="learn">
+            <p>
+                <strong>In diesem Labor</strong> programmierst du zwei Sprites, die miteinander tratschen.<br />
+                <img class="indent" src="/bjc-r/img/1-introduction/U1L2-Gossip.jpg" alt="Bühnenbild mit zwei Figuren, die sich unterhalten. Eine sagt &sbquo;Meine Katze spielt in Jakes Band&lsquo;, die andere sagt &sbquo;Oh, aber ... Mr. C liebt meine Katze.&lsquo;" title="Zwei tratschende Figuren auf der Bühne."/>
+            </p>
+            <p><strong>Auf dieser Seite</strong> probierst du ein bestehendes Programm aus, um in das Projekt einzusteigen.</p>
+        </div>
+
+        <h3>Eigene Bl&ouml;cke erkunden</h3>
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li><a href="/bjc-r/prog/1-introduction/U1L2-Gossip.xml" class="run"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Hier klicken, um ein Startprojekt zu laden und zu speichern." title="Hier klicken, um ein Startprojekt zu laden und zu speichern."></a>
+                     <div class="endnote">Du musst angemeldet sein, um in deinem Konto zu speichern. Lies bei Bedarf noch einmal nach, wie man sich anmeldet: <a href="/bjc-r/cur/programming/1-introduction/1-building-an-app/2-creating-a-snap-account.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment#login" title="Einheit 1, Labor 1, Seite 2: Snap!-Projekte speichern">Einheit 1, Labor 1, Seite 2: Snap<em>!</em>-Projekte speichern</a>.</div>
+                </li>
+                <li>F&uuml;hre jedes Experiment (A-D) mehrfach aus.</li>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" />
+                    <ul>
+                    	<li>
+                            Was liefert jeder <em>Reporter</em>-Block zur&uuml;ck?<br />
+                            <img class="indent" src="/bjc-r/img/1-introduction/who.png" alt="Block &sbquo;who&lsquo;" title="Block &sbquo;who&lsquo;" />
+                            <img class="inline" src="/bjc-r/img/1-introduction/does-what.png" alt="Block &sbquo;does what&lsquo;" title="Block &sbquo;does what&lsquo;" />
+                            <img class="inline" src="/bjc-r/img/1-introduction/gossip.png" alt="Block &sbquo;gossip&lsquo;" title="Block &sbquo;gossip&lsquo;" />
+                        </li>
+                        <li>
+                            Was passiert, wenn du dieses Skript (mit D markiert) anklickst?<br />
+                            <img class="indent" src="/bjc-r/img/1-introduction/say-broadcast.png" alt="say (gossip) broadcast (your turn)" title="say (gossip) broadcast (your turn)" />
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="examFullWidth">
+			<div class="ap-standard">AAP-3.A.6</div>
+            <div class="pseudop">
+				<div class="python">
+					<a href="#hint-python-1-2-2-1" data-toggle="collapse" title="Wie würde das in Python aussehen?">Wie w&uuml;rde das in Python aussehen?</a>
+					<div id="hint-python-1-2-2-1" class="collapse"><pre><code>print(gossip())</code></pre></div>
+				</div>
+                Es gibt nichts genau wie <img class="nopadtb" src="/bjc-r/img/1-introduction/say-gossip.png" alt="say (gossip)" title="say (gossip)" /> oder <img class="nopadtb" src="/bjc-r/img/1-introduction/say-gossip-for-3-secs.png" alt="say (gossip) for (3) secs" title="say (gossip) for (3) secs" /> in der AP-Pr&uuml;fung, weil dort keine Sprites und Sprechblasen verwendet werden. Stattdessen wird Text so angezeigt:
+                <pre class="inline">DISPLAY(gossip())</pre> oder als Block <img class="nopadtb" src="/bjc-r/img/1-introduction/display(gossip).png" alt="Weißes Rechteck mit DISPLAY und einem kleineren Rechteck mit gossip" title="DISPLAY(gossip) als Block" />.
+            </div>
+            <p>Du musst diesen Notationsstil in der AP-Pr&uuml;fung nicht <em>schreiben</em> k&ouml;nnen. Du musst ihn nur <em>lesen</em> k&ouml;nnen, um Fragen dazu zu beantworten.</p>
+        </div>
+
+        <div class="endnote">
+            <a href="#hint-zoom" data-toggle="collapse" title="Möchtest du die Blöcke vergrößern?">M&ouml;chtest du die Bl&ouml;cke gr&ouml;&szlig;er machen?</a>
+            <div id="hint-zoom" class="collapse">
+                <p>&Ouml;ffne das Einstellungen-Men&uuml; (<img class="inline" src="/bjc-r/img/sys/settings.png" alt="Zahnrad f&uuml;r das Einstellungen-Men&uuml;" title="Zahnrad f&uuml;r das Einstellungen-Men&uuml;" />), w&auml;hle &bdquo;Zoom blocks...&ldquo; und verschiebe den Schieberegler.</p>
+            </div>
+        </div>
+
+        <div class="takeNote">
+            <div class="ap-standard">AAP-3.B.6, DAT-1.A.5</div>
+            <p><strong>Abstraktion</strong> ist die grundlegendste Idee der Informatik, aber schwer zu definieren, solange man keine Beispiele gesehen hat. Die einfachste Form der Abstraktion ist es, etwas im Programm einen <em>Namen</em> zu geben. Hier haben wir zum Beispiel der Idee &bdquo;w&auml;hle zuf&auml;llig einen Eintrag aus dieser Liste von Personen (oder Katzen)&ldquo; den Namen <code>who</code> gegeben. Das hei&szlig;t <strong><em>prozedurale</em> Abstraktion</strong>, weil wir eine Prozedur (einen Block) benutzen, um der Idee einen Namen zu geben. Dadurch bleibt dein Code lesbar. Weitere Formen der Abstraktion lernst du sp&auml;ter kennen.</p>
+        </div>
+
+        <div class="ap-standard">AAP-3.B.7</div>
+        <p>Wenn du Code kopieren und einf&uuml;gen m&ouml;chtest, ohne ihn zu &auml;ndern, gib ihm stattdessen einen Namen (&ouml;ffne einen Block-Editor und f&uuml;ge den Code dort ein) und rufe deine Prozedur an beiden Stellen auf. Wenn du sp&auml;ter einen Fehler findest, musst du ihn nur einmal beheben, statt jede Kopie im gesamten Programm zu suchen.</p>
+
+        <h3>Einen zweiten Sprite erkunden<a name="second" class="anchor">&nbsp;</a></h3>
+		<div class="forYouToDo">
+            <ol start="4">
+                <li>
+		            <img class="imageRight" src="/bjc-r/img/icons/pair-programming-swap.png" alt="Paarprogrammierung: Wechsel" title="Paarprogrammierung: Wechsel" />
+                	Klicke im Sprite-Bereich auf den gr&uuml;nen Sprite namens &bdquo;Sprite(2)&ldquo;, um seine Skripte und Kost&uuml;me zu bearbeiten.<br />
+		            <img class="indent" src="/bjc-r/img/1-introduction/stage-and-sprite-corral.png" alt="Bühne und Sprite-Bereich" title="Bühne und Sprite-Bereich" />
+                </li>
+                <li>F&uuml;hre jedes Experiment (A-C) mehrfach aus.</li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" /> Notiere, was <code>broadcast</code> bewirkt.</li>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" />
+                    Vergleicht, wie sich <code>who2</code> zu <code>who</code> verh&auml;lt und wie <code>gossip2</code> zu <code>gossip</code>.
+                </li>
+                <li>
+                    <img class="imageRight" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+                    Lass Sprite(2) dem Sprite eine Antwort schicken. Was passiert?
+               
+                    <div id="broadcast">&nbsp;</div>
+                    <div class="endnote">
+                        <p>
+                            Der Block <code>broadcast</code> sendet eine Nachricht an alle Sprites. Um die Nachricht festzulegen, klicke auf den Pfeil nach unten und w&auml;hle &bdquo;new...&ldquo;<br />
+                            <img class="indent" src="/bjc-r/img/1-introduction/broadcast-dropdown.png" alt="broadcast-Block mit geöffnetem Menü: your turn, new..." title="broadcast-Block mit geöffnetem Menü" />
+                        </p>
+                        <p>
+                            Mehr Informationen zum Block <code>when I receive</code> erh&auml;ltst du, wenn du den Block rechtsklickst (Mac: Ctrl-Klick) und &bdquo;help...&ldquo; ausw&auml;hlst.<br />
+                            <img class="indent" src="/bjc-r/img/1-introduction/when-i-receive-dropdown.png" alt="when I receive-Block mit Kontextmenü: help..., duplicate, delete, script pic..." title="Kontextmenü für when I receive" />
+                        </p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

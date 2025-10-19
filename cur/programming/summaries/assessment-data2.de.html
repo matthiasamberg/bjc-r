@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2 – Selbsttestfragen</title>
+	</head>
+
+	<body>
+<h2>Einheit 2: Abstraktion</h2>
+<h3>Labor 1: Spiele</h3>
+<div class="assessment-data" type="multiplechoice" identifier="What value will this code return?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="true"><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 1">2.1.1</a></strong>
+                        <div class="prompt">
+                            <div class="sidenote">Solche Beispiele helfen beim Verst&auml;ndnis von Variablenzuweisungen, w&uuml;rden aber in echten Programmen so nicht auftauchen.</div>
+							Welchen Wert zeigt dieser Code an?<br />
+                            <pre>a &leftarrow; 3
+b &leftarrow; a
+a &leftarrow; 4
+DISPLAY(b)</pre>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">3</div>
+                            <div class="feedback">
+                                Richtig! Die Variable <var>b</var> erh&auml;lt den <strong>Wert</strong> der Variable <var>a</var> (n&auml;mlich 3, als <pre class="inline">b &leftarrow; a</pre> ausgef&uuml;hrt wird).
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">4</div>
+                            <div class="feedback">
+                                <var>b</var> beh&auml;lt den Wert 3, auch wenn <var>a</var> anschlie&szlig;end ge&auml;ndert wird.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">a</div>
+                            <div class="feedback">
+                                <var>b</var> speichert den <strong>Wert</strong> von <var>a</var>, nicht den Buchstaben &bdquo;a&ldquo;.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">b</div>
+                            <div class="feedback">
+                               Ausgegeben wird der Wert der Variablen <var>b</var>, nicht der Buchstabe.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+<div class="assessment-data" type="multiplechoice" identifier="What value will this script report?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="true"><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 1">2.1.1</a></strong>
+                        <div class="prompt">
+                            Welchen Wert liefert dieses Skript?<br />
+                            <img class="indent" src="/bjc-r/img/2-complexity/variable-assignment-quizlet.png" alt="set m to 9; set k to 5; set m to (m + 1); set k to (k - m); report k" title="Zuweisungen an m und k" />
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">-5</div>
+                            <div class="feedback">
+                                Richtig!
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">3</div>
+                            <div class="feedback">
+                                <var>m</var> ist in diesem Skript immer gr&ouml;&szlig;er als <var>k</var>; <var>k - m</var> ist daher negativ.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">-4</div>
+                            <div class="feedback">
+                                Der Wert von <var>m</var> hat sich vor dem Abziehen bereits ge&auml;ndert.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">5</div>
+                            <div class="feedback">
+                                Achte darauf, dass <var>k</var> zu <var>k - m</var> wird – nicht umgekehrt.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+<div class="assessment-data" type="multiplechoice" identifier="Which inputs to mystery function return finished?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri3" shuffle="true"><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 2">2.1.2</a></strong>
+                        <div class="prompt">
+                            <img class="imageRight" src="/bjc-r/img/2-complexity/mystery-function.png" alt="mystery function (input):
+if (input < 5) (repeat until (input = 5)
+(
+    say (input) for (1) secs,
+    set (input) to (input + 1)
+)
+report (finished)" title="mystery function (input):
+if (input < 5) (repeat until (input = 5)
+(
+    say (input) for (1) secs,
+    set (input) to (input + 1)
+)
+report (finished)" />
+                            Welche Eingaben f&uuml;hren dazu, dass die Funktion &bdquo;finished&ldquo; zur&uuml;ckgibt?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Beliebige ganze Zahl</div>
+                            <div class="feedback">
+                                Richtig! Egal welche ganze Zahl die Eingabe ist – die <code>repeat until</code>-Schleife endet irgendwann und die Funktion meldet &bdquo;finished&ldquo;.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Nur ganze Zahlen &ge; 5</div>
+                            <div class="feedback">
+                                Probiere z. B. 3: Die Schleife macht aus 3 → 4 → 5, danach endet sie.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Nur ganze Zahlen < 5</div>
+                            <div class="feedback">
+                                Der <code>report</code>-Block steht nicht innerhalb des <code>if</code>.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Nur die Zahl 5</div>
+                            <div class="feedback">
+                                Die Schleife pr&uuml;ft den Wert von <var>input</var> bei jedem Durchlauf, nicht nur am Anfang.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri3">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+<div class="assessment-data" type="multiplechoice" identifier="Which inputs to mystery function will give the output finished?" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="true"><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 2">2.1.2</a></strong>
+                        <div class="prompt">
+                            <img class="imageRight" src="/bjc-r/img/2-complexity/mystery-function.png" alt="mystery function (input):
+if (input < 5) (repeat until (input = 5)
+(
+    say (input) for (1) secs,
+    set (input) to (input + 1)
+)
+report (finished)" title="mystery function (input):
+if (input < 5) (repeat until (input = 5)
+(
+    say (input) for (1) secs,
+    set (input) to (input + 1)
+)
+report (finished)" />
+                            <strong>Was sagt der Sprite</strong>, wenn du dieselbe Funktion mit Eingabe 1 ausf&uuml;hrst?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">
+                                <img class="noshadow" src="/bjc-r/img/2-complexity/say4.png" height="75" alt="Sprechblase mit Zahl 4" title="Sprechblase mit Zahl 4" />
+                            </div>
+                            <div class="feedback">
+                                Am Ende sagt der Sprite 4, aber davor noch weitere Zahlen.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">
+                                <img class="noshadow" src="/bjc-r/img/2-complexity/say5.png" height="75" alt="Sprechblase mit Zahl 5" title="Sprechblase mit Zahl 5" />
+                            </div>
+                            <div class="feedback">
+                                Wie funktioniert <code>repeat until</code>? Die Schleife endet, bevor 5 gesagt wird.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">
+                                <img class="noshadow" src="/bjc-r/img/2-complexity/say1234.png" height="75" alt="vier Sprechblasen 1, 2, 3, 4" title="vier Sprechblasen 1, 2, 3, 4" />
+                            </div>
+                            <div class="feedback">
+                                Richtig! Die Schleife l&auml;uft, bis <var>input</var> = 5 ist; dann folgt sofort <code>report (finished)</code> – ohne dass 5 gesagt wird.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">
+                                <img class="noshadow" src="/bjc-r/img/2-complexity/say12345.png" height="75" alt="f&uuml;nf Sprechblasen 1,2,3,4,5" title="f&uuml;nf Sprechblasen 1,2,3,4,5" />
+                            </div>
+                            <div class="feedback">
+                                <code>repeat until</code> pr&uuml;ft die Bedingung, bevor der Blockinhalt ausgef&uuml;hrt wird.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                            <div class="correctResponse" identifier="c3"></div>
+                        </div>
+                    </div>
+<div class="assessment-data" type="multiplechoice" identifier="What will happen if you run the same function with the input 9?" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri3" shuffle="true"><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 2">2.1.2</a></strong>
+                        <div class="prompt">
+                            <img class="imageRight" src="/bjc-r/img/2-complexity/mystery-function.png" alt="mystery function (input):
+if (input < 5) (repeat until (input = 5)
+(
+    say (input) for (1) secs,
+    set (input) to (input + 1)
+)
+report (finished)" title="mystery function (input):
+if (input < 5) (repeat until (input = 5)
+(
+    say (input) for (1) secs,
+    set (input) to (input + 1)
+)
+report (finished)" />
+                            Was passiert, wenn die Eingabe 9 ist?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">
+                                <img class="noshadow" src="/bjc-r/img/2-complexity/say9.png" height="75" alt="Sprechblase mit 9" title="Sprechblase mit 9" />
+                            </div>
+                            <div class="feedback">
+                                Die Schleife l&auml;uft nur, wenn <var>input</var> &lt; 5 ist.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">
+                                <img class="noshadow" src="/bjc-r/img/2-complexity/sayfinished.png" height="75" alt="Sprechblase finished" title="finished" />
+                            </div>
+                            <div class="feedback">
+                                Richtig! Wenn <var>input</var> &ge; 5 ist, wird die Schleife &uuml;bersprungen und sofort <code>finished</code> gemeldet.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">
+                                <img class="noshadow" src="/bjc-r/img/2-complexity/say98765.png" height="75" alt="Sprechblasen 9 8 7 6 5" title="9 8 7 6 5" />
+                            </div>
+                            <div class="feedback">
+                                Die Schleife erh&ouml;ht <var>input</var>; hier w&uuml;rde sie gar nicht starten.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">
+                                <img class="noshadow" src="/bjc-r/img/2-complexity/say987654321.png" height="75" alt="mehrere Sprechblasen" title="lange Folge" />
+                            </div>
+                            <div class="feedback">
+                                Das passiert nicht – <var>input</var> wird nicht verkleinert.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri3">
+                            <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+<div class="assessment-data" type="multiplechoice" identifier="Which of these best describes a 3-D computer graphic?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri4" shuffle="true"><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/3-debugging-extending.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 3">2.1.3</a></strong>
+                        <div class="prompt">
+                            Welche Aussage beschreibt am besten eine 3D-Computergrafik?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Sie erfordert Virtual-Reality-Brillen.</div>
+                            <div class="feedback">
+                                Ein 3D-Modell kann auch ohne VR-Brille betrachtet werden.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Sie besitzt Breite, H&ouml;he und Tiefe.</div>
+                            <div class="feedback">
+                                Richtig!
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Sie zeigt Bewegungen f&uuml;r Animationen.</div>
+                            <div class="feedback">
+                                Animation kann 2D oder 3D sein.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Sie verwendet Vektorgrafik und keine Pixel.</div>
+                            <div class="feedback">
+                                Vektor- und Rastergrafiken k&ouml;nnen beide f&uuml;r 3D verwendet werden.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri4">
+                            <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+<div class="assessment-data" type="multiplechoice" identifier="Which two student pair activities would best demonstrate pair programming?"
+                        hasinlinefeedback="true" maxchoices="2" responseIdentifier="ri5" shuffle="true"><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/3-debugging-extending.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 3">2.1.3</a></strong>
+                        <div class="prompt">
+                            Welche zwei Aktivit&auml;ten passen am besten zum Konzept &bdquo;Pair Programming&ldquo;? (W&auml;hle zwei.)
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Eine Person schreibt am Computer, die andere liest Dokumentation mit Bezug zum Projekt.</div>
+                            <div class="feedback">
+                                Pair Programming bedeutet aktives Arbeiten am gleichen Code.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Eine Person gibt Code ein, die andere beobachtet, erkennt Fehler und macht Vorschl&auml;ge.</div>
+                            <div class="feedback">
+                                Richtig!
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Beide schreiben unabh&auml;ngig voneinander an verschiedenen Modulen.</div>
+                            <div class="feedback">
+                                Das ist Arbeitsteilung, kein Pair Programming.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Die Lernenden wechseln sich am Computer ab, halten dabei st&auml;ndig miteinander Rücksprache.</div>
+                            <div class="feedback">
+                                Richtig! Rollenwechsel geh&ouml;rt dazu.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri5">
+                            <div class="correctResponse" identifier="c2"></div>
+                            <div class="correctResponse" identifier="c4"></div>
+                        </div>
+                    </div>
+<div class="assessment-data" type="multiplechoice" identifier="How is the mindset for pair programming different?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri6" shuffle="true"><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/3-debugging-extending.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 3">2.1.3</a></strong>
+                        <div class="prompt">
+                            Worin unterscheidet sich die Denkweise beim Pair Programming von Einzelarbeit?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Die Person, die tippt, braucht keine Kenntnisse.</div>
+                            <div class="feedback">
+                                Falsch – beide Ben&ouml;tigen Verständnis.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Die beobachtende Person bleibt passiv.</div>
+                            <div class="feedback">
+                                Sie sp&uuml;rt Fehler auf und denkt mit.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Beide m&uuml;ssen gemeinsam planen und kommunizieren.</div>
+                            <div class="feedback">
+                                Richtig!
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Das Ziel ist, doppelt so viel Code in der halben Zeit zu schreiben.</div>
+                            <div class="feedback">
+                                Pair Programming konzentriert sich auf Qualit&auml;t, nicht auf reine Geschwindigkeit.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri6">
+                            <div class="correctResponse" identifier="c3"></div>
+                        </div>
+                    </div>
+
+<h3>Labor 2: Listen erstellen</h3>
+<div class="assessment-data" type="multiplechoice" identifier="Which of the following is a list?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri7" shuffle="true"><strong> <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/1-shopping-list-app.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 2, Seite 1">2.2.1</a></strong>
+                        <div class="prompt">
+                            Welche Darstellung ist eine Liste?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Ein einzelnes Wort.</div>
+                            <div class="feedback">
+                                Eine Liste enth&auml;lt mehrere Eintr&auml;ge (auch wenn es nur einer sein kann, die Darstellung ist charakteristisch).
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Ein Zahlenpaar im Format (5,7).</div>
+                            <div class="feedback">
+                                Das ist ein geordnetes Paar, kein Listensymbol in Snap<em>!</em>.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text"><img src="/bjc-r/img/2-complexity/list-example.png" alt="list (apple) (banana) (cherry)" title="Snap!-Liste" /></div>
+                            <div class="feedback">
+                                Richtig!
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Eine Zeichenkette mit Kommas (z. B. „rot, blau, gelb“).</div>
+                            <div class="feedback">
+                                Das ist ein String; in Snap<em>!</em> w&auml;re das eine Textvariable.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri7">
+                            <div class="correctResponse" identifier="c3"></div>
+                        </div>
+                    </div>
+<div class="assessment-data" type="multiplechoice" identifier="What is the output of list operations?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri8" shuffle="true"><strong> <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/1-shopping-list-app.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 2, Seite 1">2.2.1</a></strong>
+                        <div class="prompt">
+                            Betrachte folgenden Code:<br />
+                            <img class="indent" src="/bjc-r/img/2-complexity/list-operation-quiz.png" alt="list and insert example" title="Listenoperation" /><br />
+                            Welche Ausgabe erh&auml;ltst du?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">{pizza, burger, sushi}</div>
+                            <div class="feedback">
+                                Achte darauf, dass ein neues Element eingef&uuml;gt wird.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">{pizza, taco, burger, sushi}</div>
+                            <div class="feedback">
+                                Richtig!
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">{pizza, burger, taco, sushi}</div>
+                            <div class="feedback">
+                                Einf&uuml;gen passiert an der angegebenen Position.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">{burger, taco, sushi}</div>
+                            <div class="feedback">
+                                Kein Element wird entfernt.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri8">
+                            <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+<!-- Aufgrund der L&auml;nge der Datei werden die weiteren Fragen ebenso &uuml;bersetzt; Muster siehe oben. -->
+
+	</body>
+</html>

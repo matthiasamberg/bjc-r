@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2, Optionale Projekte, Seite 2</title>
+    </head>
+
+    <body>
+        <h2>&Auml;gyptisches Motiv</h2>
+        <div class="todo">
+            <p>Bilder mit neuen Beschriftungen erstellen. --MF, 26.09.18</p>
+        </div>
+        <div class="todo">
+            <p>PG: Islamische Kunst eignet sich hervorragend f&uuml;r computergest&uuml;tztes Zeichnen, die Beispiele im Bereich &bdquo;Take It Further B&ldquo; sind gut. Ich w&uuml;rde gerne echte Abbildungen zeigen. Der obere Teil wirkt nicht sehr &bdquo;&auml;gyptisch&ldquo;. K&ouml;nnen wir dem Projekt ein klares Lernziel geben?</p>
+            <p>BH: Die Grafik im rosa Kasten lie&szlig;e sich am einfachsten als verziertes Sechseck zeichnen.</p>
+            <p>MF: Diese Seite m&ouml;chte ich &uuml;berarbeiten. Einige Vorschl&auml;ge stehen jetzt dabei.</p>
+        </div>
+
+        <div class="learn">
+            <img class="indent" src="/bjc-r/img/2-complexity/EgyptianMotif_img/HexalDesign1.png" height="250" alt="Hexagonales Muster" title="Hexagonales Muster" />
+            <img src="/bjc-r/img/2-complexity/EgyptianMotif_img/HexaDesign2.png"  height="250" alt="Hexagonales Muster in Farbe" title="Hexagonales Muster in Farbe" />
+            <p>Viele Werke islamischer Kunst basieren auf Geometrie und der Wiederholung einfacher Formen. Das oben gezeigte Motiv besteht z.&nbsp;B. aus sechs &uuml;berlagernden Rechtecken.</p>
+            <p><strong>In diesem Projekt</strong> erweiterst du deinen <code>pinwheel</code>-Code aus Einheit&nbsp;1, um solche komplexen Muster zu erzeugen.</p>
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <div class="todo">
+                    <p>Warum geben wir den Code f&uuml;r diese Bl&ouml;cke vor, statt die Lernenden ihn erstellen oder importieren zu lassen? Ich w&uuml;rde Aufgabe&nbsp;1 und&nbsp;2 streichen und den ersten Teil von Aufgabe&nbsp;3 in den rosa Kasten verschieben. Die eigentliche Arbeit beginnt erst in der zweiten H&auml;lfte von Aufgabe&nbsp;3. <strong>Ich m&ouml;chte diese Seite &uuml;berarbeiten</strong>, habe aber vorerst Aufgabe&nbsp;10 von &bdquo;For You To Do&ldquo; zu &bdquo;If There Is Time&ldquo; verschoben. --MF, 26.09.18</p>
+            </div>
+            <ol>
+                <li>
+                    Zur Erinnerung: Du wirst h&auml;ufig Rechtecke verwenden. Erstelle also zuerst den Block <code>rectangle</code>.<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/EgyptianMotif_img/rectangleCode.png" alt="rectangle, width:(width) length:(length){pen down; repeat(2){move(width) steps; turn clockwise (90) degrees; move(length) steps; turn clockwise (90) degrees};pen up}" title="rectangle, width:(width) length:(length){pen down; repeat(2){move(width) steps; turn clockwise (90) degrees; move(length) steps; turn clockwise (90) degrees};pen up}"/>
+                    <div class="endnote">Beachte, dass <code>pen down</code> und <code>pen up</code> im Rechteckblock verwendet werden. Normalerweise steht das nicht im Block, hier aber schon, damit nach jedem Rechteck der Stift oben ist und keine unerw&uuml;nschten Linien entstehen.</div>
+                </li>
+                <li>
+                    Rufe dir den <code>pinwheel</code>-Code aus Einheit&nbsp;1 in Erinnerung.<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/EgyptianMotif_img/pinwheelCode.png" alt="pinwheel, branches:(number of branches) size:(size) backup:(backup){repeat(number of branches){move(size) steps; move(-1Xbackup) steps; turn clockwise(360/number of branches) degrees}}" title="pinwheel, branches:(number of branches) size:(size) backup:(backup){repeat(number of branches){move(size) steps; move(-1Xbackup) steps; turn clockwise(360/number of branches) degrees}}" />
+                </li>
+                <li>
+                    In diesem Projekt ersetzt du die <strong>Pinwheel-Zweige</strong> durch <strong>Rechtecke</strong>, wie unten gezeigt (Farben dienen nur zur Veranschaulichung).<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/EgyptianMotif_img/multiColorPinwheel.png"  height="250" alt="Buntes Pinwheel" title="Buntes Pinwheel"/>
+                    <img src="/bjc-r/img/2-complexity/EgyptianMotif_img/multiColorPinwheelwithRectangles.png" height="250" alt="Pinwheel mit Rechtecken" title="Pinwheel mit Rechtecken"/> <br />
+                    Erstelle nun einen Block <code>pinwheel with rectangles</code>. Er hat zwei zus&auml;tzliche Parameter <var>width</var> und <var>length</var> f&uuml;r die Rechteckbreite und -l&auml;nge.<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/EgyptianMotif_img/pinwheelWithRectanglesCodeHeader.png"  alt="pinwheel with rectangles, branches:(number of branches) size:(size) backup:(backup) width:(width) length:(length)" title="pinwheel with rectangles, branches:(number of branches) size:(size) backup:(backup) width:(width) length:(length)"/>
+                </li>
+                <li>
+                    Verwende <code>pinwheel with rectangles</code>, um dein eigenes geometrisches Muster zu gestalten. Probiere verschiedene Werte f&uuml;r Zweige, L&auml;nge, Farbe usw. aus.
+                </li>
+            </ol>
+        </div>
+
+        <div class="ifTime">
+            <ol start="5">
+                <li>Experimentiere mit weiteren Formen wie Dreiecken oder Polygonen, um dein Motiv zu variieren.</li>
+            </ol>
+        </div>
+
+    </body>
+</html>

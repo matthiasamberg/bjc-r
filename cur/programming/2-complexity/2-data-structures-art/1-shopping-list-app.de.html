@@ -1,0 +1,188 @@
+    <!DOCTYPE html>
+<html lang="de">
+	<head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2, Labor 2: Listen erstellen, Seite 1</title>
+	</head>
+
+	<body>
+        <h2>Einkaufsliste-App</h2>
+		<div class="todo">F&uuml;ge irgendwo hinzu: &bdquo;Du kannst doppelt auf einen Listen-Watcher klicken, um ihn in einem Dialog zu &ouml;ffnen und offen zu lassen...&ldquo; --Jens, SnapCon 2023</div>
+        <div class="learn">
+            <p><strong>In diesem Labor</strong> erstellst du Werkzeuge, um Daten zu speichern und abzurufen.</p>
+            <p><strong>Auf dieser Seite</strong> baust du eine Einkaufsliste-App. </p>
+        </div>
+
+        <div class="sidenoteBig">Manche Programmiersprachen verwenden statt <em>Liste</em> das Wort <em>Array</em>. </div>
+        <p>
+            Viele Computeranwendungen &mdash; Kontaktlisten, Playlists, Kalender, Erinnerungen &mdash; arbeiten mit <em>Listen</em> von Informationen, die durchsucht, sortiert oder ver&auml;ndert werden. Du hast bereits mit Listen gearbeitet, als du das Gossip-Projekt angepasst hast.<br />
+        </p>
+
+        <div class="examFullWidth">
+            <div class="ap-standard">AAP-1.C.1 (zweiter Satz), AAP-1.D.7</div>
+            <div class="pseudop">
+				<div class="python">
+					<a href="#hint-python-2-2-1-1" data-toggle="collapse" title="Wie sieht das in Python aus?">Wie sieht das in Python aus?</a>
+					<div id="hint-python-2-2-1-1" class="collapse">
+						<pre><code>["Señora", "Ms. C", "my cat", "Hannah", "Jake"]</code></pre>
+					</div>
+				</div>
+				Der Listen-Ausdruck <img class="inline" src="/bjc-r/img/1-introduction/list-from-who.png" alt="list{Señora, Ms. C, my cat, Hannah, Jake}" title="list{Señora, Ms. C, my cat, Hannah, Jake}" /> wird als <pre class="inline">[Señora, Ms. C, my cat, Hannah, Jake]</pre> geschrieben. Die Elemente stehen in der Reihenfolge, in der sie im Text erscheinen: &bdquo;Señora&ldquo; hat den Index 1, &bdquo;Ms. C&ldquo; den Index 2 usw.
+			</div>
+        </div>
+
+
+        <div class="forYouToDo" id="first">
+			<img class="imageRight" src="/bjc-r/img/icons/pair-programming-swap-reminder.png" alt="Denke an Paarprogrammierungs-Wechsel" title="Denke an Paarprogrammierungs-Wechsel" />
+            <ol>
+				<li><a class="run" href="/bjc-r/prog/2-complexity/U2L2-ShoppingList.xml" target="_blank"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Klicke hier, um ein Startprojekt zu laden und speichere es dann." title="Klicke hier, um ein Startprojekt zu laden und speichere es dann."></a> Dieses Projekt enth&auml;lt Button-Kost&uuml;me f&uuml;r die Sprites, mit denen Nutzerinnen und Nutzer die Einkaufsliste steuern.
+                    <div class="endnote">
+                        <a href="#hint-shopping-list-example" data-toggle="collapse" title="Klicke f&uuml;r ein Video, das zeigt, wie die Einkaufsliste aussehen k&ouml;nnte.">Klicke f&uuml;r ein Video, das zeigt, wie dein Programm aussehen k&ouml;nnte.</a>
+                        <div id="hint-shopping-list-example" class="collapse">
+                            <img class="indent" data-gifffer="/bjc-r/img/3-lists/shopping-list-project-v3.gif" alt="Animation der Einkaufsliste-App">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="sidenoteBig">Wie du eine globale Variable initialisierst (erstellst und setzt), hast du auf <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/4-keeping-score.de.html?topic=nyc_bjc%2F2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 4: Punktest&auml;nde mit globalen Variablen f&uuml;hren">Einheit 2, Labor 1, Seite 4: Punktest&auml;nde mit globalen Variablen f&uuml;hren</a> gelernt.</div>
+                    <div class="ap-standard">AAP-1.C</div>
+                    Initialisiere eine Variable <var>shopping list</var>, um die Informationen zu speichern.
+                    <ol>
+                        <li>Erstelle eine globale Variable namens <var>shopping list</var>.</li>
+                        <li>
+                            Setze <var>shopping list</var> auf eine <em>leere</em> Liste (eine Liste ohne Elemente). Daf&uuml;r brauchst du den Block <img class="inline" src="/bjc-r/img/blocks/list-full-size.png" alt="list ()" title="list ()">.
+                            <div class="narrower">Nutze den linken Pfeil am Block, um das Eingabefeld zu entfernen, damit er so aussieht: <img src="/bjc-r/img/blocks/empty-list-block.png" alt="list" title="list">. So erh&auml;ltst du eine leere Liste und nicht eine Liste mit einem leeren Element.</div>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="examFullWidth">
+            <div class="ap-standard">AAP-1.D.7, Stichpunkt 2</div>
+            <div class="pseudop">
+				<div class="python">
+					<a href="#hint-python-2-2-1-2" data-toggle="collapse" title="Wie sieht das in Python aus?">Wie sieht das in Python aus?</a>
+					<div id="hint-python-2-2-1-2" class="collapse">
+						<pre><code>shoppingList = []</code></pre>
+					</div>
+				</div>
+				Die Zuweisung <img class="inline" src="/bjc-r/img/2-complexity/example-blank-list-assignment.png" alt="set (shopping list) to (list)" title="set (shopping list) to (list)" /> w&uuml;rde als <pre class="inline">shoppingList &leftarrow; []</pre> oder <img class="inline" src="/bjc-r/img/2-complexity/blank-list-assignment-blocktran.png" alt="shoppingList ← []" title="shoppingList ← []" /> geschrieben.
+			</div>
+        </div>
+
+
+        <h3>Elemente zu einer Liste hinzuf&uuml;gen</h3>
+        <div class="forYouToDo">
+            <ol start="3">
+                <li>
+                    Schreibe ein Skript f&uuml;r den Button-Sprite &bdquo;View List&ldquo;, der eine Textblase mit den Eintr&auml;gen der Einkaufsliste zeigt.
+                    <div class="endnote">
+                        <p>Mit dem Block <img class="inline" src="/bjc-r/img/blocks/join-empty-empty.png" alt="join () ()" title="join () ()"> kannst du Text kombinieren. Beispielsweise ergibt <code>join (My name is ) (Alonzo)</code> den Text <code>My name is Alonzo</code>. Wenn du damit Listen kombinierst, f&uuml;gt <code>join</code> die Elemente hintereinander und trennt sie durch ein Leerzeichen.</p>
+                        <p>Wenn du deine Einkaufsliste-Anzeige auf das erste Element beschr&auml;nken willst, nutze <code>item 1 of (shopping list)</code>.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="examFullWidth">
+            <div class="ap-standard">AAP-2.N.1, Stichpunkt 3</div>
+            <div class="pseudop">
+                <div class="python">
+                    <a href="#hint-python-2-2-1-3" data-toggle="collapse" title="Wie sieht das in Python aus?">Wie sieht das in Python aus?</a>
+                    <div id="hint-python-2-2-1-3" class="collapse">
+                        <pre><code>shoppingList.append(&quot;milk&quot;)</code></pre>
+                    </div>
+                </div>
+                <img class="inline" src="/bjc-r/img/2-complexity/add-milk-to-shopping-list.png" alt="add (milk) to (shopping list)" title="add (milk) to (shopping list)" /> entspricht <pre class="inline">APPEND(shoppingList, "milk")</pre> oder <img class="inline" src="/bjc-r/img/2-complexity/append-blocktran.png" alt="APPEND(shoppingList, &quot;milk&quot;)" title="APPEND(shoppingList, &quot;milk&quot;)" />.
+            </div>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="3">
+                <li>
+                    <p>Erstelle ein Skript f&uuml;r den Button &bdquo;Add Item&ldquo;, sodass beim Anklicken der Button-Sprite die Spielenden mit <code>ask</code> nach einem neuen Eintrag fragt und deren <code>answer</code> zur Einkaufsliste hinzuf&uuml;gt.</p>
+                    <div class="endnote">
+                        <p>Mit dem Block <img class="inline" src="/bjc-r/img/blocks/add-to.png" alt="add () to []" title="add () to []" /> f&uuml;gst du ein Element am Ende der Liste ein.</p>
+                    </div>
+                </li>
+                <li>Teste deinen &bdquo;Add Item&ldquo;-Button mehrfach und behebe Probleme.</li>
+            </ol>
+        </div>
+
+
+        <h3>Elemente aus einer Liste entfernen</h3>
+        <div class="forYouToDo">
+			<ol start="5">
+                <li>Schreibe ein Skript f&uuml;r den Button &bdquo;Clear List&ldquo;, das nachfragt, ob wirklich alles gel&ouml;scht werden soll, und dann <var>shopping list</var> wieder auf eine leere Liste setzt.</li>
+                <li>Teste deinen &bdquo;Clear List&ldquo;-Button und korrigiere ihn bei Bedarf.</li>
+			</ol>
+		</div>
+
+        <p>Mit <img class="inline" src="/bjc-r/img/blocks/delete.png" alt="delete (1) of 'list input slot'" title="delete (1) of 'list input slot'" /> kannst du auch einzelne Elemente entfernen. Der Block <code>delete</code> erwartet die Position und die Liste und entfernt das Element an dieser Stelle.</p>
+
+        <div class="examFullWidth">
+            <div class="pseudop">
+                <div class="ap-standard">AAP-2.N.1, Stichpunkt 6</div>
+				<div class="python">
+					<a href="#hint-python-2-2-1-6" data-toggle="collapse" title="Wie sieht das in Python aus?">Wie sieht das in Python aus?</a>
+					<div id="hint-python-2-2-1-6" class="collapse">
+						<pre><code>shoppingList.pop(1)</code></pre>
+					</div>
+				</div>
+                <img class="inline" src="/bjc-r/img/2-complexity/delete-item-2-of-shopping-list.png" alt="delete item (2) of (shopping list)" title="delete item (2) of (shopping list)" /> wird als <pre class="inline">REMOVE(shoppingList, 2)</pre> oder <img class="inline" src="/bjc-r/img/2-complexity/remove-blocktran.png" alt="REMOVE(shoppingList, 2)" title="REMOVE(shoppingList, 2)" /> geschrieben.
+            </div>
+        </div>
+
+        <div class="forYouToDo">
+			<ol start="7">
+				<li>Schreibe ein Skript f&uuml;r den Button &bdquo;Delete Item&ldquo;, das die Nutzerin oder den Nutzer nach der Nummer des zu entfernenden Eintrags fragt und diesen aus der Einkaufsliste l&ouml;scht.</li>
+                <li>Teste deinen &bdquo;Delete Item&ldquo;-Button.</li>
+			</ol>
+		</div>
+
+        <div class="examFullWidth">
+            <div class="pseudop">
+                Die Elemente einer Liste sind <em>Werte</em>, daher <strong>kannst du <code>item of</code> &uuml;berall einsetzen, wo du auch andere Ausdr&uuml;cke verwenden w&uuml;rdest</strong>. Zum Beispiel:
+                <div class="ap-standard">AAP-2.N.1, Stichpunkte 2 und 3</div>
+                <ul>
+                    <li>
+                        Du kannst ein Listenelement einer Variablen zuweisen.
+                        <a href="#hint-assigning-element-to-variable" data-toggle="collapse" title="Du kannst ein Listenelement einer Variablen zuweisen. Auf der Pr&uuml;fung...">Auf der Pr&uuml;fung...</a>
+                        <div id="hint-assigning-element-to-variable" class="collapse">
+                            <ul>
+                                <li><img class="inline" src="/bjc-r/img/2-complexity/assigning-element-to-variable.png" alt="set (my favorite food) to item (3) of (shopping list)" title="set (my favorite food) to item (3) of (shopping list)" /> entspricht <pre class="inline">myFavoriteFood &leftarrow; shoppingList[3]</pre> oder <img class="inline" src="/bjc-r/img/2-complexity/assigning-element-to-variable-blocktran.png" alt="myFavoriteFood &leftarrow; shoppingList[3]" title="myFavoriteFood &leftarrow; shoppingList[3]" /></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        Du kannst einem Listen-Eintrag <em>jeden beliebigen</em> Wert zuweisen (eine Zahl, einen String, ein Sprite, ein Kost&uuml;m, ein Skript, eine andere Liste usw.). <a href="#hint-assigning-anything-to-element" data-toggle="collapse" title="Du kannst einem Listen-Eintrag jeden beliebigen Wert zuweisen. Auf der Pr&uuml;fung...">Auf der Pr&uuml;fung...</a>
+                        <div id="hint-assigning-anything-to-element" class="collapse">
+                            <ul>
+                                <li>
+                                    <img class="inline" src="/bjc-r/img/2-complexity/assigning-variable-to-element.png" alt="replace item (2) of (shopping list) with (your favorite food)" title="replace item (2) of (shopping list) with (your favorite food)" /> entspricht <pre class="inline">shoppingList[2] &leftarrow; yourFavoriteFood</pre> oder <img class="inline" src="/bjc-r/img/2-complexity/assigning-variable-to-element-blocktran.png" alt="shoppingList[2] &leftarrow; yourFavoriteFood" title="shoppingList[2] &leftarrow; yourFavoriteFood" />.
+                                </li>
+                                <li>Auch das Ersetzen durch eine andere Liste ist m&ouml;glich.</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="9">
+                <li>F&uuml;ge deinem Programm eine M&ouml;glichkeit hinzu, ein Listen-Element durch einen neuen Wert zu ersetzen, den die Nutzenden eingeben.</li>
+                <li>Teste alle Buttons und behebe Fehler.</li>
+            </ol>
+        </div>
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>Erweitere deine Einkaufsliste, sodass sie auch Preise oder Kategorien speichert, oder entwickle eine eigene App, die mit Listen arbeitet.</li>
+            </ol>
+        </div>
+
+	</body>
+</html>

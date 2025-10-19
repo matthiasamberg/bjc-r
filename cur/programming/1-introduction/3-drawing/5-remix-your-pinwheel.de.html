@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <script type="text/javascript" src="/bjc-r/utilities/gifffer.min.js"></script>
+		<script type="text/javascript">window.onload = function() {Gifffer();}</script>
+        <link rel="stylesheet" type="text/css" href="/bjc-r/css/bjc-gifffer.css">
+		<title>Einheit 1, Labor 3: Moderne Kunst mit Polygonen, Seite 5</title>
+	</head>
+
+	<body>
+        <h2><code>Pinwheel</code> nutzen, um <code>Polygon</code> zu bauen</h2>
+        <div class="learn">
+        	<strong>Auf dieser Seite</strong> verwendest du deinen Block <code>pinwheel</code>, um daraus die spezialisierten Blöcke <code>asterisk</code> und <code>polygon</code> abzuleiten.<br />
+            <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/asteriskpolygonCycle.gif" height="250" alt="Animation vom Asterisk zum Polygon" title="Animation vom Asterisk zum Polygon"/>
+        </div>
+
+		<p>Mit der allgemeinen Prozedur <code>pinwheel</code> kannst du einfachere Spezialblöcke bauen, die jeweils genau eine Aufgabe erledigen.</p>
+
+        <div class="forYouToDo">
+            <img class="imageRight" src="/bjc-r/img/1-introduction/asterisk-new.png" height="250" alt="Asterisk mit zwölf Speichen" title="Asterisk mit zwölf Speichen"/>
+        	<ol>
+				<li>Öffne dein Projekt U1L3-Pinwheel, falls es nicht schon geladen ist.</li>
+                <li>
+                    Verwende <code>pinwheel</code>, um einen spezialisierten Block <code>asterisk</code> zu schreiben.
+                    <ol>
+                        <li>Erstelle einen neuen Block <code>asterisk</code> mit zwei Eingaben: <var>number of branches</var> und <var>branch length</var>. Eine Erinnerung, wie man neue Blöcke erstellt, findest du auf <a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/4-making-a-new-block.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Eigenen Block erstellen">Seite 4 von Labor 2</a>.
+                            <img src="/bjc-r/img/1-introduction/asterisk-using-pinwheel.png" alt="asterisk-Block, der intern pinwheel aufruft" title="asterisk-Block, der intern pinwheel aufruft"/>
+                        </li>
+                        <li>Setze nun die drei Eingaben für <code>pinwheel</code> so, dass ein Asterisk gezeichnet wird.</li>
+                    </ol>
+ 		            <img class="inline" src="/bjc-r/img/icons/pair-programming-swap.png" alt="Paarprogrammierung: Wechsel" title="Paarprogrammierung: Wechsel" />
+                </li>
+                <li>Schreibe ähnlich einen Block <code>polygon</code>, der <code>pinwheel</code> mit passenden Eingaben nutzt und ein Polygon mit vorgegebener Seitenzahl und Seitenlänge zeichnet.<br /></li>
+			</ol>
+		</div>
+        
+        <div class="takeNote">
+            <h3 class="box-head">Debugging mit <img src="/bjc-r/img/2-complexity/Debugging/pause-all-block.png" alt="pause all" title="pause all"/></h3>
+            <p>Mit <code>pause all</code> kannst du Haltepunkte setzen und Schritt für Schritt sehen, was dein Programm macht. Wenn du ein Skript mit <code>pause all</code> startest, kannst du mit dem gelben Play/Pause-Button neben der grünen Flagge (<img src="/bjc-r/img/sys/play-button.png" alt="Play" title="Play"/>/<img src="/bjc-r/img/1-introduction/pause_button.png" alt="Pause" title="Pause"/>) weiterschalten, bis der nächste <code>pause all</code>-Block erreicht ist. Diese Pause wirkt auf alle gleichzeitig laufenden Skripte.</p>
+        </div>
+
+        <div class="forYouToDo">
+			<ol start="4">
+                <li>Wenn du dir den Code von <code>pinwheel</code> ansiehst und wie er in <code>polygon</code> verwendet wird, merkst du vielleicht, dass du für ein Polygon eigentlich nicht alle Schritte brauchst. Schreibe eine kompakte Version von <code>polygon</code> nur mit Grundblöcken (<code>move</code>, <code>turn</code> usw.). Wie einfach bekommst du es hin? <img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+                <div class="takeNote">
+                    <div class="ap-standard">AAP-3.B.7</div>
+                    Solange der Block <code>polygon</code> das richtige Ergebnis zeichnet, spielt es für den Rest des Projekts keine Rolle, wie er intern aufgebaut ist.
+                </div>
+                </li>
+			</ol>
+		</div>
+
+
+        <div class="ifTime">
+            <ol start="5">
+                <li>Nutze den Code von <code>pinwheel</code> ein letztes Mal, um einen Block <code>circle</code> mit einer Eingabe für die Größe zu schreiben.</li>
+                <li>
+                    Kombiniere <code>random</code> mit <code>set pen color</code> und <code>set pen size</code>, um eine bunte Sammlung von Formen zu zeichnen.<br />
+					<img class="indent" src="/bjc-r/img/1-introduction/assorted-pinwheels.png" alt="Vielfalt an Windrädern" title="Vielfalt an Windrädern" />
+                </li>
+            </ol>
+        </div>
+        
+        <div class="forYouToDo">
+            <ol start="7">
+                <li>
+                    <!-- Question 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Which statement best illustrates the importance of using parameters in programming procedures?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">
+                            <div class="ap-standard">AAP-3.B.5</div>
+                            Welche Aussage beschreibt am besten den Nutzen von Parametern (z.&nbsp;B. <var>number of branches</var> im <code>pinwheel</code>-Code)?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Parameter schränken die Flexibilität von Prozeduren ein, weil sie nur für bestimmte Eingaben funktionieren.</div>
+                            <div class="feedback">
+                                Parameter erhöhen die Flexibilität, indem sie verschiedene Eingaben erlauben.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Parameter machen Prozeduren schwer verständlich und sollten möglichst vermieden werden.</div>
+                            <div class="feedback">
+                                Parameter erleichtern das Verständnis, weil Prozeduren dadurch anpassbar werden.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Parameter verallgemeinern Prozeduren, sodass sie mit unterschiedlichen Werten wiederverwendet werden können.</div>
+                            <div class="feedback">
+                                Richtig! Parameter verallgemeinern Prozeduren und machen sie wiederverwendbar.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Man kann Parameter weglassen, ohne dass sich die Funktion einer Prozedur ändert.</div>
+                            <div class="feedback">
+                                Parameter erweitern die Funktionalität einer Prozedur.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c3"></div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>
+                    <strong>Challenge:</strong> Entwickle ein Skript, das ein blaues Quadrat der Größe 100 zeichnet und anschließend einen roten Kreis, der genau hineinpasst.<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/red-circle-in-blue-square.png" alt="Roter Kreis in blauem Quadrat" title="Roter Kreis in blauem Quadrat" /><br />
+                </li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

@@ -17,44 +17,153 @@ llab.TRANSLATIONS = {
     'ifTime': {
       en: 'If There Is Time…',
       es: 'Si hay tiempo…',
+      de: 'Wenn noch Zeit bleibt …',
     },
     'takeItFurther': {
       en: 'Take It Further…',
       es: 'Llevándolo más allá',
+      de: 'Geh noch einen Schritt weiter …',
     },
     'takeItTeased': {
       en: 'Take It Further…',
       es: 'Llevándolo más allá',
+      de: 'Geh noch einen Schritt weiter …',
     },
     'backText': {
       en: 'previous page',
       es: 'Anterior',
+      de: 'vorherige Seite',
     },
     'nextText': {
       en: 'next page',
       es: 'Siguiente',
+      de: 'nächste Seite',
     },
     'selfCheckTitle': {
       en: 'Self-Check Question',
       es: 'Autoevaluación',
+      de: 'Selbsttestfrage',
     },
     'Try Again': {
       es: 'Intentarlo de nuevo',
+      de: 'Erneut versuchen',
     },
     'Check Answer': {
       es: 'Comprobar respuesta',
+      de: 'Antwort überprüfen',
     },
     'successMessage': {
       en: 'You have successfully completed this question!',
       es: '¡Has completado la pregunta correctamente!',
+      de: 'Du hast diese Frage erfolgreich beantwortet!',
     },
     'attemptMessage': {
       en: 'This is your %{ordinal} attempt.',
       es: 'Este es tu intento n.º %{number}.',
+      de: 'Dies ist dein %{ordinal}. Versuch.',
     },
     'Go to Table of Contents': {
-      es: 'Ir a la tabla de contenido'
+      es: 'Ir a la tabla de contenido',
+      de: 'Zur Inhaltsübersicht'
+    },
+    'Go to Index': {
+      es: 'Ir al índice',
+      de: 'Zum Index'
+    },
+    'BJC logo': {
+      es: 'BJC-Logo',
+      de: 'BJC-Logo'
+    },
+    'Switch language': {
+      en: 'Switch language',
+      es: 'Cambiar idioma',
+      de: 'Sprache wechseln'
     }
+};
+
+llab.supportedLanguages = {
+  en: { label: 'English', fileSuffix: '', topicSuffix: '' },
+  es: { label: 'Español', fileSuffix: '.es', topicSuffix: '.es' },
+  de: { label: 'Deutsch', fileSuffix: '.de', topicSuffix: '.de' },
+};
+
+llab.supportedLanguageCodes = Object.keys(llab.supportedLanguages);
+
+llab.stripLangSuffix = (resource, extension) => {
+  if (!resource) { return resource; }
+  const extWithDot = `.${extension}`;
+  if (!resource.endsWith(extWithDot)) { return resource; }
+  let base = resource.slice(0, -extWithDot.length);
+  const maybeLang = base.slice(-3);
+  if (/^\.[a-z]{2}$/i.test(maybeLang)) {
+    base = base.slice(0, -3);
+  }
+  return base;
+};
+
+llab.buildResourceWithLang = (base, suffix, extension) => {
+  if (!base) { return base; }
+  const extWithDot = `.${extension}`;
+  if (!suffix) {
+    return `${base}${extWithDot}`;
+  }
+  return `${base}${suffix}${extWithDot}`;
+};
+
+llab.languagePageURL = function(targetLang) {
+  const config = llab.supportedLanguages[targetLang];
+  if (!config) { return location.href; }
+
+  const url = new URL(location.href);
+  const parts = url.pathname.split('/');
+  const filename = parts.pop();
+  const base = llab.stripLangSuffix(filename, 'html');
+  const newFilename = llab.buildResourceWithLang(base, config.fileSuffix, 'html');
+  parts.push(newFilename);
+  url.pathname = parts.join('/');
+
+  if (url.searchParams.has('topic')) {
+    const topicBase = llab.stripLangSuffix(url.searchParams.get('topic'), 'topic');
+    url.searchParams.set(
+      'topic',
+      llab.buildResourceWithLang(topicBase, config.topicSuffix, 'topic')
+    );
+  }
+
+  if (url.searchParams.has('course')) {
+    const courseBase = llab.stripLangSuffix(url.searchParams.get('course'), 'html');
+    url.searchParams.set(
+      'course',
+      llab.buildResourceWithLang(courseBase, config.fileSuffix, 'html')
+    );
+  }
+
+  const params = [];
+  url.searchParams.forEach((value, key) => {
+    const encodedKey = encodeURIComponent(key);
+    const encodedValue = encodeURIComponent(value).replace(/%2F/g, '/');
+    params.push(`${encodedKey}=${encodedValue}`);
+  });
+  const search = params.length ? `?${params.join('&')}` : '';
+  return `${url.origin}${url.pathname}${search}${url.hash}`;
+};
+
+llab.languageContentURL = function(targetLang) {
+  const config = llab.supportedLanguages[targetLang];
+  if (!config) { return location.href; }
+
+  if (!llab.isTopicFile()) {
+    return llab.languagePageURL(targetLang);
+  }
+
+  const topicParam = llab.getQueryParameter('topic');
+  if (!topicParam) {
+    return llab.languagePageURL(targetLang);
+  }
+
+  const topicBase = llab.stripLangSuffix(topicParam, 'topic');
+  const topicFile = llab.buildResourceWithLang(topicBase, config.topicSuffix, 'topic');
+  return llab.topics_path + topicFile;
 };
 
 /////////////////

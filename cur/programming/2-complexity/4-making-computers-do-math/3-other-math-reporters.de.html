@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <script src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2, Labor 4: Computer rechnen lassen, Seite 3</title>
+    </head>
+
+    <body>
+		<h2>Weitere mathematische Reporter</h2>
+        <div class="learn">
+            <strong>In diesem Projekt</strong> erstellst du mathematische Bl&ouml;cke, die mehrere Zahlen zusammenfassen, zum Beispiel einen <code>sum</code>-Block, der zwei Zahlen addiert:<br />
+            <img class="indent" src="/bjc-r/img/3-lists/sum-from-4-to-6-reporting.png" alt="sum from (4) to (6) reporting 15" title="sum from (4) to (6) reporting 15" />
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+				<li>&Ouml;ffne dein Projekt U2L4-MathLibrary, falls es noch nicht ge&ouml;ffnet ist.</li>
+                <li>
+                    Baue die Bl&ouml;cke <code>maximum</code> (liefert die gr&ouml;&szlig;ere der beiden Eingabezahlen) und <code>minimum</code> (liefert die kleinere Zahl):<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/max-of-6-and-4-reporting.png" alt="max of (6) and (4) reporting 6" title="max of (6) and (4) reporting 6" />
+                    <img class="indent" src="/bjc-r/img/2-complexity/min-of-3-and-4-reporting.png" alt="min of (3) and (-4) reporting -4" title="min of (3) and (-4) reporting -4" />
+                </li>
+			</ol>
+		</div>
+
+        <p> Der Block <img class="inline" src="/bjc-r/img/blocks/combine.png" alt="combine 'list input slot' using 'reporter input slot'" title="combine 'list input slot' using 'reporter input slot'" /> bekommt zwei Eingaben: eine Liste und eine Operation mit <em>zwei</em> Eingabefeldern. Er liefert das Ergebnis, das entsteht, wenn du alle Elemente der Liste mit dieser Operation kombinierst. Der Ausdruck unten berechnet zum Beispiel 0 + 1 + 2.<br />
+            <img class="indent" src="/bjc-r/img/3-lists/combine-simple-example.png" alt="combine (list {0, 1, 2}) with (()+()) reporting 3" title="combine (list {0, 1, 2}) with (()+()) reporting 3" />
+        </p>
+
+        <div class="takeNote">
+            <p><strong>Du entscheidest, welche Operation angewendet wird; <code>combine</code> f&uuml;hrt sie dann auf alle Listenelemente aus und liefert das Ergebnis.</strong></p>
+            <p>Beachte, dass die Funktion zum Kombinieren immer zwei leere Eingabefelder hat. Beim Block <code>keep</code> reicht ein Platzhalter, bei <code>combine</code> sind zwei Pflicht.</p>
+        </div>
+        <div class="endnote">
+            <p><code>combine</code> ist eine <em>Higher-Order-Funktion</em>; sie nimmt selbst eine Funktion als Eingabe. Eine weitere Higher-Order-Funktion kennst du bereits: <code>keep</code> (siehe <a href="/bjc-r/cur/programming/2-complexity/3-predicates/5-keeping-list-items.de.html?topic=nyc_bjc%2F2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Elemente mit keep behalten">Einheit 2, Labor 3</a>).</p>
+            <p>
+                Im Unterschied zu <code>keep</code> wird <code>combine</code> nur mit wenigen Funktionen eingesetzt.
+                <a href="#hint-which-functions" data-toggle="collapse" title="Welche Funktionen?">Welche Funktionen?</a>
+                <div id="hint-which-functions" class="collapse">
+                    <p>
+                        <code>combine</code> nutzt man haupts&auml;chlich mit diesen Funktionen:<br />
+                        <img class="indent" src="/bjc-r/img/3-lists/plus.png" alt="+" title="+" /> <img src="/bjc-r/img/3-lists/times.png" alt="&times;" title="&times;" /><br />
+                        <img class="indent" src="/bjc-r/img/3-lists/and-block.png" alt="and" title="and" /> <img src="/bjc-r/img/3-lists/or-block.png" alt="or" title="or" /><br />
+                        <img class="indent" src="/bjc-r/img/3-lists/join.png" alt="join" title="join" /> <img src="/bjc-r/img/3-lists/join-words.png" alt="join words" title="join words" /><br />
+                        sowie die Bl&ouml;cke <img class="inline" src="/bjc-r/img/3-lists/maximum.png" alt="maximum of () ()" title="maximum of () ()" /> und <img class="inline" src="/bjc-r/img/3-lists/minimum.png" alt="minimum of () ()" title="minimum of () ()" />, die du gerade erstellt hast.
+                    </p>
+                    <p>
+                        <a data-toggle="collapse" href="#hint-3">Warum so wenige?</a>
+                        <div id="hint-3" class="collapse">
+                            Die Funktion muss <em>assoziativ</em> sein, d.&nbsp;h. es darf egal sein, wie die Elemente gruppiert werden. Addition ist assoziativ: (7 + 8) + 1 ist dasselbe wie 7 + (8 + 1). Subtraktion ist es nicht: (7 − 8) − 1 liefert ein anderes Ergebnis als 7 − (8 − 1). Daher w&auml;re ein Ausdruck wie <img src="/bjc-r/img/3-lists/combine-minus.png" alt="combine mit (-) auf (list 7 8 1)"> zweideutig.
+                        </div>
+                    </p>
+                </div>
+            </p>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="3">
+                <li>
+                    Verwende <code>combine</code>, um einen Block <code>sum</code> zu erstellen, der alle Elemente einer Liste addiert. Teste ihn mit mehreren Listen (einschlie&szlig;lich leerer Listen).
+                </li>
+                <li>
+                    Erstelle auf dieselbe Weise einen Block <code>product</code>, der die Elemente multipliziert. Was soll er zur&uuml;ckgeben, wenn die Liste leer ist?
+                </li>
+                <li>
+                    Baue einen Block <code>all true?</code>, der &uuml;ber eine Liste Boolescher Werte entscheidet, ob alle Eintr&auml;ge <code>true</code> sind, und einen Block <code>any true?</code>, der pr&uuml;ft, ob mindestens ein Eintrag <code>true</code> ist.
+                </li>
+			</ol>
+		</div>
+
+        <div class="takeNote">
+            <p>Manche Berechnungen lassen sich auch mit Schleifen realisieren, aber <code>combine</code> und <code>keep</code> k&ouml;nnen Code deutlich vereinfachen und verallgemeinern.</p>
+        </div>
+
+        <div class="forYouToDo">
+			<ol start="6">
+				<li>
+                    <!-- Frage 5 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="What is the value of x?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri5" shuffle="true">
+                        <div class="prompt">
+                            <p>Wann wird &bdquo;Error. Invalid entry.&ldquo; ausgegeben?</p>
+                            <div class="pre-container indent"><pre class="inline">PROCEDURE greaterThanOrEqualTo(a, b)
+    IF(a &gt; b)
+    {
+        RETURN(true)
+    }
+    ELSE
+    {
+        RETURN(a = b)
+    }
+    DISPLAY("Error. Invalid entry.")
+}
+</pre></div>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Wenn <pre class="inline">a &gt; b</pre> wahr ist.</div>
+                            <div class="feedback">
+                                Denke daran, was <pre class="inline">RETURN</pre> bewirkt: Genau wie <code>report</code> in Snap<em>!</em> beendet es die Prozedur. Danach wird kein weiterer Code ausgef&uuml;hrt.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Wenn <pre class="inline">a &gt; b</pre> falsch ist.</div>
+                            <div class="feedback">
+                                Auch im <code>else</code>-Zweig befindet sich ein <pre class="inline">RETURN</pre>, das die Prozedur beendet.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Nur wenn sowohl <pre class="inline">a &gt; b</pre> als auch <pre class="inline">a = b</pre> wahr sind.</div>
+                            <div class="feedback">
+                                Diese Situation tritt nie auf.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Niemals.</div>
+                            <div class="feedback">
+                                Richtig! Beide Zweige enden mit <pre class="inline">RETURN</pre>; der <code>DISPLAY</code>-Befehl wird nie erreicht.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri5">
+                            <div class="correctResponse" identifier="c4"></div>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+        </div>
+
+	</body>
+</html>

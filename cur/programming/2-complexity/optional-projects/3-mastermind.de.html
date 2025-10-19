@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2, Optionale Projekte, Seite 3</title>
+    </head>
+
+    <body>
+    <!--<div class="todo">ST-Fix the student access issue due to hideControls</div>-->
+		<h2>Mastermind</h2>
+		<div class="todo">Wenn ich die Anleitung richtig verstehe, wirken zwei parallele Farbreihen verwirrend. Im Papierbeispiel sollte nur eine Reihe gleichzeitig benutzt werden (wie sp&auml;ter im Projekt). --MF</div>
+        <div class="todo">
+            <p>PG: Dieses Projekt hat &auml;hnliches Potenzial wie Tic Tac Toe – man k&ouml;nnte es &uuml;ber langere Zeit ausbauen. W&auml;re spannend, solange es ein klares Lernziel gibt.</p>
+            <p>BH: Fantastisches Projekt! Wir sollten es irgendwann so erweitern, dass der Computer r&auml;t.</p>
+            <p>MF: Ich m&ouml;chte die Seite &uuml;berarbeiten, damit sie weniger Textw&auml;nde enth&auml;lt und mehr wie unsere &uuml;brigen Seiten aussieht.</p>
+        </div>
+
+		<div class="learn">
+        	<strong>In diesem Projekt</strong> beginnst du, das Spiel Mastermind&#8482; zu programmieren. Eine Person w&auml;hlt eine geheime Viererfolge aus Farben, die andere versucht sie zu erraten.<br />
+	        <img class="indent" src="/bjc-r/img/1-introduction/mm-snapshot.png" width="250" alt="Screenshot des Spiels" title="Screenshot des Spiels"/>
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li><a class="run" href="/bjc-r/prog/2-complexity/U2-Mastermind.xml"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Klicke hier, um ein Startprojekt zu laden, und speichere es anschließend." title="Klicke hier, um ein Startprojekt zu laden, und speichere es anschließend."></a><br />Sieh dir die Skripte an. Es gibt sechs Sprites – vier f&uuml;r das Ratefeld, zwei f&uuml;r die R&uuml;ckmeldung.</li>
+                <div class="narrower">
+                	<p><strong>R&uuml;ckmeldung f&uuml;r die ratende Person</strong> besteht aus zwei Zahlen (siehe jede Zeile im Bild oben):
+                    	<ul>
+                            <li>Wie viele Farben stehen an der <em>richtigen</em> Position? (Ziel ist, alle vier korrekt zu haben.)</li>
+                            <li>Wie viele richtige Farben sind an <em>falschen</em> Positionen?</li>
+                        </ul>
+                    </p>
+                </div>
+                <li>Spielt Mastermind <em>auf Papier</em> miteinander.</li>
+                <div class="narrower">
+                	<h3 class="box-head">Mastermind-Regeln</h3>
+                    <ul>
+                        <li>
+                            <strong>Jede Person notiert eine Folge aus vier Farben</strong>, ohne dass die andere sie sieht.
+                            <ul>
+                            	<li>Zur Abk&uuml;rzung kannst du Anfangsbuchstaben verwenden: <strong><u>r</u></strong>ot, <strong><u>o</u></strong>range, <strong><u>y</u></strong>ellow (gelb), <strong><u>g</u></strong>r&uuml;n, <strong><u>b</u></strong>lau, <strong><u>v</u></strong>iolett. Verwende vorerst keine Farbe doppelt.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Gebt abwechselnd Tipps ab</strong>. Die andere Person liefert zwei Zahlen als R&uuml;ckmeldung (siehe oben).
+                            <ul>
+                            	<li>Beispiel: Deine geheime Folge ist <strong>royg</strong>, dein Gegen&uuml;ber r&auml;t <strong>goby</strong>. Du antwortest &bdquo;eins und zwei&ldquo;, weil eine Farbe (orange) an der richtigen Position steht und zwei Farben (gelb, gr&uuml;n) vorkommen, aber an falschen Stellen.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Nutze fr&uuml;here Hinweise, um bessere G&uuml;sse zu machen.</strong>
+                            <ul>
+                            	<li>Im Beispiel k&ouml;nntest du nach <strong>goby</strong> annehmen: Eine Farbe sitzt richtig, zwei weitere sind korrekt. Vielleicht bleibt gr&uuml;n an seinem Platz, orange und blau verschieben sich – n&auml;chster Tipp <strong>grob</strong>. Antwort: &bdquo;null und drei&ldquo;. Klingt schlechter, hei&szlig;t aber, dass gr&uuml;n nicht an der richtigen Position war. Du probierst weiter, z. B. orange an zweiter Stelle.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <li>
+                    Im Laufe des Jahres erweiterst du das Projekt Schritt f&uuml;r Schritt. Jetzt geht es darum, zwei menschliche Spielerinnen zu unterst&uuml;tzen und den Computer als Notizblock f&uuml;r Tipps und R&uuml;ckmeldungen zu nutzen:
+                    <ul>
+                        <li>Frage nach den Namen beider Personen, um die Z&uuml;ge nachzuverfolgen.</li>
+                        <li>
+                            Bitte eine Person um einen Tipp (vier Buchstaben wie <strong>goby</strong>).<br />
+                            <img class="indent noshadow" src="/bjc-r/img/2-complexity/mm1.png" alt="Erster Tipp" title="Erster Tipp" >
+                        </li>
+                        <li>
+                            Zeige den Tipp auf der B&uuml;hne an.<br />
+                            <img class="indent noshadow" src="/bjc-r/img/2-complexity/mm2.png" alt="Vier Farben angezeigt" title="Vier Farben angezeigt">
+                        </li>
+                        <li>
+                            Frage die andere Person nach der zweigeteilten R&uuml;ckmeldung.<br />
+                            <img class="indent noshadow" src="/bjc-r/img/2-complexity/mm3.png" alt="R&uuml;ckmeldung anfordern" title="R&uuml;ckmeldung anfordern">
+                            <img class="indent noshadow" src="/bjc-r/img/2-complexity/mm4.png" alt="Vier Farben 2 Punkte" title="Vier Farben 2 Punkte">
+                        </li>
+                        <li>Wiederhole dies, bis die ratende Person die richtige Folge gefunden hat.</li>
+                    </ul>
+                    <div class="endnote">
+                        Praktisch ist der Block <img src="/bjc-r/img/1-introduction/tell.png" alt="tell (sprite) to (action)" title="tell (sprite) to (action)">, mit dem du einen bestimmten Sprite etwas tun lassen kannst.<br />
+                        <img class="indent" src="/bjc-r/img/1-introduction/tell-alonzo.png" alt="tell (Alonzo) to (say ...)" title="tell (Alonzo) to (say ...)">
+                        <img class="indent" src="/bjc-r/img/1-introduction/tell-correct.png" alt="tell (correct position) to (show value (# correct))" title="tell (correct position) to (show value (# correct))">
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>Statt vier Buchstaben einzugeben, k&ouml;nntest du sechs Farbschaltfl&auml;chen bereitstellen, die in Reihenfolge angeklickt werden. Lege dazu sechs Sprites mit den Farben an (au&szlig;erhalb des Spielfelds, damit sie nicht mit den bisherigen Tipps verwechselt werden). F&uuml;ge au&szlig;erdem einen &bdquo;L&ouml;schen&ldquo;-Sprite mit dem Symbol ⌫ und einen Best&auml;tigungsbutton (z.&nbsp;B. ✓) hinzu. Sorge daf&uuml;r, dass die Anzeige korrekt aktualisiert wird.</li>
+                <li>Lass beide Personen geheime Farbreihen haben und abwechselnd raten. Erweitere das Feld um eine zweite Spalte f&uuml;r die Tipps der anderen Person. Das Spiel endet, sobald jemand richtig liegt.</li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

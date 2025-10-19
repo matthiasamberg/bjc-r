@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2, Labor 3: Entscheidungen treffen, Seite 3</title>
+	</head>
+
+	<body>
+        <h2>Bedingungen kombinieren</h2>
+        <div class="learn">Auf dieser Seite lernst du geschachtelte Bedingungsanweisungen kennen.</div>
+
+        <div class="forYouToDo">
+			<ol>
+                <li>
+                    <div class="ap-standard">AAP-2.E Abschnitt b, AAP-2.L, AAP-2.L.1, AAP-2.L.3, AAP-2.L.4, AAP-2.L.5</div>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" />
+                    Hier siehst du vier m&ouml;gliche Definitionen f&uuml;r <code>≥</code>. Sprecht dar&uuml;ber, welche Vorteile jeder Stil hat: <br />
+                    <ol>
+                        <li>Funktionieren sie alle korrekt?</li>
+                        <li>Welche wirken elegant, weil sie kurz sind?</li>
+                        <li>Welche wirken elegant, weil sie klar verst&auml;ndlich sind?</li>
+                        <li>Welche wirken elegant, weil die Schritte einfach sind?</li>
+                        <li>Welche Definition entspricht am ehesten deiner Vorstellung aus dem Matheunterricht?</li>
+                        <li>Welche erscheint <em>dir</em> am deutlichsten?</li>
+                    </ol>
+                    <img class="indent" src="/bjc-r/img/2-complexity/ge-ifelseelse.png" alt="a &ge; b {if (a &gt; b) {report true} else {if (a = b) {report true} else {report false}}}" title="a &ge; b {if (a &gt; b) {report true} else {if (a = b) {report true} else {report false}}}"/>
+                    <img class="indent" src="/bjc-r/img/2-complexity/ge-ifelse.png" alt="a &ge; b {if (a &gt; b) {report true} else {report (a = b)}}" title="a &ge; b {if (a &gt; b) {report true} else {report (a = b)}}" />
+                    <img class="indent" src="/bjc-r/img/2-complexity/ge-notless.png" alt="a &ge; b {report (not (a &lt; b))}" title="a &ge; b {report (not (a &lt; b))}" />
+                    <img class="indent" src="/bjc-r/img/2-complexity/ge-or.png" alt="a &ge; b {report ((a &gt; b) or (a = b))}" title="a &ge; b {report ((a &gt; b) or (a = b))}" />
+                </li>
+            </ol>
+        </div>
+
+        <div class="vocabBig">: <strong>Geschachtelte Bedingung</strong>
+            <div class="ap-standard">AAP-2.I.1</div>
+            <p>Eine <strong>geschachtelte Bedingung</strong> ist ein <code>if</code>- oder <code>if else</code>-Block innerhalb eines anderen <code>if else</code>-Blocks.</p>
+        </div>
+        <p>Betrachte die ersten beiden Beispiele oben noch einmal. Weil der Ausdruck <var>a</var> <code>=</code> <var>b</var> genau dann <code>true</code> liefert, wenn beide Werte gleich sind, ist die verschachtelte Bedingung im ersten Beispiel eigentlich &uuml;berfl&uuml;ssig. Im zweiten Beispiel reicht es, das Pr&auml;dikat im <code>else</code>-Teil aufzurufen. Manchmal (vor allem, wenn du kein Pr&auml;dikat baust) sind geschachtelte Bedingungen jedoch sehr hilfreich.</p>
+        <div class="forYouToDo">
+			<ol start="2">
+				<li>
+                    <div class="ap-standard">AAP-2.I Abschnitt b</div>
+                    <img class="imageRight" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" /> Beschreibe, was dieses Code-Segment tut.<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/is-today-tuesday.png" alt="ask (Is today Tuesday?) and wait
+if (answer = 'yes')
+{
+    say (Mary Chung's is closed today.)
+}
+else
+{
+    if (answer = 'no')
+    {
+        say (Mary Chung's is open today.)
+    }
+    else
+    {
+        say (You didn't answer yes or no.)
+    }
+}" title="ask (Is today Tuesday?) and wait
+if (answer = 'yes')
+{
+    say (Mary Chung's is closed today.)
+}
+else
+{
+    if (answer = 'no')
+    {
+        say (Mary Chung's is open today.)
+    }
+    else
+    {
+        say (You didn't answer yes or no.)
+    }
+}" />
+                </li>
+                <li>
+                    <div class="ap-standard">AAP-2.I Abschnitt a</div>
+                    Schau dir deinen Code zum Zeichnen in drei Farben noch einmal an. Falls du noch keine geschachtelte Bedingung verwendest, kopiere den Code und erstelle eine Version, die eine geschachtelte Bedingung nutzt.
+                </li>
+			
+                
+                <li>
+                    <!-- Frage 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Temperature humidity weather application" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="false">
+                        <div class="prompt">
+                            <div class="ap-standard">AAP-2.I.4.B</div>
+                            Du arbeitest an einer Wetter-App, die Outdoor-Bedingungen anhand der Temperatur (in Fahrenheit) und der Luftfeuchtigkeit (in Prozent) einordnet. Der folgende Code entscheidet, ob es &bdquo;Hot and Humid&ldquo;, &bdquo;Hot and Dry&ldquo;, &bdquo;Cool and Humid&ldquo; oder &bdquo;Cool and Dry&ldquo; ist.<br />
+                            <img class="indent" src="/bjc-r/img/2-complexity/2-3-3-temperature.png" alt="if (temperature > 70) { if (humidity > 50) {set output to Hot and Humid} else {set output to Hot and Dry}} else { if (humidity > 50) {set output to Cool and Humid} else {set output to Cool and Dry}}" title="if (temperature > 70) { if (humidity > 50) {set output to Hot and Humid} else {set output to Hot and Dry}} else { if (humidity > 50) {set output to Cool and Humid} else {set output to Cool and Dry}}" /><br />
+                            Angenommen, deine Sensoren messen 60&nbsp;&deg;F und 40&nbsp;% Luftfeuchtigkeit. Welche Ausgabe produziert das Programm?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Hot and Humid</div>
+                            <div class="feedback">
+                                Die Temperatur 60&nbsp;&deg;F erf&uuml;llt die Bedingung &gt; 70 nicht.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Hot and Dry</div>
+                            <div class="feedback">
+                                Die Temperatur 60&nbsp;&deg;F erf&uuml;llt die Bedingung &gt; 70 nicht.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Cool and Humid</div>
+                            <div class="feedback">
+                                Die Temperatur ist &le; 70, aber die Luftfeuchtigkeit 40&nbsp;% erf&uuml;llt die Bedingung &gt; 50 nicht.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Cool and Dry</div>
+                            <div class="feedback">
+                                Richtig! Temperatur &le; 70 und Luftfeuchtigkeit &le; 50.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                          <div class="correctResponse" identifier="c4"></div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+	</body>
+</html>

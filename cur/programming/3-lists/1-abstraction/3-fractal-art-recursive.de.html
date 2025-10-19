@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 3, Labor 1: Mit Komplexit&auml;t umgehen, Seite 3</title>
+    </head>
+
+    <body>
+        <h2>Abstraktion zum Verschachteln von Dreiecken nutzen</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> lernst du, mithilfe von Abstraktion ein Dreiecksskript in sich selbst einzubetten und so <em>Rekursion</em> einzuf&uuml;hren.</p>
+        </div>
+        <p>Kommt dir das Kopieren und Einf&uuml;gen der Dreiecksskripte umst&auml;ndlich vor? Es gibt eine bessere L&ouml;sung: <em>Abstraktion</em>. In Einheit&nbsp;1 hast du den Block <code>pinwheel</code> genutzt, um &auml;hnliche Programme wie <code>asterisk</code> und <code>polygon</code> umzusetzen, statt den Code zu duplizieren. Auch hier kann ein Block helfen. Da wir jedoch ein kleineres Dreieck <em>innerhalb</em> eines gr&ouml;&szlig;eren zeichnen m&ouml;chten, verwenden wir denselben Block in seiner eigenen Definition – das nennt man <em>Rekursion</em>.</p>
+
+		<div class="forYouToDo">
+			<ol start="1">
+                <li>&Ouml;ffne dein Projekt U3L1-FractalArt, falls es noch nicht ge&ouml;ffnet ist.</li>
+                <li>
+                    Erstelle einen Block <code>nested triangle</code> mit einem Eingabewert <var>size</var>. Er soll zun&auml;chst nur ein Dreieck zeichnen, allerdings nur, wenn <var>size</var> &gt; 9 ist (ohne Farbwechsel).<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/nested-tri-no-color-proto.png" alt="nested triangle, size: (size)" title="nested triangle, size: (size)">
+                    <div class="endnote">
+                        <p><a href="#hint-purple" data-toggle="collapse" title="Warum ist der Block lila?">Warum ist der Block lila?</a></p>
+                        <div id="hint-purple" class="collapse">
+                            <p>Beim Erstellen eines Blocks kannst du jede Farbe nutzen. Hier hebt sich der Block so sp&auml;ter besser ab.</p>
+                        </div>
+                        <p><a href="#hint-nested" data-toggle="collapse" title="Hinweise zum Blockaufbau anzeigen">Hinweise zum Blockaufbau</a></p>
+                        <div id="hint-nested" class="collapse">
+                            <ol type="a">
+                                <li>
+                                    Nutze das Dreiecksskript von der vorherigen Seite als Vorlage, f&uuml;ge aber eine Bedingung hinzu: Zeichne nur, wenn das Dreieck gro&szlig; genug ist.<br />
+                                    <img class="indent" src="/bjc-r/img/2-complexity/triangle.png" alt="if(size>9) { repeat(3) { move size; turn clockwise 120° } }" title="if(size>9) { repeat(3) { move size; turn clockwise 120° } }">
+                                </li>
+                                <li>Klicke im Block-Editor auf &bdquo;Apply&ldquo;, damit der Block in der Palette erscheint.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+                <li>Teste deinen Block mit mindestens den Eingaben 9, 18, 20 und 100.</li>
+            </ol>
+        </div>
+
+        <p>Bisher ist das nur eine Dreiecksprozedur; als N&auml;chstes machst du sie rekursiv.</p>
+		<div class="vocabFullWidth">: <strong>Rekursion</strong>
+            <p>Wenn eine Prozedur sich selbst aufruft, nennt man das <strong>Rekursion</strong>.</p>
+        </div>
+        <p>Auf der vorherigen Seite hast du eine Kopie des Dreiecksskripts zwischen <code>move</code> und <code>turn</code> eingef&uuml;gt. Dasselbe gelingt nun mit deinem Block <code>nested triangle</code>.</p>
+
+        <div class="forYouToDo">
+			<ol start="4">
+                <li>
+                    Ziehe <code>nested triangle</code> aus der Palette in seine eigene Definition – zwischen <code>move</code> und <code>turn</code>. Setze die Eingabe <var>size</var> auf die H&auml;lfte des aktuellen Werts.<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/nested-tri-recur-no-color.png" alt="nested triangle mit size/2" title="nested triangle mit size/2">
+                </li>
+                <li>
+                    Teste deinen Block erneut (z. B. mit 9, 18, 20 und 100).
+                    <div class="endnote">Da <code>nested triangle</code> nun in der eigenen Definition verwendet wird, ist es eine rekursive Prozedur. Rekursion ist eine der m&auml;chtigsten Techniken der Informatik; du wirst noch oft darauf sto&szlig;en.</div>
+                </li>
+                <img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+            </ol>
+		</div>
+
+        <div class="ifTime">
+            <ol start="6">
+                <li>Nutze <code>nested triangle</code> als Vorlage f&uuml;r einen rekursiven Block <code>nested square</code>.</li>
+                <li>Damit du das Objekt visuell nachvollziehen kannst, verwende ggf. sichtbares Schrittweises Ausf&uuml;hren.</li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

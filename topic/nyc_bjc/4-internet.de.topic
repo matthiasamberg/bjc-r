@@ -1,0 +1,57 @@
+title: Einheit 4: Wie das Internet funktioniert
+
+{
+
+
+heading: Labor 1: Computernetzwerke
+	raw-html: <img class="imageRight" src="/bjc-r/img/4-internet/hierarchical-1.jpg" alt="Adresshierarchie" title="Adresshierarchie" />
+	resource: Was ist das Internet? [/bjc-r/cur/programming/4-internet/1-reliable-communication/1-what-is-internet.de.html]
+	quiz: Redundanz in Netzwerken [/bjc-r/cur/programming/4-internet/1-reliable-communication/2-network-redundancy.de.html]
+    resource: Internetabstraktionen und offene Protokolle [/bjc-r/cur/programming/4-internet/1-reliable-communication/3-open-protocols.de.html]
+    resource: Wer hat im Internet das Sagen? [/bjc-r/cur/programming/4-internet/1-reliable-communication/4-who-is-in-charge.de.html]
+	raw-html: <div class="todo"><p>Der Rest der Einheit muss neu nummeriert werden (und Standards-XLS). Lehrkr&auml;fte-Handbuch nach dem 30.8. bereinigen. --MF, 29.8.19</p></div>
+
+heading: Labor 2: Cybersicherheit
+	resource: Kryptografie [/bjc-r/cur/programming/4-internet/2-cybersecurity/1-cryptography.de.html]
+	resource: Caesar-Chiffre-Projekt [/bjc-r/cur/programming/4-internet/2-cybersecurity/2-caesar-cipher.de.html]
+	resource: Verschl&uuml;sselung mit &ouml;ffentlichem Schl&uuml;ssel [/bjc-r/cur/programming/4-internet/2-cybersecurity/3-asymmetric_cryptography.de.html]
+	resource: Wen interessiert Verschl&uuml;sselung? [/bjc-r/cur/programming/4-internet/2-cybersecurity/4-who-cares-about-encryption.de.html]
+	quiz: Sicherheitsrisiken [/bjc-r/cur/programming/4-internet/2-cybersecurity/5-security-risks.de.html]
+	resource: Was kannst du tun? [/bjc-r/cur/programming/4-internet/2-cybersecurity/6-cybersecurity.de.html]
+
+heading: Labor 3: Gemeinschaft und Online-Interaktionen
+	raw-html: <img class="imageRight" src="/bjc-r/img/4-internet/redundant-1.jpg" alt="Netzwerkredundanz" title="Netzwerkredundanz" />
+	resource: Kommunikation und Gemeinschaft [/bjc-r/cur/programming/4-internet/3-community/1-ways-we-communicate.de.html]
+	resource: Cybermobbing [/bjc-r/cur/programming/4-internet/3-community/2-cyberbullying.de.html]
+	resource: Zensur [/bjc-r/cur/programming/4-internet/3-community/3-censorship.de.html]
+	resource: Suchmaschinen [/bjc-r/cur/programming/4-internet/3-community/4-search-engines.de.html]
+	resource: Informatik weltweit [/bjc-r/cur/programming/4-internet/3-community/5-computing-world.de.html]
+	resource: Nutzen der Informatik [/bjc-r/cur/programming/4-internet/3-community/6-benefits.de.html]
+	resource: Digitale Zusammenarbeit [/bjc-r/cur/programming/4-internet/3-community/7-collaboration.de.html]
+
+heading: Labor 4: Datenrepr&auml;sentation und Kompression
+	raw-html: <div class="comment">Lehrfeedback zur Zahlenrepr&auml;sentation vom <a href="https://docs.google.com/document/d/1efB6TFzJM4jMh1ds7xwOGDPVvfHcX_Lc7Uzyb6FhaZA/edit" target="_blank">letzten Jahr</a> noch einmal ansehen.</div>
+	quiz: Bits [/bjc-r/cur/programming/4-internet/4-representation-compression/1-bits.de.html]
+	quiz: Bin&auml;re Sequenzen [/bjc-r/cur/programming/4-internet/4-representation-compression/2-sequences.de.html]
+	resource: Ganze Zahlen darstellen [/bjc-r/cur/programming/4-internet/4-representation-compression/3-representing-numbers.de.html]
+	quiz: Gleitkommazahlen [/bjc-r/cur/programming/4-internet/4-representation-compression/4-floating-point.de.html]
+	resource: Bin&auml;re Darstellung [/bjc-r/cur/programming/4-internet/4-representation-compression/5-binary.de.html]
+	quiz: Datenkompression [/bjc-r/cur/programming/4-internet/4-representation-compression/6-compression.de.html]
+
+    raw-html:<div class="todo">Lehrkr&auml;fte sind <a href="https://piazza.com/class/h8yx482idav52y?cid=2907">entt&auml;uscht</a>, dass HEX entfernt wurde. Gibt es einen Grund, warum es kein optionales Projekt sein sollte? --MF, 23.5.20<ul><li>Hexadezimale Darstellung: <a href="/bjc-r/cur/programming/6-computers/old/1-number-representation/3-hexadecimal.html">6.1.3 (alt)</a>, <a href="/bjc-r/cur/programming/4-internet/4-representation-compression/old/6-hexadecimal.html">4.4.6 (neu)</a></li><li>Mehr &uuml;ber Hexadezimal: <a href="/bjc-r/cur/programming/6-computers/old/1-number-representation/4-using-hex.html">6.1.4 (alt)</a>, <a href="/bjc-r/cur/programming/4-internet/4-representation-compression/old/7-more-hex.html">4.4.7 (neu)</a></li></ul>Das <a href="/bjc-r/cur/programming/4-internet/optional-projects/1-binary-counter.html">Bin&auml;ruhren-Projekt</a> war hier als optionales Projekt, aber ich habe es entfernt, weil ich mir nicht vorstellen kann, dass wir das zur&uuml;ckholen wollten. Bitte best&auml;tigen. --MF, 17.11.19<p>Es gibt auch noch das alte Addierer-Material: <a href="/bjc-r/cur/programming/6-computers/optional-projects/2-adder.html">Bin&auml;re Addition mit Logikgattern (alt)</a>, <a href="/bjc-r/cur/programming/6-computers/optional-projects/binary-adder.html">Einen bin&auml;ren Addierer bauen (neu)</a></div>
+//heading: Optionale Projekte
+	//resource: Bin&auml;ruhren-Projekt [/bjc-r/cur/programming/4-internet/optional-projects/1-binary-counter.html]
+    //resource: Bin&auml;re Addition mit Logikgattern [/bjc-r/cur/programming/6-computers/optional-projects/2-adder.html]
+
+	//raw-html: <div class="todo">Links beibehalten:<ul><li><a href="/bjc-r/cur/programming/6-computers/old/1-hierarchy/2-storage.html">Datenspeicherung und -schutz</a> &ndash; ich m&ouml;chte mir genauer ansehen, was hier verloren ging. --MF, 30.11.17</li><li><a href="/bjc-r/cur/programming/6-computers/old/2-computer-logic/1-logic-gates-andornot.html">Logikgatter: UND, ODER, NICHT</a></li><li><a href="/bjc-r/cur/programming/6-computers/old/2-computer-logic/2-logic-gates-nandnorxor.html">Logikgatter: NAND, NOR, XOR</a></li></ul></div>
+	raw-html: <div class="todo">Mary soll das optionale Projekt &bdquo;<a href="/bjc-r/cur/programming/4-internet/optional-projects/writing-html.html">HTML schreiben</a>&ldquo; einarbeiten (fr&uuml;her 4.2.5, mit Sternchen) --MF, 27.11.17<p>Und wie steht es um die <a href="/bjc-r/cur/programming/6-computers/optional-projects/weather-app.html">Wetter-App</a>? Ich habe sie wieder auf diese Themenseite gesetzt. Ich glaube, wir haben sie verloren, weil <code>http</code> so instabil ist, aber sie ist wirklich cool ... --MF, 30.11.17 Ist sie inzwischen stabiler, Brian? --MF, 29.8.19</p></div>
+	raw-html: <div class="todo"> Brian soll <a href="/bjc-r/cur/programming/4-internet/optional-projects/2-tcp.html">TCP</a> als optionales Projekt einarbeiten. --MF, 29.8.19</div><!-- resource: Zuverl&auml;ssige &Uuml;bertragung auf unzuverl&auml;ssigen Netzwerken: TCP (/bjc-r/cur/programming/4-internet/optional-projects/2-tcp.html)-->
+
+//heading: Optionale Projekte
+	//resource: HTML-Website [/bjc-r/cur/programming/4-internet/optional-projects/writing-html.html]
+	//resource: Wetter-App-Projekt (Wahl der Lehrkraft) [/bjc-r/cur/programming/6-computers/optional-projects/weather-app.html]
+
+heading: Wiederholung zu Einheit 4
+	resource: Wortschatz [/bjc-r/cur/programming/summaries/vocab4.de.html]
+	resource: Selbsttest-Fragen [/bjc-r/cur/programming/summaries/assessment-data4.de.html]
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 3, Labor 2: Kontaktliste, Seite 3</title>
+	</head>
+
+	<body>
+		<h2>Geburtstage hinzufügen</h2>
+        <div class="todo">
+            <p><strong>Ziel:</strong> ADT erweitern, ein <code>date</code>-ADT anlegen, das <code>contact</code>-ADT anpassen und weitere Hilfsbl&ouml;cke erstellen.</p>
+        </div>
+
+		<div class="learn">
+        	<p><strong>Auf dieser Seite</strong> entwickelst du ein ADT f&uuml;r <em>Datum</em> und passt das Kontakt-ADT an, sodass es Geburtstage speichert.<br />
+                <img class="indent" src="/bjc-r/img/3-lists/contact-constructor-with-birthdate.png" alt="contact mit Geburtstag" title="contact mit Geburtstag" />
+            </p>
+        </div>
+
+        <div class="takeNote">
+            <p>Wenn Kontakte mehr Daten enthalten (Geburtstag, Adresse, …), kann sich die Position einzelner Werte in der Liste &auml;ndern. ADTs helfen hier: Verschiebst du z. B. die Telefonnummer, musst du nur den Selektor anpassen, nicht jeden einzelnen Block.</p>
+        </div>
+        <div class="ap-standard">AAP-1.D.5</div>
+        <p>Name, Adresse und Telefon sind Strings; der Geburtstag ist eine Liste. Listen k&ouml;nnen Elemente beliebiger Typen enthalten.</p>
+        <div class="forYouToDo" id="first">
+			<ol>
+				<li>
+                	Erstelle ein ADT f&uuml;r ein Datum mit <var>Monat</var>, <var>Tag</var> und <var>Jahr</var>.
+                    <ol>
+                        <li>
+                            Baue einen <code>date</code>-Konstruktor, der diese Daten als Eingaben erh&auml;lt und eine Liste mit drei Elementen zur&uuml;ckgibt.<br />
+                            <img class="indent" src="/bjc-r/img/3-lists/date-constructor-reporting.png" alt="date (July) (9) (2005)" title="date (July) (9) (2005)" />
+                        </li>
+                        <li>
+                            Schreibe drei Selektoren, um Monat, Tag bzw. Jahr aus der Datumsliste zu holen.<br />
+                            <img class="indent" src="/bjc-r/img/3-lists/date-constructor-in-month-selector-reporting.png" alt="month from date" title="month from date" />
+                            <img class="indent" src="/bjc-r/img/3-lists/date-constructor-in-day-selector-reporting.png" alt="day from date" title="day from date" />
+                            <img class="indent" src="/bjc-r/img/3-lists/date-constructor-in-year-selector-reporting.png" alt="year from date" title="year from date" />
+						</li>
+                        <li><strong>Debugge</strong> ggf. Fehler.</li>
+                    </ol>
+                </li>
+                <li>
+                	Integriere das <code>date</code>-ADT in das <code>contact</code>-ADT.
+                    <ul>
+                        <li>
+                            Erweitere den Kontakt-Konstruktor um den Geburtstag (Liste mit <code>date</code>).<br />
+                            <img class="indent" src="/bjc-r/img/3-lists/contact-constructor-with-date-reporting.png" alt="Kontakt mit Geburtsdatum" title="Kontakt mit Geburtsdatum" />
+                        </li>
+                        <li>
+                            Erstelle den Selektor <code>birthdate from contact</code>.<br />
+                            <img class="indent" src="/bjc-r/img/3-lists/birthdate-from-contact-reporting.png" alt="Geburtstag extrahieren" title="Geburtstag extrahieren" />
+                        </li>
+                        <li>
+                            Passe den Button „Kontakt hinzufügen“ an, damit er auch das Geburtsdatum abfragt.
+                            <div class="narrower">
+                                <h3 class="box-head">Geburtstage erfassen</h3>
+                                    <p>Entweder nutzt du mehrere <code>ask</code>/<code>answer</code>-Bl&ouml;cke mit Skriptvariablen oder du erstellst einen Hilfsblock <img class="inline" src="/bjc-r/img/3-lists/ask-birthdate.png" alt="ask birthdate" title="ask birthdate" />, der die drei Fragen stellt und eine Liste mit den Antworten liefert.</p>
+                                    <img class="indent" src="/bjc-r/img/3-lists/contact-constructor-with-date-with-helpers.png" alt="Kontakt mit Hilfsbl&ouml;cken" title="Kontakt mit Hilfsbl&ouml;cken" />
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+                <img class="imageRight" src="/bjc-r/img/icons/save-mini.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+                <li><strong>Debug.</strong> Leere die Liste und f&uuml;ge einige Kontakte mit Geburtstag hinzu. Behebe Fehler.</li>
+			</ol>
+		</div>
+
+
+	</body>
+</html>

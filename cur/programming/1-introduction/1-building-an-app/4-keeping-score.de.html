@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1, Labor 1: Click-Alonzo-Spiel, Seite 4</title>
+	</head>
+
+	<body>
+        <h2>Spielenden R&uuml;ckmeldung geben</h2>
+        <div class="learn">Jetzt ist das Spiel anspruchsvoll, aber die Spielenden merken nicht, wie gut sie sind, weil Alonzo herumspringt, egal ob sie ihn anklicken oder nicht. <strong>Auf dieser Seite</strong> entwickelst du eine M&ouml;glichkeit, damit Spielende wissen, wie gut sie abschneiden.</div>
+
+        <h3>Pr&uuml;fen, ob Alonzo angeklickt wurde</h3>
+        <p>Zuerst m&ouml;chte die spielende Person sofort erkennen, ob sie Alonzo erwischt hat, bevor er wegspringt.</p>
+		<div class="vocabFullWidth">: <strong>Sprites</strong> und <strong>Kost&uuml;me</strong>
+            <p>Die Figur Alonzo ist nach Alonzo Church benannt, einem wichtigen Pionier der Informatik. In diesem Projekt gibt es drei Objekte, die zu Alonzo geh&ouml;ren:
+                <ul>
+                    <li>Eines ist ein <em><strong>Sprite</strong></em>, also eine Figur auf der B&uuml;hne, die viele verschiedene Dinge kann, etwa &uuml;ber die B&uuml;hne laufen und Text sprechen.</li>
+                    <li>Die beiden anderen sind <em><strong>Kost&uuml;me</strong></em>, also Bilder, die ein Sprite &bdquo;tragen&ldquo; kann.</li>
+                </ul>
+            </p>
+        </div>
+        <div class="forYouToDo">
+            Programmiere Alonzo so, dass er in die andere Richtung schaut, wenn er angeklickt wird.
+            <img src="/bjc-r/img/1-introduction/alonzo.png" alt="Figur Alonzo" title="Figur Alonzo" height="60">
+            <img src="/bjc-r/img/1-introduction/alonzo-flipped-other-way.png" alt="Alonzo in die andere Richtung gedreht" title="Alonzo in die andere Richtung gedreht" height="60">
+            <ol>
+                <li>Das Projekt, das du geladen hast, enth&auml;lt zwei Alonzo-Kost&uuml;me&mdash;eins nach rechts und eins nach links&mdash;, sodass du den Block <img src="/bjc-r/img/blocks/next-costume.png" alt="next costume"> verwenden kannst, um den Sprite zu drehen. F&uuml;ge den Block <code>next costume</code> dort ein, wo die Nutzerin oder der Nutzer gerade auf Alonzo geklickt hat.</li>
+                <li>Teste dein Programm. Achte darauf, dass Alonzo nur beim Klick die Richtung wechselt und nicht, wenn er ohne Klick springt.</li>
+            </ol>
+        </div>
+
+        <h3>Punktest&auml;nde f&uuml;hren</h3>
+        <p>Die spielende Person m&ouml;chte auch wissen, wie weit sie im Spiel gekommen ist. Der Befehl <img src="/bjc-r/img/1-introduction/ghosteffect.png" alt="change (ghost) effect by ()" title="change (ghost) effect by ()" /> steuert Alonzos <em>Transparenz</em>.</p>
+        <div class="vocabFullWidth">: <strong>Transparenz</strong>
+            <p>
+                Die <strong>Transparenz</strong> eines Bildes beschreibt, wie gut man das sieht, was dahinter liegt. Hier siehst du den Sprite Alonzo mit drei unterschiedlichen Transparenzstufen (eingestellt &uuml;ber den Block <code>ghost effect</code>).<br />
+                <img class="indent" src="/bjc-r/img/1-introduction/transparency2.png" title="drei Bilder von Alonzo mit Geistereffekt 0 %, 25 % und 50 % vor einer Ziegelwand" alt="drei Bilder von Alonzo mit Geistereffekt 0 %, 25 % und 50 % vor einer Ziegelwand" />
+            </p>
+        </div>
+        <div class="forYouToDo">
+            <p>Nutze die Transparenz, um zu zeigen, wie nah die Spielenden am Gewinn sind: Bei jedem Klick wird Alonzo etwas unsichtbarer, und wenn er ganz verschwindet, haben sie gewonnen.</p>
+            <ol start="3">
+                <li> Ziehe den Block <code>change (ghost) effect</code> in den Skriptbereich und probiere verschiedene Eingabewerte aus (klicke den Block nach jeder Anpassung mehrfach), um zu sehen, wie er funktioniert. Bei welchem Wert wird Alonzo komplett unsichtbar? Mit dem Befehl <img src="/bjc-r/img/1-introduction/clear-graphic-effects.png" alt="clear graphic effects"> kannst du Alonzo wieder voll sichtbar machen.</li>
+                <li>Erweitere dein Skript so, dass Alonzo bei jedem Klick etwas geisterhafter wird. &Uuml;berlege dir, wie deine Eingaben die L&auml;nge des Spiels beeinflussen, und probiere dein Spiel aus.</li>
+            </ol>
+        </div>
+
+        <h3>Das Spiel schwieriger machen</h3>
+		<p>Bis jetzt wird selbst eine schlechte Spielerin oder ein schlechter Spieler Alonzo <em>irgendwann</em> verschwinden lassen. Spannender wird es, wenn Fehlklicks bestraft werden.</p>
+        <div class="forYouToDo">
+            <ol start="5">
+                <li>Finde heraus, wo du einen Block <code>change (ghost) effect by (-5)</code> einf&uuml;gen musst, damit Alonzo weniger durchsichtig wird, wenn er sich bewegt, <em>ohne</em> angeklickt zu werden. </li>
+                <li>Spiele dein Spiel ein paar Mal und passe deinen Code so an, dass der Schwierigkeitsgrad dir gef&auml;llt.
+                     <div class="endnote">Du kannst sowohl den Wert im <code>change effect</code>-Block (bei beiden Vorkommen) als auch die <code>wait</code>-Zeit ver&auml;ndern, um das Spiel leichter oder schwerer zu machen.</div>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Das Spiel beenden</h3>
+        <div class="forYouToDo">
+            <p>Wenn Alonzo komplett durchsichtig ist, soll das Spiel <em>stoppen</em>.</p>
+            <ol start="7">
+    			<li>
+                    F&uuml;ge diesen Code an der passenden Stelle in dein Skript ein, um das Spiel zu beenden.<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/if-done-stop.png"  alt="if ((ghost effect) = 100) {clear graphic effects, stop all}"  title="if ((ghost effect) = 100) {clear graphic effects, stop all}" />
+                </li>
+                <li><img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" /></li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

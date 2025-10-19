@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2, Labor 3: Entscheidungen treffen, Seite 6</title>
+	</head>
+
+	<body>
+        <h2>Ein Wortr&auml;tsel l&ouml;sen</h2>
+		<div class="todo">
+            <p>Niemand m&uuml;sste einen Computer fragen &bdquo;Hat spaghetti 5 Buchstaben?&ldquo; Der Block sollte in WORD ( ) HAS ( ) LETTERS umbenannt werden, damit er sinnvoller aussieht. --bh</p>
+            <p>Anschlie&szlig;end &Auml;nderung in 5.1 ab Seite 2 weiterverfolgen, Startdateien, L&ouml;sungen und TG in beiden Einheiten bei Bedarf anpassen. --MF, 14.07.20</p>
+        </div>
+        <div class="learn">
+			<p><strong>Auf dieser Seite</strong> l&ouml;st du ein Kreuzwortr&auml;tsel, indem du Pr&auml;dikate mit dem Block <code>and</code> kombinierst. Anschlie&szlig;end verwendest du die entstandenen Pr&auml;dikate zusammen mit <code>keep</code>, um W&ouml;rter mit bestimmten Eigenschaften zu finden.</p>
+            <img class="indent" src="/bjc-r/img/2-complexity/radiux.png" alt="Beispiel: 6 Buchstaben, erster Buchstabe r, dritter Buchstabe d" title="Beispiel: 6 Buchstaben, erster Buchstabe r, dritter Buchstabe d" />
+        </div>
+		<div class="forYouToDo" id="first">
+		    <ol>
+                <li><a class="run" href="/bjc-r/prog/2-complexity/U2L3-WordPuzzleSolver.xml" target="_blank"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Klicke hier, um ein Startprojekt zu laden, und speichere es danach." title="Klicke hier, um ein Startprojekt zu laden, und speichere es danach."></a></li>
+		        <li>
+                    Du hast den Block <img class="inline" src="/bjc-r/img/blocks/length-of-blank-operator.png" alt="length of ()" title="length of ()" /> bereits mit <code>=</code> und <code>keep</code> genutzt, um W&ouml;rter einer bestimmten L&auml;nge aus der Liste <var>words list</var> zu filtern.
+		        	<ol>
+                        <li>Setze das Skript wieder zusammen, sodass du alle W&ouml;rter mit 8 Buchstaben findest.</li>
+				        <li>Finde alle W&ouml;rter mit 11 Buchstaben.</li>
+                        <li>Du hast nun einen <em>Ausdruck</em>, den du f&uuml;r beliebige Wortl&auml;ngen anpassen kannst. Daraus l&auml;sst sich ein n&uuml;tzliches Werkzeug machen: Baue und teste einen Pr&auml;dikats-<em>Block</em>, der ein Wort und eine Zahl als Eingabe annimmt und so funktioniert:<br />
+                            <img class="indent" src="/bjc-r/img/2-complexity/does-orange-6-letters-true.png" alt="does (orange) have (6) letters? reporting true" title="does (orange) have (6) letters? reporting true" />
+                            <img class="indent" src="/bjc-r/img/2-complexity/does-apple-7-letters-false.png" alt="does (apple) have (7) letters? reporting false" title="does (apple) have (7) letters? reporting false" />
+						</li>
+                	</ol>
+                </li>
+		        <li>
+		        	Baue einen <em>Ausdruck</em>, der den Block <img class="inline" src="/bjc-r/img/blocks/letter-blank-of-blank.png" alt="letter () of ()" title="letter () of ()" /> gemeinsam mit <code>=</code> und <code>keep</code> nutzt, um W&ouml;rter mit bestimmten Buchstaben an bestimmten Stellen zu finden.
+	                <ol>
+				        <li>Nutze ihn, um alle W&ouml;rter zu finden, die mit dem Buchstaben i beginnen.</li>
+				        <li>Finde alle W&ouml;rter, deren vierter Buchstabe r ist.</li>
+                        <div class="sidenote">Der Blockname darf abweichen, solange der Block denselben Zweck erf&uuml;llt.</div>
+                        <li>Falls du deinen Ausdruck noch nicht in einen Pr&auml;dikats-<em>Block</em> umgewandelt hast, tue das jetzt. Er sollte so funktionieren:<br />
+                            <img class="indent" src="/bjc-r/img/2-complexity/is-letter-4-of-carrot-o-reporting-false.png" alt="is letter (4) of (carrot) the letter (o)? reporting false" title="is letter (4) of (carrot) the letter (o)? reporting false" />
+                            <img class="indent" src="/bjc-r/img/2-complexity/is-letter-2-of-giraffe-i-reporting-true.png" alt="is letter (2) of (giraffe) the letter (i)? reporting true" title="is letter (2) of (giraffe) the letter (i)? reporting true" />
+                        </li>
+					</ol>
+		        </li>
+				<li>
+					<strong>Arbeitet mit einem weiteren Team zusammen.</strong> Nutzt eure Pr&auml;dikate gemeinsam mit <code>and</code> und <code>keep</code>, um <a href="https://drive.google.com/open?id=1x8ShDe58qUQJDK8n97xoQGY4J4rw9aDsJCmkY-6SQc0" target="_blank" title="Solving a Word Puzzle">dieses Wortr&auml;tsel aus Einheit 2, Labor 3</a> zu l&ouml;sen.<br />
+                    <div class="endnote">
+						<div class="comment">Brauchen wir hier einen Tipp?</div>
+                        Zum Beispiel sucht dieser Ausdruck nach sechs Buchstaben langen W&ouml;rtern, die mit <var>r</var> beginnen und als dritten Buchstaben <var>d</var> haben:
+                        <img class="indent" src="/bjc-r/img/2-complexity/radiux.png" alt="Filtert W&ouml;rter mit 6 Buchstaben, 1. Buchstabe r, 3. Buchstabe d" title="Filtert W&ouml;rter mit 6 Buchstaben, 1. Buchstabe r, 3. Buchstabe d" />
+                    </div>
+                    <div class="AP-only">
+                    <div class="sidenote">
+                    	<p>Alle W&ouml;rter im R&auml;tsel haben Bezug zum Kurs AP CS Principles.</p>
+                    </div>
+                    </div>
+                    <a class="run" href="https://drive.google.com/open?id=1x8ShDe58qUQJDK8n97xoQGY4J4rw9aDsJCmkY-6SQc0" target="_blank"><img class="indent" src="/bjc-r/img/2-complexity/crossword.jpg" alt="Wortr&auml;tsel l&ouml;sen" title="Wortr&auml;tsel l&ouml;sen" /></a>
+				</li>
+            </ol>
+            <img class="imageRight" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+		</div>
+
+		<div class="takeItFurther">
+    		<ol type="A">
+                <li>
+                	Erstelle und teste einen Pr&auml;dikatsblock, der pr&uuml;ft, ob ein bestimmter Buchstabe in einem Wort vorkommt. Beispiele unten. Dein Block soll
+					<ul>
+						<li>zwei Eingaben akzeptieren: einen <var>Buchstaben</var> und ein <var>Wort</var>,</li>
+                        <li>und melden, ob das Wort diesen Buchstaben enth&auml;lt.</li>
+                    </ul>
+                    <img class="indent" src="/bjc-r/img/2-complexity/is-w-in-boston-reporting-false.png" alt="is there a (w) in (Boston)? reporting false" title="is there a (w) in (Boston)? reporting false" />
+                    <img class="indent" src="/bjc-r/img/2-complexity/is-w-in-new-york-reporting-true.png" alt="is there a (w) in (New York)? reporting true" title="is there a (w) in (New York)? reporting true" />
+				</li>
+                <li><img class="inline" src="/bjc-r/img/icons/tough-stuff-mini.png" alt="Tough Stuff" title="Tough Stuff" /> Erstelle diesen Block:<br />
+                <img class="indent" src="/bjc-r/img/2-complexity/pattern-matcher.png" alt="words matching (-e-u--c--g) from (word list)" title="words matching (-e-u--c--g) from (word list)"><br />
+                Die erste Eingabe ist ein
+                <em>Muster</em>, also ein Wort, in dem manche Buchstaben durch Bindestriche ersetzt wurden.<!--  The hard part will be to write a helper<br />
+                <img src="/bjc-r/img/2-complexity/does-word-match-pattern.png" alt="does word (foo) match pattern (f-o) ?" title="does word (foo) match pattern (f-o) ?"><br />
+                that checks whether each letter in the pattern is either the same as the corresponding letter of the input word or a hyphen. -->
+                </li>
+
+            </ol>
+        </div>
+
+
+	</body>
+</html>

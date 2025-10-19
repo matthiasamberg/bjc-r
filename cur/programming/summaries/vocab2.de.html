@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2 – Vokabular</title>
+	</head>
+
+	<body>
+<h2>Einheit 2: Abstraktion</h2>
+<h3>Labor 1: Spiele</h3>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.de.html">2.1.1</a></strong>: <strong>Variable</strong>
+<a name="box1" class="anchor">&nbsp;</a>
+            <div class="ap-standard">AAP-1.A.1</div>
+            <p>Eine <strong>Variable</strong> ist wie eine Box, die immer genau einen Wert aufnehmen kann, z.&nbsp;B. ein Wort, ein Kost&uuml;m oder eine Liste (die wiederum viele Dinge enthalten kann). Du kannst beliebig oft nachsehen, was aktuell darin liegt.</p>
+            <div class="endnote">In <a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/2-gossip.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 1, Labor 2, Seite 2">Einheit 1, Labor 2, Seite 2</a> hast du <em>prozedurale Abstraktion</em> kennengelernt: Skripte erhalten Namen, indem du sie in neue Bl&ouml;cke packst. Hier geht es um <em>Datenabstraktion</em>: Zahlen, Texte, Listen usw. bekommen Namen. Wenn du etwas benennst, kannst du dich darauf beziehen, ohne den genauen Wert zu kennen.</div>
+        </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.de.html">2.1.1</a></strong>: <strong>Lokale Variable</strong>
+<a name="box2" class="anchor">&nbsp;</a>
+			<p>Eine <strong>lokale Variable</strong> kann nur dort gesetzt oder verwendet werden, wo sie definiert wurde. Dazu z&auml;hlen Eingaben von Prozeduren sowie Variablen, die &uuml;ber <code>for</code> oder <code>script variables</code> erstellt werden.</p>
+        </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.de.html">2.1.2</a></strong><strong>: Pr&auml;dikat</strong> und <strong>Boolescher Wert</strong>
+<a name="box3" class="anchor">&nbsp;</a>
+            <div class="sidenoteBig">
+                <a href="#hint-Boolean" data-toggle="collapse" title="Warum wird „Boolesch“ gro&szlig;geschrieben?">
+                    <img class="inline" src="/bjc-r/img/icons/read-more-mini.png" alt="Mehr lesen" title="Mehr lesen" />
+                    Warum wird „Boolesch“ gro&szlig;geschrieben?
+                </a>
+                <div id="hint-Boolean" class="collapse">
+                    <p>Der Begriff geht auf George Boole zur&uuml;ck, der die Boolesche Algebra entwickelte. Eigennamen werden gro&szlig;geschrieben.</p>
+                </div>
+            </div>
+            <p>
+                Ein <strong>Pr&auml;dikat</strong> ist ein Reporter in Sechseckform, der eine Ja/Nein-Frage stellt, z.&nbsp;B.:<br />
+                <img class="indent" src="/bjc-r/img/2-complexity/8-gt-7-reporting-true.png" alt="8 > 7 reporting true" title="8 > 7 reporting true" />
+                <img class="indent" src="/bjc-r/img/2-complexity/6-gt-7-reporting-false.png" alt="6 > 7 reporting false" title="6 > 7 reporting false" />
+            </p>
+            <div class="ap-standard">AAP-2.E.1</div>
+            <p>Pr&auml;dikate liefern einen <strong>Booleschen Wert</strong> (entweder <img class="inline" src="/bjc-r/img/blocks/true.png" alt="true" title="true" /> oder <img class="inline" src="/bjc-r/img/blocks/false.png" alt="false" title="false" />).</p>
+        </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.de.html">2.1.2</a></strong>
+<a name="box4" class="anchor">&nbsp;</a>
+            <p>Die Bl&ouml;cke <code>if</code> und <code>if else</code> nennt man <strong>Bedingungsbl&ouml;cke</strong>, weil sie den Code anhand einer wahr/falsch-<strong>Bedingung</strong> steuern.</p>
+            <div class="endnote">
+                <a href="#hint-predicates-examples" data-toggle="collapse" title="Beispiele f&uuml;r Pr&auml;dikate in Bedingungsbl&ouml;cken">Beispiele f&uuml;r Pr&auml;dikate in Bedingungsbl&ouml;cken</a>
+                <div id="hint-predicates-examples" class="collapse">
+                    <a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/5-if-else.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 1, Labor 2, Seite 5">Einheit 1, Labor 2, Seite 5</a><br />
+                    <a href="/bjc-r/cur/programming/1-introduction/5-follow-the-leader/2-sprite-interaction.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 1, Labor 5, Seite 2">Einheit 1, Labor 5, Seite 2</a><br />
+                    <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.de.html?topic=nyc_bjc%2F2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 2">Einheit 2, Labor 1, Seite 2</a>
+                </div>
+            </div>
+        </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.de.html">2.1.2</a></strong>: <strong>Code-Segment</strong>
+<a name="box5" class="anchor">&nbsp;</a>
+                        <div class="ap-standard">CRD-2.B.2, AAP-2.B.2, AAP-2.B.6</div>
+                        <p>Ein <strong>Code-Segment</strong> ist eine zusammenh&auml;ngende Folge von Anweisungen mit einer bestimmten Funktion – beispielsweise ein animierter Dialog zwischen zwei Sprites.</p>
+                    </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/3-debugging-extending.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/1-variables-games/3-debugging-extending.de.html">2.1.3</a></strong>
+<a name="box6" class="anchor">&nbsp;</a>
+                    <p><strong>Debuggen</strong> bedeutet testen, Fehler finden und beheben.</p>
+                </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/4-keeping-score.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/1-variables-games/4-keeping-score.de.html">2.1.4</a></strong>: <strong>Globale Variable</strong>
+<a name="box7" class="anchor">&nbsp;</a>
+                    <p>Eine <strong>globale Variable</strong> kann in jedem Skript des Projekts verwendet werden.</p>
+                </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/4-keeping-score.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/1-variables-games/4-keeping-score.de.html">2.1.4</a></strong>: <strong>Initialisierung</strong>
+<a name="box8" class="anchor">&nbsp;</a>
+            <div class="ap-standard">AAP-1.B.1</div>
+                    <p>Den Anfangswert einer Variablen zu setzen nennt man <strong>initialisieren</strong>.</p>
+                </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/5-choosing-avatar.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/1-variables-games/5-choosing-avatar.de.html">2.1.5</a></strong>: <strong>Index</strong>
+<a name="box9" class="anchor">&nbsp;</a>
+            <div class="ap-standard">AAP-1.D.8</div>
+            <p>Der <strong>Index</strong> ist die Positionsnummer eines Elements in einer Liste.</p>
+        </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/6-keeping-a-journal.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/1-variables-games/6-keeping-a-journal.de.html">2.1.6</a></strong>
+<a name="box10" class="anchor">&nbsp;</a>
+                    <p><strong>Debuggen</strong> hei&szlig;t testen, Fehler finden und beheben.</p>
+                </div>
+<h3>Labor 2: Listen erstellen</h3>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/1-shopping-list-app.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/2-data-structures-art/1-shopping-list-app.de.html">2.2.1</a></strong>
+<a name="box11" class="anchor">&nbsp;</a>
+            <div class="ap-standard">AAP-1.C.3</div>
+            <p>Ein <strong>Listeneintrag</strong> bezeichnet ein Element (Item), das in einer Liste enthalten ist.</p>
+        </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/1-shopping-list-app.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/2-data-structures-art/1-shopping-list-app.de.html">2.2.1</a></strong>: <strong>Zusammengeklickte Bl&ouml;cke</strong>
+<a name="box12" class="anchor">&nbsp;</a>
+            <p>Eine zusammengeklickte Folge von Bl&ouml;cken nennt man ein <strong>Skript</strong>.</p>
+        </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/1-shopping-list-app.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/2-data-structures-art/1-shopping-list-app.de.html">2.2.1</a></strong>
+<a name="box13" class="anchor">&nbsp;</a>
+            <div class="ap-standard">AAP-1.C.3, AAP-1.D.5</div>
+            <p>Eine <strong>Liste</strong> ist eine geordnete Folge von Elementen.</p>
+        </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/3-traversing-list.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/2-data-structures-art/3-traversing-list.de.html">2.2.3</a></strong>: <strong>Eine Liste traversieren</strong>
+<a name="box14" class="anchor">&nbsp;</a>
+            <div class="ap-standard">AAP-2.O.2</div>
+            <p>Eine Liste zu <strong>traversieren</strong> bedeutet, jedes Element der Liste anzuschauen. <code>for each</code> ist iterativ und funktioniert ohne Indexzahlen.</p>
+        </div>
+<h3>Labor 3: Entscheidungen treffen</h3>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/3-predicates/1-what-is-predicate.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/3-predicates/1-what-is-predicate.de.html">2.3.1</a></strong><strong>: Definitionsbereich und Wertebereich</strong>
+<a name="box15" class="anchor">&nbsp;</a>
+                    <ul>
+                        <li>Der <strong>Eingabetyp</strong> (Definitionsbereich) einer Funktion beschreibt, welche Daten als Eingabe akzeptiert werden.</li>
+                        <li>Der <strong>Ausgabetyp</strong> (Wertebereich) beschreibt, welche Daten als Ergebnis zur&uuml;ckgegeben werden.</li>
+                    </ul>
+                </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/3-predicates/1-what-is-predicate.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/3-predicates/1-what-is-predicate.de.html">2.3.1</a></strong>: <strong>Sequencing, Selection, Iteration</strong>
+<a name="box16" class="anchor">&nbsp;</a>
+            <div class="ap-standard">Selection: AAP-2.G.1; Sequencing/Selection/Iteration: AAP-2.A.4</div>
+            <p><strong>Selection</strong> bedeutet zu entscheiden, welcher Teil eines Algorithmus ausgef&uuml;hrt wird (<code>if</code>, <code>if else</code>).</p>
+            <p>Jeder Algorithmus l&auml;sst sich aus <strong>Sequencing</strong> (Schritte der Reihe nach), <strong>Selection</strong> (Entscheiden) und <strong>Iteration</strong> (Wiederholen) zusammensetzen.</p>
+        </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/3-predicates/3-combining-conditionals.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/3-predicates/3-combining-conditionals.de.html">2.3.3</a></strong>
+<a name="box17" class="anchor">&nbsp;</a>
+            <div class="ap-standard">AAP-2.I.1</div>
+            <p>Eine <strong>geschachtelte Bedingung</strong> ist ein <code>if</code>- oder <code>if else</code>-Block innerhalb eines anderen <code>if else</code>-Blocks.</p>
+        </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/3-predicates/5-keeping-list-items.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/3-predicates/5-keeping-list-items.de.html">2.3.5</a></strong>: <strong>String</strong> und <strong>Index</strong>
+<a name="box18" class="anchor">&nbsp;</a>
+            <ul>
+                <div class="ap-standard">AAP-1.C.4</div>
+                <li>Ein <strong>String</strong> ist eine geordnete Folge von Zeichen.</li>
+                <div class="ap-standard">AAP-1.C.3 (strings)</div>
+                <li>Der Begriff <strong>Index</strong> bezeichnet die Position eines Elements – in Listen genauso wie bei Zeichen in einem String.</li>
+            </ul>
+        </div>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/3-predicates/6-solving-word-puzzle.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/3-predicates/6-solving-word-puzzle.de.html">2.3.6</a></strong>
+<a name="box19" class="anchor">&nbsp;</a>
+                    	<p>Alle W&ouml;rter im Wortr&auml;tsel beziehen sich auf den Kurs AP CS Principles.</p>
+                    </div>
+<h3>Labor 4: Computer rechnen lassen</h3>
+<div class="vocabSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/2-math-predicates.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/2-math-predicates.de.html">2.4.2</a></strong>
+<a name="box20" class="anchor">&nbsp;</a>
+            <div class="commentBig">AAP-3.D.1</div>
+            <p>Eine <strong>Softwarebibliothek</strong> ist eine Sammlung von Prozeduren, die in Programmen genutzt werden k&ouml;nnen.</p>
+        </div>

@@ -1,0 +1,55 @@
+title: Einheit 5: Algorithmen und Simulationen
+{
+
+heading: Labor 1: Suchalgorithmen und Effizienz
+    raw-html: <img class="imageRight" src="/bjc-r/img/5-algorithms/position-of-number-12-in-unsorted-list-reporting-2.png" alt="Zahl in einer unsortierten Liste finden" title="Zahl in einer unsortierten Liste finden" />
+	resource: Rate meine Zahl [/bjc-r/cur/programming/5-algorithms/1-searching-lists/1-sorted-lists.de.html]
+    resource: Wie viele f&uuml;nfbuchstabige W&ouml;rter gibt es? [/bjc-r/cur/programming/5-algorithms/1-searching-lists/2-how-many-five-letter-words.de.html]
+    quiz: Ist &bdquo;seperate&ldquo; richtig geschrieben? [/bjc-r/cur/programming/5-algorithms/1-searching-lists/3-spell-checker.de.html]
+    resource: Wie viel schneller ist die bin&auml;re Suche wirklich? [/bjc-r/cur/programming/5-algorithms/1-searching-lists/4-efficiency.de.html]
+    quiz: Algorithmen kategorisieren [/bjc-r/cur/programming/5-algorithms/1-searching-lists/5-categorizing-algorithms.de.html]
+    quiz: Heuristische L&ouml;sungen [/bjc-r/cur/programming/5-algorithms/1-searching-lists/6-heuristics.de.html]
+    resource: Duplikate entfernen [/bjc-r/cur/programming/5-algorithms/1-searching-lists/7-comparing-search-algorithms.de.html]
+    resource: Parallelit&auml;t [/bjc-r/cur/programming/5-algorithms/1-searching-lists/8-sequential.de.html]
+
+heading: Labor 2: Simulationen
+	raw-html: <img class="imageRight" src="/bjc-r/img/5-algorithms/img_disease-spread/diseaseSpread.png" alt="Krankheitsausbreitung" title="Krankheitsausbreitung" />
+	resource: Warum Simulationen verwenden? [/bjc-r/cur/programming/5-algorithms/2-simulation/1-intro-to-simulations.de.html]
+	resource: Projekt zur Krankheitsausbreitung [/bjc-r/cur/programming/5-algorithms/2-simulation/2-disease-spread.de.html]
+
+heading: Labor 3: Daten in Informationen verwandeln
+	resource: Globale Gesundheitsdaten analysieren [/bjc-r/cur/programming/5-algorithms/3-turning-data-information/1-health-data.de.html]
+	quiz: Selbsttest: Big Data [/bjc-r/cur/programming/5-algorithms/3-turning-data-information/2-self-check.de.html]
+	resource: Daten importieren und nutzen [/bjc-r/cur/programming/5-algorithms/3-turning-data-information/3-importing-data.de.html]
+	resource: Daten analysieren [/bjc-r/cur/programming/5-algorithms/3-turning-data-information/4-filtering-data.de.html]
+	resource: Daten visualisieren [/bjc-r/cur/programming/5-algorithms/3-turning-data-information/5-visualizing-data.de.html]
+    quiz: Metadaten [/bjc-r/cur/programming/5-algorithms/3-turning-data-information/6-metadata.de.html]
+
+heading: Labor 4: Unl&ouml;sbare und unentscheidbare Probleme
+	resource: Beweis durch Widerspruch [/bjc-r/cur/programming/5-algorithms/4-unsolvable-undecidable/1-logical-inconsistency.de.html]
+	resource: Ein unentscheidbares Problem [/bjc-r/cur/programming/5-algorithms/4-unsolvable-undecidable/2-halting-problem.de.html]
+
+heading: Labor 5: Informatik im Krieg
+	resource: Krieg und Technologie [/bjc-r/cur/programming/5-algorithms/5-war/1-war-and-technology.de.html]
+	resource: Computer und Krieg [/bjc-r/cur/programming/5-algorithms/5-war/2-machines-and-lives.de.html]
+	resource: Milit&auml;rtechnologie im Alltag [/bjc-r/cur/programming/5-algorithms/5-war/3-everyday-life.de.html]
+
+heading: Labor 6: Tic-Tac-Toe mit Computergegner
+	resource: Dein Tic-Tac-Toe-Projekt wiederholen [/bjc-r/cur/programming/5-algorithms/6-tic-tac-toe/1-review.de.html]
+	resource: Einen Computergegner erstellen [/bjc-r/cur/programming/5-algorithms/6-tic-tac-toe/2-creating-computer-player.de.html]
+	resource: Eine Spielstrategie entwickeln [/bjc-r/cur/programming/5-algorithms/6-tic-tac-toe/3-developing-strategy.de.html]
+	resource: Den Computer strategisch spielen lassen [/bjc-r/cur/programming/5-algorithms/6-tic-tac-toe/4-making-computer-player-strategic.de.html]
+
+	//raw-html: <div class="todo">Draft Optional Project: <a href="/bjc-r/cur/programming/5-algorithms/optional-projects/other-languages.html" title="Transitioning to Other Languages">Transitioning to Other Languages</a></div>
+
+heading: Optionales Labor: Andere Programmiersprachen
+	resource: Sequenzielle Sprachen [/bjc-r/cur/programming/5-algorithms/optional-lab-other-programming-languages/1-sequential-languages.de.html]
+	resource: Snap<em>!</em>-Primitive in anderen sequenziellen Sprachen [/bjc-r/cur/programming/5-algorithms/optional-lab-other-programming-languages/2-primitives-in-other-sequential-languages.de.html]
+	resource: Nicht sequenzielle Sprachen [/bjc-r/cur/programming/5-algorithms/optional-lab-other-programming-languages/3-non-sequential-languages.de.html]
+
+
+heading: Wiederholung zu Einheit 5
+	resource: Wortschatz [/bjc-r/cur/programming/summaries/vocab5.de.html]
+	resource: Auf der AP-Pr&uuml;fung [/bjc-r/cur/programming/summaries/exam5.de.html]
+	resource: Selbsttest-Fragen [/bjc-r/cur/programming/summaries/assessment-data5.de.html]
+}

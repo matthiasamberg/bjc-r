@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2, Labor 3: Entscheidungen treffen, Seite 4</title>
+	</head>
+
+	<body>
+        <h2>Experimente mit Booleschen Ausdr&uuml;cken</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> ordnest du Boolesche Ausdr&uuml;cke den Bildern zu, die dadurch entstehen.</p>
+        </div>
+
+        <div class="forYouToDo">
+			<ol>
+				<li>
+                    <img src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" />
+					Lies dieses Skript sorgf&auml;ltig, besprecht es gemeinsam und stelle sicher, dass ihr versteht, warum es dieses Bild auf der B&uuml;hne erzeugt:<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/dotscript.png" alt="clear
+pen up
+forever {
+    go to (random position)
+    if (x position < y position) {
+        set pen color to purple
+    } else {
+        set pen color to orange
+    }
+    make a point
+}" title="clear
+pen up
+forever {
+    go to (random position)
+    if (x position < y position) {
+        set pen color to purple
+    } else {
+        set pen color to orange
+    }
+    make a point
+}" />
+					<img class="indent" src="/bjc-r/img/2-complexity/y-gtr-x.png" alt="Man stelle sich eine 45-Grad-Linie durch die Mitte vor. Links oberhalb der Linie ist lila, rechts unterhalb orange." title="Man stelle sich eine 45-Grad-Linie durch die Mitte vor. Links oberhalb der Linie ist lila, rechts unterhalb orange." />
+                </li>
+                <li>
+                    Wenn du den Booleschen Ausdruck im <code>if</code>-Block &auml;nderst, &auml;ndert sich das Bild.
+					Erkl&auml;rt, warum der Ausdruck <img src="/bjc-r/img/2-complexity/apple-script.png" alt="(x position > 0) and (distance to apple > 100)" title="(x position > 0) and (distance to apple > 100)" /> dieses Bild erzeugt:<br />
+					<img class="indent" src="/bjc-r/img/2-complexity/apple.png" alt="Ein Apfel in der Mitte. Die linke H&auml;lfte der B&uuml;hne sowie ein Kreis um den Apfel sind orange, der Rest lila." title="Ein Apfel in der Mitte. Die linke H&auml;lfte der B&uuml;hne sowie ein Kreis um den Apfel sind orange, der Rest lila." />
+				</li>
+				<li>
+                    <div class="ap-standard">AAP-2.E Abschnitt b, AAP-2.C</div>
+					Ordne die Booleschen Ausdr&uuml;cke den Bildern zu. Es gibt mehr Ausdr&uuml;cke als Bilder.<br />
+                    <div style="display: grid; grid-template-columns: auto auto;">
+                        <div>
+                            <ol type="A">
+                                <li><img src="/bjc-r/img/2-complexity/x-lt--100-script.png" alt="x position < -100" title="x position < -100" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/x-lt-100-script.png" alt="x position < 100" title="x position < 100" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/x+y-lt-100-script.png" alt="x position + y position < 100" title="x position + y position < 100" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/y-gt--100-script.png" alt="y position > -100" title="y position > -100" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/x+y-lt--100-script.png" alt="y position < (-100 - x position)" title="y position < (-100 - x position)" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/y-lt--100-script.png" alt="y position < -100" title="y position < -100" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/dist-gt-100-script.png" alt="distance to apple > 100" title="distance to apple > 100" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/x-gt--100-script.png" alt="x position > -100" title="x position > -100" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/x+y-gt-100-script.png" alt="y position > (100 - x position)" title="y position > (100 - x position)" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/xy-gt-0-script.png" alt="(x position * y position) > 0" title="(x position * y position) > 0" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/x+y-gt--100-script.png" alt="(x position + y position) > -100" title="(x position + y position) > -100" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/xy-lt-0-script.png" alt="(x position * y position) < 0" title="(x position * y position) < 0" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/quadratic.png" alt="y position > ((x position ^ 2) / 100)" title="y position > ((x position ^ 2) / 100)" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/dir-to-apple-gt-135-script.png" alt="direction to apple > 135" title="direction to apple > 135" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/y-lt-100-script.png" alt="y position < 100" title="y position < 100" /></li>
+                                <li><img src="/bjc-r/img/2-complexity/y-gt-100-script.png" alt="y position > 100" title="y position > 100" /></li>
+                            </ol>
+                        </div>
+
+                        <div>
+                            <ol class="horizontal">
+                                <li><img src="/bjc-r/img/2-complexity/xy-gt-0.png" alt="Die B&uuml;hne ist durch X- und Y-Achse in vier Quadranten geteilt. Oben links und unten rechts sind orange, oben rechts und unten links lila." title="Die B&uuml;hne ist durch X- und Y-Achse in vier Quadranten geteilt. Oben links und unten rechts sind orange, oben rechts und unten links lila." /></li>
+                                <li><img src="/bjc-r/img/2-complexity/x-lt--100.png" alt="Schmaler lila Streifen am linken Rand, der Rest der B&uuml;hne orange." title="Schmaler lila Streifen am linken Rand, der Rest der B&uuml;hne orange." /></li>
+                                <li><img src="/bjc-r/img/2-complexity/dist-gt-100.png" alt="Apfel in der Mitte, oranger Kreis darum, der Rest lila." title="Apfel in der Mitte, oranger Kreis darum, der Rest lila." /></li>
+                                <li><img src="/bjc-r/img/2-complexity/x-gt-100.png" alt="Schmaler oranger Streifen am linken Rand, der Rest lila." title="Schmaler oranger Streifen am linken Rand, der Rest lila." /></li>
+                                <li><img src="/bjc-r/img/2-complexity/xy-lt-0.png" alt="Die B&uuml;hne ist durch X- und Y-Achse in vier Quadranten geteilt. Oben links und unten rechts sind lila, oben rechts und unten links orange." title="Die B&uuml;hne ist durch X- und Y-Achse in vier Quadranten geteilt. Oben links und unten rechts sind lila, oben rechts und unten links orange." /></li>
+                                <li><img src="/bjc-r/img/2-complexity/y-lt-100.png" alt="Schmaler orangefarbener Streifen am oberen Rand, der Rest lila." title="Schmaler orangefarbener Streifen am oberen Rand, der Rest lila." /></li>
+                                <li><img src="/bjc-r/img/2-complexity/dir-to-apple-gt-135.png" alt="Apfel in der Mitte. Der Bereich links zwischen unten (S&uuml;d) und Nordwest ist orange, rechts davon lila." title="Apfel in der Mitte. Der Bereich links zwischen unten (S&uuml;d) und Nordwest ist orange, rechts davon lila." /></li>
+                                <li><img src="/bjc-r/img/2-complexity/y-gt--100.png" alt="Schmaler orangefarbener Streifen am unteren Rand, der Rest lila." title="Schmaler orangefarbener Streifen am unteren Rand, der Rest lila." /></li>
+                                <li><img src="/bjc-r/img/2-complexity/parabola.png" alt="Innerhalb einer nach oben offenen Parabel ist lila, darunter orange." title="Innerhalb einer nach oben offenen Parabel ist lila, darunter orange." /></li>
+                                <li><img src="/bjc-r/img/2-complexity/x+y-lt--100.png" alt="Eine abfallende 45-Grad-Linie teilt die B&uuml;hne; unten links lila, oben rechts orange." title="Eine abfallende 45-Grad-Linie teilt die B&uuml;hne; unten links lila, oben rechts orange." /></li>
+                                <li><img src="/bjc-r/img/2-complexity/y-gt-100.png" alt="Schmaler lila Streifen am oberen Rand, der Rest orange." title="Schmaler lila Streifen am oberen Rand, der Rest orange." /></li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+                <li>Vergleicht eure Zuordnungen mit einem anderen Team und l&ouml;st eventuelle Meinungsverschiedenheiten.</li>
+				<li>Zeichne auf Papier die Bilder zu den Ausdr&uuml;cken, die du zuvor nicht zugeordnet hast (ohne Snap<em>!</em> zu benutzen).</li>
+				<li>
+				    <a href="/bjc-r/prog/2-complexity/U2L3-Dots.xml" class="run"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Klicke hier, um ein Startprojekt zu laden, und speichere es anschlie&szlig;end." title="Klicke hier, um ein Startprojekt zu laden, und speichere es anschlie&szlig;end."></a>
+				</li>
+				<li>
+                    <div class="ap-standard">AAP-2.F Abschnitt a</div>
+				    Denke dir Boolesche Ausdr&uuml;cke aus, die du in das Punktmuster-Skript einsetzen kannst, um folgende Bilder zu erzeugen:<br />
+                    <ol class="horizontal">
+					    <li><img src="/bjc-r/img/2-complexity/x-lt-100-or-y-gt-100.png" alt="Die B&uuml;hne ist gr&ouml;&szlig;tenteils lila, au&szlig;er einem hohen orangefarbenen Streifen am rechten Rand, der oben etwas lila Platz lässt." title="Die B&uuml;hne ist gr&ouml;&szlig;tenteils lila, au&szlig;er einem hohen orangefarbenen Streifen am rechten Rand, der oben etwas lila Platz lässt." /></li>
+                        <li><img src="/bjc-r/img/2-complexity/x-lt-100-and-y-gt-100.png" alt="Die B&uuml;hne ist gr&ouml;&szlig;tenteils orange, au&szlig;er einem breiten lila Rechteck oben links." title="Die B&uuml;hne ist gr&ouml;&szlig;tenteils orange, au&szlig;er einem breiten lila Rechteck oben links." /></li>
+                        <li><img src="/bjc-r/img/2-complexity/x-y-lt--100.png" alt="Eine 45-Grad-Linie steigt von links unten nach rechts oben; oberhalb links lila, unterhalb rechts orange." title="Eine 45-Grad-Linie steigt von links unten nach rechts oben; oberhalb links lila, unterhalb rechts orange." /></li>
+                    </ol>
+                    <p style="clear: both; height: 0;"></p>
+				</li>
+			</ol>
+		</div>
+
+	</body>
+</html>

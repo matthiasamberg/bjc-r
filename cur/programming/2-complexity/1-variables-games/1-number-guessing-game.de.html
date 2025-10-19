@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+	    <title>Einheit 2, Labor 1: Spiele, Seite 1</title>
+    </head>
+
+    <body>
+        <h2>Ein Zahlratespiel starten</h2>
+        <div class="todo">June meinte, diese Seite sei in der Fortbildung schwer nachzuvollziehen (zu viele Einsch&uuml;be). Die Leute m&uuml;ssen den <code>set</code>-Block an <code>script variables</code> anh&auml;ngen, damit <var>secret number</var> im Men&uuml; des <code>set</code>-Blocks erscheint.  --MF, 1.8.23</div>
+        <div class="learn">
+            <p>
+                <strong>In diesem Labor</strong> verwendest du lokale und globale <em>Variablen</em>, um Informationen zu speichern.
+                <!--<ul>
+                    <li><em>Script variables</em> (eine Form von <em>lokalen</em> Variablen), die nur innerhalb eines einzigen Skripts verwendet werden k&ouml;nnen, und</li>
+                    <li><em>Globale Variablen</em>, die &uuml;berall im Programm gesetzt, verwendet oder ver&auml;ndert werden k&ouml;nnen.</li>
+                </ul-->
+            </p>
+            <p><strong>Auf dieser Seite</strong> beginnst du mit der Entwicklung eines Zahlratespiels, das eine <em>lokale Variable</em> nutzt, um eine geheime Zahl zu speichern.</p>
+        </div>
+
+        <!--<h3>Using a Script Variable (a Local Variable)</h3>-->
+        <div class="forYouToDo" id="first">
+        	<ol>
+            	<li><div class="newProject"><span class="text">"U2L1-NumberGuessing"</span><img src="/bjc-r/img/icons/new-project-called.png" alt="Ein neues Projekt mit dem Namen U2L1-NumberGuessing erstellen" title="Ein neues Projekt mit dem Namen U2L1-NumberGuessing erstellen" /></div></li>
+                <li>Beginne mit dem Bau eines neuen Befehlsblocks namens <code>number guessing game</code>, der den Code f&uuml;r das Spiel enthalten wird. Lass den Block-Editor ge&ouml;ffnet.</li>
+            </ol>
+        </div>
+
+
+        <p>
+            In einem Zahlratespiel versucht die spielende Person, die geheime Zahl des Computers zu erraten. Der Computer braucht eine M&ouml;glichkeit, diese geheime Zahl in einer <em>Variablen</em> zu speichern, um sie mit den Vermutungen zu vergleichen.<br />
+            <img class="indent" src="/bjc-r/img/2-complexity/script-variables-secret-number.png" alt="script variables (secret number)" title="script variables (secret number)" />
+        </p>
+        <div class="vocabFullWidth">: <strong>Variable</strong>
+            <div class="ap-standard">AAP-1.A.1</div>
+            <p>Eine <strong>Variable</strong> ist wie eine beschriftete Schachtel, die immer genau einen Wert aufnehmen kann, zum Beispiel ein Wort, ein Kost&uuml;m oder eine Liste (die wiederum viele Dinge enthalten kann). Du kannst beliebig oft nachsehen, was gerade darin liegt.</p>
+            <div class="endnote">Auf <a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/2-gossip.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 1, Labor 2, Seite 2: Programme zum Sprechen bringen">Einheit&nbsp;1, Labor&nbsp;2, Seite&nbsp;2: Programme zum Sprechen bringen</a> hast du <em>prozedurale Abstraktion</em> kennengelernt: Skripte, indem du sie in neue Bl&ouml;cke gesteckt hast, benennen. Hier besch&auml;ftigen wir uns mit <em>Datenabstraktion</em>: Zahlen, Texte, Listen usw. bekommen Namen. Wenn du etwas benennst, kannst du dich darauf beziehen, ohne den exakten Wert zu kennen.</div>
+        </div>
+
+
+		<div class="forYouToDo" style="clear: right;">
+			<ol start="3">
+                <li>
+                    Erstelle eine Skriptvariable namens <var>secret number</var>, in der die Zahl gespeichert wird, die erraten werden soll (Anleitung unten).
+                    <div class="narrower">
+                        <h3 class="box-head">Eine Skriptvariable erstellen</h3>
+                        <ol type="a">
+                            <li>
+                                <strong>Ziehe einen <code>script variables</code>-Block in den Skriptbereich.</strong> Du findest ihn in der Variablen-Palette.<br />
+                                <img class="indent" src="/bjc-r/img/prog/scriptvar.png" alt="script variables" title="script variables" />
+                            </li>
+                            <li><strong>Benenne die Variable,</strong> indem du auf das orange <var>a</var> am Ende klickst und den gew&uuml;nschten Namen eintippst. Hier soll sie <var>secret number</var> hei&szlig;en.</li>
+                        </ol>
+                        <strong>Sp&auml;ter verwendest du die Skriptvariable,</strong> indem du sie aus dem <code>script variables</code>-Block herausziehst (genau wie einen Eingabewert) und an der Stelle platzierst, an der du sie im Code brauchst.
+                    </div>
+                </li>
+                <li>
+                    <div class="ap-standard">AAP-1.A, AAP-3.E</div>
+                    Verwende <img class="inline nopadtb" src="/bjc-r/img/blocks/set-empty.png" alt="set () to ()" title="set () to ()" />, um den Anfangswert von <var>secret number</var> auf eine zuf&auml;llige Zahl zwischen 1 und 10 zu setzen. Im Men&uuml; des <code>set</code>-Blocks kannst du ausw&auml;hlen, welche Variable gesetzt werden soll. <br />
+                    <div class="sidenoteBig">Die Variable <var>secret number</var> ist im <code>set</code>-Block nur dann ausw&auml;hlbar, wenn der Block hinter dem <code>script variables</code>-Block einschnappt.</div>
+                    <img class="indent" src="/bjc-r/img/2-complexity/set-secret-number-menu.jpg" alt="set Block menu secret number" title="set Block menu secret number" />
+                </li>
+                <li>
+                    Verwende <img class="inline nopadtb" src="/bjc-r/img/blocks/say-hello-2-secs.png" alt="say () for () secs" title="say () for () secs" />, um zu pr&uuml;fen, ob deine Variable tats&auml;chlich auf einen Zufallswert gesetzt wurde. Ziehe die Variable <var>secret number</var> aus dem <code>script variables</code>-Block und nutze sie als Eingabe f&uuml;r den <code>say</code>-Block.<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/set-and-say-secret-number.png" alt="script variables with set and say" title="script variables with set and say" />
+                </li>
+            </ol>
+		</div>
+
+
+        <div class="takeNote">
+            <p>Eine Skriptvariable existiert nur innerhalb des Skripts, in dem sie erstellt wurde. Au&szlig;erhalb dieses Skripts kann sie weder gelesen noch ver&auml;ndert werden.</p>
+        </div>
+
+		<div class="forYouToDo" style="clear: right;">
+			<ol start="6">
+                <li>
+                    <div class="ap-standard">AAP-1.A.2, AAP-3.E</div>
+                    <p>Schreibe einen Test in deinen Block, mit dem Snap<em>!</em> pr&uuml;fen kann, ob die spielende Person die richtige Zahl erraten hat.</p>
+                    <ol type="a">
+                        <li>Erstelle eine Eingabe f&uuml;r den Block <code>number guessing game</code>, die <var>guess</var> hei&szlig;t (Block-Editor &rarr; <span style="white-space: nowrap;">"Add input..."</span>).</li>
+                        <li>
+                            Verwende <img class="inline nopadtb" src="/bjc-r/img/blocks/repeat-until.png" alt="repeat until () {}" title="repeat until () {}" /> und <img class="inline nopadtb" src="/bjc-r/img/blocks/pick-random-1-10.png" alt="pick random (1) to (10)" title="pick random (1) to (10)" />, um so lange nach einer Vermutung zu fragen, bis die spielende Person richtig liegt.<br />
+                            <img class="indent" src="/bjc-r/img/2-complexity/repeat-until-correct-number.png" alt="repeat until guess = secret number" title="repeat until guess = secret number" />
+                            <div class="endnote">Aktuell pr&uuml;fst du nur, ob die spielende Person richtig geraten hat. In einem sp&auml;teren Schritt wird der Block das ganze Spiel enthalten.</div>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    Teste deinen Block, indem du ihn mit verschiedenen Vermutungen aufrufst. Funktioniert er wie erwartet?
+                </li>
+            </ol>
+		</div>
+
+        <p>
+            Eine Skriptvariable ist <strong>lokal</strong>, weil sie nur in dem Skript existiert, in dem sie erstellt wurde. Eine Variable, die mit dem Knopf <code>Make a Variable</code> erstellt wurde, ist dagegen <strong>global</strong> und kann in jedem Skript verwendet werden.
+        </p>
+
+        <div class="forYouToDo" style="clear: right;">
+            <ol start="8">
+                <li>
+                    <div class="ap-standard">AAP-2.C</div>
+                    <p>Vergleiche eine <em>globale</em> mit einer <em>lokalen</em> Variable.</p>
+                    <ol type="a">
+                        <li>Klicke in der Variablen-Palette auf <strong>Make a Variable...</strong>. Nenne sie <var>favorite game</var>.</li>
+                        <li>W&auml;hle im Men&uuml; des Blocks <img class="inline nopadtb" src="/bjc-r/img/blocks/show-variable-xy.png" alt="show variable ()" title="show variable ()" /> die Variable <var>favorite game</var> aus und reihe sie in ein Skript ein, das startet, wenn die gr&uuml;ne Flagge angeklickt wird.</li>
+                        <li>
+                            Vergleiche den Unterschied zwischen den Men&uuml;s des <code>set</code>-Blocks aus dem vorherigen Schritt und des Blocks <code>show variable</code>.<br />
+                            <img class="indent" src="/bjc-r/img/2-complexity/set-vs-show-variable.png" alt="set menu vs show variable menu" title="set menu vs show variable menu" />
+                        </li>
+                        <li>Notiere dir, was der wesentliche Unterschied zwischen einer Skriptvariablen und einer globalen Variablen ist.</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="vocabFullWidth">: <strong>Lokale Variable</strong>
+            <div class="ap-standard">AAP-1.A.4</div>
+            <p>Eine <strong>lokale Variable</strong> kann nur innerhalb des Skripts (oder Blocks) verwendet werden, in dem sie erstellt wurde.</p>
+        </div>
+        <div class="vocabFullWidth">: <strong>Globale Variable</strong>
+            <div class="ap-standard">AAP-1.A.5</div>
+            <p>Eine <strong>globale Variable</strong> kann in jedem Skript des Projekts verwendet werden.</p>
+        </div>
+
+        <div class="takeNote">
+            <div class="ap-standard">AAP-1.A, AAP-1.B</div>
+            <p>Variablen wirken vielleicht abstrakt, aber sie sind ein grundlegendes Werkzeug, mit dem Computer Werte speichern und ver&auml;ndern k&ouml;nnen.</p>
+        </div>
+
+        <div class="forYouToDo" style="clear: right;">
+            <ol start="9">
+                <li>
+                    <p>Beantworte die folgenden Fragen, um dein Verst&auml;ndnis zu pr&uuml;fen.</p>
+                    <div class="assessment-data" type="multiplechoice" identifier="Which value will this script report?" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">
+                            Welchen Wert gibt dieses Skript zur&uuml;ck?<br />
+                            <img class="indent" src="/bjc-r/img/2-complexity/variables-assign-simple.png" alt="set a to 3, set b to a, set a to 4, report b" title="set a to 3, set b to a, set a to 4, report b" />
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">3</div>
+                            <div class="feedback">
+                                Richtig! Die Variable <var>b</var> erh&auml;lt den <strong>Wert</strong> der Variable <var>a</var> (der 3 ist, wenn <pre class="inline">b &leftarrow; a</pre> ausgef&uuml;hrt wird).
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">4</div>
+                            <div class="feedback">
+                                Die Variable <var>b</var> bekommt den <strong>Wert</strong> der Variable <var>a</var> (der 3 betr&auml;gt, wenn <pre class="inline">b &leftarrow; a</pre> ausgef&uuml;hrt wird); <var>b</var> merkt sich nicht, dass die 3 von <var>a</var> stammt, und &auml;ndert sich deshalb nicht, wenn sich <var>a</var> sp&auml;ter &auml;ndert.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">a</div>
+                            <div class="feedback">
+                                Die Variable <var>b</var> wurde auf den <strong>Wert</strong> der Variable <var>a</var> gesetzt, nicht auf den Buchstaben &bdquo;a&ldquo; selbst.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">b</div>
+                            <div class="feedback">
+                               Das Skript zeigt den <strong>Wert der Variable <var>b</var></strong> an, nicht den Buchstaben &bdquo;b&ldquo;.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+				</li>
+				<li>
+                    <div class="assessment-data" type="multiplechoice" identifier="What value will this script report?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="true">
+                        <div class="prompt">
+                            Welchen Wert gibt dieses Skript zur&uuml;ck?<br />
+                            <img class="indent" src="/bjc-r/img/2-complexity/variable-assignment-quizlet.png" alt="set m to 9, set k to 5, set m to (m + 1), set k to (k - m), report k" title="set m to 9, set k to 5, set m to (m + 1), set k to (k - m), report k" />
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">-5</div>
+                            <div class="feedback">
+                                Richtig!
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">3</div>
+                            <div class="feedback">
+                                Der Wert der Variable <var>m</var> ist in diesem Skript immer gr&ouml;&szlig;er als der Wert der Variable <var>k</var>, daher ergibt <var>k</var> minus <var>m</var> eine negative Zahl.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">-4</div>
+                            <div class="feedback">
+                                Der Wert der Variable <var>m</var> ist zu Beginn 9, aber er hat sich ge&auml;ndert, bevor er von <var>k</var> abgezogen wird.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c5">
+                            <div class="text">5</div>
+                            <div class="feedback">
+                                Der letzte <code>set</code>-Block setzt den Wert der Variable <var>k</var> auf den Wert <var>k</var> &ndash; <var>m</var>, nicht auf <var>m</var> &ndash; <var>k</var>.
+                            </div>
+                        </div>
+
+                        <div class="responseDeclaration" identifier="ri2">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+
+                </li>
+			</ol>
+		</div>
+
+
+	</body>
+</html>

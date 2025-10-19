@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2, Labor 2: Listen erstellen, Seite 2</title>
+    </head>
+
+	<body>
+        <h2>Eine Quiz-App planen</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> beginnst du mit der Entwicklung einer Quiz-App, indem du einen <em>abstrakten Datentyp</em> erstellst, der Fragen mit den zugeh&ouml;rigen Antworten verkn&uuml;pft.</p>
+        </div>
+
+        <div class="forYouToDo" id="first">
+			<ol>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" />Legt fest, welche Art von Quiz ihr bauen wollt, und notiert drei bis f&uuml;nf Fragen samt richtiger Antworten.</li>
+                <li><img class="inline" src="/bjc-r/img/icons/take-turns-speaking-mini.gif" alt="Der Reihe nach sprechen" title="Der Reihe nach sprechen">Lies den folgenden Abschnitt. (Baue diese Beispiele nicht in Snap<em>!</em> nach. Dein eigenes Quiz erstellst du sp&auml;ter auf dieser Seite.)</li>
+			</ol>
+		</div>
+
+        <p>
+            <div class="vocab">: <strong>Teilliste</strong>
+                <p>Eine <strong>Teilliste</strong> ist eine Liste, die als Element einer anderen Liste verwendet wird.</p>
+				<p>(Das Wort Teilliste kann auch eine Teilmenge einer Liste bezeichnen.)</p>
+            </div>
+            Du speicherst deine Quizfragen in einer globalen Variable als Liste und nutzt f&uuml;r jedes Frage-Antwort-Paar eine <em>Teilliste</em>. So kannst du jeweils ein Paar ausw&auml;hlen und damit arbeiten.
+                <img class="indent" src="/bjc-r/img/2-complexity/quiz-questions-list-of-lists.png" alt="set (computer science quiz) to (list (list (What is the computer science term for looping or repetition?) (iteration)) (list (What is the name for the abstraction in a program that can hold a value?) (variable)) (list (What kind of variable is available only in the part of the program where it is defined?) (local variable)))" title="set (computer science quiz) to (list (list (What is the computer science term for looping or repetition?) (iteration)) (list (What is the name for the abstraction in a program that can hold a value?) (variable)) (list (What kind of variable is available only in the part of the program where it is defined?) (local variable)))">
+                <img class="indent" src="/bjc-r/img/2-complexity/item-of-item-of-script.png" alt="ask (item(1) of (item (3) of (computer science quiz))) and wait
+if (item (2) of (item (3) of (computer science quiz)) = answer) {
+    say (That's correct!) for (2) secs
+}" title="ask (item(1) of (item (3) of (computer science quiz))) and wait
+if (item (2) of (item (3) of (computer science quiz)) = answer) {
+    say (That's correct!) for (2) secs
+}" />
+        </p>
+        <div class="ap-standard">AAP-1.D.2, AAP-1.D.3, AAP-1.D.4</div>
+        <p>
+            Aber Code wie <img class="inline" src="/bjc-r/img/2-complexity/item-1-of-item-3-of.png" alt="item (1) of (item (3) of (computer science quiz))" title="item (1) of (item (3) of (computer science quiz))" /> ist schwer zu lesen und zu verstehen. Besser ist es, <em>Abstraktion</em> zu nutzen, um die Quiz-Elemente zu organisieren. Die Abstraktion versteckt nur die Bl&ouml;cke <code>list</code> und <code>item of</code> &ndash; sie ist also leicht aufzubauen &ndash;, macht deinen Code aber deutlich einfacher zu schreiben, zu lesen und zu debuggen.<br />
+            <img class="indent" src="/bjc-r/img/2-complexity/quiz-questions-list-of-adts.png" alt="set (computer science quiz) to (list (question: (What is the computer science term for looping or repetition?) answer: (iteration)) (question: (What is the name for the abstraction in a program that can hold a value?) answer: (variable)) (question: (What kind of variable is available only in the part of the program where it is defined?) answer: (local variable)))" title="set (computer science quiz) to (list (question: (What is the computer science term for looping or repetition?) answer: (iteration)) (question: (What is the name for the abstraction in a program that can hold a value?) answer: (variable)) (question: (What kind of variable is available only in the part of the program where it is defined?) answer: (local variable)))">
+            <img class="indent" src="/bjc-r/img/2-complexity/abstracted-quiz-script.png" alt="ask (question of quiz item (item (3) of (computer science quiz))) and wait
+if (answer = answer from quiz item (item (3) of (computer science quiz))) {
+    say (That's correct!) for (2) secs
+}" title="ask (question of quiz item (item (3) of (computer science quiz))) and wait
+if (answer = answer from quiz item (item (3) of (computer science quiz))) {
+    say (That's correct!) for (2) secs
+}" />
+        </p>
+
+        <div class="vocabFullWidth">: <strong>Datentyp</strong>
+            <ul>
+                <li>
+                    Ein <strong>Datentyp</strong> beschreibt, um welche Art von Daten es sich handelt (Zahl, Zeichenkette, Liste usw.). Beispiel: Der Datentyp <em>Zahl</em> ist das erste Eingabefeld von <img src="/bjc-r/img/blocks/item.png" alt="item (1) of ()" title="item (1) of ()">, und <em>Liste</em> ist der Datentyp f&uuml;r das zweite Eingabefeld.
+                </li>
+                <li>
+                    Ein <strong>abstrakter Datentyp (ADT)</strong> ist ein &bdquo;Rezept&ldquo; daf&uuml;r, welche Datentypen zusammengeh&ouml;ren. Er fasst mehrere Werte so zusammen, dass du sie wie ein gemeinsames Objekt behandeln kannst.
+                </li>
+            </ul>
+        </div>
+
+        <h3>Ein Frage-Antwort-Paar abstrakt speichern</h3>
+        <div class="forYouToDo">
+			<ol start="3">
+                <li>
+                    <div class="ap-standard">AAP-2.A.1, AAP-2.A.2</div>
+                    <p>Baue zwei Reporter-Bl&ouml;cke:</p>
+                    <ol type="a">
+                        <li><code>make quiz item</code> soll zwei Eingaben haben &ndash; eine Frage und eine Antwort &ndash; und daraus ein Quiz-Element machen.</li>
+                        <li><code>question of quiz item</code> soll aus einem Quiz-Element die Frage zur&uuml;ckgeben.</li>
+                    </ol>
+                    <div class="endnote">
+                        <p>Du kannst daf&uuml;r eine Liste aus zwei Elementen verwenden: Frage und Antwort. Der Block <code>make quiz item</code> erstellt die Liste, die beiden Selektoren holen die passenden Elemente daraus.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ap-standard">AAP-2.A.3</div>
+                    <p>Baue den Reporter <code>answer from quiz item</code>, der aus dem Quiz-Element die richtige Antwort liefert.</p>
+                </li>
+            </ol>
+        </div>
+
+        <div class="examFullWidth">
+            <div class="ap-standard">AAP-2.A.3, AAP-2.A.4</div>
+            <div class="pseudop">
+                Auf der AP-Pr&uuml;fung wird ein ADT als <pre class="inline">quizItem &leftarrow; [question, answer]</pre> dargestellt, und Selektoren w&uuml;rden als <pre class="inline">quizItem[1]</pre> oder <pre class="inline">quizItem[2]</pre> geschrieben.
+            </div>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="5">
+                <li>
+                    F&uuml;lle deine Quiz-Liste mit mehreren Quiz-Elementen, die deine Fragen und Antworten enthalten. Speichere die Liste in einer globalen Variable, z.&nbsp;B. <var>quiz</var>.
+                </li>
+                <li>
+                    Teste deine Selektoren (<code>question of quiz item</code> und <code>answer from quiz item</code>) mit verschiedenen Elementen deiner Liste. Debugge eventuelle Fehler.
+                    <div class="takeNote">
+                        Stelle sicher, dass das Kontrollk&auml;stchen neben der Variable <var>quiz</var> in der Variablen-Palette aktiviert ist.
+                                <img class="inlinde" src="/bjc-r/img/2-complexity/quiz-watcher.png" alt="Quiz-Watcher aktiviert" title="Quiz-Watcher aktiviert" />
+                            </div>
+                            <ul style="list-style-type: disc;">
+                                <li>
+                                    <strong>Tabellenansicht</strong> f&uuml;r <var>computer science quiz</var> (dein Quiz sieht anders aus):<br />
+                                    <img class="indent" src="/bjc-r/img/2-complexity/csquiz-big.png" alt="Quiz-Watcher mit ausgeklappter erster Spalte" title="Quiz-Watcher mit ausgeklappter erster Spalte" />
+									<div class="endnote">
+									<a href="#table-hint" data-toggle="collapse" title="">Mein Watcher ist zu schmal.</a>
+						            <div id="table-hint" class="collapse">
+									Anfangs sieht der Watcher so aus:<br />
+                                    <img class="indent" src="/bjc-r/img/2-complexity/csquiz-small.png" alt="Quiz-Watcher in Ausgangsgr&ouml;&szlig;e" title="Quiz-Watcher in Ausgangsgr&ouml;&szlig;e" /><br />
+									Ziehe den Greifer unten rechts heraus, um ihn zu vergr&ouml;&szlig;ern:<br />
+                                    <img class="indent" src="/bjc-r/img/2-complexity/csquiz-med.png" alt="Quiz-Watcher vergr&ouml;&szlig;ert" title="Quiz-Watcher vergr&ouml;&szlig;ert" /><br />
+									Fahre dann mit der Maus &uuml;ber den Buchstaben A oben. Er verwandelt sich in eine 1. Ziehe sie nach rechts:<br />
+                                    <img class="indent" src="/bjc-r/img/2-complexity/csquiz-big.png" alt="Quiz-Watcher mit breiter erster Spalte" title="Quiz-Watcher mit breiter erster Spalte" />
+									</div>
+									</div>
+                                </li>
+                                <li>
+                                    <strong>Listenansicht</strong> f&uuml;r den Watcher <var>computer science quiz</var>:<br />
+                                    <img class="indent" src="/bjc-r/img/2-complexity/csquiz-list.png" alt="Quiz-Watcher in Listenansicht" title="Quiz-Watcher in Listenansicht" />
+                                </li>
+                            </ul>
+                    </div>
+                </li>
+                <li>
+                    <img class="imageRight" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+                    Teste beide Selektoren mit verschiedenen Eintr&auml;gen deiner Quizliste und behebe Fehler.
+                </li>
+                <li>
+                    <!-- Question 1-->
+                    <div class="assessment-data" type="multiplechoice" identifier="capitals" hasinlinefeedback="true" maxchoices="8" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">
+                            <p>
+                                Stell dir vor, du legst eine Variable <var>capitals</var> an und weist ihr mit <code>set</code> die folgende Liste von Listen zu: <br />
+                                <img class="indent" src="/bjc-r/img/3-lists/check1capitals.png" alt="set (capitals) to {{Augusta, Maine}, {Boise, Idaho}, {Columbia, South Carolina}, {Des Moines, Iowa}}" title="set (capitals) to {{Augusta, Maine}, {Boise, Idaho}, {Columbia, South Carolina}, {Des Moines, Iowa}}"><br />
+                                Welche der folgenden Aussagen sind <strong>wahr</strong>?<br />
+                                <br />
+                                W&auml;hle <strong>alle</strong> zutreffenden aus.
+                            </p>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1capitalsc1.png" alt="item (1) of (capitals)" title="item (1) of (capitals)"> liefert eine <strong>Liste</strong> mit zwei Elementen: &bdquo;Augusta&ldquo; und &bdquo;Maine&ldquo;.
+                            </div>
+                            <div class="feedback">
+                                Richtig.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1capitalsc2.png" alt="item (1) of (item (1) of (capitals))" title="item (1) of (item (1) of (capitals))"> liefert das Wort &bdquo;Augusta&ldquo;.
+                            </div>
+                            <div class="feedback">
+                                Richtig.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1capitalsc3.png" alt="item (1) of (item (2) of (capitals))" title="item (1) of (item (2) of (capitals))"> liefert das Wort &bdquo;Idaho&ldquo;.
+                            </div>
+                            <div class="feedback">
+                                Falsch. Es liefert &bdquo;Boise&ldquo;.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1capitalsc4.png" alt="item (2) of (item (3) of (capitals))" title="item (2) of (item (3) of (capitals))"> liefert das Wort &bdquo;South Carolina&ldquo;.
+                            </div>
+                            <div class="feedback">
+                                Richtig.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c5">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1capitalsc5.png" alt="item (2) of (item (4) of (capitals))" title="item (2) of (item (4) of (capitals))"> liefert die Liste <code>{Des Moines, Iowa}</code>.
+                            </div>
+                            <div class="feedback">
+                                Falsch. Es liefert &bdquo;Iowa&ldquo;.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c6">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1capitalsc6.png" alt="item (2) of (item (4) of (capitals))" title="item (2) of (item (4) of (capitals))"> liefert die Liste <code>{Iowa}</code>.
+                            </div>
+                            <div class="feedback">
+                                Falsch. Der Ausdruck liefert das Wort &bdquo;Iowa&ldquo;.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c7">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1capitalsc7.png" alt="item (2) of (capitals)" title="item (2) of (capitals)"> liefert eine Liste mit zwei Elementen.
+                            </div>
+                            <div class="feedback">
+                                Richtig.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c8">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1capitalsc8.png" alt="item (1) of (item (4) of (capitals))" title="item (1) of (item (4) of (capitals))"> liefert das Wort &bdquo;Des Moines&ldquo;.
+                            </div>
+                            <div class="feedback">
+                                Richtig.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c1"></div>
+                            <div class="correctResponse" identifier="c2"></div>
+                            <div class="correctResponse" identifier="c4"></div>
+                            <div class="correctResponse" identifier="c7"></div>
+                            <div class="correctResponse" identifier="c8"></div>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+	</body>
+</html>

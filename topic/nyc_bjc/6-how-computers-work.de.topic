@@ -1,0 +1,30 @@
+title: Einheit 6: Wie Computer funktionieren
+
+{
+
+	raw-html:<p>Nach der Create Task hast du den gesamten AP-CSP-Lehrplan behandelt. Die Einheiten 6&ndash;8 enthalten weitere, f&uuml;r die Informatik wichtige Themen, die teilweise erst nach der AP-Pr&uuml;fung behandelt werden.</p>
+	raw-html: <div class="comment">Siehe auch: <ul><li><a href="https://docs.google.com/document/d/1N9igsEw9_Fmyup9b7PGU-8tymFRGGNwkz-1IMVBGbc0/edit#heading=h.jvep9yfq7y6t" target="_blank">Storyline Jahr&nbsp;3</a></li><li><a href="https://docs.google.com/document/d/1s9eZgqGP_UyybwU75Qo1B3HifwJQiMxPGH9mCoXenBc/edit" target="_blank">Pauls Storyline f&uuml;r Einheit&nbsp;6 mit Standards in Reihenfolge und Erz&auml;hlung</a></li><li><a href="https://docs.google.com/document/d/1pVpeIy4svqgrHLWDJziAkGhdy8wc3LWi5mbvArJgzCw/edit" target="_blank">Pauls kommentierte Version von Brians Gliederung f&uuml;r Einheit&nbsp;6</a></li></ul></div>
+
+
+heading: Labor 1: Hierarchie der Rechnerabstraktion
+	resource: Abstraktion im Inneren des Computers [/bjc-r/cur/programming/6-computers/1-abstraction/01-abstraction.de.html]
+	resource: Der Softwarebereich: Anwendungen [/bjc-r/cur/programming/6-computers/1-abstraction/02-software-applications.de.html]
+	quiz: Der Softwarebereich: Programmiersprachen [/bjc-r/cur/programming/6-computers/1-abstraction/03-software-languages.de.html]
+	resource: Der Softwarebereich: Bibliotheken [/bjc-r/cur/programming/6-computers/1-abstraction/04-software-libraries.de.html]
+	resource: Der Softwarebereich: Betriebssysteme [/bjc-r/cur/programming/6-computers/1-abstraction/05-software-OS.de.html]
+	resource: Der digitale Bereich: Architektur [/bjc-r/cur/programming/6-computers/1-abstraction/06-digital-architecture.de.html]
+ 	resource: Der digitale Bereich: Komponenten [/bjc-r/cur/programming/6-computers/1-abstraction/07-digital-components.de.html]
+ 	resource: Der digitale Bereich: Integrierte Schaltkreise [/bjc-r/cur/programming/6-computers/1-abstraction/08-digital-IC.de.html]
+ 	quiz: Der digitale Bereich: Logikgatter [/bjc-r/cur/programming/6-computers/1-abstraction/09-digital-logic-gates.de.html]
+	resource: Der analoge Bereich: Transistoren [/bjc-r/cur/programming/6-computers/1-abstraction/10-analog.de.html]
+
+heading: Labor 2: Geschichte der Computer
+	resource: Eine kurze Geschichte der Computer [/bjc-r/cur/programming/6-computers/2-history-impact/1-timeline.de.html]
+	quiz: Mooresches Gesetz [/bjc-r/cur/programming/6-computers/2-history-impact/2-moore.de.html]
+
+    raw-html: <div class="todo">Siehe Kommentar am Ende von 6.1.9 zu optionalen Projekten. --MF, 12.6.20</div>
+
+heading: Wiederholung zu Einheit 6
+	resource: Wortschatz [/bjc-r/cur/programming/summaries/vocab6.de.html]
+	resource: Selbsttest-Fragen [/bjc-r/cur/programming/summaries/assessment-data6.de.html]
+}

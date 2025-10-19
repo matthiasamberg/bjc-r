@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1, Labor 3: Moderne Kunst mit Polygonen, Seite 4</title>
+	</head>
+
+	<body>
+        <h2>Dein Windrad anpassen</h2>
+        <div class="learn">
+        	<strong>Auf dieser Seite</strong> erweiterst du den Block <code>pinwheel</code>, damit er ganz unterschiedliche Formen zeichnen kann.<br />
+            <img class="indent" src="/bjc-r/img/1-introduction/assorted-pinwheels.png" alt="verschiedene Windräder" title="verschiedene Windräder" />
+        </div>
+
+        <h3>Mehrere Eingaben hinzufügen</h3>
+        <p>Du hast dein Windrad bereits <em>verallgemeinert</em>, indem du die Eingabe <var>number of branches</var> eingefügt hast – sie steuert den Drehwinkel. Mit weiteren Eingaben kannst du noch mehr Aspekte beeinflussen.</p>
+        <div class="forYouToDo" id="first">
+			<ol>
+                <li>Öffne dein Projekt U1L3-Pinwheel, falls es noch nicht geladen ist.</li>
+                <li>
+                    <div class="ap-standard">AAP-3.A Teil b</div>
+                    Experimentiere mit der Eingabe für den <em>zweiten</em> <code>move</code>-Block in deinem <code>pinwheel</code>-Block (siehe Bild).<br />
+                    <ol>
+                    	<li>
+                        	<img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" />
+                        	Überlegt zuerst: Was wird passieren?<br />
+						    <img class="indent" src="/bjc-r/img/1-introduction/pinwheel-change-second-move-input.png" alt="Definition des pinwheel-Blocks mit Kommentar zum Experimentieren" title="Definition des pinwheel-Blocks mit Kommentar zum Experimentieren" />
+                        </li>
+                        <li>Probiert verschiedene Werte zwischen –100 und 0.</li>
+                        <li>
+                        	<img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Partnergespräch" title="Partnergespräch" />
+                            Was ist passiert? Entspricht das euren Vermutungen? Wie beeinflusst der Wert die Bewegung des Sprites und das Bild? Welcher Wert erzeugt einen Stern (Asterisk), welcher ein Polygon?<br />
+                            <img class="indent" data-gifffer="/bjc-r/img/1-introduction/Blockswith-Inputs_img/asteriskpolygonCycleBW.gif" height="200" alt="Animation vom Asterisk zum Polygon" title="Animation vom Asterisk zum Polygon"/>
+                        </li>
+                	</ol>
+                </li>
+                <li>
+                    <div class="sidenoteBig">Wenn nötig, lies auf <a href="/bjc-r/cur/programming/1-introduction/3-drawing/3-blocks-with-inputs.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Blöcke mit Eingaben">Seite 3</a> nach, wie man eine Eingabe hinzufügt.</div>
+                    Füge eine <em>zweite Eingabe</em> hinzu, die steuert, wie weit der Sprite „zurücksetzt“, bevor er die nächste Speiche zeichnet.
+                	<ol>
+                        <li>Bearbeite den Block <code>pinwheel</code>, klicke rechts auf das Pluszeichen und wähle „Title text“. Gib <code>backup:</code> ein und bestätige.
+                            <div class="endnote">
+                                <a href="#hint-target" data-toggle="collapse" title="Video zu den Schritten a und b ansehen.">Video zu den Schritten a und b ansehen.</a>
+                                <div id="hint-target" class="collapse">
+                                    <img class="inline" src="/bjc-r/img/1-introduction/create-input-name.gif" alt="Video: Eingabe hinzufügen" title="Video: Eingabe hinzufügen" />
+                                </div>
+                            </div>
+                        </li>
+                        <li>Klicke noch einmal auf das Pluszeichen, wähle „Input name“ und nenne die Eingabe <var>backup</var>.</li>
+                        <li>Ziehe die Eingabe <var>backup</var> an die Stelle im Skript, wo du zuvor den zweiten Bewegungswert geändert hast.</li>
+                    </ol>
+                </li>
+			</ol>
+		</div>
+
+        <div class="takeNote">
+            <p>Wenn du Eingaben an einen Block anhängst, musst du im Block-Editor den alten festen Wert durch die neue Eingabe ersetzen – sonst hat sie keine Wirkung.</p>
+        </div>
+
+        <h3>Einen weiteren Parameter hinzufügen</h3>
+        <div class="forYouToDo">
+            <ol start="4">
+                <li>Füge eine dritte Eingabe <code>size:</code> hinzu, die die Seitenlänge steuert. Ersetze mit dieser Eingabe die Werte im Skript.
+                    <div class="endnote">
+                        <a href="#hint-size-input" data-toggle="collapse" title="Bild der fertigen Definition anzeigen.">Bild der fertigen Definition anzeigen.</a>
+                        <div id="hint-size-input" class="collapse">
+                            <img class="indent" src="/bjc-r/img/1-introduction/U1ImageVideoAddendum_img/U1L3-PinwheelwithInputs.png" width="700" alt="pinwheel, branches: () size: () backup: ()" title="pinwheel, branches: () size: () backup: ()"/>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                	Probiert viele verschiedene Eingabekombinationen aus.
+                    <div class="endnote">
+                        <a href="#hint-size" data-toggle="collapse" title="Beispieleingaben anzeigen.">Beispieleingaben anzeigen.</a>
+                        <div id="hint-size" class="collapse">
+                            <img class="indent" src="/bjc-r/img/1-introduction/pinwheel-branches-3-size-100-backup-20.png" alt="pinwheel, branches: (3) size: (100) backup: (20)" title="Eingabenbeispiel" />
+                            <img class="indent" src="/bjc-r/img/1-introduction/pinwheel-branches-3-size-100-backup-20-result.png" alt="Großes Dreieck mit verlängerten Seiten" title="Großes Dreieck mit verlängerten Seiten" /><br />
+                            <img class="indent" src="/bjc-r/img/1-introduction/pinwheel-branches-3-size-65-backup-20.png" alt="pinwheel, branches: (3) size: (65) backup: (20)" title="Eingabenbeispiel" />
+                            <img class="indent" src="/bjc-r/img/1-introduction/pinwheel-branches-3-size-65-backup-20-result.png" alt="Mittleres Dreieck mit verlängerten Seiten" title="Mittleres Dreieck mit verlängerten Seiten" /><br />
+                            <img class="indent" src="/bjc-r/img/1-introduction/pinwheel-branches-3-size-30-backup-20.png" alt="pinwheel, branches: (3) size: (30) backup: (20)" title="Eingabenbeispiel" />
+                            <img class="indent" src="/bjc-r/img/1-introduction/pinwheel-branches-3-size-30-backup-20-result.png" alt="Kleines Dreieck mit verlängerten Seiten" title="Kleines Dreieck mit verlängerten Seiten" /><br />
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Partnergespräch" title="Partnergespräch" /> Besprecht, welche Eingaben Polygone ergeben und welche Sternformen. <img class="inline" src="/bjc-r/img/icons/save-mini.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" /><br />
+                    <img class="indent noshadow" src="/bjc-r/img/1-introduction/polygon-result.png" alt="Polygon" title="Polygon" />
+                    <img class="indent noshadow" src="/bjc-r/img/1-introduction/asterisk-result.png" alt="Asterisk" title="Asterisk" />
+                </li>
+			</ol>
+		</div>
+
+
+        <div class="takeNote">
+            <h3 class="box-head">Debugging-Tipp: Ordnung halten</h3>
+            <p>
+                Fehler vermeidest du am leichtesten, wenn dein Skriptbereich aufgeräumt ist. Lösche ungenutzte Skripte und verwende „clean up“, indem du im Skriptbereich rechtsklickst (Mac: Ctrl-Klick). Blöcke entfernst du, indem du sie in die Palette zurückziehst oder „delete“ im Kontextmenü wählst. <a href="#hint-organizing" data-toggle="collapse" title="Video ansehen">Video ansehen</a>. (Achtung: „delete block definition“ löscht einen selbst erstellten Block überall im Projekt!)
+                <div id="hint-organizing" class="collapse">
+                    <img class="indent" src="/bjc-r/img/2-complexity/Debugging/cleanup-deleting.gif"  height="500" alt="Animation: Blöcke löschen und aufräumen" title="Animation: Blöcke löschen und aufräumen"/>
+                </div>
+            </p>
+        </div>
+
+        <div class="forYouToDo">
+			<ol start="8">
+				<li>Räume deinen Skriptbereich auf, falls nötig.</li>
+			</ol>
+		</div>
+
+	</body>
+</html>

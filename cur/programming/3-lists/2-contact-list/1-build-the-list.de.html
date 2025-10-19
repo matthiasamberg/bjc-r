@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 3, Labor 2: Kontaktliste, Seite 1</title>
+    </head>
+
+    <body>
+		<h2>Das Kontakt-ADT erstellen</h2>
+        <div class="learn">
+        	<p><strong>In diesem Labor</strong> entwickelst du eine Kontaktlisten-App &auml;hnlich der auf deinem Handy.</p>
+        	<p><strong>Auf dieser Seite</strong> entwirfst du einen <em>abstrakten Datentyp</em>, der Kontaktdaten (Name, Adresse, Telefonnummer usw.) speichert und bereitstellt.</p>
+        </div>
+		<div class="vocabFullWidth">: <strong>Abstrakter Datentyp (ADT)</strong>
+			<p>Ein <strong>Abstrakter Datentyp (ADT)</strong> ist ein selbst definierter Datentyp, der f&uuml;r dein Programm sinnvoll ist. In <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/2-quizzes.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 2, Seite 2">Einheit 2, Labor 2</a> hast du bereits ADTs kennengelernt.</p>
+		</div>
+
+    	<h3>Kontaktliste vorbereiten</h3>
+        <div class="forYouToDo" id="first">
+            <ol>
+				<li>
+                    <a class="run" href="/bjc-r/prog/3-lists/U3L2-ContactList.xml"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Projektvorlage laden" title="Projektvorlage laden"></a>
+                </li>
+                <li>Erstelle eine globale Variable <var>contact list</var>.</li>
+                <li>Initialisiere <var>contact list</var> mit einer leeren Liste.</li>
+            </ol>
+		</div>
+
+		<div class="takeNote">
+            <h4 class="box-head">Warum global?</h4>
+            Mehrere Skripte im Projekt greifen auf diese Variable zu; lokale Skriptvariablen w&auml;ren daher ungeeignet.
+        </div>
+
+        <h3>ADT entwerfen</h3>
+        <div class="dialogue">
+            <div class="stagedir">Jasmine und Omar planen eine Kontaktliste in Snap<em>!</em>.</div>
+            <div><span>Jasmine:</span> Wir brauchen eine M&ouml;glichkeit, Kontakte zu unserer <var>contact list</var> hinzuzuf&uuml;gen.</div>
+            <div><span>Omar:</span> Jeder Kontakt wird eine Liste mit Name, Telefonnummer, Adresse, E-Mail usw.</div>
+            <div><span>Jasmine:</span> <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/2-quizzes.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 2">In Einheit 2 haben wir das ADT <code>quiz item</code> erstellt</a>, um Fragen und Antworten zu speichern. Hier k&ouml;nnen wir ein <code>contact</code>-ADT f&uuml;r unsere Kontaktdaten anlegen.</div>
+            <div><span>Omar:</span> Genau. Wir brauchen einen <code>contact</code>-Konstruktor und Selektoren f&uuml;r <code>name</code>, <code>address</code> und <code>phone</code>.</div>
+		</div>
+		<div class="takeNote">
+            <h4 class="box-head">Datenschutz</h4>
+            <p>Snap<em>!</em>-Projekte sind nicht sicher. Verwende keine echten personenbezogenen Daten.</p>
+        </div>
+        <div class="forYouToDo">
+            <ol start="4">
+                <li>
+                    <div class="sidenoteBig">
+                        <strong>Abk&uuml;rzung:</strong> Du kannst folgenden Text in &bdquo;Make a block&ldquo; einf&uuml;gen, um den Block schneller anzulegen:<br />
+                        <p style="margin-left:25px;"><code>contact with name: %name address: %address phone: %phone</code></p>
+                        Das Prozentzeichen (%) markiert Eingaben.
+                    </div>
+                    Erstelle einen <code>contact</code>-<em>Konstruktor</em> mit den Eingaben <var>name</var>, <var>phone</var> und <var>address</var>.<br />
+                    <img class="indent" src="/bjc-r/img/3-lists/contact-constructor-untyped.png" alt="contact with name: () address: () phone: ()" title="contact with name: () address: () phone: ()" /><br />
+                    Der Block soll eine Liste mit den drei Informationen zur&uuml;ckgeben:<br />
+					<img class="indent" src="/bjc-r/img/3-lists/contact-constructor-reporting.png" alt="contact mit Beispiel"<<title="contact mit Beispiel" />
+                </li>
+                <li>
+                    Schreibe die Selektorbl&ouml;cke <code>name from contact</code>, <code>address from contact</code> und <code>phone from contact</code>.
+                    <img class="indent" src="/bjc-r/img/3-lists/contact-selectors.png" alt="Selektorbl&ouml;cke" title="Selektorbl&ouml;cke" />
+                </li>
+                <li>Teste Konstruktor und Selektoren mit mehreren Kontakten.</li>
+                <li>F&uuml;ge die erzeugten Kontakte der Liste <var>contact list</var> hinzu (z. B. mit <code>add</code>).</li>
+                <li><img class="inline" src="/bjc-r/img/icons/write-out-thoughts.png" alt="Notiere deine Gedanken" title="Notiere deine Gedanken" />
+                    Erkl&auml;re schriftlich, wie dir das ADT hilft, die Komplexit&auml;t zu beherrschen.
+                </li>
+                <li>
+                    <!-- Frage 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Why are ADTs used in programming?" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">
+                            <div class="ap-standard">AAP-1.D.3.C</div>
+                            Warum werden abstrakte Datentypen (ADTs) eingesetzt?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Um den Code schneller zu machen.</div>
+                            <div class="feedback">
+                                ADTs verbessern Struktur und Verst&auml;ndlichkeit, nicht Laufzeit.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Um Komplexit&auml;t zu verbergen und eine passende Schnittstelle bereitzustellen.</div>
+                            <div class="feedback">
+                                Richtig! ADTs vereinfachen das Datenmanagement und kapseln Details.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Um auf Verzweigungen verzichten zu k&ouml;nnen.</div>
+                            <div class="feedback">
+                                Bedingte Anweisungen bleiben notwendig.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Um Debugging &uuml;berfl&uuml;ssig zu machen.</div>
+                            <div class="feedback">
+                                ADTs verhindern Fehler nicht automatisch.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                          <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

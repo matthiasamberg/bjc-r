@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1, Labor 2: Tratsch, Seite 5</title>
+	</head>
+
+	<body>
+        <h2>Mehr Abwechslung f&uuml;r <code>Gossip</code></h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> verbesserst du dein Programm, damit die S&auml;tze gelegentlich l&auml;nger und komplexer werden.</p>
+        </div>
+
+        Der Block <img src="/bjc-r/img/1-introduction/more-complicated-who.png" alt="more complicated who" title="more complicated who"> wurde bereits f&uuml;r dich vorbereitet. Er w&auml;hlt zuf&auml;llig 1, 2, 3 oder 4 und liefert – nur wenn die Zahl 3 ist – einen komplizierteren Text als <code>who</code>. Andernfalls verh&auml;lt er sich genau wie <code>who</code>.
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>&Ouml;ffne dein Projekt U1L2-Gossip, falls es nicht bereits offen ist.</li>
+                <li>Suche <img src="/bjc-r/img/1-introduction/more-complicated-who.png" alt="more complicated who" title="more complicated who"> in der roten Listen-Palette, ziehe den Block in den Skriptbereich und klicke ihn mehrfach an, um zu sehen, wie er sich von <code>who</code> unterscheidet.</li>
+                <li>
+                    Hier ist der Code f&uuml;r <code>more complicated who</code>. Darin tauchen zwei neue Bl&ouml;cke auf: <code>pick random</code> und <code>if else</code>.<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/more-complicated-who-script.png" alt="Script von more complicated who" title="Script von more complicated who" />
+                    <ol>
+                        <li>Finde <img class="inline" src="/bjc-r/img/blocks/pick-random-1-to-10-full-size.png" alt="pick random (1) to (10)" title="pick random (1) to (10)" /> in der gr&uuml;nen Operatoren-Palette und klicke ihn mehrfach an. Was macht der Block <code>random</code>?</li>
+                        <li>
+                            <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" />
+                            Was passiert im Block <code>more complicated who</code>, wenn <code>pick random</code> die Zahl 3 liefert? Und was passiert bei einer 4?
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <!-- Question 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="About how often will more complicated who pick the more complicated choice?" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="false">
+                        <div class="prompt">
+                            <div class="ap-standard">AAP-3.E</div>
+                            <img class="imageRight" src="/bjc-r/img/1-introduction/more-complicated-who-script.png" alt="Script von more complicated who" title="Script von more complicated who" />
+                            Wie oft w&auml;hlt <code>more complicated who</code> ungef&auml;hr die kompliziertere Variante?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Etwa jedes zweite Mal</div>
+                            <div class="feedback">
+                                Wenn zuf&auml;llig eine Zahl aus 1, 2, 3 und 4 gew&auml;hlt wird – wie oft ist das eine 3?
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Etwa jedes dritte Mal</div>
+                            <div class="feedback">
+                                Wenn zuf&auml;llig eine Zahl aus 1, 2, 3 und 4 gew&auml;hlt wird – wie oft ist das eine 3?
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Etwa jedes vierte Mal</div>
+                            <div class="feedback">
+                                Richtig!
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Etwa drei von vier Mal</div>
+                            <div class="feedback">
+                                Wenn zuf&auml;llig eine Zahl aus 1, 2, 3 und 4 gew&auml;hlt wird – wie oft ist das eine 3?
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c3"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    Wenn dein Programm tats&auml;chlich l&auml;ngere S&auml;tze erzeugen soll, muss <code>gossip</code> anstelle von <code>who</code> den Block <code>more complicated who</code> nutzen. Bearbeite also den Block <code>gossip</code> und ersetze dort <code>who</code> durch <code>more complicated who</code>.<br />
+                    <div class="endnote">
+                        Falls du Hilfe beim Bearbeiten brauchst, sieh dir <a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/3-customizing.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Anpassen und Debuggen">Anpassen und Debuggen</a> an.
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="vocabFullWidth">: <strong>Ausdr&uuml;cke</strong> und <strong>Werte</strong>
+            <div class="ap-standard">AAP-2.B.3, AAP-2.B.4</div>
+            <ul>
+                <li>Ein <strong>Ausdruck</strong> ist entweder ein konstanter Wert (z.&nbsp;B. „4“ oder „winter“) oder der Aufruf eines Reporter-Blocks einschlie&szlig;lich seiner Eingaben (z.&nbsp;B. <img class="inline" src="/bjc-r/img/2-complexity/number.png" alt="number" title="number" />, <img class="inline nopadtb" src="/bjc-r/img/1-introduction/5+(4x3).png" alt="5 + (4 * 3)" title="5 + (4 * 3)" /> oder <img class="inline" src="/bjc-r/img/2-complexity/join-who-doeswhat-who.png" alt="join (who) ( ) (does what) ( ) (who)" title="join (who) ( ) (does what) ( ) (who)" />).</li>
+                <li>Ausdr&uuml;cke werden ausgewertet und ergeben genau einen <strong>Wert</strong> (z.&nbsp;B. eine Zahl, eine Zeichenkette, einen Sprite, ein Kost&uuml;m, ein Skript, eine Liste – beliebige Daten). <img class="inline nopadtb" src="/bjc-r/img/1-introduction/5+(4x3).png" alt="5 + (4 * 3)" title="5 + (4 * 3)" /> zum Beispiel ergibt den Wert 17.</li>
+            </ul>
+        </div>
+        <div class="examFullWidth">
+            <div class="ap-standard">AAP-3.E.1, AAP-3.E.2</div>
+            <div class="pseudop">Der Ausdruck <img class="inline" src="/bjc-r/img/blocks/pick-random-1-to-10-full-size.png" alt="pick random (1) to (10)" title="pick random (1) to (10)" /> wird in der AP-Notation als <pre class="inline">RANDOM(1, 10)</pre> oder <img class="inline" src="/bjc-r/img/1-introduction/random-blocktran.png" alt="RANDOM(1, 10)" title="RANDOM(1, 10)" /> geschrieben. Jedes Mal, wenn du diesen Code ausf&uuml;hrst, erh&auml;ltst du eine andere Zufallszahl zwischen 1 und 10.</div>
+            <div class="python" style="width:90%">
+				<a href="#hint-python-1-2-5-1" data-toggle="collapse" title="Wie würde das in Python aussehen?">Wie w&uuml;rde das in Python aussehen?</a>
+				<div id="hint-python-1-2-5-1" class="collapse">
+					<pre><code>
+from random import randint 
+randint(1, 10)</code></pre>
+				(Beachte, dass die Bibliothek <code>random</code> in Python nicht automatisch geladen wird und importiert werden muss. Die Funktion <code>randint</code> gibt ausschlie&szlig;lich ganze Zahlen zur&uuml;ck. Mehr dazu findest du in der <a href="https://docs.python.org/3/library/random.html" title="Python documentation: random" target="_blank">Python-Dokumentation</a>.)
+				</div>
+			</div>
+        </div>
+
+        <div class="forYouToDo">
+			<ol start="5">
+				<li>
+                    <!-- Question 3 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="What expression would return a random even number between 1 and 10?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri3" shuffle="true">
+                        <div class="prompt">
+                            <div class="ap-standard">AAP-3.E</div>
+                            <div class="sidenoteBig">
+                                <a href="#hint-parity" data-toggle="collapse" title="Klicke für eine Erinnerung an gerade und ungerade Zahlen.">Klicke f&uuml;r eine Wiederholung zu geraden und ungeraden Zahlen.</a>
+                                <div id="hint-parity" class="collapse">
+                                    <p>Eine <strong>gerade</strong> Zahl ist eine ganze Zahl, die durch 2 teilbar ist (z.&nbsp;B. 2, 14, 0, -4, -6, -28 oder -176).</p>
+                                    <p><strong>Ungerade</strong> Zahlen sind ganze Zahlen, die <em>nicht</em> durch 2 teilbar sind (z.&nbsp;B. 1, 3, 9, 17, -5, -33 oder -221).</p>
+                                </div>
+                            </div>
+                            Welche der folgenden Ausdr&uuml;cke liefert eine zuf&auml;llige <em>gerade</em> Zahl zwischen 1 und 10?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text"><pre class="inline">RANDOM(2, 10)</pre></div>
+                            <div class="feedback">
+                                <pre class="inline">RANDOM(2, 10)</pre> liefert 2, 3, 4, 5, 6, 7, 8, 9 oder 10.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text"><pre class="inline">2 * RANDOM(1, 5)</pre></div>
+                            <div class="feedback">
+                                Richtig! <pre class="inline">RANDOM(1, 5)</pre> liefert 1, 2, 3, 4 oder 5; somit erzeugt <pre class="inline">2 * RANDOM(1, 5)</pre> die Werte 2, 4, 6, 8 oder 10.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text"><pre class="inline">RANDOM(1, 10) / 2</pre></div>
+                            <div class="feedback">
+                                <pre class="inline">RANDOM(1, 10)</pre> liefert 1 bis 10; daher liefert <pre class="inline">RANDOM(1, 10) / 2</pre> Werte wie &frac12;, 1, 1&frac12;, 2, …
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text"><pre class="inline">RANDOM(1, 10) * 2</pre></div>
+                            <div class="feedback">
+                                <pre class="inline">RANDOM(1, 10)</pre> liefert 1 bis 10; multipliziert mit 2 erh&auml;ltst du 2, 4, 6, 8, 10, 12, 14, 16, 18 oder 20.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri3">
+                            <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+	</body>
+</html>

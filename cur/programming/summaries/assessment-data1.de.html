@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1 – Selbsttest</title>
+	</head>
+
+	<body>
+<h2>Einheit 1: Einführung in die Programmierung</h2>
+<h3>Labor 2: Gossip</h3>
+<div class="assessment-data" type="multiplechoice" identifier="Which of the following sentences could be reported by gossip?" hasinlinefeedback="true" maxchoices="4" responseIdentifier="ri1" shuffle="true"><strong><a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/3-customizing.de.html?topic=nyc_bjc/1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment">1.2.3</a></strong>
+						<div class="prompt">
+        					<div class="ap-standard">AAP-2.D</div>
+							Welche <em><strong>zwei</strong></em> Sätze könnten vom Block <code>gossip</code> erzeugt werden?<br />
+                            <img class="indent" src="/bjc-r/img/1-introduction/gossip-definition.png" alt="Definition von gossip" title="Definition von gossip" />
+			                <div class="endnote">
+                                Zur Erinnerung:<br >
+                                <img class="indent" src="/bjc-r/img/1-introduction/who-block-definition.png" height="77" alt="Definition von who" title="Definition von who" />
+                                <img class="indent" src="/bjc-r/img/1-introduction/does-what-block-definition.png" height="89" alt="Definition von does what" title="Definition von does what" />
+                            </div>
+						</div>
+						<div class="choice" identifier="c1">
+							<div class="text">Señora and Ms. C helped.</div>
+							<div class="feedback">
+								Falsch: Der Satz enthält „and“ und die Reihenfolge passt nicht.
+							</div>
+						</div>
+						<div class="choice" identifier="c2">
+							<div class="text">Señora ran away from my cat.</div>
+							<div class="feedback">
+								Korrekt! Muster „who – does what – who“.
+							</div>
+						</div>
+						<div class="choice" identifier="c3">
+							<div class="text">Hannah listened to Hannah.</div>
+							<div class="feedback">
+								Korrekt! Ebenfalls „who – does what – who“.
+							</div>
+						</div>
+						<div class="choice" identifier="c4">
+							<div class="text">Jake helped.</div>
+							<div class="feedback">
+								Es fehlt das zweite „who“.
+							</div>
+						</div>
+						<div class="responseDeclaration" identifier="ri1">
+							<div class="correctResponse" identifier="c2"></div>
+							<div class="correctResponse" identifier="c3"></div>
+						</div>
+					</div>
+<div class="assessment-data" type="multiplechoice" identifier="About how often will more complicated who pick the more complicated choice?" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="false"><strong><a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/5-if-else.de.html?topic=nyc_bjc/1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment">1.2.5</a></strong>
+                        <div class="prompt">
+                            <div class="ap-standard">AAP-3.E</div>
+                            <img class="imageRight" src="/bjc-r/img/1-introduction/more-complicated-who-script.png" alt="Script von more complicated who" title="Script von more complicated who" />
+                            Wie oft erzeugt <code>more complicated who</code> ungefähr die komplizierte Variante?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Etwa jedes zweite Mal</div>
+                            <div class="feedback">
+                                Wie oft ist 3, wenn du zufällig 1–4 wählst?
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text"><pre class="inline">RANDOM(1, 12)</pre></div>
+                            <div class="feedback">Kann man als Summe 1 erhalten? Nein.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text"><pre class="inline">RANDOM(2, 12)</pre></div>
+                            <div class="feedback">Alle Werte wären gleich wahrscheinlich – bei zwei Würfeln ist das nicht so.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text"><pre class="inline">RANDOM(2, 6)</pre></div>
+                            <div class="feedback">Es fehlen Werte wie 7, 8 usw.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri4">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                            <div class="text">Etwa jedes dritte Mal</div>
+                            <div class="feedback">
+                                Wie oft ist 3, wenn du zufällig 1–4 wählst?
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Etwa jedes vierte Mal</div>
+                            <div class="feedback">
+                                Korrekt!
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Etwa drei von vier Mal</div>
+                            <div class="feedback">
+                                Wie oft ist 3, wenn du zufällig 1–4 wählst?
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                          <div class="correctResponse" identifier="c3"></div>
+                        </div>
+                    </div>
+<div class="assessment-data" type="multiplechoice" identifier="What expression would return a random even number between 1 and 10?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri3" shuffle="true"><strong><a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/5-if-else.de.html?topic=nyc_bjc/1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment">1.2.5</a></strong>
+                        <div class="prompt">
+                            <div class="ap-standard">AAP-3.E</div>
+                            <div class="sidenoteBig">
+                                <a href="#hint-parity" data-toggle="collapse" title="Wiederholung zu geraden/ungeraden Zahlen">Wiederholung zu geraden/ungeraden Zahlen</a>
+                                <div id="hint-parity" class="collapse">
+                                    <p><strong>Gerade</strong> Zahl: durch 2 teilbar. <strong>Ungerade</strong> Zahl: nicht durch 2 teilbar.</p>
+                                </div>
+                            </div>
+                            Welcher Ausdruck liefert eine zufällige <em>gerade</em> Zahl von 1 bis 10?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text"><pre class="inline">RANDOM(2, 10)</pre></div>
+                            <div class="feedback">Enthält auch ungerade Zahlen.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text"><pre class="inline">2 * RANDOM(1, 5)</pre></div>
+                            <div class="feedback">Richtig! Ergibt 2, 4, 6, 8 oder 10.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text"><pre class="inline">RANDOM(1, 10) / 2</pre></div>
+                            <div class="feedback">Liefert Halbzahlen.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text"><pre class="inline">RANDOM(1, 5)</pre></div>
+                            <div class="feedback">Nur 1–5.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri3">
+                            <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+<div class="assessment-data" type="multiplechoice" identifier="Which expression will simulate the rolling of two dice?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri4" shuffle="true"><strong><a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/5-if-else.de.html?topic=nyc_bjc/1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment">1.2.5</a></strong>
+                        <div class="prompt">
+                            <div class="ap-standard">AAP-3.E</div>
+                            Welcher Ausdruck simuliert zwei Würfelwürfe?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text"><pre class="inline">RANDOM(1, 6) + RANDOM(1, 6)</pre></div>
+                            <div class="feedback">Richtig! Jede Zufallswahl 1–6 simuliert einen Würfel.</div>
+                        </div>
+                        <div class="choice" identifier="c2">

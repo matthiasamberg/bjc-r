@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 3, Labor 1: Mit Komplexit&auml;t umgehen, Seite 2</title>
+    </head>
+
+    <body>
+        <h2>Fraktal-Kunst</h2>
+        <div class="learn">
+            <strong>In diesem Projekt</strong> verschachtelst du <code>repeat</code>-Bl&ouml;cke innerhalb anderer <code>repeat</code>-Bl&ouml;cke, um komplexe Bilder zu erzeugen.<br />
+            <img class="indent" src="/bjc-r/img/2-complexity/U2ImageVideoAddendum_img/three-color-sierpinski.png" height="300" alt="Rotes Dreieck mit blauen Teil-Dreiecken und gr&uuml;nen Unter-Dreiecken" title="Rotes Dreieck mit blauen Teil-Dreiecken und gr&uuml;nen Unter-Dreiecken" />
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+	            <li>
+	              <div class="newProject"><span class="text">&bdquo;U3L1-FractalArt&ldquo;</span><img src="/bjc-r/img/icons/new-project-called.png" alt="Projekt U3L1-FractalArt anlegen" title="Projekt U3L1-FractalArt anlegen" /></div></li>
+                <li>
+                	Baue ein Skript, das ein rotes Dreieck zeichnet. Dupliziere es zweimal, passe eine Kopie an, sodass sie ein blaues Dreieck zeichnet (halbe Seitenl&auml;nge), und die zweite Kopie, sodass sie ein gr&uuml;nes Dreieck zeichnet (erneut halb so gro&szlig;).
+                    <ul>
+                        <li>Zum Duplizieren eines Skripts rechtsklicke (oder Ctrl-Klick) auf den ersten Block (hier: <code>repeat</code>) und w&auml;hle &bdquo;duplicate&ldquo;.</li>
+                        <li>&Auml;ndere anschlie&szlig;end die Eingaben.</li>
+                    </ul>
+                    <div class="endnote">
+                        <a href="#hint-inputs" data-toggle="collapse" title="Video zum &Auml;ndern der Eingaben anzeigen">Video anzeigen</a>
+                        <div id="hint-inputs" class="collapse">
+                            <img class="indent" src="/bjc-r/img/1-introduction/duplicating-a-script.gif" alt="Ein Skript duplizieren" title="Ein Skript duplizieren">
+                        </div>
+                    </div>
+                </li>
+                <li>Teste jedes Skript einzeln, damit du sicher wei&szlig;t, was es macht. Leere dann die B&uuml;hne.</li>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" />
+                    Vermutet, was passiert, wenn du das gesamte Skript f&uuml;r das blaue Dreieck zwischen den <code>move</code>- und <code>turn</code>-Block des roten Dreiecks setzt:<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/two-color-sierpinski-code.png" alt="repeat (3) {set pen color to (red); move (100) steps; repeat (3) {set pen color to (blue); move (100) steps; turn clockwise (120) degrees}; turn right (120) degrees}" title="repeat (3) {set pen color to (red); move (100) steps; repeat (3) {set pen color to (blue); move (100) steps; turn clockwise (120) degrees}; turn right (120) degrees}"/>
+                </li>
+                <img class="imageRight" src="/bjc-r/img/icons/pair-programming-swap.png" alt="Pair Programming: Rollen tauschen" title="Pair Programming: Rollen tauschen" />
+                <li>Setze es dann um und sieh nach, was geschieht.</li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" />Wie oft wird die Anweisung <code>move (50) steps</code> ausgef&uuml;hrt – und warum?</li>
+                <li>
+                    Nutze deine Skripte, um dieses Bild zu erzeugen. Verwende sichtbares Schrittweises Ausf&uuml;hren (Visible Stepping), um Fehler leichter zu finden.<br />
+                    <img class="indent noshadow" src="/bjc-r/img/2-complexity/U2ImageVideoAddendum_img/three-color-sierpinski.png" height="300" alt="Rotes Dreieck mit blauen Kindern und gr&uuml;nen Enkeln" title="Rotes Dreieck mit blauen Kindern und gr&uuml;nen Enkeln" />
+                </li>
+                <div class="endnote">
+                    <a href="#hint-reminder" data-toggle="collapse" title="Erinnerung an Visible Stepping ansehen">Erinnerungsvideo zu Visible Stepping</a>
+                    <div id="hint-reminder" class="collapse">
+                        <img  class="indent" src="/bjc-r/img/2-complexity/VisualSteppinginFractal.gif" alt="Schrittweises Ausf&uuml;hren in Snap!" title="Schrittweises Ausf&uuml;hren in Snap!" />
+                    </div>
+                </div>
+                                <img class="imageRight" src="/bjc-r/img/icons/save-mini.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+
+			</ol>
+		</div>
+
+        <div class="ifTime">
+        	<ol start="8">
+            	<li>Falls du m&ouml;chtest, f&uuml;ge ein weiteres Dreieck hinzu, halb so gro&szlig; wie das letzte.</li>
+                <li>
+                	Untersuche diesen Code, ohne ihn auszuf&uuml;hren:<br />
+					<img class="indent" src="/bjc-r/img/2-complexity/blue-square-embedded-in-red-square.png" alt="repeat { set pen color to red; move 100; repeat { set pen color to blue; move 50; turn 90° }; turn 90° }" title="repeat { set pen color to red; move 100; repeat { set pen color to blue; move 50; turn 90° }; turn 90° }" >
+                	<ol>
+                    	<li>Wie viele blaue Formen werden gezeichnet?</li>
+                        <li>Versuche, das Ergebnis zu skizzieren.</li>
+                        <li>Wie viele Kopien der innersten Form entst&uuml;nden, wenn noch eine weitere Stufe eingebettet w&auml;re?</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

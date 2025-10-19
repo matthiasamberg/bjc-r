@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1, Labor 5: Folge dem Anführer, Seite 1</title>
+	</head>
+
+	<body>
+		<h2>Sprite folgt der Maus</h2>
+		<div class="learn">
+			<p>In vielen Programmen müssen Elemente auf dem Bildschirm miteinander interagieren – sich verfolgen, ausweichen oder reagieren, wenn sie sich treffen. <strong>In diesem Labor</strong> programmierst du zwei Sprites: Einer folgt deiner Maus, der andere jagt den ersten. Treffen sie sich, führen sie ein kurzes Gespräch.</p>
+			<img class="indent" data-gifffer="/bjc-r/img/1-introduction/leader-follower-animation.gif" alt="Animation: Tiger jagt Fledermaus, die dem Mauszeiger folgt" title="Animation: Tiger jagt Fledermaus, die dem Mauszeiger folgt"/>
+			<p><strong>Auf dieser Seite</strong> bringst du den ersten Sprite dazu, deiner Maus zu folgen, und sorgst dafür, dass der zweite Sprite sich auf den ersten ausrichtet.</p>
+		</div>
+
+		<h3>Der Maus folgen</h3>
+		<div class="forYouToDo" id="first">
+			<ol>
+				<li>
+					<div class="newProject"><span class="text">„U1L5-SpriteChase“</span><img src="/bjc-r/img/icons/new-project-called.png" alt="Oben rechts Namen eingeben: U1L5-SpriteChase" title="Neues Projekt U1L5-SpriteChase" /></div>
+					<div class="narrower">
+						<h4 class="box-head">Neues Snap<em>!</em>-Projekt anlegen</h4>
+						<ol style="list-style-type:lower-alpha">
+							<li>Öffne <a href="https://snap.berkeley.edu/run" title="Snap!" target="_blank">Snap<em>!</em></a>.
+								<div class="endnote">
+									Falls bereits ein Projekt offen ist:
+									<ol style="list-style-type:lower-roman">
+										<li>Speichere es bei Bedarf.</li>
+										<li>Wähle im Dateimenü <img src="/bjc-r/img/1-introduction/file_button.png" alt="File-Menü" title="File-Menü"/> „New“.</li>
+										<li>Bestätige mit „Yes“, um ein neues Projekt zu öffnen.</li>
+									</ol>
+								</div>
+							</li>
+							<li>Wähle „Save As...“ im Dateimenü.</li>
+							<li>Gib den Projektnamen ein.</li>
+							<li>Klicke auf „Save“.</li>
+						</ol>
+					</div>
+				</li>
+				<li>
+					<img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Partnergespräch" title="Partnergespräch" />
+					Sieh dir dieses Skript an, bevor du es baust. Was erwartest du?<br />
+					<img class="indent" src="/bjc-r/img/1-introduction/follow-that-mouse.png" alt="when green flag clicked{forever{go to x:(mouse x) y:(mouse y)}}" title="when green flag clicked{forever{go to x:(mouse x) y:(mouse y)}}" />
+				</li>
+				<li>Baue das Skript, starte es und bewege die Maus. Was bewirkt der Block <code>forever</code>?
+					<div class="endnote">Zum <em>Stoppen</em> klicke auf <img src="/bjc-r/img/1-introduction/stop_button.png" alt="Stopp" title="Stopp"/>.</div>
+				</li>
+				<li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Partnergespräch" title="Partnergespräch" />Funktioniert alles wie erwartet?</li>
+			</ol>
+		</div>
+
+		<div class="atworkFullWidth">
+			<p>Diana Macias, Tochter mexikanischer Eltern, ist Softwareentwicklerin mit Schwerpunkt Benutzererfahrung. Sie hat Twitter Able (eine Gruppe für Mitarbeitende mit Behinderungen) mitbegründet und war Co-Vorsitzende der Latinx-Gruppe Twitter Alas.</p>
+			<p><a href="https://www.lanacion.com.ar/tecnologia/los-20-latinos-mas-influyentes-en-tecnologia-de-2017-segun-cnet-nid2066888/" title="spanischer Artikel" target="_blank">Los 20 Latinos Más Influyentes en Tecnología</a> (<a href="https://www-lanacion-com-ar.translate.goog/tecnologia/los-20-latinos-mas-influyentes-en-tecnologia-de-2017-segun-cnet-nid2066888/?_x_tr_sl=es&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp" title="englische Übersetzung" target="_blank">englische Übersetzung</a>)</p>
+		</div>
+
+		<h3>Einen zweiten Sprite programmieren</h3>
+		<div class="forYouToDo">
+			<ol start="5">
+				<li>Klicke auf <img src="/bjc-r/img/1-introduction/add-a-new-turtle-sprite.png" alt="Sprite hinzufügen" title="Sprite hinzufügen" />, um einen zweiten Sprite zu erstellen.
+					<div class="endnote">Der neue Sprite heißt <strong>Sprite(2)</strong> und hat noch keine Skripte. Unter der Bühne siehst du die Sprite-Liste.</div>
+				</li>
+				<li>Benenne <strong>Sprite</strong> in <strong>Leader</strong> und <strong>Sprite(2)</strong> in <strong>Follower</strong> um.
+					<div class="narrower">
+						<h4 class="box-head">Sprite umbenennen</h4>
+						<p>Klicke über dem Skriptbereich in das graue Namensfeld und tippe den neuen Namen ein.<br />
+							<img class="indent" src="/bjc-r/img/1-introduction/change-sprite-name.jpg" alt="Namensfeld über dem Skriptbereich" title="Namensfeld über dem Skriptbereich" />
+						</p>
+					</div>
+				</li>
+				<li>
+					<div class="sidenoteBig">Während ein Skript läuft, erscheint ein farbiger Rahmen.</div>
+					Wähle den Sprite <strong>Follower</strong> aus. Baue ein Skript, das nach Klick auf die grüne Flagge <code>forever</code> auf <strong>Leader</strong> zeigt.<br />
+					<img class="indent" src="/bjc-r/img/blocks/point-towards.png" alt="point towards []" title="point towards []" />
+				</li>
+				<li>
+					<div class="sidenoteBig">Beide Skripte starten mit <img class="inline" src="/bjc-r/img/blocks/when-green-flag-clicked-full-size.png" alt="when green flag clicked" title="when green flag clicked" />, daher laufen sie gleichzeitig.</div>
+					Klicke auf <img src="/bjc-r/img/1-introduction/green-flag_button.png" alt="grüne Flagge" title="grüne Flagge"/>:
+					<ul>
+						<li><strong>Leader</strong> folgt deiner Maus.</li>
+						<li><strong>Follower</strong> bleibt stehen, richtet sich aber stets auf <strong>Leader</strong> aus.</li>
+					</ul>
+				<img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Speichern" title="Speichern" />
+                </li>
+			</ol>
+		</div>
+  </body>
+</html>

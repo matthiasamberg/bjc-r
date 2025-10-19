@@ -1,0 +1,25 @@
+title: Einheit 7: Fraktale und Rekursion
+
+{
+
+	raw-html:<p>Nach der Create Task hast du den gesamten AP-CSP-Lehrplan behandelt. Die Einheiten 6&ndash;8 enthalten weitere, f&uuml;r die Informatik wichtige Themen, die teilweise erst nach der AP-Pr&uuml;fung behandelt werden.</p>
+
+heading: Labor 1: B&auml;ume
+ 	raw-html: <img class="imageRight noshadow" src="/bjc-r/img/7-recursion/recursive-tree.gif" alt="Fraktalbaum" title="Fraktalbaum" /><div class="todo">Brian m&ouml;chte dieses Labor in &bdquo;B&auml;ume&ldquo; umbenennen, weil der Wald nur noch im letzten TIF auf Seite&nbsp;5 erscheint, das jetzt ein optionales Projekt wird. --MF, 3.4.19</div>
+	resource: Rekursiver Baum [/bjc-r/cur/programming/7-recursion/1-trees/1-recursive-tree.de.html]
+	resource: Der Basisfall [/bjc-r/cur/programming/7-recursion/1-trees/2-base-case.de.html]
+    quiz: Selbsttest: Eingaben f&uuml;r <code>Baum</code> [/bjc-r/cur/programming/7-recursion/1-trees/3-tree-input-self-check.de.html]
+    quiz: Selbsttest: Varianten von <code>Baum</code>  [/bjc-r/cur/programming/7-recursion/1-trees/4-tree-variations-self-check.de.html]
+    resource: Variiere deinen Baum [/bjc-r/cur/programming/7-recursion/1-trees/5-vary-your-tree.de.html]
+
+heading: Labor 2: Rekursionsprojekte
+	resource: Dreiecksfraktal [/bjc-r/cur/programming/7-recursion/2-projects/1-triangle-fractal.de.html]
+    resource: Koch-Schneeflocke [/bjc-r/cur/programming/7-recursion/2-projects/2-snowflake.de.html]
+	//raw-html: <img class="imageRight noshadow" src="/bjc-r/img/7-recursion/kochflake.gif" alt="Koch-Schneeflocke" title="Koch-Schneeflocke" />
+    resource: L&eacute;vy-C-Kurvenfraktal [/bjc-r/cur/programming/7-recursion/2-projects/3-c-curve.de.html]
+	resource: Rekursiver Mondrian [/bjc-r/cur/programming/7-recursion/2-projects/4-mondrian.de.html]
+
+heading: Wiederholung zu Einheit 7
+	resource: Wortschatz [/bjc-r/cur/programming/summaries/vocab7.de.html]
+	resource: Selbsttest-Fragen [/bjc-r/cur/programming/summaries/assessment-data7.de.html]
+}

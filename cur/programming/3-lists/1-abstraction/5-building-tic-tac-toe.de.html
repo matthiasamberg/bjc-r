@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <title>Einheit 3, Labor 1: Mit Komplexit&auml;t umgehen, Seite 5</title>
+    </head>
+
+    <body>
+		<h2>Ein Tic-Tac-Toe-Spielfeld bauen</h2>
+        <div class="learn">
+            <p><strong>In diesem Projekt</strong> entwickelst du ein Programm, das Tic-Tac-Toe genauso gut spielt wie du.</p>
+            <p><strong>Auf dieser ersten Seite</strong> nutzt du <em>Klone</em>, um das Spielfeld anzuzeigen und zwei Menschen Z&uuml;ge eingeben zu lassen.</p>
+            <img class="indent" src="/bjc-r/img/3-lists/TTT1_img/Three States of TTT.png" width="550"  alt="Tic-Tac-Toe in drei Zust&auml;nden: l&auml;uft, gewonnen, unentschieden" title="Tic-Tac-Toe in drei Zust&auml;nden: l&auml;uft, gewonnen, unentschieden"/>
+        </div>
+		<p>Das Projekt erstreckt sich &uuml;ber mehrere Einheiten, weil es viel zu tun gibt und manche Schritte Techniken erfordern, die du erst noch lernst. Auf <em>dieser</em> Seite lernst du das <em>Klonen</em> eines Sprites (eine Art Kopieren, nur besser). Sp&auml;ter bringst du dem Spiel bei, Gewinne und Unentschieden zu erkennen und dem Computer selbst mitzuspielen.</p>
+		<p>Eine Herangehensweise ist, <em>mehrere Sprites</em> zu nutzen: Jedes Feld auf dem Brett ist ein eigenes Sprite. Jedes Sprite wei&szlig;, an welcher Position es liegt und bewegt sich nach dem Platzieren nicht mehr. Die spielende Person klickt eines der neun Felder; dieses Sprite wechselt dann sein Kost&uuml;m.</p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li><a class="run" href="/bjc-r/prog/3-lists/U3L1-TicTacToe.xml" target="_blank"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Projektvorlage laden" title="Projektvorlage laden" /></a></li>
+                <li>
+                	Das erste Sprite ist vorbereitet. Es hat drei Kost&uuml;me: Leer, X und O. Klicke ein paar Mal auf <img class="inline" src="/bjc-r/img/blocks/next-costume.png" alt="next costume" title="next costume" />, um alle zu sehen.<br />
+                    <img class="indent noshadow" src="/bjc-r/img/3-lists/TTT1_img/Costumes.png" height="100" alt="Kost&uuml;me eines Feldes: leer, X, O" title="Kost&uuml;me eines Feldes: leer, X, O" />
+				</li>
+            </ol>
+        </div>
+
+        <p>Du verwendest <em>Klone</em>, um das 3×3-Brett zu erzeugen.<a name="clones" class="anchor">&nbsp;</a></p>
+        <div class="vocabFullWidth">: <strong>Klon</strong>
+            <p>Ein <strong>Klon</strong> ist eine Kopie eines Sprites, die Informationen mit dem Elternsprite teilt. Klone besitzen dieselben Skripte wie das Original; &Auml;nderst du das Originalskript, &auml;ndern sich die Klone mit. Anpassungen am Klon (Position, Kost&uuml;m ...) werden jedoch nicht ans Original zur&uuml;ckgegeben.</p>
+        </div>
+        <p>
+            Klone starten mit Position, Kost&uuml;m und Skripten ihres Elternsprites. Programmatisch erzeugte Klone …
+			<ul>
+                <li><em>erscheinen nicht</em> im Sprite-Korral.</li>
+                <li>sind <em>tempor&auml;r</em>: Gr&uuml;ne Flagge oder Stopp-Button l&ouml;schen sie.</li>
+            </ul>
+        </p>
+		<p>(Es gibt auch permanente Klone, die hier aber nicht eingesetzt werden.)</p>
+		<div class="endnote">
+			In diesem Projekt brauchst du <em>neun</em> Klone, eins pro Feld. Ein Ger&uuml;st k&ouml;nnte so aussehen:<br />
+			<img class="indent" src="/bjc-r/img/2-complexity/9-copies.png" alt="repeat (9){create clone of (myself)}" title="repeat (9){create clone of (myself)}"><br />
+			Der eigentliche Code ist etwas umfangreicher, aber dies ist der Kern. Du erstellst neun Klone und blendest das Elternsprite aus. Dann kannst du die Felder mit Bl&ouml;cken wie<br />
+			<img class="indent" src="/bjc-r/img/blocks/when-i-start-as-clone.png" alt="When I start as a clone" title="When I start as a clone" /> steuern.
+		</div>
+
+        <div class="forYouToDo">
+			<ol start="3">
+	            <li>
+                    Lies zusammen mit deiner Partnerin deinem Partner dieses Demonstrationsskript, bevor du etwas anklickst. Besprecht, was passieren wird, wenn ihr das Sprite anklickt.<br />
+                    <div class="sidenote">Dieses Skript dient nur zum Lernen; es geh&ouml;rt nicht zur Endversion.</div>
+                    <img class="indent" src="/bjc-r/img/3-lists/TTT1_img/WhenIamClicked.png" alt="when I am clicked { create clone of myself; say I'm the parent; glide ... }" title="when I am clicked { create clone of myself; say I'm the parent; glide ... }"><br />
+                </li>
+                <li>
+                	Klicke danach das Sprite auf der B&uuml;hne an und vergleicht die Beobachtung mit eurer Vorhersage. Wiederholt das, beobachtet, wie sich der Elternsprite und jeder Klon verhalten.
+                </li>
+                <li>Setze den Sprite zur&uuml;ck, indem du seine Position und Ausrichtung auf die Startwerte einstellst.</li>
+                <li>
+                    Erweitere das Skript so, dass du neun Klone erzeugst, sie zu den neun Positionen verschiebst und dem Elternsprite ein leeres Kost&uuml;m gibst (damit nur die Klone sichtbar sind).
+                </li>
+                <li>Wenn das funktioniert, l&ouml;sche das Demonstrationsskript – der eigentliche Aufbau des Bretts beginnt jetzt.</li>
+                <li>
+                    Schreibe ein Skript, das ein leeres Brett zeichnet und bei einem Klick auf ein Feld abwechselnd X und O setzt. Nutze daf&uuml;r Broadcasts oder Variablen, um zwischen den Spielenden zu wechseln.
+                </li>
+                <li><img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" /></li>
+            </ol>
+		</div>
+
+    </body>
+</html>

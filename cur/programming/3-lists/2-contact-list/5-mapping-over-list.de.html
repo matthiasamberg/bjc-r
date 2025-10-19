@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 3, Labor 2: Kontaktliste, Seite 5</title>
+	</head>
+
+    <body>
+        <h2>Jedes Listenelement transformieren</h2>
+        <div class="learn">
+        	<p><strong>Auf dieser Seite</strong> verwendest du den Block <code>map</code>, um einen Block <code>initials from name</code> zu bauen und damit die Initialen aller Kontakte zu ermitteln.</p>
+        </div>
+
+        <div class="dialogue">
+            <div class="stagedir">
+                Morgan, Jasmine und Omar bauen <code>initials from name</code>, der einen Kontakt entgegennimmt und dessen Initialen liefert.<br />
+                <img class="indent" src="/bjc-r/img/3-lists/initials-reporting.png" alt="initialen aus Kontakt" title="initialen aus Kontakt" />
+            </div>
+            <div>
+                <span>Jasmine:</span> Ich nutze <img class="inline" src="/bjc-r/img/blocks/split-by.png" alt="split" title="split" />, um den vollen Namen in eine Namensliste aufzuteilen, und verbinde dann die ersten Buchstaben:<br />
+                <img class="indent" src="/bjc-r/img/3-lists/initials-definition.png" alt="Definition von initials" title="Definition von initials" />
+            </div>
+            <div class="endnote">
+                <a href="#hint-splitting" data-toggle="collapse" title="Unterschied: nach Leerzeichen vs. nach Wörtern?">Unterschied: nach Leerzeichen vs. nach Wörtern?</a>
+                <div id="hint-splitting" class="collapse">
+                    <p>Probiere es aus! (Braune Punkte markieren Leerzeichen.)<br />
+                        <img class="indent" src="/bjc-r/img/3-lists/split-space.png" alt="split nach Leerzeichen" title="split nach Leerzeichen">
+                        <img class="indent" src="/bjc-r/img/3-lists/split-word.png" alt="split nach Wort" title="split nach Wort">
+                    </p>
+                    <p>Mal wird auf einzelne Zeichen geschaut, mal auf W&ouml;rter. Snap<em>!</em> erlaubt dir, auf h&ouml;herer Abstraktionsebene (W&ouml;rter) zu denken.</p>
+                </div>
+            </div>
+            <div><span>Morgan:</span> Aber bei drei Namen wie „Martin Luther King“ erh&auml;lt man nur „ML“.</div>
+            <div><span>Omar:</span> Stimmt, weil wir nur die ersten beiden Elemente verwenden. Wir m&uuml;ssen <code>letter (1) of (item (3) ...)</code> hinzuf&uuml;gen.</div>
+            <div><span>Jasmine:</span> Und was, wenn jemand f&uuml;nf Namen hat?</div>
+            <div><span>Omar:</span> Dann brauchen wir den ersten Buchstaben <em>jedes</em> Namens. Das schreit nach einer <em>Higher-Order-Funktion</em>.</div>
+            <div class="vocabFullWidth">: <strong>Higher-Order-Funktion</strong>
+                <p>Eine <strong>Higher-Order-Funktion</strong> nimmt eine Funktion als Eingabe oder liefert eine Funktion als Ausgabe.</p>
+            </div>
+        </div>
+
+        <div class="forYouToDo">
+			<ol>
+                <li>
+                    Probiere folgende <code>map</code>-Beispiele:<br />
+                    <img class="indent" src="/bjc-r/img/3-lists/map-join-s.png" alt="map join s" title="map join s" /><br />
+                    <img class="indent" src="/bjc-r/img/3-lists/map-3x.png" alt="map 3*" title="map 3*" />
+                </li>
+                <li>
+                    Definiere <code>initials from name</code>, sodass er jeden Namen korrekt verarbeitet (egal wie viele Bestandteile). Nutze dazu <code>map</code> &#8594; <code>join</code>.
+                </li>
+                <li>
+                    Wende <code>map</code> mit <code>initials from name</code> &uuml;ber deiner Kontaktliste an, um alle Initialen zu erhalten.
+                </li>
+                <li><img class="imageRight" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" /></li>
+            </ol>
+        </div>
+
+    </body>
+</html>

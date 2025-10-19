@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+
+        <script type="text/javascript">window.onload = function() {Gifffer();};</script>	    <title>Einheit 2, Labor 1: Spiele, Seite 3</title>
+	</head>
+
+	<body>
+    	<h2>Dein Zahlratespiel debuggen und erweitern</h2>
+
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> &uuml;bst du das Debuggen und sorgst daf&uuml;r, dass der Computer den Spielenden Hinweise gibt.</p>
+        </div>
+
+        <div class="forYouToDo" id="first">
+			<ol>
+				<li>
+                    <a class="run" href="/bjc-r/prog/2-complexity/U2L1-Buggy-Secret-Number.xml" target="_blank"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Klicke hier, um ein Startprojekt zu laden, und speichere es dann." title="Klicke hier, um ein Startprojekt zu laden, und speichere es dann."></a> In dieser Datei findest du eine Definition f&uuml;r den Block <code>number guessing game</code>. Darin steckt ein <strong>Bug</strong>&mdash;ein Fehler im Code, durch den sich das Programm anders verh&auml;lt als erwartet. Wenn du dieses Programm wieder und wieder spielst, funktioniert es meist, aber <em>manchmal</em> (nicht oft) gratuliert es dir, <em>bevor du &uuml;berhaupt r&auml;tselst</em>.
+                    <p><img class="inline" src="/bjc-r/img/icons/talk-with-another-pair-mini.png" alt="Sprich mit einem anderen Team" title="Sprich mit einem anderen Team" /> Analysiere den Code, erkl&auml;re, wie das passieren kann, behebe den Bug und speichere das Projekt.</p>
+                
+                    <div class="endnote">
+                        <p>Lass das Programm eine Zufallszahl nur zwischen 1 und 3 w&auml;hlen, damit der Fehler h&auml;ufiger auftritt.</p>
+                        <p>
+                            Wenn du weitere Skriptvariablen hinzuf&uuml;gen willst, benutze das Dreieck, das nach rechts zeigt. (Das linke Dreieck entfernt Variablen.)<br />
+                            <img class="indent" data-gifffer="/bjc-r/img/2-complexity/script-variables-adding.gif" alt="Dreiecke anklicken, um Skriptvariablen hinzuzuf&uuml;gen oder zu entfernen" title="Skriptvariablen per Dreieck hinzuf&uuml;gen" height="70"/>
+                        </p>
+                    </div>
+                </li>
+            	<li>&Ouml;ffne jetzt dein Projekt U2L1-NumberGuessing wieder. Stell sicher, dass dein Code denselben Bug nicht hat.</li>
+            </ol>
+		</div>
+
+		<div class="atworkFullWidth">
+			<img class="noshadow imageRight" height="200px" src="/bjc-r/img/atwork/Jerry_Lawson.png" alt="Foto von Jerry Lawson" title="Foto von Jerry Lawson" />
+			<p>Jerry Lawson (1940&ndash;2011) war ein amerikanischer Elektroingenieur und Spielepionier, der als &bdquo;Vater der Videospielkassette&ldquo; gilt. Geboren in New York City, studierte Jerry am Queens College und am City College of New York. Als leitender Hardwareingenieur bei Fairchild Semiconductor f&uuml;hrte er die Entwicklung der Channel-F-Konsole an und erfand die Technologie der Videospielkassette, die durch den Atari&nbsp;2600 ber&uuml;hmt wurde.</p>
+			<p><a href="https://www.cnbc.com/2021/10/30/jerry-lawson-black-silicon-valley-pioneer-changed-video-games-forever.html" title="Artikel: One of the most important Silicon Valley pioneers you've never heard of" target="_blank">Artikel: One of the most important Silicon Valley pioneers you've never heard of</a></p>
+		</div>
+
+        <h3>Das Programm mit genaueren R&uuml;ckmeldungen erweitern</h3>
+        <div class="forYouToDo">
+            <ol start="3">
+                <li>Verwende weitere Bedingungsbl&ouml;cke und Pr&auml;dikate, damit der Computer der spielenden Person sagt, ob eine Vermutung zu gro&szlig; oder zu klein ist: &bdquo;Das ist zu gro&szlig;. Versuch es noch einmal.&ldquo; <br /><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" /> Wo im Code sollen diese Bedingungen stehen?</li>
+                <li>
+                    <strong>Teste und debugge.</strong> Spiele dein Spiel so oft, bis du sicher bist, dass es wie gew&uuml;nscht l&auml;uft. Es soll:
+                    <ul>
+                        <li>die spielende Person nach der geheimen Zahl fragen;</li>
+                        <li>sagen, ob eine falsche Vermutung zu gro&szlig; oder zu klein ist, und dann erneut fragen;</li>
+                        <li>der spielenden Person gratulieren, wenn sie richtig liegt.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+		<p>Die Skriptvariable <var>secret number</var> existiert nur, solange das Skript l&auml;uft. Wenn das Spiel erneut gestartet wird, erstellt das Programm eine neue Variable <var>secret number</var> und weist ihr eine neue Zufallszahl zu.</p>
+		<img class="imageRight" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+		<p>In einer sp&auml;teren Einheit bringst du dem Computer bei, eine geheime Zahl zu erraten, die <em>du</em> ausw&auml;hlst.</p>
+
+        <div class="ifTime">
+			<ol start="5">
+				<li>Im Moment w&auml;hlt das Skript immer eine Zahl zwischen 1 und 10. Bitte die spielende Person zu Beginn des Spiels um eine maximale Zahl und lass dein Programm einen Wert zwischen 1 und <var>maximum</var> ausw&auml;hlen.</li>
+				<li>Verwende eine weitere Skriptvariable, um mitzuz&auml;hlen, wie viele Vermutungen abgegeben wurden, bevor die richtige Zahl gefunden wurde. Sobald die richtige Zahl erraten ist, soll das Programm sagen, wie viele Versuche es gebraucht hat.</li>
+            </ol>
+        </div>
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>Finde eine M&ouml;glichkeit, die Ausgaben sprachlich zu variieren, damit dein Programm in derselben Situation nicht immer genau dieselben Worte wiederholt. Wenn eine spielende Person beispielsweise zweimal hintereinander zu hoch r&auml;t, k&ouml;nnte das Programm sagen: &bdquo;Das ist immer noch zu gro&szlig;. Versuch eine andere Zahl.&ldquo;</li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

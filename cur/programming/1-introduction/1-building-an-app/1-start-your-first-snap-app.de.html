@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1, Labor 1: Click-Alonzo-Spiel, Seite 1</title>
+	</head>
+
+	<body>
+        <h2>Ein Spiel programmieren</h2>
+        <div class="learn">
+    		<p><strong>In diesem <em>Labor</em></strong> programmierst du eine App, die du mit anderen teilen und auf deinem Handy spielen kannst.</p>
+			<p><strong>Auf dieser Seite</strong> baust du ein einfaches Spiel, in dem die spielende Person versucht, eine herumh&uuml;pfende Figur anzuklicken.</p>
+        </div>
+
+        <div class="takeNote">
+            <img class="inline" src="/bjc-r/img/icons/work-with-a-partner.png" alt="Arbeite mit einer Partnerin oder einem Partner" title="Arbeite mit einer Partnerin oder einem Partner" />
+            Wenn du dies im Unterricht machst, solltest du mit einer Partnerin oder einem Partner zusammenarbeiten. Das gilt nicht nur f&uuml;r Sch&uuml;lerinnen und Sch&uuml;ler; auch professionelle Programmierende arbeiten zu zweit.
+            Wenn jede Person an einem eigenen Computer sitzt, sollte eine Person Snap<em>!</em> offen haben und die andere diese Lab-Seite. Wenn ihr euch einen Computer teilt, verwendet zwei Browser-Tabs.
+        </div>
+
+        <h3>Eine Figur bewegen</h3>
+        <div class="forYouToDo">
+            <ol>
+                <li>
+					<a href="/bjc-r/prog/1-introduction/U1L1-ClickAlonzo.xml" class="run"><img class="inline" src="/bjc-r/img/icons/load.png" alt="Hier klicken, um ein Startprojekt zu laden." title="Hier klicken, um ein Startprojekt zu laden."></a> 
+					Um Snap<em>!</em> direkt zu &ouml;ffnen, kannst du jederzeit <a href="http://snap.berkeley.edu/run" title="Snap! Build Your Own Blocks" target="_blank"><strong>http://snap.berkeley.edu/run</strong></a> aufrufen.
+                </li>
+            </ol>
+        </div>
+        <div class="pseudop" style="display: flex; align-items:center;">
+            <img class="imageLeft" src="/bjc-r/img/1-introduction/alonzo.png" alt="Figur Alonzo" title="Figur Alonzo" >
+            <span>
+                Das ist <em>Alonzo</em>, das Maskottchen unserer Programmiersprache <em>Snap!</em>. Du solltest ihn auf der <em>B&uuml;hne</em> sehen, dem wei&szlig;en Bereich oben rechts im Snap<em>!</em>-Fenster.
+            </span>
+        </div>
+        <p style="clear:both;">
+            <img class="indent" src="/bjc-r/img/1-introduction/alonzo-on-stage.png" alt="Abbildung des Snap!-Fensters mit weißem Rechteck rechts (beschriftet als &sbquo;Stage&lsquo;) und gelber Figur auf der B&uuml;hne (beschriftet als &sbquo;Sprite namens Alonzo&lsquo;)" title="Snap!-Fenster mit B&uuml;hne und Figur Alonzo" />
+        </p>
+        <p>Du wirst ein Spiel programmieren, bei dem das Ziel ist, Alonzo anzuklicken, w&auml;hrend er sich bewegt.</p>
+        <div class="forYouToDo">
+            <ol start="2">
+                <li>
+                    Mach zun&auml;chst, dass Alonzo an eine andere Stelle auf der B&uuml;hne springt, wenn er angeklickt wird. Ziehe diese beiden Bl&ouml;cke in den Skriptbereich (die Mitte des Fensters), stecke sie zusammen und achte darauf, dass die richtigen Optionen (&bdquo;clicked&ldquo; und &bdquo;random position&ldquo;) ausgew&auml;hlt sind.<br />
+                    <div class="sidenoteBig">
+                        <img class="imageRight" src="/bjc-r/img/1-introduction/motion-palette-categories.jpg" alt="Paletten-Kategorien: Motion, Looks, Sound, Pen, Control, Sensing, Operators und Variables" title="Paletten-Kategorien in Snap!" />
+                        <p>Bl&ouml;cke findest du in <em>Paletten</em> mit der passenden Farbe. Ziehe einen Block unter einen anderen, um sie zusammenzuschnappen.</p>
+                    </div>
+                    <img class="indent" src="/bjc-r/img/1-introduction/when-clicked-jump.png" alt="when I am clicked, go to [random position]">
+                    <img src="/bjc-r/img/1-introduction/go-to-menu-open.png" alt="go to ()-Block mit ge&ouml;ffnetem Men&uuml;; Optionen: 'random position', 'mouse pointer', 'center'. Der Mauszeiger zeigt auf 'random position'." title="Men&uuml; des go to()-Blocks" />
+                    <div class="ap-standard">CRD-2.B.1</div>
+                    <p>Das ist ein Computerprogramm, auch <em>Software</em> genannt. Es ist noch sehr kurz, aber schon bald wird es spannender.</p>
+                </li>
+                <li>Teste dein Programm: Klicke mehrmals auf den Alonzo-Sprite auf der B&uuml;hne. Wenn dein Programm funktioniert, bewegt sich Alonzo bei jedem Klick an eine zuf&auml;llige Position auf der B&uuml;hne.
+                    <div class="endnote">Wenn dein Programm nicht funktioniert, sieh dir das Bild des Codes noch einmal an und &uuml;berpr&uuml;fe, ob alles genau &uuml;bereinstimmt.
+                    <ul>
+                        <li>Stelle sicher, dass die beiden Bl&ouml;cke miteinander verbunden sind, indem du den Block <code>when I am clicked</code> bewegst und pr&uuml;fst, ob der <code>go to</code>-Block mitwandert.</li>
+                        <li>Stelle sicher, dass der erste Block <code>when I am (clicked)</code> und der zweite Block <code>go to (random position)</code> lautet.</li>
+                    </ul>
+                    </div>
+                </li>
+            </ol>
+        </div>
+		
+        
+        <h3>Das Spiel anspruchsvoll machen</h3>
+        <p>
+            Das Spiel macht keinen gro&szlig;en Spa&szlig;, wenn Alonzo einfach nur darauf wartet, angeklickt zu werden. Er sollte auch von selbst weiter herumspringen, nachdem du ihn erwischt hast. Damit Alonzo sich dauernd bewegt, brauchst du einen Block, der &bdquo;mach das <code>forever</code>&ldquo; sagt. Und genau diesen Block gibt es:<br />
+			<img class="indent" src="/bjc-r/img/1-introduction/forever.png" alt="forever" title="forever" />
+        </p>
+        <div class="forYouToDo">
+            <ol start="4">
+                <li>
+                    <div class="sidenoteBig">Eine Gruppe zusammengeklickter Bl&ouml;cke nennt man ein <em>Skript</em>.</div>
+                	H&auml;nge diesen Block unter dein Alonzo-Skript:<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/forever-jump.png" alt="forever {
+    go to (random position)
+}" title="forever {
+    go to (random position)
+}" />
+                    <div class="narrower">Die Abfolge der Bl&ouml;cke <em>im Inneren</em> des <code>forever</code>-Blocks wiederholt sich, bis du <strong>auf das rote Stoppschild klickst</strong>, <img src="/bjc-r/img/1-introduction/stop_button.png" alt="roter Stopp-Button" title="roter Stopp-Button"/>, oder das Skript auf eine andere Weise stoppst.</div>
+                    <div class="endnote">
+                        <a href="#hint-snapping" data-toggle="collapse" title="Klicke hier f&uuml;r eine Animation, die zeigt, wie diese beiden Bl&ouml;cke zusammenklicken.">Klicke hier f&uuml;r eine Animation, wie du diese beiden Bl&ouml;cke zusammensteckst.</a>
+                        <div id="hint-snapping" class="collapse">
+                            <img class="indent" data-gifffer="/bjc-r/img/1-introduction/snap-blocks.gif" alt="Animation: Der Block go to (position) wird in einen forever-Block gesteckt" title="Animation: go to()-Block in forever-Block einf&uuml;gen" />
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    Alonzo bewegt sich zu schnell. Verwende den Block <img src="/bjc-r/img/blocks/wait-1-secs.png" alt="wait 1 secs" title="wait 1 secs" />, um ihn zu verlangsamen. Probiere dein Programm aus und erh&ouml;he oder verringere die Wartezeit, wie es dir gef&auml;llt.
+                    <div class="endnote">
+                        Es ist wichtig, wo der <code>wait</code>-Block in deinem Skript steht. Soll das Skript nur einmal warten oder jedes Mal, wenn Alonzo sich bewegt?
+                    </div>
+                </li>
+                <li>Bevor es weitergeht, zeigt dir die n&auml;chste Seite, wie du ein Snap<em>!</em>-Projekt speicherst, damit du deine Arbeit nicht verlierst. Mit dem rechten Pfeil (oben rechts oder unten rechts auf dieser Seite) gelangst du zur Fortsetzung.</li>
+            </ol>
+        </div>
+
+        <div class="takeNote">
+            <p>Orange Boxen enthalten Ideen, an die du dich auch in drei Jahren noch erinnern solltest. </p>
+            <img class="indent" src="/bjc-r/img/blocks/when-i-am-clicked.png" alt="when i am (clicked)" title="when i am (clicked)" />
+            <img class="indent" src="/bjc-r/img/blocks/when-green-flag-clicked-full-size.png" alt="when 'green flag' clicked" title="when 'green flag' clicked" />
+            <img class="indent" src="/bjc-r/img/blocks/when-space-key-pressed.png" alt="when (space) key pressed" title="when (space) key pressed" />
+            <div class="ap-standard">CRD-2.C.2, CRD-2.C.3, CRD-2.C.5</div>
+            <p>Solche Bl&ouml;cke k&ouml;nnen ein <strong>Ereignis</strong> erkennen, etwa einen Klick auf den Sprite, das Dr&uuml;cken einer Taste oder das Anklicken des gr&uuml;nen Flaggen-Buttons (<img src="/bjc-r/img/1-introduction/green-flag_button.png" alt="gr&uuml;ner Flaggen-Button" title="gr&uuml;ner Flaggen-Button"/>). Sie starten das Skript, wenn dieses Ereignis eintritt. Weil diese Bl&ouml;cke nur oben auf einem Skript sitzen k&ouml;nnen (um es zu starten), nennen Snap<em>!</em>-Programmierende sie &bdquo;Hutbl&ouml;cke&ldquo;. Ein Programm mithilfe von Ereignissen zu steuern, hei&szlig;t <em><strong>ereignisgesteuerte Programmierung</strong></em>.</p>
+	        <p>Nicht jedes Skript braucht einen Hutblock; du kannst ein Skript auch starten, indem du direkt darauf klickst.</p>
+        </div>
+
+    </body>
+</html>

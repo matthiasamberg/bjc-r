@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+	    <title>Einheit 2, Labor 1: Spiele, Seite 5</title>
+	</head>
+
+    <body>
+        <h2>Ein Kost&uuml;m ausw&auml;hlen</h2>
+        <div class="learn">
+            <p>In Click Alonzo wechselte das Spiel zwischen zwei Alonzo-Kost&uuml;men hin und her, um den Spielenden zu zeigen, ob ein Klick erfolgreich war. <strong>Auf dieser Seite</strong> erm&ouml;glichst du den Nutzerinnen und Nutzern deines Click-Alonzo-Programms, das Kost&uuml;m des Sprites selbst auszuw&auml;hlen.</p>
+        </div>
+
+        <div class="forYouToDo" id="first">
+			<ol>
+                <li>
+                    <div class="sidenote">Wie du Kost&uuml;me hinzuf&uuml;gst, hast du auf <a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/3-customizing.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 1, Labor 2, Seite 3: Anpassen und Debuggen">Einheit&nbsp;1, Labor&nbsp;2, Seite&nbsp;3: Anpassen und Debuggen</a> gelernt.</div>
+                Falls es nicht schon ge&ouml;ffnet ist, lade dein Projekt U2L1-ClickAlonzo.</li>
+				<li>
+                    Richte alles ein, was du f&uuml;r diese neue Version brauchst:
+                    <ol>
+                        <li>F&uuml;ge mehrere Kost&uuml;me hinzu.</li>
+                        <li>L&ouml;sche das Kost&uuml;m &bdquo;Alonzo r&uuml;ckw&auml;rts&ldquo;.</li>
+                        <li>Entferne den Code im Programm, der beim Anklicken des Sprites das Kost&uuml;m wechselt.</li>
+                    </ol>
+                </li>
+				<li>Experimentiere einige Male mit dem Block <img class="inline nopadtb" src="/bjc-r/img/blocks/switch-to-costume.png" alt="switch to costume []" title="switch to costume []" /> und unterschiedlichen Eingaben, um das Kost&uuml;m des Sprites manuell zu wechseln.</li>
+			</ol>
+		</div>
+
+		<div class="takeNote">Wenn <em>du</em> dein Spiel spielst und das Kost&uuml;m &auml;ndern willst, kannst du im Pulldown-Men&uuml; des Blocks <code>switch to costume</code> einfach den gew&uuml;nschten Namen ausw&auml;hlen. Stell dir aber vor, du gibst das Spiel einem Freund, der nicht programmieren kann. Du willst die Kost&uuml;mauswahl <em>im Spiel programmieren</em>, damit dein Freund nichts &uuml;ber Bl&ouml;cke wissen muss.</div>
+
+        <p>
+            Wenn du <code>item of</code> bisher verwendet hast (etwa in den Bl&ouml;cken <code>who</code> und <code>does what</code>), hast du zuf&auml;llige Elemente der Liste ausgew&auml;hlt. Du kannst aber auch ein bestimmtes Element ausw&auml;hlen, indem du seine <em>Position</em> angibst.
+        </p>
+        <div class="vocabFullWidth">: <strong>Index</strong>
+            <p>
+                Die Positionsnummer hei&szlig;t <strong>Index</strong> eines Elements in der Liste.  <br />
+                <img class="indent" src="/bjc-r/img/3-lists/item-2-of-list-reporting.png" alt="item (2) of (list (apple) (cantaloupe) (banana)) reporting 'cantaloupe'" title="item (2) of (list (apple) (cantaloupe) (banana)) reporting 'cantaloupe'" /><br />
+				In dieser Liste ist 1 der Index f&uuml;r &bdquo;apple&ldquo;, 2 f&uuml;r &bdquo;cantaloupe&ldquo; und so weiter.
+            </p>
+            <div class="ap-standard">AAP-1.D.8</div>
+            <p>In Snap<em>!</em> und auf der AP-Pr&uuml;fung ist der Index immer eine ganze Zahl (1, 2, 3, 4, ...). Eine Zahl kleiner als 1 oder gr&ouml;&szlig;er als die L&auml;nge der Liste zu verwenden, f&uuml;hrt zu einem Fehler.</p>
+        </div>
+
+        <p>
+            <!--<img class="imageRight" src="/bjc-r/img/2-complexity/my-menu.png" alt="my (neighbors) with drop-down menu open showing: neighbors, self, other sprites, clones, parts, anchor, stage, children, parent, name, costumes, sounds, dangling?, draggable?, rotation x, rotation y, center x, center y" title="my (neighbors) with drop-down menu open showing: neighbors, self, other sprites, clones, parts, anchor, stage, children, parent, name, costumes, sounds, dangling?, draggable?, rotation x, rotation y, center x, center y" />-->
+            Listen k&ouml;nnen alles enthalten: Buchstaben oder W&ouml;rter, Kost&uuml;me, andere Listen oder sogar Bl&ouml;cke. Mit dem Block <code>my</code> kannst du dir eine Liste der Kost&uuml;me deines Sprites ausgeben lassen.<br />
+            <div class="sidenote">Der Block <code>my</code> sieht zun&auml;chst aus wie <img class="inline" src="/bjc-r/img/blocks/my-neighbors.png" alt="my (neighbors)" title="my (neighbors)" />, bis du im Men&uuml; &bdquo;costumes&ldquo; ausw&auml;hlst.</div>
+            <img class="indent" src="/bjc-r/img/2-complexity/my-costumes-reporting.png" alt="my (costumes) gibt eine Liste aus: ein M&auml;dchen mit Afro, ein Pinguin, ein Einhorn" title="my (costumes) gibt eine Kost&uuml;mliste aus" />
+        </p>
+        <p>Mit <code>item of</code> zusammen mit <code>my</code> kannst du ein Kost&uuml;m an einer bestimmten Position in der Liste ausw&auml;hlen.</p>
+
+        <div class="endnote">
+            <div class="python">
+				<a href="#hint-python-2-1-5-1" data-toggle="collapse" title="Wie w&uuml;rde das in Python aussehen?">Wie w&uuml;rde das in Python aussehen?</a>
+				<div id="hint-python-2-1-5-1" class="collapse">
+					<pre><code>
+costumes[1]
+len(costumes)
+					</code></pre>
+				</div>
+			</div>
+			Manche Bl&ouml;cke (wie <code>item of</code>) haben Eingabefelder, die eine Liste erwarten. Das erkennst du daran, dass das Eingabefeld wie eine Liste aussieht:<br />
+            <img class="indent" src="/bjc-r/img/blocks/item.png" alt="item (1) of 'list input slot'" title="item (1) of 'list input slot'" />
+            <img class="indent" src="/bjc-r/img/2-complexity/listpic.png" alt="Abbildung einer Liste mit zwei Elementen">
+			
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="4">
+                <li>
+                    <div class="ap-standard">AAP-2.N part a</div>
+                    &Uuml;be, den <em>Index</em> der Kost&uuml;me in deiner Liste zu benutzen, um das Kost&uuml;m des Sprites mehrfach zu wechseln.
+                    <div class="narrower">
+                        <p>
+                            Du kannst Bl&ouml;cke in das Eingabefeld von <code>switch to costume</code> ziehen, obwohl es wie ein Dropdown-Men&uuml; aussieht.<br />
+                            <img class="indent" src="/bjc-r/img/blocks/switch-to-costume.png" alt="switch to costume []" title="switch to costume []" />
+							<img class="indent" src="/bjc-r/img/2-complexity/switch-to-costume(item-of).png" alt="switch to costume (item (1) of 'list input slot')" title="switch to costume (item (1) of 'list input slot')" />
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ap-standard">AAP-2.N part a</div>
+                    <div class="sidenote">Die Bl&ouml;cke <code>ask</code> und <code>answer</code> hast du auf <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.de.html?topic=nyc_bjc%2F2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="">Einheit 2, Labor 1, Seite 2: Die Vermutung pr&uuml;fen</a> verwendet.</div>
+				
+                    Passe deinen Code so an, dass die spielende Person das Kost&uuml;m ausw&auml;hlen kann:
+                    <ol type="a">
+                        <li>Verwende eine Skriptvariable <var>costumes</var>, um die Liste der Kost&uuml;me zu speichern.</li>
+                        <li>Nutze <img class="inline nopadtb" src="/bjc-r/img/blocks/show-variable-full-size.png" alt="show variable []" title="show variable []" />, um den Inhalt dieser Variable anzuzeigen.</li>
+                        <li><code>Frag</code> die spielende Person: &bdquo;Welche Kost&uuml;mnummer m&ouml;chtest du?&ldquo;</li>
+                        <li>Wechsle zu dem Kost&uuml;m, dessen Index in der <code>answer</code> steht.</li>
+						<li>Blende die Kost&uuml;mliste wieder aus.</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="examFullWidth">
+            <div class="ap-standard">AAP-2.N.1 bullet 1</div>
+            <div class="pseudop">
+                Der Ausdruck <img class="inline" src="/bjc-r/img/2-complexity/item-2-of-costumes.png" alt="item (2) of (costumes)" title="item (2) of (costumes)" /> wird als <pre class="inline">costumes[2]</pre> oder <img class="inline" src="/bjc-r/img/2-complexity/accessing-blocktran.png" alt="costumes[2]" title="costumes[2]" /> geschrieben. Alle drei Varianten dieses Codes w&uuml;rden das Pinguin-Kost&uuml;m liefern (wenn die AP-Sprache Kost&uuml;me als Datentyp h&auml;tte):<br />
+                <img class="indent" src="/bjc-r/img/2-complexity/item-2-of-costumes-reporting-penguin.png" alt="item (2) of (costumes) reporting a picture of the penguin costume" title="item (2) of (costumes) reporting a picture of the penguin costume" />
+            </div>
+        </div>
+
+        <div class="forYouToDo">
+			<ol start="6">
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Talk with Your Partner" title="Talk with Your Partner" />
+                    <strong>Ohne Snap<em>!</em></strong> zu benutzen, sagt voraus, was jeder der folgenden Ausdr&uuml;cke liefert:
+                    <ol>
+                        <li><img class="inline" src="/bjc-r/img/2-complexity/list-length-quiz-list.png" alt="length of ( list (pineapple) (strawberry) (kiwi) (mango))" title="length of ( list (pineapple) (strawberry) (kiwi) (mango))" /></li>
+                        <li><img class="inline" src="/bjc-r/img/2-complexity/list-length-quiz-join.png" alt="length of ( join (pineapple) (strawberry) (kiwi) (mango))" title="length of ( join (pineapple) (strawberry) (kiwi) (mango))" /></li>
+                        <li><img class="inline" src="/bjc-r/img/2-complexity/list-length-quiz-nested.png" alt="length of ( list (list (pineapple) (strawberry) (kiwi)) (mango))" title="length of ( list (list (pineapple) (strawberry) (kiwi)) (mango))" /></li>
+                        <div class="ap-standard">AAP-2.N part b</div>
+                        <li><img class="inline" src="/bjc-r/img/2-complexity/list-length-quiz-item-of-nested.png" alt="length of (item (1) of (list (list (pineapple) (strawberry) (kiwi)) (mango)))" title="length of (item (1) of (list (list (pineapple) (strawberry) (kiwi)) (mango)))" /></li>
+                    </ol>
+                </li>
+                <li>Teste deine Vorhersagen in Snap<em>!</em>.</li>
+				<li>
+                    <!-- Question 1-->
+                    <div class="assessment-data" type="multiplechoice" identifier="length3" hasinlinefeedback="true" maxchoices="3" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">
+                            <p>
+                                <div class="ap-standard">AAP-2.N part b</div>
+                                Welche der folgenden Bl&ouml;cke liefern <strong>eine Liste der L&auml;nge&nbsp;3</strong>?<br /><br />
+                                W&auml;hle <strong>alle</strong> zutreffenden aus.
+                            </p>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1length3c1.png" alt="list (pineapple strawberry kiwi)" title="list (pineapple strawberry kiwi)">
+                            </div>
+                            <div class="feedback">
+                                Nein, das erzeugt eine Liste mit nur einem Element, auch wenn dieses Element aus mehreren W&ouml;rtern besteht.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1length3c4.png" alt="item 3 of {pineapple, strawberry, kiwi}" title="item 3 of {pineapple, strawberry, kiwi}">
+                            </div>
+                            <div class="feedback">
+                                Nein, Element&nbsp;3 der Liste ist das Wort &bdquo;kiwi&ldquo;; das ist keine Liste.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1length3c5.png" alt="item 2 of {lemon, {pineapple, strawberry, kiwi}}" title="item 2 of {lemon, {pineapple, strawberry, kiwi}}">
+                            </div>
+                            <div class="feedback">
+                                Das ist eine der beiden richtigen Antworten.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1length3c7.png" alt="list () (pineapple) ()" title="list () (pineapple) ()">
+                            </div>
+                            <div class="feedback">
+                                Das ist die zweite richtige Antwort.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c3"></div>
+                            <div class="correctResponse" identifier="c4"></div>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+        <div class="examFullWidth">
+            <div class="ap-standard">AAP-2.N.1 bullet 7</div>
+            <div class="pseudop">
+                Der Ausdruck <img class="inline" src="/bjc-r/img/2-complexity/example-length.png" alt="length of (words list)" title="length of (words list)" /> wird als <pre class="inline">LENGTH(wordsList)</pre> oder <img class="inline" src="/bjc-r/img/2-complexity/length-blocktran.png" alt="LENGTH(wordsList)" title="LENGTH(wordsList)" /> geschrieben.
+            </div>
+        </div>
+
+
+     </body>
+</html>

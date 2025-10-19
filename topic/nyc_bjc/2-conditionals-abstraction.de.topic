@@ -1,0 +1,60 @@
+title: Einheit 2: Abstraktion
+
+{
+
+heading: Labor 1: Spiele
+	quiz: Ein Zahlratespiel starten [/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.de.html]
+	quiz: Die Vermutung der Spielenden pr&uuml;fen [/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.de.html]
+	resource: Dein Zahlratespiel debuggen und erweitern [/bjc-r/cur/programming/2-complexity/1-variables-games/3-debugging-extending.de.html]
+	resource: Punktest&auml;nde mit globalen Variablen f&uuml;hren [/bjc-r/cur/programming/2-complexity/1-variables-games/4-keeping-score.de.html]
+	resource: Ein Kost&uuml;m ausw&auml;hlen [/bjc-r/cur/programming/2-complexity/1-variables-games/5-choosing-avatar.de.html]
+
+	raw-html: <img class="imageRight noshadow" src="/bjc-r/img/2-complexity/U2ImageVideoAddendum_img/tri-color-bjc.gif" alt="Mit der Maus in drei Farben auf der B&uuml;hne schreiben" height="300" title="Mit der Maus in drei Farben auf der B&uuml;hne schreiben" />
+
+heading: Labor 2: Listen erstellen
+    resource: Einkaufslisten-App [/bjc-r/cur/programming/2-complexity/2-data-structures-art/1-shopping-list-app.de.html]
+    resource: Eine Quiz-App planen [/bjc-r/cur/programming/2-complexity/2-data-structures-art/2-quizzes.de.html]
+    quiz: Jede Quizantwort pr&uuml;fen [/bjc-r/cur/programming/2-complexity/2-data-structures-art/3-traversing-list.de.html]
+
+heading: Labor 3: Entscheidungen treffen
+    resource: Was ist ein Pr&auml;dikat? [/bjc-r/cur/programming/2-complexity/3-predicates/1-what-is-predicate.de.html]
+    resource: Pr&auml;dikate kombinieren [/bjc-r/cur/programming/2-complexity/3-predicates/2-combining-predicates.de.html]
+    resource: Bedingungsbl&ouml;cke kombinieren [/bjc-r/cur/programming/2-complexity/3-predicates/3-combining-conditionals.de.html]
+	resource: Experimente mit booleschen Ausdr&uuml;cken [/bjc-r/cur/programming/2-complexity/3-predicates/4-boolean-experiments.de.html]
+    resource: Elemente einer Liste <code>behalten</code> [/bjc-r/cur/programming/2-complexity/3-predicates/5-keeping-list-items.de.html]
+	resource: Ein Wortr&auml;tsel l&ouml;sen [/bjc-r/cur/programming/2-complexity/3-predicates/6-solving-word-puzzle.de.html]
+
+heading: Labor 4: Computer rechnen lassen
+    resource: Der <code>Mod</code>-Operator [/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/1-mod-operator.de.html]
+    resource: Eine mathematische Bibliothek erstellen [/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/2-math-predicates.de.html]
+    resource: Weitere mathematische Reporter [/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/3-other-math-reporters.de.html]
+
+heading: Labor 5: Urheberrecht
+	resource: Urheberrecht [/bjc-r/cur/programming/2-complexity/5-copyrights/1-copyright.de.html]
+	resource: Faire Nutzung [/bjc-r/cur/programming/2-complexity/5-copyrights/2-fairuse.de.html]
+	resource: Der gesellschaftliche Vertrag [/bjc-r/cur/programming/2-complexity/5-copyrights/3-bargain.de.html]
+	resource: Urheberrechte und Computer [/bjc-r/cur/programming/2-complexity/5-copyrights/4-digital.de.html]
+	resource: Software als Urheberrechtsdurchsetzung [/bjc-r/cur/programming/2-complexity/5-copyrights/5-drm.de.html]
+
+	raw-html: <img class="imageRight" src="/bjc-r/img/2-complexity/EgyptianMotif_img/multiColorPinwheelwithRectangles.png" height="250" alt="Mehrfarbiges Windrad mit Rechtecken" title="Mehrfarbiges Windrad mit Rechtecken"/>
+
+heading: Optionale Projekte
+	resource: Automatischer Wahrsager [/bjc-r/cur/programming/2-complexity/optional-projects/1-magic8ball.de.html]
+	resource: &Auml;gyptisches Motiv [/bjc-r/cur/programming/2-complexity/optional-projects/2-egyptian-motif.de.html]
+	resource: Mastermind [/bjc-r/cur/programming/2-complexity/optional-projects/3-mastermind.de.html]
+	resource: Sprache modellieren: Plurale, Teil 1 [/bjc-r/cur/programming/2-complexity/optional-projects/4-plurals1.de.html]
+	resource: Sprache modellieren: Plurale, Teil 2 [/bjc-r/cur/programming/2-complexity/optional-projects/5-plurals2.de.html]
+    resource: Ein Kaleidoskop bauen [/bjc-r/cur/programming/2-complexity/optional-projects/6-kaleidoscope.de.html]
+    raw-html: <div class="todo">Brian und Mary haben vereinbart, &bdquo;klicken, um Punkte zu sammeln&ldquo; (siehe Seiten <a href="/bjc-r/cur/programming/2-complexity/optional-projects/future/2-data-types.html">1</a>, <a href="/bjc-r/cur/programming/2-complexity/optional-projects/future/3-click-points.html">2</a> und <a href="/bjc-r/cur/programming/2-complexity/optional-projects/future/4-the-for-each-block.html">3</a>) sowie <a href="/bjc-r/cur/programming/2-complexity/optional-projects/future/7-diagonal-design.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment">Diagonal Design</a> zu den optionalen Projekten zu verschieben, aber sie m&uuml;ssen noch angepasst werden, um die Wiederholung von ADTs und F&Uuml;R JEDE zu entfernen. --MF, 7/5/19</div>
+
+    //quiz: Processing Each Item in a List [/bjc-r/cur/programming/2-complexity/optional-projects/future/4-the-for-each-block.html]
+	//resource: Abstract Data Types [/bjc-r/cur/programming/2-complexity/optional-projects/future/2-data-types.html]
+	//resource: Capturing Clicks to Draw [/bjc-r/cur/programming/2-complexity/optional-projects/future/3-click-points.html]
+    //resource: Diagonal Design [/bjc-r/cur/programming/2-complexity/optional-projects/future/7-diagonal-design.html]
+
+
+heading: Wiederholung zu Einheit 2
+	resource: Wortschatz [/bjc-r/cur/programming/summaries/vocab2.de.html]
+	resource: Auf der AP-Pr&uuml;fung [/bjc-r/cur/programming/summaries/exam2.de.html]
+	resource: Selbsttest-Fragen [/bjc-r/cur/programming/summaries/assessment-data2.de.html]
+}

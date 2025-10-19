@@ -1,0 +1,109 @@
+h<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2 – Zur AP-Pr&uuml;fung</title>
+	</head>
+
+	<body>
+<h2>Einheit 2: Abstraktion</h2>
+<h3>Labor 1: Spiele</h3>
+<div class="examSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.de.html">2.1.1</a></strong>
+            <div class="ap-standard">AAP-1.B.2</div>
+            <div class="pseudop">
+                <img class="inline" src="/bjc-r/img/2-complexity/set-secret-number-to-7.png" alt="set (secret number) to (7)" title="set (secret number) to (7)" /> wird in Textform als <pre class="inline">secretNumber &leftarrow; 7</pre> oder <img class="nopadtb" src="/bjc-r/img/2-complexity/secret-number-assignment-blocktran.png" alt="secretNumber ← 7" title="secretNumber ← 7" /> geschrieben.
+            </div>
+        </div>
+<div class="examSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.de.html">2.1.2</a></strong>
+            <div class="pseudop">
+                Der Code <img class="inline" src="/bjc-r/img/2-complexity/chicken-script.png" alt="ask (Why did the chicken cross the road?) and wait; set (user response) to (answer)" title="ask (Why did the chicken cross the road?) and wait; set (user response) to (answer)" />
+                lautet in der Pr&uuml;fung
+                <div class="pre-container"><pre class="inline">DISPLAY("Why did the chicken cross the road?")
+userResponse &leftarrow; INPUT()</pre></div> oder
+                <img class="inline" src="/bjc-r/img/2-complexity/chicken-script-blocktran.png" alt="DISPLAY ... / userResponse ← INPUT()" title="DISPLAY ... / userResponse ← INPUT()" />.
+            </div>
+            <div class="ap-standard">AAP-3.A.8, AAP-3.A.9</div>
+            <div class="pseudop">Die Prozedur <pre class="inline">INPUT()</pre> nimmt die Eingabe der Nutzerin entgegen und gibt sie zur&uuml;ck; diese wird der Variablen <pre class="inline">userResponse</pre> zugewiesen. In Snap<em>!</em> entspricht das dem Block <code>answer</code>.</div>
+        </div>
+<div class="examSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/4-keeping-score.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/1-variables-games/4-keeping-score.de.html">2.1.4</a></strong>
+                            <div class="pseudop">
+                                <img class="inline nopadtb" src="/bjc-r/img/2-complexity/change-score-by-1.png"  height="26" alt="change (score) by (1)" title="change (score) by (1)" /> (entspricht <img src="/bjc-r/img/2-complexity/set-score-to-score-plus-one.png" height="40" alt="set(score) to (score+1)" title="set(score) to (score+1)">) wird als <pre class="inline">score &leftarrow; score + 1</pre> bzw. <img class="inline" src="/bjc-r/img/2-complexity/score-increment-blocktran.png" alt="score ← score + 1" title="score ← score + 1" /> notiert.
+                            </div>
+                        </div>
+<div class="examSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/5-choosing-avatar.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/1-variables-games/5-choosing-avatar.de.html">2.1.5</a></strong>
+            <div class="ap-standard">AAP-2.N.1 bullet 1</div>
+            <div class="pseudop">
+                Der Ausdruck <img class="inline" src="/bjc-r/img/2-complexity/item-2-of-costumes.png" alt="item (2) of (costumes)" title="item (2) of (costumes)" /> wird als <pre class="inline">costumes[2]</pre> notiert; alle Varianten liefern dasselbe Ergebnis.
+            </div>
+        </div>
+
+<h3>Labor 2: Listen erstellen</h3>
+<div class="examSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/1-shopping-list-app.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/2-data-structures-art/1-shopping-list-app.de.html">2.2.1</a></strong>
+            <div class="ap-standard">AAP-2.N.1 bullet 2</div>
+            <div class="pseudop">Der Operator <code>in</code> wird als <img class="inline nopadtb" src="/bjc-r/img/2-complexity/list-membership-blocktran.png" alt="LIST CONTAINS" title="LIST CONTAINS" /> dargestellt.</div>
+        </div>
+<div class="examSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/3-traversing-list.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/2-data-structures-art/3-traversing-list.de.html">2.2.3</a></strong>
+            <div class="ap-standard">AAP-2.O.2</div>
+            <div class="pseudop">Das Konstrukt <code>for each</code> taucht in Textform als <pre class="inline">FOR EACH ... IN ...</pre> auf.</div>
+        </div>
+
+<h3>Labor 3: Entscheidungen treffen</h3>
+<div class="examSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/3-predicates/1-what-is-predicate.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/3-predicates/1-what-is-predicate.de.html">2.3.1</a></strong>
+            <div class="ap-standard">AAP-2.H.2</div>
+            <div class="pseudop">
+                Das <code>if</code>-Statement erscheint als <pre class="inline">
+IF(condition)
+{
+    ...
+}
+                </pre>
+            </div>
+        </div>
+<div class="examSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/3-predicates/3-combining-conditionals.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/3-predicates/3-combining-conditionals.de.html">2.3.3</a></strong>
+            <div class="ap-standard">AAP-2.I.1</div>
+            <div class="pseudop">In Textform gelten dieselben Regeln: <pre class="inline">IF ... ELSE</pre> kann ineinander verschachtelt werden.</div>
+        </div>
+<div class="examSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/3-predicates/5-keeping-list-items.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/3-predicates/5-keeping-list-items.de.html">2.3.5</a></strong>
+            <div class="ap-standard">AAP-2.E.2</div>
+            <div class="pseudop">Der Block <code>keep</code> entspricht in Textform einem Filter, der eine Bedingung (Pr&auml;dikat) auf jedes Element anwendet.</div>
+        </div>
+
+<h3>Labor 4: Computer rechnen lassen</h3>
+<div class="examSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/1-mod-operator.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/1-mod-operator.de.html">2.4.1</a></strong>
+            <div class="sidenote">
+                <div class="pseudop">Die Verfahren <pre class="inline">move()</pre> und <pre class="inline">turn_clockwise()</pre> sind im AP-Pseudocode nicht eingebaut; deshalb werden sie kleingeschrieben wie benutzerdefinierte Prozeduren.</div>
+            </div>
+            <div class="pseudop">
+                Die Bedingung
+                <img class="inline" src="/bjc-r/img/2-complexity/if-example-preview-fractal-art.png" alt="if (size > 15) { ... }" title="if (size > 15) { ... }" />
+                wird als
+                <div class="pre-container"><pre class="inline">
+IF(size &gt; 15)
+{
+    REPEAT 4 TIMES
+    {
+        move(size)
+        turn_clockwise(90)
+    }
+}</pre>
+                </div>
+                notiert.
+            </div>
+        </div>
+<div class="examSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/1-mod-operator.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/1-mod-operator.de.html">2.4.1</a></strong>
+            <div class="pseudop">
+                <strong>Der Operator <code>mod</code>:</strong> <img class="inline nopadtb" src="/bjc-r/img/1-introduction/17-mod-5.png" alt="(17) mod (5)" title="(17) mod (5)" /> entspricht <pre class="inline">17 MOD 5</pre>. Bei <pre class="inline">a MOD b</pre> gilt: <var>a</var> ist gr&ouml;&szlig;er/gleich&nbsp;0, <var>b</var> ist positiv.
+            </div>
+            <div class="ap-standard">AAP-2.B.5, AAP-2.C.1, AAP-2.C.2, AAP-2.C.3, AAP-2.C.4</div>
+            <div class="pseudop">In der Pr&uuml;fung treten die Operatoren <pre class="inline">+</pre>, <pre class="inline">-</pre>, <pre class="inline">*</pre>, <pre class="inline">/</pre> und <pre class="inline">MOD</pre> auf.</div>
+            <div class="ap-standard">AAP-2.L.2</div>
+            <div class="pseudop"><strong>Reihenfolge der Operationen:</strong> In Textsprachen gelten die &uuml;blichen Priorit&auml;ten (Multiplikation/Division vor Addition/Subtraktion; <code>MOD</code> geh&ouml;rt dazu). Beispiel: <pre class="inline">7 + 5 MOD 2 - 6</pre> entspricht <pre class="inline">7 + 1 - 6</pre>.</div>
+        </div>
+<div class="examSummary" ><strong> <a href="/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/3-other-math-reporters.de.html?topic=nyc_bjc/2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/3-other-math-reporters.de.html">2.4.3</a></strong>
+            <div class="ap-standard">AAP-3.C.2</div>
+            <div class="pseudop">Funktionsdefinitionen erscheinen in der Pr&uuml;fung als <pre class="inline">PROCEDURE name(parameters) { ... }</pre>.</div>
+        </div>
+
+	</body>
+</html>

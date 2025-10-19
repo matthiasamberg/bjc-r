@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2, Labor 3: Entscheidungen treffen, Seite 5</title>
+	</head>
+
+	<body>
+        <h2>Elemente mit <code>keep</code> aus einer Liste behalten</h2>
+        <div class="learn">
+			<p><strong>Auf dieser Seite</strong> verwendest du Pr&auml;dikate gemeinsam mit dem Block <code>keep</code>, um nur die Listeneintr&auml;ge zu behalten, die bestimmte Eigenschaften erf&uuml;llen.</p>
+		</div>
+
+		<p>Pr&auml;dikate kannst du mit Bedingungsbl&ouml;cken kombinieren, um zu entscheiden, <em>wann</em> etwas passieren soll; mit <code>keep</code> legst du fest, <em>welche</em> Eintr&auml;ge erhalten bleiben. Der Block <img class="inline" src="/bjc-r/img/blocks/keep.png" alt="keep items 'predicate input slot' from 'list input slot'" title="keep items 'predicate input slot' from 'list input slot'" /> bekommt eine Liste und ein Pr&auml;dikat als Eingabe und liefert eine neue Liste, die nur die Elemente enth&auml;lt, f&uuml;r die das Pr&auml;dikat <code>true</code> ergibt.</p>
+
+        <p>
+            Der folgende Ausdruck findet beispielsweise alle W&ouml;rter aus der Liste <var>words list</var>, deren erster Buchstabe v ist. Das <em>leere Eingabefeld</em> ist der Platzhalter f&uuml;r das jeweilige Listenelement, &uuml;ber das entschieden wird.<br>
+			<img class="indent" src="/bjc-r/img/2-complexity/keep-example-6.png" alt="keep items ((letter(1) of ( )) = (v)) from (words list)" title="keep items ((letter(1) of ( )) = (v)) from (words list)">
+		</p>
+
+        <div class="vocabFullWidth">: <strong>String</strong> und <strong>Index</strong>
+            <ul>
+                <li>
+                    <div class="ap-standard">AAP-1.C.4</div>
+                    Ein <strong>String</strong> ist eine geordnete Folge von Zeichen.
+                </li>
+                <li>
+                    <div class="ap-standard">AAP-1.C.3 (strings)</div>
+                    Den Begriff <strong>Index</strong> kennst du bereits als Positionsnummer eines Elements in einer Liste. Derselbe Begriff bezeichnet auch die Position eines Zeichens in einem String (z. B. eines Buchstabens in einem Wort). Der erste Eingang von <code>letter</code> ist also der Index.
+                </li>
+            </ul>
+        </div>
+
+        <div class="takeNote">
+            <p><strong>Du schreibst das Pr&auml;dikat, das die Pr&uuml;fung &uuml;bernimmt, und <code>keep</code> wendet dieses Pr&auml;dikat auf jedes Listenelement an und liefert die Elemente zur&uuml;ck, f&uuml;r die dein Pr&auml;dikat <code>true</code> meldet.</strong></p>
+			<p>Das leere Eingabefeld im Pr&auml;dikat ist <em>notwendig</em>; hier wird jedes Element eingesetzt, w&auml;hrend es gepr&uuml;ft wird.</p>
+            <div class="endnote">Der Block <code>letter</code> sieht in der Palette so aus: <img src="/bjc-r/img/blocks/letter-1-of-world.png" alt="letter (1) of (world)" title="letter (1) of (world)" />. Entferne das Wort &bdquo;world&ldquo;, damit an dieser Stelle ein leeres Feld entsteht.</div>
+		</div>
+
+        <div class="forYouToDo" id="first">
+			<ol>
+                <li>
+                    <a class="run" href="/bjc-r/prog/2-complexity/U2L3-KeepingData.xml" target="_blank"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Klicke hier, um ein Startprojekt zu laden, und speichere es anschlie&szlig;end." title="Klicke hier, um ein Startprojekt zu laden, und speichere es anschlie&szlig;end."></a>
+                    <div class="endnote">Dieses Projekt enth&auml;lt zwei Beispielausdr&uuml;cke mit <code>keep</code> und eine Prozedur <code>initialize list</code> (du kannst hineinschauen, um zu sehen, was sie macht).</div>
+                </li>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" /> Experimentiert mit diesen <code>keep</code>-Beispielen. Besprecht und notiert anschließend <em>schriftlich</em>, was die Ausdr&uuml;cke bewirken.<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/keep-example-4.png" alt="keep items ((length of ( )) = (5)) from {apple, banana, orange, grape, kiwi, mango, watermelon} reporting {apple, grape, mango}" title="keep items ((length of ( )) = (5)) from {apple, banana, orange, grape, kiwi, mango, watermelon} reporting {apple, grape, mango}"><br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/keep-example-7.png" alt="keep items (not (is () a (number)?)) from {5, :), six, 7, elephant, 3} reporting {5,7,3}" title="keep items (not (is () a (number)?)) from {5, :), six, 7, elephant, 3} reporting {5,7,3}">
+                </li>
+
+                <li>
+                    <div class="ap-standard">AAP-2.F</div>
+                    <p>Mit <code>keep</code> kannst du sowohl Listen von W&ouml;rtern als auch Zahleneintr&auml;ge filtern. Zum Beispiel:</p>
+					<img class="indent" src="/bjc-r/img/2-complexity/keep-example-2.png" alt="Ein Pr&auml;dikat pr&uuml;ft, ob die Zahl gerade ist und beh&auml;lt nur gerade Werte." title="Ein Pr&auml;dikat pr&uuml;ft, ob die Zahl gerade ist und beh&auml;lt nur gerade Werte." />
+				</li>
+                <li>
+                    <div class="ap-standard">AAP-2.E Abschnitt b</div>
+                    Schreibe ein Pr&auml;dikat, das W&ouml;rter beh&auml;lt, die mit einem Vokal beginnen <em>oder</em> enden.
+                </li>
+                <li>
+                    <div class="ap-standard">AAP-2.E Abschnitt b</div>
+                    In einer Liste, die Zahlen und Strings mischt, willst du <em>nur</em> die Strings behalten, die gleichzeitig mindestens 4 Zeichen lang sind. Erstelle das passende <code>keep</code>.
+                </li>
+			</ol>
+		</div>
+
+        <div class="ifTime">
+            <ol start="6">
+                <li>Schreibe ein <code>keep</code>, das nur W&ouml;rter mit genau drei verschiedenen Buchstaben beh&auml;lt (z. B. &bdquo;Maus&ldquo; nicht, aber &bdquo;Ball&ldquo;).</li>
+                <li>Filtere eine Liste von Benutzernamen so, dass nur die Eintr&auml;ge bleiben, die <code>@school.edu</code> enthalten.</li>
+            </ol>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="8">
+                <li>
+                    <!-- Frage 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Which of the following will be reported" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">
+                            <div class="ap-standard">AAP-2.E.2</div>
+                            <p>Welche Ausgabe liefert dieser Ausdruck?</p>
+                            <img class="indent" src="/bjc-r/img/2-complexity/keep-1.png" alt="keep items ((letter(1) of ()) = (c)) from {cat, dog, camel, cow, otter, cheetah, whale}" title="keep items ((letter(1) of ()) = (c)) from {cat, dog, camel, cow, otter, cheetah, whale}">
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">{cat, camel, cow, cheetah}</div>
+                            <div class="feedback">
+                                Richtig!
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">{dog, otter, whale}</div>
+                            <div class="feedback">
+                                Diese W&ouml;rter beginnen nicht mit &bdquo;c&ldquo;.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">{cat, camel}</div>
+                            <div class="feedback">
+                                Der Ausdruck beh&auml;lt auch weitere Eintr&auml;ge.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">{cat}</div>
+                            <div class="feedback">
+                                Es werden alle W&ouml;rter behalten, die mit &bdquo;c&ldquo; beginnen.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                          <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <!-- Frage 2 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Keep expression filters" hasinlinefeedback="true" maxchoices="8" responseIdentifier="ri2" shuffle="false">
+                        <div class="prompt">
+                            <div class="ap-standard">AAP-2.E.2</div>
+                            <p>Der Ausdruck <img class="inline" src="/bjc-r/img/2-complexity/keep-2.png" alt="keep items ((length of ()) > 10 and (not (is () a number?))) from ()" title="keep items ((length of ()) > 10 and (not (is () a number?))) from ()" /> soll alle Elemente behalten, die <strong>l&auml;nger als 10 Zeichen</strong> sind und <strong>keine Zahl</strong> darstellen. Welche Eintr&auml;ge werden definitiv behalten? (Mehrfachauswahl m&ouml;glich.)</p>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Eine Telefonnummer mit Leerzeichen und Bindestrichen, z. B. &bdquo;555-0123&ldquo;.</div>
+                            <div class="feedback">
+                                Der Ausdruck erlaubt keine Zahlen und verlangt mehr als 10 Zeichen.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Eine Zahl mit weniger als 10 Ziffern.</div>
+                            <div class="feedback">
+                                Das Element darf keine Zahl sein.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Eine Mischung aus Zahlen und Buchstaben, die l&auml;nger als 10 Zeichen ist.</div>
+                            <div class="feedback">
+                                Richtig! Ein Mix ist keine Zahl und kann l&auml;nger als 10 Zeichen sein.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Ein Satz aus f&uuml;nf W&ouml;rtern, bei dem jedes Wort zwei oder drei Buchstaben hat.</div>
+                            <div class="feedback">
+                                Richtig! Der Satz besteht nicht nur aus Ziffern und ist l&auml;nger als 10 Zeichen.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c5">
+                            <div class="text">Ein Ausdruck mit weniger als 10 Zeichen.</div>
+                            <div class="feedback">
+                                Das Pr&auml;dikat verlangt l&auml;nger als 10 Zeichen.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c6">
+                            <div class="text">Beliebiger Text, der keine Ziffern enth&auml;lt.</div>
+                            <div class="feedback">
+                                Auch hier gilt: Die L&auml;nge muss &gt; 10 sein.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c7">
+                            <div class="text">Ein 16-stelliges Passwort mit Zahlen, Buchstaben und Symbolen.</div>
+                            <div class="feedback">
+                                Richtig! Es ist keine Zahl, aber l&auml;nger als 10 Zeichen.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c8">
+                            <div class="text">Ein langes Wort mit mehr als 10 Buchstaben, z. B. &bdquo;Nachvollziehbar&ldquo;.</div>
+                            <div class="feedback">
+                                Richtig! Ein Wort ist keine Zahl und kann l&auml;nger als 10 Zeichen sein.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                          <div class="correctResponse" identifier="c3"></div>
+                          <div class="correctResponse" identifier="c4"></div>
+                          <div class="correctResponse" identifier="c7"></div>
+                          <div class="correctResponse" identifier="c8"></div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+	</body>
+</html>

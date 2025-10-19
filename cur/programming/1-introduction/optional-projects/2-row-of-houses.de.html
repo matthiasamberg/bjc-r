@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1, Optionale Projekte, Seite 2</title>
+	</head>
+
+	<body>
+		<h2>Häuserreihe</h2>
+        <div class="learn">
+            <p><strong>In diesem Projekt</strong> verschachtelst du Abstraktionen und zeichnest eine Reihe von Häusern.<br />
+                <img class="indent noshadow" style="height: 119px;" src="/bjc-r/img/1-introduction/row-of-houses-size-100.png" alt="Häuserreihe" title="Häuserreihe" />
+            </p>
+        </div>
+
+
+        <div class="forYouToDo" id="first">
+			<ol>
+				<li><div class="newProject"><span class="text">„U1-Row-of-Houses“</span><img src="/bjc-r/img/icons/new-project-called.png" alt="Neues Projekt U1-Row-of-Houses" title="Neues Projekt U1-Row-of-Houses" /></div></li>
+            	<li>
+                    Erstelle den Block <code>draw square</code> mit der Eingabe <var>size</var>. Teste verschiedene Werte.<br />
+                    <div class="sidenote">Eingaben für Blöcke hast du auf <a href="/bjc-r/cur/programming/1-introduction/3-drawing/3-blocks-with-inputs.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Labor 3, Seite 3">Labor 3, Seite 3</a> gelernt.</div>
+                    <img class="indent" src="/bjc-r/img/1-introduction/draw-square-size.png" alt="draw square, size: ()" title="draw square, size: ()" />
+                    <img class="indent noshadow" src="/bjc-r/img/1-introduction/square-size-100.png" alt="Quadratzeichnung" title="Quadratzeichnung" />
+                    <div class="endnote">
+                        <a href="#hint-square" data-toggle="collapse" title="Variante ohne Eingabe anzeigen">Variante ohne Eingabe anzeigen</a>
+                        <div id="hint-square" class="collapse">
+                            <img class="indent" src="/bjc-r/img/1-introduction/draw-square-def-repeat-4(move-50-turn-right-90).png" alt="repeat 4 (move 50, turn 90)" title="repeat 4 (move 50, turn 90)" />
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    Nutze <code>draw square</code> als Vorlage und schreibe <code>draw triangle</code> für ein gleichseitiges Dreieck.<br />
+                    <div class="sidenote">Drehwinkel findest du auf <a href="/bjc-r/cur/programming/1-introduction/3-drawing/2-exploring-snap-drawing-motion.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Labor 3, Seite 2">Labor 3, Seite 2</a>.</div>
+                    <img class="indent" src="/bjc-r/img/1-introduction/draw-triangle-size.png" alt="draw triangle, size: ()" title="draw triangle, size: ()" />
+                    <img class="indent noshadow" src="/bjc-r/img/1-introduction/triangle-size-100.png" alt="Dreieck" title="Dreieck" />
+                </li>
+                <li>
+                    Kombiniere beide Blöcke zu <code>draw house</code> (Quadrat + Dreieck als Dach).<br />
+                    <div class="sidenote">Möglicherweise musst du die Position anpassen.</div>
+                    <img class="indent" src="/bjc-r/img/1-introduction/draw-house-size.png" alt="draw house, size: ()" title="draw house, size: ()" />
+                    <img class="indent noshadow" src="/bjc-r/img/1-introduction/house-size-100.png" alt="Hauszeichnung" title="Hauszeichnung" />
+                </li>
+            </ol>
+        </div>
+
+        <div class="takeNote">Einen Block in einem anderen zu nutzen, ist eine Form der <em>Abstraktion</em>.</div>
+
+        <div class="forYouToDo">
+			<ol start="5">
+                <li>
+                    Verwende <code>draw house</code> und <code>repeat until</code>, um <code>draw row of houses</code> zu erstellen. Zeichne Häuser, bis der Sprite nahe am rechten Bühnenrand ist.<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/draw-row-of-houses-size.png" alt="draw row of houses, size: ()" title="draw row of houses, size: ()" />
+                    <img class="indent noshadow" src="/bjc-r/img/1-introduction/row-of-houses-size-100.png" alt="Häuserreihe" title="Häuserreihe" /><br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/repeat-until-(x-position+size-greater-than-240).png" title="repeat until (((x position) + (size)) > 240)" alt="repeat until (((x position) + (size)) > 240)">
+                </li>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Partnergespräch" title="Partnergespräch" />Warum verhindert die Bedingung, dass zu nah am rechten Rand gezeichnet wird?
+                    <img class="inline" src="/bjc-r/img/icons/save-mini.png" alt="Speichern" title="Speichern" />
+                </li>
+            </ol>
+        </div>
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>
+                    Erweitere <code>draw square</code> zu <code>draw flower with square petals</code>, der Blüten mit beliebiger Blattzahl zeichnet.<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/draw-flower-with-6-petals-of-size-50.png" alt="Blume mit sechs Blättern" title="Blume mit sechs Blättern" />
+                    <img class="indent" src="/bjc-r/img/1-introduction/flower-with-6-square-petals.png" alt="Zeichnung der Blume" title="Zeichnung der Blume" /><br />
+                </li>
+                <div class="endnote"><img class="inline" src="/bjc-r/img/icons/talk-with-another-pair-mini.png" alt="Tauscht euch aus" title="Tauscht euch aus" />Schaut euch gegenseitig Ergebnisse an und lasst euch inspirieren.</div>
+                <li>
+                    Zeichne ein Feld mit Blumen unterschiedlicher Größe, Blattzahl und Position (verwende <img class="inline" src="/bjc-r/img/blocks/pen-up-full-size.png" alt="pen up" title="pen up" />).<br />
+                    <img class="indent noshadow" src="/bjc-r/img/1-introduction/field-of-flowers.png" alt="Blumenfeld" title="Blumenfeld" /><br />
+                </li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

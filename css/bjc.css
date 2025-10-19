@@ -750,6 +750,13 @@ table.truth tr td {
   line-height: 1.5em;
 }
 
+html[lang="de"] .vocab:before,
+html[lang="de"] .vocabBig:before,
+html[lang="de"] .vocabFullWidth:before,
+html[lang="de"] .vocabSummary:before {
+  content: "Vokabular";
+}
+
 .exam:before,
 .examBig:before,
 .examFullWidth:before,

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <script type="text/javascript" src="/bjc-r/utilities/gifffer.min.js"></script>
+		<script type="text/javascript">window.onload = function() {Gifffer();}</script>
+        <link rel="stylesheet" type="text/css" href="/bjc-r/css/bjc-gifffer.css">
+		<title>Einheit 1, Labor 2: Tratsch, Seite 3</title>
+	</head>
+
+	<body>
+        <h2>Anpassen und Debuggen</h2>
+        <div class="learn">
+			<p><strong>Auf dieser Seite</strong> bearbeitest du die Wortlisten, die die Sprites verwenden, und behebst eventuelle Probleme.</p>
+        </div>
+
+        <div class="forYouToDo" id="first">
+			<ol>
+                <li>
+           	    &Ouml;ffne dein Projekt U1L2-Gossip. Bearbeite diese drei Reporter-Bl&ouml;cke, um die Ausdr&uuml;cke zu &auml;ndern, die das Programm nutzt (Anleitung im Kasten unten). Sei kreativ und lustig, aber respektvoll.<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/who.png" alt="Block &sbquo;who&lsquo;" title="Block &sbquo;who&lsquo;" />
+                    <img class="inline" src="/bjc-r/img/1-introduction/does-what.png" alt="Block &sbquo;does what&lsquo;" title="Block &sbquo;does what&lsquo;" />
+                    <img class="inline" src="/bjc-r/img/1-introduction/who2.png" alt="Block &sbquo;who2&lsquo;" title="Block &sbquo;who2&lsquo;" />
+                    <div class="narrower">
+                        <h3 class="box-head">So bearbeitest du einen Block</h3>
+                        <ol type="a">
+                            <li><strong>Finde den Block</strong> im Skriptbereich oder in den farbigen Paletten links.</li>
+                            <li><strong>Strg-Klick</strong> (oder Rechtsklick) auf den Block und &bdquo;edit...&ldquo; w&auml;hlen.</li>
+                            <li><strong>Nimm die &Auml;nderungen</strong> am internen Code vor. (In diesen Bl&ouml;cken stehen bereits Hinweise.)</li>
+                            <li><strong>Klicke auf OK</strong>, wenn alles passt. (Oder auf &bdquo;Cancel&ldquo;, falls du doch nichts &auml;ndern m&ouml;chtest.) </li>
+                        </ol>
+                        <div class="endnote">
+                            <div class="todo">Brian, bitte dieses Video neu aufnehmen, mit eingeschalteten Pluszeichen und dem Leerzeichen vor der 2 in <code>who 2</code> (bitte vom Starterprojekt ausgehen). --MF, 15.6.20</div>
+                            <a href="#hint-edit-block" data-toggle="collapse" title="Klicke hier für ein Video, das diese Schritte zeigt.">Klicke hier f&uuml;r ein Video, das diese Schritte zeigt.</a>
+                            <div id="hint-edit-block" class="collapse">
+                                <div style="display:block;">
+                                    <img src="/bjc-r/img/1-introduction/U1ImageVideoAddendum_img/U1L2P2-EditABlock.gif" alt="Block bearbeiten" title="Block bearbeiten"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="endnote">
+            <a href="#hint-report" data-toggle="collapse" title="Warum verwenden diese Blöcke report? Warum nicht einfach say?">Warum verwenden diese Bl&ouml;cke <img class="inline nopadtb" src="/bjc-r/img/blocks/report.png" alt="report ()" title="report ()" />? Warum nicht <img class="" src="/bjc-r/img/blocks/say-empty-full-size.png" alt="say ()" title="say ()" />?</a>
+            <div id="hint-report" class="collapse">
+                <p>Die Bl&ouml;cke <code>report</code> und <code>say</code> bedeuten ganz unterschiedliche Dinge. <code>report</code> gibt dem Computer einen Wert zur&uuml;ck, der als Eingabe f&uuml;r einen anderen Block dienen kann, zum Beispiel f&uuml;r den Block <code>join</code> innerhalb von <code>gossip</code>. <code>say</code> zeigt einen Wert nur als Sprechblase f&uuml;r die Nutzer*innen an.</p>
+            </div>
+        </div>
+
+
+        <div class="vocabFullWidth">: <strong>Listen</strong>, <strong>Zeichenketten</strong> und <strong>Konkatenation</strong>
+            <ul>
+                <li>
+					<div class="ap-standard">AAP-1.C.1 erster Satz</div>
+                    <div class="sidenoteBig">
+						<a href="#ordered" data-toggle="collapse" title="Was bedeutet &sbquo;geordnet&lsquo;?">Was bedeutet &bdquo;geordnet&ldquo;?</a>
+						<div id="ordered" class="collapse">
+							Es bedeutet nicht, dass die Elemente alphabetisch oder numerisch sortiert sein m&uuml;ssen. Es hei&szlig;t nur, dass
+							<img src="/bjc-r/img/1-introduction/list-a-b.png" alt="(list a b)" title="(list a b)">
+							eine andere Liste ist als
+							<img src="/bjc-r/img/1-introduction/list-b-a.png" alt="(list b a)" title="(list b a)">
+							.
+						</div>
+					</div>
+                    Eine <strong>Liste</strong> ist eine geordnete Folge von Elementen. Dieses Beispiel kennst du bereits:<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/list-from-who-result.png" alt="list{Senora, Ms. C, my cat, Hannah, Jake}" title="list{Senora, Ms. C, my cat, Hannah, Jake}" />
+                </li>
+                <li>
+                    <div class="ap-standard">AAP-2.D.1, AAP-2.D.2</div>
+                    Die Elemente einer Liste k&ouml;nnen <em>alles</em> sein: Namen, Zahlen, Listen oder Bl&ouml;cke. Hier ist eine Liste von Listen:<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/list-of-lists.png" alt="list{list{hi, hello}, list{listening to, looking at}, list{my cat, Hannah, Jake}}" title="Liste von Listen" />
+                </li>
+                <li>
+                    <div class="ap-standard">AAP-1.C.1 restlicher Satz</div>
+                    Eine <strong>Zeichenkette</strong> (engl. <em>string</em>) ist eine geordnete Liste von Zeichen (Buchstaben, Leerzeichen, Satzzeichen usw.). Beispielsweise ist <img src="/bjc-r/img/1-introduction/string-hannah.png" alt="list {h, a, n, n, a, h}" title="Zeichenkette &sbquo;hannah&lsquo;"> die Zeichenkette &bdquo;hannah&ldquo;.</li>
+                <li>
+                    <div class="ap-standard">AAP-1.E.1</div>
+                    <strong>Konkatenation</strong> bedeutet, zwei Zeichenketten aneinanderzuh&auml;ngen. In Snap<em>!</em> macht das der Block <img src="/bjc-r/img/blocks/join.png" alt="join () ()" title="join () ()" />.</li>
+            </ul>
+        </div>
+
+        <h3>Dein Programm testen</h3>
+        <div class="forYouToDo">
+            <ol start="2">
+                <li>Teste dein ge&auml;ndertes Programm gr&uuml;ndlich. Wenn etwas nicht funktioniert, korrigiere es.</li>
+                <li><img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" /></li>
+            </ol>
+        </div>
+
+        <h3>Fehler finden</h3>
+        <div class="takeNote">
+            <div class="ap-standard">AAP-1.E.2</div>
+            <p><strong>Debugging</strong> ist die Fehlersuche in einem Programm. Bugs sind normale Bestandteile der Programmierung. Wenn dein Programm nicht das tut, was du erwartest, versuche zuerst, das Problem nachzustellen und zu beobachten. Dann kannst du dir &uuml;berlegen, was der Grund sein k&ouml;nnte, und gezielt testen.</p>
+        </div>
+
+        <h3>Bl&ouml;cke kommentieren</h3>
+        <div class="forYouToDo">
+            <ol start="4">
+                <li>F&uuml;ge jedem der drei Reporter-Bl&ouml;cke einen kurzen Kommentar hinzu, der erkl&auml;rt, was der Block macht.</li>
+            </ol>
+        </div>
+
+        <h3>Mehr Tests</h3>
+        <div class="forYouToDo">
+            <ol start="5">
+				<li>
+					<!--<div class="index-term" id="if else</code>"></div>-->
+					<strong>Teste dein Programm erneut.</strong> Wenn du einen Fehler l&ouml;st, teste danach auch alle anderen Teile des Programms, die davon betroffen sein k&ouml;nnten.
+				</li>
+                <li>Notiere zwei Tests (Was gibst du ein? Was erwartest du?), mit denen du &uuml;berpr&uuml;fst, dass dein Programm richtig funktioniert.</li>
+            </ol>
+        </div>
+
+        <h3>Ausprobieren</h3>
+        <div class="forYouToDo">
+			<div class="ap-standard">AAP-2.I.1</div>
+            <ol start="7">
+                <li>Schreibe drei weitere Experimente, die du mit deinem Programm ausprobierst. Notiere, was du getestet hast und was du beobachtet hast.</li>
+                <li>
+                    Erkl&auml;re, was dieser Block <em>reportet</em>:<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/gossip.png" alt="Block &sbquo;gossip&lsquo;" title="Block &sbquo;gossip&lsquo;">
+                    <div class="endnote">Das Ergebnis ist eine Zeichenkette, also eine Reihe von Zeichen, die zusammen einen Satz bilden.</div>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Debugging-Quiz</h3>
+        <div class="quizFullWidth">
+			<div class="ap-standard">AAP-2.I.1</div>
+            <div class="forYouToDo">
+                <p> Welche der folgenden Aussagen w&uuml;rde dein Programm generieren? W&auml;hle alle zutreffenden Antworten.</p>
+				<div class="quiz black-quiz multiple-choice">
+					<div class="question">
+						<div class="prompt">
+							Welche Aussagen liefert dein Programm, wenn du den <code>gossip</code>-Block ausf&uuml;hrst?
+						</div>
+						<div class="choice" identifier="c1">
+							<div class="text">Jake l&auml;chelte zu.</div>
+							<div class="feedback">
+								Diese Aussage folgt nicht dem Muster &bdquo;wer macht was wer&ldquo;.
+							</div>
+						</div>
+						<div class="choice" identifier="c2">
+							<div class="text">Hannah grinste bei Jake.</div>
+							<div class="feedback">
+								Richtig! Das folgt dem Muster &bdquo;wer&ldquo;, &bdquo;tut was&ldquo;, &bdquo;wer&ldquo;.
+							</div>
+						</div>
+						<div class="choice" identifier="c3">
+							<div class="text">Hannah h&ouml;rte Hannah zu.</div>
+							<div class="feedback">
+								Richtig! Auch das entspricht dem Muster.
+							</div>
+						</div>
+						<div class="choice" identifier="c4">
+							<div class="text">Jake half.</div>
+							<div class="feedback">
+								Hier fehlt der zweite Teil &bdquo;wer&ldquo;.
+							</div>
+						</div>
+						<div class="responseDeclaration" identifier="ri1">
+							<div class="correctResponse" identifier="c2"></div>
+							<div class="correctResponse" identifier="c3"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="10">
+                <li>
+                    &Auml;ndere die Kost&uuml;me ganz nach deinem Geschmack.
+                    <div class="narrower">
+                        <h3 class="box-head">Ein Kost&uuml;m hinzuf&uuml;gen</h3>
+                        <ol type="a">
+                            <li>Markiere im Sprite-Bereich den Sprite, dem du ein Kost&uuml;m geben willst.</li>
+                            <li>W&auml;hle im Datei-Men&uuml; (<img src="/bjc-r/img/1-introduction/file_button.png" style="height:1.5em;" alt="File-Button" title="File-Button"/>) den Punkt &bdquo;Costumes...&ldquo;.</li>
+                            <li>Such dir ein Kost&uuml;m aus.</li>
+                            <li>Klicke auf &bdquo;Import&ldquo;.</li>
+                            <li>Klicke auf &bdquo;Cancel&ldquo;, um den Dialog zu schlie&szlig;en.</li>
+                        </ol>
+                    </div>
+                    <div class="endnote">Du kannst auch ein Foto oder Bild aus dem Internet verwenden, indem du es in das Snap<em>!</em>-Fenster ziehst.</div>
+                </li>
+                <li>
+                    Behebe eventuelle Probleme mit deinen Kost&uuml;men.
+                    <div class="narrower">
+                        <h3 class="box-head">Ein Kost&uuml;m anpassen</h3>
+                        <ul>
+                            <li>&Auml;ndere die Gr&ouml;&szlig;e des Sprites mit <img class="inline nopadtb" src="/bjc-r/img/blocks/set-size-empty.png" alt="set size to ( ) %" title="set size to ( ) %" />.</li>
+                            <li>Bestimme seine Position mit <img class="inline nopadtb" src="/bjc-r/img/blocks/go-to-x-y.png" alt="go to x: () y: ()" title="go to x: () y: ()" />.</li>
+                            <li>
+                                &Auml;ndere die Blickrichtung des Sprites:<br />
+                                <img class="indent" src="/bjc-r/img/1-introduction/point-in-direction-menu-showing.png" alt="point in direction (270) mit geöffnetem Menü (right, left, up, down, random)" title="point in direction (270) mit Menü" /><br>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+        <div class="ifTime">
+			<ol start="6">
+                <li>
+                    &Auml;ndere den Hintergrund der B&uuml;hne.<br />
+                    <div class="narrowblue">
+                        <h3 class="box-head">Einen B&uuml;hnenhintergrund hinzuf&uuml;gen</h3>
+                        <div class="endnote">Einen Hintergrund zu wechseln funktioniert fast genauso wie ein Kost&uuml;m.</div>
+                        <ol type="a">
+                        <li><strong>W&auml;hle die B&uuml;hne</strong> im Sprite-Bereich aus.</li>
+                            <li>&Ouml;ffne im Datei-Men&uuml; (<img src="/bjc-r/img/1-introduction/file_button.png" style="height:1.5em;" alt="File-Button" title="File-Button"/>) den Punkt &bdquo;Backgrounds...&ldquo;.</li>
+                            <li>Such dir einen Hintergrund aus.</li>
+                            <li>Klicke auf &bdquo;Import&ldquo;.</li>
+                            <li>Klicke auf &bdquo;Cancel&ldquo;, um den Dialog zu schlie&szlig;en.</li>
+                        </ol>

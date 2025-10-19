@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 3, Labor 3: Tic-Tac-Toe, Seite 3</title>
+    </head>
+
+    <body>
+        <h2>Auf Unentschieden pr&uuml;fen</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> erkennst du ein Unentschieden, also ob keine Felder mehr frei sind, ohne dass jemand gewonnen hat.</p>
+        </div>
+
+
+        <div class="forYouToDo">
+			<ol start="1">
+                <li>
+                    Entwickle eine M&ouml;glichkeit festzustellen, ob das Spiel unentschieden ausgegangen ist, und sorge daf&uuml;r, dass das Programm die Spieler:innen informiert.
+                    <div class="endnote">
+                        <p>Snap<em>!</em> hat die Higher-Order-Funktion <img class="inline nopadtb" src="/bjc-r/img/blocks/find-first.png" alt="find first item () in &lsquo;list input slot&rsquo;" title="find first item () in &lsquo;list input slot&rsquo;" />, die &auml;hnlich wie <code>keep</code> arbeitet, aber nur das <em>erste</em> gefundene Element berichtet und daher schneller sein kann. <code>Find first</code> entspricht <code>item (1) of (keep)</code>.</p>
+                        <p><code>find first</code> ist wie <code>keep</code>, <code>map</code> und <code>combine</code> eine Higher-Order-Funktion, weil sie eine Funktion (ein Pr&auml;dikat) als Eingabe erh&auml;lt.</p>
+                        <p><a href="#hint-tie-contains" data-toggle="collapse" title="Klicke f&uuml;r einen Tipp zum Einsatz von find first bei Unentschieden.">Klicke f&uuml;r einen Tipp zum Einsatz von <code>find first</code> bei Unentschieden.</a></p>
+                        <div id="hint-tie-contains" class="collapse"><img class="indent" src="/bjc-r/img/3-lists/any-numbers.png" alt="find first item (is () a number?) in ()" title="find first item (is () a number?) in ()" /></div>
+					</div>
+                </li>
+                <li>Spiele ein paar Runden, um die Unentschieden-Erkennung zu testen, und behebe Fehler.</li>
+                <div class="sidenoteBig">
+                    <p>Du kannst an diesem Projekt weiterarbeiten in <a href="/bjc-r/cur/programming/5-algorithms/6-tic-tac-toe/1-review.html?topic=nyc_bjc%2F5-algorithms.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 5, Labor 6: Tic Tac Toe mit Computergegner">Einheit 5, Labor 6: Tic Tac Toe mit Computergegner</a>.</p>
+                </div>
+                <li>
+                	Warum spielt die Reihenfolge der Tests (Sieg vs. Unentschieden) eine Rolle?
+					<img src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deiner Partnerperson" title="Sprich mit deiner Partnerperson" />
+				</li>
+                <li><img class="inline" src="/bjc-r/img/icons/save-use-later.png" alt="Speichere. Du brauchst das sp&auml;ter noch." title="Speichere. Du brauchst das sp&auml;ter noch." /></li>
+			</ol>
+		</div>
+
+		<div class="ifTime">
+			<ol start="5">
+				<li>Es gibt viele kleine Verbesserungen, die du vornehmen kannst. Zum Beispiel k&ouml;nntest du nach einem Sieg weitere Z&uuml;ge verhindern. Welche anderen &Auml;nderungen oder Verbesserungen fallen dir ein?</li>
+			</ol>
+		</div>
+
+        <div class="takeItFurther">
+			<img class="imageRight" src="/bjc-r/img/icons/tough-stuff-mini.png" alt="Schwierige Aufgabe" title="Schwierige Aufgabe" />
+            <ol type="A">
+                <li>Dein Programm kann Unentschieden cleverer erkennen. Wenn nur noch ein Feld frei ist und dessen Belegen f&uuml;r die Spieler:in, die als n&auml;chstes an der Reihe ist, keinen Sieg bringen w&uuml;rde, steht das Unentschieden bereits fest. Die Herausforderung besteht darin, dass du einen Sieg auf einem Spielbrett pr&uuml;fen musst, das nicht dem aktuellen <var>board</var> entspricht.</li>
+                <li>Anstatt dass der Sprite nur sagt &bdquo;X hat gewonnen&ldquo;, ist es f&uuml;r die Spielenden befriedigender, wenn du eine dicke Linie durch die drei Gewinnfelder zeichnest. Das ist etwas knifflig, weil du zum Zeitpunkt der Gewinnmeldung nicht mehr wei&szlig;t, welches Tripel ausgel&ouml;st hat. Achte darauf, dass dein Code f&uuml;r andere Programmierer:innen lesbar bleibt.</li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

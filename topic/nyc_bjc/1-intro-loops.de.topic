@@ -1,0 +1,54 @@
+title: Einheit 1: Einf&uuml;hrung in die Programmierung
+
+{
+
+heading:  Labor 1: Das Klick-Alonzo-Spiel
+	raw-html:<img class="imageRight noshadow" src="/bjc-r/img/1-introduction/U1ImageVideoAddendum_img/U1L1P6_AlonzoFading.gif" height="175" alt="Animation des Klick-Alonzo-Spiels in Aktion" title="Animation des Klick-Alonzo-Spiels in Aktion" />
+	resource: Ein Spiel programmieren [/bjc-r/cur/programming/1-introduction/1-building-an-app/1-start-your-first-snap-app.de.html]
+	resource: Snap<em>!</em>-Projekte speichern [/bjc-r/cur/programming/1-introduction/1-building-an-app/2-creating-a-snap-account.de.html]
+	resource: Dein Spiel teilen [/bjc-r/cur/programming/1-introduction/1-building-an-app/3-loading-mobile-device.de.html]
+	resource: Spielenden R&uuml;ckmeldung geben [/bjc-r/cur/programming/1-introduction/1-building-an-app/4-keeping-score.de.html]
+	resource: Dein Spiel verbessern [/bjc-r/cur/programming/1-introduction/1-building-an-app/5-finish-your-first-snap-app.de.html]
+
+heading: Labor 2: Tratsch
+	raw-html: <img class="imageRight noshadow" src="/bjc-r/img/1-introduction/U1L2-Gossip.jpg" alt="B&uuml;hne mit zwei Figuren, die miteinander sprechen. Eine sagt: &sbquo;Meine Katze spielt in Jakes Band&lsquo;, die andere sagt: &sbquo;Oh, aber &hellip; Mr. C liebt meine Katze.&lsquo;" title="B&uuml;hne mit zwei Figuren, die miteinander sprechen. Eine sagt: &sbquo;Meine Katze spielt in Jakes Band&lsquo;, die andere sagt: &sbquo;Oh, aber &hellip; Mr. C liebt meine Katze.&lsquo;"/>
+	resource: Paarprogrammierung [/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/1-pair-programming.de.html]
+	resource: Programme zum Sprechen bringen [/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/2-gossip.de.html]
+	resource: Anpassen und Debuggen [/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/3-customizing.de.html]
+	resource: Einen eigenen Block erstellen [/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/4-making-a-new-block.de.html]
+	quiz: Mehr Abwechslung f&uuml;r <code>Tratsch</code> [/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/5-if-else.de.html]
+
+heading: Labor 3: Moderne Kunst mit Polygonen
+	resource: Bewegung erkunden [/bjc-r/cur/programming/1-introduction/3-drawing/1-exploring-motion.de.html]
+	resource: Winkel und Drehungen [/bjc-r/cur/programming/1-introduction/3-drawing/2-exploring-snap-drawing-motion.de.html]
+	resource: Bl&ouml;cke mit Eingaben [/bjc-r/cur/programming/1-introduction/3-drawing/3-blocks-with-inputs.de.html]
+	resource: Dein Windrad ver&auml;ndern [/bjc-r/cur/programming/1-introduction/3-drawing/4-modify-your-pinwheel.de.html]
+	resource: Mit <code>Pinwheel</code> ein <code>Polygon</code> bauen [/bjc-r/cur/programming/1-introduction/3-drawing/5-remix-your-pinwheel.de.html]
+	raw-html: <img class="imageRight" src="/bjc-r/img/1-introduction/GraphicArt_img/ColoredSquareMesh.png" height="200" alt="zuf&auml;llig gef&auml;rbte Quadrate auf schwarzem Hintergrund" title="zuf&auml;llig gef&auml;rbte Quadrate auf schwarzem Hintergrund" />
+	resource: Schleifen mit Z&auml;hler [/bjc-r/cur/programming/1-introduction/3-drawing/6-the-for-block.de.html]
+	resource: Ein Programmierjournal f&uuml;hren [/bjc-r/cur/programming/1-introduction/3-drawing/7-programming-journal.de.html]
+
+heading: Labor 4: Deine Privatsph&auml;re sch&uuml;tzen
+	resource: Dein Bild in der Cloud [/bjc-r/cur/programming/1-introduction/4-privacy/1-your-image-in-the-cloud.de.html]
+	resource: Privatsph&auml;re untersuchen [/bjc-r/cur/programming/1-introduction/4-privacy/2-examining-privacy.de.html]
+	resource: Die Geschichte von Tanya Rider [/bjc-r/cur/programming/1-introduction/4-privacy/3-tanya-rider.de.html]
+	resource: Innovationen und Privatsph&auml;re [/bjc-r/cur/programming/1-introduction/4-privacy/4-privacy-affected.de.html]
+
+heading: Labor 5: Folge der F&uuml;hrung
+	resource: Figur folgt der Maus [/bjc-r/cur/programming/1-introduction/5-follow-the-leader/1-following-sprites.de.html]
+	resource: Figur folgt einer Figur [/bjc-r/cur/programming/1-introduction/5-follow-the-leader/2-sprite-interaction.de.html]
+
+	raw-html: <img class="imageRight noshadow" src="/bjc-r/img/1-introduction/Pong_img/pongAnimation.gif" width="250" alt="Pong-Spiel" title="Pong-Spiel"/>
+heading: Optionale Projekte
+	resource: Linienkunst-Spielzeug [/bjc-r/cur/programming/1-introduction/optional-projects/1-sprite-line-art.de.html]
+	resource: H&auml;userreihe [/bjc-r/cur/programming/1-introduction/optional-projects/2-row-of-houses.de.html]
+	resource: Das Spiel Pong [/bjc-r/cur/programming/1-introduction/optional-projects/3-pong.de.html]
+	resource: G&auml;nsebl&uuml;mchen-Design [/bjc-r/cur/programming/1-introduction/optional-projects/4-daisy.de.html]
+	resource: Sprache modellieren [/bjc-r/cur/programming/1-introduction/optional-projects/5-sentence-builder.de.html]
+
+
+heading: Wiederholung zu Einheit 1
+	resource: Wortschatz [/bjc-r/cur/programming/summaries/vocab1.de.html]
+	resource: Auf der AP-Pr&uuml;fung [/bjc-r/cur/programming/summaries/exam1.de.html]
+	resource: Selbsttest-Fragen [/bjc-r/cur/programming/summaries/assessment-data1.de.html]
+}

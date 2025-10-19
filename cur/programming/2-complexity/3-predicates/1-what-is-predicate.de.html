@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <script type="text/javascript" src="/bjc-r/utilities/gifffer.min.js"></script>
+        <script type="text/javascript">window.onload = function() {Gifffer();}</script>
+        <link rel="stylesheet" type="text/css" href="/bjc-r/css/bjc-gifffer.css">
+        <title>Einheit 2, Labor 3: Entscheidungen treffen, Seite 1</title>
+	</head>
+
+	<body>
+        <h2>Was ist ein Pr&auml;dikat?</h2>
+
+        <div class="learn">
+			<p><strong>In diesem Labor</strong> entwickelst du Werkzeuge, die beim L&ouml;sen von Wortr&auml;tseln helfen, indem sie nach W&ouml;rtern mit bestimmten Eigenschaften suchen.</p>
+            <p><strong>Auf dieser Seite</strong> wiederholst du Pr&auml;dikate und baust einige davon, die du in anderen Projekten einsetzen kannst.</p>
+		</div>
+
+        <div class="ap-standard">AAP-2.H.1</div>
+        <p>Wie du wei&szlig;t, sind Pr&auml;dikate Reporter-Bl&ouml;cke (Funktionen), die immer einen <em>Booleschen Wert</em> liefern (sie geben nur die Werte <img class="inline nopadtb" src="/bjc-r/img/blocks/true.png" alt="true" title="true" /> oder <img class="inline nopadtb" src="/bjc-r/img/blocks/false.png" alt="false" title="false" /> zur&uuml;ck). In Snap<em>!</em> werden Pr&auml;dikate als hexagonale Bl&ouml;cke dargestellt. Sie berechnen die <em>Bedingung</em>, die von <em>Bedingungsbl&ouml;cken</em> (wie <code>if</code>, <code>if else</code> oder <code>repeat until</code>) genutzt wird, um zu entscheiden, wann etwas passieren soll.</p>
+        <div class="takeNote">
+            <p>
+                Der <em>Eingabetyp</em> eines Bedingungsblocks sind Boolesche Werte, und der <em>Ausgabetyp</em> eines Pr&auml;dikats sind ebenfalls Boolesche Werte.
+                <div class="vocabFullWidth">: <strong>Eingabetyp</strong>, <strong>Ausgabetyp</strong>, <strong>Definitionsbereich</strong> und <strong>Wertebereich</strong>
+                    <ul>
+                        <li>Der <strong>Eingabetyp</strong> (von Programmierenden h&auml;ufig <strong>Definitionsbereich</strong> genannt) einer Funktion beschreibt, welche Daten als Eingabe akzeptiert werden.</li>
+                        <li>Der <strong>Ausgabetyp</strong> (auch <strong>Wertebereich</strong> genannt) einer Funktion beschreibt, welche Daten als Ergebnis zur&uuml;ckgegeben werden.</li>
+                    </ul>
+                </div>
+                Gemeinsam mit &bdquo;Abstraktion&ldquo; geh&ouml;ren diese beiden Ideen zu den wichtigsten in der Informatik. Wenn du sie gewohnheitsm&auml;&szlig;ig anwendest, schleichen sich viel seltener Bugs in deine Programme ein, weil du automatisch kontrollierst, ob der Ausgabetyp eines Reporters zum Eingabetyp des Blocks passt, in dem du ihn verwenden m&ouml;chtest.
+            </p>
+        </div>
+        <p>Pr&auml;dikate beantworten Ja/Nein-Fragen wie &bdquo;Ist die Zufallszahl 3?&ldquo; oder &bdquo;Ber&uuml;hrt dieser Sprite den Sprite namens &sbquo;Leader&lsquo;?&ldquo;</p>
+        <p>
+            Jeder <code>if else</code>-Block enth&auml;lt zwei Skripte; genau eines davon wird ausgef&uuml;hrt, je nachdem, welchen Wert das Pr&auml;dikat liefert. Danach macht der Computer mit dem weiter, was nach dem <code>if else</code>-Block kommt.<br />
+            <a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/5-if-else.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment"><img class="indent" src="/bjc-r/img/2-complexity/more-complicated-who-conditional.png" alt="if (pick random (1) to (4)) = (3) {
+    report (join (who) (', who') (does what) ( ) (who) (,))
+} else {
+    report (who)
+}" title="if (pick random (1) to (4)) = (3) {
+    report (join (who) (', who') (does what) ( ) (who) (,))
+} else {
+    report (who)
+}" /></a>
+            <a href="/bjc-r/cur/programming/1-introduction/5-follow-the-leader/2-sprite-interaction.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment"><img class="indent" src="/bjc-r/img/1-introduction/move-tiny-no-comment.png" alt="when green flag clicked:
+repeat until (touching (Leader)?)
+{
+    point towards (Leader)
+    move (1) steps
+}" title="when green flag clicked:
+repeat until (touching (Leader)?)
+{
+    point towards (Leader)
+    move (1) steps
+}" /></a>
+        </p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li><div class="newProject"><span class="text">&quot;U2L3-Predicates&quot;</span><img src="/bjc-r/img/icons/new-project-called.png" alt="Ein neues Projekt namens U2L3-Predicates erstellen" title="Ein neues Projekt namens U2L3-Predicates erstellen" /></div></li>
+                <li>
+                    In <a href="/bjc-r/cur/programming/1-introduction/5-follow-the-leader/1-following-sprites.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment">Einheit&nbsp;1, Labor&nbsp;5</a> hast du ein Skript gebaut, das den Sprite der Maus folgen l&auml;sst. <br />
+					<img class="indent" src="/bjc-r/img/2-complexity/U2-follow-that-mouse.png" alt="go to (mouse-pointer)" title="go to (mouse-pointer)"><br />
+                    <div class="ap-standard">AAP-2.E Abschnitt a</div>
+                    Nutze nun einen oder mehrere der folgenden <em>Relationaloperatoren</em>, um ein Skript zu erstellen, das mit der Maus auf der B&uuml;hne zeichnet, und zwar in zwei Farben, abh&auml;ngig von der Position der Maus auf der B&uuml;hne.<br />
+					<img class="indent" src="/bjc-r/img/blocks/less-than.png" alt="() < ()" title="() < ()" />
+					<img class="indent" src="/bjc-r/img/blocks/greater-than.png" alt="() > ()" title="() > ()" />
+					<img class="indent" src="/bjc-r/img/blocks/equal.png" alt="() = ()" title="() = ()" />
+					<img class="indent" src="/bjc-r/img/blocks/not-equal.png" alt="() ≠ ()" title="() ≠ ()" />
+                    <div class="endnote">
+                        <p><img class="inline" src="/bjc-r/img/icons/take-turns-speaking-mini.gif" alt="Abwechselnd sprechen" title="Abwechselnd sprechen" />Besprecht im Team, welche Eingabewerte ihr vergleicht, welche Farben ihr nutzen wollt und wie ihr sicherstellt, dass die Farbe gewechselt wird.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Eigene Pr&auml;dikate erstellen</h3>
+        <div class="forYouToDo">
+            <ol start="3">
+                <li>
+                    <div class="ap-standard">AAP-2.H Abschnitt a</div>
+                    <p>Erstelle ein Pr&auml;dikat <code>touching mouse-pointer?</code>, das <code>true</code> zur&uuml;ckgibt, wenn die Maus in der N&auml;he des Sprites ist, und <code>false</code>, wenn nicht.</p>
+                    <div class="endnote">
+                        <p>Teste deinen Block, indem du verschiedene Situationen ausprobierst: Maus direkt &uuml;ber dem Sprite, knapp daneben, weit entfernt.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ap-standard">AAP-2.H Abschnitt b</div>
+                    <p>Erstelle ein Pr&auml;dikat, das &uuml;berpr&uuml;ft, ob eine Eingabe ein <em>Gro&szlig;buchstabe</em> ist. Nutze dazu <img class="inline" src="/bjc-r/img/blocks/letter-of-apple.png" alt="letter ( ) of ( )" title="letter ( ) of ( )" /> und die Operatorbl&ouml;cke.</p>
+                    <div class="takeNote">
+                        <p>Vergiss nicht: Eingabetyp ist Text (Buchstaben), Ausgabetyp ist Boolean.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ap-standard">AAP-2.H Abschnitt c</div>
+                    <p>Baue ein Pr&auml;dikat, das pr&uuml;ft, ob ein Wort ein <em>Palindrome</em> ist (also vorw&auml;rts und r&uuml;ckw&auml;rts gelesen gleich bleibt).</p>
+                    <div class="endnote">
+                        <p>Speichere deine Pr&auml;dikate im Projekt &mdash; sie werden dir in sp&auml;teren Seiten n&uuml;tzen.</p>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="ifTime">
+            <ol start="6">
+                <li>Erweitere dein Palindrom-Pr&auml;dikat so, dass Leerzeichen oder Satzzeichen ignoriert werden.</li>
+                <li>Schreibe ein Pr&auml;dikat, das feststellt, ob ein Wort mindestens zwei Vokale enth&auml;lt.</li>
+            </ol>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="8">
+                <li>
+                    <!-- Frage 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Login" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">
+                            <p>
+                                <div class="ap-standard">AAP-2.H.2</div>
+								Was wird dieses Code-Segment melden, wenn <code>userInput</code> den Wert <code>password123</code> hat?<br />
+								<img class="indent" src="/bjc-r/img/2-complexity/login-predicate.png" alt="if (userInput = secret) {say Access granted!} else {say Access denied!}" title="if (userInput = secret) {say Access granted!} else {say Access denied!}" />
+                            </p>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Access granted!</div>
+                            <div class="feedback">
+                                Vergiss nicht: Der Vergleich <code>password123</code> = <code>secret</code> ergibt <code>false</code>.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Access denied!</div>
+                            <div class="feedback">
+                                Richtig! Da &bdquo;password123&ldquo; nicht gleich &bdquo;secret&ldquo; ist, ist die Bedingung <code>false</code> und das <code>else</code> wird ausgef&uuml;hrt.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Keine Ausgabe; es erscheint eine Fehlermeldung.</div>
+                            <div class="feedback">
+                                Der Code l&auml;uft ohne Fehler und liefert immer eine Ausgabe.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Keine Ausgabe; der Code behandelt diesen Fall nicht.</div>
+                            <div class="feedback">
+                                Beide F&auml;lle werden abgedeckt: Die Bedingung ist entweder wahr oder falsch.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                          <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+                </li>
+                
+                <li>
+                    <!-- Frage 2 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Do the following code segments produce the same output" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="true">
+                        <div class="prompt">
+                            <div class="ap-standard">AAP-2.L.1D</div>
+                            Erzeugen die folgenden Code-Segmente dasselbe Ergebnis?<br />
+                            <img class="indent" src="/bjc-r/img/2-complexity/2-3-1-less-than-100.png" alt="if (xposition) < (100) {set pen color to (blue)} else {set pen color to (yellow)}" title="if (xposition) < (100) {set pen color to (blue)} else {set pen color to (yellow)}" />
+                            <img class="indent" src="/bjc-r/img/2-complexity/2-3-1-greater-than-100.png" alt="if (xposition) > (100) {set pen color to (yellow)} else {set pen color to (blue)}" title="if (xposition) > (100) {set pen color to (yellow)} else {set pen color to (blue)}" />
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Nein, wo das eine Segment Blau setzt, w&auml;hlt das andere Gelb (und umgekehrt).</div>
+                            <div class="feedback">
+                                Meistens setzen beide Segmente dieselbe Farbe. Achte auf die unterschiedlichen Vergleichsoperatoren.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Nein, bei einer X-Position von 100 verhalten sie sich unterschiedlich.</div>
+                            <div class="feedback">
+                                Richtig! Beim ersten Block wird bei <code>x = 100</code> das <code>else</code> ausgef&uuml;hrt (Gelb), beim zweiten ebenfalls das <code>else</code> (Blau).
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Ja, das Ergebnis ist in beiden F&auml;llen, dass sich die Stiftfarbe nicht &auml;ndert.</div>
+                            <div class="feedback">
+                                Beide Segmente &auml;ndern die Stiftfarbe in Abh&auml;ngigkeit von der X-Position.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Ja, wo das eine Segment Blau setzt, setzt das andere ebenfalls Blau (und genauso bei Gelb).</div>
+                            <div class="feedback">
+                                Das stimmt fast &uuml;berall, aber nicht bei <code>x = 100</code>.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                          <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+
+        <script type="text/javascript">window.onload = function() {Gifffer();};</script>	    <title>Einheit 2, Labor 1: Spiele, Seite 4</title>
+	</head>
+
+	<body>
+    	<h2>Punktest&auml;nde mit globalen Variablen f&uuml;hren</h2>
+		<div class="learn">
+          <p><strong>Auf dieser Seite</strong> verwendest du eine <em>globale Variable</em>, um in deinem Click-Alonzo-Spiel den Punktestand zu speichern.</p>
+        </div>
+
+        <p>In deinem Zahlratespiel hast du <em>Skriptvariablen</em> genutzt, um Informationen (den Wert von <var>secret number</var>) zu speichern, die nur ein einzelnes Skript ben&ouml;tigt. Um im Click-Alonzo-Spiel Punkte zu z&auml;hlen, brauchen mehrere Skripte Zugriff auf dieselben Daten, daher verwendest du eine <em>globale Variable</em>.</p>
+        <div class="vocabFullWidth">: <strong>Globale Variable</strong>
+            <p>Eine <strong>globale Variable</strong> kann in allen Skripten des Programms verwendet werden.</p>
+        </div>
+        <div class="endnote">
+            <h3 class="box-head">Wann werden globale Variablen gebraucht?</h3>
+            <p>Meistens sind Skriptvariablen die bessere Wahl, weil sie nicht von anderen Teilen des Programms ver&auml;ndert werden k&ouml;nnen und dadurch weniger Fehler entstehen. Aber <strong>wenn mehrere Skripte Zugriff brauchen</strong> oder <strong>wenn die Information mit dem Projekt gespeichert werden soll</strong>, verwendest du eine globale Variable.</p>
+        </div>
+
+        <div class="forYouToDo" id="first">
+			<ol>
+				<li>&Ouml;ffne dein Projekt U1L1-ClickAlonzo, spiele das Spiel und sieh dir den Code noch einmal an, damit du dich erinnerst, wie alles funktioniert.</li>
+                <li><div class="saveAs"><span class="text">"U2L1-ClickAlonzo"</span><img src="/bjc-r/img/icons/save-this-as.png" alt="Speichere deine Arbeit unter U2L1-ClickAlonzo" title="Speichere deine Arbeit unter U2L1-ClickAlonzo" /> Denk daran, dein Projekt <strong>mit &bdquo;U2&ldquo; im Dateinamen umzubenennen.</strong> </div>
+                    <div class="takeNote">Wenn du neue Arbeit unter einem alten Dateinamen speicherst, &uuml;berschreibt Snap<em>!</em> dein urspr&uuml;ngliches Projekt. Nutze &bdquo;Save as...&ldquo; im Snap<em>!</em>-Dateimen&uuml;, um unter dem neuen Namen zu speichern. Wenn du ein &auml;lteres Projekt l&auml;dst und eine gr&ouml;&szlig;ere &Auml;nderung planst, gew&ouml;hne dir an, <em>zuerst mit dem neuen Namen zu speichern, bevor du etwas &auml;nderst</em>. </div>
+                </li>
+                <li>Erstelle eine globale Variable namens <var>score</var>. So gehst du vor:
+                    <div class="narrower">
+                        <h3 class="box-head">Eine globale Variable erstellen</h3>
+                        <ol type="a">
+                            <li>Klicke in der Variablen-Palette auf <img class="inline" src="/bjc-r/img/1-introduction/make-a-variable.png" alt="make a variable button" title="make a variable button" />. (Das ist kein Block; du kannst ihn nicht in den Skriptbereich ziehen.)</li>
+                            <li>Gib den Namen deiner Variable ein. In diesem Fall hei&szlig;t sie <var>score</var>.</li>
+                            <li>Klicke auf &bdquo;OK&ldquo;.</li>
+                        </ol>
+                    </div>
+                </li>
+        		<li>
+                    Verwende die Variable <var>score</var>, um den Punktestand zu verfolgen:
+                    <ol>
+                        <li>Initialisiere <var>score</var> zu Beginn des Spiels auf 0.
+                            <div class="vocabFullWidth">: <strong>Initialisierung</strong>
+                                <p>Den Anfangswert einer Variable zu setzen nennt man die Variable <strong>initialisieren</strong><a name="initialize" class="anchor">&nbsp;</a>.</p>
+                            </div>
+                            <div class="ap-standard">AAP-1.B.1</div>
+                        </li>
+                        <li> Lass das Programm den Punktestand um 1 erh&ouml;hen, wann immer der Sprite angeklickt wird.
+                            <div class="examFullWidth">
+                                <div class="pseudop">
+									<div class="python">
+										<a href="#hint-python-2-1-4-1" data-toggle="collapse" title="Wie w&uuml;rde das in Python aussehen?">Wie w&uuml;rde das in Python aussehen?</a>
+										<div id="hint-python-2-1-4-1" class="collapse">
+											<pre><code>score = score + 1</code></pre>
+										</div>
+									</div>
+                                    <img class="inline nopadtb" src="/bjc-r/img/2-complexity/change-score-by-1.png"  alt="change (score) by (1)" title="change (score) by (1)" /> (das bedeutet <img src="/bjc-r/img/2-complexity/set-score-to-score-plus-one.png" alt="set(score) to (score+1)" title="set(score) to (score+1)">) w&uuml;rde als <pre class="inline">score &leftarrow; score + 1</pre> oder <img class="inline" src="/bjc-r/img/2-complexity/score-increment-blocktran.png" alt="score ← score + 1" title="score ← score + 1" /> geschrieben.
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </li>
+                <li><img class="imageRight" src="/bjc-r/img/icons/pair-programming-swap.png" alt="Paarprogrammierung: Tauschen" title="Paarprogrammierung: Tauschen" />
+                <strong>Teste und debugge.</strong> Spiele das Spiel lang genug, um sicherzugehen, dass die Variable f&uuml;r den Punktestand funktioniert. <img class="inline" src="/bjc-r/img/icons/save-mini.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" /></li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" /> Im Moment gibt es noch keinen Weg zu gewinnen, aber das &auml;nderst du gleich. Legt fest, bei welchem Punktestand ihr pr&uuml;ft, ob die spielende Person gewonnen hat.</li>
+                <li>
+                	Nutze einen Bedingungsblock, der pr&uuml;ft, wann die spielende Person diesen Punktestand erreicht. Wenn das passiert:
+                      <ol>
+
+                        <li>Sorge daf&uuml;r, dass Alonzo aufh&ouml;rt herumzuspringen.</li>
+                    	<li>Lass Alonzo wieder sichtbar werden. (Du musst den Geistereffekt zur&uuml;cksetzen.)</li>
+                        <li>Gratuliere der spielenden Person f&uuml;r ein paar Sekunden.</li>
+                        <!--<li>If necessary, use another <code>stop</code> block to stop the running script.  (Whether you need this will depend on your program structure.)</li>-->
+                    </ol>
+                </li>
+                <li>
+                    <strong>Teste und debugge.</strong> Spielt abwechselnd und behebt Fehler. <img class="inline" src="/bjc-r/img/icons/save-mini.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" /><br />
+                    <div class="takeNote">
+                        <h3 class="box-head">Debugging-Tipp: Variablen anzeigen</h3>
+                        <p>
+                            Beim Debuggen hilft es, den Wert einer Variablen an unterschiedlichen Stellen im Programm zu sehen. Das funktioniert bei lokalen und globalen Variablen unterschiedlich:
+                            <ul>
+                                <li>Globale Variablen haben Kontrollk&auml;stchen, mit denen du den Variablen-<em>Watcher</em> auf der B&uuml;hne ein- oder ausblendest (siehe unten).<br />
+                                <img class="indent" src="/bjc-r/img/2-complexity/Debugging/golbal-variables-checked.png"  height="300" alt="Globale Variablen in der Palette anhaken" title="Globale Variablen in der Palette anhaken"/><img class="indent" src="/bjc-r/img/2-complexity/Debugging/global-variables-displayed.png"  height="300" alt="Globale Variable auf der B&uuml;hne anzeigen" title="Globale Variable auf der B&uuml;hne anzeigen"/></li>
+                                <li>Wenn es sich um eine <em>lokale</em> (Skript-)Variable handelt, kannst du im Skript den Block <strong><code>show variable</code></strong> verwenden, um einen Watcher auf der B&uuml;hne anzuzeigen (und mit <code>hide variable</code> wieder zu verstecken).</li>
+                            </ul>
+                        </p>
+                    </div>
+                </li>
+            </ol>
+		</div>
+
+
+        <div class="ifTime">
+            <ol start="9">
+                <li>Falls sich der Sprite bewegt, ohne angeklickt zu werden, lass den Punktestand um 1 sinken.</li>
+                <li>Ist das Spiel zu schwer? Erh&ouml;he den Punktestand bei einem Treffer um 2. Zu gro&szlig;er Sprung? Erh&ouml;he bei einem Treffer um 3 und verringere bei einem Fehlschlag um 2. Du kannst den Schwierigkeitsgrad beliebig fein einstellen. Dieser Prozess hei&szlig;t ein Spiel <em>Playtuning</em>.</li>
+            </ol>
+		</div>
+
+
+	</body>
+</html>

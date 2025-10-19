@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 3, Labor 2: Kontaktliste, Seite 2</title>
+        <script type="text/javascript">
+			window.hinttext='<br /><img class="indent" src="/bjc-r/img/3-lists/ask-name-definition.png" alt="ask name Blockdefinition" title="ask name Blockdefinition" />';
+        </script>
+    </head>
+
+    <body>
+    	<h2>Kontaktdaten hinzufügen</h2>
+		<div class="learn">
+        	<p><strong>Auf dieser Seite</strong> baust du die Buttons „Kontakt hinzufügen“ und „Liste leeren“ f&uuml;r dein Kontaktlistenprogramm.</p>
+        </div>
+
+
+        <div class="forYouToDo" id="first">
+			<ol>
+				<li>&Ouml;ffne dein Projekt U3L2-ContactList, falls es noch nicht ge&ouml;ffnet ist.</li>
+                <li>
+                    Entwickle den Button „Kontakt hinzuf&uuml;gen“.
+                    <ol>
+                        <div class="ap-standard">CRD-2.C</div>
+                        <li>Notiere anhand der vorherigen Seite, welche Fragen dein Programm stellen wird. Die Antworten bilden die <em>Eingaben</em> deines Programms.</li>
+                        <div class="vocabFullWidth">: <strong>Eingabe</strong> und <strong>Ausgabe</strong>
+                            <div class="ap-standard">CRD-2.C.1, CRD-2.C.4, CRD-2.C.6, CRD-2.D.1, CRD-2.D.2</div>
+                            <p>„Eingabe“ verwenden wir einerseits f&uuml;r freie Felder in Bl&ouml;cken, andererseits f&uuml;r Informationen, die Nutzerinnen eingeben, etwa per <code>ask and wait</code>. Eingaben k&ouml;nnen auch aus Dateien, Audio, Bildern, Video oder anderen Programmen stammen.</p>
+                            <p>„Ausgabe“ bezeichnet Daten, die das Programm an Nutzerinnen oder Ger&auml;te sendet – meist abh&auml;ngig von den Eingaben.</p>
+                        </div>
+                        <li>Lass dein Skript die Nutzerin nach den Kontaktdaten fragen und f&uuml;ge den neuen Kontakt mithilfe des <code>contact</code>-Konstruktors zur <var>contact list</var> hinzu.</li>
+                        <div class="narrower">
+                            <h3 class="box-head">Daten vom Benutzer einsammeln</h3>
+                            <p>
+                                Frage jede Information einzeln ab (Name, Adresse, Telefonnummer).
+								<ul>
+                                    <li>
+                                        <strong>Du <em>k&ouml;nntest</em> mehrere <code>ask</code>- und <code>answer</code>-Bl&ouml;cke mit Skriptvariablen kombinieren,</strong> um die Eingaben zwischenzuspeichern und sie anschlie&szlig;end gemeinsam an <code>contact</code> zu &uuml;bergeben.<br />
+                                        <img class="indent" src="/bjc-r/img/3-lists/contact-constructor-with-variables.png" alt="contact mit Variablen" title="contact mit Variablen" />
+                                    </li>
+                                    <li>
+                                        <strong><em>Eleganter</em> ist Abstraktion: Erstelle Hilfsbl&ouml;cke</strong> (z.&nbsp;B. <img src="/bjc-r/img/3-lists/ask-name.png" alt="ask name" title="ask name" /> oder <img src="/bjc-r/img/3-lists/ask-phone.png" alt="ask phone" title="ask phone" />), die jeweils eine Frage stellen und ihre Antwort an den Konstruktor zur&uuml;ckgeben.<br />
+                                        <img class="indent" src="/bjc-r/img/3-lists/contact-constructor-with-helpers.png" alt="contact mit Hilfsbl&ouml;cken" title="contact mit Hilfsbl&ouml;cken" /><br />
+                                        Jeder Hilfsblock nutzt <code>ask</code>, um z. B. „Wie lautet die Adresse?“ zu fragen, und gibt die <code>answer</code> zur&uuml;ck.
+                                    </li>
+								</ul>
+                                <div class="endnote">
+                                    Du kannst zun&auml;chst einen allgemeinen Hilfsblock <img src="/bjc-r/img/3-lists/answer-to-prompt.png" alt="answer to prompt ()" title="answer to prompt ()" /> bauen und diesen in den anderen Hilfsbl&ouml;cken verwenden – so musst du <code>ask</code>/<code>answer</code> nicht mehrfach schreiben.
+                                </div>
+							</p>
+                        </div>
+                    </ol>
+                </li>
+                <li>Teste deinen Button „Kontakt hinzuf&uuml;gen“ mit mehreren Beispielen.</li>
+                <li>Erstelle einen Button „Liste leeren“, der <var>contact list</var> auf eine leere Liste setzt (praktisch beim Debuggen).</li>
+			</ol>
+        </div>
+
+        <div class="forYouToDo">
+        	<ol start="5">
+                <li>
+                    <!-- Frage -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Temperature flowchart inputs and outputs" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">
+                            <div class="ap-standard">CRD-2.C.3.A, CRD-2.D.3.A</div>
+                            Bestimme Eingaben und Ausgaben in folgendem Szenario: Ein Smart-Home-Thermostat misst die aktuelle Raumtemperatur (Sensor) und sendet Befehle an die Heizung. Der Ablaufplan sieht so aus:<br />
+                            <img src="/bjc-r/img/3-lists/3-2-2-flowchart.png" alt="Flowchart Thermostat" title="Flowchart Thermostat" />
+                            Sind die folgenden Aussagen wahr oder falsch?
+                            <ol>
+                                <li>Die aktuelle Raumtemperatur ist eine Eingabe.</li>
+                                <li>Die von der Nutzerin eingestellte WunschtTemperatur ist eine Ausgabe.</li>
+                                <li>Die Nachricht „Heizung AN/AUS“ an das Heizsystem ist eine Ausgabe.</li>
+                                <li>Die tats&auml;chliche Temperatur&auml;nderung im Raum ist eine Ausgabe.</li>
+                            </ol>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Wahr, Wahr, Wahr, Falsch</div>
+                            <div class="feedback">
+                                Die Wunschtemperatur ist ebenfalls eine Eingabe.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Wahr, Falsch, Wahr, Falsch</div>
+                            <div class="feedback">
+                                Richtig! Das Programm liest Sensorwerte und gibt Steuerbefehle an die Heizung aus.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Wahr, Falsch, Falsch, Wahr</div>
+                            <div class="feedback">
+                                Die Ausgabe ist der Steuerbefehl, nicht die Temperatur&auml;nderung.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Falsch, Falsch, Wahr, Falsch</div>
+                            <div class="feedback">
+                                Sowohl aktuelle als auch gewünschte Temperatur sind Eingaben.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                          <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+    </body>
+</html>

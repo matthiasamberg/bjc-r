@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <script src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2, Labor 4: Computer rechnen lassen, Seite 2</title>
+    </head>
+
+    <body>
+		<h2>Eine mathematische Bibliothek erstellen</h2>
+        <div class="learn"><strong>In diesem Projekt</strong> baust du eine <em>Bibliothek</em> (eine Sammlung) von Mathe-Werkzeugen auf, die auf den Bl&ouml;cken aus <a href="/bjc-r/cur/programming/2-complexity/3-predicates/2-combining-predicates.de.html?topic=nyc_bjc%2F2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Labor 3, Seite 2: Pr&auml;dikate kombinieren">Labor 3, Seite 2</a> aufsetzt.</div>
+
+        <div class="ap-standard">AAP-2.M.3, AAP-3.D.3</div>
+        <p><em>Bibliotheken</em> vereinfachen die Entwicklung neuer Programme. Wenn du Prozeduren nutzt, von denen du wei&szlig;t, dass sie funktionieren, reduzierst du Programmieraufwand, potenzielle Fehlerquellen und den Testumfang.</p>
+        <div class="vocabFullWidth">: <strong>Softwarebibliothek</strong>
+            <div class="commentBig">AAP-3.D.1</div>
+            <p>Eine <strong>Softwarebibliothek</strong> ist eine Sammlung von Prozeduren, die in Programmen verwendet werden k&ouml;nnen.</p>
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>
+                    Exportiere die mathematischen Bl&ouml;cke aus deinem Projekt U2L3-Predicates.
+                    <div class="narrower">
+                      <h3 class="box-head">Bl&ouml;cke exportieren</h3>
+                        <ol type="a">
+                            <li><strong>&Ouml;ffne das Snap<em>!</em>-Projekt</strong>, aus dem du exportieren m&ouml;chtest (hier: U2L3-Predicates).</li>
+                            <li><strong>W&auml;hle &bdquo;Export blocks...&ldquo;</strong> im Snap<em>!</em>-Dateimen&uuml; (<img class="inline" src="/bjc-r/img/1-introduction/file_button.png" alt="Dateimen&uuml;-Button" title="Dateimen&uuml;-Button"/>).</li>
+                            <li>
+                                <strong>Markiere nur die Bl&ouml;cke, die du exportieren willst</strong> (hier z. B. <img class="inline nopadtb" src="/bjc-r/img/2-complexity/between.png" alt="is () between () and ()?" title="is () between () and ()?" />,  <img class="inline nopadtb" src="/bjc-r/img/blocks/less-than-or-equal.png" alt="less than or equal" title="less than or equal" />, <img class="inline nopadtb" src="/bjc-r/img/blocks/greater-than-or-equal.png" alt="greater than or equal" title="greater than or equal" /> und <img class="inline nopadtb" src="/bjc-r/img/2-complexity/not-equal.png" alt="() not equal ()" title="() not equal ()" />).
+                                <div class="endnote">Du kannst nicht ben&ouml;tigte Bl&ouml;cke abw&auml;hlen oder das Kontextmen&uuml; &ouml;ffnen, &bdquo;none&ldquo; w&auml;hlen und danach die gew&uuml;nschten Bl&ouml;cke anklicken.</div>
+                            </li>
+                            <li>
+                                <div class="sidenoteBig">Snap<em>!</em>-Bibliotheken und -Projekte werden beide als XML-Dateien exportiert.</div>
+                                <strong>Klicke &bdquo;OK&ldquo;.</strong> Eine XML-Datei wird heruntergeladen.
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+                <li>
+                    Importiere diese Bl&ouml;cke in dein Projekt U2L4-MathLibrary, teste sie, behebe Probleme und speichere.
+                    <div class="narrower">
+                        <h3 class="box-head">Bl&ouml;cke importieren</h3>
+                        <ol type="a">
+                            <li><strong>&Ouml;ffne das Snap<em>!</em>-Projekt</strong>, in das du importieren willst (hier: U2L4-MathLibrary).</li>
+                            <li>
+                                <strong>Ziehe die XML-Datei</strong> aus deinem Download-Ordner in das Snap<em>!</em>-Fenster.
+                                <div class="endnote">
+                                    Alternativ kannst du im Dateimen&uuml; &bdquo;Import...&ldquo; w&auml;hlen, die XML-Datei suchen und &bdquo;Open&ldquo; anklicken.
+                                </div>
+                            </li>
+                            <li>
+                                <strong>Teste die importierten Bl&ouml;cke:</strong>
+                                <ol>
+                                    <li><strong>Du findest sie am Ende</strong> der jeweiligen Palette.</li>
+                                    <li><strong>Klicke jeden Block an</strong>, um sicherzugehen, dass er funktioniert.</li>
+                                </ol>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="endnote">
+            Du erstellst gerade eine Mathebibliothek. Snap<em>!</em> bietet zahlreiche Bibliotheken, zum Beispiel f&uuml;r die Arbeit mit Textbausteinen. Bibliotheken lassen sich im Dateimen&uuml; &uuml;ber &bdquo;Libraries&ldquo; aktivieren.
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="3">
+                <li>
+                    Erstelle die folgenden Bl&ouml;cke und teste sie. Beschreibe kurz, was sie tun und welche Eingaben sie erwarten.
+                    <ol type="a">
+                        <li><strong><code>divisors of</code></strong>: Liefert eine Liste aller Teiler einer positiven ganzen Zahl.</li>
+                        <li><strong><code>has exactly two divisors?</code></strong>: Meldet <code>true</code>, wenn die Eingabe genau zwei Teiler hat.</li>
+                        <li><strong><code>between?</code></strong>: Nutzt deine exportierten Bl&ouml;cke, um zu pr&uuml;fen, ob eine Zahl zwischen zwei Grenzen liegt.</li>
+                    </ol>
+                </li>
+                <li>
+                    Schreibe eine Kurzbeschreibung (z. B. in einer Textbox in Snap<em>!</em>), wie man jeden deiner Bl&ouml;cke verwendet. Das ist der Beginn der Dokumentation f&uuml;r deine Bibliothek.
+                </li>
+                <li>
+                    <div class="ap-standard">AAP-2.M</div>
+                    Teste deine Bl&ouml;cke ausf&uuml;hrlich: Welche Zahlen haben genau zwei Teiler?
+                    <div class="endnote">
+                        <ul>
+                            <li><strong>Welche Arten von Zahlen k&ouml;nnten mehr als zwei Teiler haben?</strong></li>
+                            <li><strong>Welche Zahlen haben genau zwei Teiler?</strong></li>
+                        </ul>
+                    </div>
+                </li>
+			</ol>
+        </div>
+
+        <img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+
+        <div class="ifTime">
+			<ol start="5">
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" /> Besprecht zu den beiden Fragen oben &ndash; weshalb haben bestimmte Zahlarten genau diese Menge an Teilern?</li>
+			</ol>
+		</div>
+
+        <p>Du hast nun eine kleine Bibliothek erstellt. Es ist sinnvoll, eine Anleitung zur Nutzung der Funktionen zu schreiben (zum Beispiel: <code>divisors of</code> erwartet eine positive ganze Zahl und liefert eine Liste von Zahlen). Diese Anleitung ist die <em>Application Program Interface</em> deiner Bibliothek.</p>
+
+        <div class="vocabFullWidth">: <strong>Application Program Interface (API)</strong>
+            <div class="ap-standard">AAP-3.D.4, AAP-3.D.5</div>
+            <p>Eine <strong>Application Program Interface (API)</strong> dokumentiert, was eine Programmiererin &uuml;ber eine Bibliothek wissen muss: Sie beschreibt Zweck, Eingaben und Ausgaben jeder Prozedur (aber nicht den Algorithmus).</p>
+            <div class="endnote">
+                <a href="#hint-webAPI" data-toggle="collapse" title="Was ist eine Web-API?">Was ist eine Web-API?</a>
+                <div id="hint-webAPI" class="collapse">
+                    <p>Eine h&auml;ufige Form einer API ist eine <em>Web-API</em>, bei der die Bibliothek auf einem anderen Rechner liegt. Beispiel: Die <a href="https://developers.google.com/maps/documentation/embed/start" title="Google Maps API" target="_blank">Google-Maps-API</a> erkl&auml;rt, wie du eine Google-Karte auf deiner Website einbindest.</p>
+                    <div class="todo">M&ouml;glicherweise k&uuml;rzen wir den restlichen Text dieser gelben Box. --MF, 15.01.20</div>
+                    <p>Eine Web-API ruft lediglich eine Prozedur auf einem anderen Rechner auf. Diese drei Schreibweisen meinen dasselbe und liefern die Anzahl der Suchanfragen nach &bdquo;BJC&ldquo; in den USA:
+                        <ul>
+                            <li><a href="https://trends.google.com/trends/explore?q=BJC&geo=US" title="https://trends.google.com/trends/explore?q=BJC&amp;geo=US" target="_blank">https://trends.google.com/trends/explore?q=BJC&amp;geo=US</a></li>
+                            <li><pre class="inline">EXPLORE (q = BJC, geo = US)</pre></li>
+                            <li><img class="" src="/bjc-r/img/6-computers/explore-api-example.png" alt="explore, query: (BJC) geographical location: (US)" title="explore, query: (BJC) geographical location: (US)" /></li>
+                        </ul>
+                    Der Unterschied ist lediglich, dass die URL verr&auml;t, wo im Internet die Prozedur zu finden ist.</p>
+                </div>
+            </div>
+		</div>
+
+
+	</body>
+</html>

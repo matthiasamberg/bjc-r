@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+	    <title>Einheit 2, Labor 1: Spiele, Seite 2</title>
+    </head>
+
+    <body>
+        <h2>Die Vermutung pr&uuml;fen</h2>
+		<div class="todo">Menschen lassen sich von der Box &bdquo;Auf der AP-Pr&uuml;fung&ldquo; verwirren und versuchen, den dortigen Code nachzubauen. --MF, 1.8.23</div>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> entwickelst du dein Zahlratespiel weiter, sodass Spielende so lange raten k&ouml;nnen, bis sie richtig liegen.</p>
+        </div>
+		<!--<div class="index-term" id="<code>repeat until</code> block" />-->
+
+        <p>Der Computer soll die Spielenden immer wieder um eine neue Vermutung bitten, bis sie richtig geraten haben. Daf&uuml;r verwendest du den Block <img class="inline nopadtb" src="/bjc-r/img/blocks/repeat-until.png" alt="repeat until" title="repeat until" />. <code>repeat until</code> ist eine <em>Schleife</em> (genau wie <code>repeat</code>, <code>forever</code> und <code>for</code>), aber auch ein <em>Bedingungsblock</em> (wie <code>if</code> und <code>if else</code>). Er wiederholt sich, bis eine bestimmte Bedingung erf&uuml;llt ist. In diesem Programm soll der Code so lange wiederholt werden, bis die Antwort der spielenden Person gleich der geheimen Zahl ist.</p>
+
+        <div class="endnote">
+            <p>Schleifen hast du auf <a href="/bjc-r/cur/programming/1-introduction/3-drawing/6-the-for-block.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 1, Labor 3, Seite 6: Schleifen mit Z&auml;hler">Einheit&nbsp;1, Labor&nbsp;3, Seite&nbsp;6: Schleifen mit Z&auml;hler</a> kennengelernt.</p>
+            <p>Bedingungen sind dir bereits von <a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/5-if-else.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 1, Labor 2, Seite 5: Mehr Abwechslung f&uuml;r Gossip">Einheit&nbsp;1, Labor&nbsp;2, Seite&nbsp;5: Mehr Abwechslung f&uuml;r <code>Gossip</code></a> und von <a href="/bjc-r/cur/programming/1-introduction/5-follow-the-leader/2-sprite-interaction.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 1, Labor 5, Seite 2: Figur folgt einer Figur">Einheit&nbsp;1, Labor&nbsp;5, Seite&nbsp;2: Figur folgt einer Figur</a> bekannt.</p>
+        </div>
+        <div class="forYouToDo">
+            <img class="imageRight" src="/bjc-r/img/icons/pair-programming-swap.png" alt="Paarprogrammierung: Tauschen" title="Paarprogrammierung: Tauschen" />
+            <ol start="1">
+                <li>Nutze <code>repeat until</code>, um die spielende Person (<img class="inline nopadtb" src="/bjc-r/img/blocks/ask-empty-full-size.png" alt="ask () and wait" title="ask () and wait" />) so lange nach der geheimen Zahl fragen zu lassen, bis ihre <img class="inline" src="/bjc-r/img/blocks/answer-full-size.png" alt="answer" title="answer" /> dem <var>secret number</var> entspricht.
+                    <div class="endnote">
+                        <ul>
+                            <li>Ziehe die Variable <var>secret number</var> aus dem <code>script variables</code>-Block, um sie zu verwenden.</li>
+                            <li>Die Bl&ouml;cke <code>ask</code> und <code>answer</code> geh&ouml;ren zusammen. Wenn du mit <code>ask</code> eine Frage stellst, liefert <code>answer</code> die Antwort der Nutzerin oder des Nutzers.</li>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="examFullWidth">
+            <div class="pseudop">
+                Der Code <img class="inline" src="/bjc-r/img/2-complexity/chicken-script.png" alt="ask (Why did the chicken cross the road?) and wait; set (user response) to (answer)" title="ask (Why did the chicken cross the road?) and wait; set (user response) to (answer)" />
+                w&uuml;rde so geschrieben:
+                <div class="pre-container"><pre class="inline">DISPLAY("Why did the chicken cross the road?")
+userResponse &leftarrow; INPUT()</pre></div> oder
+                <img class="inline" src="/bjc-r/img/2-complexity/chicken-script-blocktran.png" alt="wei&szlig;es, abgerundetes Rechteck mit zwei kleineren wei&szlig;en Rechtecken: Im ersten steht 'DISPLAY' und darunter 'Why did the chicken cross the road?', im zweiten 'userResponse &leftarrow; INPUT()'" title="DISPLAY/INPUT() Darstellung" />.
+            </div>
+            <div class="ap-standard">AAP-3.A.8, AAP-3.A.9</div>
+            <div class="pseudop">Beachte, dass das Verfahren <pre class="inline">INPUT()</pre> den eingegebenen Wert annimmt und zur&uuml;ckgibt; dieser wird dann mit dem Operator <pre class="inline">&leftarrow;</pre> der Variablen <pre class="inline">userResponse</pre> zugewiesen. In Snap<em>!</em> funktioniert das wie beim Block <code>answer</code>, der die Eingabe annimmt und zur&uuml;ckliefert, und der Computer <code>set</code> diese Antwort einem Variablenwert zuweist.</div>
+        </div>
+
+        <div class="takeNote">
+            <p>Der <code>repeat until</code>-Block pr&uuml;ft die Bedingung am Ende jeder Wiederholung. Wenn die Bedingung <code>true</code> ist, h&ouml;rt die Schleife auf, ansonsten wird der Inhalt noch einmal ausgef&uuml;hrt.</p>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="2">
+                <li>
+                    <div class="ap-standard">AAP-2.C, AAP-2.D</div>
+                    <p>Verbessere deinen Block, sodass er den Spielenden Hinweise gibt.</p>
+                    <ol type="a">
+                        <li>
+                            Wenn die Antwort der spielenden Person nicht korrekt ist, soll das Programm mitteilen, ob die Vermutung zu hoch oder zu niedrig war.<br />
+                            <img class="indent" src="/bjc-r/img/2-complexity/checking-player-guess-script.png" alt="Zahlrateskript mit Hinweisen 'too high'/'too low'" title="Zahlrateskript mit Hinweisen" />
+                        </li>
+                        <li>
+                            <strong>Damit das funktioniert,</strong> musst du die Antwort der spielenden Person mit einer Zahl vergleichen. Der <code>ask</code>-Block liefert jedoch <em>Text</em>. Verwende daher den Block <img class="inline nopadtb" src="/bjc-r/img/blocks/letter-of-apple.png" alt="letter ( ) of ( )" title="letter ( ) of ( )" /> oder <img class="inline nopadtb" src="/bjc-r/img/blocks/join-empty-empty.png" alt="join () ()" title="join () ()" />, um die Antwort in eine Zahl umzuwandeln, <em>oder</em> nutze den Operator <img class="inline nopadtb" src="/bjc-r/img/blocks/plus.png" alt="() + ()" title="() + ()" />, indem du 0 addierst. (Falls du dir nicht sicher bist, wie das geht, probiere es im Snap<em>!</em>-Interpreter aus.)<br />
+                            <img class="indent" src="/bjc-r/img/2-complexity/cast-answer.png" alt="use () + 0 to convert answer to a number" title="Antwort in eine Zahl umwandeln" />
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="examFullWidth">
+            <div class="ap-standard">AAP-3.A.9, AAP-3.B.7</div>
+            <p>Auf der AP-Pr&uuml;fung kann die Eingabe durch einen Aufruf wie <pre class="inline">answer &leftarrow; INPUT()</pre> dargestellt werden. Wenn die Antwort eine Zahl sein soll, wird sie m&ouml;glicherweise mit <pre class="inline">answer &leftarrow; answer + 0</pre> in eine Zahl umgewandelt.</p>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="3">
+                <li>
+                    Teste deinen Block mit verschiedenen Vermutungen. Gibt er die richtigen Hinweise? Funktioniert der Vergleich <code>answer = secret number</code> auch dann, wenn du mehrmals die gleiche falsche Zahl eingibst?
+                </li>
+            </ol>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="4">
+                <li>
+                    <div class="ap-standard">AAP-3.A.5, AAP-3.A.8, AAP-3.B.1</div>
+                    <p>Erweitere deinen Block, sodass er das Ergebnis zur&uuml;ckmeldet.</p>
+                    <ol type="a">
+                        <li>Wenn die spielende Person richtig geraten hat, soll der Block ein <code>report (true)</code> ausf&uuml;hren. Andernfalls soll er <code>report (false)</code> melden.</li>
+                        <li>
+                            Teste deinen Block mit verschiedenen Eingaben, um sicherzustellen, dass er immer das richtige Ergebnis zur&uuml;ckliefert.<br />
+                            <img class="indent" src="/bjc-r/img/2-complexity/reports-true-false.png" alt="Block mit report true/false" title="Block mit report true/false" />
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="examFullWidth">
+            <div class="ap-standard">AAP-3.B.1</div>
+            <p>Auf der AP-Pr&uuml;fung ist das <code>report</code>-Kommando ein <code>return</code>-Befehl. Ein zweiter <code>return</code> im selben Block ist erlaubt, solange der erste nicht bereits ausgef&uuml;hrt wurde.</p>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="5">
+                <li>
+                    <p>Teste dein Verst&auml;ndnis.</p>
+                    <div class="assessment-data" type="multiplechoice" identifier="Which inputs to mystery function return finished?" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">
+                            <img class="imageRight" src="/bjc-r/img/2-complexity/mystery-function.png" alt="mystery function (input):
+if (input < 5) (repeat until (input = 5)
+(
+    say (input) for (1) secs,
+    set (input) to (input + 1)
+)
+report (finished)" title="mystery function (input):
+if (input < 5) (repeat until (input = 5)
+(
+    say (input) for (1) secs,
+    set (input) to (input + 1)
+)
+report (finished)" />
+                            Welche Eingaben f&uuml;r <code>mystery function</code> f&uuml;hren zum Ergebnis &bdquo;finished&ldquo;?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Beliebige ganze Zahl</div>
+                            <div class="feedback">
+                                Richtig! Egal welche ganze Zahl eingegeben wird, der <code>report</code>-Block wird irgendwann ausgef&uuml;hrt. (Das gilt nicht f&uuml;r jedes Verfahren, aber hier schon.)
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Nur ganze Zahlen gr&ouml;&szlig;er oder gleich 5</div>
+                            <div class="feedback">
+                                Schreibe einige Beispiele auf, bei denen die Eingabe kleiner als 5 ist. Wenn die Eingabe zum Beispiel 3 ist, sagt der Sprite 3, die Eingabe wird zu 4, der Sprite sagt 4, die Eingabe wird zu 5, die <code>repeat until</code>-Schleife stoppt und das Verfahren meldet &bdquo;finished&ldquo;.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Nur ganze Zahlen kleiner als 5</div>
+                            <div class="feedback">
+                                Der <code>report</code>-Befehl steht nicht innerhalb des <code>if</code>-Blocks.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Nur 5</div>
+                            <div class="feedback">
+                                Der <code>repeat until</code>-Block pr&uuml;ft den Wert von <var>input</var> bei jedem Durchlauf, nicht nur am Anfang.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+				</li>
+				<li>
+                    <!-- Question 2 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Which inputs to mystery function will give the output finished?" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="true">
+                        <div class="prompt">
+                            <img class="imageRight" src="/bjc-r/img/2-complexity/mystery-function.png" alt="mystery function (input):
+if (input < 5) (repeat until (input = 5)
+(
+    say (input) for (1) secs,
+    set (input) to (input + 1)
+)
+report (finished)" title="mystery function (input):
+if (input < 5) (repeat until (input = 5)
+(
+    say (input) for (1) secs,
+    set (input) to (input + 1)
+)
+report (finished)" />
+                            <strong>Was sagt der Sprite</strong>, wenn du dieselbe Funktion mit der Eingabe 1 aufrufst?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">
+                                <img class="noshadow" src="/bjc-r/img/2-complexity/say4.png" height="75px" alt="Sprechblase mit der Zahl 4" title="Sprechblase mit der Zahl 4" />
+                            </div>
+                            <div class="feedback">
+                                Am Ende sagt der Sprite 4, aber zuvor werden noch andere Zahlen angezeigt.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">
+                                <img class="noshadow" src="/bjc-r/img/2-complexity/say1then2345.png" height="100px" alt="Sprechblase sagt nacheinander 1, 2, 3, 4, 5" title="Sprechblase mit 1, 2, 3, 4, 5" />
+                            </div>
+                            <div class="feedback">
+                                Genau! Das Skript sagt 1, ver&auml;ndert die Eingabe zu 2, sagt 2, ver&auml;ndert die Eingabe zu 3 und so weiter, bis es 5 sagt.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">
+                                <img class="noshadow" src="/bjc-r/img/2-complexity/say123.png" height="75px" alt="Sprechblase 1 2 3" title="Sprechblase 1 2 3" />
+                            </div>
+                            <div class="feedback">
+                                Vergiss nicht, dass die Schleife so lange weiterl&auml;uft, bis die Eingabe 5 ist.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">
+                                <img class="noshadow" src="/bjc-r/img/2-complexity/say1.png" height="75px" alt="Sprechblase 1" title="Sprechblase 1" />
+                            </div>
+                            <div class="feedback">
+                                Der Wert der Eingabe &auml;ndert sich innerhalb der Schleife.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                            <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+    </body>
+</html>

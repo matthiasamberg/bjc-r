@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <title>Einheit 2, Optionale Projekte, Seite 6</title>
+    </head>
+
+    <body>
+        <h2>Ein Kaleidoskop erstellen</h2>
+        <div class="learn">
+            <p>
+                <strong>In diesem Projekt</strong> baust du eine App, mit der du wie in einem Kaleidoskop zeichnen kannst.<br />
+                <img class="indent" src="/bjc-r/img/1-introduction/topic1-kaleidoscope.gif" alt="Kaleidoskop-Aktivit&auml;t"/>
+            </p>
+        </div>
+        <p>Ein Sprite folgt der Maus. Drei weitere Sprites spiegeln dessen Bewegung auf unterschiedliche Weise.</p>
+        <div class="forYouToDo">
+			<ol>
+            	<li><div class="newProject"><span class="text">&bdquo;U2-Kaleidoscope&ldquo;</span><img src="/bjc-r/img/icons/new-project-called.png" alt="Ein neues Projekt namens U2-Kaleidoscope erstellen" title="Ein neues Projekt namens U2-Kaleidoscope erstellen" /></div></li>
+
+				<li>
+                    <img class="imageRight" src="/bjc-r/img/2-complexity/draggable-check-box.png" alt="draggable-Box aktiviert" title="draggable-Box aktiviert">
+                    Erstelle und teste zun&auml;chst den Code, damit der erste Sprite der Maus folgt und seine Spur zeichnet.
+                    <ol>
+                        <li>Nutze ein <em>Ereignis</em>, um das Kaleidoskop zu starten, damit Nutzerinnen nicht jeden Sprite einzeln anklicken m&uuml;ssen.</li>
+                        <li>Der Sprite soll nur zeichnen, wenn die Maustaste gedr&uuml;ckt ist (deaktiviere dazu &bdquo;draggable&ldquo;, sonst denkt Snap<em>!</em>, du willst den Sprite verschieben).</li>
+                    </ol>
+                    <div class="endnote">
+                        <p><a href="#hint-mousedown" data-toggle="collapse" title="Ben&ouml;tigst du eine Erinnerung zum Mausverhalten?">Braucht du einen Hinweis?</a></p>
+                        <div id="hint-mousedown" class="collapse">
+                            <p>Wie ein Sprite der Maus folgt, hast du in <a href="/bjc-r/cur/programming/1-introduction/5-follow-the-leader/1-following-sprites.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 1, Labor 5, Seite 1">Einheit 1, Labor 5, Seite 1</a> gelernt. Ereignisse kennst du aus <a href="/bjc-r/cur/programming/1-introduction/1-building-an-app/1-start-your-first-snap-app.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 1, Labor 1, Seite 1">Einheit 1, Labor 1, Seite 1</a>. Und wie du nur zeichnest, wenn die Maus gedr&uuml;ckt ist, hast du in <a href="/bjc-r/cur/programming/2-complexity/3-predicates/1-what-is-predicate.de.html?topic=nyc_bjc%2F2-conditionals-abstraction.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 2, Labor 3, Seite 1">Einheit 2, Labor 3, Seite 1</a> gesehen.</p>
+                        </div>
+                    </div>
+                </li>
+				<li>
+                    Erstelle einen zweiten Sprite, der die Bewegung des ersten spiegelt.
+                    <div class="endnote">
+                        <p>Du kannst den ersten Sprite duplizieren und den Code anpassen. Rechtsklicke den Sprite im Korral (unten rechts) und w&auml;hle &bdquo;duplicate&ldquo;. Der neue Sprite hat dieselben Skripte wie das Original.</p>
+                        <p><a href="#hint-second-sprite" data-toggle="collapse" title="Hinweis zum Spiegeln">Hinweis zum Spiegeln</a></p>
+                        <div id="hint-second-sprite" class="collapse">
+                            <p>Der zweite Sprite soll entweder dieselbe <em>x</em>-Position und die invertierte <em>y</em>-Position, oder umgekehrt, annehmen.</p>
+                            <a href="#hint-second-sprite-second-hint" data-toggle="collapse" title="Noch ein Hinweis?">Noch ein Hinweis?</a>
+                            <div id="hint-second-sprite-second-hint" class="collapse">
+                                <p>Nutze <img src="/bjc-r/img/2-complexity/inverse-mouse-x.png" alt="(-1) × (mouse x)" title="(-1) × (mouse x)" /> innerhalb von <img src="/bjc-r/img/blocks/go-to-x-y.png" alt="go to x: () y: ()" title="go to x: () y: ()" />.</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    Teste deinen Code und behebe Fehler.
+                    <div class="endnote">Ein Ereignis (z. B. Taste &bdquo;c&ldquo;) zum L&ouml;schen der B&uuml;hne und Stoppen aller Skripte erleichtert das Testen.</div>
+                </li>
+                <li>
+                    Erstelle zwei weitere Sprites, die die bisherigen Spiegelungen wiederum spiegeln.
+                    <div class="endnote">
+                        <p>Wenn der zweite Sprite horizontal gespiegelt hat, spiegeln die Sprites drei und vier vertikal – oder umgekehrt.</p>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+        <div class="ifTime">
+            <ol start="6">
+                <li>Experimentiere mit diesen Ideen oder erfinde eigene Variationen:
+                    <ul>
+                        <li>
+                            Stift anpassen:
+                            <ul>
+                                <div class="sidenoteBig">Den Umgang mit <code>set pen color</code> und <code>set pen size</code> kennst du aus <a href="/bjc-r/cur/programming/1-introduction/3-drawing/1-exploring-motion.de.html?topic=nyc_bjc%2F1-intro-loops.de.topic&course=bjc4nyc.de.html&novideo&noassignment" title="Einheit 1, Labor 3, Seite 1">Einheit 1, Labor 3, Seite 1</a>.</div>
+                                <li>F&uuml;ge Farben hinzu.</li>
+                                <li>Ver&auml;ndere die Stiftbreiten.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            Weitere Sprites:
+                            <ul>
+                                <li>Nutze <code>mouse x</code> als <em>y</em>-Eingabe und umgekehrt.</li>
+                                <li>Erzeuge Sprites, die zu anderen versetzt sind.</li>
+                            </ul>
+                        </li>
+                        <li>Erfinde eigene Varianten.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+
+
+    </body>
+</html>

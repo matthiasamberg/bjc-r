@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 3, Labor 3: Tic-Tac-Toe, Seite 1</title>
+    </head>
+
+    <body>
+	    <h2>Z&uuml;ge speichern und m&ouml;gliche Gewinne</h2>
+
+        <div class="learn">
+            <p><strong>In diesem Labor</strong> f&uuml;hrst du dein <a href="/bjc-r/cur/programming/3-lists/1-abstraction/5-building-tic-tac-toe.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Ein Tic-Tac-Toe-Brett bauen">Tic-Tac-Toe-Projekt</a> fort, damit das Programm das Spielfeld <em>analysieren</em> und Gewinne sowie Unentschieden erkennen kann.</p>
+            <p><strong>Auf dieser Seite</strong> bereitest du alles vor: Das Programm zeichnet die gemachten Z&uuml;ge auf und lernt die Gewinnkombinationen aus jeweils drei Feldern.</p>
+        </div>
+        <p>
+            Als du Tic Tac Toe zum ersten Mal geschrieben hast, war es leicht, ung&uuml;ltige Z&uuml;ge zu erkennen (ein Feld, das schon ein X- oder O-Kost&uuml;m tr&auml;gt). Jeder Sprite konnte das f&uuml;r sich pr&uuml;fen, ohne den Rest des Spielfelds zu kennen. Um Gewinne und Unentschieden zu erkennen, muss das Programm jedoch den Zustand des <em>gesamten Spielfelds</em> testen, nicht nur eines einzelnen Felds. Deshalb verwendest du eine <em>globale Variable</em>, <img src="/bjc-r/img/5-algorithms/board.png" alt="board" title="board">, die speichert, ob jedes Feld leer ist oder ein X bzw. O enth&auml;lt.<br />
+            <div class="sidenote">
+                <p>Du hast <strong>globale Variablen</strong> auf <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/4-keeping-score.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 4: Punktest&auml;nde mit globalen Variablen verwalten">Einheit 2, Labor 1, Seite 4: Punktest&auml;nde mit globalen Variablen verwalten</a> kennengelernt.</p>
+            </div>
+            <img class="indent noshadow" src="/bjc-r/img/3-lists/ttt-board-var.png" alt="Watcher f&uuml;r die Variable board zeigt {O, O, X, 4, X, 6, X, 8, 9} neben einem Tic-Tac-Toe-Spielbrett" title="Watcher f&uuml;r die Variable board zeigt {O, O, X, 4, X, 6, X, 8, 9} neben einem Tic-Tac-Toe-Spielbrett" />
+        </p>
+
+        <div class="forYouToDo" id="first">
+			<ol>
+                <li>&Ouml;ffne dein Projekt <strong>U3L1-TicTacToe</strong> und speichere es als <strong>U3L3-TicTacToe</strong>, damit du eine Kopie der alten Version beh&auml;ltst.</li>
+                <li>
+                    Erstelle eine globale Variable namens <var>board</var>, die zu Beginn des Spiels eine Liste der Zahlen von 1 bis 9 enth&auml;lt.<br />
+               </li>
+            </ol>
+        </div>
+
+        <p>Jeder Sprite muss seine eigene Position auf dem Brett kennen, damit du mit dem Block <code>item of</code> den Eintrag an dieser Position durch X oder O ersetzen kannst. Daf&uuml;r legst du eine <em>Sprite-Variable</em> an, <img class="inline nopadtb" src="/bjc-r/img/3-lists/position-number.png" alt="position number" title="position number" />, und jeder Klon erh&auml;lt seine <em>eigene Version</em> dieser Variable.</p>
+
+        <div class="vocabFullWidth">: <strong>Sprite-Variable</strong>
+            <p>Eine <strong>Sprite-Variable</strong> ist wie eine globale Variable, weil sie nicht zu einem bestimmten <em>Skript</em> geh&ouml;rt, aber sie geh&ouml;rt zu einem bestimmten <em>Sprite</em>.</p>
+        </div>
+
+        <div class="forYouToDo">
+			<ol start="3">
+                <li>
+                    <div class="sidenote">
+                        <p>Du hast das <strong>Initialisieren von Variablen</strong> auf <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 1: Ein Zahlenratespiel mit Skriptvariablen entwickeln">Einheit 2, Labor 1, Seite 1: Ein Zahlenratespiel mit Skriptvariablen entwickeln</a> ge&uuml;bt.</p>
+                    </div>
+                    Erstelle eine Sprite-Variable <var>position number</var>.
+                    <div class="narrower">
+                        <p>
+                            Sprite-Variablen erstellst du fast genauso wie globale Variablen:
+                            <ul>
+                                <li>Klicke im Variablen-Men&uuml; auf <img class="inline nopadtb noshadow" src="/bjc-r/img/1-introduction/make-a-variable.png" alt="Schaltfl&auml;che &bdquo;make a variable&ldquo;" title="Schaltfl&auml;che &bdquo;make a variable&ldquo;" />.</li>
+                                <li>W&auml;hle beim Eingeben des Variablennamens &bdquo;for this sprite only&ldquo;, um eine Sprite-Variable zu erzeugen.</li>
+                            </ul>
+                        </p>
+
+                        <img class="indent" src="/bjc-r/img/3-lists/square-number-var.png" alt="Dialog zum Anlegen einer Variable mit aktivierter Option &bdquo;for this sprite only&ldquo;" title="Dialog zum Anlegen einer Variable mit aktivierter Option &bdquo;for this sprite only&ldquo;" /><br />
+                    </div>
+                </li>
+                <li>
+                    Setze beim Erzeugen der Klone f&uuml;r jeden Klon die Variable <var>position number</var> auf den passenden Wert (1&ndash;9).<br />
+                    <div class="endnote">
+                        <a href="#hint-1" data-toggle="collapse" class="collapsed" title="Tipp">&Ouml;ffne einen Tipp zum Setzen der <var>position number</var>.</a>
+                        <div id="hint-1" class="collapse">
+                            Erh&ouml;he in der Schleife, die die Klone erzeugt, die Variable des Eltern-Sprites f&uuml;r jeden neuen Klon um eins, sodass jeder Klon einen eindeutigen Wert bekommt.
+                        </div>
+                    </div>
+					<div class="takeNote">Achte darauf, dass die <var>position number</var> des Eltern-Sprites am Ende nicht zwischen 1 und 9 liegt, damit es nicht mit einem Klon kollidiert.</div>
+                </li>
+                <li>Wenn ein Feld angeklickt wird, ersetze den Eintrag dieses Feldes in der <var>board</var>-Liste je nach Spieler durch X oder O.</li>
+                <li>Beobachte beim Spielen von Tic Tac Toe die Werte in der Variable <var>board</var>. Stell sicher, dass sie sich wie erwartet &auml;ndert, und behebe eventuelle Fehler.</li>
+			</ol>
+		</div>
+
+        <h3>Alle Gewinnm&ouml;glichkeiten speichern</h3>
+		<p>
+            Damit das Programm einen Sieg feststellen kann, musst du definieren, was als Sieg gilt. Du speicherst jede m&ouml;gliche Gewinnkombination als Liste aus drei Positionsnummern (ein <em>Triple</em>). Dieses Triple zum Beispiel l&auml;sst sich als <img src="/bjc-r/img/3-lists/{3,5,7}.png" alt="Liste {3, 5, 7}" title="Liste {3, 5, 7}"> darstellen, weil der Sieg an den Positionen 3, 5 und 7 liegt:<br />
+            <img class="indent noshadow" src="/bjc-r/img/3-lists/winning-combo-357.png" alt="Diagonaler Sieg von unten links nach oben rechts" title="Diagonaler Sieg von unten links nach oben rechts"><br />
+        </p>
+
+        <div class="forYouToDo">
+			<ol start="7">
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerperson" title="Sprich mit deiner Partnerperson" />
+                    <ol>
+                        <li>Wie viele Gewinn-Tripel sind m&ouml;glich?</li>
+                        <li>Notiere jedes der m&ouml;glichen Gewinn-Tripel.</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        <p>
+            Du <em>k&ouml;nntest</em> jede m&ouml;gliche Gewinnkombination einzeln &uuml;berpr&uuml;fen:<br />
+            <img class="indent" src="/bjc-r/img/3-lists/silly-check-win.png" alt="is there a win? ... (Kommentar: Nicht bauen!)" title="is there a win? ... (Kommentar: Nicht bauen!)">
+        </p>
+
+        <p>Das w&auml;re allerdings viel zu viel Code, vor allem, weil du sp&auml;ter etwas ganz &Auml;hnliches brauchst, wenn der Computer gegen dich spielen soll. Stattdessen erstellst du eine Liste, die alle m&ouml;glichen Gewinn-Tripel enth&auml;lt, damit du sie mit dem aktuellen Spielstand in <var>board</var> vergleichen kannst.</p>
+
+        <div class="forYouToDo">
+			<ol start="8">
+               <img class="imageRight" src="/bjc-r/img/icons/save-mini.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+                <li>
+                    Baue einen Reporter, der eine Liste aller m&ouml;glichen Gewinn-Tripel ausgibt. Er sollte ungef&auml;hr so aussehen:<br />
+                    <img class="indent" src="/bjc-r/img/3-lists/winning-triples.png" alt="Definition eines Reporters mit einer Liste von Tripeln, z.&nbsp;B. {1,2,3} und {2,5,8}" title="Definition eines Reporters mit einer Liste von Tripeln, z.&nbsp;B. {1,2,3} und {2,5,8}"/>
+                </li>
+		<li>
+                	<img class="inline" src="/bjc-r/img/icons/save-use-later.png" alt="Speichere. Du brauchst das sp&auml;ter noch." title="Speichere. Du brauchst das sp&auml;ter noch." />
+				</li>
+            </ol>
+        </div>
+
+
+
+
+    </body>
+</html>

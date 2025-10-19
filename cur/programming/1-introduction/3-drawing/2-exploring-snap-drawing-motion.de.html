@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1, Labor 3: Moderne Kunst mit Polygonen, Seite 2</title>
+	</head>
+
+	<body>
+        <h2>Winkel und Drehungen</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> lernst du, wie sich Drehwinkel auf das Zeichnen von Polygonen auswirken. Als Einstieg zeichnest du verschiedene Sternformen wie diese:<br />
+                <img class="indent" src="/bjc-r/img/1-introduction/Three-spokes.png" alt="Asterisk mit drei Speichen" title="Asterisk mit drei Speichen" />
+                <img src="/bjc-r/img/1-introduction/Five-spokes.png" alt="Asterisk mit fünf Speichen" title="Asterisk mit fünf Speichen" />
+                <img src="/bjc-r/img/1-introduction/Eight-spokes.png" alt="Asterisk mit acht Speichen" title="Asterisk mit acht Speichen" />
+            </p>
+        </div>
+
+        <p>
+            Vielleicht hast du auf der vorherigen Seite versucht, ein gleichseitiges Dreieck mit folgendem Code zu zeichnen:<br />
+           <img class="indent" src="/bjc-r/img/1-introduction/half-hex-code.png" alt="repeat (3) {move (100) steps; turn right (60) degrees}" title="repeat (3) {move (100) steps; turn right (60) degrees}" />
+            und als Ergebnis eine Form wie diese erhalten:
+            <img src="/bjc-r/img/1-introduction/half-hex-pic.png" alt="Drei Seiten eines regelmäßigen Hexagons" title="Drei Seiten eines regelmäßigen Hexagons" /><br />
+            Das kommt h&auml;ufig vor, wenn man gelernt hat, dass alle Innenwinkel eines gleichseitigen Dreiecks 60 Grad betragen. Der Sprite muss sich aber tatsächlich um 120 Grad drehen. Es ist wichtig zu verstehen, warum das so ist und wie du f&uuml;r andere Polygone (f&uuml;nf, elf Seiten usw.) den richtigen Drehwinkel findest.
+        </p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li><a href="/bjc-r/prog/1-introduction/U1L3-AngleExperiments1.xml" class="run"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Starterprojekt laden und speichern" title="Starterprojekt laden und speichern"></a></li>
+                <li>F&uuml;hre die vier Experimente (A–D) aus und lies die Kommentare zu jedem Skript. Besprich mit deiner Partnerin oder deinem Partner, was passiert und warum.</li>
+                <li>
+                    Experimentiere anschlie&szlig;end mit dem letzten Skript (rechts):<br />
+                    <img class="imageRight" src="/bjc-r/img/1-introduction/angles-and-turning.png" alt="repeat (2): {move (100) steps, move (-100) steps, turn (180) degrees}" title="repeat (2): {move (100) steps, move (-100) steps, turn (180) degrees}" />
+                    <ol>
+                        <li>Probiere eine <em>Vierteldrehung</em> aus (<code>turn</code> 90 statt 180 Grad). Passe die Anzahl der Wiederholungen an, bis der Sprite wieder in seine Ausgangsrichtung zeigt.<br />
+                            <img class="indent" data-gifffer="/bjc-r/img/1-introduction/U1ImageVideoAddendum_img/U1L3P2-AngleExperiment-4.gif" height="150" alt="Animation eines vierstrahligen Asterisks" title="Animation eines vierstrahligen Asterisks"/>
+                        </li>
+                        <li>Experimentiere mit einer <em>Zehnteldrehung</em> (36 Grad). Welche Zahl musst du <code>repeat</code> geben, damit der Sprite wieder nach vorne zeigt?</li>
+                        <li><em>Ohne</em> den Computer zu benutzen: Welchen Drehwinkel brauchst du f&uuml;r einen Asterisk mit f&uuml;nf Speichen? Stimmt euch ab.</li>
+                        <li>Teste das Ergebnis anschlie&szlig;end im Skript.</li>
+                    </ol>
+                </li>
+				<li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" /> Beschreibt, was ihr &uuml;ber Drehwinkel gelernt habt.</li>
+				<li>Oben ging es bereits um Dreiecke. Zeichne als Zwischenschritt einen dreistrahligen Asterisk.
+                    <div class="endnote">
+                        <a href="#hint-three-spoke" data-toggle="collapse" title="Hinweis zum Zeichnen eines dreistrahligen Asterisks.">Klicke f&uuml;r einen Hinweis.</a>
+                        <div id="hint-three-spoke" class="collapse">
+                            <img class="indent" data-gifffer="/bjc-r/img/1-introduction/3-point-asterisk.gif" alt="Animation eines dreistrahligen Asterisks" title="Animation eines dreistrahligen Asterisks" />
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+
+        <div class="takeNote">Eine Drehung um 360° entspricht einer vollen Umdrehung, 180° sind eine halbe Drehung. Ein Viertel von 360° ist 90°.<br /><img src="/bjc-r/img/1-introduction/360-degrees.png" alt="360° eingezeichnet auf einem Kreis" title="360° eingezeichnet auf einem Kreis" /></div>
+
+        <div class="takeNote">
+            <div class="ap-standard">AAP-2.A.4</div>
+            <p>Viele Algorithmen enthalten <strong>Iteration</strong> – ein Teil des Codes l&auml;uft mehrmals hintereinander ab. In Snap<em>!</em> erkennst du das an Bl&ouml;cken wie <code>repeat</code>, <code>repeat until</code> oder <code>for</code>.</p>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="6">
+                <li>Mach eigene Experimente. Notiere, welche Drehwinkel funktionieren und welche nicht.</li>
+                <li><img class="inline" src="/bjc-r/img/icons/write-out-thoughts.png" alt="Notiere deine Gedanken" title="Notiere deine Gedanken" /> Zeichne und kommentiere die Muster, die du erzeugt hast.</li>
+                <li><img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" /></li>
+            </ol>
+        </div>
+
+        <div class="takeNote">
+            <div class="ap-standard">AAP-2.A, AAP-2.B</div>
+            <p>Ein Algorithmus kannst du sowohl als Text als auch in Bildern (z.&nbsp;B. Blockcode, Flussdiagramm) beschreiben.</p>
+        </div>
+
+        <div class="forYouToDo">
+        	<ol start="9">
+                <li>
+                    <!-- Question 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="What shape would the following script draw?" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">
+                            Welche Form zeichnet folgendes Skript?<br />
+                            <img class="indent" src="/bjc-r/img/1-introduction/pentagon-draw-script.png" alt="clear; pen down; repeat (5) {move (100) steps; turn right (360-divided-by-5) degrees}" title="clear; pen down; repeat (5) {move (100) steps; turn right (360-divided-by-5) degrees}" />
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text"><img class="noshadow" src="/bjc-r/img/1-introduction/pentagon-with-sprite.png" alt="Fünfeck" title="Fünfeck"></div>
+                            <div class="feedback">
+                                Richtig! Drehwinkel, Schrittweite und Wiederholungen passen zum Skript.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text"><img class="noshadow" src="/bjc-r/img/1-introduction/five-branch-asterisk.png" alt="Asterisk mit fünf Speichen" title="Asterisk mit fünf Speichen"></div>
+                            <div class="feedback">
+                                Hier m&uuml;sste der Sprite auch r&uuml;ckw&auml;rts laufen.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text"><img class="noshadow" src="/bjc-r/img/1-introduction/five-sides-not-closed.png" alt="Fünf Seiten, aber kein geschlossenes Polygon" title="Fünf Seiten, aber kein geschlossenes Polygon"></div>
+                            <div class="feedback">
+                                Die Drehwinkel passen nicht zu diesem Skript.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text"><img class="noshadow" src="/bjc-r/img/1-introduction/circle-with-sprite.png" alt="Kreis" title="Kreis"></div>
+                            <div class="feedback">
+                                Anzahl der Drehungen, Drehwinkel und Schrittweite stimmen hier nicht.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                          <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+
+	    <div class="takeItTeaser">
+            <img src="/bjc-r/img/1-introduction/alphie-small.png" alt="Snap!-Grafik, inspiriert von Alma Thomas" title="Snap!-Grafik, inspiriert von Alma Thomas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="/bjc-r/img/1-introduction/Thomas/Stage (19).png" alt="Snap!-Grafik, inspiriert von Alma Thomas" title="Snap!-Grafik, inspiriert von Alma Thomas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="/bjc-r/img/1-introduction/Thomas/Stage (16).png" alt="Snap!-Grafik, inspiriert von Alma Thomas" title="Snap!-Grafik, inspiriert von Alma Thomas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="/bjc-r/img/1-introduction/painted-small.png" alt="Snap!-Grafik, inspiriert von Alma Thomas" title="Snap!-Grafik, inspiriert von Alma Thomas">
+		</div>
+
+		<div class="takeItTeased">
+			<img class="imageRight" src="/bjc-r/img/1-introduction/GraphicArt_img/alma-big.jpg" height="200" alt="Gemälde von Alma Thomas" title="Gemälde von Alma Thomas"/>
+			<ol type="A">
+				<li>Rechts siehst du ein Gem&auml;lde von Alma Thomas. Lass dich davon inspirieren und gestalte deine eigene Version.<br />
+				<strong>Das ist deine Kunst – werde ruhig kreativ.</strong>
+					<div class="dialogue">
+						<div>
+							<span>Omar:</span> F&uuml;r mich sieht es aus wie eine Karte. Links die H&auml;user, rechts die Innenstadt mit Rathaus, Feuerwehr und Einkaufszentrum.
+						</div>
+						<div>
+							<span>Jasmine:</span> Vielleicht. F&uuml;r mich erinnert der linke Teil an einen Fingerabdruck, und rechts sehe ich eindeutig eine Person, die nach rechts schaut, die Nase ber&uuml;hrt fast den Bildrand.
+						</div>
+						<div>
+							<span>Morgan:</span> Egal, wie es aussieht – wie bekommen <em>wir</em> etwas hin, das <em>so wirkt</em>?
+						</div>
+						<div>
+							<span>Jasmine:</span> Einige Teile sehen aus wie gebogene, dicke Punktelinien. Wir k&ouml;nnten so etwas probieren:<br />
+							<img class="indent" src="/bjc-r/img/1-introduction/betty-code.png" alt="Beispielcode für dicke Punktelinien" title="Beispielcode für dicke Punktelinien" />
+                        </div>
+					</div>
+				</li>
+			</ol>
+		</div>
+
+	</body>
+</html>

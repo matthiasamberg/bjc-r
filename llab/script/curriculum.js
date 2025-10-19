@@ -409,8 +409,9 @@ llab.createTitleNav = function() {
             <i class="far fa-globe" aria-hidden=true></i>
           </a>
           <ul class="dropdown-menu" aria-labelledby="dropdown-langs">
-            <li><a class="js-switch-lang-en">English</a></li>
-            <li><a class="js-switch-lang-es">Espa\u00F1ol</a></li>
+            <li class="hidden"><a class="js-switch-lang-en">English</a></li>
+            <li class="hidden"><a class="js-switch-lang-es">Espa\u00F1ol</a></li>
+            <li class="hidden"><a class="js-switch-lang-de">Deutsch</a></li>
           </ul>
         </li>
         <li class="nav-btn-group nav-btn-group-first">${previousPageButton}</li>
@@ -675,58 +676,68 @@ llab.addFooter = () => {
   );
 };
 
-llab.translated_page_url = function() {
-  // Return the URL to the current page when a translation exists.
-  if (llab.pageLang() === 'es') {
-    return location.href.replace(/\.es\./g, '.');
-  } else if (llab.pageLang() === 'en') {
-    return location.href.replace(/\.html/g, '.es.html').replace(/\.topic/g, '.es.topic');
-   }
-};
-
-llab.translated_content_url = function() {
-  // This returns the URL directly to a topic file, so we can see if the fetch passes.
-  if (!llab.isTopicFile()) {
-    return llab.translated_page_url();
-  } else {
-    let topic_file = llab.getQueryParameter("topic");
-    if (llab.pageLang() === 'es') {
-      topic_file = topic_file.replace(/\.es\./g, '.');
-    } else if (llab.pageLang() === 'en') {
-      topic_file = topic_file.replace(/\.topic/g, '.es.topic');
-    }
-    return llab.topics_path + topic_file;
-  }
-}
-
 // Show a dropdwon icon in the navbar if the same URL exists in a translated form.
 llab.setupTranslationsMenu = function() {
-  // extract the language from the file name
-  // make an ajax call to get the file name in the other language
-  // if the file exists, add a link to it
-  let lang = llab.pageLang();
-  let new_url = llab.translated_page_url();
-  // This URL is different when on a topic page.
-  let translated_content_url = llab.translated_content_url();
+  const currentLang = llab.pageLang();
+  const dropdown = $('.js-langDropdown');
+  const allItems = dropdown.find('li');
 
-  fetch(translated_content_url).then(response => {
-    if (!response.ok) {
-      console.log('Not found!!')
-      // We need to re-hide the menu if it is currently showing.
-      $('.js-langDropdown').addClass('hidden');
-      $('.js-langDropdown a').removeAttr('href');
+  dropdown.addClass('hidden');
+  allItems.addClass('hidden');
+  allItems.find('a').removeAttr('href');
+
+  let pending = 0;
+  let hasOption = false;
+
+  llab.supportedLanguageCodes.forEach(lang => {
+    const $link = $(`.js-switch-lang-${lang}`);
+    if ($link.length === 0) {
       return;
     }
-    $('.js-langDropdown').removeClass('hidden');
-    if (lang == 'es') {
-      $('.js-switch-lang-es').attr('href', location.href);
-      $('.js-switch-lang-en').attr('href', new_url);
-    } else if (lang == 'en') {
-      $('.js-switch-lang-es').attr('href', new_url);
-      $('.js-switch-lang-en').attr('href', location.href);
+
+    if (lang === currentLang) {
+      $link.parent().addClass('hidden');
+      $link.removeAttr('href');
+      return;
     }
-  }).catch(() => {});
-}
+
+    pending += 1;
+
+    const targetURL = llab.languagePageURL(lang);
+    const contentURL = llab.languageContentURL(lang);
+
+    const markUnavailable = () => {
+      $link.removeAttr('href');
+      $link.parent().addClass('hidden');
+    };
+
+    const finalize = () => {
+      pending -= 1;
+      if (pending === 0 && !hasOption) {
+        dropdown.addClass('hidden');
+      }
+    };
+
+    fetch(contentURL).then(response => {
+      if (response.ok) {
+        hasOption = true;
+        $link.attr('href', targetURL);
+        $link.parent().removeClass('hidden');
+        dropdown.removeClass('hidden');
+      } else {
+        markUnavailable();
+      }
+      finalize();
+    }).catch(() => {
+      markUnavailable();
+      finalize();
+    });
+  });
+
+  if (pending === 0) {
+    dropdown.addClass('hidden');
+  }
+};
 
 llab.setupSnapImages = () => {
   $('img.js-runInSnap').each((_idx, elm) => {

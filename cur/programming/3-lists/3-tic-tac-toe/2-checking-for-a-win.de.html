@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 3, Labor 3: Tic-Tac-Toe, Seite 2</title>
+    </head>
+
+    <body>
+       <h2>Einen Sieg erkennen</h2>
+        <div class="todo">
+           <p>Ich habe ein paar Stellen angepasst, damit &ouml;fter &bdquo;possible&ldquo; vorkommt. Vielleicht ist es jetzt sogar verwirrender. Muss ich mir an einem anderen Tag noch einmal ansehen. --MF, 13.06.18</p>
+            <p>Ich muss den Rest dieses Labors &uuml;berpr&uuml;fen. Sieht anders aus als fr&uuml;her. --MF, 31.05.20</p>
+            <p>PG: Ich habe nicht intensiv dar&uuml;ber nachgedacht (nicht einmal sorgf&auml;ltig gelesen!) und m&ouml;chte sicherstellen, dass das f&uuml;r Lernende wirklich hilfreich ist. Vielleicht passt es schon.</p>
+        </div>
+
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> programmierst du dein Tic-Tac-Toe-Projekt so, dass es zuerst den Inhalt einer bestimmten Dreierkombination pr&uuml;ft (z.&nbsp;B. die obere Reihe) und danach alle m&ouml;glichen Gewinn-Tripel untersucht. Mit diesen Informationen kannst du feststellen, ob ein:e Spieler:in gewonnen hat.</p>
+        </div>
+
+
+        <h3>Eine Gewinnm&ouml;glichkeit testen</h3>
+        <p>Wir brauchen eine M&ouml;glichkeit, um herauszufinden, ob eine m&ouml;gliche Gewinnkombination wirklich eingetreten ist. Dazu k&ouml;nnen wir <code>map</code> verwenden und jede Position eines Tripels pr&uuml;fen, um zu sehen, ob jemand mit diesem Tripel gewonnen hat.</p>
+
+        <div class="endnote">
+            <p>Du hast <code>map</code> auf <a href="/bjc-r/cur/programming/3-lists/2-contact-list/5-mapping-over-list.html?topic=nyc_bjc%2F3-lists.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 3, Labor 2, Seite 5: Jedes Listenelement transformieren">Einheit 3, Labor 2, Seite 5: Jedes Listenelement transformieren</a> kennengelernt.</p>
+            <p>
+                <code>map</code> f&uuml;hrt die Funktion im grauen Ring auf jedes Element der Eingabeliste aus und gibt eine Liste mit allen Ergebnissen zur&uuml;ck.<br />
+                <img class="indent" src="/bjc-r/img/3-lists/map-example-2.png" alt="map (join( )(s)) auf (list {cat, dog, bird}) ergibt {cats, dogs, birds}" title="map (join( )(s)) auf (list {cat, dog, bird}) ergibt {cats, dogs, birds}" />
+            </p>
+            <p>Das leere Eingabefeld in der Funktion innerhalb des grauen Rings ist die Stelle, an der bei jedem Durchlauf jeweils ein Listenelement eingesetzt wird.</p>
+        </div>
+
+        <div class="forYouToDo">
+			<ol start="1">
+                <li>Klicke auf <img src="/bjc-r/img/1-introduction/green-flag_button.png" alt="Gr&uuml;ne Fahne" title="Gr&uuml;ne Fahne" />, um ein neues Spiel zu starten. Spiele eine Runde und sorge absichtlich daf&uuml;r, dass <strong>X</strong> gewinnt.</li>
+                <li>
+                    Baue dann diesen Ausdruck und sieh dir an, was er zur&uuml;ckgibt:<br />
+                    <img class="indent" src="/bjc-r/img/3-lists/map-item-board.png" alt="map (item ( ) of (board)) &uuml;ber (list{1, 2, 3})" title="map (item ( ) of (board)) &uuml;ber (list{1, 2, 3})"><br />
+                    <div class="endnote">
+                        <a href="#hint-map-item" data-toggle="collapse" title="Wie funktioniert map hier?">Wie funktioniert <code>map</code> hier?</a>
+                        <div id="hint-map-item" class="collapse">
+                            <p>Dieser <code>map</code>-Ausdruck funktioniert genauso wie das <code>join</code>-Beispiel oben, wirkt aber oft komplexer, weil viele erwarten w&uuml;rden <img src="/bjc-r/img/3-lists/map-over-board.png" alt="map (etwas) &uuml;ber (board)" title="map (etwas) &uuml;ber (board)"> zu sehen. Hier wird jedoch &uuml;ber eine <em>konstante</em> Liste iteriert, nicht &uuml;ber eine Variable. Wie gewohnt setzt <code>map</code> jedes Listenelement in die leere Stelle der Funktion im grauen Ring ein und liefert die Liste der Ergebnisse.</p>
+                            <p>In diesem Fall ist die Funktion im grauen Ring <code>item ( ) of (</code><var>board</var><code>)</code>. <code>map</code> pr&uuml;ft also die Eintr&auml;ge 1, 2 und 3 der Liste <var>board</var> und berichtet, was in diesen Positionen steht (X, O oder eine Zahl, wenn das Feld leer ist).</p>
+                            <p>
+                            	Wenn du den Inhalt der Variable <var>board</var> nicht sehen kannst, aktiviere das H&auml;kchen in der Variablen-Palette und vergr&ouml;&szlig;ere den Watcher, damit alle Listeneintr&auml;ge sichtbar werden, wie im Bild unten.<br />
+            <img class="indent noshadow" src="/bjc-r/img/3-lists/ttt-board-var.png" alt="Watcher f&uuml;r board zeigt {O, O, X, 4, X, 6, X, 8, 9} neben dem Tic-Tac-Toe-Spiel" title="Watcher f&uuml;r board zeigt {O, O, X, 4, X, 6, X, 8, 9} neben dem Tic-Tac-Toe-Spiel" />
+                               <img class="indent" src="/bjc-r/img/3-lists/map-item-board-reporting.png" alt="map (item ( ) of (board)) &uuml;ber (list{1, 2, 3}) ergibt {O, O, X}" title="map (item ( ) of (board)) &uuml;ber (list{1, 2, 3}) ergibt {O, O, X}"><br />
+							</p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="forYouToDo">
+			<ol start="3">
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerperson" title="Sprich mit deiner Partnerperson" />
+                    Was sagt dir das Ergebnis dieses Ausdrucks &uuml;ber den Spielstand?
+                </li>
+                <li>Falls <code>{1, 2, 3}</code> nicht das Tripel ist, in dem <strong>X</strong> gewonnen hat, ersetze die Liste im <code>map</code>-Ausdruck durch das Gewinn-Tripel und klicke den Ausdruck erneut.</li>
+                <li>
+                	Nutze diese Idee, um einen Block <img src="/bjc-r/img/3-lists/status-of-triple.png" alt="status of triple ( )" title="status of triple ( )"> zu bauen, der ein m&ouml;gliches Gewinn-Tripel (zum Beispiel <img src="/bjc-r/img/3-lists/{1,2,3}.png" alt="Liste {1, 2, 3}" title="Liste {1, 2, 3}">) als Eingabe nimmt und eine Liste dessen zur&uuml;ckgibt, was an diesen drei Positionen steht (X, O oder eine Zahl). Schreibe dann einen Ausdruck im Skriptbereich, der den Wert <code>true</code> hat, wenn X im Tripel <img src="/bjc-r/img/3-lists/{1,2,3}.png" alt="Liste {1, 2, 3}" title="Liste {1, 2, 3}"> gewonnen hat, und <code>false</code> sonst.
+                    <div class="endnote">Du hast gelernt, wie du den Listeneingabetyp (<img class="inline" src="/bjc-r/img/3-lists/list_input_slot.png" alt="Listeneingabetyp: Rechteck mit zwei kleineren orangefarbenen Rechtecken" title="Listeneingabetyp: Rechteck mit zwei kleineren orangefarbenen Rechtecken">) festlegst, auf <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/2-quizzes.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 2, Seite 2: Eine Quiz-App planen">Einheit 2, Labor 2, Seite 2: Eine Quiz-App planen</a>.</div>
+                </li>
+                <li>
+                    <img class="imageRight" src="/bjc-r/img/icons/save-mini.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+                    Spiele ein weiteres Spiel, bei dem Spieler:in O gewinnt, und teste deinen Block <code>status of triple</code> mit dem Gewinn-Tripel. Behebe eventuelle Fehler.
+                </li>
+            </ol>
+        </div>
+
+        <h3>Alle Gewinnwege pr&uuml;fen</h3>
+
+	<p>Nun setzt du <code>status of triple</code> systematisch ein, um <em>alle</em> Tripel zu pr&uuml;fen.</p>
+
+	<p>
+        	Im folgenden Beispiel hat Spieler:in O gewonnen, und der Block <code>status of all winning triples</code> ermittelt f&uuml;r jedes m&ouml;gliche Tripel den aktuellen Zustand. Der Computer kann diesen Block nutzen, um nach einem Gewinn-Tripel zu suchen, das entweder nur X oder nur O enth&auml;lt.<br />
+	        <img class="indent noshadow" src="/bjc-r/img/3-lists/status-of-all-board.png" alt="Tic-Tac-Toe-Spiel, bei dem O die mittlere Spalte gewinnt. Obere Reihe: X, O, X; mittlere Reihe: X, O, leeres Feld; untere Reihe: leeres Feld, O, leeres Feld." title="Tic-Tac-Toe-Spiel, bei dem O die mittlere Spalte gewinnt. Obere Reihe: X, O, X; mittlere Reihe: X, O, leeres Feld; untere Reihe: leeres Feld, O, leeres Feld." />
+	        <img class="indent noshadow" src="/bjc-r/img/3-lists/status-of-all-reporting.png" alt="Der Block &bdquo;status of all winning triples&ldquo; liefert eine Tabelle aus drei Spalten und acht Zeilen mit X, O oder Zahlen. Rechts steht zu jeder Zeile das passende Tripel; f&uuml;r das Tripel (2, 5, 8) zeigt die Tabelle O, O, O." title="Der Block &bdquo;status of all winning triples&ldquo; liefert eine Tabelle aus drei Spalten und acht Zeilen mit X, O oder Zahlen. Rechts steht zu jeder Zeile das passende Tripel; f&uuml;r das Tripel (2, 5, 8) zeigt die Tabelle O, O, O." />
+        </p>
+        <div class="endnote">Die Reihenfolge deiner Tripel oder die Nummerierung der Felder kann in deinem Projekt anders sein. Das ist in Ordnung, solange dein Programm funktioniert.</div>
+        <div class="forYouToDo">
+			<ol start="7">
+                <li>Nutze <code>map</code> zusammen mit deinen bisherigen Bl&ouml;cken, um den Block <code>status of all winning triples</code> zu bauen. Er soll wie oben gezeigt eine Liste aller m&ouml;glichen Gewinn-Tripel mit ihren aktuellen Inhalten zur&uuml;ckgeben.</li>
+	            <div class="endnote">
+                    <a href="#hint-status-all" data-toggle="collapse" title="Klicke f&uuml;r einen Tipp zum Einsatz von map.">Klicke f&uuml;r einen Tipp zum Einsatz von <code>map</code>.</a>
+                    <div id="hint-status-all" class="collapse">
+                        <p>
+                            Wenn du <code>map</code> nutzt, denke daran:
+                            <ol>
+                                <li>Welche Funktion soll ausgef&uuml;hrt werden? Sie geh&ouml;rt in den grauen Ring.</li>
+                                <li>Auf welche Daten wird die Funktion angewendet? Das ist die Liste, &uuml;ber die du iterierst.</li>
+                            </ol>
+                            Hier m&ouml;chtest du den Status jedes m&ouml;glichen Gewinn-Tripels wissen.
+                        </p>
+                    </div>
+                </div>
+                <div class="sidenoteBig">
+                	<a href="#hint-won" data-toggle="collapse" title="Klicke f&uuml;r einen Tipp zum Block won?.">Klicke f&uuml;r einen Tipp zum Block <code>won?</code>.</a>
+					<div id="hint-won" class="collapse">
+                    	<p>Formuliere in Worten: Was genau willst du pr&uuml;fen?</p>
+                        <p>Gibt es Bl&ouml;cke, die dir dabei helfen k&ouml;nnen?</p>
+                        <p>
+                            <a href="#hint-won-contains" data-toggle="collapse" title="Klicke f&uuml;r einen weiteren Tipp.">Klicke f&uuml;r einen weiteren Tipp.</a>
+                            <div id="hint-won-contains" class="collapse"><img src="/bjc-r/img/3-lists/contains.png" alt="( ) contains ( )" title="( ) contains ( )" /></div>
+                        </p>
+                    </div>
+                </div>
+                <li>Erstelle jetzt einen Block <img src="/bjc-r/img/3-lists/wonQ.png" alt="won? ( )" title="won? ( )">, der den Buchstaben <strong>X</strong> oder <strong>O</strong> als Eingabe erh&auml;lt und genau dann <code>true</code> zur&uuml;ckgibt, wenn dieser Spieler bzw. diese Spielerin gewonnen hat.</li>
+                <img class="imageRight" src="/bjc-r/img/icons/save-mini.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+                <li>Erg&auml;nze dein Programm, sodass es die Spieler:innen benachrichtigt, sobald jemand gewonnen hat.</li>
+                <li>Spiele das Spiel ein paar Mal durch, um sicherzustellen, dass alles funktioniert, und behebe Fehler. Lass dabei beide Spieler:innen mindestens einmal gewinnen.</li>
+            </ol>
+        </div>
+
+    </body>
+</html>
