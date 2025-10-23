@@ -34,7 +34,7 @@ jobs:
         with: 
           lfs: true 
           fetch-depth: 0
-      - name: Debug:
+      - name: Debug
         run: |
           echo "Working dir: $(pwd)"
           echo "Files count (safe):"
