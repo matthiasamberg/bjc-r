@@ -34,13 +34,25 @@ jobs:
         with: 
           lfs: true 
           fetch-depth: 0
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Debug: list files safely
+        run: |
+          echo "Working dir: $(pwd)"
+          echo "Files count (safe):"
+          find . -type f -print0 | tr '\0' '\n' | wc -l
+          echo "Sample files (first 200):"
+          find . -type f -print0 | sed -z 's/\x0/\n/g' | sed -n '1,200p'
+          echo "Checking for Git LFS files (if installed):"
+          git lfs ls-files || true
+      - name: Prepare site directory
+        run: |
+          mkdir -p artifacts/site
+          rsync -a --delete --copy-links --exclude='.git' --exclude='artifacts' --exclude='.github' --exclude='node_modules' --protect-args ./ artifacts/site/
+          du -sh artifacts/site || true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          path: 'artifacts/site'
       - name: Deploy to GitHub Pages
         id: deployment
+        uses: actions/deploy-pages@v4
         uses: actions/deploy-pages@v4
