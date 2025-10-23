@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 3, optionale Projekte, Seite 1</title>
+    </head>
+
+    <body>
+        <h2>Kurven sticken</h2>
+        <div class="todo">
+            <p>PG: Ich freue mich, dass hier jetzt auf die Erweiterungen verwiesen wird (und es nicht mehr &bdquo;Astrid&ldquo; hei&szlig;t). Die Idee, es mehr wie Turtle-Grafik aufzubauen, gef&auml;llt mir, auch wenn nur der Tipp die Lernenden von einer Turtle-L&ouml;sung weglenkt. Die Punkte algorithmisch zu berechnen, zu speichern und dann die Liste der Koordinaten zu verwenden, ist einfacher als eine reine Turtle-L&ouml;sung, vielleicht sogar f&uuml;r Kardiode und &auml;hnliche H&uuml;llkurven im Kreis. Ich w&uuml;rde wahrscheinlich nur mit der Animation starten und eine zweite, etwas langsamere Animation zeigen, die die Kardiode im Kreis entstehen l&auml;sst (ein Ende bewegt sich um einen Schritt, das andere Ende um zwei Schritte). So k&ouml;nnen die Lernenden die Regel erkennen. Reine Geschmacksfrage, aber &bdquo;Besprich mit deiner Partnerperson&ldquo; klingt f&uuml;r mich arg schulisch &ndash; keine echte Situation verlangt so explizit nach einem Partnergespr&auml;ch. Und in einem optionalen Projekt m&uuml;ssen wir nicht unbedingt vorschreiben, dass ein Algorithmus entwickelt und dann Abstraktion verwendet wird. Wenn die Lernenden das Projekt freiwillig machen, k&ouml;nnen sie es auch frei angehen. Mit der langsam entstehenden Grafik (die aktuelle Animation ist v&ouml;llig okay) sollten sie genug Anregung zum Erfinden haben.  </p>
+            <p>BH: Siehe die roten Boxen.</p>
+            <p>MF: Muss umgeschrieben werden.</p>
+        </div>
+
+        <div class="todo">
+            <strong>Warum dieses Projekt?</strong> Es bietet Lernenden die M&ouml;glichkeit, ihre F&auml;higkeiten in der Algorithmusentwicklung und Abstraktion in einem k&uuml;nstlerischen Kontext einzusetzen. Lernende mit Kunstinteresse werden so motiviert und k&ouml;nnen ihre k&uuml;nstlerischen F&auml;higkeiten mit ihrem Wissen &uuml;ber Algorithmen und Programmierung verbinden.<br />
+            <strong>Warum an dieser Stelle?</strong> An dieser Stelle des Curriculums verf&uuml;gen die Lernenden &uuml;ber genug Vorwissen, um ein visuelles Informatikprojekt nahezu selbstst&auml;ndig umzusetzen.
+        </div>
+
+        <div class="learn">
+            <strong>In diesem Projekt</strong> erstellst du ein mathematisches Kunstwerk und erforschst Varianten davon. (Klicke auf das Bild, um die Animation zu sehen.)<br />
+            <img class="indent" data-gifffer="/bjc-r/img/3-lists/Astrid_img/AstridAnimation.gif" height="300" alt="Kurvenstickerei, die in jedem Quadranten Linie f&uuml;r Linie gezeichnet wird" title="Kurvenstickerei, die in jedem Quadranten Linie f&uuml;r Linie gezeichnet wird"/>
+        </div>
+
+        <p>
+            Dieses Design verwendet gerade Linien, um Formen zu erzeugen, die gekr&uuml;mmt aussehen, und wird manchmal mit Garn gestickt oder auf Papier gezeichnet. Hier siehst du Beispiele und Variationen des Designs &ndash; umgesetzt mit Faden, Computer, Bleistift auf Papier oder sogar mit zusammengeklebten Stiften:
+            <ul>
+                <li><a href="https://www.ams.org/publicoutreach/curve-stitching" title="Making Patterns: Pushing the Envelope" target="_blank">Making Patterns: Pushing the Envelope</a></li>
+                <li><a href="https://mathcraft.wonderhowto.com/how-to/create-parabolic-curves-using-straight-lines-0131301/" title="Create Parabolic Curves Using Straight Lines" target="_blank">Create Parabolic Curves Using Straight Lines</a></li>
+            </ul>
+        </p>
+
+        <div class="forYouToDo">
+            <img class="imageRight" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerperson" title="Sprich mit deiner Partnerperson">
+            <ol>
+                <li>Besprich mit deiner Partnerperson, wie du dieses Design erzeugen kannst. Entwickelt einen <em>Algorithmus</em>, der den ersten Quadranten generiert, und nutzt dann <em>Abstraktion</em>, um das Design auf die anderen Quadranten zu erweitern.</li>
+                <li>
+                    Schreibe ein Snap<em>!</em>-Programm, das das Design erzeugt.
+                    <div class="todo">Mary und Brian m&ouml;chten diese Seite so umschreiben, dass keine festen Koordinaten verwendet werden, sondern Turtle-Grafik. --MF, 7.9.18</div>
+
+		            <div class="endnote">
+                        <a href="#hint-coordinates" data-toggle="collapse" title="Klicke f&uuml;r einen Tipp zum Aufbau des Designs.">Klicke f&uuml;r einen Tipp zum Aufbau des Designs.</a>
+                        <div id="hint-coordinates" class="collapse">
+                            <p>
+                                Unten findest du eine unvollst&auml;ndige Tabelle mit Koordinaten f&uuml;r den ersten Quadranten, die zeigt, welche Punkte auf der y-Achse mit welchen Punkten auf der x-Achse verbunden werden.<br />
+                                <img class="indent" style="float:left; margin-right: 100px;" src="/bjc-r/img/3-lists/Astrid_img/Q1.png"  height="250" alt="Koordinatensystem mit erstem Quadranten des Designs" title="Koordinatensystem mit erstem Quadranten des Designs"/>
+                            </p>
+
+                            <table class="bordered" style="margin-left: 10%;" summary="Vorgeschlagene Punkte f&uuml;r das Design">
+                                <tr>
+                                    <th scope="col" style="white-space: nowrap;">Von (y-Achse)</th>
+                                    <th scope="col" style="white-space: nowrap;">Nach (x-Achse)</th>
+                                </tr>
+                                <tr>
+                                    <td>(0, 0)</td>
+                                    <td>(1, 9)</td>
+                                </tr>
+                                <tr>
+                                    <td>(0, 1)</td>
+                                    <td>(2, 9)</td>
+                                </tr>
+                                <tr>
+                                    <td>(0, 2)</td>
+                                    <td>(3, 9)</td>
+                                </tr>
+                                <tr>
+                                    <td>(0, 3)</td>
+                                    <td>(4, 9)</td>
+                                </tr>
+                                <tr>
+                                    <td>(0, 4)</td>
+                                    <td>(5, 9)</td>
+                                </tr>
+                                <tr>
+                                    <td>(0, 5)</td>
+                                    <td>(6, 9)</td>
+                                </tr>
+                            </table>
+                            <p>Fahre so fort, bis du alle Linien im ersten Quadranten gezeichnet hast.</p>
+                        </div>
+		            </div>
+                </li>
+                <li>Mache mehrere Variationen deines Designs, indem du Koordinaten, Farben oder Linienanzahl anpasst.</li>
+                <li>
+                    Nutze dein Wissen &uuml;ber Animationen in Snap<em>!</em>, um eine Animation auf Basis dieses Designs zu erstellen. Damit Rotationen oder andere Bewegungen m&ouml;glich werden, musst du wahrscheinlich eine andere Technik verwenden als feste Koordinaten.
+                    <div class="endnote">
+                        <a href="#hint-example" data-toggle="collapse" class="collapsed" title="M&ouml;chtest du ein Beispiel sehen?">M&ouml;chtest du ein Beispiel sehen?</a>
+                        <div id="hint-example" class="collapse">
+                            <p>
+                                Diese Animation greift das k&uuml;nstlerische Konzept des &bdquo;<a href="https://en.wikipedia.org/wiki/Negative_space" target="_blank">Negativraums</a>&ldquo; auf, indem sie ein Raster rotierender Kopien des Motivs verwendet. Wie k&ouml;nntest du dein Programm anpassen, um solche Animationen zu erzeugen?<br />
+                                <img class="noshadow indent" src="/bjc-r/img/3-lists/Astrid_img/Negative-Space.gif"  height="400" alt="Ein Raster aus Kurvenstickereien, das rotiert und den Negativraum sichtbar macht" title="Ein Raster aus Kurvenstickereien, das rotiert und den Negativraum sichtbar macht"/>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

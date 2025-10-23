@@ -38,6 +38,9 @@ Dieses Dokument fasst den bisherigen Übersetzungsprozess zusammen und dient als
 | concatenation      | Verkettung          | Begriffsgebrauch aus der Programmierdidaktik. |
 | debugging          | Debugging           | Übernommen, häufig verwendet; ggf. kurz erläutern. |
 | find first         | find first          | Snap!-Blockname bleibt Englisch; im Fließtext kurz erklären („find first sucht das erste passende Listenelement“). |
+| telecommute / remote work | Telearbeit / remote arbeiten | „Remote arbeiten“ im Fließtext, „Telearbeit“ in erläuternden Absätzen. |
+| telemedicine       | Telemedizin         | Fachbegriff etabliert, ggf. kurz Vorteile/Nachteile erläutern. |
+| negative space     | Negativraum         | Kunstbegriff, im Text gern verlinken/erklären. |
 | personally identifiable information (PII) | personenbezogene Daten (PII) | Deutsche Entsprechung plus Abkürzung für Wiedererkennung. |
 | privacy            | Privatsphäre        | Allgemeingebräuchlich. |
 | vocabulary         | Vokabular           | Standardbeschriftung für Vokabular-Kästen und Überschriften. |

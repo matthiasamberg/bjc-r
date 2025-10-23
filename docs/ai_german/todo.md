@@ -9,10 +9,10 @@
   - [x] Labor 1 (Abstraction) Seiten 1–6.  
   - [x] Labor 2 (Contact List) Seiten 1–5.  
   - [x] Labor 3 (Tic-Tac-Toe) Seiten 1–3 – neu übersetzt (2025-10-18).  
-  - [ ] 4-Robots & AI (4 Seiten) → übersetzen.  
-  - [ ] 5-Work (3 Seiten) → übersetzen.  
-  - [ ] Investigations (5 Seiten) → übersetzen.  
-  - [ ] Optionale Projekte (4 Seiten) → übersetzen.  
+  - [x] 4-Robots & AI (4 Seiten) – abgeschlossen (2025-10-18).  
+  - [x] 5-Work (3 Seiten) – abgeschlossen (2025-10-18).  
+  - [x] Investigations (5 Seiten) – abgeschlossen (2025-10-18).  
+  - [x] Optionale Projekte (4 Seiten) – abgeschlossen (2025-10-18).  
   - [ ] Assessments & Legacy (`old/`, `unused-*`) → Relevanz klären.  
 - [ ] Einheit 4 (Internet & Privacy) – Status prüfen; ggf. Restseiten/Assets ergänzen.  
 - [ ] Einheit 5 (Algorithms & Simulations) – komplette Übersetzung.  

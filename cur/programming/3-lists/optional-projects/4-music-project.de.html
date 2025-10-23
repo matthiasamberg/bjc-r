@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 3, optionale Projekte, Seite 4</title>
+    </head>
+
+    <body>
+		<h2>Musikprojekt</h2>
+        <div class="todo">Diese Seite braucht eine aktualisierte Version von <code>keep such that</code>. --MF, 22.06.20</div>
+
+        <div class="todo">
+            <p>PG: Ich h&auml;tte sehr gern einen Block, der Noten auf eine Skala abbildet (ein Beispiel habe ich irgendwo). Musikbegeisterte Lernende finden die Umschaltungen spannend, und selbst diejenigen, die meinen, keinen Unterschied zu h&ouml;ren, tun es doch.</p>
+            <p>BH: Das ist soweit okay, aber es schreit nach mehr &ndash; angefangen bei einem Reporter, der Notennamen in MIDI-Zahlen umwandelt, bis hin zum Kanon.</p>
+            <p>MF: BH muss diese Seite noch reviewen (siehe Lehrkr&auml;ftehandbuch).</p>
+            <p>Diese Seite wurde neu nummeriert; pr&uuml;fen, ob das die Nummerierung in den L&ouml;sungen oder im TG beeinflusst. --MF, 26.04.19</p>
+        </div>
+
+        <div class="todo">Siehe auch:
+            <ul>
+                <li><a href="/bjc-r/cur/programming/3-lists/optional-projects/old/music-project-old.html?topic=nyc_bjc%2F3-lists.topic&course=bjc4nyc.html&novideo&noassignment">Zusammenstellung alter Sound-Inhalte</a></li>
+                <li><a href="/bjc-r/cur/programming/new-ideas/graphics/colors-sound.html">Fr&uuml;here Seite &bdquo;Looks and Sound&ldquo;</a></li>
+                <li><a href="/bjc-r/cur/programming/2-complexity/old/new/map-music.html">Der Block <code>map</code> &amp; Musik</a> (inkl. invert und round)</li>
+            </ul>
+        </div>
+
+		<div class="learn">
+            <p><strong>In diesem Projekt</strong> nutzt du den Snap<em>!</em>-Block <code>play note</code>, um Musik zu erzeugen und gleichzeitig abstrakte Datentypen sowie Higher-Order-Funktionen zu wiederholen. </p>
+        </div>
+
+        <div class="forYouToDo" id="first">
+        	<ol>
+                <li><div class="newProject"><span class="text">"U3-MusicProject"</span><img src="/bjc-r/img/icons/new-project-called.png" alt="Lege ein neues Projekt namens U3-MusicProject an" title="Lege ein neues Projekt namens U3-MusicProject an" /></div></li>
+            	<li><img class="inline" src="/bjc-r/img/icons/headphones.png" alt="Schlie&szlig;e Kopfh&ouml;rer oder Lautsprecher an" title="Schlie&szlig;e Kopfh&ouml;rer oder Lautsprecher an" /></li>
+            </ol>
+        </div>
+
+		<h3>Higher-Order-Funktionen mit Klang wiederholen</h3>
+
+		<div class="forYouToDo">
+			<ol start="3">
+				<li>Baue und vergleiche diese <code>play</code>-Skripte. F&uuml;hre jedes Skript mehrfach aus.
+                    <ol>
+                        <div class="sidenote">Die Eingaben f&uuml;r <code>play note</code> sind Tonh&ouml;hen. Gr&ouml;&szlig;ere Zahlen bedeuten h&ouml;here T&ouml;ne. Du kannst ganzzahlige Werte zwischen 0 und 127 eingeben. Die Zahl 60 entspricht dem eingestrichenen C.</div>
+                        <li><img class="inline" src="/bjc-r/img/3-lists/compare-play-note-1.png" alt="play note (item (any) of (list (60) (64) (67) (72) (60))) for (1) beats" title="play note (item (any) of (list (60) (64) (67) (72) (60))) for (1) beats"></li>
+                        <li><img class="inline" src="/bjc-r/img/3-lists/compare-play-note-2.png" alt="for each (note) of (list (60) (64) (67) (72) (60)) (play note (note) for (1) beats)" title="for each (note) of (list (60) (64) (67) (72) (60)) (play note (note) for (1) beats)"></li>
+                        <li><img class="inline" src="/bjc-r/img/3-lists/compare-play-note-3.png" alt="for each (note) of (map (_ + 5) over (list (60) (64) (67) (72) (60))) (play note (note) for (1) beats)" title="for each (note) of (map (_ + 5) over (list (60) (64) (67) (72) (60))) (play note (note) for (1) beats)"></li>
+                        <li><img class="inline" src="/bjc-r/img/3-lists/compare-play-note-4.png" alt="for each (note) of (keep items such that (() < 65) from (list (60) (64) (67) (72) (60))) (play note (note) for (1) beats)" title="for each (note) of (keep items such that (() < 65) from (list (60) (64) (67) (72) (60))) (play note (note) for (1) beats)" /></li>
+                    </ol>
+                </li>
+            </ol>
+            <div class="endnote">
+                <strong>Wiederholungsbedarf?</strong>
+                <ul>
+                    <li><code>for each</code> hast du in <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/3-traversing-list.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 2: Jede Quizantwort pr&uuml;fen">Einheit 2, Labor 2</a> kennengelernt.</li>
+                    <li><code>keep</code> hast du in <a href="/bjc-r/cur/programming/2-complexity/3-predicates/5-keeping-list-items.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Listenelemente behalten">Einheit 2, Labor 3</a> ge&uuml;bt.</li>
+                    <li><code>map</code> wurde in Einheit 3, Labor 2 vertieft.</li>
+                </ul>
+            </div>
+		</div>
+
+        <h3>Ein Lied als Datenstruktur</h3>
+        <div class="forYouToDo">
+            <ol start="4">
+                <li>Lege eine Liste von Noten an, die ein Lied repr&auml;sentiert. Du kannst z.&nbsp;B. &bdquo;Row, Row, Row Your Boat&ldquo; verwenden: <img class="inline" src="/bjc-r/img/3-lists/row-row-row-your-boat.png" alt="Liste mit Noten und L&auml;ngen" title="Liste mit Noten und L&auml;ngen" /></li>
+                <li>
+                    Verwende ein abstraktes Datentyp-Objekt <code>note</code> mit folgenden Bl&ouml;cken:<br />
+                    <img class="indent" src="/bjc-r/img/3-lists/note-adt.png" alt="note pitch: () length: ()" title="note pitch: () length: ()" />
+                </li>
+                <li>
+                    Schreibe einen Block <code>play song</code>, der eine Notenliste abspielt.<br />
+                    <img class="indent" src="/bjc-r/img/3-lists/play-song.png" alt="play song (notes)" title="play song (notes)" />
+                </li>
+                <li>
+                    Verwende <code>map</code> zusammen mit deinen ADT-Bl&ouml;cken, um einen Reporter <code>transpose</code> zu schreiben. Er erh&auml;lt eine Notenliste und eine Zahl f&uuml;r die Verschiebung und gibt die transponierte Version zur&uuml;ck. Beispiel:<br />
+                    <img class="indent" src="/bjc-r/img/3-lists/play-song-transpose-row-row-row-by-19.png" alt="play song (transpose (row row row your boat) by (19))" title="play song (transpose (row row row your boat) by (19))" />
+                    <div class="endnote">
+                        <a href="#hint-target-2" data-toggle="collapse" title="Tipp anzeigen">Tipp anzeigen</a>
+                        <div id="hint-target-2" class="collapse">
+                        	<img src="/bjc-r/img/3-lists/transpose-definition.png" alt="Hinweis zur Definition von transpose" title="Hinweis zur Definition von transpose" />
+                        </div>
+                    </div>
+                </li>
+                <li>Spiele dein Lied mit unterschiedlichen Transpositionswerten ab, um den Effekt von <code>map</code> zu h&ouml;ren.</li>
+			</ol>
+		</div>
+
+        <div class="todo">
+            Funktioniert in Snap<em>!</em> nicht, w&auml;re aber eine sch&ouml;ne Klammer f&uuml;r die Seite ... :/
+            <h3>Einen Kanon erstellen</h3>
+            <div class="comment">Falls dieser Teil bleibt, erkl&auml;re den Aufbau von Kanons (z.&nbsp;B. wie auf <a href="/bjc-r/cur/programming/2-complexity/old/new/map-music.html" target="_blank">dieser Entwurfsseite</a>).</div>
+            <img class="indent" src="/bjc-r/img/3-lists/musical-round.png" alt="launch(play song(row row row your boat)); wait (3) secs; launch(play song(row row row your boat));" title="launch(play song(row row row your boat)); wait (3) secs; launch(play song(row row row your boat));" />
+            <a href="https://github.com/jmoenig/Snap--Build-Your-Own-Blocks/issues/1807">GitHub Issue #1807</a>
+        </div>
+
+        <div class="todo">Langweilig? Vielleicht nicht f&uuml;r Audio-/Video-Fans ...
+		<h3>Einen Frequenz-Cutoff verwenden</h3>
+		<div class="forYouToDo">
+            <ol start="12">
+                <li>
+                	<img class="imageRight" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deiner Partnerperson" title="Sprich mit deiner Partnerperson" />
+                    Vergleiche die Ausgabe dieser beiden oben erstellten Skripte. Diskutiert, was <code>keep &lt; 65</code> mit dem Klang macht:<br />
+                    <img class="indent" src="/bjc-r/img/3-lists/compare-play-note-2.png" alt="for each (note) of (list (60) (64) (67) (72) (60)) (play note (note) for (1) beats)" title="for each (note) of (list (60) (64) (67) (72) (60)) (play note (note) for (1) beats)"><br />
+                    <img class="indent" src="/bjc-r/img/3-lists/compare-play-note-4.png" alt="for each (note) of (keep items such that (() < 65) from (list (60) (64) (67) (72) (60))) (play note (note) for (1) beats)" title="for each (note) of (keep items such that (() < 65) from (list (60) (64) (67) (72) (60))) (play note (note) for (1) beats)" />
+                </li>
+                <li>...</li>
+            </ol>
+        </div>
+        </div>
+
+
+
+    </body>
+</html>

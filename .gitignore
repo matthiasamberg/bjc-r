@@ -13,6 +13,9 @@
 ._*
 .#*
 tmp/
+.venv
+.venv*/
+.venv_*/
 
 # IDE-Specific Files
 .project

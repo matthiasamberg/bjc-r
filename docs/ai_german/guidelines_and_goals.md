@@ -11,7 +11,7 @@ Alle öffentlich sichtbaren BJC-Inhalte sollen auf Deutsch verfügbar sein, ohne
 1. **Übersetzen der HTML-/MD-Inhalte**  
    - Einheit 1 abgeschlossen (Laborseiten, optionale Projekte, Zusammenfassungen).  
    - Einheit 2: Aktuelle Kursstruktur (Labs & optionale Projekte) auf Deutsch; Legacy-/`old`-Material offen.  
-   - Einheit 3: Labs 1–3 komplett auf Deutsch (Labor 3 neu 2025-10-18); noch offen: 4-Robots & AI, 5-Work, Investigations, optionale Projekte, Assessments/Legacy.  
+   - Einheit 3: Labs 1–5, Investigations und optionale Projekte komplett auf Deutsch (Stand 2025-10-18); noch offen: Assessments/Legacy.  
    - Ausstehend: Einheiten 4–8, globale Seiten (Startseiten, Lehrer*innenmaterial, ggf. Indexe).
 
 2. **Anpassung der Sprachumschaltung (JS/CSS)**  

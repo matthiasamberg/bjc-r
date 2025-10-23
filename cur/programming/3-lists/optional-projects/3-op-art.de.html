@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 3, optionale Projekte, Seite 3</title>
+    </head>
+
+    <body>
+        <h2>Op-Art</h2>
+        <div class="todo">
+            <p>BH: Nur die letzte &bdquo;Take It Further&ldquo;-Idee ist wirklich anspruchsvoll; ich finde, sie sollte ein normaler Auftrag sein. Das Bild von Hand auszumalen ist merkw&uuml;rdig.</p>
+            <p>MF: BH muss diese Seite noch reviewen (siehe Lehrkr&auml;ftehandbuch).</p>
+        </div>
+
+        <div class="learn">
+            In diesem Projekt erstellst du Werkzeuge, um Op-Art zu erkunden &ndash; eine Form der Bildenden Kunst, die optische T&auml;uschungen nutzt.<br />
+            <div class="comment">Der kleine Kreis inmitten der Formen wirkt etwas verwirrend. Geht es noch jemandem so? --MF, 10.09.18</div>
+		    <img class="indent" data-gifffer="/bjc-r/img/3-lists/OpArt_img/OpArtAnimation.gif" height="300" alt="Animation: Eine Person zeichnet &uuml;berlappende Rechtecke und f&uuml;llt die Bereiche so, dass keine angrenzenden Fl&auml;chen die gleiche Farbe haben." title="Animation &uuml;berlappender Rechtecke mit schwarzer/wei&szlig;er F&auml;rbung" />
+        </div>
+
+        <p>Anfangs zeichnet man mit der Maus Rechtecke. Sobald die Leertaste gedr&uuml;ckt wird, endet die Zeichenphase und ein Mausklick funktioniert wie ein Farbeimer, der geschlossene Bereiche ausf&uuml;llt. Hier siehst du zwei Beispiele f&uuml;r Phase&nbsp;1 (Rechtecke zeichnen) und Phase&nbsp;2 (Bereiche f&uuml;llen):</p>
+        <p class="indent">
+            Beispiel 1: <img src="/bjc-r/img/3-lists/OpArt_img/OpArt2Phase1.png" height="175" alt="Op Art 1 Phase 1" title="Op Art 1 Phase 1" />
+            <img src="/bjc-r/img/3-lists/OpArt_img/OpArt2Phase2.png" height="175" alt="Op Art 1 Phase 2" title="Op Art 1 Phase 2" />
+        </p>
+        <p class="indent">
+            Beispiel 2: <img src="/bjc-r/img/3-lists/OpArt_img/OpArt3Phase1.png" height="175" alt="Op Art 2 Phase 1" title="Op Art 2 Phase 1" />
+            <img src="/bjc-r/img/3-lists/OpArt_img/OpArt3Phase2.png"  height="175" alt="Op Art 2 Phase 2" title="Op Art 2 Phase 2" />
+        </p>
+
+        <div class="forYouToDo">
+            <ol>
+            	<li><div class="newProject"><span class="text">"U3-OpArt"</span><img src="/bjc-r/img/icons/new-project-called.png" alt="Lege ein neues Projekt namens U3-OpArt an" title="Lege ein neues Projekt namens U3-OpArt an" /></div></li>
+                <li>
+                    In der Zeichenphase (Phase&nbsp;1) erstellst du viele Rechtecke, indem du von einer Ecke zur gegen&uuml;berliegenden Ecke klickst und ziehst. Es ist hilfreich, ein abstraktes Datentyp-Objekt (ADT) zu verwenden, das die Eckpunkte verwaltet.<br />
+                    <div class="comment"><h3>POINT wird in Einheit&nbsp;2 optional.</h3> Das ADT <code>corner</code> funktioniert genauso wie das <code>point</code>-ADT, das du in <a href="/bjc-r/cur/programming/2-complexity/optional-projects/future/2-data-types.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, optionales Projekt: Kunst mit Datenstrukturen, Seite 2">Einheit&nbsp;2</a> erstellt hast.</div>
+                    <img class="indent" src="/bjc-r/img/3-lists/OpArt_img/corner12.png" height="150" alt="Gegen&uuml;berliegende Ecken eines Rechtecks" title="Gegen&uuml;berliegende Ecken eines Rechtecks" /><br />
+                    <ol>
+                        <li>
+                            Erstelle einen Konstruktor <code>corner</code>, der eine Liste mit den <em>x</em>- und <em>y</em>-Koordinaten einer Ecke zur&uuml;ckgibt.<br />
+                            <img class="indent" src="/bjc-r/img/3-lists/corner-reporting.png" alt="corner x:(mouse x) y:(mouse y) reporting {-1177, -34}" title="corner x:(mouse x) y:(mouse y) reporting {-1177, -34}" />
+                        </li>
+                        <li>
+                            Schreibe zwei Selektoren <code>x of corner</code> und <code>y of corner</code>, die den jeweiligen Wert f&uuml;r eine Eingabe <var>corner</var> zur&uuml;ckgeben.<br />
+                            <img class="indent" src="/bjc-r/img/3-lists/x-of-corner-reporting.png" alt="x of corner: (corner) reporting -239" title="x of corner: (corner) reporting -239" />
+                            <img class="indent" src="/bjc-r/img/3-lists/y-of-corner-reporting.png" alt="y of corner: (corner) reporting 38" title="y of corner: (corner) reporting 38" />
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    Lege zwei globale Variablen an, um die Eckpunkte jedes Rechtecks w&auml;hrend des Zeichnens zwischenzuspeichern:
+                    <ul>
+                        <li><var>current corner 1</var>: speichert die Koordinaten beim ersten Mausklick</li>
+                        <li><var>current corner 2</var>: speichert die Koordinaten, w&auml;hrend die Maus bewegt wird (beim Loslassen der Maustaste ist das die endg&uuml;ltige Position der zweiten Ecke)</li>
+                    </ul>
+                </li>
+                <li>
+                    Erstelle nun einen Block <code>rectangle start (corner) end (corner)</code>, der mithilfe der beiden gespeicherten Eckpunkte ein Rechteck zeichnet.<br />
+                    <img class="indent" src="/bjc-r/img/3-lists/OpArt_img/rectangle-block.png" height="125" alt="Rechteck zeichnen" title="Rechteck zeichnen" />
+                </li>
+                <li>
+                    Implementiere Ereignisse f&uuml;r die Maussteuerung, damit die beiden Variablen gesetzt und das Rechteck gezeichnet wird.<br />
+                    <img class="indent" src="/bjc-r/img/3-lists/OpArt_img/mouse-handlers.png" height="175" alt="Maus-Handler" title="Maus-Handler" />
+                </li>
+                <li>
+                    Speichere jedes fertiggestellte Rechteck in einer Liste, damit du sp&auml;ter wei&szlig;t, welche Fl&auml;chen gezeichnet wurden.<br />
+                    <img class="indent" src="/bjc-r/img/3-lists/OpArt_img/store-rectangles.png" height="200" alt="Rechtecke speichern" title="Rechtecke speichern" />
+                </li>
+                <li>
+                    Wenn die Nutzerperson die Leertaste dr&uuml;ckt, soll Phase&nbsp;2 beginnen. Du brauchst also eine Variable <var>phase</var> (z.&nbsp;B. Werte 1 oder 2), die steuert, ob gezeichnet oder gef&auml;rbt wird.<br />
+                    <img class="indent" src="/bjc-r/img/3-lists/OpArt_img/phase-variable.png" height="140" alt="Phasenvariable" title="Phasenvariable" />
+                </li>
+                <li>
+                    In Phase&nbsp;2 wird mit der Mausfarbeimer-Funktion ein Bereich gef&uuml;llt. Entwickle dazu eine Strategie, wie du feststellst, in welchem Bereich sich der Mausklick befindet, und wie du ihn einf&auml;rbst. Du kannst zum Beispiel die Rechtsklick-F&uuml;llmethode aus Snap<em>!</em> nachbauen oder eine eigene Listendarstellung der Fl&auml;chen anlegen.<br />
+                    <div class="comment">Vielleicht kann jemand eine Variante einbauen, die automatische F&auml;rbung oder generierte Muster erlaubt. --BH</div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="takeItFurther">
+            <p>
+                Ideen f&uuml;r Erweiterungen:
+                <ol type="A">
+                    <li>Erstelle eine Funktion, die &uuml;berlappende Rechtecke automatisch einf&auml;rbt, sodass angrenzende Bereiche unterschiedliche Farben erhalten.</li>
+                    <li>Implementiere eine Undo-/Redo-Funktion, um Zeichen- und Malaktionen r&uuml;ckg&auml;ngig zu machen.</li>
+                    <li>Sammle Inspiration bei Op-Art-K&uuml;nstler:innen wie Victor Vasarely oder Bridget Riley und versuche, ihre Stile nachzubilden.<br />
+                    <img src="/bjc-r/img/3-lists/OpArt_img/Riley1.jpg"  height="150" alt="Op-Art von Bridget Riley" title="Op-Art von Bridget Riley" />
+                    <img src="/bjc-r/img/3-lists/OpArt_img/Riley2.png"  height="150" alt="Riley Op Art #2" title="Riley Op Art #2" />
+                    <img src="/bjc-r/img/3-lists/OpArt_img/Riley3.jpg"  height="150" alt="Riley Op Art #3" title="Riley Op Art #3" />
+                    </li>
+                    <li>
+                        Automatisiere die Malphase mit folgendem Algorithmus:
+                        <ul>
+                            <li>Bestimme f&uuml;r jeden Pixel auf dem Bildschirm, in wie vielen Rechtecken er liegt.</li>
+                            <li>F&auml;rbe jeden Pixel schwarz, wenn die Anzahl ungerade ist, und wei&szlig;, wenn sie gerade ist (oder umgekehrt).</li>
+                        </ul>
+                        Um zu verstehen, warum dieser Algorithmus funktioniert, teste ihn mit Papier und Stift an einfachen Beispielen mit wenigen &uuml;berlappenden Rechtecken.<br />
+                        <img src="/bjc-r/img/3-lists/OpArt_img/autoOpArt1.png" height="200" alt="&Uuml;berlappende Rechtecke" title="&Uuml;berlappende Rechtecke"/><img src="/bjc-r/img/3-lists/OpArt_img/autoOpArt2.png" height="200" alt="&Uuml;berlappungen gez&auml;hlt" title="&Uuml;berlappungen gez&auml;hlt"/><img src="/bjc-r/img/3-lists/OpArt_img/autoOpArt3.png" height="200" alt="Bereiche eingef&auml;rbt" title="Bereiche eingef&auml;rbt"/>
+                    </li>
+                </ol>
+            </p>
+        </div>
+
+
+    </body>
+</html>
