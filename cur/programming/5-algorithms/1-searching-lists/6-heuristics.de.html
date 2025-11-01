@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 5, Labor 1: Suchalgorithmen und Effizienz, Seite 6</title>
+	</head>
+
+	<body>
+        <h2>Heuristische Lösungen</h2>
+		<div class="todo">
+            <h3>Lehrer*innenunterlagen und Lösungen müssen überprüft werden. --MF, 19.12.2018</h3>
+        </div>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> lernst du, dass es selbst für Probleme mit unangemessener Laufzeit vernünftige „gut genug“-Lösungen geben kann.</p>
+        </div>
+        <div class="ap-standard">AAP-4.A.6, AAP-4.A.8, AAP-4.A.9</div>
+        <p>Wenn sich ein Problem nur in exponentieller Zeit lösen lässt, gibt es vielleicht einen anderen Algorithmus, der es in polynomialer Zeit (also schneller) schafft. Manche Probleme lassen sich jedoch grundsätzlich nicht in polynomialer Zeit beantworten. Wichtig ist: Ein Algorithmus mit exponentieller Laufzeit <strong>liefert trotzdem die richtige Lösung</strong>; er braucht nur unangemessen lange (für manche Eingaben vielleicht hunderte Jahre).</p>
+        <p>Manchmal lassen sich exponentielle Algorithmen durch <em>Heuristiken</em> ersetzen. Das sind Algorithmen mit polynomialer Laufzeit, die das Problem nicht exakt lösen, aber eine ausreichend gute Annäherung liefern. Heuristiken sind jedoch nur für bestimmte Problemtypen sinnvoll.<!--Heuristics are useful when a problem has has a solution, and although we can't compute the solution in a practical amount a time, we can still find "pretty good" solutions.--></p>
+        <div class="vocabFullWidth">: <strong>Entscheidungsproblem</strong> vs. <strong>Optimierungsproblem</strong>
+          <div class="ap-standard">AAP-4.A.2</div>
+            <ul>
+                <li>Ein <strong>Entscheidungsproblem</strong> hat eine wahr/falsch-Antwort (zum Beispiel „Ist 5,825,496,221 eine Primzahl?“).</li>
+                <li>Ein <strong>Optimierungsproblem</strong> hat das Ziel, unter vielen Möglichkeiten die <em>beste</em> Lösung zu finden (zum Beispiel „Wie erstellen wir den Stundenplan so, dass alle Schüler*innen möglichst viele Wunschkurse besuchen?“).</li>
+            </ul>
+        </div>
+
+        <div class="forYouToDo">
+			<ol>
+				<li>Für welche Art von Problemen (Optimierungsprobleme oder Entscheidungsprobleme) ist eine heuristische Lösung wahrscheinlich nützlich?</li>
+			</ol>
+		</div>
+
+        <p>
+            Ein Beispiel für ein Problem, bei dem eine Heuristik hilfreich ist, ist das <strong>Problem des Handlungsreisenden</strong>: Für eine Menge von Städten, <em>wie lautet die kürzeste Route</em>, die alle Städte genau einmal besucht und wieder zur Heimatstadt zurückkehrt? Das ist ein guter Kandidat für Heuristiken, weil:
+            <ol>
+                <li>Es klar ist, dass es tatsächlich eine kürzeste Route geben muss.</li>
+                <li>Kein Algorithmus mit polynomialer Laufzeit bekannt ist (und die meisten Informatiker*innen glauben, dass es keinen geben kann).</li>
+                <li>Es <em>wohl</em> eine Heuristik gibt: Wähle einen zufälligen Weg und verbessere ihn, indem du immer wieder zwei Städte vertauschst, bis keine kleinen Änderungen ihn noch besser machen.</li>
+            </ol>
+            <div class="endnote">Diese Heuristik heißt „Hill Climbing“, weil du den besten <em>nahen</em> Weg findest (den Gipfel eines Hügels), aber es könnte anderswo einen höheren Hügel (einen noch besseren Weg) geben.</div>
+        </p>
+
+        <div class="forYouToDo">
+			<ol start="2">
+                <li>
+                    <div class="ap-standard">AAP-4.A Teil b</div>
+                    <!-- Question 2 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="In which of the following problems is a heuristic solution appropriate?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="true">
+                        <div class="prompt">
+                            Für welches der folgenden Probleme eignet sich eine heuristische Lösung?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Finde das größte Element in einer Liste.</div>
+                            <div class="feedback">
+                                Dieses Problem können wir in polynomialer Zeit exakt lösen.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Finde die beste Kombination von Zutaten für eine Tomatensoße.</div>
+                            <div class="feedback">
+                                Es gibt keine perfekte (objektiv richtige) Lösung, weil Menschen unterschiedliche Vorlieben haben.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Schach spielen.</div>
+                            <div class="feedback">
+                                Richtig! Hier gibt es eine Lösung (eine Möglichkeit, das Ergebnis bei perfektem Spiel zu bestimmen), sie lässt sich nicht in polynomialer Zeit finden, und eine Annäherung wäre nützlich.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Finde die Kombination eines Schlosses mit <em>n</em> Zahlen.</div>
+                            <div class="feedback">
+                                Hier bringt eine Heuristik nichts, weil „fast richtig“ nicht hilft.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                            <div class="correctResponse" identifier="c3"></div>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+        <h3>Lassen sich alle Entscheidungsprobleme lösen?</h3>
+        <p>Es stellt sich heraus, dass sich nicht alle Entscheidungsprobleme (Ja/Nein-Fragen) mit einem Algorithmus lösen lassen.</p>
+
+        <div class="vocabFullWidth">: <strong>Entscheidbares Problem</strong> vs. <strong>unentscheidbares Problem</strong>
+            <div class="ap-standard">AAP-4.B.1, AAP-4.B.2, AAP-4.B.3</div>
+            <p>Ein <strong>entscheidbares</strong> Problem ist ein Entscheidungsproblem, für das sich ein Algorithmus schreiben lässt, der für alle Eingaben eine korrekte Ausgabe liefert. </p>
+            <p>Ein <strong>unentscheidbares</strong> Problem ist das Gegenteil. Es ist <em>nicht</em> möglich, einen Algorithmus zu schreiben, der für alle Eingaben die richtige Antwort liefert – auch wenn das für manche Eingaben klappen mag. </p>
+        </div>
+        <div class="endnote">
+            <p>Die Frage „Ist die Zahl gerade?“ ist ein Beispiel für ein <em>entscheidbares Problem</em>, weil es einen Algorithmus gibt, der für <em>jede</em> ganze Zahl bestimmt, ob sie gerade ist.</p>
+            <p>Die Frage „Wird dieses Programm mit Eingabe irgendwann ein Ergebnis liefern?“ ist ein <em>unentscheidbares Problem</em>. Es ist möglich, einen Prüfalgorithmus zu schreiben, der für <em>manche</em> Programme mit <em>manchen</em> Eingaben sagt, ob sie ein Ergebnis melden oder in einer Endlosschleife hängen bleiben. Es gibt jedoch keinen Prüfalgorithmus, der für <em>jedes</em> Programm mit <em>jeder</em> Eingabe funktioniert. (Einen Beweis dafür, dass sich kein solcher Prüfalgorithmus – weder für Computer noch für Menschen – schreiben lässt, findest du in <a href="/bjc-r/cur/programming/5-algorithms/4-unsolvable-undecidable/1-logical-inconsistency.html?topic=nyc_bjc%2F5-algorithms.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 5, Labor 4">Labor 4</a>.)</p>
+        </div>
+
+        <div class="forYouToDo">
+			<ol start="3">
+                <div class="ap-standard">AAP-4.B</div>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" /> Was bedeutet es, wenn ein Problem unentscheidbar ist?</li>
+			</ol>
+		</div>
+
+
+    </body>
+</html>

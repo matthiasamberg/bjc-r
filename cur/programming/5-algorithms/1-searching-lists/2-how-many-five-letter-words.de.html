@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 5, Labor 1: Suchalgorithmen und Effizienz, Seite 2</title>
+	</head>
+
+	<body>
+        <h2>Wie viele f&uuml;nfbuchstabige W&ouml;rter gibt es?</h2>
+        <div class="todo">
+            <h3>TG und L&ouml;sungen pr&uuml;fen. --MF, 19.12.2018</h3>
+        </div>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> siehst du, wie lange ein <em>lineares Such</em>-Algorithmus l&auml;uft.</p>
+        </div>
+        <p>Auf <a href="/bjc-r/cur/programming/2-complexity/3-predicates/6-solving-word-puzzle.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 3, Seite 6: Ein Wortr&auml;tsel l&ouml;sen">Einheit&nbsp;2, Labor&nbsp;3, Seite&nbsp;6: Ein Wortr&auml;tsel l&ouml;sen</a> hast du den Block <img class="inline nopadtb" src="/bjc-r/img/5-algorithms/does-word-have-number-letters.png" alt="hat () () Buchstaben?" title="hat () () Buchstaben?" /> gebaut und mit <code>keep</code> verwendet, um W&ouml;rter einer bestimmten L&auml;nge in einer Wortliste zu finden. <strong>Wie lange dauert so ein Prozess?</strong></p>
+
+        <div class="forYouToDo" id="first">
+			<ol>
+                <li>
+                    <a href="/bjc-r/prog/5-algorithms/U5L1-Spell-Checker.xml" class="run"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Klicke hier, um ein Startprojekt zu laden. Speichere es anschlie&szlig;end." title="Klicke hier, um ein Startprojekt zu laden. Speichere es anschlie&szlig;end."></a>
+                    <div class="endnote">Dieses Projekt stellt die Variablen <var>1,000 words</var>, <var>10,000 words</var> und <var>100,000 words</var> bereit (jeweils mit einer Liste von W&ouml;rtern) sowie eine Kopie des Pr&auml;dikats <code>does () have () letters?</code>.</div>
+                </li>
+				<li>Wie viele f&uuml;nfbuchstabige W&ouml;rter gibt es in der Liste <var>10,000 words</var>?</li>
+                <li>Nutze den in diesem Projekt bereitgestellten Block <img class="inline" src="/bjc-r/img/5-algorithms/computation-time-of.png" alt="computation time of 'graues Ring-Eingabefeld'" title="computation time of 'graues Ring-Eingabefeld'" />, um herauszufinden, wie lange der Computer f&uuml;r die Antwort ben&ouml;tigt.</li>
+            </ol>
+        </div>
+
+        <p>
+            Der Block <code>computation time</code> nimmt einen beliebigen Reporter (mit ausgef&uuml;llten Eingaben), berechnet das Ergebnis, ignoriert es aber und meldet stattdessen, <em>wie lange</em> die Berechnung gedauert hat (in Millisekunden).<br />
+            <img class="indent" src="/bjc-r/img/5-algorithms/computation-time-reporting.png" alt="computation time of (numbers from (1) to (1000)) meldet 27" title="computation time of (numbers from (1) to (1000)) meldet 27" />
+        </p>
+        <p>In diesem Beispiel dauerte es 27&nbsp;Millisekunden, die Liste der ganzen Zahlen von 1 bis 1000 zu berechnen. (Dein Wert h&auml;ngt von der Geschwindigkeit deines Computers und von anderen laufenden Programmen ab.)</p>
+        <p>Du kannst in <code>computation time</code> hineinschauen, um zu sehen, wie es funktioniert: Rechtsklicke (oder Ctrl‑Klick auf dem Mac) auf den Block und w&auml;hle „edit…“.</p>
+
+        <div class="forYouToDo">
+			<ol start="4">
+                <li>Klicke dreimal auf den <code>computation time</code>-Ausdruck, den du eben verwendet hast, und notiere die Spannweite der Antworten. Sie sind nicht exakt gleich, weil dein Computer gleichzeitig andere Dinge erledigt; betrachte das Ergebnis daher immer als <em>ann&auml;hernd</em>.</li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Besprich es mit deiner Partnerin/deinem Partner" title="Besprich es mit deiner Partnerin/deinem Partner" /> Wie lange w&uuml;rde es dauern, f&uuml;nfbuchstabige W&ouml;rter zu z&auml;hlen, wenn die Liste 100.000 W&ouml;rter enthielte?</li>
+                <li>Pr&uuml;fe es mit <code>computation time</code> anhand der Liste <var>100,000 words</var>.</li>
+            </ol>
+        </div>
+
+		<p>Nach allen f&uuml;nfbuchstabigen W&ouml;rtern in einer bestimmten Wortliste zu suchen, ist eine <em>Instanz</em> eines allgemeineren Problems: nach allen W&ouml;rtern einer beliebigen L&auml;nge zu suchen.</p>
+        <div class="vocabFullWidth">: <strong>Problem</strong> vs. <strong>Instanz eines Problems</strong>
+            <div class="ap-standard">AAP-4.A.1</div>
+            <ul>
+                <li>Ein <strong>Problem</strong> ist eine allgemeine Beschreibung einer Aufgabe, die algorithmisch l&ouml;sbar sein <em>kann</em> (oder auch nicht).</li>
+                <li>Eine <strong>Instanz eines Problems</strong> ist ein einzelner Fall mit konkreten Eingaben.</li>
+            </ul>
+        </div>
+
+        <div class="forYouToDo">
+			<ol start="7">
+                <li>
+                    Angenommen, wir z&auml;hlen stattdessen die <em>sieben</em>buchstabigen W&ouml;rter. Dauert das …
+                    <img class="imageRight" src="/bjc-r/img/icons/write-out-thoughts.png" alt="Schreibe deine Gedanken auf" title="Schreibe deine Gedanken auf" />
+                    <ol>
+                        <li>l&auml;nger, weil sieben mehr als f&uuml;nf Buchstaben sind?</li>
+                        <li>k&uuml;rzer, weil es weniger siebenbuchstabige als f&uuml;nfbuchstabige W&ouml;rter gibt?</li>
+                        <li>gleich lang, weil nicht die W&ouml;rterl&auml;nge z&auml;hlt, sondern die Gr&ouml;&szlig;e des W&ouml;rterbuchs?</li>
+                    </ol>
+                    <div class="todo">Das Format hat mich verwirrt; als Frage umformuliert. --MF, 31.05.2020<p>Sollte das vielleicht ein Quizlet sein? Unsicher … --MF, 13.07.2020</p></div>
+                </li>
+                <li>
+                    Experimentiere, um es sicher herauszufinden.
+                </li>
+			</ol>
+		</div>
+        <p>Die einzige M&ouml;glichkeit, eine „Wie viele W&ouml;rter …“-Frage zu beantworten, ist, <em>jedes einzelne</em> Wort im W&ouml;rterbuch zu pr&uuml;fen. Hast du also <strong>zehnmal so viele</strong> W&ouml;rter im W&ouml;rterbuch, dauert es <strong>zehnmal so lange</strong>, sie alle zu pr&uuml;fen. </p>
+
+		<div class="vocabFullWidth">: <strong>Lineare Suche</strong> vs. <strong>Sequenzielle Suche</strong>
+            <ul>
+                <li>Ein Algorithmus ben&ouml;tigt <strong>lineare Zeit</strong>, wenn eine Verzehnfachung der Eingabegr&ouml;&szlig;e die ben&ouml;tigte Zeit ebenfalls verzehnfacht.<br />
+                <img class="indent noshadow" style="height:300px" src="/bjc-r/img/5-algorithms/size-vs-time.png" alt="Diagramm Gr&ouml;&szlig;e vs. Zeit: Gerade durch den Ursprung nach rechts oben, Punkte f&uuml;r x=10.000 und x=100.000 markiert" title="Diagramm Gr&ouml;&szlig;e vs. Zeit: Gerade durch den Ursprung nach rechts oben, Punkte f&uuml;r x=10.000 und x=100.000 markiert" />
+                </li>
+                <div class="ap-standard">AAP-2.O.5</div>
+                <li>Ein <strong>linearer Such</strong>- (oder <strong>sequenzieller Such</strong>-)Algorithmus pr&uuml;ft Listenelemente der Reihe nach; das dauert <em>linear viel Zeit</em>.</li>
+            </ul>
+        </div>
+
+
+    </body>
+</html>
+

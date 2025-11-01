@@ -68,4 +68,9 @@ Dieses Dokument fasst den bisherigen Übersetzungsprozess zusammen und dient als
 2. **Währenddessen**: Bei unklaren Begriffen Staging-Server konsultieren oder Snap!-UI auf Deutsch öffnen (falls verfügbar), um offizielle Terminologie abzugleichen.  
 3. **Nach der Übersetzung**: Terminologieänderungen in diesem Dokument ergänzen; offene Fragen in Issues/TODO festhalten.
 
+## Übersetzungslog
+- 2025-10-24: Einheit 4, Labor 3, Seite 1 („Communication and Community“) übersetzt; keine neuen Glossareinträge erforderlich.
+- 2025-10-31: Einheit 5, Labor 1 („Searching Lists“) Seiten 1–8 auf Deutsch; keine zusätzlichen Glossarbegriffe nötig, Snap!-Blocknamen unverändert belassen.
+- 2025-10-31: Einheit 5, Labor 2 („Simulations“) Seiten 1–2 übersetzt; Fokus auf Konsistenz bei Begriffen wie „Simulation“, Snap!-Variablen englisch gelassen, neue Hinweise zu ethischen Aspekten lokalisiert.
+
 Dieses Dokument wird laufend aktualisiert, sobald neue Begriffe hinzukommen oder Übersetzungsentscheidungen angepasst werden.

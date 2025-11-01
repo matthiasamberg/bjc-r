@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <script type="text/javascript" src="/bjc-r/utilities/gifffer.min.js"></script>
+		<script type="text/javascript">window.onload = function() {Gifffer();}</script>
+        <link rel="stylesheet" type="text/css" href="/bjc-r/css/bjc-gifffer.css">
+		<title>Einheit 5, Labor 2: Simulationen, Seite 2</title>
+	</head>
+
+	<body>
+        <h2>Projekt: Krankheitsausbreitung</h2>
+        <div class="commentBig">
+            <p>Paul schlug vor, wir sollten DHHs Analysis-Lehrbuch ansehen; dort wird ein gedankliches Modell aufgebaut, das sich wunderbar in Snap programmieren ließe. --MF, 27.06.2021 mit BH</p>
+        </div>
+
+		<div class="learn">
+            <p><strong>Auf dieser Seite</strong> modellierst du, wie sich eine Krankheit in einer Population verbreitet.</p>
+            <img class="indent" data-gifffer="/bjc-r/img/5-algorithms/img_disease-spread/disease-spread.gif" alt="Simulation einer sich ausbreitenden Krankheit: Eine anfänglich infizierte Person steckt mit der Zeit die gesamte Gruppe an." title="Simulation einer sich ausbreitenden Krankheit: Eine anfänglich infizierte Person steckt mit der Zeit die gesamte Gruppe an."/>
+	    <p><strong>Hinweis:</strong> Das BJC enthielt schon lange vor COVID-19 eine Krankheits-Simulation. Gerade jetzt ist Krankheitsausbreitung allerdings kein abstraktes Thema. Alle haben die Auswirkungen von Isolation gespürt, manche haben sogar Angehörige verloren. Medizinische Forscher*innen arbeiten mit Simulationen (deutlich komplexeren als hier), um den weiteren Verlauf einer Krankheit abzuschätzen.</p>
+        </div>
+
+        <p>Angenommen, du bist medizinische*r Forscher*in und möchtest verstehen, welche Faktoren zur Verbreitung einer Krankheit beitragen. Dich interessiert insbesondere, welchen Einfluss die Größe der Population auf die Zeit bis zur vollständigen Durchseuchung hat – unter der vereinfachenden Annahme, dass Infizierte krank bleiben.</p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+				<li><img class="imageRight" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" /> Welche sinnvolle Hypothese hast du, wie die Populationsgröße die verstrichene Zeit beeinflusst?</li>
+                <li>Was passiert, wenn die Personen häufiger miteinander interagieren?</li>
+            </ol>
+        </div>
+
+        <p>Vielleicht hast du nicht genug reale Daten, um deine Hypothese zu prüfen, und es wäre unethisch, absichtlich eine Krankheit zu verbreiten. Eine Simulation erlaubt es dir, Hypothesen ohne Einschränkungen durch Zeit, Kosten oder Ethik zu testen.</p>
+
+        <div class="forYouToDo" id="second">
+            <ol start="3">
+				<li>
+					<a href="/bjc-r/prog/5-algorithms/U5L2-Simulation.xml" class="run"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Projektvorlage laden und anschließend speichern." title="Projektvorlage laden und anschließend speichern."></a><br />
+					Darin findest du:
+					<ul>
+						<li>eine Variable <var>population</var>, die die Gesamtzahl der Menschen speichert (dargestellt durch Klone eines Sprites)</li>
+						<li>eine Variable <var>percent initially infected</var>, die den Anteil der anfänglich Erkrankten enthält</li>
+						<li>eine Variable <var>speed</var>, die steuert, wie schnell sich die Klone bewegen</li>
+						<li>eine Variable <var>sprites ready?</var>, ein Wahrheitswert, der festhält, ob alle Klone erzeugt wurden und die Simulation starten kann</li>
+						<li>eine Variable <var>number infected</var>, die mitzählt, wie viele Klone aktuell krank sind</li>
+						<li>eine <em>sprite-lokale</em> Variable <var>infected?</var>, die für jeden Klon speichert, ob er krank ist (jeder Klon besitzt seine eigene Variable mit diesem Namen)</li>
+						<li>zwei Kostüme, sick (<img class="inline" src="/bjc-r/img/5-algorithms/img_disease-spread/sick.png" height="40" alt="Kostüm „sick“: kleine rote Person" title="Kostüm „sick“: kleine rote Person" />) und well (<img class="inline" src="/bjc-r/img/5-algorithms/img_disease-spread/well.png" height="40" alt="Kostüm „well“: kleine blaue Person" title="Kostüm „well“: kleine blaue Person" />), die den Zustand jedes Klons anzeigen</li>
+						<li>
+							<div class="sidenoteBig">
+								<p>Wie man ein Sprite klont, hast du in <a href="/bjc-r/cur/programming/3-lists/1-abstraction/5-building-tic-tac-toe.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 3, Labor 1, Seite 5: Tic-Tac-Toe-Feld bauen">Einheit 3, Labor 1, Seite 5</a> gelernt.</p>
+								<p>Der primitive Block <img class="inline" src="/bjc-r/img/blocks/my-neighbors.png" alt="my (neighbors)" title="my (neighbors)" /> meldet eine Liste von Sprites, die sich in der Nähe des aktuellen Sprites befinden.</p>
+							</div>
+							einen Block <code>simulate disease</code>, den du <strong>fertigstellst</strong>. Er nimmt drei Eingaben: Gesamtpopulation, Prozent anfänglich Erkrankter und Bewegungsgeschwindigkeit.
+						</li>
+					</ul>
+				</li>
+                <li>Vervollständige den Block <code>simulate disease</code>, das Prädikat <code>touching infected person?</code> und das Skript <code>when I start as clone</code>.</li>
+				<li><img class="imageRight" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" /> Vergleiche, wie sich deine Simulation zu einem realen Krankheitsausbruch verhält. Welche <em>vereinfachenden Annahmen</em> triffst du hier?</li>
+			</ol>
+		</div>
+		<p>Du möchtest wissen, wie sich die Populationsgröße auf die verstrichene Zeit auswirkt. Wegen zufälliger Ereignisse schwanken die Ergebnisse jeder Simulation leicht (kein Fehler – auch in der Realität spielen Zufälle eine Rolle).</p>
+		<div class="forYouToDo">
+			<ol start="6">
+                <li>
+                    <div class="ap-standard">AAP-3.F.8</div>
+					Schreibe einen Reporter, der die Populationsgröße als Eingabe erhält, die Simulation zehnmal durchführt, den anfänglichen Anteil Erkrankter auf 10 % und die Geschwindigkeit auf 2 setzt und schließlich die durchschnittliche verstrichene Zeit meldet.<br />
+                    <img class="indent" src="/bjc-r/img/5-algorithms/average-of-disease-spread.png" alt="average time for disease spread with population size: ()" title="average time for disease spread with population size: ()" />
+                </li>
+                <div class="ap-standard">AAP-3.F.7</div>
+                <div class="sidenoteBig">Klone zu verwenden ist eine Form von Parallelisierung. Wie du in <a href="/bjc-r/cur/programming/5-algorithms/1-searching-lists/8-sequential.de.html?topic=nyc_bjc%2F5-algorithms.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 5, Labor 1, Seite 8: Parallelität">Einheit 5, Labor 1, Seite 8</a> gelernt hast, teilen sich jedoch alle Klone denselben Prozessor – du gewinnst dadurch also keine zusätzliche Geschwindigkeit.</div>
+				<li>Rufe diesen Reporter viermal mit unterschiedlichen Populationsgrößen (50, 100, 150 und 200) auf und notiere die Ergebnisse. Formuliere eine verfeinerte Hypothese über den Zusammenhang zwischen Populationsgröße und benötigter Zeit.</li>
+                <li>In echten Krankheitsverläufen erkranken nicht alle Menschen. Wie würdest du entscheiden, ob die Vereinfachungen in deiner Simulation die möglichen Schlussfolgerungen unbrauchbar machen?</li>
+			</ol>
+        </div>
+
+        <p>Dieses Modell ist stark vereinfacht. Du könntest es realistischer machen, indem Erkrankte mit der Zeit genesen oder manche Menschen immun bleiben. Ganz ohne Vereinfachungen wirst du aber nie auskommen.</p>
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>Führe ein ähnliches Experiment durch, indem du die Populationsgröße konstant lässt und den anfänglich infizierten Anteil variierst. Formuliere eine Hypothese für diesen Zusammenhang.</li>
+                <li>Starte anschließend ein weiteres Experiment: Variiere die Bewegungsgeschwindigkeit, halte Populationsgröße und anfänglichen Anteil konstant und beschreibe eine dritte Hypothese.</li>
+                <li>Erweitere den Simulationsblock um weitere Eingaben. Mögliche Ideen: Erkrankte genesen nach einer gewissen Zeit oder werden von Ärzt*innen geheilt – dir fallen bestimmt noch mehr ein.</li>
+                <li>Bisher hast du jeweils nur eine Variable verändert. Was passiert, wenn du zwei Parameter gleichzeitig änderst? Beeinflussen sie das Ergebnis unabhängig voneinander oder beeinflussen sie sich gegenseitig (z. B. wenn Erkrankte sich schnell erholen, ändert das den Zusammenhang zwischen Populationsgröße und verstrichener Zeit)? Führe Experimente durch, um das herauszufinden.</li>
+                <li>Entwirf und implementiere eine Räuber-Beute-Simulation in Snap<em>!</em>. Du könntest z. B. eine Umgebung mit Wolfs- und Hirschpopulation modellieren, in der Wölfe Hirschbestände jagen. Welche Parameter brauchst du, um realistische Schwankungen beider Populationen abzubilden?</li>
+                <li>
+                    Stell dir vor, du arbeitest für eine Bank, die die Wartezeiten der Kund*innen minimieren möchte. Zwei Varianten stehen zur Wahl:
+                    <ul>
+                        <li>eine einzige Warteschlange, in der Kund*innen nach Ankunftszeit auf den nächsten freien Schalter warten, oder</li>
+                        <li>separate Warteschlangen für jeden Schalter.</li>
+                    </ul>
+                    Entwirf und implementiere zwei Simulationen in Snap<em>!</em>, um die <em>durchschnittliche Wartezeit</em> in beiden Szenarien zu bestimmen und die beste Option zu wählen.<br />
+                    <img class="indent" src="/bjc-r/img/5-algorithms/img_disease-spread/single-queue.png"  height="180" alt="Eine gemeinsame Warteschlange" title="Eine gemeinsame Warteschlange"/><img src="/bjc-r/img/5-algorithms/img_disease-spread/multiple-queues.png" height="180" alt="Mehrere Warteschlangen" title="Mehrere Warteschlangen"/>
+                </li>
+				<li>Recherchiere: Warum nutzen (die meisten) Banken eine einzige Schlange, während (die meisten) Supermärkte pro Kasse eine eigene Warteschlange haben?</li>
+            </ol>
+		</div>
+
+    </body>
+</html>

@@ -14,8 +14,14 @@
   - [x] Investigations (5 Seiten) – abgeschlossen (2025-10-18).  
   - [x] Optionale Projekte (4 Seiten) – abgeschlossen (2025-10-18).  
   - [ ] Assessments & Legacy (`old/`, `unused-*`) → Relevanz klären.  
-- [ ] Einheit 4 (Internet & Privacy) – Status prüfen; ggf. Restseiten/Assets ergänzen.  
-- [ ] Einheit 5 (Algorithms & Simulations) – komplette Übersetzung.  
+- [ ] Einheit 4 (Internet & Privacy)  
+  - [x] Labor 1 (Computer Networks) Seiten 1–4 – abgeschlossen (2025-10-24).  
+  - [x] Labor 2 (Cybersecurity) Seiten 1–6 – abgeschlossen (2025-10-24).  
+  - [ ] Labor 3 (Community & Online Interactions) Seiten 1–8 – Seite 1 abgeschlossen (2025-10-24).  
+- [ ] Einheit 5 (Algorithms & Simulations)  
+  - [x] Labor 1 (Searching Lists) Seiten 1–8 – abgeschlossen (2025-10-31).  
+  - [x] Labor 2 (Simulations) Seiten 1–2 – abgeschlossen (2025-10-31).  
+  - [ ] Weitere Labs/Projekte.  
 - [ ] Einheit 6 (How Computers Work) – komplette Übersetzung.  
 - [ ] Einheit 7 (Recursion) – komplette Übersetzung.  
 - [ ] Einheit 8 (Recursive Reporters) – komplette Übersetzung.  
@@ -42,4 +48,4 @@
 - [ ] Feedback aus Tests sammeln und im Guidelines-Dokument ergänzen.  
 - [ ] Rollout-Plan festlegen (Reihenfolge, Staging → Produktion).
 
- _Stand: 2025-10-18_
+_Stand: 2025-10-31_

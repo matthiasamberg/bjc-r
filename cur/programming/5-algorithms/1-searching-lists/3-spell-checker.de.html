@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 5, Labor 1: Suchalgorithmen und Effizienz, Seite 3</title>
+	</head>
+
+	<body>
+		<h2>Ist „seperate“ richtig geschrieben?</h2>
+        <div class="todo">
+            <h3>TG und L&ouml;sungen pr&uuml;fen. --MF, 19.12.2018</h3>
+        </div>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> verwendest du einen <em>bin&auml;ren Such</em>-Algorithmus, um effizient in einer <em>sortierten</em> Liste zu suchen.</p>
+        </div>
+        <p>Diese Frage ist in Snap<em>!</em> einfach zu beantworten, denn du kannst ein W&ouml;rterbuch direkt fragen: <img class="inline nopadtb" src="/bjc-r/img/5-algorithms/100000-words-contains-seperate.png" alt="(100,000 words) contains (seperate)" title="(100,000 words) contains (seperate)" />. Aber <em>„einfach“ hei&szlig;t nicht schnell</em>. Der Block <code>contains</code> muss dennoch jedes Listenelement der Reihe nach pr&uuml;fen, bis er das gesuchte findet (und <code>true</code> meldet) oder das Listenende erreicht (und <code>false</code> meldet). Das ist weiterhin eine lineare Suche.</p>
+        <p>Wenn du in einer Liste nur nach <em>einem</em> Ding suchst (z.&nbsp;B. ob ein Wort korrekt geschrieben ist) statt nach <em>allen</em> W&ouml;rtern mit einer Eigenschaft (z.&nbsp;B. alle f&uuml;nfbuchstabigen W&ouml;rter), kannst du die Strategie aus <a href="/bjc-r/cur/programming/5-algorithms/1-searching-lists/1-sorted-lists.de.html?topic=nyc_bjc%2F5-algorithms.topic&course=bjc4nyc.html&novideo&noassignment" title="Seite 1: Rate meine Zahl">Seite&nbsp;1: Rate meine Zahl</a> nutzen, um deinen Algorithmus schneller zu machen. Die beste Strategie ist ein <em>bin&auml;rer Such</em>-Algorithmus: stets den <em>mittleren</em> Wert raten und die n&auml;chste Vermutung davon abh&auml;ngig machen, ob die vorige zu gro&szlig; oder zu klein war. So eliminierst du bei jedem Versuch die H&auml;lfte der M&ouml;glichkeiten. Eine &auml;hnliche Strategie k&ouml;nnen wir f&uuml;r die Suche nach einem Wort in einer Wortliste nutzen.</p>
+        <div class="endnote">Du h&auml;ttest auch ein einfacheres Zahlenratespiel schreiben k&ouml;nnen: Der Computer r&auml;t 1, dann 2, dann 3 usw., bis er die Zahl findet. Das w&auml;re ein <em>linearer Such</em>-Algorithmus; leichter zu programmieren, aber langsamer, weil bei einem falschen Versuch immer nur genau diese eine M&ouml;glichkeit entf&auml;llt. Mit bin&auml;rer Suche eliminiert jeder falsche Versuch <em>die H&auml;lfte</em> aller M&ouml;glichkeiten.</div>
+        <div class="vocabFullWidth">: <strong>Bin&auml;re Suche</strong>
+        	<div class="ap-standard">AAP-2.P.1, AAP-2.P.2</div>
+            <p>Ein Algorithmus zur <strong>bin&auml;ren Suche</strong> beginnt in der Mitte einer <em>sortierten</em> Liste und eliminiert wiederholt die jeweilige H&auml;lfte, bis entweder der gesuchte Wert gefunden ist oder alle Elemente ausgeschieden sind.</p>
+            <div class="ap-standard">AAP-2.O.1</div>
+            <div class="sidenoteBig">Du hast das Durchlaufen einer Liste gelernt auf <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/3-traversing-list.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 2, Seite 3: Jedes Quiz-Ergebnis pr&uuml;fen">Einheit&nbsp;2, Labor&nbsp;2, Seite&nbsp;3: Jedes Quiz-Ergebnis pr&uuml;fen</a>.</div>
+            <p>Lineare Suche durchl&auml;uft die Liste <em>vollst&auml;ndig</em>. Bin&auml;re Suche spart Zeit durch ein <em>teilweises</em> Durchlaufen.</p>
+        </div>
+        <div class="endnote">Fast alle wissen, dass Computer bin&auml;r arbeiten: Einsen und Nullen. Die bin&auml;re Suche hat damit nichts zu tun. „Bin&auml;r“ bedeutet einfach „zwei“ – zwei Ziffern oder zwei H&auml;lften.</div>
+
+        <div class="forYouToDo" id="first">
+			<ol>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/write-out-thoughts.png" alt="Schreibe deine Gedanken auf" title="Schreibe deine Gedanken auf" />
+                    Vergleiche diesen Block <code>binary search</code> mit deinem Code aus <a href="/bjc-r/cur/programming/5-algorithms/1-searching-lists/1-sorted-lists.de.html?topic=nyc_bjc%2F5-algorithms.topic&course=bjc4nyc.html&novideo&noassignment" title="Seite 1: Rate meine Zahl">Seite&nbsp;1: Rate meine Zahl</a>. Welche Teile sind gleich? Welche sind anders?<br />
+                    <img class="indent" src="/bjc-r/img/5-algorithms/binary-search-block-definition.png" alt="Definition des binary search-Blocks" title="Definition des binary search-Blocks" />
+                </li>
+                <li>
+                    <a href="/bjc-r/prog/5-algorithms/U5L1-Spell-Checker.xml" class="run"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Klicke hier, um ein Startprojekt zu laden. Speichere es anschlie&szlig;end." title="Klicke hier, um ein Startprojekt zu laden. Speichere es anschlie&szlig;end."></a>
+                    <div class="endnote">Dieses Projekt stellt die Variable <var>100,000 words</var> bereit (eine Liste von W&ouml;rtern) und die Definition von <code>binary search</code>.</div>
+                </li>
+                <li>Teste, ob „seperate“ korrekt geschrieben ist, indem du die bin&auml;re Suche auf die Liste <var>100,000 words</var> anwendest.</li>
+                <li>Wie unterscheidet sich die Laufzeit einer bin&auml;ren Suche von der einer linearen Suche, wenn du in derselben Liste suchst? Begr&uuml;nde.</li>
+                <li>
+                    <div class="assessment-data" type="multiplechoice" identifier="In which of these cases can a binary search be used?" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">In welchem dieser F&auml;lle kann eine bin&auml;re Suche verwendet werden?</div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Liste ist aufsteigend sortiert</div>
+                            <div class="feedback">Richtig! F&uuml;r bin&auml;re Suche m&uuml;ssen die Daten sortiert sein.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Liste ist absteigend sortiert</div>
+                            <div class="feedback">Auch das geht – vorausgesetzt, du passt die Vergleichsrichtung entsprechend an.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">unsortiert</div>
+                            <div class="feedback">Sind Daten unsortiert, kannst du nicht sicher die H&auml;lfte vor oder nach dem mittleren Wert ausschlie&szlig;en.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">linear</div>
+                            <div class="feedback">„Linear“ ist der Name eines <em>anderen</em> Suchalgorithmus, nicht eine Eigenschaft der Daten.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+                    <!-- Question 2 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Which of the following questions can be answered with a binary search, assuming the data are sorted?" hasinlinefeedback="true" maxchoices="2" responseIdentifier="ri2" shuffle="true">
+                        <div class="prompt">Welche der folgenden Fragen lassen sich mit einer bin&auml;ren Suche beantworten, wenn die Daten sortiert sind? W&auml;hle alle zutreffenden.</div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Wie lautet die Telefonnummer meines Freundes Rasheed?</div>
+                            <div class="feedback">Richtig! Du suchst <strong>eine</strong> Telefonnummer in der Liste.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Gib mir eine Liste aller Beyonc&eacute;-Songs.</div>
+                            <div class="feedback">Hier m&uuml;ssen <strong>alle</strong> Beyonc&eacute;-Songs gefunden werden, nicht nur einer.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Steht Brot auf meiner Einkaufsliste?</div>
+                            <div class="feedback">Richtig! Du suchst nach <strong>einem</strong> Eintrag in der Liste.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Wer in meiner Kontaktliste wohnt in der Grand Avenue?</div>
+                            <div class="feedback">Deine Kontaktliste ist vermutlich <strong>nach Namen</strong> sortiert, nicht nach Adressen. Au&szlig;erdem k&ouml;nnten <strong>mehrere</strong> Personen dort wohnen.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                            <div class="correctResponse" identifier="c1"></div>
+                            <div class="correctResponse" identifier="c3"></div>
+                        </div>
+                </li>
+            </ol>
+		</div>
+
+        <div class="ifTime">
+			<ol start="7">
+				<li>Baue einen Rechtschreibpr&uuml;fer.</li>
+                <div class="endnote">Nutze <img class="inline" src="/bjc-r/img/blocks/split-by-whitespace.png" alt="split () by (whitespace)" title="split () by (whitespace)" />, um den eingegebenen Text in eine Liste umzuwandeln.</div>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Besprich es mit deiner Partnerin/deinem Partner" title="Besprich es mit deiner Partnerin/deinem Partner" />Soll dein Rechtschreibpr&uuml;fer f&uuml;r jedes Wort im Text im W&ouml;rterbuch nachsehen oder f&uuml;r jedes W&ouml;rterbuchwort im Text suchen?</li>
+			</ol>
+		</div>
+
+
+
+
+    </body>
+</html>
+

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4, Labor 2: Cybersicherheit, Seite 2</title>
+	</head>
+
+	<body>
+        <h2>Caesar-Verschl&uuml;sselung (Projekt)</h2>
+        <div class="todo">Brian, ich habe &bdquo;initials part deux&ldquo; als ITIT auf dieser Seite erg&auml;nzt (siehe unten). Ist das zu viel f&uuml;r ein ITIT? Sollte es eher ein TIF sein? Wenn es dir gef&auml;llt, bitte erst in die L&ouml;sungsdatei aufnehmen und <em>danach</em> diesen Kommentar entfernen. Wenn nicht, bitte anpassen oder streichen. --MF, 04.07.2020</div>
+
+        <div class="learn"><strong>Auf dieser Seite</strong> programmierst du ein Verfahren f&uuml;r eine Schiebeschl&uuml;ssel-Verschl&uuml;sselung, um Text zu ver- und entschl&uuml;sseln.</div>
+        <p>
+            Computer speichern Tastaturzeichen (Gro&szlig;- und Kleinbuchstaben, Satzzeichen, Leerzeichen, Ziffern, Symbole usw.) als Zahlen, die Unicode genannt werden. Diese Tabelle zeigt den Unicode f&uuml;r einige Tastaturzeichen:<br />
+            <img class="indent noshadow" src="/bjc-r/img/4-internet/img_CaesarCipher/Mary_CharacterTable.jpeg" height="330px" alt="Unicode-Tabelle" title="Unicode-Tabelle" />
+        </p>
+
+        <p>
+            Der Block <code>unicode von</code> gibt die Zahl zur&uuml;ck, die f&uuml;r ein bestimmtes Zeichen verwendet wird:<br />
+            <img class="indent" src="/bjc-r/img/4-internet/img_CaesarCipher/SnapUnicode1.png" alt="unicode von (a) ergibt &lsquo;97&rsquo;" title="unicode von (a) ergibt &lsquo;97&rsquo;" /><br />
+            Der Block <code>unicode als buchstabe</code> gibt das Zeichen aus, das zu einer bestimmten Unicode-Zahl geh&ouml;rt:<br />
+            <img class="indent" src="/bjc-r/img/4-internet/img_CaesarCipher/SnapUnicode2.png" alt="unicode (65) als buchstabe ergibt &lsquo;A&rsquo;" title="unicode (65) als buchstabe ergibt &lsquo;A&rsquo;" />
+        </p>
+
+        <div class="forYouToDo" id="second">
+            <ol>
+                <li>Experimentiere mit den Bl&ouml;cken <code>unicode von</code> und <code>unicode als buchstabe</code>. Versuche, ein Wort in Unicode umzuwandeln, erz&auml;hle einer Freundin oder einem Freund den Unicode und lass die Person das Wort wieder zur&uuml;ckverwandeln.</li>
+                <li>Verschl&uuml;ssle und entschl&uuml;ssle eine kurze Nachricht auf Papier mit einer Schiebeschl&uuml;ssel-Methode, damit du ein Gef&uuml;hl f&uuml;r diese Verschl&uuml;sselung bekommst.</li>
+                <li>Schreibe eine Caesar-Verschl&uuml;sselung, die f&uuml;r <em>beliebigen Eingabetext</em> und <em>beliebige Verschiebungswerte</em> funktioniert.</li>
+                <div class="endnote">
+                    <p><a href="#hint-characters" data-toggle="collapse" title="Warum erscheinen Zeichen wie = ? @ # ^ * { oder ~?">Warum sehen wir Zeichen wie <strong>= ? @ # ^ * { </strong> oder <strong>~</strong>?</a></p>
+                    <div id="hint-characters" class="collapse">
+                        <p>Du kannst davon ausgehen, dass das Verschieben einer beliebigen Zeichenfolge in einem vern&uuml;nftigen Umfang zu einer Menge druckbarer Zeichen f&uuml;hrt, zu denen auch nicht alphanumerische Zeichen (also keine Buchstaben oder Ziffern) geh&ouml;ren k&ouml;nnen.</p>
+                        <p>Wenn wir zum Beispiel eine Verschiebung um 4 verwenden, um folgende Nachricht zu verschl&uuml;sseln:</p>
+                        <p class="indent"><em><strong>Invasion of Normandy is on 6 June 1944</strong></em></p>
+                        <p>wird daraus:</p>
+                        <p class="indent"><em><strong>Mrzewmsr$sj$Rsvqerh}$mw$sr$:$Nyri$5=88</strong></em></p>
+                        <p>
+                            <ul>
+                                <li>Welches Zeichen im Geheimtext (der verschl&uuml;sselten Version) steht f&uuml;r ein Leerzeichen im Klartext?</li>
+                                <li>In diesem Code wird aus 1 die 5 und aus 4 die 8, was deutlich die Verschiebung um 4 zeigt. Was wird aus der 9?</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <p><a href="#hint-missing" data-toggle="collapse" title="Was tun, wenn deiner entschl&uuml;sselten Nachricht Zeichen fehlen?">Was tun, wenn deiner entschl&uuml;sselten Nachricht Zeichen fehlen?</a></p>
+                    <div id="hint-missing" class="collapse">
+                        <p>Wenn du deine verschl&uuml;sselte Nachricht anders weitergibst als per Copy &amp; Paste (z.&nbsp;B. indem du sie abschreibst oder auf einem Handy eintippst), k&ouml;nnen manche Zeichen verschwinden. Das liegt daran, dass einige Unicode-Zeichen hinter 126 Steuerzeichen wie &bdquo;L&ouml;schen&ldquo; darstellen. Diese Zeichen zeigt Snap<em>!</em> nicht an, sodass du sie nicht per Hand kopieren kannst &ndash; mit Copy &amp; Paste erkennt Snap<em>!</em> sie aber. Im Take-It-Further-Teil A kannst du eine Verschl&uuml;sselung entwickeln, die dieses Problem vermeidet.</p>
+                    </div>
+                </div>
+                <li>Teste nun dein Programm. Einigt euch auf einen Verschiebungswert f&uuml;r die Verschl&uuml;sselung. Verschl&uuml;ssle damit eine geheime Nachricht und sende sie deiner Partnerin oder deinem Partner per E-Mail. Lass die Person die Nachricht entschl&uuml;sseln, indem sie dein Programm nutzt, um die Verschiebung r&uuml;ckg&auml;ngig zu machen.</li>
+                <div class="endnote">
+                	Du kannst die verschl&uuml;sselten Nachrichten aus der Snap<em>!</em>-Oberfl&auml;che exportieren, indem du mit der rechten Maustaste auf die Variable klickst, die die verschl&uuml;sselte Nachricht enth&auml;lt, und &bdquo;Exportieren&ldquo; ausw&auml;hlst. Dadurch l&auml;dst du eine Textdatei herunter, deren Inhalt du kopieren kannst.<br />
+                	<img class="indent" src="/bjc-r/img/4-internet/img_CaesarCipher/Export.png" width="350" alt="Export-Option" title="Export-Option" />
+                </div>
+            </ol>
+		</div>
+
+        <div class="ifTime">
+			<ol start="5">
+                <li>
+                    Verbessere deinen Block <code>initials</code> aus dem Projekt U3L2-ContactList, sodass er auch f&uuml;r Doppelnamen wie Alexandria Ocasio-Cortez die Initialen findet.<br />
+                    <img class="indent" src="/bjc-r/img/4-internet/initials-reporting-aoc.png" alt="initials von (Alexandria Ocasio-Cortez) ergibt AOC" title="initials von (Alexandria Ocasio-Cortez) ergibt AOC" />
+                    <div class="endnote">
+                        <a href="#hint-initials" data-toggle="collapse" title="Tipps zum Verbessern des initials-Blocks anzeigen.">Tipps anzeigen.</a>
+                        <div id="hint-initials" class="collapse">
+                            Es gibt mehrere Arten, dieses Problem zu l&ouml;sen. Beide folgenden Varianten verwenden HOFs (Higher Order Functions). (Du kannst die Funktionen <code>map</code>, <code>keep</code> und <code>combine</code> auf <a href="/bjc-r/cur/programming/3-lists/2-contact-list/5-mapping-over-list.html?topic=nyc_bjc%2F3-lists.topic&course=bjc4nyc.html&novideo&noassignment#HOFreview" title="Einheit 3, Labor 2, Seite 5: Jedes Listenelement transformieren">Einheit 3, Labor 2, Seite 5</a> wiederholen.)
+                            <ul>
+                                <li>
+                                    Eine M&ouml;glichkeit besteht darin, &uuml;ber den Block <code>unicode</code> alle Gro&szlig;buchstaben auszuw&auml;hlen, statt an Wortgrenzen zu trennen.
+                                    <ul>
+                                        <li>Wenn du Unicode verwenden willst, kannst du einen Block wie <code>liegt zwischen?</code> aus deinem Projekt U2L4-MathLibrary bauen oder importieren, um zu pr&uuml;fen, welche Unicode-Werte Gro&szlig;buchstaben darstellen. (Das Exportieren und Importieren von Bl&ouml;cken hast du auf <a href="/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/2-math-predicates.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 4, Seite 2: Eine mathematische Bibliothek bauen">Einheit 2, Labor 4, Seite 2</a> gelernt.)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Eine andere M&ouml;glichkeit ist, den Block <code>teile</code> zu verwenden, um neben Leerzeichen auch Bindestriche zu ber&uuml;cksichtigen.
+                                    <ul>
+                                        <li>Wenn du <code>teile</code> einsetzen willst, beachte, dass der zweite Eingang das Zeichen sein kann, das als Trennzeichen dienen soll. (Du hast <code>teile</code> ebenfalls auf <a href="/bjc-r/cur/programming/3-lists/2-contact-list/5-mapping-over-list.html?topic=nyc_bjc%2F3-lists.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 3, Labor 2, Seite 5: Jedes Listenelement transformieren">Einheit 3, Labor 2, Seite 5</a> kennengelernt.)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+
+        <div class="takeItFurther">
+			<ol type="A">
+                <li>Implementiere eine Version der Caesar-Verschl&uuml;sselung, die die Zeichen nicht nur verschiebt, sondern sie am Ende des Alphabets auch wieder zum Anfang zur&uuml;ckf&uuml;hrt. Du kannst dein Alphabet dabei auf die Menge druckbarer Zeichen aus der Unicode-Tabelle oben beschr&auml;nken.</li>
+                <li>Recherchiere andere Verschl&uuml;sselungsmethoden aus der Geschichte. Lies besonders &uuml;ber die Vigen&egrave;re-Verschl&uuml;sselung, die w&auml;hrend des Zweiten Weltkriegs intensiv f&uuml;r vertrauliche Kommunikation eingesetzt wurde.</li>
+                <li>Erstelle dein eigenes Verfahren zum Ver- und Entschl&uuml;sseln und implementiere es in Snap<em>!</em>.</li>
+            </ol>
+        </div>
+
+	</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 5, Labor 1: Suchalgorithmen und Effizienz, Seite 4</title>
+	</head>
+
+	<body>
+		<h2>Wie viel schneller ist die bin&auml;re Suche genau?</h2>
+        <div class="todo">
+            <h3>TG und L&ouml;sungen pr&uuml;fen. --MF, 19.12.2018</h3>
+        </div>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> vergleichst du die Laufzeit von bin&auml;rer Suche und linearer Suche.</p>
+            <div class="todo">TG: Sch&uuml;ler*innen vergleichen diese beiden Algorithmen auf zwei Arten: empirisch (mit Uhrzeit) und durch Z&auml;hlen von Operationen (Schritten).</div>
+        </div>
+
+        <div class="forYouToDo" id="first">
+			<ol>
+                <li>
+                    <div class="ap-standard">AAP-2.P.3</div>
+                    Finde den Block <img class="inline" src="/bjc-r/img/5-algorithms/linear-search.png" alt="linear search for () in 'Listeneingabefeld'" title="linear search for () in 'Listeneingabefeld'" /> in deinem Projekt und sieh hinein. Vergleiche ihn mit dem Algorithmus, den du genutzt hast, um die Anzahl der f&uuml;nf- oder siebenbuchstabigen W&ouml;rter zu z&auml;hlen. Dieser Block erledigt dieselbe Aufgabe wie <code>binary search</code>, nutzt aber den linearen Algorithmus.
+                </li>
+                <li>
+                    Nutze <img class="inline" src="/bjc-r/img/5-algorithms/computation-time-of.png" alt="computation time of 'graues Ring-Eingabefeld'" title="computation time of 'graues Ring-Eingabefeld'" />, um zu testen, wie lange <code>linear search</code> braucht, um das Wort „zebra“ in Listen unterschiedlicher L&auml;nge zu finden.
+                    <table class="bordered center standard" summary="Teiltabelle zur Laufzeit von LINEAR SEARCH f&uuml;r Listen unterschiedlicher L&auml;nge">
+                        <tr>
+                            <th scope="col">Listenl&auml;nge</th>
+                            <th scope="col"><code>Linear Search</code> Zeit</th>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10.000</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>100.000</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Besprich es mit deiner Partnerin/deinem Partner" title="Besprich es mit deiner Partnerin/deinem Partner" /> Schau auf die Tabelle. Wie w&uuml;rdest du beschreiben, was mit der Zeit passiert, wenn die Eingabe gr&ouml;&szlig;er wird?</li>
+            </ol>
+        </div>
+        <p>
+            Die tats&auml;chliche physische Zeit f&uuml;r die L&ouml;sung eines Problems h&auml;ngt nicht nur vom Algorithmus ab, sondern auch von der Geschwindigkeit deines Computers, anderen laufenden Programmen usw. Daher messen Informatiker*innen die Geschwindigkeit eines Algorithmus in der Anzahl der <em>Schritte</em>. Bei der Effizienz von <code>linear search</code> interessiert uns z.&nbsp;B., wie oft <var>current item</var> mit <var>value</var> verglichen wird (also wie oft <img class="inline nopadtb" src="/bjc-r/img/5-algorithms/current-item=value.png" alt="(current item) = (value)" title="(current item) = (value)" /> ausgef&uuml;hrt wird).
+        </p>
+        <div class="forYouToDo">
+			<ol start="4">
+                <li>
+                    <div class="ap-standard">AAP-2.P.3</div>
+                    F&uuml;ge deiner Tabelle eine weitere Spalte hinzu. Angenommen, „zebra“ ist das <em>letzte Wort</em> jeder Wortliste: Wie viele Vergleiche macht der Algorithmus <code>linear search</code> bei jeder Listenl&auml;nge?
+                    <table class="bordered center standard" summary="Teiltabelle f&uuml;r Zeit und Schritte von LINEAR SEARCH bei verschiedenen Listenl&auml;ngen">
+                        <tr>
+                            <th scope="col" style="white-space: nowrap;">Listenl&auml;nge</th>
+                            <th scope="col"><code>Linear Search</code> Zeit</th>
+                            <th scope="col" style="white-space: nowrap;"><code>Linear Search</code> Schritte</th>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10.000</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>100.000</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </li>
+                <li><img class="imageRight" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Besprich es mit deiner Partnerin/deinem Partner" title="Besprich es mit deiner Partnerin/deinem Partner" /> Wie w&uuml;rdest du beschreiben, was mit der Anzahl der <em>Schritte</em> passiert, wenn die Eingabeliste gr&ouml;&szlig;er wird? Notiere deine Hypothese.</li>
+                <li>Entspricht das Verhalten der Schritte dem der Zeit? Kannst du also Schritte als Ma&szlig; f&uuml;r Zeit verwenden?</li>
+            </ol>
+        </div>
+        <div class="vocabFullWidth">: <strong>Effizienz</strong>
+            <div class="ap-standard">AAP-4.A.3</div>
+            <p>Die Beziehung zwischen Eingabegr&ouml;&szlig;e und Anzahl der Schritte zur Probleml&ouml;sung ist die <strong>Effizienz</strong> des verwendeten Algorithmus.</p>
+        </div>
+        <div class="ap-standard">AAP-4.A.4, AAP-4.A.5</div>
+        <p>Das Z&auml;hlen der Schritte, wie eben getan, ist eine <em>informelle</em>, aber vollkommen brauchbare Methode zur Bestimmung der Effizienz. Die <em>formale</em> Messung erfordert einen mathematischen Beweis. </p>
+
+        <div class="takeNote">In diesem Kurs arbeitest du meist mit kleinen Problemen, sodass die Effizienz oft keine gro&szlig;e Rolle spielt. In der Praxis hantieren Programmierende jedoch mit Listen aus Milliarden Eintr&auml;gen – da macht die Effizienz einen riesigen Unterschied. </div>
+
+        <div class="forYouToDo">
+            <ol start="7">
+                <li>
+                	<div class="ap-standard">AAP-2.P Teil a</div>
+                    <div class="ap-standard">AAP-2.P.3</div>
+                    Teste nun, wie lange <code>binary search</code> braucht, um „zebra“ in den <em>sortierten</em> Listen zu finden, und ermittle, wie viele Vergleiche der Algorithmus macht, wenn „zebra“ jeweils das letzte Wort ist.
+                    <table class="bordered center standard" summary="Teiltabelle f&uuml;r Zeit und Schritte von BINARY SEARCH bei verschiedenen Listenl&auml;ngen">
+                        <tr>
+                            <th scope="col">Listenl&auml;nge</th>
+                            <th scope="col"><code>Binary Search</code> Zeit</th>
+                            <th scope="col"><code>Binary Search</code> Schritte</th>
+                        </tr>
+                        <tr>
+                            <td>1000</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10.000</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>100.000</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Besprich es mit deiner Partnerin/deinem Partner" title="Besprich es mit deiner Partnerin/deinem Partner" /> Beschreibe, was mit Zeit und Schrittzahl passiert, wenn die Eingabeliste gr&ouml;&szlig;er wird. Notiere deine Hypothese.</li>
+                <li>
+                	<div class="ap-standard">AAP-2.P.3, AAP-4.A.6</div>
+                	Sieh dir deine Tabellen f&uuml;r <code>linear search</code> und <code>binary search</code> an und vergleiche die beiden Suchalgorithmen:
+                    <ol>
+                        <li>Welcher hat mehr Bl&ouml;cke im Code?</li>
+                        <li>Welcher l&auml;uft bei gro&szlig;en Eingaben schneller?</li>
+                        <li>Welcher Algorithmus ist effizienter?</li>
+                    </ol>
+                </li>
+                <li>
+                    <div class="ap-standard">AAP-2.P Teil b</div>
+                    <img class="inline" src="/bjc-r/img/icons/write-out-thoughts.png" alt="Schreibe deine Gedanken auf" title="Schreibe deine Gedanken auf" />
+                    Welche zwei Voraussetzungen gibt es f&uuml;r die Verwendung einer bin&auml;ren Suche?
+                </li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>
+

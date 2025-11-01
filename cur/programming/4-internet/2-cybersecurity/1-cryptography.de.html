@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4, Labor 2: Cybersicherheit, Seite 1</title>
+    </head>
+
+    <body>
+    	<h2>Kryptografie</h2>
+        <div class="todo">
+            <p>BH: Es w&auml;re sch&ouml;n, einige komplexere Verschl&uuml;sselungen wie Playfair zu betrachten.</p>
+        </div>
+
+        <div class="learn">
+            <p><strong>In diesem Labor</strong> lernst du Sicherheitsrisiken im Internet kennen und wie Daten verschl&uuml;sselt werden k&ouml;nnen, um sie zu sch&uuml;tzen.</p>
+            <p><strong>Auf dieser Seite</strong> experimentierst du mit verschiedenen Methoden zum Verschl&uuml;sseln und Entschl&uuml;sseln einer Nachricht und lernst eine einfache symmetrische Verschl&uuml;sselung kennen.</p>
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>Schreibe eine geheime Nachricht f&uuml;r deine Partnerin oder deinen Partner. Denke dir eine Methode aus, um die Nachricht zu verschl&uuml;sseln. Gib dann die <em>verschl&uuml;sselte</em> Nachricht weiter.</li>
+                <li>Deine Partnerin oder dein Partner gibt <em>dir</em> eine verschl&uuml;sselte Nachricht. Versuche, sie zu entschl&uuml;sseln, sobald du sie erh&auml;ltst. Welche Strategien nutzt du?</li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-another-pair-mini.png" alt="Sprich mit einem anderen Team" title="Sprich mit einem anderen Team" />Vergleicht eure Verschl&uuml;sselungsmethoden mit einem anderen Team. Konnte jemand die Nachricht entschl&uuml;sseln? Wie?</li>
+            </ol>
+        </div>
+
+		<div class="vocabFullWidth">: <strong>Encryption (Verschl&uuml;sselung)</strong> und <strong>Decryption (Entschl&uuml;sselung)</strong>
+            <div class="ap-standard">IOC-2.B.5</div>
+            <ul>
+                <li><strong>Encryption</strong> ist der Prozess, Daten so zu codieren, dass unbefugter Zugriff verhindert wird.</li>
+                <li><strong>Decryption</strong> ist der Prozess, die Daten wieder zu decodieren.</li>
+            </ul>
+        </div>
+
+		<p>
+            Vielleicht hast du ein <em>Substitutionsverfahren</em> verwendet, indem du jeden Buchstaben des Alphabets durch einen anderen ersetzt hast. Du kannst die Buchstaben in beliebiger Reihenfolge austauschen, zum Beispiel so:
+            <div class="indent fixedwidth">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+            <div class="indent fixedwidth">PQVFUBZOTHWYELIXRNAMGDSCKJ<img class="noshadow nopad" src="/bjc-r/img/4-internet/this-is-the-key.jpg" alt="Das ist der Schl&uuml;ssel." title="Das ist der Schl&uuml;ssel." /></div>
+            Das nennt man eine <em>einfache Substitutionsverschl&uuml;sselung</em>.
+        </p>
+        <p>
+            Einfacher ist es, die Buchstaben nur zu verschieben. Hier siehst du zum Beispiel eine Verschiebung um 3:
+            <div class="indent fixedwidth">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+            <div class="indent fixedwidth">DEFGHIJKLMNOPQRSTUVWXYZABC<img class="noshadow nopad" src="/bjc-r/img/4-internet/this-is-the-key.jpg" alt="Das ist der Schl&uuml;ssel." title="Das ist der Schl&uuml;ssel." /></div>
+            Das ist eine spezielle Form der einfachen Substitution, die <em>Caesar-Verschl&uuml;sselung</em> (nach Julius Caesar) oder <em>Schiebeschl&uuml;ssel</em> genannt wird.
+        </p>
+        <div class="vocabFullWidth">: <strong>Symmetric Encryption (symmetrische Verschl&uuml;sselung)</strong>
+            <div class="ap-standard">IOC-2.B.5</div>
+            <p>Substitutionsverfahren sind Beispiele f&uuml;r <strong>symmetrische Verschl&uuml;sselung</strong>, weil sie denselben <em>Schl&uuml;ssel</em> zum Ver- und Entschl&uuml;sseln verwenden.</p>
+        </div>
+        <div class="endnote">
+            <p>
+                Es gibt weitaus komplexere Methoden der symmetrischen Verschl&uuml;sselung, aber sie nutzen immer denselben Schl&uuml;ssel an beiden Enden.
+                <a href="#hint-symmetric" data-toggle="collapse" title="Wie wurde symmetrische Verschl&uuml;sselung genutzt?">Wie wurde symmetrische Verschl&uuml;sselung genutzt?</a>
+            </p>
+            <div id="hint-symmetric" class="collapse">Bis in die 1970er-Jahre hinein standen nur symmetrische Verfahren zur Verf&uuml;gung, allerdings mit deutlich komplexeren Algorithmen als einfachen Substitutionen. Heute findest du einfache Substitutionsr&auml;tsel in Magazinen, aber das Knacken der deutschen Enigma-Verschl&uuml;sselung im Zweiten Weltkrieg, &uuml;ber das du in Einheit 5 mehr erf&auml;hrst, brauchte ein ganzes Geb&auml;ude voller Mathematiker*innen und Rechentechnik.</div>
+        </div>
+
+
+        <div class="forYouToDo">
+            <ol start="4">
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" />Die Person, die deine Nachricht erh&auml;lt, muss wissen, wie sie sie entschl&uuml;sselt. Beschreibe einen Algorithmus, der eine Nachricht entschl&uuml;sselt, die mit einer Caesar- (Shift-)Verschl&uuml;sselung erstellt wurde.</li>
+            </ol>
+        </div>
+
+        <div class="ifTime">
+			<ol start="5">
+                <li>Wie k&ouml;nntest du eine abgefangene Nachricht entschl&uuml;sseln, die mit einer einfachen Substitution verschl&uuml;sselt wurde, wenn du den Schl&uuml;ssel nicht kennst?</li>
+                <li>Wie k&ouml;nnten Sender*in und Empf&auml;nger*in die Verschl&uuml;sselung sicherer machen als mit einer einfachen Substitution?</li>
+			</ol>
+		</div>
+
+        <div class="takeItFurther">
+        	<ol type="A">
+            	<li>
+                    Eine einfache Substitutionsverschl&uuml;sselung ist relativ leicht zu knacken, weil manche Buchstaben h&auml;ufiger vorkommen als andere.
+                    <ul>
+                        <li>Lies &uuml;ber Al-Kindi, den arabischen Philosophen und Mathematiker, der als Erster die H&auml;ufigkeitsanalyse zum Codebrechen beschrieben hat, in &bdquo;Breaking Substitution Ciphers&ldquo; (<a href="http://www.bitsbook.com/wp-content/uploads/2008/12/B2B_3.pdf#page=184" target="_blank" title="Breaking Substitution Ciphers"><em>Blown to Bits</em>, Seiten 166&ndash;169</a>).</li>
+                        <li>Diese Methode ist selbst heute noch n&uuml;tzlich, auch bei besseren Kryptografie-Tools: <a href="http://www.forbes.com/sites/thomasbrewster/2015/09/03/microsoft-dumb-attacks-cracks-next-gen-cryptography/" target="_blank" title="How A 1200-Year-Old Hacking Technique Can Already Crack Tomorrow's Encrypted Vaults">How a 1200-year-old Hacking Technique Can Already Crack Tomorrow's Encrypted Vaults (Forbes, 03.09.2015)</a></li>
+                    </ul>
+                </li>
+                <li>Lies &bdquo;Secret Keys and One-Time Pads&ldquo; (<a href="http://www.bitsbook.com/wp-content/uploads/2008/12/B2B_3.pdf#page=187" target="_blank" title="Secret Keys and One-Time Pads"><em>Blown to Bits</em>, Seiten 169&ndash;173</a>), um mehr &uuml;ber Vigen&egrave;re-Verschl&uuml;sselungen und die Methoden aus dem Zweiten Weltkrieg und dem Kalten Krieg zu erfahren.</li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

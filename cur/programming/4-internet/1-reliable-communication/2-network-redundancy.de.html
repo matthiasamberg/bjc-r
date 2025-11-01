@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4, Labor 1: Computernetzwerke, Seite 2</title>
+    </head>
+
+	<body>
+        <h2>Netzwerkredundanz</h2>
+        <div class="learn">
+	        <p><strong>Auf dieser Seite</strong> lernst du, wie das Internet so aufgebaut ist, dass es mehrere Wege zwischen zwei Punkten gibt, um die Zuverl&auml;ssigkeit zu sichern.</p>
+        </div>
+
+        <div class="ap-standard">CSN-1.B.5, CSN-1.B.7, CSN-1.E.3, CSN-1.E.4, CSN-1.E.5, CSN-1.E.6, CSN-1.E.7</div>
+        <div class="vocabBig">: <strong>Path (Pfad)</strong>, <strong>Routing</strong>, <strong>Scalability (Skalierbarkeit)</strong>, <strong>Redundancy (Redundanz)</strong> und <strong>Fault tolerance (Fehlertoleranz)</strong>
+            <div class="ap-standard">CSN-1.A.5, CSN-1.A.6, CSN-1.B.6, CSN-1.E.2, CSN-1.E.5</div>
+            <ul>
+                <li>Ein <strong>path (Pfad)</strong> ist eine Folge direkt verbundener Computerger&auml;te, die einen Absender mit einem Empf&auml;nger verbinden.</li>
+                <li><strong>Routing</strong> ist der Prozess, einen Pfad vom Absender zum Empf&auml;nger zu finden.</li>
+                <li><strong>Scalability (Skalierbarkeit)</strong> bezeichnet die F&auml;higkeit des Internets, weiter zu funktionieren, w&auml;hrend es w&auml;chst.</li>
+                <li><strong>Redundancy (Redundanz)</strong> bedeutet, Ersatzkomponenten bereitzuhalten, falls ein Teil ausf&auml;llt.</li>
+                <li><strong>Fault tolerance (Fehlertoleranz)</strong> ist die F&auml;higkeit eines Systems, trotz Problemen arbeitsf&auml;hig zu bleiben.</li>
+            </ul>
+        </div>
+
+		<div class="atwork">
+			<img class="noshadow imageRight" height="200px" src="/bjc-r/img/atwork/Thomas_David_Petite.jpeg" alt="Foto von Thomas Petite" title="Foto von Thomas Petite" />
+			<p>Thomas (David) Petite (geboren 1956) ist Mitglied des Stammes Fond du Lac Band of the Lake Superior Chippewa. David ist vor allem f&uuml;r seine Arbeit an drahtlos vernetzten Ger&auml;ten bekannt. Er geh&ouml;rt zu den fr&uuml;hen Erfinder*innen drahtloser Ad-hoc-Netzwerke, einer tempor&auml;ren, dezentralen Art von Funknetz, die es heute allen Mobiltelefonen erm&ouml;glicht zu funktionieren. Seine Erfindungen waren ebenfalls ein Antrieb f&uuml;r die Entwicklung dessen, was heute als &bdquo;Smart Grid&ldquo; bekannt ist und den Einsatz drahtloser Ger&auml;te an einem bestimmten Ort &uuml;berwacht und nutzt.</p>
+			<p><a href="https://en.wikipedia.org/wiki/Thomas_David_Petite" title="Wikipedia-Artikel &uuml;ber Thomas Petite" target="_blank">Mehr erfahren</a></p>
+		</div>
+
+        <p>Angesichts der riesigen Zahl von Ger&auml;ten im Internet und der Tatsache, dass Teile eines komplexen Systems zu unerwarteten Zeiten ausfallen (oft in ganzen Gruppen, wie zum Beispiel einer gesamten Stadt), musste das Internet als <em>zuverl&auml;ssiges</em> System entworfen werden. Das gelingt, indem viele <em>redundante</em> Verbindungen in die physische Infrastruktur des Internets eingebaut werden. So kann bei einem Ausfall eines Abschnitts die &Uuml;bertragung &uuml;ber einen anderen <em>Pfad</em> erfolgen. Solche Pfad&auml;nderungen k&ouml;nnen sogar w&auml;hrend der &Uuml;bertragung stattfinden, weil das <em>Routing</em> im Internet dynamisch ist und nicht im Voraus festgelegt wird. Redundanz zu schaffen erfordert zus&auml;tzliche Ressourcen (etwa weitere Computer und Kabel), erh&ouml;ht aber auch die <em>Fehlertoleranz</em> des Internets (die F&auml;higkeit, Probleme zu umgehen) und hilft dem Internet, sich auf mehr Ger&auml;te und Menschen auszuweiten (zu <em>skalieren</em>).</p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" /> Beschreibe, was in dieser Animation passiert.<br />
+                    <div class="todo">Jemand sollte bei Dan nachfragen, woher diese Bilder stammen. --MF, 29.08.2019</div>
+                    <img class="indent" src="/bjc-r/img/4-internet/redundancy.gif" alt="Ein Netzwerk aus Knoten, die &uuml;ber Kanten verbunden sind, mit einem Absender-Knoten und einem Empf&auml;nger-Knoten. Der Absender kann eine Nachricht auch dann zustellen, wenn ein Knoten unterwegs ausf&auml;llt, weil die Nachricht einen alternativen Pfad nutzt und so die Redundanz des Netzwerks sichtbar macht." title="Ein Netzwerk, das zeigt, wie ein alternativer Pfad die Kommunikation zwischen Absender und Empf&auml;nger trotz eines defekten Zwischenknotens erm&ouml;glicht." />
+                </li>
+            </ol>
+        </div>
+
+        <p>In der Animation schl&auml;gt ein Blitz in einen der Knoten ein. Es gibt viele Gr&uuml;nde, warum ein Knoten ausfallen kann, zum Beispiel ein Stromausfall oder ein Chip, der durchbrennt. Es kann aber auch sein, dass alle Knoten intakt sind, w&auml;hrend die gr&uuml;nen Linien, die die Verbindungen darstellen, ausfallen (z.&nbsp;B. weil ein Kabel versehentlich oder absichtlich durchtrennt beziehungsweise getrennt wird).</p>
+
+        <div class="forYouToDo">
+			<ol start="2">
+                <li>
+                    <!-- Question 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="What is the fewest number of nodes?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="false">
+                        <div class="prompt">
+                            <img class="imageRight" src="/bjc-r/img/4-internet/redundant-2.jpg" height="250px" alt="Diagramm eines Netzwerks mit einem Absender und einem Empf&auml;nger an den Endpunkten sowie vielen Verbindungen zwischen zahlreichen Knoten" title="Diagramm eines Netzwerks mit vielen redundanten Verbindungen zwischen Absender und Empf&auml;nger" />
+                            In diesem Netzmodell: Wie viele Knoten (Verbindungspunkte) m&uuml;ssen <em>mindestens</em> ausfallen, bevor Absender und Empf&auml;nger nicht mehr miteinander kommunizieren k&ouml;nnen? (Abgesehen vom Absender oder Empf&auml;nger selbst.)
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">1</div>
+                            <div class="feedback">
+                                Es gibt keine Knoten, die f&uuml;r das System unverzichtbar sind. Suche dir einen beliebigen Knoten aus, der ausf&auml;llt, und du findest immer noch einen anderen Pfad.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">2</div>
+                            <div class="feedback">
+                                Richtig! Wenn der Knoten mit den sechs Verbindungen ausf&auml;llt und au&szlig;erdem einer der beiden links daneben, k&ouml;nnen Absender und Empf&auml;nger nicht mehr kommunizieren.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">3</div>
+                            <div class="feedback">
+                                Versuche, eine kleinere Anzahl an Knoten zu finden, deren Ausfall die Kommunikation bereits verhindert.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">4</div>
+                            <div class="feedback">
+                                Versuche, eine kleinere Anzahl an Knoten zu finden, deren Ausfall die Kommunikation bereits verhindert.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c5">
+                            <div class="text">5</div>
+                            <div class="feedback">
+                                Versuche, eine kleinere Anzahl an Knoten zu finden, deren Ausfall die Kommunikation bereits verhindert.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="What is the maximum that can fail?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="false">
+                        <div class="prompt">
+                            <img class="imageRight" src="/bjc-r/img/4-internet/redundant-2.jpg" height="250px" alt="Diagramm eines Netzwerks mit einem Absender und einem Empf&auml;nger an den Endpunkten sowie vielen Verbindungen zwischen zahlreichen Knoten" title="Diagramm eines Netzwerks mit vielen redundanten Verbindungen zwischen Absender und Empf&auml;nger" />
+                            Im selben Netzmodell: Wie viele Knoten k&ouml;nnen <em>h&ouml;chstens</em> ausfallen, sodass Absender und Empf&auml;nger trotzdem noch kommunizieren k&ouml;nnen?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">10</div>
+                            <div class="feedback">
+                                Zeichne einen Pfad von Absender zu Empf&auml;nger, der weiterhin funktioniert.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">9</div>
+                            <div class="feedback">
+                                Zeichne einen Pfad von Absender zu Empf&auml;nger, der weiterhin funktioniert.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">8</div>
+                            <div class="feedback">
+                                Richtig! Wenn die vier Knoten rechts und <em>auch</em> die vier Knoten links ausfallen, k&ouml;nnen die beiden verbleibenden Knoten in der Mitte die Kommunikation zwischen Absender und Empf&auml;nger weiterhin erm&ouml;glichen.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">7</div>
+                            <div class="feedback">
+                                Versuche, eine gr&ouml;&szlig;ere Anzahl an Knoten zu finden, deren Ausfall die Kommunikation trotzdem noch zul&auml;sst.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c5">
+                            <div class="text">6</div>
+                            <div class="feedback">
+                                Versuche, eine gr&ouml;&szlig;ere Anzahl an Knoten zu finden, deren Ausfall die Kommunikation trotzdem noch zul&auml;sst.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                            <div class="correctResponse" identifier="c3"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="ap-standard">CSN-1.E</div>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" />
+                    <img class="inline" src="/bjc-r/img/icons/write-out-thoughts.png" alt="Schreibe deine Gedanken auf" title="Schreibe deine Gedanken auf" />
+                    <ol>
+                        <li>Beschreibe die Vorteile von Fehlertoleranz. Welche Arten von Problemen k&ouml;nnten bei der Verbindung von Millionen Ger&auml;ten auf dem ganzen Planeten auftreten, die Fehlertoleranz im Internet notwendig machen?</li>
+                        <li>Welche Eigenschaften des Internets sorgen f&uuml;r Fehlertoleranz?</li>
+                        <li>Auf welche Weise kann das Internet ausfallen?</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

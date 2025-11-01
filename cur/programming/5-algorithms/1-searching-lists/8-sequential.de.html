@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 5, Labor 1: Suchalgorithmen und Effizienz, Seite 8</title>
+    </head>
+
+
+    <body>
+		<h2>Parallelität</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> lernst du, wie das parallele Ausführen mehrerer Skripte die Laufzeit eines Algorithmus verkürzen kann.</p>
+        </div>
+        <p>In Snap<em>!</em> bist du es gewohnt, dass mehrere Skripte unabhängig voneinander laufen – manchmal sogar in unterschiedlichen Sprites. Das ähnelt dem <em>Parallelrechnen</em>. Wenn wir für jedes Sprite einen eigenen Computer hätten, wäre das echte Parallelität. In Wirklichkeit gibt es nur einen Computer, der seine Zeit zwischen den Prozessen aufteilt: Er führt ein kleines Stück eines Skripts aus und wechselt dann zum nächsten. Konkret passiert der Wechsel am Ende von Schleifen (<code>forever</code>, <code>repeat</code> usw.).</p>
+
+        <div class="vocabFullWidth">: <strong>Sequenzielles Rechnen</strong> vs. <strong>paralleles Rechnen</strong>
+            <div class="ap-standard">CSN-2.A.1, CSN-2.A.2</div>
+            <p>
+                In diesem Abschnitt lernst du zwei Rechenmodelle kennen:
+                <ul>
+                    <li>Beim <strong>sequenziellen Rechnen</strong> werden Operationen nacheinander ausgeführt – stets eine nach der anderen.</li>
+                    <li>Beim <strong>parallelen Rechnen</strong> wird das Programm in kleinere Schritte zerlegt, von denen einige gleichzeitig laufen. Moderne Computer besitzen mehrere Prozessoren (2, 4 oder 8) in einem Gerät, sodass du auf deinem Schreibtisch-Rechner bereits Parallelität im kleinen Maßstab nutzen kannst.</li>
+                </ul>
+            </p>
+		</div>
+
+        <div class="ap-standard">CSN-2.A.4</div>
+        <p>Du kannst die Effizienz zweier algorithmischer Lösungen vergleichen, indem du misst, wie lange sie für dieselbe Aufgabe brauchen.</p>
+
+        <div class="forYouToDo" id="first">
+			<ol>
+                <li>
+                    <!-- Question 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="How long will this sequential script take to run?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">
+                            <div class="ap-standard">CSN-2.A Teil b, CSN-2.A.5</div>
+                            Wie lange braucht dieses <em>sequenzielle</em> Programm?<br />
+                            <img class="indent" src="/bjc-r/img/5-algorithms/quizlet-sequential.png" alt="wait (6), wait (4), wait (8)" title="wait (6), wait (4), wait (8)" />
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">18</div>
+                            <div class="feedback">Richtig!</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">8</div>
+                            <div class="feedback">Eine sequenzielle Lösung dauert so lange wie die Summe der Laufzeiten aller Schritte.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">4</div>
+                            <div class="feedback">Eine sequenzielle Lösung dauert so lange wie die Summe der Laufzeiten aller Schritte.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">6</div>
+                            <div class="feedback">Eine sequenzielle Lösung dauert so lange wie die Summe der Laufzeiten aller Schritte.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="ap-standard">CSN-2.A.5</div>
+        <p>Die Laufzeit eines sequenziellen Algorithmus ist die Summe der Laufzeiten aller seiner Schritte.</p>
+
+        <div class="forYouToDo">
+			<ol start="2">
+				<li>
+                    <!-- Question 2 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="How long will this parallel script take to run?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="true">
+                  <div class="prompt">
+                            <div class="ap-standard">CSN-2.A Teil b, CSN-2.A.6</div>
+                            Wie lange braucht dieses <em>parallele</em> Programm?<br />
+                            <img class="indent" src="/bjc-r/img/5-algorithms/quizlet-parallel-1.png" alt="broadcast (go) and wait, wait (6) secs" title="broadcast (go) and wait, wait (6) secs" />
+                            <img class="indent" src="/bjc-r/img/5-algorithms/quizlet-parallel-2.png" alt="when I receive (go): wait (4) secs" title="when I receive (go): wait (4) secs" />
+                            <img class="indent" src="/bjc-r/img/5-algorithms/quizlet-parallel-3.png" alt="when I receive (go): wait (8) secs" title="when I receive (go): wait (8) secs" />
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">18</div>
+                            <div class="feedback">Die beiden <code>when I receive</code>-Aufgaben laufen parallel, nicht nacheinander.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">8</div>
+                            <div class="feedback">Die längste parallele Zeit ist wichtig, aber sie ist nicht der einzige Beitrag zur Gesamtdauer.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">6</div>
+                            <div class="feedback"><code>broadcast and wait</code> wartet, bis alle gestarteten Aufgaben fertig sind.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">14</div>
+                            <div class="feedback">Richtig!</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                            <div class="correctResponse" identifier="c4"></div>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+        <div class="ap-standard">CSN-2.B.1, CSN-2.B.2, CSN-2.B.3, CSN-2.B.4</div>
+        <div class="vocabBig">: <strong>Verteiltes Rechnen</strong>
+            <div class="ap-standard">CSN-2.A.3</div>
+            <p><strong>Verteiltes Rechnen</strong> ist eine Form des Parallelrechnens, bei der mehrere Computer zusammenarbeiten – oft sogar weltweit verteilt.</p>
+        </div>
+        <p>Ein Programm zu schreiben, das nur wartet, ist natürlich unrealistisch. Realistisch ist jedoch, dass es bei den meisten Problemen keine Lösung gibt, die vollständig parallel ist. Ein Teil der Berechnung muss immer sequenziell ablaufen. In der vorherigen Aufgabe modelliert <code>wait 6 secs</code> diesen sequenziellen Anteil. Parallelisierung wirkt in diesem kleinen Beispiel banal, aber stell dir vor, du arbeitest bei Google: Millionen Suchanfragen und Webseitenänderungen müssen verarbeitet werden. Ohne riesige Serverfarmen mit tausenden Rechnern pro Gebäude wäre das unmöglich. Verteiltes Rechnen ermöglicht es, Probleme auf sehr große Datenmengen zu skalieren.</p>
+
+        <div class="ap-standard">CSN-2.A.6</div>
+        <p>
+            <img class="noshadow imageRight" src="/bjc-r/img/5-algorithms/sequential-parallel-parts.png" alt="Diagramm: Algorithmus zur Ermittlung der durchschnittlichen Wortlänge; erste Schritte 'Divide up the wordlist' und 'Send tasks to each other computer' als sequenziell, danach parallele Teilaufgaben für Buchstaben A–Z, zuletzt drei sequenzielle Schritte zum Zusammenführen der Ergebnisse" title="Algorithmus zur Ermittlung der durchschnittlichen Wortlänge mit sequenziellen und parallelen Abschnitten" style="background: white;"/>
+            Ein konkretes Beispiel: Du willst die durchschnittliche Wortlänge in einer Liste mit 100.000 Wörtern bestimmen. Du kannst die Arbeit auf mehrere Computer verteilen (je einen pro Anfangsbuchstaben). Jeder Computer summiert die Längen der Wörter, für die er zuständig ist (alle „A“-Wörter, alle „B“-Wörter usw.). Anschließend muss ein Computer die 26 Teilergebnisse addieren und durch die Gesamtzahl der Wörter teilen, um den Durchschnitt zu erhalten. Um die Laufzeit dieser parallelen Lösung zu bestimmen, addierst du die Laufzeit des längsten parallelen Abschnitts (der Buchstabe mit den meisten Wörtern) und die Laufzeit des sequenziellen Abschnitts (die 26 Teilergebnisse addieren und durch die Gesamtwortzahl teilen).
+        </p>
+
+        <div class="forYouToDo" style="clear: right;">
+            <p>Da jede Berechnung einen sequenziellen Anteil besitzt, gibt es eine Grenze, wie stark du eine Aufgabe durch zusätzliche <em>Prozessoren</em> beschleunigen kannst.</p>
+            <div class="vocab">: <strong>Prozessor</strong>
+                <p>Ein <strong>Prozessor</strong> ist ein elektronisches Bauteil im Computer, das die Befehle eines Programms ausführt.</p>
+                <p class="center"><img src="/bjc-r/img/6-computers/Hardware_img/CPU_small.jpg" alt="CPU" title="CPU"/></p>
+                <p><small>Bildnachweis: Wikipedia-Nutzer*in Solipsist</small></p>
+            </div>
+			<ol start="3">
+                <div class="ap-standard">CSN-2.A Teile a und b, CSN-2.A.4, CSN-2.B.5</div>
+				<li>
+                    Angenommen, eine Aufgabe enthält eine Minute sequenzielle Schritte und einen parallelisierbaren Abschnitt, der sequenziell ausgeführt eine Stunde dauern würde. Fülle die Tabelle aus:
+                    <table class="bordered standard nowrap center" summary="Tabelle: Anzahl Prozessoren vs. gesamte Laufzeit">
+                        <tr>
+                            <th scope="col">Anzahl Prozessoren</th>
+                            <th scope="col">Gesamtdauer</th>
+                            <th scope="col">Lösungstyp</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>61 Minuten (1&nbsp;Std. + 1&nbsp;Min.)</td>
+                            <td>sequenzielle Lösung</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>31 Minuten (30&nbsp;Min. + 1&nbsp;Min.)</td>
+                            <td rowspan="10">parallele Lösungen</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>20</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>30</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>60</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>120</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>240</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>480</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </li>
+                <div class="ap-standard">CSN-2.B.5</div>
+                <li>Denk über das Gesetz des abnehmenden Grenzertrags nach:
+                    <ol>
+                        <li>Wenn du einen Prozessor hast und einen weiteren hinzufügst, wie viel Zeit sparst du?</li>
+                        <li>Wenn du 240 Prozessoren hast und weitere 240 hinzufügst, wie viel Zeit sparst du?</li>
+                        <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" /> Wie viele Prozessoren findest du für dieses Problem sinnvoll?</li>
+                    </ol>
+                </li>
+                <div class="endnote">
+                    <a href="#hint-diminishing" data-toggle="collapse" title="Was besagt das Gesetz des abnehmenden Grenzertrags?">Was besagt das Gesetz des abnehmenden Grenzertrags?</a>
+                    <div id="hint-diminishing" class="collapse">Das Gesetz des abnehmenden Grenzertrags stammt aus der Wirtschaftswissenschaft und besagt im Grunde, dass „mehr“ ab einem bestimmten Punkt keinen zusätzlichen Nutzen bringt. Wenn du fünf Geburtstagsgeschenke bekommst, bist du vielleicht glücklicher als mit einem. Aber hundert Geschenke wären anstrengend auszupacken – und tausend oder eine Million würden deinen Geburtstag nicht besser machen. Dasselbe gilt auch für Geburtstagskuchen!</div>
+                </div>
+			</ol>
+		</div>
+
+        <div class="vocabFullWidth">: <strong>Speedup</strong>
+            <div class="ap-standard">CSN-2.A.7</div>
+            <p>Programmierer*innen sprechen vom <strong>Speedup</strong>, um anzugeben, wie viel schneller die parallele Lösung im Vergleich zur sequenziellen Lösung ist:<br />
+            <span class="katex indent">\text{speedup} = \frac{\text{sequential time}}{\text{parallel time}}</span>
+            </p>
+        </div>
+
+        <p>Computerhardware ist sehr zuverlässig; es ist selten, dass sie während eines Programmlaufs ausfällt. In verteilten Systemen mit zehntausenden Rechnern ist es jedoch <em>wahrscheinlich</em>, dass einer davon ausfällt. (Wenn die Ausfallwahrscheinlichkeit eines Computers während des Laufs 0,0001 beträgt und du 10.000 Computer verwendest, liegt die Ausfallwahrscheinlichkeit bei etwa 0,368 – also ungefähr einem Drittel!) Software muss deshalb prüfen, ob alle Maschinen laufen, und die Aufgaben eines ausgefallenen Rechners an funktionierende Systeme neu verteilen.</p>
+        <p>Außerdem können sich parallele Prozesse gegenseitig stören.
+            <div class="endnote">
+                <a href="#hint-banking" data-toggle="collapse" title="Ein Beispiel für störende Prozesse im Bankwesen...">Ein Beispiel für störende Prozesse im Bankwesen…</a>
+                <div id="hint-banking" class="collapse">
+                    <p>
+                        Wenn zwei Personen gleichzeitig an unterschiedlichen Geldautomaten Geld vom selben Konto abheben, könnte folgender Ablauf entstehen:
+                        <table class="bordered standard nowrap center" summary="Möglicher Ablauf, wenn zwei Geldautomaten gleichzeitig auf dasselbe Konto zugreifen">
+                        <tr>
+                            <td rowspan="9" style="vertical-align: middle; border-left: 0; border-top: 0; border-bottom: 0;"><img class="inline noshadow" src="/bjc-r/img/5-algorithms/time-arrow.png" alt="pfeilförmige Zeitleiste" title="Zeitpfeil" /></td>
+                            <th scope="col">Geldautomat&nbsp;1</th>
+                            <th scope="col">Geldautomat&nbsp;2</th>
+                        </tr>
+                        <tr>
+                            <td>liest Kontostand (100&nbsp;$)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>liest Kontostand (100&nbsp;$)</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>prüft, ob der gewünschte Betrag (40&nbsp;$) verfügbar ist</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>passt den Kontostand an (60&nbsp;$)</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>gibt das Geld aus</td>
+                        </tr>
+                        <tr>
+                            <td>prüft, ob der gewünschte Betrag (20&nbsp;$) verfügbar ist</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>passt den Kontostand an (80&nbsp;$)</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>gibt das Geld aus</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    </p>
+                    <p>Da Geldautomat&nbsp;2 den Kontostand geändert hat, nachdem Geldautomat&nbsp;1 ihn gelesen hatte, wusste Geldautomat&nbsp;1 nichts von der Änderung. Das Konto endet mit 80&nbsp;$, obwohl es mit 100&nbsp;$ begann und insgesamt 60&nbsp;$ abgehoben wurden.</p>
+                </div>
+            </div>
+        </p>
+        <p>Aus diesen und weiteren Gründen ist es schwieriger, ein paralleles Programm zu schreiben und zu testen als ein sequenzielles.</p>
+
+
+        <div class="forYouToDo">
+			<ol start="5">
+				<div class="ap-standard">CSN-2.B</div>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" />
+                    Nenne Vorteile und mögliche Herausforderungen von parallelem und verteiltem Rechnen.
+                    <img class="inline" src="/bjc-r/img/icons/write-out-thoughts.png" alt="Schreibe deine Gedanken auf" title="Schreibe deine Gedanken auf" />
+                </li>
+			</ol>
+		</div>
+
+        <div class="ifTime">
+			<ol start="6">
+				<li>
+                    <!-- Question 3 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="What is the speedup for this parallel solution when compared to the sequential solution?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri3" shuffle="true">
+                        <div class="prompt">
+                            Wie groß ist der <em>Speedup</em> dieser parallelen Lösung im Vergleich zur sequenziellen Lösung?<br />
+                            <ul>
+                                <li>Sequenzielle Lösung: <img class="inline" src="/bjc-r/img/5-algorithms/quizlet-sequential.png" alt="wait (6), wait (4), wait (8)" title="wait (6), wait (4), wait (8)" /></li>
+                                <li>
+                                    Parallele Lösung:
+                                    <img class="inline" src="/bjc-r/img/5-algorithms/quizlet-parallel-1.png" alt="broadcast (go) and wait, wait (6) secs" title="broadcast (go) and wait, wait (6) secs" />
+                                    <img class="inline" src="/bjc-r/img/5-algorithms/quizlet-parallel-2.png" alt="when I receive (go): wait (4) secs" title="when I receive (go): wait (4) secs" />
+                                    <img class="inline" src="/bjc-r/img/5-algorithms/quizlet-parallel-3.png" alt="when I receive (go): wait (8) secs" title="when I receive (go): wait (8) secs" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text"><span class="katex" title="18/14">\frac{18}{14}</span></div>
+                            <div class="feedback">
+                                Richtig!
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text"><span class="katex" title="14/18">\frac{14}{18}</span></div>
+                            <div class="feedback">
+                                Zur Berechnung des Speedups teilst du die sequenzielle Laufzeit durch die parallele Laufzeit.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text"><span class="katex" title="18/6">\frac{18}{6}</span></div>
+                            <div class="feedback">
+                                <code>broadcast and wait</code> wartet, bis alle gestarteten Aufgaben beendet sind.
+                            </div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text"><span class="katex" title="18/8">\frac{18}{8}</span></div>
+                            <div class="feedback">
+                                Die längste parallele Zeit spielt eine Rolle, aber sie ist nicht der einzige Faktor der Gesamtlaufzeit.
+                            </div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri3">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+
+    </body>
+</html>

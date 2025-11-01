@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4, Labor 1: Computernetzwerke, Seite 4</title>
+    </head>
+
+    <body>
+        <h2>Wer hat im Internet das Sagen?</h2>
+        <div class="todo">
+            <p>BH: Was ist mit dem Foto von Snowden passiert?<ul><li>Wir hatten im Team entschieden, es zu entfernen. --MF, 25.03.2019</li></ul></p>
+            <p>K&ouml;nnten wir uns <em>bitte</em> darauf einigen, es wieder einzuf&uuml;gen?</p>
+            <p>
+                <span style="color:red">Moment, jetzt ist sogar der Text verschwunden! Die gesamte Geschichte &uuml;ber die Kontrolle des Netzes durch die NSF ist weg. Das geht nicht.</span>
+                <ul><li>Steht sie nicht im gelben Kasten? Falls nicht, haben wir sie wohl letzten Sommer (oder fr&uuml;her) gek&uuml;rzt oder verschoben; das war noch vor dem Commit vom 29. August (<a href="https://github.com/bjc-edc-2017-18/bjc-r/commits/master/cur/programming/4-internet/1-reliable-communication/4-who-is-in-charge.html">Commit-Historie</a>). Lass uns das besprechen. --MF, 31.05.2020</li></ul>
+            </p>
+        </div>
+
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> lernst du die Personengruppen kennen, die steuern, wie das Internet funktioniert.</p>
+        </div>
+        <p>Manche Menschen glauben, dass niemand das Internet kontrolliert &mdash; dass einfach alle frei zusammenarbeiten, ohne zentrale Organisation. Freie Zusammenarbeit spielt tats&auml;chlich eine wichtige Rolle, aber Menschen k&ouml;nnen nicht einfach jede beliebige IP-Adresse oder jeden Hostnamen w&auml;hlen, sonst g&auml;be es Konflikte. Wir k&ouml;nnen zum Beispiel keinen Server namens <code>bjc.org</code> starten, weil dieser Name bereits vergeben ist (an einen Gesundheitsdienstleister in St.&nbsp;Louis, Missouri). Bis 2009 stand die <strong><a href="/bjc-r/cur/programming/4-internet/old/4-address-hierarchy.html?topic=nyc_bjc%2F4-internet.topic&course=bjc4nyc.html&novideo&noassignment" title="Adresshierarchie">Domain-Namen-Hierarchie</a></strong> des Internets vollst&auml;ndig unter Kontrolle der US-Regierung, die die Details an ICANN (Internet Corporation for Assigned Names and Numbers) delegiert hatte.</p>
+        <div class="endnote">Im Jahr 2009 unterzeichnete das US-Handelsministerium (Department of Commerce) ein neues Abkommen mit ICANN und erkannte die Organisation als unabh&auml;ngig und multinational an. Dennoch steht ICANN weiterhin unter Vertrag mit dem Department of Commerce, um bestimmte Grunds&auml;tze einzuhalten. Internationale Kritiker*innen sind nach wie vor nicht zufrieden damit, dass ICANN wirklich von den USA unabh&auml;ngig ist.</div>
+
+
+        <h3>Die Kraft offener Protokolle</h3>
+        <p>Das Wachstum des Internets wurde durch <strong>offene Protokolle</strong> vorangetrieben &mdash; Standards, die <em>nicht im Besitz eines Unternehmens</em> sind.</p>
+        <div class="takeNote">
+        	Beispiele f&uuml;r offene Protokolle:
+              <ul>
+                <li>Standards zum <em>Austausch von Informationen</em> und f&uuml;r die <em>Kommunikation zwischen Browsern und Servern</em> im Web beinhalten <strong>HTTP</strong>, Simple Mail Transfer Protocol (<strong>SMTP</strong>) sowie Secure Sockets Layer/Transport Layer Security (<strong>SSL</strong>/<strong>TLS</strong>).</li>
+                <li>Standards f&uuml;r <em>Pakete und Routing</em> umfassen das Transmission Control Protocol/Internet Protocol (<strong>TCP</strong>/<strong>IP</strong>).</li>
+            </ul>
+        </div>
+        <p>Die Protokolle des Internets entwickeln sich im Laufe der Zeit weiter. Die <strong>Internet Engineering Task Force (IETF)</strong> besteht aus Expert*innen, die f&uuml;r die Entwicklung und Genehmigung dieser Protokolle verantwortlich sind. ICANN verwaltet die DNS-Hierarchie und die Vergabe der IP-Adressen.</p>
+        <div class="endnote">
+            <a href="#hint-groups" data-toggle="collapse" title="Mehr &uuml;ber die Institutionen hinter diesen Protokollen erfahren.">Mehr &uuml;ber diese Organisationen.</a>
+            <div id="hint-groups" class="collapse">
+                <p>Die Arbeit der IETF wird gr&ouml;&szlig;tenteils per E-Mail erledigt, und alle mit dem n&ouml;tigen Fachwissen k&ouml;nnen sich in die Mailinglisten eintragen. Entscheidungen werden im Konsens getroffen (alle m&uuml;ssen einer &Auml;nderung zustimmen), nie per Abstimmung. Die Idee dahinter: Wenn ein Vorschlag so umstritten ist, dass es einer Abstimmung bedarf, sollte er so lange verbessert werden, bis alle Einw&auml;nde ausger&auml;umt sind. Anders als ICANN ist die IETF bemerkenswert frei von politischem Druck, auch wenn sie historisch betrachtet ebenfalls stark von Expert*innen aus den USA gepr&auml;gt war.</p>
+                <p>Die Internet Society (ISOC) ist eine weltweite, gemeinn&uuml;tzige Mitgliederorganisation, der <em>jede Person</em> kostenlos beitreten kann. Sie ist heute offiziell f&uuml;r die IETF zust&auml;ndig, betreibt Bildungsarbeit und setzt sich f&uuml;r Regierungsrichtlinien ein, die ein offenes Internet unterst&uuml;tzen.</p>
+            </div>
+        </div>
+
+
+        <h3>Die Frage der US-Kontrolle</h3>
+    	<!--<img class="imageRight" src="/bjc-r/img/4-internet/snowden.png" width="300px" alt="Edward Snowden" title="Edward Snowden" />-->
+        <p>Falls es dir merkw&uuml;rdig vorkommt, dass ein einziges Land ein weltweites Netzwerk kontrolliert, bist du nicht allein. Andere Staaten waren nie gl&uuml;cklich &uuml;ber die Kontrolle des Internets durch die USA, die bis 2009 <em>offiziell</em> bei den USA lag und nach Meinung vieler Kritiker*innen noch immer inoffiziell von der US-Regierung dominiert wird.</p>
+        <div class="endnote">Beispielsweise mussten bis 2009 alle DNS-Domainnamen das englische Alphabet verwenden, obwohl st&auml;ndig darum gebeten wurde, andere Sprachen zu ber&uuml;cksichtigen.</div>
+        <p>Seit 2013 ist das Thema US-Kontrolle deutlich h&ouml;her gekocht, nachdem Edward Snowden (rechts abgebildet, Quelle: <a href="https://en.wikipedia.org/wiki/Edward_Snowden" target="_blank" title="Wikipedia: Edward Snowden">Wikipedia</a>) aufdeckte, dass die US-amerikanische National Security Agency (NSA) weltweit Internetverkehr &uuml;berwacht. Es ist noch zu fr&uuml;h, um zu wissen, wie diese Bedenken letztlich gel&ouml;st werden.</p>
+		<div class="endnote">
+            <a href="#hint-US" data-toggle="collapse" title="Wie kam es dazu, dass die USA die Kontrolle &uuml;bernahmen?">Wie kam es dazu, dass die USA die Kontrolle &uuml;bernahmen?</a>
+            <div id="hint-US" class="collapse">
+                <p>1968 k&uuml;ndigte die Advanced Research Projects Agency (ARPA) des US-Verteidigungsministeriums die Entwicklung eines gro&szlig;angelegten, paketvermittelten Netzwerks an. 1969 wurden die ersten Verbindungen zwischen vier universit&auml;ren Forschungsgruppen hergestellt. Auf ihrem H&ouml;hepunkt umfasste das ARPANET nur einige Hundert Computer (alle im Besitz milit&auml;rischer Einrichtungen oder universit&auml;rer Informatiklabore).</p>
+                <p>Das ARPANET war winzig, inspirierte aber die Protokolle, die zur Grundlage des Internets wurden. Und es geh&ouml;rte dem US-Milit&auml;r.</p>
+                <p>Nachdem 1982 IP erfunden wurde, war das ARPANET nur noch ein Netzwerk unter vielen und wurde 1990 au&szlig;er Betrieb genommen. Bereits 1981 hatte die National Science Foundation (NSF &mdash; eine zivile US-Beh&ouml;rde, die auch die Entwicklung dieses Curriculums gef&ouml;rdert hat) das R&uuml;ckgrat eines neuen landesweiten Netzwerks aufgebaut. Damals durften Unternehmen das Netzwerk noch nicht nutzen, aber die Nachfrage war deutlich. Also entstanden kommerzielle, IP-basierte Netzwerke.</p>
+                <a href="#hint-commerce" data-toggle="collapse" title="Wie wechselten wir von Forschung zu Wirtschaft?">Wie wechselten wir von Forschung zu Wirtschaft?</a>
+                <div id="hint-commerce" class="collapse">
+                    <p>All die Zeit &uuml;ber lag die Vergabe von IP-Adressen und Hostnamen <em>zun&auml;chst bei der ARPA und sp&auml;ter bei der NSF</em>. Als die kommerzielle Nutzung des Internets die Nutzung in der Forschung &uuml;bertraf, <em>ging diese Kontrolle auf das US-Handelsministerium &uuml;ber</em>, das ICANN einrichtete, um den Domain-Namensraum und die Vergabe von IP-Adressen zu verwalten.</p>
+                    <p>2009 unterzeichnete das Handelsministerium ein Abkommen, das ICANN f&uuml;r unabh&auml;ngig erkl&auml;rte, auch wenn weiterhin ein Vertrag mit den USA besteht, der dem Department of Commerce eine Rolle bei der &Uuml;berpr&uuml;fung von ICANNs Arbeit einr&auml;umt.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ifTime">
+            <ol>
+            	<li>Lies <a href="http://www.bitsbook.com/wp-content/uploads/2008/12/B2B_3.pdf#page=330" target="_blank" title="Blown to Bits: Layers, Not Silos"><em>Blown to Bits</em>, Seiten 312&ndash;316</a>.</li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

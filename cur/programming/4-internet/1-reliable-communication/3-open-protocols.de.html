@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4, Labor 1: Computernetzwerke, Seite 3</title>
+	</head>
+
+    <body>
+        <h2>Internet-Abstraktionen und offene Protokolle</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> lernst du die Kommunikationsstandards kennen, die im Internet verwendet werden, und wie sie zusammenarbeiten.</p>
+        </div>
+        <div class="vocabBig">: <strong>Protocol (Protokoll)</strong>, <strong>IP Address (IP-Adresse)</strong>, <strong>Packet (Paket)</strong> und <strong>Packet Switching (Paketvermittlung)</strong>
+            <div class="ap-standard">CSN-1.B.3, CSN-1.C.1</div>
+            <ul>
+                <li>Ein <strong>protocol (Protokoll)</strong> ist eine Sammlung von Regeln, die das Verhalten eines Systems festlegen.</li>
+                <li>Eine <strong>IP address (IP-Adresse)</strong> ist eine eindeutige Nummer, die jedem Ger&auml;t in einem Computernetzwerk zugewiesen wird.</li>
+                <li>Ein <strong>packet (Paket)</strong> ist ein kleiner Block beliebiger Daten (Text, Zahlen, Listen usw.) samt Metadaten (Informationen &uuml;ber diese Daten), der als Datenstrom durch das Internet gesendet wird.</li>
+                <li><strong>Packet switching (Paketvermittlung)</strong> bedeutet, dass das Internet Informationen in kurzen Burst-Paketen versendet, nicht als lange, kontinuierliche Zeichenketten.</li>
+            </ul>
+        </div>
+
+			<div class="atwork">
+				<div class="imageRight">
+					<img class="noshadow" height="200px" src="/bjc-r/img/atwork/Vint_Cert.jpeg" alt="Foto von Vint Cerf" title="Foto von Vint Cerf" />
+				</div>
+				<p>Vint Cerf (geboren 1943) ist ein amerikanischer Internet-Pionier und gilt als einer der &bdquo;V&auml;ter des Internets&ldquo;. Gemeinsam mit Bob Kahn entwickelte Vint Cerf TCP/IP, einen Rahmen f&uuml;r die Organisation der Kommunikationsprotokolle, die im Internet und in &auml;hnlichen Computernetzwerken verwendet werden. Cerf war au&szlig;erdem im Kuratorium der Gallaudet University t&auml;tig, einer Universit&auml;t f&uuml;r die Ausbildung geh&ouml;rloser und schwerh&ouml;riger Menschen. Er selbst ist schwerh&ouml;rig und tr&auml;gt H&ouml;rger&auml;te.</p>
+				<p><a href="https://papyrus.greenville.edu/2020/09/sound-off-technology-has-transformed-the-deaf-community/" title="Artikel: Sound Off: Technology Has Transformed the Deaf Community" target="_blank">Artikel: Sound Off: Technology Has Transformed the Deaf Community</a></p>
+			</div>
+
+
+        <p>Milliarden von Ger&auml;ten sind mit dem Internet verbunden und es gibt Hunderte unterschiedlicher Ger&auml;tetypen: Laptops, Tablets, Telefone, smarte K&uuml;hlschr&auml;nke, mobile Kartenleser und vieles mehr. Wie finden und verstehen sich all diese Ger&auml;te? <em>Protokolle</em> (Kommunikationsstandards) sorgen daf&uuml;r, dass die Vielfalt der Ger&auml;te reibungslos miteinander interagiert.</p>
+        <p>Jedes Ger&auml;t im Internet hat eine eigene <em>Internet Protocol (IP) address</em> (oder mehrere, wenn es ein Router ist) &ndash; vergleichbar mit einer Post- oder E-Mail-Adresse. Das <em>Internet Protocol</em> legt fest, wie ein Router mit einer Anfrage nach einer anderen IP-Adresse umgeht. Jeder Router kennt die Struktur seiner Umgebung im Internet und wei&szlig;, wohin eine Nachricht als n&auml;chstes gesendet werden muss, damit sie ihrem Ziel n&auml;her kommt. Dass Router nicht alle Adressen des gesamten Internets kennen m&uuml;ssen, verbessert die Skalierbarkeit.</p>
+        <p>Wenn du Daten &uuml;ber das Internet streamst, wird der Strom in <em>Pakete</em> aufgeteilt, die IP einzeln versendet. Dieser Prozess macht das Internet zu einem Netzwerk mit <em>Paketvermittlung</em>.</p>
+        <div class="ap-standard">CSN-1.C.2, CSN-1.C.3</div>
+        <p>Das Internet ist ziemlich zuverl&auml;ssig, doch hin und wieder geht ein Paket verloren, und die beteiligten Ger&auml;te m&uuml;ssen solche Fehler tolerieren. Eine M&ouml;glichkeit besteht darin, den Verlust zu ignorieren (wenn ein Videoframe fehlt, ist das kaum schlimm). Eine andere M&ouml;glichkeit (genannt <em>TCP</em> f&uuml;r Transmission Control Protocol) besteht darin, Pakete so lange zu senden, bis ihr korrekter Empfang best&auml;tigt wird. Bei Anwendungen, die TCP nutzen, &uuml;bernimmt TCP selbst die Aufteilung der Daten in Pakete. Weil Pakete unterschiedliche Wege nehmen k&ouml;nnen, kommen sie m&ouml;glicherweise in anderer Reihenfolge an; und trotz der Redundanz des Internets kann es sein, dass manche Pakete gar nicht ankommen. TCP garantiert eine <em>zuverl&auml;ssige</em> Daten&uuml;bertragung, indem es nachverfolgt, welche Pakete erfolgreich empfangen wurden, verlorene oder besch&auml;digte Pakete erneut sendet und die Reihenfolge f&uuml;r das Zusammensetzen der Daten am Ziel vorgibt.</p>
+
+        <div class="vocabFullWidth">: <strong>TCP/IP</strong>
+            <p>
+                <strong>TCP/IP</strong> ist ein Protokollpaar, das zwei Abstraktionsebenen bereitstellt:
+                <ul>
+                    <li><strong>IP</strong> (Internet Protocol) l&auml;sst deinen Computer so tun, als h&auml;tte er eine <em>direkte</em> Verbindung zu einem anderen Computer. Die Router an jedem Verbindungspunkt im Internet verwenden IP, um Pakete von einer IP-Adresse zur n&auml;chsten zu &uuml;bertragen.</li>
+                    <li><strong>TCP</strong> (Transmission Control Protocol) l&auml;sst deinen Computer so tun, als h&auml;tte er eine <em>zuverl&auml;ssige</em> Verbindung zum anderen Computer. Die Computer (einschlie&szlig;lich Server) an den beiden Endpunkten einer Kommunikation verwenden TCP, das sicherstellt, dass Pakete erfolgreich ankommen.</li>
+                </ul>
+            </p>
+        </div>
+
+        <div class="forYouToDo">
+			<ol>
+				<div class="ap-standard">CSN-1.C</div>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" />
+                    Beschreibe, wie Daten &uuml;ber das Internet mithilfe von Paketen gesendet werden.
+                    <img class="inline" src="/bjc-r/img/icons/write-out-thoughts.png" alt="Schreibe deine Gedanken auf" title="Schreibe deine Gedanken auf" />
+                </li>
+			</ol>
+		</div>
+
+        <h3>Hierarchie der Internet-Abstraktionen</h3>
+        <div class="ap-standard">CSN-1.D.2 (unter &bdquo;Application Layer Protocols&ldquo;)</div>
+		<div class="sidenoteBig">
+            <div class="ap-standard">CSN-1.C-4</div>
+            <h4>Beispiele f&uuml;r Protokolle je Ebene:</h4>
+            <p><strong>Application Layer:</strong> Browser verwenden HTTP (HyperText Transfer Protocol), um HTML-Anweisungen f&uuml;r die Darstellung von Webseiten zu interpretieren. DNS (Domain Name System) wandelt benutzerfreundliche Hostnamen (wie edc.org oder berkeley.edu) in IP-Adressen um. Deine E-Mail-Anwendung nutzt m&ouml;glicherweise SMTP (Simple Mail Transfer Protocol) zum Senden und IMAP (Internet Message Access Protocol) zum Lesen von E-Mails.</p>
+            <p><strong>Transport Layer:</strong> TCP (Transmission Control Protocol) <em>simuliert</em> eine zuverl&auml;ssige, dauerhafte Verbindung zwischen zwei Computern, indem Daten erst angezeigt werden, wenn alle Pakete angekommen sind. Wenn Geschwindigkeit wichtiger als Genauigkeit ist, zum Beispiel bei Echtzeit-Video, kommt UDP (User Datagram Protocol) zum Einsatz.</p>
+            <p><strong>Internet Layer:</strong> Jedes Ger&auml;t im Internet ben&ouml;tigt eine IP-Adresse, damit andere Ger&auml;te es finden k&ouml;nnen. Router verwenden Protokolle der Internet-Schicht, um Netz&uuml;berlastungen zu erkennen und zu umgehen.</p>
+            <p><strong>Network Interface Hardware:</strong> Du verbindest dich vielleicht mit einem <em>Ethernet</em>-Kabel oder &uuml;ber eine <em>WLAN</em>-Antenne im Geh&auml;use deines Computers mit dem Internet. Beide verbinden den Computer mit einem lokalen Netzrouter, der dann den Kontakt zum Internetanbieter (ISP) herstellt. Mobiltelefone nutzen eine l&auml;nger reichende <em>Mobilfunk</em>-Verbindung zu ihrem Netzbetreiber.</p>
+        </div>
+        <p>Es gibt <em>sehr</em> viele Protokolle! Das Internet wurde mit mehreren Ebenen von <em>Abstraktion</em> entwickelt, die die Protokolle danach ordnen, welchen Teil des Kommunikationsprozesses sie unterst&uuml;tzen. Diese <em>Abstraktionshierarchie</em> beherrscht die Komplexit&auml;t des Internets, indem sie die Details der unteren Ebenen verbirgt:</p>
+        <div>
+            <ul>
+                <li><strong>Application Layer Protocols</strong> (z. B. HTTP) bilden die h&ouml;chste Abstraktionsebene, weil sie <em>steuern, wie Daten interpretiert und angezeigt</em> werden. Diese Protokolle <em>geben den Bits Bedeutung</em>, die von tieferen Ebenen gesendet werden; Client- und Server-Computer m&uuml;ssen sich dar&uuml;ber einig sein, und die Anwendungsprotokolle stellen diese Einigung her.</li>
+                <li><strong>Transport Layer Protocols</strong> (z. B. TCP) verwalten die <em>Aufteilung einer Nachricht in Pakete</em>, die von unteren Ebenen &uuml;bertragen werden, sowie die <em>Zusammensetzung der Nachricht aus den Paketen</em> bei der Ankunft.</li>
+                <li><strong>Internet Layer Protocols</strong> (z. B. IP) <em>organisieren die Pfade, auf denen Datenpakete &uuml;ber Netzwerke reisen</em>. Diese Protokolle vermitteln die Abstraktion eines gro&szlig;en Netzwerks, obwohl auf physischer Ebene zahlreiche Teilnetze existieren.</li>
+                <li><strong>Network Interface Hardware</strong> (mit Link-Layer-Protokollen wie WLAN) verwaltet die Verbindung zwischen einem Internetger&auml;t und seinem lokalen Netzwerk. Diese lokalen Protokolle sind die am wenigsten abstrakten, weil sie direkt mit deiner physischen Hardware arbeiten.</li>
+            </ul>
+		</div>
+
+        <div class="ap-standard">CSN-1.B.4 (Absatz &uuml;ber &bdquo;open standards&ldquo;)</div>
+        <div class="takeNote">All diese Standards sind <em>offen</em>: Jeder kann ein Protokoll nachschlagen und damit neue Hardware oder Software entwickeln, ohne jemanden um Erlaubnis bitten zu m&uuml;ssen. Das Internet ist wahrscheinlich das gr&ouml;&szlig;te und komplexeste Artefakt der Menschheitsgeschichte und es basiert auf <em>Zusammenarbeit</em>. Trotz einzelner Versuche von Regierungen, das Netz zu zensieren, &uuml;berwiegt der kooperative Geist.</div>
+		<div class="endnote">
+        	<a href="#hint-open" data-toggle="collapse" title="Warum sind offene Standards wichtig?">Warum sind offene Standards wichtig?</a>
+            <div id="hint-open" class="collapse">
+                <ul>
+                    <li>Dein T-Mobile-Handy kann mit dem Verizon-Handy deiner Freundin sprechen.</li>
+                    <li>Du kannst einer Person in einem Land eine E-Mail senden, das als feindlich gegen&uuml;ber deinem Land gilt (zum Beispiel von den USA nach Iran).</li>
+                    <li>Eine Ingenieurin bei Microsoft kann eine Webseite bei Apple lesen, obwohl ihre Unternehmen Wettbewerber sind.</li>
+                </ul>
+                <p>Vor dem Internet gab es mehrere verschiedene Netzwerkprotokolle, die als Geheimnisse bestimmter Hersteller galten. Hattest du also einen Computer oder Router einer bestimmten Marke, konnte er nur mit Ger&auml;ten derselben Marke kommunizieren.</p>
+            </div>
+		</div>
+
+        <div class="forYouToDo">
+            <ol start="2">
+                <li>
+                    <img class="imageRight" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" /> Erkl&auml;re, wie jedes dieser Protokolle eine Abstraktion darstellt. Welche Details verbirgt jedes davon?
+                    <ul>
+                        <li>HTTP (HyperText Transfer Protocol)&mdash;das Protokoll, mit dem dein Browser <em>auf eine HTML-Webseite zugreift</em></li>
+                        <li>TCP (Transmission Control Protocol)&mdash;das Protokoll, das eine <em>zuverl&auml;ssige &Uuml;bertragung</em> von Daten sicherstellt</li>
+						<li>IP (Internet Protocol)&mdash;das hierarchische Adressierungsprotokoll, das <em>das Routing</em> von Daten zwischen Computern organisiert</li>
+                    </ul>
+                </li>
+                <div class="ap-standard">CSN-1.B</div>
+                <li>Sammle deine Beschreibungen dazu, wie Menschen sich mit dem Internet verbinden (von Seite 1), wie Ger&auml;te innerhalb eines Netzwerks verbunden sind (von Seite 2), wie und warum das Internet fehlertolerant ist (von Seite 2) und wie TCP/IP funktioniert (von Seite 3). Fasse diese Beschreibungen zu einem kurzen Aufsatz dar&uuml;ber zusammen, wie das Internet funktioniert.</li>
+            </ol>
+        </div>
+
+        <div class="ifTime">
+            <ol start="4">
+        		<li>Lies <a href="http://www.bitsbook.com/wp-content/uploads/2008/12/B2B_3.pdf#page=319" target="_blank" title="Blown to Bits: The Internet as System and Spirit"><em>Blown to Bits</em>, Seiten 301&ndash;316</a>.</li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 5, Labor 1: Suchalgorithmen und Effizienz, Seite 7</title>
+	</head>
+
+	<body>
+    	<h2>Doppelte entfernen</h2>
+		<div class="learn">
+        	<p>
+                <strong>Auf dieser Seite</strong> lernst du eine rekursive Technik, um Duplikate aus einer Liste zu entfernen.<br />
+                <img class="indent" src="/bjc-r/img/5-algorithms/distinct-reporter-reporting.png" alt="distinct items from (list (apples) (carrots) (bananas) (oranges) (bananas) (bread) (carrots)) meldet { apples, oranges, bananas, bread, carrots }" title="distinct items from (list (apples) (carrots) (bananas) (oranges) (bananas) (bread) (carrots)) meldet { apples, oranges, bananas, bread, carrots }" />
+		    </p>
+        </div>
+
+        <p>Angenommen, du hast eine Liste von Elementen und möchtest wissen, ob alle <em>verschieden</em> sind. Vielleicht willst du zum Beispiel sicherstellen, dass nichts doppelt auf deiner Einkaufsliste steht.</p>
+        <p>Als ersten Schritt beantworten wir die Ja/Nein-Frage: Kommen auf deiner Liste Duplikate vor?<br />
+            <img class="indent" src="/bjc-r/img/5-algorithms/distinct-predicate-reporting.png" alt="are the items of (list (apples) (carrots) (bananas) (oranges) (bananas) (bread) (carrots)) distinct? meldet false" title="are the items of (list (apples) (carrots) (bananas) (oranges) (bananas) (bread) (carrots)) distinct? meldet false" />
+        </p>
+
+		<div class="forYouToDo" id="first">
+			<ol>
+                <li>Experimentiere mit dem Block <img class="inline nopadtb" src="/bjc-r/img/blocks/all-but-first.png" alt="all but first of 'list input slot'" title="all but first of 'list input slot'" /> und probiere ein paar unterschiedliche Eingabelisten. <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Besprich es mit deiner Partnerin/deinem Partner" title="Besprich es mit deiner Partnerin/deinem Partner" /> Was meldet dieser Block?</li>
+                <li>
+                    Vervollständige das Prädikat <code>are the items distinct?</code>, das unten begonnen wurde. Da du ein Prädikat schreibst, muss deine Prozedur immer <code>true</code> oder <code>false</code> melden.<br />
+                    <div class="sidenote">
+                        <a href="#hint-predicate" data-toggle="collapse" title="Versuche es ohne diesen Hinweis zum Prädikat „are the items distinct?“">Versuche es ohne diesen Hinweis.</a>
+                        <div id="hint-predicate" class="collapse">Wenn das Programm den dritten <code>report</code>-Block ganz unten erreicht, was sagt das über die Elemente in der Liste aus?</div>
+                    </div>
+                    <img class="indent" src="/bjc-r/img/5-algorithms/distinct-predicate-starter.png" alt="are the items of (data) distinct?
+{
+	if (is (data) empty?)
+	{
+		report ()
+	}
+	if ((all but first of (data)) contains ())
+	{
+		report ()
+	}
+	report (are the items of () distinct?)
+}" title="are the items of (data) distinct?
+{
+	if (is (data) empty?)
+	{
+		report ()
+	}
+	if ((all but first of (data)) contains ())
+	{
+		report ()
+	}
+	report (are the items of () distinct?)
+}" />
+                    <div class="endnote">
+                        Beachte, dass sich diese Prozedur am Ende selbst aufruft (sie ist <em>rekursiv</em>). Das funktioniert nicht, wenn die Eingabe für diesen Aufruf dieselbe ist wie die ursprüngliche Eingabe. Du kannst also nicht einfach <img class="inline" src="/bjc-r/img/5-algorithms/report-are-items-of-data-distinct.png" alt="report (are the items of (data) distinct?)" title="report (are the items of (data) distinct?)" /> verwenden. Stattdessen brauchst du eine kleinere Eingabe.
+                    </div>
+                </li>
+				<li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" /> Würde dieser Algorithmus bei doppelter Listenlänge gleich viel Zeit brauchen? Doppelt so viel? Mehr als doppelt so viel?</li>
+            </ol>
+        </div>
+
+        <p>Für deine Einkaufsliste möchtest du nicht nur wissen, ob es Duplikate gibt. Du brauchst eine neue Liste, aus der die Duplikate entfernt wurden.</p>
+
+        <div class="forYouToDo">
+			<ol start="4">
+                <li>Experimentiere mit dem Block <img class="inline nopadtb" src="/bjc-r/img/blocks/in-front-of-full-size.png" alt="() in front of 'list input slot'" title="() in front of 'list input slot'" /> und nutze verschiedene Eingaben. <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Besprich es mit deiner Partnerin/deinem Partner" title="Besprich es mit deiner Partnerin/deinem Partner" /> Was meldet dieser Block?</li>
+                <li>
+                    Baue einen Reporter <code>distinct items from</code>, der dieselbe Struktur wie das Prädikat <code>are the items distinct?</code> verwendet.
+                    <div class="endnote">
+                        <img class="imageRight" src="/bjc-r/img/5-algorithms/distinct-reporter-starter.png" alt="distinct items from (data)
+{
+	if (is (data) empty?)
+	{
+		report ()
+	}
+	if ((all but first of (data)) contains ())
+	{
+		report ()
+	}
+	report ()
+}" title="distinct items from (data)
+{
+	if (is (data) empty?)
+	{
+		report ()
+	}
+	if ((all but first of (data)) contains ())
+	{
+		report ()
+	}
+	report ()
+}" /><p>Der Algorithmus für diesen Block trifft dieselben Entscheidungen wie <code>are the items distinct?</code>. Das war jedoch ein Prädikat. Hier musst du eine Liste melden. Schau dir daher die drei <code>report</code>-Blöcke in deinem Code für <code>are the items distinct?</code> an und entscheide, was sie im Reporter <code>distinct items from</code> melden sollen.</p>
+                        <p>
+                            <a href="#hint-reporter" data-toggle="collapse" title="Brauchst du einen weiteren Hinweis zum Reporter <code>distinct items from</code>?">Brauchst du einen weiteren Hinweis?</a>
+                            <div id="hint-reporter" class="collapse">
+                                <ul>
+                                    <li>Was soll <code>distinct items from</code> melden, wenn die Liste leer ist?</li>
+                                    <li>
+                                        Wenn das erste Element in der Liste auch später nochmals vorkommt, ist es egal, welches Vorkommen du weglässt. Gibt es einen einfachen Weg, die Liste ohne eine dieser Kopien zu bekommen?
+                                        <ul>
+                                            <li>Was, wenn es noch weitere Duplikate in dieser Liste gibt?</li>
+                                        </ul>
+                                    </li>
+                                    <li>Wenn der Computer den dritten <code>report</code>-Block erreicht, was sagt das über das erste Element aus? Soll dieses Element Teil der gemeldeten Liste sein?</li>
+                                </ul>
+                            </div>
+                        </p>
+                        <p style="clear: both; height: 0px;"></p>
+                    </div>
+                </li>
+                <li>Teste dein Ergebnis. Wähle gute Testfälle: mehr als ein Duplikatpaar, mehr als zwei identische Elemente, Duplikate direkt nebeneinander usw.</li>
+				<li><div class="saveAs"><span class="text">„U5L1-Removing-Duplicates“</span><img src="/bjc-r/img/icons/save-this-as.png" alt="Speichere deine Arbeit als U5L1-Removing-Duplicates" title="Speichere deine Arbeit als U5L1-Removing-Duplicates" /></div></li>
+            </ol>
+        </div>
+
+    </body>
+</html>

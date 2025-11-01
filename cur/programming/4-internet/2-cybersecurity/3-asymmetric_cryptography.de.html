@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4, Labor 2: Cybersicherheit, Seite 3</title>
+	</head>
+
+	<body>
+    	<h2>Public-Key-Verschl&uuml;sselung</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> lernst du eine h&auml;ufig verwendete, sicherere Methode der Kryptografie kennen.</p>
+        </div>
+
+        <p>Das grundlegende Problem der Kryptografie besteht darin, eine Nachricht an deine Freundin oder deinen Freund zu senden, ohne dass sie von Gegner*innen abgefangen wird. Symmetrische Verschl&uuml;sselung hat dabei eine Schw&auml;che: Der Schl&uuml;ssel selbst ist eine Nachricht, die zur Freundin geschickt werden muss, ohne dass er in falsche H&auml;nde gelangt.</p>
+
+        <p><em>Public-Key-Kryptografie</em> ist eine mathematische Technik, die verhindert, dass ein geheimer Schl&uuml;ssel zwischen zwei Personen &uuml;bertragen werden muss. Stattdessen besitzt jede Person <em>zwei</em> Schl&uuml;ssel: einen privaten Schl&uuml;ssel, den nur sie selbst kennt, und einen &ouml;ffentlichen Schl&uuml;ssel, den jeder kennen darf. Wenn Bob Alice eine geheime Nachricht schicken m&ouml;chte, verschl&uuml;sselt er sie mit Alices &ouml;ffentlichem Schl&uuml;ssel. Dann kann nur Alice die Nachricht entschl&uuml;sseln. Nur ihr privater Schl&uuml;ssel kann die Verschl&uuml;sselung aufheben, und aus dem &ouml;ffentlichen Schl&uuml;ssel <em>l&auml;sst sich</em> der private Schl&uuml;ssel nicht berechnen.</p>
+
+        <div class="vocabFullWidth">: <strong>Public Key Encryption</strong>
+            <div class="ap-standard">IOC-2.B.5</div>
+            <p><strong>Public-Key-Verschl&uuml;sselung</strong> verwendet ein Schl&uuml;sselpaar: einen &ouml;ffentlichen Schl&uuml;ssel zum Verschl&uuml;sseln und einen privaten Schl&uuml;ssel zum Entschl&uuml;sseln. Die sendende Person nutzt den &ouml;ffentlichen Schl&uuml;ssel, um die Nachricht zu verschl&uuml;sseln; die empfangende Person nutzt ihren privaten Schl&uuml;ssel zum Entschl&uuml;sseln.</p>
+        </div>
+
+        <div class="endnote">
+            <div class="commentBig"><a href="https://commons.wikimedia.org/wiki/File:Public_key_encryption.svg" target="_blank">https://commons.wikimedia.org/wiki/File:Public_key_encryption.svg</a></div>
+            <p><a href="#hint-model" data-toggle="collapse" title="Hier siehst du ein visuelles Modell der Public-Key-Verschl&uuml;sselung (von wikimedia.org).">Hier siehst du ein visuelles Modell der Public-Key-Verschl&uuml;sselung</a> (Quelle: wikimedia.org).</p>
+            <div id="hint-model" class="collapse">
+                <img class="indent noshadow" border="0" src="/bjc-r/img/3-lists/525px-Public_key_encryption.png" alt="Diagramm der Public-Key-Verschl&uuml;sselung: Eine Nachricht wird mit einem &ouml;ffentlichen Schl&uuml;ssel verschl&uuml;sselt und mit einem privaten Schl&uuml;ssel entschl&uuml;sselt." title="Diagramm der Public-Key-Verschl&uuml;sselung: Eine Nachricht wird mit einem &ouml;ffentlichen Schl&uuml;ssel verschl&uuml;sselt und mit einem privaten Schl&uuml;ssel entschl&uuml;sselt." />
+            </div>
+            <p><a href="#hint-paint" data-toggle="collapse" title="Ein Video nutzt Farb-Mischen als Metapher f&uuml;r Public-Key-Verschl&uuml;sselung.">Hier findest du ein Video, das Farb-Mischen als Metapher f&uuml;r Public-Key-Verschl&uuml;sselung nutzt.</a></p>
+            <div id="hint-paint" class="collapse">
+                <img class="imageRight" src="/bjc-r/img/icons/headphones-mini.png" alt="Kopfh&ouml;rer oder Lautsprecher bereitlegen" title="Kopfh&ouml;rer oder Lautsprecher bereitlegen" />
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YEBfamv-_do?start=145&rel=0" frameborder="0" allowfullscreen class="indent"></iframe>
+                <p>Falls deine Verbindung YouTube blockiert, <a href="http://scratch.mit.edu/discuss/youtube/YEBfamv-_do" target="_blank" title="Public key cryptography - Diffie-Hellman Key Exchange">sieh dir das Video hier an</a>, aber starte bei 2:25.</p>
+            </div>
+        </div>
+
+        <div class="takeNote">
+            <p><strong>Symmetrische Kryptografie</strong> nutzt denselben geheimen Schl&uuml;ssel zum Ver- und Entschl&uuml;sseln einer Nachricht und existiert seit Jahrtausenden. Ihre Schw&auml;che besteht darin, dass der Schl&uuml;ssel zu <em>einer weiteren Nachricht</em> wird, die sicher &uuml;bertragen werden muss.</p>
+            <div class="sidenote">
+                <p><a href="#hint-invented" data-toggle="collapse" title="Wer hat die Public-Key-Verschl&uuml;sselung erfunden?">Wer hat die Public-Key-Verschl&uuml;sselung erfunden?</a></p>
+                <div id="hint-invented" class="collapse">Die Idee eines &ouml;ffentlichen Schl&uuml;ssels wurde 1976 erstmals von Whitfield Diffie und Martin Hellman ver&ouml;ffentlicht. Tats&auml;chlich war sie jedoch schon fr&uuml;her erfunden worden, blieb aber als Regierungsgeheimnis unter Verschluss.</div>
+            </div>
+            <p><strong>Public-Key- (asymmetrische) Kryptografie</strong> entstand in den 1970er-Jahren. Sie verwendet <em>zwei unterschiedliche Schl&uuml;ssel</em> zum Ver- und Entschl&uuml;sseln, sodass der Austausch des &ouml;ffentlichen Schl&uuml;ssels den privaten nicht verr&auml;t. Public-Key-Verschl&uuml;sselung ist heute die wichtigste Methode, weil sie ein hohes Ma&szlig; an Sicherheit bietet.</p>
+        </div>
+
+        <div class="forYouToDo">
+        	<ol>
+                <li>
+                    <div class="sidenote">Auf <a href="/bjc-r/cur/programming/4-internet/2-cybersecurity/1-cryptography.html?topic=nyc_bjc%2F4-internet.topic&course=bjc4nyc.html&novideo&noassignment" title="Seite 1: Kryptografie" >Seite 1: Kryptografie</a> hast du symmetrische Verschl&uuml;sselung kennengelernt.</div>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin oder deinem Partner" title="Sprich mit deiner Partnerin oder deinem Partner" />
+                    Beschreibe, warum Public-Key-Verschl&uuml;sselung die &Uuml;bertragung geheimer Nachrichten besser absichert als symmetrische Verschl&uuml;sselung. W&uuml;rdest du dieser Methode vertrauen, um eine Kreditkartennummer zu versenden?
+                </li>
+            </ol>
+        </div>
+
+        <div class="todo">Diese Endnote verweist auf Funktionskomposition, aber ich glaube, das Konzept taucht im Curriculum zum ersten Mal auf. --MF, 15.06.2020</div>
+        <div class="endnote">
+            <a href="#hint-digital-signatures" data-toggle="collapse" title="Es ist auch m&ouml;glich, den privaten Schl&uuml;ssel zum Verschl&uuml;sseln und den &ouml;ffentlichen zum Entschl&uuml;sseln zu verwenden...">Auch den <em>privaten</em> Schl&uuml;ssel kann man zum Verschl&uuml;sseln einsetzen und den <em>&ouml;ffentlichen</em> zum Entschl&uuml;sseln...</a>
+            <div id="hint-digital-signatures" class="collapse">
+                <p>Das taugt zwar nicht f&uuml;r geheime Nachrichten (warum nicht?), aber es ist n&uuml;tzlich f&uuml;r <strong>digitale Signaturen</strong>. Ich verschl&uuml;ssle eine Nachricht mit meinem privaten Schl&uuml;ssel; du entschl&uuml;sselst sie mit meinem &ouml;ffentlichen Schl&uuml;ssel. Wenn dabei eine sinnvolle Nachricht herauskommt, beweist das, dass sie mit meinem privaten Schl&uuml;ssel verschl&uuml;sselt wurde. (Wenn ich Geheimhaltung <em>und</em> Signatur m&ouml;chte, verschl&uuml;ssle ich die Nachricht erst mit meinem privaten Schl&uuml;ssel zum Signieren und dann <em>noch einmal</em> mit deinem &ouml;ffentlichen Schl&uuml;ssel, um sie geheim zu halten. Du entschl&uuml;sselst zweimal: zuerst mit deinem privaten Schl&uuml;ssel und dann mit meinem &ouml;ffentlichen.) Das ist ein sch&ouml;nes Beispiel f&uuml;r <em>Funktionskomposition</em>: Die Ausgabe der ersten Verschl&uuml;sselung wird zur Eingabe der zweiten.</p>
+            </div>
+        </div>
+
+        <div class="endnote">
+			Dieser Comic stammt von Randall Munroe (Quelle: xkcd).<br />
+			<img class="indent" src="http://imgs.xkcd.com/comics/public_key.png" alt="Comic in vier Panels: Eine Person sitzt am Computer. Panel 1: &bdquo;Ich ver&ouml;ffentliche meinen Public Key seit 15 Jahren, aber offenbar braucht ihn niemand.&ldquo; Panel 2 und 3: die Person schweigt. Panel 4: &bdquo;Vielleicht sollte ich stattdessen meinen Private Key posten.&ldquo;" title="Ich sollte wohl Dinge signieren, aber ich wusste nie was. Wenn ich meinen Private Key poste, kann die Crowd f&uuml;r mich entscheiden, was zu signieren ist." />
+        </div>
+
+
+        <h3>Sicheres HTTP</h3>
+        <div class="vocabBig">: <strong>SSL/TLS</strong>
+        	<p><strong>SSL/TLS</strong> (Secure Sockets Layer/Transport Layer Security) ist der Standard f&uuml;r kryptografisch gesch&uuml;tzte Daten&uuml;bertragungen im Internet.</p>
+        </div>
+        <p>Sichere HTTP-Verbindungen (die <strong>https://</strong> statt <strong>http://</strong> verwenden) nutzen ein Protokoll namens <em>Transport Layer Security</em> (TLS) oder eine &auml;ltere Version namens <em>Secure Sockets Layer</em> (SSL). Beide basieren auf Public-Key-Kryptografie. Bei SSL/TLS sendet die besuchte Website ihren &ouml;ffentlichen Schl&uuml;ssel, und dein Browser nutzt ihn, um die von dir &uuml;bermittelten Informationen zu verschl&uuml;sseln.</p>
+
+        <div class="endnote">
+            <a href="#hint-open-standards" data-toggle="collapse" title="Offene Standards st&auml;rken die Sicherheit">Offene Standards st&auml;rken die Sicherheit...</a>
+    		<div id="hint-open-standards" class="collapse">
+                <p>Damit eine kryptografische Funktion sinnvoll funktioniert, muss sie f&uuml;r die Besitzerin des privaten Schl&uuml;ssels leicht umkehrbar sein, f&uuml;r alle anderen jedoch schwer. Woher wissen wir, was &bdquo;schwer&ldquo; bedeutet? Aktuelle Verfahren verlassen sich zum Beispiel darauf, dass es schwierig ist, sehr gro&szlig;e Zahlen in Primfaktoren zu zerlegen. Es gibt keinen <em>Beweis</em> daf&uuml;r, dass niemand eine schnelle Methode finden wird, aber viele Mathematiker*innen haben dieses Problem untersucht und sind daher zuversichtlich. (Wenn <em>Quantencomputer</em> praktisch werden, wird Faktorisiere n allerdings <em>einfach</em> und neue kryptografische Methoden werden n&ouml;tig sein. Forschungsergebnisse von 2019 lassen praktische Quanten-Kryptoanalyse nicht mehr so fern erscheinen.)</p>
+                <p>Dass Mathematiker*innen die Sicherheit von Internet-Kryptografie untersuchen k&ouml;nnen, verdanken wir der offenen Ver&ouml;ffentlichung der verwendeten Methode, also der kryptografischen Funktion. Das mag seltsam wirken: Wenn man etwas geheim halten will, sollte man die Technik doch ebenfalls geheim halten, oder? Doch geheime Algorithmen k&ouml;nnen Schwachstellen enthalten, die unentdeckt bleiben, bis sie jemand ausnutzt. Offene Standards erlauben es, einen Algorithmus zu pr&uuml;fen, <em>bevor</em> er in der Praxis verwendet wird.</p>
+            </div>
+        </div>
+
+
+        <h3>Zertifizierungsstellen</h3>
+        <div class="vocabBig">: <strong>Certificate Authorities</strong>
+        	<div class="ap-standard">IOC-2.B.6</div>
+            <p><strong>Zertifizierungsstellen</strong> (Certificate Authorities) sind Organisationen, die digitale Zertifikate ausstellen, um zu best&auml;tigen, wem die Schl&uuml;ssel f&uuml;r gesicherte Kommunikation geh&ouml;ren.</p>
+            <p>Statt einfach darauf zu vertrauen, dass eine Website wirklich die ist, die sie behauptet zu sein, musst du also darauf vertrauen, dass die Zertifizierungsstelle zuverl&auml;ssig ist.</p>
+        </div>
+        <p>Public-Key-Kryptografie l&ouml;st nicht alle Probleme, denn eine Abh&ouml;reinheit (sagen wir Eve) k&ouml;nnte einen gef&auml;lschten &ouml;ffentlichen Schl&uuml;ssel ver&ouml;ffentlichen und so tun, als sei sie Alice. Dann verschl&uuml;sselt Bob seine Nachricht an Alice vielleicht aus Versehen mit Eves falschem Schl&uuml;ssel, und nur Eve kann die Nachricht lesen. In der Praxis wird das Problem dadurch abgemildert, dass man sich auf vertrauensw&uuml;rdige Drittparteien verl&auml;sst, sogenannte <em>Zertifizierungsstellen</em>, die &ouml;ffentliche Schl&uuml;ssel zertifizieren. In den Sicherheitseinstellungen deines Browsers kannst du alle Zertifizierungsstellen sehen, denen er vertraut.</p>
+		<div class="endnote">Damit ist das Problem jedoch nur eine Ebene nach hinten verschoben. Woher wei&szlig; die Zertifizierungsstelle, dass du wirklich die Person bist, f&uuml;r die du dich ausgibst? Es ist ein bisschen so, wie wenn deine Bank sicherstellen will, dass du es bist, wenn du anrufst: Man stellt Fragen, deren Antworten hoffentlich nur du kennst.</div>
+
+        <div class="ifTime">
+        	<ol start="2">
+                <li>Es mag unglaublich klingen, dass jemand (z.&nbsp;B. Alice) ihren Verschl&uuml;sselungsschl&uuml;ssel &ouml;ffentlich machen kann und dennoch niemand au&szlig;er ihr die Nachricht entschl&uuml;sseln kann. Die Public-Key-Methode beruht sowohl auf Mathematik als auch auf den aktuellen Grenzen der Rechengeschwindigkeit. Lies &bdquo;Secrecy Changes Forever&ldquo; (<a href="http://www.bitsbook.com/wp-content/uploads/2008/12/B2B_3.pdf#page=196" target="_blank" title="Blown to Bits: Secrecy Changes Forever"><em>Blown to Bits</em>, Seiten 178&ndash;181</a>), um zu verstehen, wie das funktioniert.</li>
+            	<li>Lies &bdquo;The Key Agreement Protocol&ldquo; und &bdquo;Public Keys for Private Messages&ldquo; (<a href="http://www.bitsbook.com/wp-content/uploads/2008/12/B2B_3.pdf#page=199" target="_blank" title="Blown to Bits: The Key Agreement Protocol"><em>Blown to Bits</em>, Seiten 181&ndash;183</a>), um mehr &uuml;ber Public-Key-Verschl&uuml;sselung zu erfahren.</li>
+			</ol>
+		</div>
+
+		<div class="takeItFurther">
+        	<ol type="A">
+                <li>Recherchiere moderne Verschl&uuml;sselungssysteme wie das RSA-Kryptosystem, das f&uuml;r sichere Transaktionen im Internet genutzt wird.</li>
+            </ol>
+        </div>
+
+	</body>
+</html>
