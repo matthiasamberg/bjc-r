@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 7, Labor 1: Bäume, Seite 4</title>
+	</head>
+
+	<body>
+		<h2>Selbsttest: <code>tree</code>-Variationen</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> findest du heraus, welche Änderungen am <code>tree</code>-Code zu bestimmten Veränderungen im Bild führen.</p>
+        </div>
+        <p>
+			Sämtliche Bilder in den folgenden Fragen basieren auf Varianten dieses rekursiven <code>tree</code>-Blocks.<br />
+            <div class="comment">MARY: Bilder und Alt-Texte müssen überarbeitet werden. --MF, 19.06.2020</div>
+            <img class="indent" src="/bjc-r/img/7-recursion/quiztree.png" alt="Rekursiver Baumblock mit Basisfall und zwei rekursiven Aufrufen" title="Rekursiver Baumblock mit Basisfall und zwei rekursiven Aufrufen"/>
+            <img class="indent noshadow" src="/bjc-r/img/7-recursion/tree-level5.jpg" alt="Ergebnis von tree level:5 size:100 (Stamm und vier Ebenen von Ästen)" title="Ergebnis von tree level:5 size:100"/>
+        </p>
+
+        <div class="forYouToDo">
+			<ol>
+                <li>
+                    <!-- Frage 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="asymmetric" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="false">
+                        <div class="prompt">
+                            <img class="imageRight noshadow" src="/bjc-r/img/7-recursion/tree-variation-slanted.jpg" alt="Baum mit nach links geneigten Ästen"  title="Baum mit nach links geneigten Ästen" />
+                            <p>Was wurde am Code verändert?</p>
+                        </div>
+                        <div class="choice" identifier="c0">
+                            <div class="text">Der Drehwinkel zwischen den Ästen</div>
+                            <div class="feedback">Richtig!</div>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Der Skalierungsfaktor (wie stark sich die Länge verkürzt)</div>
+                            <div class="feedback">Beachte, dass die Äste jetzt anders geneigt sind als im Original.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Zusätzliche rekursive Aufrufe und weitere <code>turn</code>-Blöcke</div>
+                            <div class="feedback">Die Anzahl der Äste pro Ebene hat sich nicht verändert.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c0"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <!-- Frage 2 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="5-branches" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="false">
+                        <div class="prompt">
+                            <img class="imageRight noshadow" src="/bjc-r/img/7-recursion/tree-variation-extra-branches.jpg" alt="Baum mit vier Ästen pro Verzweigung" title="Baum mit vier Ästen pro Verzweigung" />
+                            <p>Was wurde am Code verändert?</p>
+                        </div>
+                        <div class="choice" identifier="c0">
+                            <div class="text">Der Drehwinkel zwischen den Ästen</div>
+                            <div class="feedback">Hier wurden zwar auch Winkel angepasst, aber das erklärt nicht die zusätzlichen Äste.</div>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Der Skalierungsfaktor (wie stark sich die Länge verkürzt)</div>
+                            <div class="feedback">Die Astlängen wirken dem Original recht ähnlich.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Zusätzliche rekursive Aufrufe und weitere <code>turn</code>-Blöcke</div>
+                            <div class="feedback">Genau! Es wurden zusätzliche rekursive Aufrufe (und Drehungen) ergänzt.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                            <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <!-- Frage 3 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="trunk-double" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri3" shuffle="false">
+                        <div class="prompt">
+                            <img class="imageRight noshadow" src="/bjc-r/img/7-recursion/tree-variation-wide-trunk.jpg" alt="Baum mit breitem Stamm und zwei Astpaaren" title="Baum mit breitem Stamm und zwei Astpaaren" />
+                            <p>Was wurde am Code verändert?</p>
+                        </div>
+                        <div class="choice" identifier="c0">
+                            <div class="text">Der Drehwinkel zwischen den Ästen</div>
+                            <div class="feedback">Im Vergleich zum Original fällt vor allem der breitere Stamm auf.</div>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Der Skalierungsfaktor (wie stark sich die Länge verkürzt)</div>
+                            <div class="feedback">Die Zweige sehen ähnlich lang aus wie zuvor.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Zusätzliche rekursive Aufrufe und weitere <code>turn</code>-Blöcke</div>
+                            <div class="feedback">Richtig! Es wurden zusätzliche Aufrufe eingefügt, sodass oben vier Äste entstehen.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri3">
+                            <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <!-- Frage 4 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="no-scale" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri4" shuffle="false">
+                        <div class="prompt">
+                            <img class="imageRight noshadow" src="/bjc-r/img/7-recursion/tree-variation-long-branches.jpg" alt="Baum mit Ästen, die nicht kürzer werden" title="Baum mit gleich langen Ästen" />
+                            <p>Was wurde am Code verändert?</p>
+                        </div>
+                        <div class="choice" identifier="c0">
+                            <div class="text">Der Drehwinkel zwischen den Ästen</div>
+                            <div class="feedback">Die Winkel sehen ähnlich aus wie im Original.</div>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Der Skalierungsfaktor (wie stark sich die Länge verkürzt)</div>
+                            <div class="feedback">Richtig! Die Äste behalten jetzt ihre Länge, statt kürzer zu werden.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Zusätzliche rekursive Aufrufe und weitere <code>turn</code>-Blöcke</div>
+                            <div class="feedback">Es gibt genauso viele Äste wie zuvor, und die Winkel haben sich nicht geändert.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri4">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <!-- Frage 5 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="square-tree" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri5" shuffle="false">
+                        <div class="prompt">
+                            <img class="imageRight noshadow" src="/bjc-r/img/7-recursion/tree-variation-right-angle-branches.jpg" alt="Baum mit rechten Winkeln zwischen den Ästen" title="Baum mit rechten Winkeln zwischen den Ästen" />
+                            <p>Was wurde am Code verändert?</p>
+                        </div>
+                        <div class="choice" identifier="c0">
+                            <div class="text">Der Drehwinkel zwischen den Ästen</div>
+                            <div class="feedback">Genau! Die Drehungen betragen hier 90 Grad.</div>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Der Skalierungsfaktor (wie stark sich die Länge verkürzt)</div>
+                            <div class="feedback">Der Skalierungsfaktor entspricht dem Original.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Zusätzliche rekursive Aufrufe und weitere <code>turn</code>-Blöcke</div>
+                            <div class="feedback">Die Anzahl der Äste ist gleich geblieben.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri5">
+                            <div class="correctResponse" identifier="c0"></div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

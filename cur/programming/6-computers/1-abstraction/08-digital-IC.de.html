@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 6, Labor 1: Hierarchie der Computerabstraktion, Seite 8</title>
+	</head>
+    <body>
+        <h2>Die digitale Dom&auml;ne: Integrierte Schaltkreise</h2>
+        <div class="learn"><strong>Auf dieser Seite</strong> lernst du die elektronischen Bauteile im Inneren des Computers kennen: <em>integrierte Schaltkreise</em>.</div>
+        <div class="vocabBig">: <strong>Integrierter Schaltkreis</strong>
+        	<p>Ein <strong>integrierter Schaltkreis</strong> (&bdquo;IC&ldquo; oder &bdquo;Chip&ldquo;) ist ein einzelnes Bauteil, das Millionen oder Milliarden grundlegender elektrischer Elemente enth&auml;lt. Ein Prozessor ist ein IC, aber nicht jeder IC ist ein Prozessor &ndash; im Computer stecken auch zahlreiche Spezialchips.</p>
+        </div>
+        <p>
+            Damit Menschen heute extrem leistungsf&auml;hige Computer in der Hosentasche tragen k&ouml;nnen, mussten Schaltungen kleiner und g&uuml;nstiger werden. Die Erfindung des <em>integrierten Schaltkreises</em> machte das m&ouml;glich. ICs vereinen (&bdquo;integrieren&ldquo;) Millionen oder Milliarden winziger Bauteile (Transistoren, Widerst&auml;nde, Kondensatoren u.&nbsp;a.) in einem kleinen Kunststoffgeh&auml;use.
+            <div class="sidenote">Intel Core i7-8700K (64&nbsp;Bit), &copy; 2017 Intel.</div>
+            <img class="indent noshadow" width="400px" src="/bjc-r/img/6-computers/intel.jpg" alt="Intel-64-Bit-Prozessorchip mit Sockel" title="Intel-64-Bit-Prozessor und Sockel" />
+        </p>
+		<div class="endnote">Jack Kilby erhielt 2000 den Nobelpreis f&uuml;r seine funktionsf&auml;hige IC-Demonstration von 1958.</div>
+		<p>
+        	Die grundlegende Technologie des Computerzeitalters ist der <em>Transistor</em>. In digitalen Schaltungen dienen Transistoren als Schalter (mehr dazu auf einer sp&auml;teren Seite). Anfangs steckte jeder Transistor in einem separaten Geh&auml;use. Hier siehst du eine Schaltung mit einzelnen (diskreten) Transistoren (die schwarzen, D-f&ouml;rmigen Teile) und Widerst&auml;nden (braune, gestreifte zylindrische Bauteile):<br />
+        	<div class="sidenoteBig"><small>Foto und Aufbau: Simon Inns, Lizenz CC BY-SA, Quelle: waitingforfriday.com.</small></div>
+            <img class="indent" width="400px" src="/bjc-r/img/6-computers/discrete-transistor-adder.jpg" alt="Schaltung mit einzelnen Transistoren" title="Schaltung mit einzelnen Transistoren" />
+        </p>
+        <div class="endnote">
+        	<a href="#hint-discrete-transistors" data-toggle="collapse" title="Mehr &uuml;ber dieses Foto erfahren">Mehr zu dieser Schaltung</a>
+			<div id="hint-discrete-transistors" class="collapse">
+            	<p>Die Transistoren sind die schwarzen, D-f&ouml;rmigen Bauteile. Die braunen, gestreiften Zylinder sind <em>Widerst&auml;nde</em>, ein sehr einfaches Bauteil, das es fast so lange gibt wie elektrische Anwendungen. Die dunklen Linien durch die Platine sind Leiterbahnen. Mit einem Tintenstrahldrucker, der Silberfarbe druckt, lie&szlig;en sich solche Leiterbahnen herstellen. Alle Bauteile sitzen auf der Vorderseite; ihre Dr&auml;hte (je ein Draht an jedem Widerstand, drei dicht beieinander am Transistor) gehen durch die Platine und werden auf der R&uuml;ckseite verl&ouml;tet. Einige Dr&auml;hte verlaufen trotzdem vorne, weil sich sonst Leiterbahnen kreuzen w&uuml;rden.</p>
+                <p>Der IBM 7090, entwickelt 1959, bestand aus &uuml;ber 50.000 diskreten Transistoren. Diese Maschine war riesig und teuer: rund drei Millionen US-Dollar, inflationsbereinigt &uuml;ber 55&nbsp;Millionen. Damals glaubte man, Computer k&ouml;nnten nur von gro&szlig;en Unternehmen oder Regierungen genutzt werden.</p>
+            </div>
+        </div>
+        <p>Fr&uuml;he ICs enthielten nur wenige Transistoren. Die oben gezeigte Schaltung h&auml;tte Anfang der 1960er Jahre gerade in einen IC gepasst. Doch der Fortschritt war rasant: Moderne Chips enthalten Milliarden Transistoren. Der gr&ouml;&szlig;te Prozessorchip 2017, der AMD Epyc, besitzt mehr als <em>19&nbsp;Milliarden</em> Transistoren!</p>
+
+        <div class="endnote">
+            <p>So komplexe Bauteile wie ICs beruhen auf vielen Abstraktionsebenen. Wenn ein Chip Milliarden Transistoren enth&auml;lt, kann niemand sie einzeln platzieren. Stattdessen nutzen Entwickler*innen spezielle Programmiersprachen, mit denen sie kleine Schaltungselemente definieren, daraus gr&ouml;&szlig;ere Bausteine zusammensetzen und so weiter.</p>
+        </div>
+
+        <h3>Was steckt in einem IC oder auf einer Leiterplatte?</h3>
+		<div class="takeNote">
+            <p>Metalle wie Tantal, Zinn, Wolfram und Gold werden als <em>Konfliktmineralien</em> bezeichnet. Sie stecken in Technologien, die wir t&auml;glich nutzen: Laptops, Handys, Tablets, Autos, Flugzeuge, Beleuchtung, Schmuck. Milizen und Rebellen in Ostkongo finanzieren sich &uuml;ber den Handel mit diesen Mineralien; seit 1998 wurden dadurch &uuml;ber 5&nbsp;Millionen Menschen get&ouml;tet.</p>
+            <p>In diesem rohstoffreichen zentralafrikanischen Land leben viele Bergleute unter extrem schlechten Bedingungen und leiden unter Gewalt und Unterdr&uuml;ckung durch Milizen, die ihre Feldz&uuml;ge mit diesen Rohstoffen finanzieren.</p>
+            <p>Die Elektronikbranche arbeitet mit Minen in der Demokratischen Republik Kongo zusammen, um nachverfolgbare Lieferketten zu schaffen und Ger&auml;te mit konfliktfreien Mineralien herzustellen.</p>
+            <small>Ausz&uuml;ge aus <a href="https://www.intel.com/content/www/us/en/corporate-responsibility/conflict-free-minerals.html" target="_blank" title="Intel’s Efforts Are Helping Families in the Congo">Intel&rsquo;s Efforts Are Helping Families in the Congo</a>. Siehe auch <a href="https://www.intel.com/content/www/us/en/corporate-responsibility/statement-combating-modern-slavery.html" target="_blank" title="Intel Statement on Combating Modern Slavery">Intel Statement on Combating Modern Slavery</a>. Quelle kritisch einordnen.</small>
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>Recherchiere zu Konfliktmineralien und welchen Beitrag die Elektronikindustrie leistet, um die Bedingungen f&uuml;r Minenarbeiter*innen zu verbessern.</li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

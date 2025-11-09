@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 7, Labor 2: Rekursionsprojekte, Seite 4</title>
+	</head>
+
+	<body>
+		<h2>Rekursiver Mondrian</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> nutzt du Rekursion, um abstrakte Kunst im Stil von Piet Mondrian zu gestalten. <img class="inline" src="/bjc-r/img/icons/tough-stuff.png" alt="Knifflig" title="Knifflig" />  </p>
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>Rekursion ist nicht nur für Fraktale. <a href="https://duckduckgo.com/?q=mondrian&ia=images" target="_blank" title="DuckDuckGo: Mondrian">Suche nach dem niederländischen Maler Piet Mondrian</a>, um Beispiele seiner Werke zu sehen.</li>
+            </ol>
+            <div class="endnote">
+                <a href="#hint-frac" data-toggle="collapse" title="Warum ist das kein Fraktal?">Warum ist das kein Fraktal?</a>
+                <div id="hint-frac" class="collapse">
+                    <p>Sie ähneln Fraktalen darin, dass das Gesamtbild aus kleineren Bildern desselben Typs besteht. Aufgrund des Zufalls sehen die kleineren Bilder aber nicht exakt aus wie das Original. Ein Fraktal ist „selbstähnlich“, d. h. jeder Teil gleicht dem Ganzen.</p>
+                </div>
+            </div>
+        </div>
+        <p>
+            Mondrian arbeitete ohne Computer, aber du kannst seine Malweise modellieren. Der Basisfall ist ein Rechteck mit schwarzem Rand. Weil das komplexer ist als die bisherigen Basisfälle, versteckst du den Zeichen-Code in einem Block <code>rectangle</code>.<br />
+            <img class="indent noshadow" src="/bjc-r/img/7-recursion/mondrian-1.png" alt="Rekursiver Mondrian" title="Rekursiver Mondrian" />
+            <img class="indent noshadow" src="/bjc-r/img/7-recursion/mondrian-base-case-blue.png" alt="Mondrian-Basisfall: blaues Rechteck mit schwarzem Rand" title="Mondrian-Basisfall: blaues Rechteck mit schwarzem Rand" />
+        </p>
+
+        <div class="forYouToDo">
+            <ol start="2">
+                <li>
+                    <a class="run" href="/bjc-r/prog/7-recursion/U7L2-Mondrian.xml" target="_blank"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Starterprojekt laden und speichern" title="Starterprojekt laden und speichern"></a>
+                    <p>
+                        Ein Teil des Codes ist bereits vorhanden. Eine Anweisung initialisiert die Variable <var>colors</var> mit einer Liste von Befehlen.<br />
+                        <img class="indent" src="/bjc-r/img/7-recursion/set-colors.png" alt="set (colors) to {(set pen color to red), …}" title="Farbliste als Befehlsliste" />
+                        <div class="endnote">Beachte: Es handelt sich um eine Liste von <em>Scripts</em>. Code als Daten zu verwenden, ist eine wichtige Abstraktion in Snap<em>!</em>.</div>
+                    </p>
+                    <p>
+                        Für den Basisfall <code>rectangle</code> und die rekursive Prozedur <code>Mondrian</code> gibt es Teilskelette.<br />
+                        <img class="indent" src="/bjc-r/img/7-recursion/rectangle-block.png" alt="rectangle, width: (400) height: (300)" title="rectangle, width: (400) height: (300)" />
+                        <img class="indent" src="/bjc-r/img/7-recursion/Mondrian-block.png" alt="Mondrian, level: (5) width: (400) height: (300)" title="Mondrian, level: (5) width: (400) height: (300)" />
+                        <div class="endnote">Praktisch: Lege ein Skript <code>when (r) key pressed</code> an, das das Rechteck zeichnet, und eines mit <code>when (m) key pressed</code> für den Mondrian (jeweils mit <code>clear</code> und Startposition).</div>
+                    </p>
+                    <p>Außerdem findest du zwei vollständige Blockdefinitionen. Lies sie beide durch.<br />
+                        <img class="indent" src="/bjc-r/img/7-recursion/set-pen-to-paint.png" alt="set pen to paint with thickness (thickness) { … }" title="Stift für gefüllte Flächen setzen" />
+                        <img class="indent" src="/bjc-r/img/7-recursion/set-pen-to-line.png" alt="set pen to black line { … }" title="Stift für Linien setzen" />
+                    </p>
+                </li>
+                <li>Schreibe als Erstes den Block <code>rectangle</code>, damit er ein gefülltes Rechteck mit schwarzem Rand zeichnet. Verwende anschließend Rekursion in <code>Mondrian</code>, indem du das Rechteck horizontal oder vertikal teilst, solange <var>level</var> größer als 1 ist. Nutze Zufall, um Breite/Höhe der Teilrechtecke zu bestimmen.</li>
+                <li>Experimentiere mit unterschiedlichen Level-Werten. Welcher Level lässt deine Bilder Mondrians Werken am ähnlichsten aussehen?
+                    <div class="endnote">
+                        Wenn du Inspiration brauchst, sieh dir weitere Beispiele im Projekt an.<br />
+                        <img class="indent noshadow" src="/bjc-r/img/7-recursion/mondrian-3.png" alt="Rekursiver Mondrian" title="Rekursiver Mondrian" />
+                    </div>
+                </li>
+                <li><a href="https://www.wikiart.org/en/piet-mondrian/all-works#!#filterName:Style_neoplasticism,resultType:masonry">Betrachte echte Mondrian-Bilder</a> und zähle, wie viele Rechtecke er verwendet. Welche <var>level</var>-Einstellung führt bei dir zu ähnlichen Ergebnissen?</li>
+            </ol>
+        </div>
+		<div class="ifTime">
+			<ol start="8">
+				<li>
+					Bisher hast du nur Primärfarben (Rot/Gelb/Blau) plus Schwarz und Weiß genutzt – so wie Mondrian. Jetzt bist du die Künstlerin/der Künstler: Wähle andere Farben, wenn du möchtest. Überlege, warum Mondrian diese intensiven Farben wählte.
+					<div class="endnote">
+						<a href="#hint-rgb" data-toggle="collapse" title="Sind Primärfarben nicht Rot, Grün und Blau?">Rot, Grün und Blau?</a>
+						<div id="hint-rgb" class="collapse">
+						<p>Bei Licht mischt man Rot, Grün und Blau. Beim Mischen von <em>Farben</em> (z. B. Farbe/Karton) gelten Rot, Gelb und Blau als Primärfarben.</p></div>
+					</div>
+				</li>
+				<li>Vergleiche sorgfältig deine Ergebnisse mit Mondrians Bildern. Wie gut bildet dein Algorithmus (rechteckige Unterteilung, rekursives Aufteilen) Mondrians Technik ab? Fällt dir auf, dass zufällige Farben manchmal zwei angrenzende Rechtecke identisch einfärben? Überlege, wie du deinen Code verbessern könntest (z. B. Regeln für Farbwahl oder Verhältnis der Teilrechtecke).</li>
+			</ol>
+        </div>
+        <p>Mondrians geometrische Bilder entstanden spät in seiner Karriere. Er begann mit realistischen Landschaften und wurde über die Zeit immer abstrakter. Mehr über sein Werk findest du im <a href="https://de.wikipedia.org/wiki/Piet_Mondrian">Wikipedia-Artikel</a>.</p>
+
+</body>
+</html>

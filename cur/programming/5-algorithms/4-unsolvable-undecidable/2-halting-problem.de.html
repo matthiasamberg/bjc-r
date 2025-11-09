@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 5, Labor 4: Unlösbare und unentscheidbare Probleme, Seite 2</title>
+	</head>
+
+	<body>
+        <h2>Ein unentscheidbares Problem</h2>
+        <div class="todo">
+            <p>PG: Das ist ein wunderbares Stück Logik, schön geschrieben. Ich würde es gern behalten (und vielleicht sprachlich weiter vereinfachen), aber Widerspruchsbeweise sind notorisch schwierig. Hilft der Programmierkontext oder erschwert er es? Gibt es Feedback? CB besteht darauf, „das zu lehren“, also sollten wir mehr als ein bloßes Faktenwissen daraus machen. Mir gefällt unser Ansatz – funktioniert er?</p>
+            <p>BH: FYTD 1c ist etwas TIF-verdächtig. Außerdem hat Church das wohl vor Turing bewiesen – bitte prüfen. Und bring sein Bild zurück!</p>
+            <p>MF: Ich möchte diese Seite überarbeiten, weil die Idee es verdient.</p>
+        </div>
+
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> beschäftigst du dich mit einem Problem, das <em>keine</em> Lösung haben kann.</p>
+        </div>
+
+        <p>Du hast inzwischen die frustrierende Erfahrung des Debuggens gemacht. Es wäre großartig, wenn es ein universelles Debugging-Programm gäbe, das jeden Code analysieren und Fehler erkennen kann. Mit einem Widerspruchsbeweis (wie auf der vorherigen Seite) zeigen wir, dass das unmöglich ist.</p>
+        <p>Dazu nehmen wir zunächst an, dass es eine Funktion gibt, die <em>Endlosschleifen</em> in Programmen erkennt (also Situationen, in denen eine Funktion nie einen Wert liefert). Diese Funktion benutzen wir dann in einem speziell konstruierten Programm, das einen Widerspruch erzeugt. Daraus folgt: Unsere Annahme ist falsch – <strong>ein universelles Debugging-Programm kann nicht existieren</strong>. „Hat dieses Programm einen Bug?“ ist ein <em>unentscheidbares Problem</em>; es gibt keinen Algorithmus, der es für alle Programme zuverlässig beantwortet.</p>
+        <div class="vocabFullWidth">: <strong>Endlosschleife</strong>, <strong>Unlösbares Problem</strong>, <strong>Unentscheidbares Problem</strong>
+            <p>Eine <strong>Endlosschleife</strong> ist eine Folge von Befehlen, die sich für immer wiederholt.</p>
+            <p>Ein <strong>unlösbares Problem</strong> ist ein Problem, für das kein Algorithmus existiert, der die Lösung liefert.</p>
+            <p>Ein <strong>unentscheidbares Problem</strong> ist ein Problem, für das kein Algorithmus existiert, der für jede Eingabe immer die korrekte Ja/Nein-Antwort liefert. Unentscheidbare Probleme sind also unlösbare Probleme mit Wahr/Falsch-Antworten (z. B. „Hat mein Code einen Bug?“).</p>
+        </div>
+
+        <h3>Wir nehmen an, die Funktion <code>halts?</code> existiert</h3>
+        <h4 class="box-head">Die Annahme</h4>
+        <p>
+			<div class="sidenote">Wir zeigen den Code von <code>halts?</code> nicht, weil wir beweisen wollen, dass er gar nicht existieren kann – egal wie er aussehen würde.</div>
+            Zuerst <em>nehmen wir an</em>, es gäbe eine Funktion <code>halts?</code>, die feststellt, ob ein Reporter in endlicher Zeit einen Wert liefert (ob er also <em>stoppt</em>). Sie hat zwei Eingaben: eine Funktion und einen Eingabewert für diese Funktion. Sie gibt <code>true</code> zurück, wenn die Funktion bei diesem Eingabewert stoppt, und <code>false</code>, wenn sie unendlich lange läuft.<br />
+            <img class="indent" src="/bjc-r/img/5-algorithms/halts.png" alt="halts? (function) (input)" title="halts? (function) (input)" />
+        </p>
+
+        <p>Beispiel: Die Funktion <code>round</code> läuft bei der Eingabe <var>7.5</var> nicht endlos, sondern liefert 8.</p>
+        <div class="sidenote">Der graue Ring um die Eingabefunktion zeigt, dass <code>halts?</code> die Funktion als Daten behandelt, sie also nicht direkt ausführt.</div>
+        <p class="indent"><img class="inline" src="/bjc-r/img/5-algorithms/halts-reporting.png" alt="halts?(round())(7.5) reporting true" title="halts?(round())(7.5) reporting true" />, weil <img class="inline" src="/bjc-r/img/5-algorithms/round(7-5).png" alt="round (7.5)" title="round (7.5)" /> einen Wert liefert.</p>
+
+        <p>Stell dir dagegen eine Funktion vor, die bei der Eingabe <var>foo</var> in einer Endlosschleife steckenbleibt und nie einen Wert liefert.</p>
+        <p class="indent"><img class="inline" src="/bjc-r/img/5-algorithms/halts-reporting-false.png" alt="halts?(program with an infinite loop ())(foo) reporting false" title="halts?(program with an infinite loop ())(foo) reporting false" />, weil <img class="inline" src="/bjc-r/img/5-algorithms/program-with-loop(foo).png" alt="program with an infinite loop (foo)" title="program with an infinite loop (foo)" /> nicht stoppt.</p>
+
+        <h4 class="box-head">Der nächste Schritt ist einer Funktion namens <code>tester</code></h4>
+        <p>
+            Jetzt schreiben wir eine Funktion <code>tester</code>, die <code>halts?</code> benutzt, um ein Problem zu konstruieren.
+        </p>
+        <p class="indent"><img class="inline" src="/bjc-r/img/5-algorithms/tester.png" alt="definition von tester" title="definition von tester" /></p>
+
+        <p><code>tester</code> nimmt eine Funktion <code>fn</code> als Eingabe. Es prüft mit <code>halts?</code>, ob <code>fn</code> bei Eingabe <code>fn</code> selbst stoppt. Wenn <code>halts?</code> <code>true</code> meldet, lässt <code>tester</code> sein Ergebnis mittels <code>report</code> sofort stoppen. Wenn <code>halts?</code> <code>false</code> meldet, startet <code>tester</code> eine Endlosschleife.</p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>
+                    <div class="ap-standard">DAT-2.C</div>
+                    <p>Was passiert, wenn du <code>tester</code> mit einer Funktion aufrufst, die immer stoppt? Was, wenn die Funktion nicht stoppt? Erkläre jeweils, warum das passiert.</p>
+                </li>
+                <li>
+                    <div class="ap-standard">DAT-2.C.5</div>
+                    <p>Beschreibe in Worten, was <code>tester</code> macht. (Sprich nicht nur von „Funktion“) Was sind die möglichen Situationen? Was geschieht jeweils?</p>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Wir rufen <code>tester</code> mit sich selbst auf</h3>
+        <p>
+            <img class="inline" src="/bjc-r/img/5-algorithms/testertester.png" alt="tester (tester())" title="tester (tester())" />
+        </p>
+        <p>
+            Wir betrachten nun <code>tester(tester)</code>. Also wird <code>tester</code> aufgerufen und bekommt als Eingabe wieder <code>tester</code>.
+        </p>
+
+        <p>Es kann nur zwei Möglichkeiten geben:</p>
+        <ol>
+            <li><code>halts?(tester, tester)</code> liefert <code>true</code>.</li>
+            <li><code>halts?(tester, tester)</code> liefert <code>false</code>.</li>
+        </ol>
+
+        <p>
+            Untersuchen wir beide Fälle.
+        </p>
+        <ol>
+            <li>
+                <p>Falls <code>halts?</code> <code>true</code> meldet, bedeutet das: <code>tester(tester)</code> stoppt. In diesem Fall führt <code>tester</code> den Zweig <code>report true</code> aus, liefert also sofort einen Wert und stoppt tatsächlich. <code>halts?</code> hätte also richtig gelegen? Moment – sehen wir genauer hin.</p>
+                <p>In diesem Zweig müsste <code>tester</code> <code>halt?</code> aufrufen, dann selbst stoppen. Aber <code>tester</code> würde in diesem Fall aufhören, wodurch <code>halts?</code> korrekt <code>true</code> gemeldet hätte. Klingt konsistent? Gleich sehen wir, warum es nicht passt.</p>
+            </li>
+            <li>
+                <p>Falls <code>halts?</code> <code>false</code> meldet, behauptet es, dass <code>tester(tester)</code> nicht stoppt. Daraufhin geht <code>tester</code> in die Endlosschleife. Das heißt, <code>tester(tester)</code> stoppt wirklich nicht. Klingt auch konsistent? Schauen wir genauer hin.</p>
+            </li>
+        </ol>
+
+        <p>Wo liegt nun der Widerspruch? Betrachte den Fall, in dem <code>halts?</code> <code>true</code> meldet:</p>
+        <ul>
+            <li><code>halts?</code> behauptet: <code>tester(tester)</code> stoppt.</li>
+            <li>Daraufhin führt <code>tester</code> den <code>report</code>-Zweig aus, stoppt also sofort. Soweit scheint alles zu passen.</li>
+            <li>Aber <code>tester</code> ruft <code>halts?</code> auf und erwartet, dass <code>halts?</code> korrekte Antworten liefert. Wenn <code>halts?</code> <code>true</code> meldet, würde <code>tester</code> tatsächlich stoppen – also korrekt. Kein Widerspruch?</li>
+        </ul>
+
+        <p>Der Widerspruch entsteht erst im zweiten Fall:</p>
+        <ul>
+            <li><code>halts?</code> meldet <code>false</code> – also soll <code>tester(tester)</code> nicht stoppen.</li>
+            <li>Daraufhin läuft <code>tester</code> in die Endlosschleife. <code>tester(tester)</code> stoppt wirklich nicht.</li>
+        </ul>
+
+        <p>Nun scheint es ebenfalls zu passen. Wo ist der Trick? Wir müssen genauer analysieren:</p>
+        <p>Angenommen, <code>halts?</code> meldet <code>true</code>. Dann stoppt <code>tester(tester)</code> – und <code>halts?</code> hatte recht. Angenommen, <code>halts?</code> meldet <code>false</code>. Dann stoppt <code>tester(tester)</code> nicht – ebenfalls richtig. Wo steckt also der Widerspruch?</p>
+
+        <p>Der Widerspruch liegt darin, dass <code>tester</code> in beiden Fällen das Gegenteil dessen tut, was <code>halts?</code> vorhersagt:</p>
+        <ul>
+            <li>Wenn <code>halts?</code> <code>true</code> meldet, führt <code>tester</code> <code>report</code> aus. Dadurch stoppt <code>tester</code> zwar, aber er hat <code>halts?</code> aufgerufen und damit die Vorhersage bestätigt. Soweit scheint es zu passen.</li>
+            <li>Entscheidend ist die Verbindung: <code>tester</code> fragt <code>halts?</code>, ob <code>tester</code> mit dieser Eingabe stoppt, und verhält sich dann genau umgekehrt: Meldet <code>halts?</code> <code>true</code>, stoppt <code>tester</code> sofort (ok). Meldet <code>halts?</code> <code>false</code>, geht <code>tester</code> in eine Schleife (ebenfalls ok).</li>
+        </ul>
+
+        <p>Um den klassischen Widerspruch klarer zu machen, denken wir Schritt für Schritt:</p>
+        <ol>
+            <li><code>halts?</code> meldet <code>true</code> → <code>tester</code> stoppt → <code>halts?</code> lag richtig.</li>
+            <li><code>halts?</code> meldet <code>false</code> → <code>tester</code> stoppt nicht → <code>halts?</code> lag richtig.</li>
+        </ol>
+
+        <p>Wo ist der Konflikt? Wir müssen berücksichtigen, dass <code>tester</code> selbst die Vorhersage von <code>halts?</code> nutzt, um das Gegenteil zu tun:</p>
+        <ul>
+            <li>Wenn <code>halts?</code> <code>true</code> sagt, stoppt <code>tester</code> sofort – also stimmt es.</li>
+            <li>Wenn <code>halts?</code> <code>false</code> sagt, läuft <code>tester</code> unendlich – ebenfalls korrekt.</li>
+        </ul>
+
+        <p>Der Widerspruch zeigt sich, wenn wir uns klar machen, dass die Annahme „<code>halts?</code> existiert“ dazu führt, dass <code>tester</code> ein Verhalten erzwingt, das <code>halts?</code> immer widerlegt. Die beiden Optionen schließen sich gegenseitig aus – <code>halts?</code> kann keine konsistente Antwort geben. Deshalb kann <code>halts?</code> nicht existieren.</p>
+
+        <div class="forYouToDo">
+			<p>
+				<ol>
+					<li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Besprich es mit deiner Partnerin/deinem Partner" title="Besprich es mit deiner Partnerin/deinem Partner" />Erklärt euch gegenseitig Schritt für Schritt, warum <code>halts?</code> nicht existieren kann. Achtet besonders auf den Zusammenhang zwischen der Vorhersage von <code>halts?</code> und dem Verhalten von <code>tester</code>.</li>
+				</ol>
+			</p>
+        </div>
+        <div class="endnote">Es ist egal, welchen Wert <code>tester</code> zurückgibt – wichtig ist nur, <em>dass</em> er einen Wert liefert. Entscheidend ist, was <code>halts?</code> meldet.</div>
+
+        <div class="takeNote">
+            <p>Egal, was <code>halts?</code> meldet – in einem Programm wie diesem wird es sich immer selbst widersprechen. <strong>Dieser Widerspruch zeigt, dass die Annahme falsch ist:</strong> <code>halts?</code> lässt sich nicht schreiben. Das gilt nicht nur für Snap<em>!</em>. Die Programmiersprache beeinflusst, wie klar unser Code aussieht, aber nicht, ob ein Problem lösbar ist. Selbst mit Quantencomputern wird es nie ein universelles Debugging-Programm geben. Dieses berühmte Problem heißt <em>Halteproblem</em>; die Aussage, dass es unentscheidbar ist, nennt man das <em>Halting Theorem</em>.</p>
+		</div>
+
+        <div class="forYouToDo">
+            <ol start="2">
+                <li>
+					<img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Besprich es mit deiner Partnerin/deinem Partner" title="Besprich es mit deiner Partnerin/deinem Partner" />
+                    Geht den gesamten Beweis gemeinsam durch. Stellt sicher, dass ihr beide versteht:
+                    <ol>
+	                    <li>Alles aus Aufgabe 1 über den Widerspruchsbeweis, was <code>halts?</code> macht und wie es im Beweis verwendet wird</li>
+	                    <li>Das Grundverhalten von <code>tester</code> (für <em>jede</em> Eingabefunktion)</li>
+	                    <li>Warum der Aufruf <img class="inline" src="/bjc-r/img/5-algorithms/testertester.png" alt="tester(tester())" title="tester(tester())" /> zum Widerspruch führt</li>
+                        <li>Welche Bedeutung dieser Widerspruch im Beweis hat</li>
+                        <li>Ob das Halteproblem unlösbar, unentscheidbar oder beides ist – und <em>warum</em></li>
+                    </ol>
+                </li>
+                <li>Schreibe einen Absatz, in dem du erklärst, worin sich ein Problem, das <em>nicht lösbar</em> ist (wie das Halteproblem), von einem Problem unterscheidet, das nur <em>unvernünftig viel Zeit</em> benötigt.</li>
+            </ol>
+        </div>
+
+			<div class="atworkFullWidth">
+				<div class="imageRight">
+					<img class="noshadow" height="200px" src="/bjc-r/img/atwork/Alan_Turing.jpeg" alt="Foto von Alan Turing" title="Foto von Alan Turing" />
+				</div>
+				<p>Alan Turing (1912–1954) war ein britischer Informatiker und Mathematiker. Während des Zweiten Weltkriegs entwickelte er entscheidende Techniken, um verschlüsselte deutsche Nachrichten zu entziffern – ein wichtiger Beitrag zum Sieg der Alliierten. Nach dem Krieg arbeitete er an der Universität Manchester und widmete sich der Idee der Künstlichen Intelligenz. Von ihm stammt auch der „Turing-Test“. Gemeinsam mit Alonzo Church begründete er die theoretische Informatik und zeigte, dass Computer funktionieren müssen – unabhängig von künftiger Technik.</p>
+
+
+				<p>Turing bewies, dass es klar definierte mathematische Probleme gibt, die Computer niemals lösen können, egal wie groß oder schnell sie werden. Tragischerweise wurde er wegen seiner Homosexualität verurteilt und zwangsweise hormonell behandelt; vermutlich nahm er sich später das Leben. Er gilt als „Vater der modernen Informatik“.</p>
+				<p><a href="https://www.nytimes.com/2019/06/05/obituaries/alan-turing-overlooked.html" title="Artikel: Overlooked No More" target="_blank">Artikel: Overlooked No More</a></p>
+			</div>
+
+
+	</body>
+</html>

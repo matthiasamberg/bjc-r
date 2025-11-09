@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Mutation von Variablen</title>
+	</head>
+
+	<body>
+		<p>
+			Angenommen, es gibt eine globale Variable <code>foo</code> und ich definiere die beiden Blöcke unten:
+		</p>
+		<p><img src="/bjc-r/img/list/add5foo.png" alt="add 5 to foo" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/bjc-r/img/list/add20any.png" alt="add 20 to (var)" /></p>
+		<p>
+			Jetzt führe ich folgendes Skript aus:
+		</p>
+		<p><img src="/bjc-r/img/list/addscript.png" alt="call both blocks" /></p>
+		<p>
+			Welchen Endwert hat <code>foo</code>? 100? 105? 120? oder 125? Probiere es aus.
+		</p>
+		<hr />
+		<p>
+			Führe nun ein ähnliches Experiment durch, aber diesmal ist der Wert von <code>foo</code> eine Liste:
+		</p>
+		<p><img src="/bjc-r/img/list/append5foo.png" alt="append 5 to foo" /> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/bjc-r/img/list/append20var.png" alt="append 20 to (var)" /></p>
+		<p><img src="/bjc-r/img/list/appendscript.png" alt="call both append blocks" /></p>
+		<p>
+			Welche Elemente enthält <code>foo</code>, nachdem du dieses Skript ausgeführt hast?
+		</p>
+		<hr />
+		<p>
+			Warum liefern diese beiden Experimente unterschiedliche Ergebnisse?
+		</p>
+		<p>
+			Dass die beiden Blöcke, die explizit die globale Variable <code>foo</code> verändern, funktionieren, ist erwartbar. Aber warum kannst du einer Liste, die als Eingabe übergeben wird, ein neues Element hinzufügen, während du eine als Eingabe übergebene Zahl nicht ändern kannst?
+		</p>
+		<p>
+			Snap<em>!</em> verhält sich in beiden Fällen völlig konsistent. Du musst dir nur den Unterschied zwischen einem <em>Wert</em> – Zahl, Text, Boolescher Wert oder Liste – und einer <em>Variable</em> klar machen. Eine Variable ist im Wesentlichen die Verknüpfung zwischen einem Namen und einem Wert. (Das ist nicht ganz die formale Definition aus einem Compilerkurs, reicht hier aber aus.)
+		</p>
+		<p>
+			Wie in den meisten Programmiersprachen sind die Eingaben eines Blocks in Snap<em>!</em> <em>Werte</em>. Dem Block ist egal, wie der Wert zustande kam: ob du ihn direkt eingibst, ob ein Reporter ihn berechnet oder ob er aus einer Variable stammt.
+		</p>
+		<p>
+			Falls dir das zu abstrakt ist, schau dir dieses Skript an:
+		</p>
+		<p><img src="/bjc-r/img/list/addfoo+3.png" alt="add 20 to (foo+3)" /></p>
+		<p>
+			Du würdest nicht erwarten, dass sich dadurch der Wert von <code>foo</code> ändert – aber auf welchen Wert überhaupt? 123? 117? Es ergibt schlicht keinen Sinn. Die Eingabe für <code>add 20 to</code> ist die Zahl 103 – der <em>Wert</em> von <img src="/bjc-r/img/list/foo+3.png" alt="foo+3" /> – nicht die Variable selbst. Genau dasselbe passiert im ersten Experiment: Die Eingabe für <code>add 20 to</code> ist 105 (weil der Block <code>add 5 to foo</code> den Wert von <code>foo</code> verändert hat), nicht die Variable <code>foo</code> selbst.
+		</p>
+		<p>
+			Der Block <code>change</code> in der Definition von <code>add 20 to</code> verändert sehr wohl eine Variable: nämlich <code>var</code>. Diese Variable ist lokal im Skript des Blocks definiert; eine Änderung wirkt sich außerhalb nicht aus. Lokale Variablen sind temporär – sobald der Block endet, verschwinden sie.
+		</p>
+		<p>
+			Was passiert, wenn <code>foo</code> eine Liste ist? Im Gegensatz zu Zahlen sind Listen selbst veränderlich. (<em>Variablen</em> sind es ebenfalls – deswegen reden wir überhaupt darüber – jedoch nur, wenn der Variablenname selbst in einem <code>set</code>- oder <code>change</code>-Block steht.) Nach dem Ausführen der beiden <code>append</code>-Blöcke im zweiten Experiment verweist die Variable <code>foo</code> auf <em>dieselbe Liste</em> wie zuvor. Diese Liste enthält jetzt nur mehr Elemente. Man sagt: Die Liste behält ihre Identität, obwohl sich ihr Inhalt ändert.
+		</p>
+	</body>
+</html>

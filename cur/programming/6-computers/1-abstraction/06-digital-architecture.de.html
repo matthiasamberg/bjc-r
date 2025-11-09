@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 6, Labor 1: Hierarchie der Computerabstraktion, Seite 6</title>
+	</head>
+    <body>
+        <h2>Die digitale Dom&auml;ne: Architektur</h2>
+
+        <div class="learn"><strong>Auf dieser Seite</strong> wechseln wir von Software zu Hardware und beginnen mit der <em>Architektur</em> &ndash; also der Sicht, die die Hardware der Software bietet.</div>
+
+		<p>Software w&auml;re wertlos ohne die <em>Hardware</em> des Computers: die Schaltkreise im Geh&auml;use. So wie Software in Abstraktionsschichten gedacht wird, arbeiten auch Hardware-Entwickler*innen mit Abstraktionsebenen.</p>
+		<img class="imageRight noshadow" src="/bjc-r/img/6-computers/hardware-abstraction-mini.png" alt="Vereinfachtes Diagramm der Computerabstraktionshierarchie mit den Ebenen Software-Bereich, Digitaler Bereich und Analogbereich; zwischen Software und Digital steht „Programmierabstraktionsbarriere“, zwischen Digital und Analog „Digitale Abstraktionsbarriere“; ein Pfeil markiert hohe und niedrige Abstraktion." title="Vereinfachtes Diagramm der Abstraktionsebenen eines Computers" />
+        <p>Oft hei&szlig;t es, Computer w&uuml;rden alle Daten nur mit zwei Werten darstellen: 0 und 1. Ganz so funktioniert Elektronik aber nicht. Hardware-Designer*innen k&ouml;nnen so arbeiten, <em>als ob</em> Schaltungen nur aus (0) oder an (1) w&auml;ren, weil es die <strong>digitale Abstraktion</strong> gibt &ndash; die wichtigste Abstraktion in der Hardware. Oberhalb dieser Ebene liegen vier detailliertere Ebenen; zusammen bilden sie die <strong>digitale Dom&auml;ne</strong>. Unterhalb der digitalen Abstraktion arbeiten Entwickler*innen in der <strong>analogen Dom&auml;ne</strong>, in der eine Leitung in einer Schaltung beliebige Spannungswerte annehmen kann, nicht nur zwei.</p>
+        <p>Auf den n&auml;chsten vier Seiten schauen wir uns die vier Ebenen der digitalen Dom&auml;ne genauer an.</p>
+
+        <div class="endnote">
+            <h3>Der gespeicherte Programmcomputer</h3>
+            <p>Wie du in Labor&nbsp;2 sehen wirst, gibt es seit Tausenden von Jahren Maschinen, die Berechnungen ausf&uuml;hren. Der moderne, <em>programmierbare</em> Computer geht jedoch auf die Arbeiten von Charles Babbage im fr&uuml;hen 19.&nbsp;Jahrhundert zur&uuml;ck.</p>
+            <p>Babbage war vor allem Mathematiker, trug aber auch zu Astronomie und &Ouml;konomie bei. Er lebte von 1791 bis 1871, also vor etwa 150 Jahren. Elektrizit&auml;t als Energiequelle war damals noch unbekannt. Um die Zeit seiner Geburt verbreitete sich die Dampfmaschine. Die pr&auml;ziseste Technik jener Zeit waren Zahnr&auml;der wie in Uhren.</p>
+
+            <h4 class="box-head">Difference Engine</h4>
+            <p>Babbages erste Maschine war die Difference Engine. Mit Zahnr&auml;dern entwarf er eine komplexe Maschine, die Zahlentabellen (wie Logarithmen- oder Trigonometrie-Tabellen aus Matheb&uuml;chern) berechnen und drucken sollte. Die Zahnr&auml;der mussten jedoch so pr&auml;zise sein, dass jedes von Hand gefertigt werden musste. Das Projekt wurde so teuer, dass die Regierung die F&ouml;rderung einstellte, und Babbage konnte nie eine vollst&auml;ndige Version fertigstellen.</p>
+            <table class="indent">
+                <tr>
+                    <td>
+                        <img src="/bjc-r/img/6-computers/babbage-difference-engine.jpg" height="200px" alt="Die Difference Engine im Science Museum London: eine gro&szlig;e mechanische Maschine aus Zahnr&auml;dern mit einer Kurbel an der Seite." title="Difference Engine im Science Museum London" /><br />
+                        <small>Difference Engine im Science Museum London</small><br />
+                        <small><small>
+                            Bild: Wikimedia-Nutzer*in geni, 2008, Lizenz GFDL, CC BY-SA.
+                        </small></small>
+                    </td>
+                    <td>
+                        <img src="/bjc-r/img/6-computers/closeup-difference-eng.jpg" height="200px" alt="Nahaufnahme der Zahnr&auml;der der Difference Engine" title="Nahaufnahme der Zahnr&auml;der der Difference Engine" /><br />
+                        <small>Nahaufnahme der Zahnr&auml;der</small><br />
+                        <small><small>
+                            Bild: Wikimedia-Nutzer*in geni, 2008, Lizenz GFDL, CC BY-SA.
+                        </small></small>
+                    </td>
+                </tr>
+            </table>
+
+            <h4 class="box-head">Analytical Engine</h4>
+            <p>Babbage entwarf auch eine allgemeiner einsetzbare Analytical Engine. Seine Partnerin Ada Lovelace schrieb &uuml;ber dieses Konzept und gilt als erste Programmiererin.</p>
+            <table class="indent">
+                <tr>
+                    <td>
+                        <img src="/bjc-r/img/6-computers/analytical-engine-plan-28.jpg" height="200px" alt="Planzeichnung der Analytical Engine (Plan 28, 1837) mit mechanischen Komponenten" title="Planzeichnung der Analytical Engine (Plan 28, 1837)" /><br />
+                        <small>Analytical Engine, Plan&nbsp;28 (1837)</small><br />
+                        <small><small>
+                            Quelle: &bdquo;Charles Babbage Analytical Engine, Plan&nbsp;28&ldquo;, Wikimedia, gemeinfrei.
+                        </small></small>
+                    </td>
+                    <td>
+                        <img src="/bjc-r/img/6-computers/ada-lovelace-portrait.jpg" height="200px" alt="Portr&auml;t von Ada Lovelace" title="Portr&auml;t von Ada Lovelace" /><br />
+                        <small>Ada Lovelace (1815&ndash;1852)</small><br />
+                        <small><small>
+                            Portr&auml;t von Alfred Edward Chalon (1840er), gemeinfrei.
+                        </small></small>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <h3 class="box-head">Die Ebenen der digitalen Dom&auml;ne</h3>
+        <p>Aus heutiger Sicht betrachten wir vier Abstraktionsebenen oberhalb der digitalen Abstraktion:</p>
+        <ul>
+            <li><strong>Architektur:</strong> das Befehlssatz-Interface f&uuml;r Software</li>
+            <li><strong>Komponenten:</strong> Hardware-Bausteine wie Prozessor, Speicher, Ein-/Ausgabe</li>
+            <li><strong>Integrierte Schaltkreise:</strong> Chips, die Komponenten umsetzen</li>
+            <li><strong>Logikgatter:</strong> grundlegende Schaltfunktionen</li>
+        </ul>
+
+        <div class="endnote">
+            <h3>Von-Neumann- und Harvard-Architektur</h3>
+            <p>Die meisten Computer verwenden die <strong>Von-Neumann-Architektur</strong>, in der Programme und Daten denselben Speicher nutzen. Im Gegensatz dazu trennt die <strong>Harvard-Architektur</strong> Programm- und Datenspeicher strikt. Manche Mikrocontroller (wie AVR-Chips in Arduinos) folgen dem Harvard-Modell.</p>
+            <p>Warum sollte man Programme und Daten trennen? Ein Grund liegt in der verwendeten Hardware: Unterschiedliche Speichertechnologien unterscheiden sich in Kosten, Geschwindigkeit und <em>Fl&uuml;chtigkeit</em> (volatile Speicher verlieren Daten ohne Strom, nicht fl&uuml;chtige behalten sie). AVR-Chips kombinieren mehrere Speicherarten:
+                <ul>
+                    <li>
+                        <strong>EEPROM</strong> (512&nbsp;Byte&ndash;4&nbsp;KB) ist nicht fl&uuml;chtig und speichert langlebige Daten. Programme m&uuml;ssen diesen Speicher explizit &uuml;ber eine Bibliothek ansprechen. Der Name &bdquo;Electrically Erasable Programmable Read-Only Memory&ldquo; stammt aus einer Zeit, in der es zuerst ROM gab (nur vom Hersteller beschreibbar), dann PROM (einmal beschreibbar), EPROM (per UV-Licht l&ouml;schbar) und schlie&szlig;lich EEPROM, das elektrisch l&ouml;schbar ist.</li>
+                    <li>
+                        <strong>SRAM</strong> (1&ndash;4&nbsp;KB) ist fl&uuml;chtig und speichert tempor&auml;re Daten, etwa Skriptvariablen in Snap<em>!</em>. &bdquo;Static Random Access Memory&ldquo; bedeutet, dass die Werte zwar Strom brauchen, aber nicht regelm&auml;&szlig;ig aufgefrischt werden m&uuml;ssen (anders als beim &bdquo;Dynamic RAM&ldquo; in gro&szlig;en Hauptspeichern).</li>
+                    <li>
+                        <strong>Flash</strong> (16&ndash;256&nbsp;KB) speichert Programme und Daten dauerhaft. Flash kennst du von USB-Sticks. Es ist technisch eine Form von EEPROM, jedoch g&uuml;nstiger und erfordert spezielle Steuerschaltungen, um die digitale Abstraktion sicherzustellen. Ein Bit von 1 auf 0 zu setzen ist einfach; von 0 auf 1 zu wechseln erfordert ein langsameres L&ouml;schen gr&ouml;&szlig;erer Bl&ouml;cke.</li>
+                </ul>
+            </p>
+            <p>Die Harvard-Architektur nutzt getrennte Schnittstellen f&uuml;r Programm- und Datenspeicher, damit der Prozessor Programmcode und Daten gleichzeitig lesen kann. Das kann die Geschwindigkeit steigern, auch wenn der Effekt in der Praxis begrenzt ist. Viele Prozessoren verwenden <em>Pipelining</em>, &auml;hnlich wie beim W&auml;schewaschen: W&auml;hrend die erste Ladung trocknet, wird die zweite gewaschen. So kann ein Prozessor eine Anweisung dekodieren, w&auml;hrend er die vorherige ausf&uuml;hrt. Ganz so einfach ist es dennoch nicht &ndash; auch Von-Neumann-Architekturen k&ouml;nnen pipelinen, und reine Harvard-Systeme m&uuml;ssten ein Programm von au&szlig;en laden. Daher sind reale Systeme Kompromisse.</p>
+        </div>
+
+        <p>Atmel hat sp&auml;ter eine Reihe ARM-kompatibler 32-Bit-Prozessoren eingef&uuml;hrt, und Arduino bietet Platinen mit dieser CPU an, die dennoch zu den vorhandenen Steckleisten passen.</p>
+        <p>Zur Popularit&auml;t des Arduino tragen <em>Shields</em> bei: Zusatzplatinen, die auf die Steckleisten gesteckt werden und eigene Anschl&uuml;sse oben besitzen. Shields erweitern das System &ndash; zum Beispiel um Motorsteuerungen, Bluetooth, RFID-Leseger&auml;te und mehr. Sowohl Arduino als auch andere Hersteller verkaufen Shields.</p>
+        <div class="sidenote">
+            <small>Stapeln von Arduino-Shields</small><br />
+            <small><small>Bild: Wikimedia-Nutzer Marlon J. Manrique, CC BY-SA 2.0.</small></small>
+        </div>
+		<img class="indent" src="/bjc-r/img/6-computers/arduino-shields.jpg" width="250px" alt="Ein Stapel von Arduino-Shields" title="Arduino-Shields" />
+        <p>Eine ganz andere Hobby-Plattform ist der <em>Raspberry Pi</em>. Er wurde gebaut, um wie ein Desktop- oder Laptop-Computer eingesetzt zu werden, aber mit leichterem Zugriff auf die Elektronik. Er verwendet einen ARM-kompatiblen Prozessor wie viele Smartphones, l&auml;uft aber mit &bdquo;vollwertigen&ldquo; Betriebssystemen. Standardm&auml;&szlig;ig liefert die Pi-Stiftung Linux aus, aber auch Windows l&auml;sst sich installieren.</p>
+        <p>Besonders attraktiv ist der Preis: Je nach Modell kostet der Pi zwischen 5&nbsp;und&nbsp;35&nbsp;US-Dollar. Im Lieferumfang ist nur die Platine (keine Tastatur, kein Display, keine Maus, kein Netzteil, kein Geh&auml;use). Da Anzeigen teuer sind, ist der Pi darauf ausgelegt, an den Fernseher angeschlossen zu werden. Komplettpakete mit einfachem Geh&auml;use, Tastatur und weiterem Zubeh&ouml;r bekommst du f&uuml;r rund 20&nbsp;Dollar; aufw&auml;ndige Geh&auml;use mit Display kosten deutlich mehr.</p>
+        <p>Weil der Pi f&uuml;r den Bildungsbereich gedacht ist, wird er mit Software ausgeliefert, die sonst oft kostenpflichtig ist. Ein prominentes Beispiel ist Mathematica, das f&uuml;r Studierende &uuml;ber 200&nbsp;Dollar kostet, auf dem Pi aber kostenlos enthalten ist.</p>
+        <p>Wie beim Arduino lassen sich Zusatzplatinen mit Sensoren oder Funkmodulen anschlie&szlig;en.</p>
+        <div class="sidenote">
+            <small>Raspberry-Pi-Platine</small><br />
+            <small><small>Bild: Evan Amos, Wikimedia, gemeinfrei.</small></small>
+        </div>
+		<img class="indent" src="/bjc-r/img/6-computers/raspberry-pi.jpg" width="250px" alt="Raspberry-Pi-Platine" title="Raspberry Pi" />
+
+        <div class="endnote">
+        	<a href="#hint-architecture-general" data-toggle="collapse" title="Mehr &uuml;ber Computerarchitekturen erfahren">Mehr &uuml;ber Computerarchitekturen</a>
+            <div id="hint-architecture-general" class="collapse">
+                <h4 class="box-head">Die Speicherhierarchie</h4>
+                <p>Bei gleicher Hardware kostet gro&szlig;er Speicher Geschwindigkeit. Deshalb besitzen Computer nicht nur <em>einen</em> gro&szlig;en Speicher. Im Prozessor gibt es eine kleine Anzahl von <em>Registern</em> (meist 8 bis 16), deren Breite der Architektur entspricht.</p>
+                <p>Der Hauptspeicher moderner Rechner umfasst mehrere Gigabyte. Ein so gro&szlig;er Speicher kann nicht schnell genug sein, um mit dem Prozessor Schritt zu halten. Zum Gl&uuml;ck weisen Programme oft <em>Lokalit&auml;t</em> auf: Wenn gerade auf eine Speicheradresse zugegriffen wurde, folgt h&auml;ufig eine benachbarte. Daher benötigen Programme zwar insgesamt viel Speicher, aber in kurzen Zeitr&auml;umen nur kleine Ausschnitte. Moderne Computer besitzen deshalb eine oder mehrere <em>Caches</em> &ndash; kleinere, aber schnellere Speicher &ndash; zwischen Prozessor und Hauptspeicher. Der Prozessor sorgt daf&uuml;r, dass die zuletzt genutzten Daten im Cache liegen.</p>
+                <p>Ein aktueller 64-Bit-x86-Prozessor hat zum Beispiel einen L1-Cache von 64&nbsp;KB im Prozessorchip, einen gr&ouml;&szlig;eren, langsameren L2-Cache von 256&nbsp;KB (ebenfalls im Chip) und einen L3-Cache von bis zu 2&nbsp;MB au&szlig;erhalb des Prozessors. Jeder Cache enth&auml;lt eine Kopie der zuletzt verwendeten Daten der n&auml;chsten Ebene. Auf den L1-Cache kann der Prozessor fast so schnell zugreifen wie auf seine Register; jede weitere Ebene ist etwas langsamer. Spezielle Hardware im Prozessor verbirgt diese Komplexit&auml;t, sodass Programmierende so tun k&ouml;nnen, als ob der Prozessor direkt mit dem Hauptspeicher verbunden w&auml;re.</p>
+
+                <h4 class="box-head">Second Sourcing</h4>
+                <p>Intel lizenziert anderen Chipherstellern die Produktion von Prozessoren mit derselben Architektur wie die eigenen. Warum? Gro&szlig;e Computerhersteller wie Dell, Apple oder Lenovo m&ouml;chten ihre Produkte nicht von einem einzigen Lieferanten abh&auml;ngig machen. Es geht nicht darum, dass Intel verschwinden k&ouml;nnte, sondern darum, dass eine hohe Nachfrage ein Engpass werden k&ouml;nnte. Wenn andere Firmen wie AMD oder Cyrix denselben Befehlssatz produzieren, verhindert ein Lieferverzug bei Intel Verz&ouml;gerungen bei den PC-Herstellern. Die internen Schaltungen d&uuml;rfen sich unterscheiden, solange sie sich auf Architekturebene gleich verhalten.</p>
+            </div>
+        </div>
+
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>
+                    Dich n&auml;her mit der Analytical Engine zu besch&auml;ftigen, sodass du ein <em>einfaches</em> Programm schreiben kannst, erfordert viel Arbeit. Warte damit bis nach der AP-Pr&uuml;fung. Wenn du interessiert bist, findest du hier umfangreiche Online-Ressourcen:
+                    <ul>
+                        <li><a href="http://www.fourmilab.ch/babbage/contents.html" title="Inhaltsverzeichnis zur Analytical Engine" target="_blank">Analytical-Engine-Inhaltsverzeichnis</a></li>
+                        <li><a href="http://www.fourmilab.ch/babbage/emulator.html" title="Web-Emulator f&uuml;r die Analytical Engine" target="_blank">Web-Emulator f&uuml;r die Analytical Engine</a></li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

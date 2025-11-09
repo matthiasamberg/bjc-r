@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 5, Optionales Labor: Andere Programmiersprachen, Seite 1</title>
+	</head>
+
+	<body>
+		<h2>Sequenzielle Sprachen</h2>
+        <div class="learn">
+            <p><strong>In diesem Labor</strong> lernst du andere Programmiersprachen kennen und wie du auf deinen Snap<em>!</em>-Kenntnissen aufbauen kannst.</p>
+            <p><strong>Auf dieser Seite</strong> geht es um sequenzielle Programmiersprachen – und du wirst sehen, dass du sie im Grunde schon lesen kannst.</p>
+        </div>
+
+		<p>Eine Programmiersprache wird von zwei Dingen geprägt: ihrer Programmierphilosophie und ihren Notationsdetails. Die meisten modernen Sprachen sind <em>multiparadigmatisch</em>, aber im Kern <em>sequenziell</em>. Dazu gehört auch Snap<em>!</em>, obwohl du bereits etwas funktionale Programmierung (Verschachteln von Reportern und Prädikaten) sowie objektorientierte Ideen (Sprites als Objekte) kennengelernt hast.</p>
+		<div class="vocabFullWidth">
+			<div class="sidenote">Über Reporter und Befehle hast du in <a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/4-making-a-new-block.html?topic=nyc_bjc/1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 1, Labor 2, Seite 4: Eigene Blöcke bauen">Einheit 1, Labor 2, Seite 4</a> gelernt; Prädikate in <a href="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.html?topic=nyc_bjc/2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 2: Eingabe prüfen">Einheit 2, Labor 1, Seite 2</a>.</div>
+			<p>
+				<strong>Multiparadigmatische</strong> Sprachen kombinieren verschiedene Stilrichtungen. In Snap<em>!</em> hast du beispielsweise gesehen:
+				<ul>
+					<li><strong>Sequenzielle</strong> Programmierung – Anweisungen werden nacheinander ausgeführt.</li>
+					<li><strong>Funktionale</strong> Programmierung – Berechnungen entstehen durch das Verschachteln von <em>Reportern</em> und <em>Prädikaten</em> statt durch das Hintereinanderausführen von <em>Kommandoblöcken</em>.</li>
+					<li><strong>Objektorientierte</strong> Programmierung – Code wird um Objekte (Sprites) organisiert, die eigene Daten oder Skripte enthalten, statt um Funktionen oder Befehlsfolgen.</li>
+				</ul>
+                <div class="todo">Es wäre schön, kurze Beispiele für jede Stilrichtung zu zeigen. --MF 17.12.24</div>
+			</p>
+			<p style="clear: both; height: 0;"></p>
+		</div>
+		<p>
+			Eine weitere Sprache desselben Typs zu lernen ist <em>viel</em> einfacher, als zum ersten Mal programmieren zu lernen. Hier siehst du zum Beispiel die Binärsuche aus <a href="/bjc-r/cur/programming/5-algorithms//1-searching-lists/3-spell-checker.html?topic=nyc_bjc%2F5-algorithms.topic&course=bjc4nyc.html&novideo&noassignment" title="Labor 1: Binärsuche">Labor 1</a> dieser Einheit:<br />
+
+		<img class="indent" src="/bjc-r/img/5-algorithms/binary-search-block-definition.png" alt="Snap!-Block: binary search for (value) in (data) { ... }" title="binary search for (value) in (data) { ... }" />
+		</p>
+
+		<div class="forYouToDo">
+            <ol>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Besprich es mit deiner Partnerin/deinem Partner" title="Besprich es mit deiner Partnerin/deinem Partner" />
+					 Vergleicht den Snap<em>!</em>-Code mit dem folgenden Python-Code. Welche Anweisungen entsprechen welchen Blöcken?
+                </li>
+            </ol>
+        </div>
+
+		<p>Hier ist dieselbe Prozedur in Python:</p>
+		<pre class="indent">
+def binarySearch(value, data):
+    low = 0
+    high = len(data)-1
+    while low &lt;= high:
+        currentIndex = average(low, high)        # find the middle word
+        currentItem = data[currentIndex]
+        if currentItem == value:
+            return True
+        elif currentItem &gt; value:                # eliminate half the list
+            high = currentIndex-1
+        else:
+            low = currentIndex+1
+    return False
+</pre>
+
+		<p>Der Python-Code sieht dem Snap<em>!</em>-Block ziemlich ähnlich, unterscheidet sich aber in einigen Details.</p>
+        <div class="forYouToDo">
+            <ol start="2">
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Besprich es mit deiner Partnerin/deinem Partner" title="Besprich es mit deiner Partnerin/deinem Partner" />
+                    Lest den Python-Code und notiert Gemeinsamkeiten und Unterschiede im Vergleich zu Snap<em>!</em>.
+                </li>
+            </ol>
+        </div>
+
+        <h3>JavaScript</h3>
+		<p>Hier ist dieselbe Binärsuche in JavaScript:</p>
+		<pre class="indent">
+function binarySearch(value, data) {
+    var low, high, currentIndex, currentItem;
+    low = 0;
+    high = len(data)-1;
+    while (low &lt;= high) {
+        currentIndex = average(low, high);    // find the middle word
+        currentItem = data[currentIndex];
+        if (currentItem == value) {
+            return true;
+        } else if (currentItem &gt; value) {     // eliminate half the list
+            high = currentIndex-1;
+        } else {
+            low = currentIndex+1;
+        }
+    }
+    return false;
+}
+</pre>
+		<p>Auch dieser Code unterscheidet sich nur wenig, bringt aber neue Schreibweisen mit sich.</p>
+        <div class="forYouToDo">
+            <ol start="3">
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Besprich es mit deiner Partnerin/deinem Partner" title="Besprich es mit deiner Partnerin/deinem Partner" />
+                    Vergleicht die JavaScript-Version mit den Varianten in Python und Snap<em>!</em>. Was fällt euch auf?
+                </li>
+            </ol>
+        </div>
+        
+        <div class="ifTime show">
+            <ol start="4">
+                <li>Lies mehr über Besonderheiten von JavaScript.
+                    <ul>
+                        <li><strong>JavaScript erzeugt lokale Variablen anders.</strong> Innerhalb einer Funktion entspricht <pre class="inline">var</pre> dem Block <img class="inline nopadtb" src="/bjc-r/img/blocks/script-variables(a).png" alt="script variables (a)" title="script variables (a)" />. Es gibt modernere Varianten, sie sehen aber erneut anders aus als in Snap<em>!</em>.</li>
+                        <li><strong>JavaScript nutzt geschweifte Klammern zur Strukturierung.</strong> Die Klammern <pre class="inline">{ }</pre> markieren den Bereich eines Blockkörpers – ähnlich wie eine C-Klammer in Snap<em>!</em>. Die Einrückung dient in JavaScript vor allem der Lesbarkeit, sie ist nicht zwingend.</li>
+                        <li><strong>JavaScript nennt alles „Funktion“.</strong> Sowohl Reporter als auch Befehle heißen dort <em>function</em>.</li>
+                        <li><strong>JavaScript erlaubt keine Leerzeichen in Variablennamen.</strong> Stattdessen wird oft „camelCase“ verwendet, z. B. <pre class="inline">currentItem</pre> statt <img class="inline nopadtb" src="/bjc-r/img/5-algorithms/current-item.png" alt="current item" title="current item" />.</li>
+                        <li><strong>JavaScript unterscheidet zwischen <pre class="inline">==</pre> und <pre class="inline">===</pre>.</strong> Wie in Python setzt <pre class="inline">=</pre> den Wert einer Variablen. Vergleiche nutzt <pre class="inline">==</pre> (entspricht <img class="inline nopadtb" src="/bjc-r/img/5-algorithms/x-is-3.png" alt="(x) = (3)" title="(x) = (3)" />) oder <pre class="inline">===</pre> (entspricht <img class="inline nopadtb" src="/bjc-r/img/5-algorithms/is-x-identical-to-3.png" alt="is (x) identical to (3)?" title="is (x) identical to (3)?" />).</li>
+                    </ul>
+                </li>
+            </ol>
+		</div>
+
+        <div class="todo">Sollten wir hier eine kleine Übung in einem <a href="https://www.w3schools.com/python/trypython.asp?filename=demo_oper" target="_blank">Mini-Editor</a> als FYTD einbauen? Vielleicht können wir für interessierte Lernende auch einen leicht einzurichtenden Compiler als ITIT/TIF empfehlen. Gleiches gilt für <a href="https://www.w3schools.com/js/tryit.asp?filename=tryjs_oper" target="_blank">JavaScript</a>. Weitere FYTD-Ideen würden die Seite auflockern. Vielleicht etwas wie „Lies diesen Python-Code und beantworte eine Multiple-Choice-Frage dazu“ (aka „Schau, du kannst tatsächlich schon etwas Python/JS lesen!“). --MF, 20.12.21<br /><br />
+		Umm sure go for it. -bh 18.02.22</div>
+
+		<div class="endnote">
+			<div class="todo">Muss aktualisiert werden; außerdem brauchen Mary und Michael ein Update für das Python-CSS. --MF 02.09.25</div>
+            Du bist in diesem Kurs immer wieder auf Python gestoßen.
+			<a href="#hint-python-examples" data-toggle="collapse" title="Klicke für Beispiele.">Hier ein paar Beispiele.</a>
+			<div id="hint-python-examples" class="collapse">
+				<p>
+					<ul>
+						<li><a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/2-gossip.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 1, Labor 2, Seite 2">Einheit 1, Labor 2, Seite 2: Programme reden lassen</a></li>
+						<li><a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/4-making-a-new-block.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 1, Labor 2, Seite 4">Einheit 1, Labor 2, Seite 4: Eigene Blöcke</a></li>
+						<li><a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/5-if-else.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 1, Labor 2, Seite 5">Einheit 1, Labor 2, Seite 5: Varianten für <code>Gossip</code></a></li>
+						<li><a href="/bjc-r/cur/programming/1-introduction/3-drawing/4-modify-your-pinwheel.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 1, Labor 3, Seite 4">Einheit 1, Labor 3, Seite 4: Dein Windrad verändern</a></li>
+						<li><a href="/bjc-r/cur/programming/2-complexity/1-variables-games/1-number-guessing-game.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 1">Einheit 2, Labor 1, Seite 1: Zahlenratespiel starten</a></li>
+						<li><a href="/bjc-r/cur/programming/2-complexity/1-variables-games/2-checking-player-guess.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 2">Einheit 2, Labor 1, Seite 2: Eingabe prüfen</a></li>
+						<li><a href="/bjc-r/cur/programming/2-complexity/1-variables-games/4-keeping-score.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 4">Einheit 2, Labor 1, Seite 4: Punkte mit globalen Variablen zählen</a></li>
+						<li><a href="/bjc-r/cur/programming/2-complexity/1-variables-games/5-choosing-avatar.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 1, Seite 5">Einheit 2, Labor 1, Seite 5: Kostüm wählen</a></li>
+						<li><a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/1-shopping-list-app.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 2, Seite 1">Einheit 2, Labor 2, Seite 1: Einkaufslisten-App</a></li>
+						<li><a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/3-traversing-list.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 2, Seite 3">Einheit 2, Labor 2, Seite 3: Jede Antwort prüfen</a></li>
+						<li><a href="/bjc-r/cur/programming/2-complexity/3-predicates/1-what-is-predicate.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 3, Seite 1">Einheit 2, Labor 3, Seite 1: Was ist ein Prädikat?</a></li>
+						<li><a href="/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/1-mod-operator.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 4, Seite 1">Einheit 2, Labor 4, Seite 1: Der <code>Mod</code>-Block</a></li>
+						<li><a href="/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/3-other-math-reporters.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 4, Seite 3">Einheit 2, Labor 4, Seite 3: Weitere mathematische Reporter</a></li>
+					</ul>
+				</p>
+			</div>
+		</div>
+    
+    
+		<h3>Eine weitere sequenzielle Sprache lernen</h3>
+		<p>Es gibt natürlich Notationsdetails (<em>Syntax</em>) zu lernen. Aber weil du Snap<em>!</em> beherrschst, kannst du dir eine andere sequenzielle Sprache jetzt <em>viel</em> schneller aneignen – du kannst bereits in diesem Paradigma programmieren!</p>
+		<div class="vocabFullWidth">
+			<p>Die <strong>Syntax</strong> einer Sprache beschreibt die verwendete Notation (Schlüsselwörter, Satzzeichen usw.). Auch natürliche Sprachen haben Syntax, zum Beispiel Unterschiede zwischen Nomen und Verben oder zwischen Komma und Semikolon.</p>
+			<div class="todo"><p>Die <strong>Semantik</strong> einer Sprache beschreibt die Bedeutung der jeweiligen Syntax. Ich bin mir nicht sicher, warum dieser Begriff hier auftaucht; er wird sonst nicht erwähnt, und ein isolierter Vokabel-Eintrag wirkt etwas seltsam. --MF, 20.12.21</p></div>
+		</div>
+        
+        <div class="learn"><strong>Auf dieser Seite</strong> hast du sequenzielle Programmiersprachen kennengelernt und gesehen, dass du – auch ohne Syntax im Detail zu kennen – bereits zwei weitere sequenzielle Sprachen (Python und JavaScript) ein Stück weit lesen kannst.</div>
+
+        
+	</body>
+</html>

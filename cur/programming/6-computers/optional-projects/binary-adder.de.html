@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 6, optionale Projekte, Seite 2</title>
+	</head>
+
+	<body>
+		<h2>Einen Binäraddierer bauen</h2>
+        <div class="learn"><strong>Auf dieser Seite</strong> untersuchst du, wie sich Logikgatter kombinieren lassen, um arithmetische Operationen – insbesondere die Addition – mit Binärwerten auszuführen.</div>
+
+        <p>Erinnere dich: Beim schriftlichen Addieren zweier Dezimalzahlen (Basis 10) berechnest du jede Spalte und berücksichtigst dabei einen möglichen Übertrag aus der vorherigen Spalte.</p>
+        <img  class="indent noshadow" src="/bjc-r/img/6-computers/LogicGates_img/Adders/DecimalAddition.png" width="500" alt="Schriftliche Addition im Dezimalsystem"/><br />
+        <p>Nach demselben Verfahren addierst du Zahlen in Basis 2.</p>
+        <img class="indent noshadow" src="/bjc-r/img/6-computers/LogicGates_img/Adders/BinaryAddition.png" width="500" alt="Schriftliche Addition im Binärsystem"/><br />
+        <div class="takeNote">Jeder Algorithmus zur Addition muss Werte berücksichtigen, die von niedrigeren Stellen zu höheren Stellen „mitgenommen“ werden.</div>
+
+        <h3>Halbaddierer</h3>
+        <p>Ein Halbaddierer addiert zwei Binärziffern (ohne <em>Übertrag in</em>) und gibt ihre Summe sowie den <em>Übertrag out</em> zurück. Die „SUM“-Spalte der Wahrheitstabelle entspricht dem Ergebnis von XOR, die „CARRY“-Spalte dem Ergebnis von AND.</p>
+        <div class="sidenote">
+            Falls dir die Tabelle schwerfällt, denke an diese Ergebnisse:<br />
+            0 + 0 = 0<br />0 + 1 = 1<br />1 + 0 = 1<br />1 + 1 = 2 → 10₂ (Einerstelle 0, Übertrag 1).
+        </div>
+        <img class="indent" src="/bjc-r/img/6-computers/LogicGates_img/TruthTables/HalfAdder_TruthTable01.png" height="200" alt="Wahrheitstabelle des Halbaddierers mit Summe und Übertrag" title="Wahrheitstabelle des Halbaddierers mit Summe und Übertrag"/><br />
+        <img class="indent" data-gifffer="/bjc-r/img/6-computers/LogicGates_img/Animations/gif/Half-Adder_Animation.gif" height="350" alt="Schaltskizze eines Halbaddierers" title="Halbaddierer"/><br />
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li><a class="run" href="/bjc-r/prog/6-computers/U6L2-HALF-ADDER.xml" target="_blank"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Projektdatei laden und speichern" title="Projektdatei laden und speichern"></a></li>
+                <li>Untersuche die Snap<em>!</em>-Datei. Baue für die Sprites <code>SUM</code> und <code>CARRY</code> passende Blöcke, die einen Halbaddierer simulieren.</li>
+            </ol>
+        </div>
+
+        <h3>Volladdierer</h3>
+        <div class="sidenote">
+            Auch hier hilft ein Blick auf die Addition von drei Binärziffern:<br />
+            <img src="/bjc-r/img/6-computers/LogicGates_img/Adders/Full-Adder-Helper.png"  height="200" alt="Addition von drei Bits" title="Addition von drei Bits"/><br />
+            Beispiel: 1 + 1 + 1 = 3 → 11₂ (Einerstelle 1, Übertrag 1).
+        </div>
+        <p>Ein Volladdierer nutzt zwei Halbaddierer, um eine Addition mit <em>Übertrag in</em> durchzuführen. Er liefert die Summe und den <em>Übertrag out</em>.</p>
+
+        <img class="indent" src="/bjc-r/img/6-computers/LogicGates_img/TruthTables/FullAdder_TruthTable01.png"  height="250" alt="Wahrheitstabelle des Volladdierers mit Übertrag in, Summe und Übertrag out" title="Wahrheitstabelle des Volladdierers mit Übertrag in, Summe und Übertrag out"/><br />
+        <img class="indent" data-gifffer="/bjc-r/img/6-computers/LogicGates_img/Animations/gif/Full-Adder_Animation.gif" height="350" alt="Schaltskizze eines Volladdierers" title="Volladdierer"/>
+
+        <div class="forYouToDo" id="second">
+            <ol start="3">
+                <li>Erkläre mithilfe der Tabelle und des Schaltplans, wie zwei Halbaddierer plus ein OR-Gatter die Addition mit <em>Übertrag in</em> ermöglichen.</li>
+                <li><a class="run" href="/bjc-r/prog/6-computers/U6L2-FULL-ADDER.xml" target="_blank"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Projektdatei laden und speichern" title="Projektdatei laden und speichern"></a></li>
+                <li>Im Snap<em>!</em>-Projekt sind die Sprites <code>CARRY IN</code>, <code>A</code> und <code>B</code> bereits programmiert. Ergänze den Code für <code>SUM1</code>, <code>CARRY1</code>, <code>SUM OUT</code>, <code>CARRY2</code> und <code>CARRY OUT</code>, sodass der Volladdierer funktioniert.</li>
+            </ol>
+        </div>
+
+        <div class="takeItFurther">
+            <ol>
+                <li>Informiere dich über <em>Ripple-Carry-Addierer</em>. Erläutere, wie sie Volladdierer verketten, um mehrstellige Binärzahlen zu addieren, und modelliere die Addition zweier 3-stelliger Zahlen in Snap<em>!</em>.</li>
+                <li>Erforsche, wie Computer mit Logikgattern Binärzahlen subtrahieren und multiplizieren, und entwickle entsprechende Snap<em>!</em>-Programme.</li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 7, Labor 1: Bäume, Seite 5</title>
+	</head>
+
+	<body>
+		<h2>Variiere deinen Baum</h2>
+		<div class="learn">
+            <p>
+                <strong>Auf dieser Seite</strong> experimentierst du frei mit dem Block <code>tree</code>, um das Aussehen des Baumes zu verändern.<br />
+                <img class="indent" src="/bjc-r/img/7-recursion/thicktree.png" alt="Baum mit sehr dickem Stamm" title="Baum mit sehr dickem Stamm">
+                <img src="/bjc-r/img/7-recursion/random-tree5.jpg" alt="Zufälliger Baum mit unterschiedlichen Astlängen und Winkeln" title="Zufälliger Baum mit unterschiedlichen Astlängen und Winkeln"/>
+            </p>
+        </div>
+
+    	<div class="todo">
+            BRIAN PRÜFEN<p><a href="https://piazza.com/class/h8yx482idav52y?cid=1993" target="_blank">Kommentar und Anfrage von Tim Matthies auf Piazza</a> (z. B. animierte GIFs zu jeder Aufgabe).</p>
+            <p><a href="https://piazza.com/class/h8yx482idav52y?cid=2004" target="_blank">Anfrage von Tim Matthies auf Piazza</a> nach Lösungen für diese Gravitätsvariante sowie den Rest von Einheit 7/8.</p>
+		</div>
+
+		<div class="forYouToDo" id="first">
+        	<ol>
+				<li>
+                	Experimentiere! Probiere Folgendes aus:
+                	<ul>
+                        <li>Ändere den Drehwinkel.</li>
+                        <li>Verändere den Skalierungsfaktor.</li>
+                        <li>Ändere die Anzahl der Äste pro Ebene.</li>
+                        <li>
+                            Verändere die <em>Struktur</em> der Verzweigungen.
+							Bäume können beispielsweise entlang des Stamms Äste besitzen <img class="noshadow" src="/bjc-r/img/7-recursion/tree-with-five-branches.png" height="150" alt="Baum mit Ästen an verschiedenen Positionen des Stamms und drei Ästen an der Spitze" title="Baum mit Ästen an verschiedenen Positionen des Stamms und drei Ästen an der Spitze"> oder einen gebogenen Stamm <img class="noshadow" src="/bjc-r/img/7-recursion/tree-with-bent-trunk.png"  height="165" alt="Baum mit Stamm, der sich bei jeder Abzweigung um 5 Grad nach rechts neigt" title="Baum mit Stamm, der sich bei jeder Abzweigung um 5 Grad nach rechts neigt">.
+                        </li>
+                    </ul>
+                            <div class="todo"> Brian hält diesen Hinweis für verwirrend.
+                            <div class="endnote">
+                                Bei komplexeren Strukturen oder einem gekrümmten Stamm wird es mühsam, den Sprite durch einzelne <code>move</code>/<code>turn</code>-Befehle wieder in den Ausgangszustand zu bringen. Stattdessen kannst du die Startposition speichern<br />
+                                <img class="indent" src="/bjc-r/img/7-recursion/set-sprite-state.png" alt="script variables(sprite state); set(sprite state) to (sprite pos and direction); set pen color to (brown)" title="script variables(sprite state); set(sprite state) to (sprite pos and direction); set pen color to (brown)"><br />
+                                mit einem Block wie diesem<br />
+                                <img class="indent" src="/bjc-r/img/7-recursion/sprite-pos-and-direction.png" alt="sprite pos and direction {report list {x position, y position, direction}}" title="sprite pos and direction {report list {x position, y position, direction}}"><br />
+                                und anschließend einen Block <code>return sprite to state</code> bauen, der den Sprite exakt zurücksetzt.<br />
+                                <img class="indent" src="/bjc-r/img/7-recursion/return-sprite.png" alt="return sprite to state (sprite state)" title="return sprite to state (sprite state)">
+                            </div>
+                            </div>
+                </li>
+                <li>
+                    Ändere die Stiftdicke je nach Ebene, sodass der Stamm sehr dick und die Blätter dünn sind.<br />
+                    <img class="indent noshadow" src="/bjc-r/img/7-recursion/thicktree.png" alt="Baum mit sehr dickem Stamm" title="Baum mit sehr dickem Stamm">
+                </li>
+            	<li>
+                    Gestalte braune Stämme/Äste und grüne Blätter.<br />
+                    <div class="sidenote">Es muss nicht exakt wie im Beispiel aussehen.</div>
+                    <img class="indent noshadow" src="/bjc-r/img/7-recursion/leafytree.png" alt="Realistisch gefärbter Baum" title="Realistisch gefärbter Baum" /><br />
+                    <div class="endnote">Vielleicht war das Einfärben der Blätter kniffliger als die variable Strichstärke. Was lief dabei schief? Warum trat dasselbe Problem bei der Strichstärke nicht auf?</div>
+                </li>
+            </ol>
+		</div>
+
+        <div class="ifTime">
+        	<ol start="4">
+            	<li>
+                	Baue Zufall ein – etwa bei Winkeln oder Skalierungsfaktoren. Beispiele:<br />
+                    <div class="center">
+                        <img src="/bjc-r/img/7-recursion/random-tree1.jpg" alt="Zufälliger Baum mit unterschiedlichen Astlängen und Winkeln" title="Zufälliger Baum mit unterschiedlichen Astlängen und Winkeln"/>
+                        <img src="/bjc-r/img/7-recursion/random-tree2.jpg" alt="Weiterer zufälliger Baum" title="Weiterer zufälliger Baum"/>
+                        <img src="/bjc-r/img/7-recursion/random-tree3.jpg" alt="Noch ein zufälliger Baum" title="Noch ein zufälliger Baum"/>
+                    </div>
+                    <div class="center">
+                        <img src="/bjc-r/img/7-recursion/random-tree4.jpg" alt="Zufälliger Baum, Variante 4" title="Zufälliger Baum, Variante 4"/>
+                        <img src="/bjc-r/img/7-recursion/random-tree5.jpg" alt="Zufälliger Baum, Variante 5" title="Zufälliger Baum, Variante 5"/>
+                        <img src="/bjc-r/img/7-recursion/random-tree6.jpg" alt="Zufälliger Baum, Variante 6" title="Zufälliger Baum, Variante 6"/>
+                    </div>
+                </li>
+                <li>
+                	Erzeuge einen Wald, indem du verschiedene Bäume zufällig auf der Bühne platzierst.<br />
+                    <img class="indent" src="/bjc-r/img/7-recursion/forest.png" alt="Wald aus mehreren Bäumen" title="Wald aus mehreren Bäumen" />
+                </li>
+				<li><a href="https://duckduckgo.com/?q=fractals+in+nature&iax=images&ia=images" target="_blank" title="DuckDuckGo-Suche nach Fraktalen in der Natur">Suche</a> nach Bildern von Fraktalen in der Natur.</li>
+            </ol>
+        </div>
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>
+                    In der Natur beeinflusst die Schwerkraft das Wachstum. Hier siehst du einen Baumfraktal mit einem Block <code>gravity</code>, der die Äste nach unten „zieht“. Die Verzweigungsstruktur entspricht <img src="/bjc-r/img/7-recursion/tree-with-bent-trunk.png"  height="165" alt="Baum mit Stamm, der sich bei jeder Abzweigung um 5 Grad nach rechts neigt" title="Baum mit Stamm, der sich bei jeder Abzweigung um 5 Grad nach rechts neigt">. Das Bild darunter zeigt den Effekt der Gravitation. Experimentiere mit dieser Idee oder entwickle eigene Varianten, die du spannend oder schön findest.<br />
+                    <img class="indent" src="/bjc-r/img/7-recursion/tree-with-gravity.jpg" alt="Baum, dessen Äste durch Gravitation nach unten gezogen werden" title="Baum mit Gravitation"/>
+                    <img class="indent" src="/bjc-r/img/7-recursion/gravity-block.png" alt="gravity(strength #) { point in direction(direction + sin(direction) ✕ strength) }" title="gravity(strength #) { point in direction(direction + sin(direction) ✕ strength) }" />
+                </li>
+            </ol>
+        </div>
+
+	</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 6, Labor 1: Hierarchie der Computerabstraktion, Seite 3</title>
+	</head>
+    <body>
+        <h2>Die Software-Dom&auml;ne: Programmiersprachen</h2>
+
+        <div class="learn"><strong>Auf dieser Seite</strong> besch&auml;ftigst du dich damit, warum es unterschiedliche Programmiersprachen gibt und in welchen Merkmalen sie sich unterscheiden.</div>
+
+		<p>JavaScript, Python, Snap<em>!</em>, C++, Java, Scheme, Prolog &hellip; Warum gibt es so viele Sprachen? Warum suchen wir uns nicht einfach die beste aus, oder erfinden eine neue beste, und bleiben dabei?</p>
+        <p>Einige Sprachen haben sehr eng begrenzte Einsatzgebiete; sie hei&szlig;en <em>Dom&auml;nen-</em> oder <em>Spezialsprachen</em>. Microsoft Word hat zum Beispiel mit den &bdquo;Word-Makros&ldquo; eine eingebaute Sprache, die nur daf&uuml;r gedacht ist, Daten zu erzeugen und in einem Dokument zu formatieren. Auch HTML (HyperText Markup Language) dient nur dazu, Webseiten zu strukturieren.</p>
+        <p><em>Allzwecksprachen</em> sind nicht auf einen einzigen Einsatzzweck beschr&auml;nkt. In gewisser Weise sind sie alle gleich: Wenn sich ein Algorithmus in einer Sprache ausdr&uuml;cken l&auml;sst, geht das grunds&auml;tzlich auch in jeder anderen. Fast alle Sprachen enthalten grundlegende Bausteine wie arithmetische Operatoren (<code>+</code>, <code>-</code>, <code>&times;</code>, <code>÷</code>) und boolesche Operatoren (<code>and</code>, <code>or</code>, <code>not</code>). Die Unterschiede zwischen den Sprachen betreffen vor allem ihre <em>Abstraktionsebenen</em>.</p>
+
+		<h3>Hoch- und Niedrigsprachen</h3>
+        <img class="imageRight noshadow" src="/bjc-r/img/6-computers/language-continuum.png" width="400" alt="Diagramm mit g&auml;ngigen Programmiersprachen nach Abstraktionsebene sortiert; ein Doppelpfeil rechts markiert die oberen Sprachen (Snap!, Scheme, Prolog, Ruby, Lisp) als Hochsprachen, die mittleren (JavaScript, Python, Java, Alice, Scratch) als Zwischenbereich und die unteren (C, C++) als Niedrigsprachen." title="Programmiersprachen entlang eines Abstraktionskontinuums" />
+        <p>Eine <em>Hochsprache</em> (wie Snap<em>!</em> oder Scheme) bietet viele eingebaute Abstraktionen, sodass du dich eher auf das Problem konzentrieren kannst, das du l&ouml;sen willst, statt darauf, wie die Hardware funktioniert. Eine <em>Niedrigsprache</em> (wie C) enth&auml;lt weniger Abstraktionen, weshalb du die Architektur deines Computers gut kennen musst, um ein Programm zu schreiben.</p>
+
+        <h4 class="box-head">Warum arbeiten Programmierende mit Hochsprachen?</h4>
+        <p>Hochsprachen f&uuml;hren zu <em>sichereren</em> Programmen &ndash; also zu weniger Fehlern &ndash;, weil ihre Abstraktionen sich um viele Stolperfallen k&uuml;mmern.</p>
+        <div class="endnote">
+            <p>Hochsprachen reduzieren Fehler im Umgang mit Arbeitsspeicher. &Auml;ltere Niedrigsprachen verlangen von Programmierenden, den Speicher selbst zu verwalten, zum Beispiel mit Anweisungen wie &bdquo;gib mir einen Block, in den 100 Zahlen passen&ldquo; oder &bdquo;ich bin fertig, dieser Block kann wiederverwendet werden&ldquo;.</p>
+            <p>Das ist m&uuml;hsam, und Menschen sind darin nicht sehr gut. Eine h&auml;ufige Fehlerquelle ist, dass ein Teil des Programms sagt, ein Speicherblock sei frei, w&auml;hrend ein anderer Teil ihn noch nutzt. Hochsprachen nehmen uns das ab, indem sie <em>Garbage Collection</em> einsetzen: Der Computer erkennt selbst, wann ein Speicherbereich nicht mehr gebraucht wird.</p>
+        </div>
+        <p>Hochsprachen machen das Programmieren auch bequemer, weil sie mehr Abstraktionen anbieten. Ein Beispiel sind <em>Funktionen h&ouml;herer Ordnung</em> (wie <code>map</code>, <code>keep</code>, <code>combine</code> und <code>for each</code>), mit denen sich k&uuml;rzere und klarere Programme schreiben lassen.</p>
+        <div class="forYouToDo" id="first">
+			<ol>
+                <li>
+                    <!-- Question 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Identify this higher-order function."
+hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="false">
+                        <div class="prompt">
+                            <p>Welche Funktion h&ouml;herer Ordnung ist das?</p>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text"><code>map</code></div>
+                            <div class="feedback">Nein, <code>map</code> wendet eine Funktion auf alle Werte an.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text"><code>keep</code></div>
+                            <div class="feedback">Richtig!</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text"><code>combine</code></div>
+                            <div class="feedback">Nein, <code>combine</code> kombiniert Eingaben zu einer einzelnen Ausgabe.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text"><code>for each</code></div>
+                            <div class="feedback">Nein, <code>for each</code> f&uuml;hrt eine Aktion f&uuml;r jedes Listenelement aus.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Which is TRUE about a program written in a high-level programming language?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="false">
+                        <div class="prompt">Ein Programm wurde in einer Hochsprache geschrieben. Welche Aussage dazu stimmt?</div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Es l&auml;sst sich auch in Maschinensprache mit Bin&auml;rcode schreiben, ist dann aber f&uuml;r Menschen schwerer zu verstehen.</div>
+                            <div class="feedback">Richtig. Bin&auml;rcode ist f&uuml;r Menschen sehr schwer zu lesen.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Es l&auml;sst sich auch in Bin&auml;rcode schreiben, wodurch die Fehlerwahrscheinlichkeit sinkt.</div>
+                            <div class="feedback">Eher das Gegenteil: Es ist schwieriger, Bin&auml;rcode fehlerfrei zu schreiben.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Es kann nicht in Bin&auml;rcode geschrieben werden, weil nur Daten bin&auml;r dargestellt werden k&ouml;nnen.</div>
+                            <div class="feedback">Doch, ganze Programme lassen sich bin&auml;r darstellen &ndash; das ist sogar die einzige Form, die Maschinen verstehen.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Einfache Teile k&ouml;nnen in Bin&auml;rcode geschrieben werden, aber Kontrollstrukturen wie Schleifen ben&ouml;tigen eine Hochsprache.</div>
+                            <div class="feedback">Auch Kontrollstrukturen lassen sich bin&auml;r darstellen &ndash; Maschinen arbeiten ausschlie&szlig;lich damit.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+        <h3>Lesbarkeit von Code</h3>
+        <p>
+            Snap<em>!</em> bietet dir unter anderem die M&ouml;glichkeit, Beschriftungen mitten in einem Block zu platzieren.<br />
+            <div class="sidenote">Du hast <code>polygon</code> in <a href="/bjc-r/cur/programming/1-introduction/3-drawing/5-remix-your-pinwheel.html?topic=nyc_bjc%2F1-intro-loops.topic&amp;course=bjc4nyc.html&amp;novideo&amp;noassignment" title="Grafik und Kunst">Einheit&nbsp;1: Grafik und Kunst</a> gebaut.</div>
+            <img class="indent" src="/bjc-r/img/6-computers/polygon-30-15.png" alt="polygon, Seiten: (30) Seitenl&auml;nge: (15)" title="polygon, Seiten: (30) Seitenl&auml;nge: (15)" /><br />
+            Im Vergleich zu Sprachen, in denen der Funktionsname am Anfang steht und alle Eingaben anschlie&szlig;en, verbessert das die Klarheit und Lesbarkeit.<br />
+            <p class="indent"><code>polygon(30, 15)</code></p>
+        </p>
+        <div class="pseudop">
+            In einer textbasierten Sprache musst du au&szlig;erdem Regeln wie Punkt-vor-Strich-Rechnung kennen: Bei 3 &times; 5 + 4 wei&szlig;t du aus dem Mathematikunterricht, dass zuerst multipliziert wird (Ergebnis 19). Wenn es andersherum laufen soll, brauchst du Klammern: 3 &times; (5 + 4) ergibt 27. In einer Blocksprache zeigen dir die Bl&ouml;cke, was gemeint ist:
+            <img class="inline nopadtb" src="/bjc-r/img/6-computers/3-times(5+4).png" alt="3 × (5 + 4)" title="3 × (5 + 4)" />. Die Rechenregeln f&uuml;r +, &ndash;, &times; und &divide; kennst du vielleicht, aber wei&szlig;t du auch spontan, wie <pre class="inline">x &amp;&amp; y &lt;&lt; z</pre> ausgewertet wird? Kommt <pre class="inline">&amp;&amp;</pre> vor <pre class="inline">&lt;&lt;</pre> oder umgekehrt?
+        </div>
+        <div class="endnote">
+            <a href="#hint-ooo" data-toggle="collapse" title="">Wie findest du das heraus?</a>
+            <div id="hint-ooo" class="collapse">
+                <p>Sieh dir zum Beispiel <a href="https://en.cppreference.com/w/c/language/operator_precedence" title="C Operator Precedence" target="_blank">die Operatorpr&auml;zedenz in C</a> an.</p>
+            </div>
+        </div>
+
+        <h3>Parallelit&auml;t</h3>
+        <div class="commentBig">5.2.1H Ein Prozess kann auf einer oder mehreren CPUs ausgef&uuml;hrt werden.</div>
+        <p>Ein Grund f&uuml;r neue Programmiersprachen ist, dass sie das Schreiben <em>paralleler</em> Programme erleichtern sollen &ndash; also von Programmen, die mehr als einen Prozessor gleichzeitig nutzen. Schon 2017 verfügen Computer und Smartphones &uuml;ber <em>Multicore</em>-Prozessoren mit 2, 4 oder 8 Kernen, die denselben Code gleichzeitig ausf&uuml;hren (und es werden immer mehr). Gro&szlig;e Unternehmen wie Google treiben Parallelit&auml;t noch weiter: Sie nutzen Cluster mit Tausenden von Rechnern, die gemeinsam an einem Programm arbeiten.</p>
+        <div class="commentBig">4.1.2D Unterschiedliche Sprachen eignen sich besser, unterschiedliche Algorithmen auszudr&uuml;cken.<br />4.1.2E Manche Sprachen wurden f&uuml;r bestimmte Dom&auml;nen entwickelt und eignen sich dort besonders gut.</div>
+        <p><em>Funktionale</em> Programmiersprachen (in denen Programmierende den Wert einer Variablen nie ver&auml;ndern) sind f&uuml;r Parallelit&auml;t besonders geeignet, weil es nicht passieren kann, dass ein Prozessor einen Wert &auml;ndert, den ein anderer gerade nutzt. Wir haben dir funktionale Ideen im ganzen Kurs vorgestellt, zum Beispiel beim Schreiben von Reportern und beim Einsatz von Funktionen h&ouml;herer Ordnung (<code>map</code>, <code>keep</code>, <code>combine</code>).</p>
+        <div class="endnote">Snap<em>!</em> ist keine funktionale Sprache, w&auml;re es aber fast, wenn die Entwickler*innen nur wenige Befehle entfernen w&uuml;rden, darunter <code>set</code> (stattdessen w&uuml;rdest du Eingabevariablen in rekursiven Funktionen verwenden) sowie diese vier Listenbefehle: <code>add</code>, <code>delete</code>, <code>insert</code> und <code>replace</code>. Stattdessen k&ouml;nntest du <code>in front of</code>, <code>item 1 of</code> und <code>all but first of</code> nutzen, um eine neue Liste mit ver&auml;nderten Werten zu erzeugen, ohne die alte zu &auml;ndern.</div>
+
+	</body>
+</html>

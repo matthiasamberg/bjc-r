@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 6, Labor 1: Hierarchie der Computerabstraktion, Seite 10</title>
+	</head>
+    <body>
+        <h2>Die analoge Dom&auml;ne: Transistoren</h2>
+
+        <div class="learn"><strong>Auf dieser Seite</strong> erf&auml;hrst du, wie Transistoren Logikgatter umsetzen.</div>
+        <div class="sidenote">
+			<p>Der <strong>Transistor</strong> ist der grundlegende Baustein elektronischer Schaltungen; dort arbeitet er als Ein-/Ausschalter.</p>
+            <img class="indent" src="/bjc-r/img/6-computers/transistors.jpg" alt="Verschiedene Transistortypen" title="Verschiedene Transistortypen" /><br />
+            <small>Bild: sv.Wikipedia-Nutzer DaRy</small>
+        </div>
+
+        <p>Du hast gelernt, dass eine Leitung entweder Spannung f&uuml;hrt oder nicht. In der Realit&auml;t ist das komplizierter. Die Vorstellung von &bdquo;an&ldquo; oder &bdquo;aus&ldquo; bei einer Leitung, einem Transistor oder dem Ausgang eines Gatters ist eine Vereinfachung &ndash; eine Abstraktion.</p>
+        <img class="imageLeft" height="220" src="/bjc-r/img/6-computers/transistor-curve.png" alt="Diagramm: Eingangs- vs. Ausgangsspannung eines Transistors mit den Bereichen Cutoff, linear und S&auml;ttigung" title="Eingang-Ausgang-Kurve eines Transistors" />
+        <p>Das Diagramm zeigt grob, wie ein Transistor auf Eingangs- und Ausgangsspannung reagiert. Wichtig sind die beiden blauen, <em>flachen</em> Bereiche. Im Bereich &bdquo;cutoff&ldquo; &auml;ndern kleine Eingangsschwankungen die Ausgangsspannung &uuml;berhaupt nicht &ndash; der Ausgang bleibt <em>0</em>&nbsp;Volt. Im Bereich &bdquo;saturation&ldquo; wirken sich kleine Schwankungen ebenfalls kaum aus; der Ausgang gilt als <em>1</em>. So funktionieren Transistoren als <em>Schalter</em> im Computer.</p>
+		<p>Transistoren sind vielseitig: Im mittleren, linearen (rosa) Bereich wirken sie als <em>Verst&auml;rker</em>; kleine Eingangsschwankungen f&uuml;hren zu gro&szlig;en Ausgangs&auml;nderungen. So verst&auml;rken sie beispielsweise Musiksignale in einer Stereoanlage.</p>
+        <div class="endnote" style="overflow: hidden;">
+            <a href="#hint-chart-labels" data-toggle="collapse" title="Warum heißen die Bereiche „cutoff“, „linear“ und „saturation“?">Woher stammen die Bezeichnungen &bdquo;cutoff&ldquo;, &bdquo;linear&ldquo; und &bdquo;saturation&ldquo;?</a>
+            <div id="hint-chart-labels" class="collapse">Der untere Bereich hei&szlig;t &bdquo;cutoff&ldquo;, weil der Ausgang <em>abgeschnitten</em> ist (immer null). Der obere Bereich hei&szlig;t &bdquo;saturation&ldquo;, weil der Transistor &ndash; wie ein vollgesogener Schwamm &ndash; kein h&ouml;heres Ausgangssignal mehr liefern kann. Der mittlere Bereich hei&szlig;t &bdquo;linear&ldquo;, weil er sich wie eine lineare Funktion verh&auml;lt.</div>
+        </div>
+
+		<div class="endnote">Erfunden wurde der Transistor 1947 von John Bardeen, Walter Brattain und William Shockley in den Bell Labs (dort entstand auch Unix). 1956 erhielten sie daf&uuml;r den Nobelpreis f&uuml;r Physik.</div>
+
+		<div class="takeNote">Die digitale Dom&auml;ne ist keine Naturgegebenheit; Schaltungsdesigner*innen m&uuml;ssen daf&uuml;r sorgen, dass jede Leitung wirklich vollst&auml;ndig an oder aus ist. Die digitale Dom&auml;ne ist eine Abstraktion.</div>
+
+        <div class="endnote">
+            <a href="#hint-digital-abstraction" data-toggle="collapse" title="Mehr über die Ebene unter der digitalen Abstraktion">Mehr zur Ebene unter der digitalen Abstraktion</a>
+            <div id="hint-digital-abstraction" class="collapse">
+                <p>Die flachen Bereiche an den Extremen sind wichtig, weil es immer kleine Eingangsschwankungen gibt. Elektrische Schaltungen haben &bdquo;Rauschen&ldquo;, verursachen Spannungs&auml;nderungen durch Erw&auml;rmung, wacklige Kontakte oder sogar kosmische Strahlung. Deshalb arbeiten Computer mit Nullen und Einsen: Ein Transistor bietet zwei stabile Bereiche.</p>
+                <p>Allerdings ist die S&auml;ttigung nur ann&auml;hernd flach, und sie h&auml;ngt von der restlichen Schaltung ab. Ein Problem ist zum Beispiel der <em>Fanout</em>, also wie viele Eing&auml;nge von einem Ausgang versorgt werden. Ab einer gewissen Zahl (je nach Transistortyp, aber zehn w&auml;ren zu viel) sinkt die Ausgangsspannung so stark, dass die Eing&auml;nge nicht mehr sicher zwischen Null und Eins unterscheiden k&ouml;nnen.</p>
+                <p>Wie ein Transistor wirklich funktioniert, h&auml;ngt von Quantenphysik ab. (Hier ist nicht von <em>Quantencomputern</em> die Rede; auch &bdquo;klassische&ldquo; Schaltungen basieren auf quantenphysikalischen Effekten.) Wenn du mehr &uuml;ber analoges Schaltungsdesign und den inneren Aufbau von Transistoren erfahren willst, beleg ein Studium oder einen Kurs in Elektrotechnik.</p>
+            </div>
+        </div>
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>Recherchiere, wie Transistoren konkret eingesetzt werden, um Logikgatter zu bauen.</li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

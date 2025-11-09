@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <!--<title>Unit 5 Lab X: Tic-Tac-Toe with a Computer Player, Page 2</title>-->
+        <title>Einheit 5, Optionales Projekt, Seite 2</title>
+    </head>
+
+    <body>
+        <h2>Einen Computergegner erstellen</h2>
+        <div class="todo">
+            <p>PG: Kleine Anpassungen. „Erkläre“-Fragen wie Nr. 5 wirken oft wie „Rate, was ich hören will“. Eine Antwort wie „Es gibt mehr Gewinnmöglichkeiten“ ist korrekt, überzeugt aber niemanden, der es nicht sieht. „Weil Spieler dort häufiger gewinnen“ ist ebenfalls richtig …</p>
+            <p>MF: Projekt muss noch fertiggestellt und online aktualisiert werden.</p>
+        </div>
+
+		<div class="learn">
+            <p><strong>Auf dieser Seite</strong> bringst du dem Computer bei, gegen die menschliche Spielerin anzutreten.</p>
+        </div>
+
+        <p>Momentan können zwei Menschen abwechselnd spielen. Für so ein Spiel braucht man aber keinen Computer, der die Züge verwaltet. Wir wollen stattdessen, dass der Mensch sich mit einem Computergegner abwechselt, der automatisch setzt. Zur Vereinfachung nehmen wir an: Der Mensch beginnt immer (als X), der Computer spielt O.</p>
+	<h3>Zunächst Zufallszüge</h3>
+        <p>Für den Anfang erstellst du einen Computergegner, der auf ein <em>zufälliges</em> freies Feld setzt. (Das ist noch keine starke Strategie, aber sobald die Struktur steht, kannst du sie verbessern.) Sobald das Programm entscheidet, wohin es ziehen soll, nutzt du <code>broadcast</code>, um allen Klonen eine Nachricht zu schicken; der Klon mit der passenden <var>position number</var> trägt den Zug ein. (Beim Menschen übernimmt <code>when I am clicked</code> diese Rolle, Computerzüge werden nicht per Mausklick ausgelöst.)</p>
+        <div class="endnote">Zur Erinnerung: Klone sind temporäre Kopien eines Sprites. Du hast sie in <a href="/bjc-r/cur/programming/3-lists/1-abstraction/5-building-tic-tac-toe.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment#clones" title="Einheit 3, Labor 1, Seite 5">Einheit 3, Labor 1, Seite 5</a> kennengelernt.</div>
+
+	<p>
+            <img class="indent" src="/bjc-r/img/blocks/broadcast.png" alt="broadcast" title="broadcast" />
+            <img class="indent" src="/bjc-r/img/blocks/when-i-receive.png" alt="when I receive" title="when I receive" />
+            <img class="indent" src="/bjc-r/img/blocks/message.png" alt="message" title="message" /></p>
+            <p><code>Broadcast</code> sendet eine Nachricht an alle Sprites im Projekt. Jeder Skriptanfang mit <code>when I receive</code> und passender Nachricht läuft an.</p>
+            <p>Der Reporter <code>message</code> liefert die zuletzt gesendete Nachricht.</p>
+
+		<div class="forYouToDo" id="first">
+			<ol>
+                <li>Öffne dein Projekt U5-TicTacToe.</li>
+		<li>Suche das Skript, das mit <code>when I am clicked</code> beginnt – es verarbeitet den Zug des Menschen. Erstelle daneben ein neues Skript:<br />
+		<img src="/bjc-r/img/5-algorithms/when-receive.png" alt="when I receive (any message) : if (message) = (square number) [leer]" title="when I receive (any message) : if (message) = (square number) [leer]" />
+		</li>
+		<li>Was gehört in den Block? Eigentlich dasselbe wie beim menschlichen Zug, nur wird er anders ausgelöst. Statt den Code zu kopieren, erstelle einen Block <img src="/bjc-r/img/5-algorithms/move-here.png" alt="move in this square (Befehl)" title="move in this square (Befehl)" /> und verschiebe den kompletten Inhalt des <code>if</code>-Blocks in diesen neuen Block. Danach sollten deine Skripte etwa so aussehen:<br />
+		<img class="indent" src="/bjc-r/img/5-algorithms/when-clicked.png" alt="when I am clicked : if (costume #) = 1" title="when I am clicked : if (costume #) = 1" />&nbsp;&nbsp;&nbsp;
+		<img src="/bjc-r/img/5-algorithms/when-receive-mov.png" alt="when I receive (any message) : if (message) = (square number)" title="when I receive (any message) : if (message) = (square number)" />
+		</li>
+               <li>
+		<div class="sidenoteBig"><a href="#hint-how-vacant" data-toggle="collapse" title="Wie finde ich freie Felder?">Wie finde ich freie Felder?</a>
+		<div id="hint-how-vacant" class="collapse">Sieh in <var>board</var> nach.</div>
+		</div>
+		Füge im Block <code>move in this square</code> nach dem Zug von Spieler X einen Zufallszug hinzu: Wähle ein freies Feld aus und sende mit <code>broadcast</code> dessen Nummer als Nachricht (dann setzt der Computer dorthin – vorausgesetzt dein <code>when I receive</code>-Skript funktioniert).</li>
+				<div class="narrower">Falls der Computer beim letzten Zug das falsche Kostüm wählt, hat das Elternsprite dieselbe <var>position number</var>. Überarbeite <code>make board</code>, damit die Elternfigur keine Nummer 1–9 hat und somit nicht mit einem Klon kollidiert.</div>
+				<li>Spielt abwechselnd Tic-Tac-Toe gegen den Computer. Behebt gefundene Fehler.</li>
+			</ol>
+		</div>
+
+		<h3>Nun eine einfache Strategie</h3>
+
+		<p>Anstatt zufällig zu ziehen, bekommt der Computer nun eine erste Strategie. Nicht alle Felder sind gleich gut: Das Zentrum (Position 5) oder eine Ecke (1, 3, 7, 9) sind besser als die Kanten (2, 4, 6, 8).<br />
+            <img class="indent noshadow" src="/bjc-r/img/5-algorithms/position-ranking.png" alt="Tic-Tac-Toe-Gitter mit lachenden Gesichtern in Ecken und Mitte" title="Tic-Tac-Toe-Gitter mit lachenden Gesichtern in Ecken und Mitte" />
+        </p>
+
+        <div class="forYouToDo">
+            <ol start="5">
+	    	<li>
+                    <img class="imageRight" src="/bjc-r/img/icons/talk-with-another-pair.png" alt="Sprich mit einem anderen Team" title="Sprich mit einem anderen Team" />
+                    Warum sind Mitte und Ecken besser als die Kanten? Formuliert eine kurze, überzeugende Begründung und vergleicht eure Argumente mit anderen Teams.
+                </li>
+                <li>
+                    Erstelle einen Block <img class="inline" src="/bjc-r/img/5-algorithms/best-empty-square.png" alt="best empty square" title="best empty square" />, der das beste freie Feld meldet. Verwende ihn anstelle von <code>random</code> als Eingabe für <code>broadcast</code>.
+                    <div class="endnote">
+                        <a href="#hint-empty" data-toggle="collapse" title="Hinweis zu best empty square">Hinweis zu <code>best empty square</code></a>
+                        <div id="hint-empty" class="collapse"><img class="indent" src="/bjc-r/img/5-algorithms/empties.png" alt="list (5, 1, 3, 7, 9, 2, 4, 6, 8)" title="list (5, 1, 3, 7, 9, 2, 4, 6, 8)"></div>
+                    </div>
+                </li>
+                <li>Spielt weitere Partien gegen den Computer. Achtet darauf, dass er nur dann eine Kante wählt, wenn alle Ecken <em>und</em> die Mitte bereits belegt sind.</li>
+                <img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+		</ol>
+	</div>
+
+    </body>
+</html>

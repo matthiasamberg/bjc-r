@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 6, Labor 1: Hierarchie der Computerabstraktion, Seite 7</title>
+	</head>
+    <body>
+        <h2>Die digitale Dom&auml;ne: Komponenten</h2>
+
+        <div class="learn"><strong>Auf dieser Seite</strong> besch&auml;ftigst du dich mit den <em>Bestandteilen</em> (Komponenten) der Computerhardware.</div>
+
+        <p>Seit es Informatikunterricht gibt, h&ouml;rst du denselben Satz: &bdquo;Ein Computer besteht aus Prozessor, Speicher und Ein-/Ausgabe (I/O).&ldquo;</p>
+        <p>
+            In den Anfangsjahren lie&szlig;en sich diese drei Bereiche leicht zeigen &ndash; riesige Schaltschr&auml;nke voller Technik:<br />
+            <img class="indent" width="400px" src="/bjc-r/img/6-computers/pdp-10.jpg" alt="Digital Equipment Corporation PDP-10: Prozessor- und Speicherschr&auml;nke" title="Digital Equipment Corporation PDP-10 Prozessor und Speicher">
+            <img class="inline" width="360px" src="/bjc-r/img/6-computers/pdp-10-disks.jpg" alt="Digital Equipment Corporation PDP-10: Magnetbandlaufwerke, Festplatten und andere I/O-Ger&auml;te" title="Digital Equipment Corporation PDP-10 I/O-Ger&auml;te">
+        </p>
+        <p>Das sind Fotos eines leistungsf&auml;higen Computers aus den 1970er Jahren. Jeder dieser Schr&auml;nke ist so gro&szlig; wie ein K&uuml;hlschrank. Heute passt ein viel leistungsf&auml;higeres System mit mehr Rechenleistung und Speicher in ein Smartphone.</p>
+        <p>Da Prozessoren und Speicher inzwischen winzig sind, sehen wir vor allem die <strong>Ein-/Ausgabeger&auml;te (I/O)</strong> wie Tastatur, Maus oder Bildschirme. <em>Eingabeger&auml;te</em> sind z.&nbsp;B. Tastatur, Maus, Mikrofon. <em>Ausgabeger&auml;te</em> sind Drucker, Lautsprecher und bei Desktop- oder Laptop-Computern der Bildschirm. Auf Smartphones und Tablets kombiniert der Touchscreen Ein- und Ausgabe. Festplatten, optische Laufwerke (CDs, DVDs) und Netzwerkschnittstellen dienen ebenfalls beidem.</p>
+
+        <div class="forYouToDo">
+            <ol>
+                <li>Fahre mit der Maus &uuml;ber die Zahlen, um mehr &uuml;ber die Komponenten zu erfahren. (Oder lade das <a href="/bjc-r/cur/programming/6-computers/1-abstraction/ComputerComponents.pdf" target="_blank" title="PDF der Computerk Komponenten">Computer-Components-PDF</a> herunter.)</li>
+            </ol>
+                <map name="Map">
+                    <div class="hoverinfo">
+                        <area shape="rect" coords="6,351,32,377" href="#" aria-labelledby="scanner_desc">
+                        <p id="scanner_desc"><strong>Scanner:</strong> Eingabeger&auml;t, das den Inhalt eines Papierdokuments in ein digitales Bild umwandelt und im Computer speichert.</p>
+                    </div>
+                    <div class="hoverinfo">
+                        <area shape="rect" coords="141,4,172,29" href="#" aria-labelledby="cpu_desc">
+                        <p id="cpu_desc">
+                            <strong>CPU (Central Processing Unit)</strong> bzw. <strong>Prozessor:</strong> Das &bdquo;Gehirn&ldquo; des Computers, in dem Programme ausgef&uuml;hrt werden. Einer der teuersten Hardwareteile. Moderne CPUs erledigen mehrere Aufgaben gleichzeitig.<br />
+                            <img class="indent" src="/bjc-r/img/6-computers/Hardware_img/CPU.jpg"  height="150" alt="CPU" title="CPU"/><br />
+                            <small>Bild: Wikipedia-Nutzer Solipsist</small>
+                        </p>
+                    </div>
+                    <div class="hoverinfo">
+                        <area shape="rect" coords="143,60,169,90" href="#" aria-labelledby="ram_desc">
+                        <p id="ram_desc">
+                            <strong>RAM (Random Access Memory):</strong> Der schnelle Kurzzeitspeicher des Computers. Er speichert vor&uuml;bergehend Daten und Anweisungen f&uuml;r laufende Programme.<br />
+                            <img class="indent" src="/bjc-r/img/6-computers/Hardware_img/RAM.jpg" height="200" alt="RAM-Riegel" title="RAM"/><br />
+                            <small>Bild: Wikipedia-Nutzer Cyberdex</small>
+                        </p>
+                    </div>
+                    <div class="hoverinfo">
+                        <area shape="rect" coords="108,102,133,129" href="#" aria-labelledby="expansion_desc">
+                        <p id="expansion_desc">
+                            <strong>Erweiterungssteckplatz:</strong> Steckplatz f&uuml;r Erweiterungskarten, zum Beispiel f&uuml;r Grafikkarten, Soundkarten oder weitere Schnittstellen.
+                        </p>
+                    </div>
+                    <div class="hoverinfo">
+                        <area shape="rect" coords="60,137,87,164" href="#" aria-labelledby="psu">
+                        <p id="psu"><strong>Netzteil:</strong> Wandelt Strom aus der Steckdose in die Spannungen um, die die Computerkomponenten ben&ouml;tigen.</p>
+                    </div>
+                    <div class="hoverinfo">
+                        <area shape="rect" coords="135,239,161,267" href="#" aria-labelledby="optical">
+                        <p id="optical"><strong>Optisches Laufwerk:</strong> Ein Ein-/Ausgabeger&auml;t, das Daten von CDs oder DVDs liest und darauf schreibt.</p>
+                    </div>
+                    <div class="hoverinfo">
+                        <area shape="rect" coords="166,307,196,332" href="#" aria-labelledby="hd">
+                        <p id="hd">
+                            <strong>Festplatte:</strong> Ein Ein-/Ausgabeger&auml;t f&uuml;r dauerhafte Datenspeicherung. Es gibt zwei Haupttypen: mechanische Festplatten mit Schreib-/Lesekopf auf einer rotierenden Platte (siehe unten) und &bdquo;Solid State&ldquo;-Laufwerke ohne bewegliche Teile.<br />
+                            <img class="indent" src="/bjc-r/img/6-computers/Hardware_img/HardDiskDrive.gif"  height="200" alt="Festplatte" title="Festplatte"/><br />
+                            <small>Video: Wikipedia-Nutzer Peter17</small>
+                        </p>
+                    </div>
+                    <div class="hoverinfo">
+                        <area shape="rect" coords="251,21,280,52" href="#" aria-labelledby="motherboard">
+                        <p id="motherboard">
+                            <strong>Mainboard (Motherboard):</strong> Leiterplatte, die die Komponenten des Computers aufnimmt, verbindet und ihre Kommunikation erm&ouml;glicht.<br />
+                            <img class="indent" src="/bjc-r/img/6-computers/Hardware_img/Motherboard.JPG"  height="200" alt="Mainboard" title="Mainboard"/><br />
+                            <small>Bild: Wikipedia-Nutzer Julianprescott2604juuly</small>
+                        </p>
+                    </div>
+                    <div class="hoverinfo">
+                        <area shape="rect" coords="266,178,296,204" href="#" aria-labelledby="speaker">
+                        <p id="speaker"><strong>Lautsprecher:</strong> Ein Ein-/Ausgabeger&auml;t, das Tonsignale des Computers wiedergibt.</p>
+                    </div>
+                    <div class="hoverinfo">
+                        <area shape="rect" coords="319,131,353,161" href="#" aria-labelledby="monitor">
+                        <p id="monitor"><strong>Monitor:</strong> Ein Ein-/Ausgabeger&auml;t, das Informationen sichtbar anzeigt. <em>Touchscreens</em> verbinden Anzeige und Bedienung.</p>
+                    </div>
+                    <div class="hoverinfo">
+                        <area shape="rect" coords="430,330,464,361" href="#" aria-labelledby="keyboard">
+                        <p id="keyboard"><strong>Tastatur:</strong> Eingabeger&auml;t, auf dem Nutzer*innen tippen, um mit dem Computer zu kommunizieren.</p>
+                    </div>
+                    <div class="hoverinfo">
+                        <area shape="rect" coords="496,292,532,326" href="#" aria-labelledby="mouse">
+                        <p id="mouse"><strong>Maus:</strong> Eingabeger&auml;t, mit dem Nutzer*innen grafische Elemente auf dem Bildschirm steuern.</p>
+                    </div>
+                    <div class="hoverinfo">
+                        <area shape="rect" coords="528,252,563,282" href="#" aria-labelledby="external_hd">
+                        <p id="external_hd"><strong>Externe Festplatte:</strong> Ein Ein-/Ausgabeger&auml;t f&uuml;r zus&auml;tzlichen oder Sicherungsspeicher.</p>
+                    </div>
+                    <div class="hoverinfo">
+                        <area shape="rect" coords="569,235,599,270" href="#" aria-labelledby="printer">
+                        <p id="printer"><strong>Drucker:</strong> Ausgabeger&auml;t, das digitale Daten auf Papier &uuml;bertr&auml;gt.</p>
+                    </div>
+                </map>
+                <div class="sidenote"><small>Grafik: Wikipedia-Nutzer HereToHelp</small></div>
+                <img class="indent" src="/bjc-r/img/6-computers/Hardware_img/ComputerComponents.png" alt="Computerkomponenten" title="Computerkomponenten" height="400" usemap="#Map" style="min-width:665px;position:relative;">
+        </div>
+
+        <div class="endnote">
+        	<a href="#hint-target" data-toggle="collapse" title="Warum sagt man Motherboard?">Warum hei&szlig;t es <em>Motherboard</em>?</a>
+			<div id="hint-target" class="collapse">In Desktop-Computern gibt es auch andere Leiterplatten &ndash; etwa Netzwerk-, Tastatur-/Maus- oder Erweiterungskarten &ndash; und <strong>alle stecken im Motherboard</strong>. In Laptops ist kaum Platz f&uuml;r zus&auml;tzliche Platinen, schon gar nicht senkrecht zum Motherboard, aber der Name blieb.</div>
+        </div>
+
+        <div class="ifTime">
+			<ol start="2">
+				<li>
+                	<img class="imageRight" src="/bjc-r/img/icons/talk-with-another-pair-mini.png" alt="Mit einem anderen Team sprechen" title="Mit einem anderen Team sprechen" />
+                    Stell dir vor, ihr kauft einen neuen Computer. In einer Vierergruppe sucht sich jede Person einen der folgenden Hauptgr&uuml;nde aus:<br />
+                    <ol start="a">
+                        <li>Vor allem E-Mails lesen und Webseiten besuchen (ohne viele Filme).</li>
+                        <li>Vor allem Online-Videospiele spielen.</li>
+                        <li>Vor allem Fotos und Musik speichern.</li>
+                        <li>Vor allem Online-Filme streamen.</li>
+                    </ol>
+                    Ihr wollt jeweils den g&uuml;nstigsten Computer, der f&uuml;r euren Zweck hervorragend funktioniert. <strong>Recherchiert, welche Merkmale daf&uuml;r besonders wichtig sind, w&auml;hlt ein Ger&auml;t und vergleicht eure Ergebnisse.</strong> Welcher Computer ist am teuersten, welcher am g&uuml;nstigsten? Habt ihr euch f&uuml;r ein Laptop oder einen Desktop entschieden und warum?
+                </li>
+                <li>
+                    Entwickle ein Quiz, das Wissen &uuml;ber Computerhardware abfragt.<br />
+                    <div class="sidenote">
+                        Sprites sind auf <em>not draggable</em> gesetzt, damit sich die Zahlen nicht verschieben.
+                        <img src="/bjc-r/img/1-introduction/snap-center-tabs.png" alt="Nicht-ziehbar-Option deaktivieren" title="Nicht-ziehbar-Option deaktivieren" />
+                    </div>
+                    <a href="/bjc-r/prog/6-computers/U6L1-HardwareQuiz.xml" class="run"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Starterprojekt laden und speichern" title="Klicke, um ein Starterprojekt zu laden. Speichere es anschlie&szlig;end."></a><br />
+                    Diese Projektdatei enth&auml;lt einen B&uuml;hnenhintergrund, Sprite-Kost&uuml;me f&uuml;r die nummerierten Komponenten und eine Liste der Komponenten, damit du sie nicht eintippen musst.<br />
+                    <div class="endnote">
+                        &Uuml;berlege beim Entwurf deines Programms:
+                        <ol type="a">
+                            <li>Wie stellt der Computer Fragen? W&auml;hlt das Programm zuf&auml;llig Komponenten aus?</li>
+                            <li>Wie antwortet der/die Spieler*in? Klicken sie eine Zahl auf der B&uuml;hne an?</li>
+                            <li>Wie reagiert das Programm auf Fehler? D&uuml;rfen sie sofort erneut antworten? Wird sp&auml;ter wiederholt? Gibt es nur einen Versuch?</li>
+                            <li>Willst du Punkte z&auml;hlen? Falls ja, wie?</li>
+                            <li>Willst du festhalten, was bereits gefragt wurde, damit sich Komponenten nicht wiederholen? Wenn ja, wie?</li>
+                            <li>Wann endet das Spiel und was passiert dann?</li>
+                        </ol>
+                    </div>
+                    <img class="indent" src="/bjc-r/img/6-computers/hardware-quiz.jpg" alt="Quiz zu Computerkomponenten mit Alonzo, der sagt: „Klicke auf die Nummer der CPU.“" title="Quiz zu Computerkomponenten" />
+                </li>
+            </ol>
+        </div>
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>
+                    Suche dir eine oder mehrere dieser Fragen f&uuml;r eine Recherche aus:
+                    <ul>
+                        <li>Wie erkennt ein Touchscreen, wo dein Finger den Bildschirm ber&uuml;hrt?</li>
+                        <li>Was ist ein Register? Warum besitzen Computer Register?</li>
+                        <li>Was ist ein Cache? Warum haben Computer Caches?</li>
+                    </ul>
+                </li>
+			</ol>
+		</div>
+
+    </body>
+</html>

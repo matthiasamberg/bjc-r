@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 6, Labor 2: Geschichte der Computer, Seite 2</title>
+    </head>
+    <body>
+        <h2>Mooresches Gesetz</h2>
+
+        <div class="learn"><strong>Auf dieser Seite</strong> erfährst du, dass sich Prozessorleistung und Speichergröße seit über 50 Jahren ungefähr alle ein bis zwei Jahre verdoppeln.</div>
+        <img class="imageRight noshadow" src="/bjc-r/img/6-computers/mooreslaw_graph.png" alt="Diagramm: Transistoranzahl in Prozessoren wächst von 1971 bis 2017 exponentiell von 0 auf 20 Milliarden" title="Exponentielles Wachstum der Transistoranzahl 1971–2017"/>
+		<p>1965 sagte Gordon Moore, einer der Pionier*innen integrierter Schaltkreise, voraus, dass sich die <em>Zahl der Transistoren</em> auf einem Chip jedes Jahr verdoppeln würde. 1975 korrigierte er seine Schätzung auf eine Verdopplung alle zwei Jahre. Diese Vorhersage heißt <em>Mooresches Gesetz</em>.</p>
+		<div class="vocabFullWidth">: <strong>Mooresches Gesetz</strong>
+			<p><strong>Mooresches Gesetz</strong> ist die Beobachtung, dass sich die Anzahl der Transistoren, die auf einen Chip passen, ungefähr jährlich (oder alle zwei Jahre) verdoppelt.</p>
+		</div>
+
+        <div class="comment">5.2.1K Verbesserungen bei Algorithmen, Hardware und Software erhöhen die Arten und Größen von Problemen, die sich programmierend lösen lassen.</div>
+        <p>Auch andere Messwerte zeigen ein ähnliches Verdopplungsmuster, etwa Prozessor­geschwindigkeit oder Speichergröße. Wenn Hardware doppelt so schnell wird, können größere Problemgrößen effizient bearbeitet werden.</p>
+        <p>Wichtig ist nicht nur, <em>dass</em> Computer schneller werden, sondern dass Ingenieur*innen abschätzen können, <em>wieviel</em> schneller – so lassen sich Projekte planen, deren Ergebnisse erst in fünf Jahren benötigt werden.</p>
+
+        <div class="ifTime">
+            <ol>
+                <li>
+                    Der riesige Computer aus Labor 1 wurde 1975 gebaut und hatte rund 1 MB Speicher. Ein Server von 2017 (Desktopgröße) besitzt bis zu 3 TB (3 Milliarden MB). Prüfe, ob die Verdopplung alle zwei Jahre hier zutrifft.
+                    <ol>
+                        <li>Wie viele Jahre liegen zwischen den beiden Maschinen?</li>
+                        <li>Wenn sich die Speicherkapazität alle zwei Jahre verdoppelt, mit welchem Faktor würdest du 1 MB multiplizieren, um 2017 zu prognostizieren?</li>
+                        <li>Liegt 3 TB über oder unter deiner Erwartung?</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <h3>Grenzen des Mooreschen Gesetzes</h3>
+        <img class="imageRight" src="/bjc-r/img/6-computers/heatsink.png" height="200px" alt="Kühlkörper" title="Kühlkörper" />
+        <p>Damit Transistorzahlen weiter steigen, müssen Transistoren immer kleiner werden. Doch höhere Dichte und schnellere Schaltvorgänge erzeugen mehr <em>Hitze</em>. Moderne Chips produzieren bereits so viel Wärme, dass sie schmelzen könnten, wenn sie nicht aktiv gekühlt würden. Deshalb sitzen Prozessoren unter Metall-<em>Kühlkörpern</em> (siehe rechts), die Wärme an die Luft abgeben.</p>
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>Kühlkörper sind keine massiven Metallblöcke, sondern haben Lamellen und Zacken. Finde heraus, warum.</li>
+            </ol>
+        </div>
+        <p>Wegen des Hitzeproblems haben Hersteller vorerst aufgehört, Taktfrequenzen weiter zu erhöhen. Stattdessen packen sie mehrere Prozessoren auf einen Chip. Wenn sich Berechnungen auf unterschiedliche Datenanteile gleichzeitig anwenden lassen (Parallelität – ähnlich wie Sprite-Klone, die denselben Block zur gleichen Zeit ausführen), erreichen solche <em>Multicore</em>-Chips effektiv eine höhere Geschwindigkeit als ein einzelner Kern. Viele heutige Computer besitzen zwei oder vier Kerne. Damit das etwas bringt, muss Software explizit für Multicore entwickelt werden.</p>
+
+        <div class="endnote">
+            <a href="#hint-target" data-toggle="collapse" title="Mehr über die Grenzen des Mooreschen Gesetzes erfahren">Mehr über die Grenzen des Mooreschen Gesetzes</a>
+            <div id="hint-target" class="collapse">
+                <p>In den kommenden Jahren werden Transistoren so klein wie Atome. Auf dieser Skala funktionieren herkömmliche Transistoren aus physikalischen Gründen nicht mehr. Neben der Wärme gibt es also grundsätzliche Grenzen für Dichte und Geschwindigkeit – etwa die maximale Driftgeschwindigkeit von Elektronen.</p>
+                <p>Optimist*innen hoffen, dass neue Technologien bereitstehen, bevor diese Grenzen erreicht werden. Eine Idee wäre, einzelne Elektronen als Bits zu verwenden (Elektro­nen sind kleiner als Atome). Eine andere Möglichkeit wäre, Licht anstelle von elektrischem Strom zur Informationsübertragung einzusetzen. Bis dahin ist jedoch noch viel Forschung nötig.</p>
+            </div>
+        </div>
+
+        <div class="forYouToDo">
+			<ol start="2">
+				<li>
+                    <!-- Question 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Which is TRUE according to Moore's Law?"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">Gordon Moore beobachtete 1965, dass sich Rechenleistungen ungefähr alle zwei Jahre verdoppeln. Technologieunternehmen nutzen diese Beobachtung, das „Mooresche Gesetz“, zur Planung. Welche Aussage beschreibt das am besten?</div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Sie können damit rechnen, dass sich ihre Gewinne alle zwei Jahre verdoppeln.</div>
+                            <div class="feedback">Das lässt sich aus dem Mooreschen Gesetz nicht ableiten.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Sie können exakt vorhersagen, wann neue Entwicklungen verfügbar sein werden.</div>
+                            <div class="feedback">Auch das erlaubt das Mooresche Gesetz nicht.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Sie können ihre Forschungs- und Entwicklungsziele an zu erwartenden künftigen Rechengeschwindigkeiten ausrichten.</div>
+                            <div class="feedback">Richtig.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Sie können damit rechnen, dass sich ihre Kosten mit jeder Geschwindigkeitssteigerung verdoppeln.</div>
+                            <div class="feedback">Auch das folgt nicht aus dem Mooreschen Gesetz.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c3"></div>
+                        </div>
+                    </div>
+
+                </li>
+			</ol>
+		</div>
+
+
+    </body>
+</html>

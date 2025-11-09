@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 6, Labor 1: Hierarchie der Computerabstraktion, Seite 1</title>
+	</head>
+    <body>
+		<h2>Abstraktion im Inneren des Computers</h2>
+
+        <p>In Einheit&nbsp;4, <a href="/bjc-r/cur/programming/4-internet/old/2-communication-protocols/3-open-protocols.html?topic=nyc_bjc%2F4-internet.topic&amp;course=bjc4nyc.html&amp;novideo&amp;noassignment" title="A Hierarchy of Open Protocols">A Hierarchy of Open Protocols</a>, hast du gesehen, dass Internetsysteme aus mehreren Abstraktionsebenen bestehen: Anwendungsprogramme (wie dein E-Mail-Programm) stehen ganz oben, Netzwerkinfrastruktur wie Wi-Fi oder Ethernet ganz unten. Erinnere dich: <em>H&ouml;here</em> Ebenen stehen n&auml;her bei dem, was Nutzer*innen tun oder denken wollen; <em>untere</em> Ebenen besch&auml;ftigen sich damit, wie die Maschinen wirklich funktionieren.</p>
+        <p>So wie beim Internet gibt es auch bei der Funktionsweise eines Computers im Inneren mehrere Abstraktionsebenen.</p>
+
+        <div class="learn">
+            <p><strong>In diesem Labor</strong> lernst du die Abstraktionsebenen in Computer-Software und -Hardware kennen.</p>
+            <p><strong>Auf dieser Seite</strong> bekommst du einen &Uuml;berblick &uuml;ber drei gro&szlig;e Gruppen (<em>Dom&auml;nen</em>) von Abstraktionsebenen.</p>
+        </div>
+
+        <p>Es gibt viele Abstraktionsebenen daf&uuml;r, wie Computer arbeiten. Hier sind sie in drei &uuml;bergeordnete Dom&auml;nen eingeordnet:</p>
+
+		<img class="indent noshadow" src="/bjc-r/img/6-computers/hardware-abstraction.png" alt="Diagramm der Computerabstraktionshierarchie mit drei Ebenen: Software-Bereich (Anwendungen, Programmiersprachen, Bibliotheken, Betriebssysteme), Digitaler Bereich (Architektur, Komponenten, integrierte Schaltkreise, Logikgatter) und Analoger Bereich (Transistoren); zwischen Software und Digitalbereich steht „Programmierabstraktionsbarriere“, zwischen Digital- und Analogbereich „Digitale Abstraktionsbarriere“; ein Pfeil am rechten Rand zeigt von hoher zu niedriger Abstraktion." title="Diagramm der Computerabstraktionshierarchie mit Software-, Digital- und Analogbereich sowie ihren wichtigsten Ebenen" />
+        <div class="endnote">Unterschiedliche Personen w&uuml;rden dieses Diagramm leicht anders zeichnen, also musst du nicht jede Ebene auswendig lernen. Wichtig ist, sich die Ebenen Software, digitale Computerhardware und darunterliegende analoge Schaltungskomponenten zu merken.</div>
+
+        <h3>Software-Dom&auml;ne</h3>
+        <p>
+            Die Programme, die du schreibst und nutzt, sind Software. Unter diesen Programmen befindet sich weitere Software, die ihnen bei der Arbeit hilft. In diesem Labor betrachten wir vier Abstraktionsebenen im Software-Bereich:
+            <ul>
+                <li><strong>Anwendungen</strong>, die du schreibst und verwendest</li>
+                <li><strong>Programmiersprachen</strong>, mit denen Anwendungen geschrieben werden</li>
+                <li><strong>Bibliotheken</strong> mit hilfreichen Funktionen, die komplizierte Details verbergen</li>
+                <li><strong>Betriebssysteme</strong>, die die Schnittstelle zur Hardware bilden</li>
+            </ul>
+        </p>
+        <p>Software ist eine <em>Abstraktion</em>&mdash;eine M&ouml;glichkeit, &uuml;ber den Computer nachzudenken, ohne sich gleichzeitig mit seiner inneren Funktionsweise besch&auml;ftigen zu m&uuml;ssen.</p>
+        <div class="endnote">Auch Autofahrer*innen bewegen sich auf einer hohen Abstraktionsebene, wenn sie das Bremspedal benutzen. Solange Ingenieur*innen und Mechaniker*innen das Auto richtig konstruiert und gebaut haben, m&uuml;ssen Fahrer*innen keine Details dar&uuml;ber wissen, <em>wie</em> das Bremssystem funktioniert&mdash;sie verwenden es einfach auf hoher Ebene.</div>
+        <div class="captioned">
+            <img class="inline" src="/bjc-r/img/6-computers/motherboard_small.jpg" alt="Hauptplatine (Motherboard) mit verschiedenen Chips" title="Hauptplatine (Motherboard)"/>
+            <div><small>Bild: Wikipedia-Nutzer*in Julianprescott2604juuly</small></div>
+        </div>
+
+        <h3>Digitale Dom&auml;ne</h3>
+        <p>
+        	Im Software-Bereich ist jede Abstraktionsebene ein anderes Programm. In der digitalen Dom&auml;ne dagegen sind die Ebenen unterschiedliche Arten, &uuml;ber dasselbe physikalische Objekt nachzudenken. Die Schaltungen im Inneren eines Computers sind komplex, und damit ihre Konstruktion m&ouml;glich ist, betrachten Ingenieur*innen sie auf mehreren Abstraktionsebenen:
+            <ul>
+                <li>Die <strong>Architektur</strong> ist die Menge an Befehlen, die Software an die Hardware senden kann und die diese versteht.</li>
+                <li>Der Computer besitzt <strong>Komponenten</strong> (zum Beispiel Speicher, Prozessoren, Grafikkarten usw.), die die Architektur umsetzen.</li>
+                <li>Diese Komponenten bestehen aus <strong>integrierten Schaltkreisen (Chips)</strong> &ndash; den schwarzen Rechtecken, die du auf der Leiterplatte siehst.</li>
+                <li>Diese integrierten Schaltkreise basieren auf <strong>Logikgattern</strong>, den grundlegenden Bausteinen, die boolesche Funktionen umsetzen.
+                    <div class="endnote">
+                        Boolesche Funktionen hast du in <a href="/bjc-r/cur/programming/2-complexity/3-predicates/1-what-is-predicate.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&amp;course=bjc4nyc.html&amp;novideo&amp;noassignment">Einheit&nbsp;2, Labor&nbsp;3: Entscheidungen mithilfe von Pr&auml;dikaten</a> kennengelernt.<br />
+                        <img class="indent" src="/bjc-r/img/blocks/and.png" alt="() und ()" title="() und ()" />
+                        <img class="indent" src="/bjc-r/img/blocks/or-small.png" alt="() oder ()" title="() oder ()" />
+                        <img class="indent" src="/bjc-r/img/blocks/not_small.png" alt="nicht ()" title="nicht ()" />
+                    </div>
+                </li>
+            </ul>
+        </p>
+
+        <h3>Analoge Dom&auml;ne</h3>
+        <p>Logikgatter, die niedrigste Abstraktionsebene der digitalen Dom&auml;ne, arbeiten mit Einsen und Nullen. In der physikalischen Realit&auml;t bestehen diese Logikgatter aus <strong>Transistoren</strong>, einer Art elektronischer Bauteile. Transistoren sind keine einfachen Lichtschalter, die nur an oder aus sind. Es kann Zwischenwerte geben (zum Beispiel &bdquo;nur zu 23&nbsp;% an&ldquo;). Deshalb m&uuml;ssen Elektroingenieur*innen die Gesetze der Elektronik beachten, damit digitale Schaltungen so konstruiert sind, dass solche Zwischenwerte nicht auftreten.</p>
+
+        <div class="vocabFullWidth">: <strong>Analog</strong> vs. <strong>Digital</strong>
+        	<p>Digital und analog sind Gegens&auml;tze. <strong>Digital</strong> bedeutet, dass Informationen als <em>Einsen und Nullen</em> dargestellt werden. <strong>Analog</strong> bedeutet, dass Informationen durch Signale dargestellt werden, die <em>kontinuierlich variieren</em> (also auch Zwischenwerte enthalten).</p>
+        </div>
+
+
+	</body>
+</html>

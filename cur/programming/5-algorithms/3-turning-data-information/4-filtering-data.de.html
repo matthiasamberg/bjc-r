@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 5, Labor 3: Daten in Informationen verwandeln, Seite 4</title>
+    </head>
+
+    <body>
+        <h2>Daten analysieren</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> stellst du anspruchsvollere Fragen zu deinem Datensatz und lernst neue Werkzeuge kennen.</p>
+        </div>
+
+        <p>
+            <div class="ap-standard">DAT-2.D.4</div>
+            Du kannst Fragen zu bestimmten Teilmengen deiner Daten stellen, indem du die Daten mit <code>keep</code> <em>filterst</em>. Filtern ist ein mächtiges Werkzeug, um Informationen und Muster zu erkennen. Beispiel: „Wie hoch ist die durchschnittliche City-MPG <em>nur für Subarus</em> in diesem Datensatz?“<br />
+            <img class="indent" src="/bjc-r/img/5-algorithms/average-mpg-of-subarus-reporting.png" alt="average of (column (9) of table (keep items (field (14) of record 'empty list input slot' = Subaru) from (data of table (cars))) reporting 19.704..." title="average of (column (9) of table (keep items (field (14) of record 'empty list input slot' = Subaru) from (data of table (cars))) reporting 19.704..." /><br />
+            Spalte 14 enthält den Fahrzeughersteller. Wir <code>keep</code> alle Datensätze aus <var>cars</var>, deren 14. Feld „Subaru“ ist. Anschließend nehmen wir Spalte 9 (City-MPG) dieser gefilterten Datensätze und berechnen den Durchschnitt.
+        </p>
+        <div class="endnote">
+            <p>Beachte die vielen Nachkommastellen im Ergebnis. Wie viele Ziffern stehen in der Tabelle für den MPG-Wert? In der Datenanalyse gilt: Ergebnisse sollten nicht mehr Genauigkeit beanspruchen, als die Ausgangsdaten hergeben. In diesem Fall sollte das Ergebnis auf 19 gerundet werden.</p>
+            <p>Ausdrücke mit vielen verschachtelten Funktionen lassen sich leichter mit <code>pipe</code> aufbauen. <a href="#hint-pipe" data-toggle="collapse" title="Wie würde das mit pipe aussehen?">Wie würde das mit <code>pipe</code> aussehen?</a>
+                <div id="hint-pipe" class="collapse">
+                    <p>
+                        Mit der Funktion <code>pipe</code> aus der Bibliothek „Bar Charts“ kannst du die Schritte nacheinander definieren:<br />
+                       <img class="indent" src="/bjc-r/img/5-algorithms/pipe-cars-reporting.png" alt="pipe (data of table (cars)) → (keep items ...) (column (9) of table ()) (average of ()) reporting 19.49..." title="pipe (data of table (cars)) → (keep items ...) (column (9) of table ()) (average of ()) reporting 19.49..." /><br />
+                        <code>pipe</code> sendet die <code>data of table (</code><var>cars</var><code>)</code> zunächst durch <code>keep</code> (filtert auf Subarus), dann durch <code>column (9) of table</code> (City-MPG) und schließlich durch <code>average</code>.
+                    </p>
+                    <p>Leere Eingabefelder werden automatisch mit dem vorherigen Ergebnis gefüllt: In <code>keep</code> sind beide leeren Felder <code>data of table (</code><var>cars</var><code>)</code>; das leere Feld in <code>column (9) of table</code> erhält das Ergebnis von <code>keep</code>; das leere Feld in <code>average</code> erhält das Ergebnis von <code>column (9) of table</code>. So fließen die Daten Schritt für Schritt durch die Funktionen.</p>
+                </div>
+            </p>
+        </div>
+
+        <div class="forYouToDo">
+			<ol>
+				<li>Öffne dein Projekt U5L3-Data-Processing, falls es nicht mehr geöffnet ist.</li>
+                <li>
+                    <div class="sidenote">
+                        <p>Wie du Bibliotheken lädst oder Blöcke exportierst/importierst, hast du auf <a href="/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/2-math-predicates.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 4, Seite 2: Mathe-Bibliothek erstellen">Einheit 2, Labor 4, Seite 2</a> gelernt.</p>
+                    </div>
+                    Ergänze die Werkzeuge, die du brauchst:
+                    <ol>
+                        <li>Lade die Bibliothek „Bar Charts“ über „Libraries…“ im Snap<em>!</em>-Dateimenü (<img src="/bjc-r/img/1-introduction/file_button.png" style="height:1.6em;" alt="Datei-Schaltfläche" title="Datei-Schaltfläche"/>).</li>
+                        <li>Importiere die Blöcke <code>maximum of list</code>, <code>minimum of list</code>, <code>sum of list</code> und <code>average of list</code> aus deinem Projekt U2L4-MathTools.</li>
+                    </ol>
+                </li>
+			</ol>
+		</div>
+
+        <p>Auch wenn der Datensatz <var>cars</var> mittlerweile alt ist, bleiben die Techniken relevant.</p>
+
+        <div class="forYouToDo">
+			<ol start="3">
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" />Schreibe eine kurze Beschreibung und formuliere mindestens drei Forschungsfragen, die du mit deinen Blöcken beantworten möchtest.</li>
+                <li>Konzentriere dich auf mehrere Fragen, die du mit Daten beantworten kannst.</li>
+			</ol>
+        </div>
+
+        <p>Manchmal sind deine Daten noch nicht in der passenden Form. Du kannst sie vorverarbeiten (Filtern, Gruppieren, Berechnen), bevor du sie visualisierst.</p>
+
+        <div class="forYouToDo">
+			<ol start="5">
+                <li>Baue einen Block <img class="inline nopadtb" src="/bjc-r/img/5-algorithms/keep-items.png" alt="keep items () of () from ()" title="keep items () of () from ()" />, um gezielt Teilmengen zu filtern.</li>
+                <li>Nimm dir zwei Fragen vor, bei denen du Filtern, Summieren, Durchschnitt oder Maximum brauchst, und beantworte sie mit deinen Blöcken.</li>
+                <li><img class="inline" src="/bjc-r/img/icons/write-out-thoughts.png" alt="Schreibe deine Gedanken auf" title="Schreibe deine Gedanken auf" />Dokumentiere, welche Blöcke du erstellt hast und wie du sie kombinierst.</li>
+			</ol>
+        </div>
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>Nutze <code>pipe</code>, um komplexere Analysen Schritt für Schritt aufzubauen, z. B. beim Filtern nach mehreren Kriterien.</li>
+                <li>Entwickle weitere Blöcke, die dir helfen, Daten zu sortieren oder Werte zusammenzufassen, z. B. eine Funktion zur Berechnung des Median.</li>
+            </ol>
+        </div>
+
+    </body>
+</html>

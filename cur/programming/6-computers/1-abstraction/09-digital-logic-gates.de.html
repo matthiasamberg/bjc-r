@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 6, Labor 1: Hierarchie der Computerabstraktion, Seite 9</title>
+	</head>
+
+	<body>
+		<h2>Die digitale Dom&auml;ne: Logikgatter</h2>
+
+		<div class="learn"><strong>Auf dieser Seite</strong> wiederholst du drei boolesche Operatoren (<code>and</code>, <code>or</code>, <code>not</code>) und lernst, wie sie mit elektronischen Schaltungen verkn&uuml;pft sind.</div>
+
+		<p>In einer Schaltung mit Tausenden oder gar Milliarden Transistoren k&ouml;nnen Hardware-Designer*innen nicht jeden einzelnen Transistor betrachten. Genau wie Programmierende mit Abstraktionen arbeiten, nutzen Hardware-Architekt*innen Abstraktionen, bei denen eine Gruppe von Transistoren und anderen Bauteilen als eine Einheit betrachtet wird. Im Wesentlichen gibt es zwei Typen solcher Einheiten: einen f&uuml;r Speicher, einen f&uuml;r Berechnungen.</p>
+        <div class="endnote">
+        	<a href="#hint-memory" data-toggle="collapse" title="Mehr &uuml;ber Speicher erfahren">Mehr &uuml;ber Speicher</a>
+			<div id="hint-memory" class="collapse">
+                <p>Speicher besteht aus <em>Flipflops</em>. Ein Flipflop ist eine Schaltung mit zwei stabilen Zust&auml;nden: an und aus. Ein Eingangssignal kann es einschalten, ausschalten oder seinen Zustand umkehren. Danach bleibt es in diesem Zustand, bis ein neues Signal kommt. Der Ausgang zeigt den aktuellen Zustand an: an, wenn das Flipflop an ist, aus, wenn es aus ist.</p>
+            </div>
+        </div>
+
+        <h3>Boolesche Operatoren</h3>
+        <p>Berechnungsschaltungen sind besonders spannend. Sie berechnen <em>Funktionen</em>, ganz wie Reporter in Snap<em>!</em>. Man k&ouml;nnte meinen, die grundlegenden Schaltungen seien Addition, Subtraktion, Multiplikation und Division. Solche Schaltungen gibt es zwar, sie bestehen aber aus <em>Logikgattern</em>: Schaltungen, die <strong>boolesche Funktionen</strong> wie <code>and</code>, <code>or</code> und <code>not</code> berechnen.</p>
+        <p>Boolesche Funktionen gelten als fundamentaler, weil ihre Ein- und Ausg&auml;nge &uuml;ber jeweils <em>eine</em> Leitung dargestellt werden k&ouml;nnen. Bei arithmetischen Funktionen ist das nicht so: Wenn eine Leitung den Wert 1 tr&auml;gt und keine Spannung den Wert 0 bedeutet, hat ein Addierer drei m&ouml;gliche Ergebnisse, denn 1+1=2 ist weder 0 noch 1. Betrachtest du die Spannung hingegen als <code>true</code> und keine Spannung als <code>false</code>, dann hat eine boolesche Funktion mit zwei Eing&auml;ngen weiterhin nur zwei m&ouml;gliche Ausg&auml;nge &ndash; also reicht eine Leitung.</p>
+		<p>Beispiele kennst du aus <a href="/bjc-r/cur/programming/2-complexity/3-predicates/1-what-is-predicate.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&amp;course=bjc4nyc.html&amp;novideo&amp;noassignment" title="What’s a Predicate?">Einheit&nbsp;2, Labor&nbsp;3: Entscheidungen mit Pr&auml;dikaten</a>: <code>AND</code>, <code>OR</code> und <code>NOT</code>:<br />
+            <img class="indent" src="/bjc-r/img/6-computers/logical-operators/and-TT-reporting.png" alt="(true) AND (true) ergibt true" title="(true) AND (true) ergibt true" />
+            <img class="indent" src="/bjc-r/img/6-computers/logical-operators/and-TF-reporting.png" alt="(true) AND (false) ergibt false" title="(true) AND (false) ergibt false" />
+            <img class="indent" src="/bjc-r/img/6-computers/logical-operators/and-FF-reporting.png" alt="(false) AND (false) ergibt false" title="(false) AND (false) ergibt false" />
+            <img class="indent" src="/bjc-r/img/6-computers/logical-operators/or-TT-reporting.png" alt="(true) OR (true) ergibt true" title="(true) OR (true) ergibt true" />
+            <img class="indent" src="/bjc-r/img/6-computers/logical-operators/or-TF-reporting.png" alt="(true) OR (false) ergibt true" title="(true) OR (false) ergibt true" />
+            <img class="indent" src="/bjc-r/img/6-computers/logical-operators/or-FF-reporting.png" alt="(false) OR (false) ergibt false" title="(false) OR (false) ergibt false" />
+            <img class="indent" src="/bjc-r/img/6-computers/logical-operators/not-T-reporting.png" alt="NOT (true) ergibt false" title="NOT (true) ergibt false" />
+            <img class="indent" src="/bjc-r/img/6-computers/logical-operators/not-F-reporting.png" alt="NOT (false) ergibt true" title="NOT (false) ergibt true" />
+        </p>
+
+		<div class="endnote">
+            <strong>Weitere Sichtweisen auf boolesche Operatoren:</strong> Boolesche Operationen lassen sich elektronisch nachbilden und werden h&auml;ufig als Wahrheitstabellen (mit true/false oder 0/1) dargestellt.
+            <ul>
+                <li>
+                	<a href="#hint-truth-tables-and" data-toggle="collapse" title="Schaltung und Wahrheitstabellen f&uuml;r and">Schaltung und Wahrheitstabellen f&uuml;r <code>and</code></a>
+                    <div id="hint-truth-tables-and" class="collapse">
+                        <p>
+                        Diese Schaltung zeigt, wie sich der Operator <code>and</code> mit zwei Schaltern in Reihe darstellen l&auml;sst. Beim Schlie&szlig;en beider Schalter flie&szlig;t Strom zur Lampe, andernfalls bleibt sie aus.<br />
+                        <img class="indent" data-gifffer="/bjc-r/img/6-computers/LogicGates_img/Animations/gif/AND_Animation.gif" width="335" height="250" alt="Elektrische Schaltung f&uuml;r AND: zwei Schalter in Reihe steuern eine Lampe. Nur wenn beide geschlossen sind, leuchtet sie." title="Elektrische Schaltung f&uuml;r AND" />
+                        </p>
+                        <div class="sidenoteBig">
+                            <p>Die beiden Tabellen sind identisch; sie unterscheiden sich nur durch die Bezeichnungen true/false und 1/0.</p>
+                        </div>
+                        <table class="truth bordered" summary="Wahrheitstabelle f&uuml;r AND (true/false)">
+                        	<tr>
+                            	<th scope="colgroup" colspan="2">Eingaben</th>
+                            	<th scope="col">Ausgabe</th>
+                            </tr>
+                            <tr>
+                            	<th scope="col" style="width:100px;">A</th>
+                            	<th scope="col" style="width:100px;">B</th>
+                            	<th scope="col" style="width:100px;">A <code>and</code> B</th>
+                            </tr>
+                            <tr>
+                            	<td>False</td>
+                            	<td>False</td>
+                            	<td>False</td>
+                            </tr>
+                            <tr>
+                            	<td>False</td>
+                            	<td>True</td>
+                            	<td>False</td>
+                            </tr>
+                            <tr>
+                            	<td>True</td>
+                            	<td>False</td>
+                            	<td>False</td>
+                            </tr>
+                            <tr>
+                            	<td>True</td>
+                            	<td>True</td>
+                            	<td>True</td>
+                            </tr>
+                        </table>
+                        <table class="truth bordered" summary="Wahrheitstabelle f&uuml;r AND (0/1)">
+                        	<tr>
+                            	<th scope="colgroup" colspan="2">Eingaben</th>
+                            	<th scope="col">Ausgabe</th>
+                            </tr>
+                            <tr>
+                            	<th scope="col" style="width:100px;">A</th>
+                            	<th scope="col" style="width:100px;">B</th>
+                            	<th scope="col" style="width:100px;">A <code>and</code> B</th>
+                            </tr>
+                            <tr>
+                            	<td>0</td>
+                            	<td>0</td>
+                            	<td>0</td>
+                            </tr>
+                            <tr>
+                            	<td>0</td>
+                            	<td>1</td>
+                            	<td>0</td>
+                            </tr>
+                            <tr>
+                            	<td>1</td>
+                            	<td>0</td>
+                            	<td>0</td>
+                            </tr>
+                            <tr>
+                            	<td>1</td>
+                            	<td>1</td>
+                            	<td>1</td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+                <li>
+                	<a href="#hint-truth-tables-or" data-toggle="collapse" title="Schaltung und Wahrheitstabellen f&uuml;r or">Schaltung und Wahrheitstabellen f&uuml;r <code>or</code></a>
+                    <div id="hint-truth-tables-or" class="collapse">
+                    <p>
+                        Diese Schaltung zeigt ein vereinfachtes <code>or</code>: Die Schalter liegen parallel. Wenn einer oder beide geschlossen sind, leuchtet die Lampe; nur wenn beide offen sind, bleibt sie aus.<br />
+                        <img class="indent" data-gifffer="/bjc-r/img/6-computers/LogicGates_img/Animations/gif/OR_Animation.gif" width="335" height="250" alt="Elektrische Schaltung f&uuml;r OR: zwei Schalter parallel steuern eine Lampe. Wenn mindestens einer geschlossen ist, leuchtet sie." title="Elektrische Schaltung f&uuml;r OR" />
+                	</p>
+                    	<div class="sidenoteBig">
+                            <p>Auch hier sind die Tabellen identisch bis auf die Bezeichnungen.</p>
+                            <p>Im Alltag hat &bdquo;oder&ldquo; zwei Bedeutungen. <em>Inklusiv</em> bedeutet &bdquo;mindestens eines&ldquo; (&bdquo;Regnet es <em>oder</em> ist es sehr kalt&ldquo;). <em>Exklusiv</em> meint &bdquo;dies oder das, aber nicht beides&ldquo; (&bdquo;Iss dein Gem&uuml;se <em>oder</em> es gibt keinen Nachtisch&ldquo;). In Informatik und Mathematik bedeutet &bdquo;or&ldquo; immer inklusiv. Wenn exklusiv gemeint ist, muss das dazu gesagt werden.</p>
+                        </div>
+                        <table class="truth bordered" summary="Wahrheitstabelle f&uuml;r OR (true/false)">
+                        	<tr>
+                            	<th scope="colgroup" colspan="2">Eingaben</th>
+                            	<th scope="col">Ausgabe</th>
+                            </tr>
+                            <tr>
+                            	<th scope="col" style="width:100px;">A</th>
+                            	<th scope="col" style="width:100px;">B</th>
+                            	<th scope="col" style="width:100px;">A <code>or</code> B</th>
+                            </tr>
+                            <tr>
+                            	<td>False</td>
+                            	<td>False</td>
+                            	<td>False</td>
+                            </tr>
+                            <tr>
+                            	<td>False</td>
+                            	<td>True</td>
+                            	<td>True</td>
+                            </tr>
+                            <tr>
+                            	<td>True</td>
+                            	<td>False</td>
+                            	<td>True</td>
+                            </tr>
+                            <tr>
+                            	<td>True</td>
+                            	<td>True</td>
+                            	<td>True</td>
+                            </tr>
+                        </table>
+                        <table class="truth bordered" summary="Wahrheitstabelle f&uuml;r OR (0/1)">
+                        	<tr>
+                            	<th scope="colgroup" colspan="2">Eingaben</th>
+                            	<th scope="col">Ausgabe</th>
+                            </tr>
+                            <tr>
+                            	<th scope="col" style="width:100px;">A</th>
+                            	<th scope="col" style="width:100px;">B</th>
+                            	<th scope="col" style="width:100px;">A <code>or</code> B</th>
+                            </tr>
+                            <tr>
+                            	<td>0</td>
+                            	<td>0</td>
+                            	<td>0</td>
+                            </tr>
+                            <tr>
+                            	<td>0</td>
+                            	<td>1</td>
+                            	<td>1</td>
+                            </tr>
+                            <tr>
+                            	<td>1</td>
+                            	<td>0</td>
+                            	<td>1</td>
+                            </tr>
+                            <tr>
+                            	<td>1</td>
+                            	<td>1</td>
+                            	<td>1</td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+				<li>
+                	<a href="#hint-truth-tables-not" data-toggle="collapse" title="Schaltung und Wahrheitstabellen f&uuml;r not">Schaltung und Wahrheitstabellen f&uuml;r <code>not</code></a>
+					<div id="hint-truth-tables-not" class="collapse">
+                    <p>
+                        Diese Schaltung zeigt ein vereinfachtes <code>not</code>: Der Schalter wirkt wie ein <em>Sicherungsschalter</em>. Ist er <em>an</em>, unterbricht er den Stromkreis und die Lampe erlischt; ist er aus, flie&szlig;t Strom und die Lampe leuchtet.<br />
+                        <img class="indent" data-gifffer="/bjc-r/img/6-computers/LogicGates_img/Animations/gif/NOT_Animation2.gif" width="335" height="250" alt="Elektrische Schaltung f&uuml;r NOT: ein Schalter unterbricht den Stromkreis, sodass die Lampe ausgeht." title="Elektrische Schaltung f&uuml;r NOT" />
+                    </p>
+                    	<div class="sidenote">Auch hier sind die Tabellen bis auf true/false vs. 0/1 identisch.</div>
+                        <table class="truth bordered" summary="Wahrheitstabelle f&uuml;r NOT (true/false)">
+                        	<tr>
+                            	<th scope="col">Eingang</th>
+                            	<th scope="col">Ausgang</th>
+                            </tr>
+                            <tr>
+                            	<th scope="col" style="width:100px;">A</th>
+                            	<th scope="col" style="width:100px;"><code>not</code> A</th>
+                            </tr>
+                            <tr>
+                            	<td>False</td>
+                            	<td>True</td>
+                            </tr>
+                            <tr>
+                            	<td>True</td>
+                            	<td>False</td>
+                            </tr>
+                        </table>
+                        <table class="truth bordered" summary="Wahrheitstabelle f&uuml;r NOT (0/1)">
+                        	<tr>
+                            	<th scope="col">Eingang</th>
+                            	<th scope="col">Ausgang</th>
+                            </tr>
+                            <tr>
+                            	<th scope="col" style="width:100px;">A</th>
+                            	<th scope="col" style="width:100px;"><code>not</code> A</th>
+                            </tr>
+                            <tr>
+                            	<td>0</td>
+                            	<td>1</td>
+                            </tr>
+                            <tr>
+                            	<td>1</td>
+                            	<td>0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </li>
+			</ul>
+        </div>
+
+
+        <h2>Logikgatter</h2>
+        <p>Im Computer werden boolesche Operationen &uuml;ber Logikgatter umgesetzt. Ein einzelnes Gatter implementiert eine Grundfunktion (<code>and</code>, <code>or</code> oder <code>not</code>). Logikschaltungen werden h&auml;ufig als Diagramme dargestellt, damit Ingenieur*innen den Informationsfluss sehen. Das folgende Diagramm mit zwei Gattern entspricht der booleschen Formel <img class="inline" src="/bjc-r/img/6-computers/(a)or((a)and(b))-booleans.png" alt="A oder (A und B)" title="A or (A and B)" />. Erkennst du, wie?</p>
+
+        <img class="indent noshadow" src="/bjc-r/img/6-computers/(a)or((a)and(b))-gate.png" alt="Logikgatterdiagramm f&uuml;r A oder (A und B)" title="Logikgatter f&uuml;r A oder (A und B)" />
+
+        <div class="forYouToDo" id="first">
+			<ol>
+				<li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Besprich dich mit deiner Partnerin/deinem Partner" title="Besprich dich mit deiner Partnerin/deinem Partner" /> Welche Werte von A und B lassen den Ausgang im obigen Diagramm <code>true</code> werden?</li>
+            </ol>
+        </div>
+
+		<div class="takeNote">
+            Auf der vorherigen Seite ging es um Wolfram und Zinn, jetzt sprechen wir &uuml;ber boolesche Funktionen. Wieso ist das weniger abstrakt? <strong>Aus Sicht von Chip-Designer*innen sind Logikgatter die grundlegenden Bausteine einer digitalen Schaltung.</strong> (Die physische Chipfertigung liegt noch tiefer in der analogen Dom&auml;ne.)
+            <img class="indent noshadow" src="/bjc-r/img/6-computers/hardware-abstraction.png" alt="Diagramm der Abstraktionsebenen eines Computers: Software-, digitale und analoge Dom&auml;ne" title="Abstraktionsebenen eines Computers" />
+        </div>
+
+		<div class="forYouToDo">
+			<ol>
+                <li>
+                    <!-- Question 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Multiple choice: Logic Gate Truth Table"
+hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="false">
+                        <div class="prompt">
+                            <p>Dieses Gatter erh&auml;lt Eing&auml;nge A und B. Welche Tabelle passt dazu?</p>
+                            <img class="indent" src="/bjc-r/img/6-computers/LogicGates_img/Assessments/gate_table_1.png" alt="Logikgatter mit zwei Eing&auml;ngen" title="Logikgatter" />
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">
+                                <table class="truth bordered" summary="Wahrheitstabelle">
+                                    <tr>
+                                        <th scope="col" rowspan="2">A</th>
+                                        <th scope="col" rowspan="2">B</th>
+                                        <th scope="col" colspan="3">Ausgabe</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Gerade</th>
+                                        <th scope="col">Ungerade</th>
+                                        <th scope="col">Kann nicht bestimmt werden</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>X</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td></td>
+                                        <td>X</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>X</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>X</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="feedback">Diese Tabelle geh&ouml;rt nicht zu einem booleschen Gatter. Suche weiter.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">
+                                <table class="truth bordered" summary="Wahrheitstabelle">
+                                    <tr>
+                                        <th scope="col" rowspan="2">A</th>
+                                        <th scope="col" rowspan="2">B</th>
+                                        <th scope="col" colspan="3">Ausgabe</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">0</th>
+                                        <th scope="col">1</th>
+                                        <th scope="col">Nicht definiert</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>X</td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>X</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>X</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td></td>
+                                        <td>X</td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="feedback">Sehr gut!</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">
+                                <table class="truth bordered" summary="Wahrheitstabelle">
+                                    <tr>
+                                        <th scope="col" rowspan="2">A</th>
+                                        <th scope="col" rowspan="2">B</th>
+                                        <th scope="col" colspan="3">Ausgabe</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Gerade</th>
+                                        <th scope="col">Ungerade</th>
+                                        <th scope="col">Kann nicht bestimmt werden</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>X</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td></td>
+                                        <td>X</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>X</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>X</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="feedback">Schau dir die Schaltung noch einmal genau an.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">
+                                <table class="truth bordered" summary="Wahrheitstabelle">
+                                    <tr>
+                                        <th scope="col" rowspan="2">A</th>
+                                        <th scope="col" rowspan="2">B</th>
+                                        <th scope="col" colspan="3">Ausgabe</th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Gerade</th>
+                                        <th scope="col">Ungerade</th>
+                                        <th scope="col">Kann nicht bestimmt werden</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>X</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>0</td>
+                                        <td>X</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>1</td>
+                                        <td>X</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>X</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="feedback">Diese Tabelle passt nicht zu einem booleschen Gatter.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="Multiple choice: Logic Gate Diagram"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="false">
+                        <div class="prompt">
+                            <p>Zwei Logikgatter-Diagramme sind dargestellt. Diagramm&nbsp;I zeigt die Schaltung f&uuml;r <code>(A and not B) or (B and not C)</code>, Diagramm&nbsp;II die Schaltung f&uuml;r <code>(A and (not B or C))</code>. Welche Aussage stimmt?</p>
+                            <img class="indent" src="/bjc-r/img/6-computers/LogicGates_img/Assessments/gate_table_2.png" alt="Zwei Logikgatter-Diagramme" title="Logikgatter-Diagramme" />
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">I und II</div>
+                            <div class="feedback">Richtig!</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Nur I</div>
+                            <div class="feedback">Sieh dir Diagramm&nbsp;II noch einmal an. Welches Signal gelangt von rechts zum AND-Gatter?</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Nur II</div>
+                            <div class="feedback">Sieh dir Diagramm&nbsp;I noch einmal an. Welches Signal gelangt von links zum OR-Gatter?</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Weder I noch II</div>
+                            <div class="feedback">Pr&uuml;fe beide Diagramme erneut &ndash; beide stimmen.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+        <div class="endnote">
+        	<p><a href="#hint-target" data-toggle="collapse" title="Wie zeichnen Ingenieur*innen Logikgatter?">Wie zeichnen Ingenieur*innen Logikgatter?</a></p>
+			<div id="hint-target" class="collapse">
+                <img class="imageRight" src="/bjc-r/img/6-computers/logic-gates-example-circuit.png" alt="Logikgatterdiagramm f&uuml;r (not and) und (or)" title="Logikgatterbeispiel" />
+                Ingenieur*innen zeichnen Logikgatter meist horizontal und verwenden Standardsymbole:<br />
+                <img class="indent" src="/bjc-r/img/6-computers/LogicGates_img/Gates/AND.png" width="151" height="80" alt="AND-Gatter" title="AND-Gatter"/>
+                <img class="indent" src="/bjc-r/img/6-computers/LogicGates_img/Gates/OR.png" width="156" height="81" alt="OR-Gatter" title="OR-Gatter"/>
+                <img class="indent" src="/bjc-r/img/6-computers/LogicGates_img/Gates/NOT.png" width="126" height="69" alt="NOT-Gatter" title="NOT-Gatter"/><br />
+                Das oben gezeigte Schaltbild w&uuml;rden sie so zeichnen:<br />
+				<img class="indent" src="/bjc-r/img/6-computers/LogicGates_img/Circuits/notandandor.png" height="250" alt="Ingenieurzeichnung der Logikschaltung" title="Ingenieurzeichnung" /><br />
+                Suche nach <a href="https://www.duckduckgo.com/?q=logic+gate+diagrams&amp;ia=images&amp;iax=imageslogic+gate+diagrams&amp;ia=images&amp;iax=images" target="_blank" title="Bildersuche nach Logikgatter-Diagrammen">„logic gate diagrams“</a>, um mehr Beispiele zu sehen.
+            </div>
+        </div>
+
+
+	</body>
+</html>

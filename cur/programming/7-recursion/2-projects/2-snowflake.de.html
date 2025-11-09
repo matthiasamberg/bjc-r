@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 7, Labor 2: Rekursionsprojekte, Seite 2</title>
+	</head>
+
+	<body>
+        <h2>Koch-Schneeflocke</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> nutzt du Rekursion, um die <strong>Koch-Schneeflocke</strong> zu zeichnen.<br />
+            <img class="indent noshadow" data-gifffer="/bjc-r/img/7-recursion/kochflake.gif" alt="Koch-Schneeflocke Ebenen 1–6" title="Koch-Schneeflocke Ebenen 1–6" /></p>
+        </div>
+
+        <div class="sidenote">„Koch“ spricht man wie das deutsche „ch“ in „Bach“ aus (oder wie das spanische „x“ in „México“, das „j“ in „Alejandra“ oder das „ch“ in „chutzpah“).</div>
+        <p>
+            Die Koch-Schneeflocke besteht aus drei Kopien der <strong>Koch-Kurve</strong>, angeordnet entlang der Seiten eines Dreiecks:<br />
+            <img class="indent noshadow" src="/bjc-r/img/7-recursion/kochflake-triangle.jpg" alt="Koch-Schneeflocke mit eingezeichnetem Dreieck" title="Koch-Schneeflocke mit eingezeichnetem Dreieck" />
+        </p>
+        <p>
+            Anders als bei <code>tree</code> und <code>triangle fractal</code> kehrt der Sprite hier nach jedem rekursiven Aufruf <em>nicht</em> an dieselbe Position zurück. Statt einer Geraden entsteht eine geknickte Linie.<br />
+            <img class="indent noshadow" src="/bjc-r/img/7-recursion/kochflake-line.jpg" alt="Ein seitliches Segment der Koch-Schneeflocke" title="Ein seitliches Segment der Koch-Schneeflocke" />
+        </p>
+        <p>
+        	Der Basisfall ist einfach ein Liniensegment: <br />
+            <img class="indent noshadow" src="/bjc-r/img/7-recursion/snowflake-level1.jpg" alt="Koch-Schneeflocke Ebene 1: Gerade" title="Koch-Schneeflocke Ebene 1" />
+        </p>
+        <p>
+            In jeder weiteren Ebene zeichnet der Algorithmus vier Kopien der vorherigen Ebene – jede ein Drittel so lang wie zuvor – und ordnet sie so an (rot markiert ist die kleinere Kopie der Vorstufe):<br />
+            <img class="indent noshadow" src="/bjc-r/img/7-recursion/snowflake-level2.jpg" alt="Koch-Schneeflocke Ebene 2: Gleichseitiges Dreieck im mittleren Drittel" title="Koch-Schneeflocke Ebene 2" /><br />
+            <div class="sidenoteBig">Das Rot dient nur zur Veranschaulichung. Deine Version sollte zunächst einfarbig sein (später kannst du mit Farben experimentieren).</div>
+            <img class="indent noshadow" src="/bjc-r/img/7-recursion/snowflake-level3.jpg" alt="Koch-Schneeflocke Ebene 3" title="Koch-Schneeflocke Ebene 3" /><br />
+            <img class="indent noshadow" src="/bjc-r/img/7-recursion/snowflake-level4.jpg" alt="Koch-Schneeflocke Ebene 4" title="Koch-Schneeflocke Ebene 4" /><br />
+            <img class="indent noshadow" src="/bjc-r/img/7-recursion/snowflake-level5.jpg" alt="Koch-Schneeflocke Ebene 5" title="Koch-Schneeflocke Ebene 5"/>
+        </p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li><div class="newProject"><span class="text">„U7L2-KochSnowflake“</span><img src="/bjc-r/img/icons/new-project-called.png" alt="Neues Projekt U7L2-KochSnowflake" title="Neues Projekt U7L2-KochSnowflake" /></div></li>
+                <li>
+                    Ergänze diese rekursive Prozedur, damit sie eine Seite der Koch-Schneeflocke zeichnet. Fülle die Leerstellen aus und füge zusätzliche Blocks hinzu:<br />
+                    <img class="indent" src="/bjc-r/img/7-recursion/snowflake-code-with-more-blanks.png" alt="Unvollständiger Kochkurven-Code" title="Unvollständiger Kochkurven-Code">
+                </li>
+                <li>Wenn eine Seite funktioniert, verbinde drei solcher Seiten zu einer kompletten Schneeflocke.</li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Besprich dich mit deiner Partnerin/deinem Partner" title="Besprich dich mit deiner Partnerin/deinem Partner" /> Warum muss die <var>size</var> in jedem rekursiven Aufruf ein Drittel der vorherigen sein? Es gibt vier Kopien – warum nicht ein Viertel?</li>
+            </ol>
+        </div>
+
+        <div class="ifTime">
+            <ol start="5">
+                <li>
+                    Diese Bilder sind eng mit der Kochkurve verwandt. Experimentiere mit anderen Drehwinkeln:<br />
+                    <img class="indent" src="/bjc-r/img/7-recursion/koch-ish.png" alt="Variante der Kochkurve" title="Variante der Kochkurve" />
+                    <img class="indent" src="/bjc-r/img/7-recursion/koch-ish2.png" alt="Weitere Variante der Kochkurve" title="Weitere Variante der Kochkurve" />
+                </li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

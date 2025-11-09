@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 6 Labor 6: Webdaten, Seite 3</title>
+    </head>
+    <body>
+    	<img class="imageRight" src="/bjc-r/img/icons/teachers-choice.png" alt="Lehrer*innenwahl" title="Lehrer*innenwahl" />
+        <h2>Weather-App-Projekt (Lehrer*innenwahl)</h2>
+        <p>Auf dieser Seite findest du mehrere kleine Projekte. Du kannst sie alle bearbeiten oder – je nach Vorgabe deiner Lehrkraft – nur einzelne Aufgaben auswählen.</p>
+        <p>
+            In jeder Aktivität wertest du eine Wetter-Website aus, um Daten für einen Algorithmus deiner Wetter-App zu sammeln.<br />
+            <img class="indent" src="/bjc-r/img/4-internet/current-temp-34.png" alt="Beispielausgabe: 34 Grad in New York">
+            <img class="indent" src="/bjc-r/img/4-internet/umbrellatrue.png" alt="Block UMBRELLA? liefert true">
+            <img class="indent" src="/bjc-r/img/4-internet/sunsettime2.png" alt="Block SUNSET TIME mit Ausgabe" />
+        </p>
+        <h3>Reporter <code>Aktuelle Temperatur</code> und <code>Aktuelles Wetter</code> bauen</h3>
+        <p>Zahlreiche Websites stellen aktuelle Wetter- und Vorhersagedaten bereit. Einige – zum Beispiel <a href="http://wunderground.com" target="_blank">Weather Underground</a> – liefern ortsspezifische Informationen über <a href="/bjc-r/cur/programming/4-internet/old/6-web-data/2-web-scraping-techniques.html?topic=nyc_bjc%2F4-internet.topic&course=bjc4nyc.html&novideo&noassignment">URL-Tags</a>. Weather Underground akzeptiert Ortsangaben und Postleitzahlen.</p>
+        <div class="ifTime">
+            <ol>
+				<div class="sidenoteBig">Zwischen Stadt und Bundesstaat steht kein Leerzeichen: <strong>Boston,MA</strong>. Bei Städten mit mehreren Wörtern ersetzt du Leerzeichen durch Pluszeichen: <strong>New+York,NY</strong>. Diese Regeln gelten speziell für diese Website.</div>
+                <li>
+                	Lies die folgenden URLs und öffne sie anschließend:
+                    <ul>
+                        <li><a href="https://www.wunderground.com/cgi-bin/findweather/getForecast?query=Boston,MA" target="_blank">https://www.wunderground.com/cgi-bin/findweather/getForecast?query=Boston,MA</a></li>
+                        <li><a href="https://www.wunderground.com/cgi-bin/findweather/getForecast?query=10002" target="_blank">https://www.wunderground.com/cgi-bin/findweather/getForecast?query=10002</a></li>
+                    </ul>
+                </li>
+                <li>Erstelle nach demselben Muster eine URL für das Wetter einer anderen Stadt.</li>
+				<div class="sidenoteBig">Das Gradzeichen (&#176;) wird mit dem HTML-Code <code>&amp;#176;</code> dargestellt.</div>
+                <li>Nutze den Browser, um den <a href="/bjc-r/cur/programming/4-internet/optional-projects/writing-html.html?topic=nyc_bjc%2F4-internet.topic&course=bjc4nyc.html&novideo&noassignment">Seitenquelltext</a> (HTML) anzuzeigen. Wo steht dort die aktuelle Temperatur? Wie findest du diese Zeile am einfachsten wieder?</li>
+                <li>
+					<div class="sidenoteBig">
+                    	Lass im Eingabefeld des <code>http</code>-Blocks das „http://“ weg.
+                        <img class="inline noshadow" src="/bjc-r/img/4-internet/http-http.png" alt="Hinweis: Kein &quot;http://&quot; im Eingabefeld des http-Blocks" title="Kein &quot;http://&quot; im Eingabefeld des http-Blocks" />
+                    </div>
+                	Nimm das Projekt <a class="run" href="/bjc-r/prog/4-internet/old/U4L6-HttpBlock.xml">U4L3-HttpBlock</a> als Ausgangspunkt und entwirf einen <img src="/bjc-r/img/4-internet/current-temp.png" alt="Block CURRENT TEMPERATURE IN" title="Block CURRENT TEMPERATURE IN">-Block, der eine Postleitzahl oder eine Kombination aus Stadt und Bundesstaat entgegennimmt und die aktuelle Temperatur in Grad Fahrenheit zurückgibt:<br />
+                	<img class="indent" src="/bjc-r/img/4-internet/current-temp-34.png" alt="34 Grad in New York">
+                    <div class="saveAs"><span class="text">„U4L3-WeatherApp“</span><img src="/bjc-r/img/icons/save-this-as.png" alt="Speichere als U4L3-WeatherApp" title="Speichere als U4L3-WeatherApp" /></div>
+                </li>
+                <li>Erstelle einen ähnlichen Block, der die aktuellen Wetterbedingungen für den angegebenen Ort zurückgibt.
+                    <img class="indent" src="/bjc-r/img/4-internet/current-weather-reporting.png" alt="Block CURRENT WEATHER IN mit Ausgabe" title="Block CURRENT WEATHER IN" />
+                </li>
+            </ol>
+        </div>
+
+
+        <h3>Eine Multi-City-Wetterübersicht erstellen</h3>
+        <p>Mit <a href="http://www.wunderground.com" target="_blank">wunderground.com</a> kannst du für eine Liste von Städten sowohl Temperatur als auch Wetterbedingungen abfragen …<br />
+			<div class="sidenote">Wenn du die Eingabe der Städtenamen „sauberer“ gestalten willst, wandelst du Namen wie <strong>New York, NY</strong> in <strong>New+York,NY</strong> um. Blocks, die Wörter in Listen und zurück verwandeln, helfen dir dabei.<br />
+            Dein Ergebnis muss nicht genau so aussehen.
+			</div>
+            <img class="indent noshadow" src="/bjc-r/img/4-internet/citieslist.png" alt="Liste von Städtenamen" title="Liste von Städtenamen" />
+        </p>
+
+        <p>
+            … und daraus einen Bericht wie diesen erstellen:<br />
+            <img class="indent noshadow" src="/bjc-r/img/4-internet/citiesreport.png" alt="Wetterbericht für mehrere Städte" title="Wetterbericht für mehrere Städte" />
+        </p>
+
+		<div class="ifTime">
+            <ol start="6">
+                <li>Baue – wie in der <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/1-shopping-list-app.html">Shopping-List-App</a> – einen <code>Ort hinzufügen</code>-Block, mit dem Nutzer*innen die Liste erweitern.</li>
+                <li>Nutze deine Reporter <code>aktuelle Temperatur</code> und <code>aktuelles Wetter</code>, um eine Wettertabelle (Liste von Listen) für mehrere Städte zu erzeugen.
+                	<ol>
+                        <img class="imageRight" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" />
+                        <li>Plane zunächst: Wenn nur eine Stadt in der Liste stünde, wie sähe der Bericht aus?<br />
+                            <img class="indent" src="/bjc-r/img/4-internet/weather-report-1-city.png" alt="Watcher mit einem Wettereintrag: {New York, NY, 60, Fair}" title="Wettereintrag für eine Stadt" />
+                        </li>
+                        <li>Nutze Listenoperationen, um den Bericht für alle eingegebenen Städte zu erzeugen.</li>
+                        <li>Teste deine Lösung, indem du weitere Städte hinzufügst und den Bericht erneut abrufst.</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="ifTime ifTimeHide">
+			<ol start="8">
+				<li>
+                    Du kannst auch eine Sprecher-Sprite für Wetterberichte gestalten:<br />
+                    <img class="indent" src="/bjc-r/img/4-internet/boston62.png" width="20%" align="middle" alt="Gesprochener Wetterbericht für Boston">
+                </li>
+            </ol>
+        </div>
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>Erweitere den Bericht um <em>Vorhersagen</em> für Temperatur und Bedingungen von morgen.</li>
+            </ol>
+        </div>
+
+
+        <h3>Prädikat <code>Umbrella?</code> bauen</h3>
+        <p>Du kannst einen Algorithmus entwickeln, der dir sagt, ob du heute einen Regenschirm brauchst.</p>
+
+        <div class="ifTime">
+            <ol start="9">
+                <li>Baue ein Prädikat <code>umbrella?</code>, das einen Ort als Eingabe erhält. Überlege, bei welchen Informationen der Block <img class="" src="/bjc-r/img/blocks/true.png" alt="true-Block" title="true-Block" /> zurückgeben sollte.</li>
+                <li>Damit <img src="/bjc-r/img/4-internet/umbrella.png" alt="Block UMBRELLA?" title="Block UMBRELLA?"> den aktuellen Standort automatisch nutzt, verwende einen <a href="/bjc-r/cur/programming/4-internet/old/6-web-data/2-web-scraping-techniques.html?topic=nyc_bjc%2F4-internet.topic&course=bjc4nyc.html&novideo&noassignment"><code>IP address</code>-Reporter</a>.</li>
+            </ol>
+        </div>
+
+		<div class="takeItFurther">
+            <ol type="A" start="2">
+                <li>Erweitere <img src="/bjc-r/img/4-internet/umbrella.png" alt="Block UMBRELLA?" title="Block UMBRELLA?"> zu einem Reporter, der mehrere Ausgaben liefern kann, z. B. <em>heute Abend</em>, <em>morgen</em>, <em>kompliziert</em> oder <em>zieh lieber Stiefel an</em>.</li>
+                <div class="sidenote"><img src="/bjc-r/img/4-internet/sunsettime2.png" alt="Block SUNSET TIME mit Ausgabe" /></div>
+                <li>Baue einen <img src="/bjc-r/img/4-internet/sunsettime1.png" alt="Block SUNSET TIME" title="Block SUNSET TIME">-Reporter, der die Sonnenuntergangszeit für einen Ort zurückgibt; ohne Eingabe nutzt er den aktuellen Standort.</li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<!-- put the following in exactly --><script type="text/javascript" src="/bjc-r/llab/loader.js"></script><title>Zwei Listeneinträge tauschen</title><!--ORIGINAL NAME: Swap List Values-->
+	</head>
+	<body>
+
+		Wir möchten einen Block bauen, der zwei Elemente einer Liste vertauscht. Der Block bekommt zwei Zahlen – die Positionen der Elemente – und die Liste selbst als Eingaben und tauscht anschließend die beiden Elemente.
+
+		Lege den Block in der Kategorie „List“ als Befehl an. Setze die Eingabetypen von <code>itemX</code> und <code>itemY</code> auf „number“, den Typ von <code>data</code> auf „list“.
+		<br />
+		<br />
+		<div style="margin-left: 40px;">
+			<img border="0" title="Block „swap items“" alt="Block „swap items“" src="/bjc-r/img/list/swapproto.png" origsrc="http://veritas.eecs.berkeley.edu/courses/file.php/17/Images/Lab05/Lists/SwapRows/Empty.gif">
+		</div>
+
+		<p>
+			Nach einem Klick auf <code>Apply</code> siehst du zwei runde Zahleneingaben und eine Listen-Eingabe.
+		</p>
+		<div style="margin-left: 40px;">
+			<img border="0" title="„swap items“-Block mit Listeneingabe" alt="„swap items“-Block mit Listeneingabe" src="/bjc-r/img/list/swap-rows-empty-block-list-input-BYOB.gif" origsrc="http://veritas.eecs.berkeley.edu/courses/file.php/17/Images/Lab05/Lists/SwapRows/ListInput.gif">
+		</div>
+
+		<p>
+			(Hinweis: Wir nennen die Listen-Eingabe <code>data</code> statt <code>list</code>, damit sie nicht mit dem Block zum Erzeugen einer leeren Liste verwechselt wird: <img src="/bjc-r/img/list/orangelist.png" alt="orange Listenvolariable"><img src="/bjc-r/img/list/redlist.png" alt="roter Listen-Konstruktor">.)
+		</p>
+		<p>
+			Gib nun das vollständige Skript ein:
+		</p>
+		<p><img src="/bjc-r/img/list/swapitems.png" alt="komplettes Skript für ‚swap items‘"></p>
+		<p>
+			So kann der Block verwendet werden: Wenn wir ihn mit folgenden Argumenten aufrufen …
+			<br />
+		</p>
+		<div style="margin-left: 40px;">
+			<img border="0" src="/bjc-r/img/list/swapexample.png" alt="Aufruf von „swap items“" title="Aufruf von „swap items“" origsrc="http://veritas.eecs.berkeley.edu/courses/file.php/17/Images/Lab05/GameBoard/SwapRowsExample.gif">
+		</div>
+
+		<p>
+			… wobei <code>game board</code> die Liste
+		</p>
+		<div style="margin-left: 40px;">
+			<img border="0" src="/bjc-r/img/list/gameboard.png" alt="Liste vor dem Tausch" title="Liste vor dem Tausch" origsrc="http://veritas.eecs.berkeley.edu/courses/file.php/17/Images/Lab05/GameBoard/ListBeforeSwap.gif">
+		</div>
+
+		<p>
+			ist, dann sollte die Liste anschließend so aussehen:
+		</p>
+		<div style="margin-left: 40px;">
+			<p><img border="0" src="/bjc-r/img/list/gameboard-after.png" alt="Liste nach dem Tausch" title="Liste nach dem Tausch" origsrc="http://veritas.eecs.berkeley.edu/courses/file.php/17/Images/Lab05/GameBoard/ListAfterSwap.gif"></p>
+		</div>
+		<p>
+			Die <code>replace item</code>-Blöcke in diesem Skript zeigen ein neues Vorgehen: Listen <em>mutieren</em> – bestehende Listen verändern, statt wie bei <code>map</code> oder <code>keep</code> neue Listen zu erzeugen. Mutation ist oft effizienter, weil nicht die gesamte Liste kopiert werden muss. Andererseits entstehen so neue Fehlermöglichkeiten, die bei <em>funktionaler</em> Arbeitsweise nicht auftreten. Wenn zwei Programmteile dieselbe Liste für verschiedene Zwecke nutzen und einer davon die Liste verändert, wird der andere Teil unweigerlich durcheinandergebracht. Darum haben wir zuerst funktionale Programmierung vorgestellt – sie sollte dein Standardansatz sein.
+		</p>
+		<p>
+			Wir haben Mutation bereits bei Nicht-Listen verwendet; etwa ändert der <code>for</code>-Block den Wert seiner Variablen <code>i</code> bei jedem Schleifendurchlauf. Das ist weniger riskant, weil diese Variable nur innerhalb der Schleife existiert – kein anderer Teil des Programms kann sich auf einen alten Wert verlassen. Bei <em>globalen</em> Variablen besteht dasselbe Risiko, weshalb wir, wann immer möglich, Skriptvariablen empfehlen. Ein Spielbrett ist jedoch ein Beispiel für einen Wert, der zugleich global und veränderlich sein muss. Mehr dazu erfährst du in der nächsten Lektion.
+		</p>
+	</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 7, Labor 1: Bäume, Seite 2</title>
+	</head>
+
+	<body>
+		<h2>Der Basisfall</h2>
+		<div class="learn">
+            <p><strong>Auf dieser Seite</strong> lernst du, wie man Rekursion so begrenzt, dass sie nicht endlos weiterläuft.</p>
+        </div>
+
+        <p>
+            Es schien sinnvoll, alle ähnlich aussehenden, nummerierten Baum-Skripte durch <em>ein</em> rekursives Skript mit derselben Struktur zu ersetzen:<br />
+            <img class="indent" src="/bjc-r/img/7-recursion/tree-2-script.png" style="height: 230px;" alt="tree 2 Skript mit zwei tree 1 Aufrufen" title="tree 2 Skript mit zwei tree 1 Aufrufen"/>
+            <img src="/bjc-r/img/7-recursion/tree-3-script.png" style="height: 230px;" alt="tree 3 Skript mit zwei tree 2 Aufrufen" title="tree 3 Skript mit zwei tree 2 Aufrufen"/>
+            <span style="padding-right: 1em; padding-left: 1em; font-size: 36px;">&rightarrow;</span>
+            <img src="/bjc-r/img/7-recursion/tree-nobase.png" style="height: 230px;" alt="Rekursives tree Skript ohne Basisfall" title="Rekursives tree Skript ohne Basisfall" />
+        </p>
+        <p>
+            Doch das funktionierte nicht:<br />
+            <img class="indent noshadow" src="/bjc-r/img/7-recursion/treebug.gif" alt="Baumzeichnung läuft endlos" title="Baumzeichnung läuft endlos" />
+        </p>
+        <div class="dialogue">
+        	<div>
+                <span>Jasmine:</span> Ich habe <code>tree, level 9 size 50</code> ausgeführt, aber sieh dir das Ergebnis an. Was ist da los?
+            </div>
+        	<div>
+                <span>Morgan:</span> Es hört gar nicht auf!
+            </div>
+        	<div>
+                <span>Omar:</span> Nach der Drehung nach links sollte eigentlich ein kleiner Baum gezeichnet werden und danach müsste der Sprite zurückdrehen und rechts auch einen Baum zeichnen.
+			</div>
+        	<div>
+                <span>Jasmine:</span> Genau! Auf der rechten Seite passiert gar nichts.
+            </div>
+        	<div>
+                <span>Omar:</span> Hmmm, bei jedem rekursiven Aufruf werden die linken Äste kleiner und kleiner, bis sich der Sprite quasi nur noch im Kreis dreht. Er dreht nie nach rechts, um den aktuellen Baum zu beenden.
+			</div>
+        	<div>
+                <span>Morgan:</span> Schau mal! Der Block <code>tree 1</code> unterscheidet sich von den anderen – er zeichnet nur eine Linie, <em>keine</em> Äste, und bringt den Sprite wieder exakt an den Startpunkt.
+            </div>
+			<div class="stagedir">
+                <em>Morgan zeigt auf den Code von <code>tree 1</code> und auf die Figur, die er zeichnet.</em><br />
+                <img class="indent" src="/bjc-r/img/7-recursion/tree1.png" alt="tree 1 Skript" title="tree 1 Skript"  />
+                <img class="indent noshadow" src="/bjc-r/img/7-recursion/tree-level1.png" alt="Ergebnis von tree 1" title="Ergebnis von tree 1"  />
+            </div>
+        	<div>
+                <span>Morgan:</span> Vielleicht brauchen wir im rekursiven Skript einen Fall, in dem <code>tree</code> einfach den Block <code>tree 1</code> ausführt.
+            </div>
+        	<div>
+                <span>Omar:</span> Also so etwas wie „wenn die Rekursionstiefe 1 ist, zeichne nur diesen Grundstamm“?
+            </div>
+        	<div>
+                <span>Jasmine:</span> Das würde verhindern, dass sie weiter ruft.
+            </div>
+        	<div>
+                <span>Morgan:</span> Ja! Dann hätten wir einen <em>Basisfall</em>. Und in allen anderen Fällen ruft sich der Block selbst auf, aber mit einer kleineren Zahl.
+            </div>
+        </div>
+
+		<div class="forYouToDo" id="first">
+            <ol>
+                <li>
+                    Ergänze deinen rekursiven <code>tree</code>-Block um einen Basisfall: Wenn <var>level</var> gleich 1 ist, führe einfach den Code aus, der bisher in <code>tree 1</code> stand (zeichne nur den Stamm).
+                    <div class="endnote">
+                        Tipp: Du kannst den vorhandenen Code kopieren. Achte darauf, dass der Sprite am Ende wieder dieselbe Position/Richtung besitzt.
+                    </div>
+                </li>
+                <li>
+                    Teste deinen Code: Führe <code>tree, level: 9 size: 50</code> aus. Funktioniert alles korrekt, solltest du dieses Ergebnis erhalten.<br />
+                    <img class="indent noshadow" src="/bjc-r/img/7-recursion/tree-level9.jpg" alt="Baum mit Stamm und acht Ebenen von Ästen" title="Baum mit Stamm und acht Ebenen von Ästen"/>
+                </li>
+			</ol>
+		</div>
+
+        <div class="takeNote">
+        	<img class="imageRight" src="/bjc-r/img/icons/take-turns-speaking-mini.gif" alt="Abwechselnd sprechen" title="Abwechselnd sprechen">
+            <p><em>Rekursive</em> Blöcke rufen sich selbst auf. Damit sie irgendwann fertig werden, braucht es einen Fall, in dem sie sich <em>nicht</em> erneut aufrufen. Dieser <em>Basisfall</em> ist eine einfachere Version des Skripts, die ohne Selbstaufruf auskommt.</p>
+            <p>Meist gibt es eine Bedingung mit zwei Zweigen: einen <em>Basisfall</em> für die niedrigste Ebene, der die Rekursion stoppt, und einen <em>rekursiven Fall</em>, der sich mit einem kleineren Parameter selbst aufruft, bis der Basisfall erreicht ist.</p>
+            <p>Wenn ein Block sich endlos selbst aufruft (wie beim „Drehen auf der Stelle“), handelt es sich um einen Fehler – das Programm steckt in einer <em>Endlosschleife</em>.</p>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="3">
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" />Sieh dir dein korrigiertes, rekursives <code>tree</code>-Skript an. Benenne Basisfall und rekursiven Fall und besprecht gemeinsam, wie die Rekursion hier funktioniert.</li>
+                <li>Läuft <code>tree</code> in vertretbarer Zeit oder dauert es „unangemessen“ lange? Du kannst darüber nachdenken, die Laufzeit von Level 8 bis 12 messen oder eine globale Variable <var>count</var> verwenden, die bei jedem <code>tree</code>-Aufruf erhöht wird, um zu zählen, wie oft der Block bei unterschiedlichen Leveln aufgerufen wird.
+                    <div class="endnote">Über „vertretbare“ und „unvertretbare“ Laufzeit hast du in <a href="/bjc-r/cur/programming/5-algorithms/old/3-timing-experiments/3-classifying-algorithms.html?topic=nyc_bjc%2F5-algorithms.topic&course=bjc4nyc.html&novideo&noassignment" title="Algorithmen klassifizieren">Einheit 5, Labor 3</a> gesprochen.</div>
+                </li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

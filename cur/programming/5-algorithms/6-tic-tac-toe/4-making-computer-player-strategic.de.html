@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <script type="text/javascript" src="/bjc-r/utilities/gifffer.min.js"></script>
+        <script type="text/javascript">window.onload = function() {Gifffer();}</script>
+        <link rel="stylesheet" type="text/css" href="/bjc-r/css/bjc-gifffer.css">
+        <title>Einheit 5, Labor 6: Tic-Tac-Toe mit Computergegner, Seite 4</title>
+    </head>
+
+    <body>
+        <h2>Den Computer strategisch spielen lassen</h2>
+        <div class="todo">
+            <p>MF: Projekt muss noch fertiggestellt und online aktualisiert werden.</p>
+        </div>
+
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> setzt du die Strategieregeln um, damit der Computer gezielt spielt.</p>
+        </div>
+
+        <p>Du baust einen Block <img src="/bjc-r/img/5-algorithms/next-move.png" alt="next move for computer" title="next move for computer">, der die Feldnummer liefert, an die der Computer ziehen soll. Über <code>broadcast</code> schickst du diese Feldnummer an alle Klone; nur der Klon mit der passenden <var>position number</var> führt den Zug aus.</p>
+        <p>
+        	Im Block <code>next move for computer</code> setzt du die drei Strategieregeln um:
+            <ul>
+                <li>Regel 1: Wenn ich (der Computer, Spieler O) gewinnen kann, tue es.</li>
+                <li>Regel 2: Wenn meine Gegnerin (der Mensch, Spieler X) gewinnen kann, blockiere sie.</li>
+                <li>Abschlussregel: Ansonsten wähle das beste freie Feld.</li>
+            </ul>
+		</p>
+
+        <div class="forYouToDo" id="first">
+			<ol>
+				<li>Öffne dein Projekt U5L6-TicTacToe.</li>
+                <li>
+		            Die Regeln 1 und 2 lauten auf Deutsch sinngemäß „Wenn …, dann …“. Für den <code>if</code>-Block brauchst du einen Prädikat-Block für die sechseckige Eingabe. Schreibe <img src="/bjc-r/img/5-algorithms/can-player-win-now.png" alt="can player () win now?" title="can player () win now?"> mithilfe von <img src="/bjc-r/img/5-algorithms/winning-square-for-player.png" alt="winning square for player" title="winning square for player">, den du auf der vorherigen Seite erstellt hast.
+		</li>
+               <li>Erstelle nun den Block <img src="/bjc-r/img/5-algorithms/next-move.png" alt="next move for computer" title="next move for computer">, der diese Regeln nutzt, und verwende ihn als Eingabe für <code>broadcast</code> anstelle von <code>best empty square</code>.
+                    <div class="endnote">
+                        <a href="#hint-rules" data-toggle="collapse" title="Hinweis zur Strategieumsetzung">Hinweis zur Strategieumsetzung</a>
+                        <div id="hint-rules" class="collapse">
+                            <p>Nutze auch deinen Block <img class="inline" src="/bjc-r/img/5-algorithms/best-empty-square.png" alt="best empty square" title="best empty square" />.</p>
+                            </div>
+                    </div>
+                </li>
+               <li>Spiele mehrere Partien gegen den Computer. Behebe Fehler. Achte darauf, dass der Computer alle drei Regeln nutzt.</li>
+            </ol>
+        </div>
+
+        <div class="ifTime">
+            <ol start="5">
+                <li>Erweitere das Programm so, dass der Computer wahlweise X oder O spielt. Frage beim Start, welches Symbol der Mensch übernehmen möchte.</li>
+				<li>Baue eine Möglichkeit ein, auszuwählen, ob gegen einen Menschen oder gegen den Computer gespielt werden soll.</li>
+            </ol>
+        </div>
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>Spiele gegen den Computer und finde eine Strategie, mit der du gewinnen kannst. (Das ist nicht trivial – die bestehenden Regeln sind schon recht gut.)</li>
+                <li>
+                    Implementiere weitere Regeln, damit der Computer besser wird. Dazu musst du mehr als einen Zug vorausdenken. Ein Ansatz:
+                    <ol type="a">
+                        <li>
+                            Es reicht nicht, nur den eigenen Gewinn in zwei Zügen zu suchen – deine Gegnerin würde ihn blockieren. Du brauchst eine <em>Gabel</em>: zwei Tripel, in denen du jeweils ein Feld hast und der Rest frei ist, wobei beide Tripel ein gemeinsames Feld besitzen. Ein Beispiel:<br />
+                            <img class="indent" src="/bjc-r/img/hof/fork.png" alt="Tic-Tac-Toe-Brett mit Fork" title="Tic-Tac-Toe-Brett mit Fork" /><br />
+                            <div class="endnote">Spieler X beginnt in der Mitte. Spieler O antwortet schlecht (oben), X spielt oben links. O muss unten rechts blocken. Jetzt ist X wieder dran: Es gibt kein Tripel mit zwei X oder zwei O. Aber X kann zwei Gewinnkombinationen finden (rot markiert), beide haben ein gemeinsames freies Feld (hier Feld 4). Dorthin sollte X setzen.</div>
+                        </li>
+                        <li>Finde alle Tripel (also eine <em>Liste von Tripeln</em>), in denen der Computer genau ein Feld belegt und die anderen zwei leer sind. Speichere sie in <var>singles</var>.</li>
+                        <li>
+                            Erstelle aus allen Tripeln eine Liste aller Elemente:<br />
+                            <img class="indent" src="/bjc-r/img/hof/ttt-flatten.png" alt="Scriptvariable atoms; set atoms to combine..." title="Scriptvariable atoms; set atoms to combine..." /><br />                        
+                            <div class="endnote">„Atom“ bezeichnet hier einen Wert, der keine Liste ist. Eine Liste enthält mehrere Elemente, ähnlich wie ein Molekül mehrere Atome.</div>
+                        </li>
+                        <li>Finde nun eine Zahl, die in <code>atoms</code> mehrfach vorkommt.
+                            <div class="endnote">
+                               Ein verwandtes Problem hast du in
+                                <a href="/bjc-r/cur/programming/5-algorithms/1-searching-lists/7-comparing-search-algorithms.html" title="Einheit 5, Labor 1, Seite 7: Algorithmen vergleichen">Einheit 5, Labor 1, Seite 7</a> gelöst.
+                            </div>
+                        </li>
+
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

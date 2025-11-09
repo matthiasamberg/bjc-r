@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 5, Labor 6: Tic-Tac-Toe mit Computergegner, Seite 3</title>
+    </head>
+
+    <body>
+        <h2>Eine Spielstrategie entwickeln</h2>
+        <div class="todo">
+            <p>MF: Projekt muss noch fertiggestellt und online aktualisiert werden.</p>
+        </div>
+
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> legst du die Strategie fest, die der Computer verwendet – indem du untersuchst, welche Strategien Menschen anwenden.</p>
+        </div>
+
+        <p>Die grundlegende Regel hast du bereits umgesetzt: Der Computer setzt auf das <code>best empty square</code>. Für eine gute Strategie braucht er jedoch weitere Elemente …</p>
+        <div class="forYouToDo" id="first">
+			<ol>
+				<li>Spiel mit deiner Partnerin ein paar Tic-Tac-Toe-Partien auf Papier.</li>
+				<li>Besprecht eure Strategie und notiert eine Liste von Wenn-Dann-Regeln („Wenn …, dann spiele auf dieses Feld“).</li>
+			</ol>
+		</div>
+
+		<p>Strategieregeln haben unterschiedliche Prioritäten. Die wichtigste ist: „Wenn ich in diesem Zug gewinnen kann, setze auf dieses Feld.“</p>
+        <div class="forYouToDo">
+            <ol start="3">
+                <li>Was ist die zweitwichtigste Regel?</li>
+				<li>
+                    <img class="imageRight" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" />
+                	Überlegt, wie der Computer erkennen kann, ob eine Spielerin im nächsten Zug gewinnen könnte. Der Block <code>won?</code> findet Tripel, in denen alle drei Felder X oder O sind. Beschreibe, welche Werte in einem Tripel stehen, wenn Spieler O im nächsten Zug gewinnen kann, indem er das letzte Feld füllt.
+                </li>
+            </ol>
+        </div>
+
+        <div class="endnote">Diese drei Regeln – selbst gewinnen, den anderen blockieren, sonst bestes freies Feld wählen – verwenden die meisten menschlichen Spieler*innen. Sehr gute Spieler*innen ergänzen weitere Regeln zwischen den ersten beiden und der letzten. Einige davon kannst du in den „Take it Further“-Aufgaben erkunden.</div>
+
+	<div class="forYouToDo">
+        Nun setzt du die Regeln „Wenn ich gewinnen kann …“ und „Wenn der andere gewinnen kann …“ um, indem du diese Situationen erkennst.
+        <ol start="5">
+            <li>Erstelle einen Block <img src="/bjc-r/img/5-algorithms/how-many-x-in-x-5-x-reporting.png" alt="number of (X) in (list{X,5,X}) reporting 2" title="number of (X) in (list{X,5,X}) reporting 2" />.</li>
+            <li>Sieh dir den Block <img src="/bjc-r/img/5-algorithms/wonp-x.png" alt="won? (X)" title="won? (X)"> aus Einheit 3 erneut an. Erinner dich, wie er Tripel mit drei gleichen Symbolen findet.</li>
+            <li>
+                <div class="sidenoteBig"><a href="#hint-what-wins" data-toggle="collapse" title="Hinweis anzeigen">Hinweis anzeigen</a>
+                <div id="hint-what-wins" class="collapse">Ein möglicher Gewinnzug für O im nächsten Zug hat ____ O und ____ X.</div>
+                </div>
+                Schreibe nun <img src="/bjc-r/img/5-algorithms/winning-triple-for-player.png" alt="winning triple for player ()" title="winning triple for player ()">. Der Block soll das erste Tripel melden, in dem der Spieler im nächsten Zug gewinnen könnte.<br />
+                <img class="indent" src="/bjc-r/img/5-algorithms/winning-triple-for-player-reporting.png" alt="winning triple for player reporting {3, O, O}" title="winning triple for player reporting {3, O, O}" />
+            </li>
+            <li>Spiele ein Stück, teste <code>winning triple</code> für X und O; spiele weiter und teste erneut. Behebe Fehler.</li>
+            <li>Was meldet <code>winning triple</code>, wenn es kein Gewinner-Tripel gibt?</li>
+            <li>Schreibe anschließend den Block <img src="/bjc-r/img/5-algorithms/winning-square-for-player.png" alt="winning square for player ()" title="winning square for player ()">. Achte darauf, dass er auch funktioniert, wenn kein Gewinnfeld existiert.
+                <div class="endnote">
+                	<a href="#hint-winning-square" data-toggle="collapse" title="Hinweis zu winning square">Hinweis zu <code>winning square</code></a>
+                    <div id="hint-winning-square" class="collapse">
+                        <img class="indent" src="/bjc-r/img/blocks/is-a-number.png" alt="is () a number?" title="is () a number?" />
+                        <img class="indent" src="/bjc-r/img/blocks/is-a-list.png" alt="is () a list?" title="is () a list?" />
+                    </div>
+				</div>
+            </li>
+            <li>Spiele ein Stück, teste <code>winning square</code> für beide Spieler*innen und behebe Fehler.</li>
+        </ol>
+        <img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+    </div>
+
+		<p>Auf der nächsten Seite nutzt du <code>winning square</code>, um dem Computer eine bessere Strategie zu geben.</p>
+
+    </body>
+</html>

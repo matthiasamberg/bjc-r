@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 6, Labor 1: Hierarchie der Computerabstraktion, Seite 5</title>
+	</head>
+    <body>
+        <h2>Die Software-Dom&auml;ne: Betriebssysteme</h2>
+
+        <div class="learn"><strong>Auf dieser Seite</strong> lernst du die Software kennen, die die Hardware des Computers direkt verwaltet: das <em>Betriebssystem</em>.</div>
+        <p>Auf deinem Computer ist ein <em>Betriebssystem</em> (Operating System, OS) installiert. Betriebssysteme stellen grundlegende Funktionen bereit, &uuml;ber die Apps mit dem Computer kommunizieren. Bei Tasten-Ger&auml;ten sind das meistens Linux, macOS oder Windows. Auf Smartphones und Tablets laufen in der Regel Android oder iOS.</p>
+        <p>
+            Grob gesagt &uuml;bernimmt das Betriebssystem die Basisaufgaben, auf denen deine Anwendungen aufbauen:
+			<ul>
+                <li>das Fenstersystem, das mehrere Fenster gleichzeitig auf dem Bildschirm anzeigt</li>
+                <li>den Dateimanager, der Ordnerinhalte darstellt und Dateien zum Lesen oder Bearbeiten ausw&auml;hlen l&auml;sst</li>
+                <li>die Kommunikation mit externen Ger&auml;ten wie Tastatur oder Drucker</li>
+                <li>Hilfsprogramme wie einen einfachen Texteditor oder Taschenrechner</li>
+			</ul>
+        </p>
+
+        <div class="takeNote">Auf einem Computer wollen viele Anwendungen und Betriebssystemdienste gleichzeitig laufen. Jedes Betriebssystem besitzt einen <em>Kernel</em>, der steuert, wann welche Prozesse ausgef&uuml;hrt werden.</div>
+
+        <div class="endnote">
+            <h3>Der Kernel</h3>
+            <p>
+                Der <em>Kernel</em> arbeitet direkt mit der Hardware (Tastatur, Maus, Mikrofon, Kamera, Festplatten, Speicher, Drucker, Lautsprecher, Bildschirm usw.). Deshalb ist er meist in einer Niedrigsprache geschrieben, um die Ger&auml;te pr&auml;zise steuern zu k&ouml;nnen. Er &uuml;bernimmt mehrere wichtige Aufgaben:
+                <ul>
+                    <li><strong>Scheduling.</strong> Der Kernel greift auf die eingebaute Uhr der Hardware zu, l&auml;sst jedes Programm f&uuml;r einen kurzen Zeitraum laufen (typischerweise etwa ein Zehntel einer Sekunde) und wechselt dann zum n&auml;chsten Programm.</li>
+                    <li><strong>Sicherheit.</strong> Viele Programme k&ouml;nnen Fehler oder sogar sch&auml;dlichen Code enthalten. Der Kernel hat Zugriff auf den <em>Speicher</em>, in dem Programme und Daten liegen, und sorgt daf&uuml;r, dass jedes Programm einen eigenen Bereich erh&auml;lt und andere Programme nicht st&ouml;rt. Au&szlig;erdem kontrolliert er &uuml;ber <em>Dateischutz</em>-Einstellungen, auf welche Dateien ein Programm zugreifen darf.</li>
+                    <li><strong>Eingabe und Ausgabe.</strong> Zahlreiche Ger&auml;te lassen sich anschlie&szlig;en. Der Kernel wei&szlig;, wie die Hardware Daten mit jedem Ger&auml;t austauscht. Nur der Kernel darf diese Ger&auml;te direkt ansprechen und f&uuml;hrt autorisierte &Uuml;bertragungen f&uuml;r Anwendungen aus.</li>
+                </ul>
+            </p>
+            <p>Heute &auml;hneln sich Kernel stark. Von den f&uuml;nf oben genannten Systemen (Linux, macOS, Windows, Android, iOS) basieren vier (alle bis auf Windows) auf Varianten eines gemeinsamen Kernels namens Unix.</p>
+            <p><a href="#hint-unix" data-toggle="collapse" title="Mehr zu Unix lesen">Mehr &uuml;ber Unix</a></p>
+            <div id="hint-unix" class="collapse">
+                <p>(&bdquo;Unix&ldquo; ist ein Markenzeichen der Open Group. Nicht alle hier besprochenen Varianten d&uuml;rfen diesen Namen offiziell tragen, bieten aber im Wesentlichen dieselbe Programmierschnittstelle.) Unix wurde um 1970 von Ken Thompson und Dennis Ritchie in den Bell Laboratories von AT&amp;T entwickelt.</p>
+                <p>Vor Unix gingen viele davon aus, dass ein Betriebssystem f&uuml;r eine bestimmte Computerarchitektur entwickelt und in deren Maschinensprache geschrieben werden muss &ndash; also in den sehr niedrigstufigen Befehlen, die die Hardware direkt versteht. Auch die erste Unix-Version entstand zun&auml;chst in der Maschinensprache eines konkreten Rechners, der PDP-7 von Digital Equipment Corporation. Die Entwickler*innen wussten jedoch, dass bald andere, bessere Rechner folgen w&uuml;rden, und wollten Unix <em>portierbar</em> machen, also auf neue Architekturen &uuml;bertragen k&ouml;nnen, ohne alles neu zu schreiben. 1972 erfand Dennis Ritchie daf&uuml;r die Programmiersprache C. Sie &auml;hnelt anderen Sprachen der Zeit, bietet aber ein wichtiges Extra: C-Programme k&ouml;nnen einzelne Bytes im Speicher &uuml;ber ihre <em>Adresse</em> lesen oder schreiben. (Das ist das Gegenteil von Abstraktion und hilft nur, wenn man ganz genau wei&szlig;, welche Werte wo im Speicher liegen.) Unix wurde anschließend in C neu implementiert.</p>
+                <p>Dank dieser Portierbarkeit verbreitete sich Unix schnell auf vielen Architekturen. Forschende an der University of California, Berkeley, entwickelten auf Basis der AT&amp;T-Version eine Variante mit <em>virtuellem Speicher</em>, die Programme ausf&uuml;hren konnte, deren Teile auf Festplatte ausgelagert waren. Diese Berkeley-Version ist die Vorfahrin der Apple-Betriebssysteme macOS (seit Version 10.0) und iOS. (Ein Apple-Computer verh&auml;lt sich zwar nicht wie ein klassischer Unix-Rechner, die Unterschiede liegen aber h&auml;ufig in Anwendungsprogrammen, nicht im Kernel.) Android, Googles Betriebssystem f&uuml;r Smartphones und Tablets, basiert auf Linux, einer kompletten Unix-Neuimplementierung von Linus Torvalds, der damals Informatikstudent in Finnland war.</p>
+                <p>Viele der urspr&uuml;nglichen Unix-Anwendungen wurden in g&auml;ngigen Systemen durch Programme aus dem GNU-Paket der Free Software Foundation ersetzt (&bdquo;GNU&ldquo; steht f&uuml;r &bdquo;Gnu's Not Unix&ldquo;).</p>
+            </div>
+        </div>
+
+		<div class="ifTime" type="first">
+            <ol>
+            	<li>
+                    Untersuche, welche Programme gerade auf deinem Computer laufen.
+                    <ol>
+                        <li>Finde heraus, wie du dir eine Liste aller aktuell laufenden Prozesse anzeigen lassen kannst, und speichere sie in einer Textdatei.</li>
+                        <li>Z&auml;hle, wie viele davon Programme sind, die <em>du</em> bewusst gestartet hast.</li>
+                        <li>Versuche bei den anderen anhand der Namen zu erkennen, was sie tun.</li>
+                        <li>Welche geh&ouml;ren zum Betriebssystem (aber nicht zum Kernel)?</li>
+                        <li>Suche nach auff&auml;lligen Namen im Web, um herauszufinden, wof&uuml;r sie da sind.</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 7, Labor 1: Bäume, Seite 1</title>
+	</head>
+
+	<body>
+		<h2>Rekursiver Baum</h2>
+        <div class="learn">
+            <p><strong>In diesem Labor</strong> erstellst du ein Baumzeichenprogramm, das Rekursion nutzt: Die Äste entstehen, indem kleinere Bäume gezeichnet werden.</p>
+            <p><strong>Auf dieser Seite</strong> verschachtelst du Baum-Code innerhalb von Baum-Code.</p>
+        </div>
+
+        <p>
+            Das Verzweigungsmuster vieler Pflanzen hat eine <em>fraktale</em> Struktur: Kleine Teile sehen wie verkleinerte Kopien der gesamten Pflanze aus. <br />
+            <div class="vocab">: <strong>Fraktal</strong>
+                <p>Ein <strong>Fraktal</strong> ist ein unendliches, sich wiederholendes Muster aus Kopien (oder leichten Variationen) derselben Form. In diesem Bild hat der grüne Ast (im Wesentlichen) dieselbe Form wie das gesamte Bild.</p>
+            </div>
+            <img class="indent noshadow" data-gifffer="/bjc-r/img/7-recursion/greentree.gif" alt="Fraktalbaum" title="Fraktalbaum" /><br />
+        </p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li><div class="newProject"><span class="text">„U7L1-Tree“</span><img src="/bjc-r/img/icons/new-project-called.png" alt="Starte ein neues Projekt namens U7L1-Tree" title="Starte ein neues Projekt namens U7L1-Tree" /></div></li>
+                <li>
+                    Baue die erste Ebene.
+                    <ol>
+                        <li>
+                            Erstelle einen Block <code>tree 1</code>. Er sieht harmlos aus, aber gleich wird es komplizierter.<br />
+                            <img class="indent" src="/bjc-r/img/7-recursion/tree1.png" alt="tree 1, size: (size #) { move (size) steps; move (-1 ✕ size) steps }" title="tree 1, size: (size #) { move (size) steps; move (-1 ✕ size) steps }" /><br />
+                        </li>
+                        <li>
+                        	Richte den Sprite nach oben aus, setze den Stift ab, und führe <img src="/bjc-r/img/7-recursion/tree-1(50).png" alt="tree 1, size: (50)" title="tree 1, size: (50)"> aus. Das Ergebnis sollte so aussehen: <br />
+							<img class="indent noshadow" src="/bjc-r/img/7-recursion/tree-level1.png" alt="Ergebnis von tree 1: gezeichneter Baumstamm" title="Ergebnis von tree 1: Baumstamm" />
+                    	</li>
+                        <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" /> Wo startet dein Sprite, in welche Richtung zeigt es, und wo endet es?</li>
+                    </ol>
+                </li>
+                <li>
+                    <div class="sidenote"><code>tree 1</code> als Zweige in <code>tree 2</code> zu verwenden, ist ein Beispiel für <em>Abstraktion</em>.</div>
+                    Baue einen Block <code>tree 2</code>, der <code>tree 1</code> als Zweige nutzt.<br />
+                    <div class="indent borderless-table two-col">
+                        <div><img src="/bjc-r/img/7-recursion/tree-2-script.png" alt="tree 2 Skript mit zwei tree 1 Aufrufen" title="tree 2 Skript mit zwei tree 1 Aufrufen"/></div>
+                        <div>
+                            <img src="/bjc-r/img/7-recursion/tree-2(50).png" alt="tree 2, size: (50)" title="tree 2, size: (50)"><br />
+                            <img class="noshadow" src="/bjc-r/img/7-recursion/tree-level2.jpg" alt="Ergebnis von tree 2: Stamm mit zwei Ästen" title="Ergebnis von tree 2" />
+                        </div>
+                    </div>
+                </li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" /> Beschreibe genau Position und Richtung des Sprites, wenn der erste <code>tree 1</code>-Aufruf endet. Warum ist das entscheidend dafür, dass <code>tree 2</code> funktioniert?</li>
+            </ol>
+        </div>
+
+        <div class="vocabFullWidth">: <strong>State Transparency</strong>
+            <p><strong>State Transparency</strong> bedeutet, alles exakt in den Ausgangszustand zurückzuversetzen. Das ist besonders wichtig, wenn Blöcke voneinander abhängen. In der Regel heißt das: gleiche Position und Richtung des Sprites sowie gleiche Farbe und Größe des Stifts wiederherstellen.</p>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="5">
+                <li>Erstelle einen Block <code>tree 3</code>, der <code>tree 2</code> als Zweige verwendet.
+                    <div class="endnote">
+                        Durch Rechtsklick (bzw. Ctrl-Klick auf dem Mac) kannst du Blöcke „duplizieren“ oder „umbenennen“. Das beschleunigt die Aufgaben. <a href="#hint-dup-and-relabel" data-toggle="collapse" title="Beispiel für Duplizieren und Umbenennen anzeigen.">Beispiel ansehen</a>
+                        <div id="hint-dup-and-relabel" class="collapse">
+                            <div class="comment">Alt-/Titeltexte sollten noch verbessert werden. --MF, 18.06.2020</div>
+                            <img class="indent" src="/bjc-r/img/7-recursion/dup-and-relabel.gif" alt="Kontextmenü mit duplicate und relabel" title="Kontextmenü duplicate/relabel" />
+                        </div>
+                    </div>
+                </li>
+                <li>Erstelle einen Block <code>tree 4</code>, der <code>tree 3</code> als Zweige nutzt.</li>
+                <li>
+                    Wenn du magst, baue einen Block <code>tree 5</code>, der auf <code>tree 4</code> aufbaut. Der Aufruf <img src="/bjc-r/img/7-recursion/tree-5(50).png"  alt="tree 5 size:(50)" title="tree 5 size:(50)"> sollte dieses Bild erzeugen. <img class="inline" src="/bjc-r/img/icons/save-mini.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" /><br />
+                    <img class="indent noshadow" src="/bjc-r/img/7-recursion/tree5.png" alt="Ergebnis von tree 5: Baum mit Stamm und Ästen" title="Ergebnis von tree 5" />
+                </li>
+            </ol>
+    	</div>
+
+        <p>Alle diese Blöcke sehen fast identisch aus – nur dass <code>tree 5</code> <code>tree 4</code> verwendet, <code>tree 4</code> <code>tree 3</code>, <code>tree 3</code> <code>tree 2</code> usw. Es liegt also nahe, all diese Blöcke durch einen einzigen Block <code>tree</code> zu ersetzen, indem wir die variable Tiefe als Parameter verwenden.</p>
+        <div class="vocabFullWidth">: <strong>Rekursion</strong>
+            <p>Wenn ein Verfahren sich selbst aufruft, nennt man das <strong>Rekursion</strong>.</p>
+            <div class="endnote">Du hast Rekursion bereits in <a href="/bjc-r/cur/programming/3-lists/1-abstraction/3-fractal-art-recursive.html?topic=nyc_bjc%2F3-lists.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 3, Labor 1, Seite 3: Dreiecke verschachteln">Einheit 3, Labor 1, Seite 3</a> kennengelernt.</div>
+        </div>
+
+		<div class="forYouToDo">
+            <ol start="8">
+                <li>
+                    So sieht die Idee für die <em>rekursive</em> Version aus. <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" /> Welche Unterschiede gibt es zwischen diesem rekursiven Skript und den Blöcken <code>tree 2</code>/<code>tree 3</code>? Warum sind diese Unterschiede nötig?<br />
+            		<img class="indent" src="/bjc-r/img/7-recursion/tree-nobase.png" alt="Rekursiver tree-Block ohne Abbruchbedingung" title="Rekursiver tree-Block ohne Abbruchbedingung" />
+                </li>
+                <li>
+                    So sieht das Ergebnis von <code>tree, level: 9 size: 50</code> aus.<br />
+                    <img class="indent noshadow" data-gifffer="/bjc-r/img/7-recursion/treebug.gif" alt="Baumzeichnung läuft endlos" title="Baumzeichnung läuft endlos" /><br />
+                    Es funktioniert nicht. Versuche, das Skript zu debuggen. Baue den Code nach und führe ihn aus. <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" /> Was läuft schief?<br />
+                </li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

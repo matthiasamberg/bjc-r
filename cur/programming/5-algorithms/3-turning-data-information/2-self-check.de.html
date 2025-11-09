@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 5, Labor 3: Daten in Informationen verwandeln, Seite 2</title>
+	</head>
+
+	<body>
+        <h2>Selbsttest: Big Data</h2>
+        <div class="learn">
+        	<p><strong>Auf dieser Seite</strong> bereitest du dich auf Datenfragen der AP-Prüfung vor.</p>
+        </div>
+
+        <div class="ap-standard">DAT-2.C.6, DAT-2.C.7, DAT-2.C.8</div>
+        <p>Die Größe eines Datensatzes bestimmt, wie viele Informationen sich daraus gewinnen lassen. Die Daten, mit denen du in diesem Kurs arbeitest, sind winzig im Vergleich zu den „Big-Data“-Sammlungen, die Internet-Suchtrends, Umweltforschung oder FinTech-Anwendungen analysieren. Sehr große Datenmengen (Milliarden oder Billionen Einträge) lassen sich kaum auf einem einzelnen Computer verarbeiten und erfordern oft parallele Verarbeitung auf vielen Systemen. Damit wird Skalierbarkeit zum Thema: Die Rechenkapazität bestimmt, wie Daten verarbeitet und gespeichert werden können.</p>
+
+        <div class="forYouToDo" id="first">
+            <ol>	
+                <li>
+                    <div class="ap-standard">DAT-2.A</div>
+                    Diese Fragen ähneln Aufgaben, die du in der AP-CSP-Prüfung sehen wirst.
+                    <!-- Question 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="migrating birds"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="true">
+                        <div class="prompt">
+                            Forschende, die Zugvögel untersuchen, befestigen häufig Tracker an den Tieren. Für jeden Vogel werden in kurzen Abständen folgende Daten aufgezeichnet:
+                            <ul>
+                                <li>Datum und Uhrzeit</li>
+                                <li>Breiten- und Längengrad</li>
+                                <li>Höhe</li>
+                                <li>Temperatur</li>
+                            </ul>
+							Welche der folgenden Fragen zu einem bestimmten Vogel lässt sich <em><strong>nicht</strong></em> allein mit den Tracking-Daten beantworten?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Wie viel Zeit verbringt der Vogel ungefähr in der Luft bzw. am Boden?</div>
+                            <div class="feedback">Das ließe sich aus den Höhendaten erkennen.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Reist der Vogel gemeinsam mit anderen getrackten Vögeln?</div>
+                            <div class="feedback">Das ließe sich aus Breiten- und Längengraden ablesen.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Beeinflussen Temperaturmuster den Migrationsweg?</div>
+                            <div class="feedback">Das ließe sich aus den Temperaturdaten erkennen.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Welche Auswirkungen hat industrielle Verschmutzung auf den Migrationsweg?</div>
+                            <div class="feedback">Richtig, es werden keine Daten zur Verschmutzung der Umgebung erfasst.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c4"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="searching for patterns"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="true">
+                        <div class="prompt">Mit Hilfe von Computern durchsuchen Forschende große Datensätze nach interessanten Mustern. Bei welchem der folgenden Beispiele ist <em><strong>keine</strong></em> Mustersuche nötig, um die gewünschte Information zu erhalten?</div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Ein Onlinehändler analysiert die Einkaufshistorie von Kund*innen, um neue Produkte vorzuschlagen.</div>
+                            <div class="feedback">Hier werden Muster gesucht, um Informationen zu gewinnen.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Eine Schule wertet Anwesenheitslisten aus, um zu entscheiden, wer eine Disziplinarwarnung erhält.</div>
+                            <div class="feedback">Richtig, hier reicht das Sortieren der Daten aus.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Ein Streamingdienst analysiert die Sehdauer von Serien, um neue Episoden zu planen.</div>
+                            <div class="feedback">Auch hier werden Muster analysiert.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Ein Forschungsteam untersucht Luftqualitätsdaten, um Vorhersagen für Asthmaanfälle zu erstellen.</div>
+                            <div class="feedback">Auch das ist ein Beispiel für Musteranalyse.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                            <div class="correctResponse" identifier="c2"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="structure of the internet"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri3" shuffle="true">
+                        <div class="prompt"><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" />Warum ist es schwierig, Datenmengen im Petabyte- oder Exabyte-Bereich mit nur einem einzigen Computer zu analysieren?</div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Ein einzelner Computer kann vielleicht nicht alle Daten speichern oder verarbeiten.</div>
+                            <div class="feedback">Richtig! Speicherplatz und Rechenleistung sind begrenzt.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Viele Daten kann man gar nicht speichern.</div>
+                            <div class="feedback">Nicht korrekt – Speichern ist möglich, aber aufwändig.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Dafür bräuchte man sehr viele unterschiedliche Programmiersprachen.</div>
+                            <div class="feedback">Programmiersprachen spielen hier keine Rolle.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Die Daten dürfen nicht über mehrere Computer verteilt werden.</div>
+                            <div class="feedback">Doch, gerade verteilte Systeme sind üblich.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri3">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="cd sales"
+                        hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri4" shuffle="true">
+                        <div class="prompt">
+                            Ein Online-Musikshop stellt Verkaufsdaten in einer öffentlich zugänglichen Datenbank bereit. Auszug:
+                            <table class="center bordered" summary="Songverkäufe nach Datum, Titel, Stadt und Anzahl">
+                                <tr>
+                                    <th scope="col">Datum</th>
+                                    <th scope="col">Song</th>
+                                    <th scope="col">Stadt</th>
+                                    <th scope="col">Verkäufe</th>
+                                </tr>
+                                <tr>
+                                    <td style="white-space: nowrap;">Mo 10.07.17</td>
+                                    <td style="white-space: nowrap;">Despacito</td>
+                                    <td style="white-space: nowrap;">Boston, MA</td>
+                                    <td class="center" style="white-space: nowrap;">117</td>
+                                </tr>
+                                <tr>
+                                    <td style="white-space: nowrap;">Mo 10.07.17</td>
+                                    <td style="white-space: nowrap;">Malibu</td>
+                                    <td style="white-space: nowrap;">Chicago, IL</td>
+                                    <td class="center" style="white-space: nowrap;">53</td>
+                                </tr>
+                                <tr>
+                                    <td style="white-space: nowrap;">Mo 10.07.17</td>
+                                    <td style="white-space: nowrap;">Malibu</td>
+                                    <td style="white-space: nowrap;">New York, NY</td>
+                                    <td class="center" style="white-space: nowrap;">197</td>
+                                </tr>
+                                <tr>
+                                    <td style="white-space: nowrap;">Mo 10.07.17</td>
+                                    <td style="white-space: nowrap;">Bad Liar</td>
+                                    <td style="white-space: nowrap;">Anchorage, AK</td>
+                                    <td class="center" style="white-space: nowrap;">11</td>
+                                </tr>
+                                <tr>
+                                    <td style="white-space: nowrap;">Di 11.07.17</td>
+                                    <td style="white-space: nowrap;">Despacito</td>
+                                    <td style="white-space: nowrap;">San Diego, CA</td>
+                                    <td class="center" style="white-space: nowrap;">241</td>
+                                </tr>
+                            </table>
+                            Welche der folgenden Fragen lässt sich <em><strong>nicht</strong></em> allein mit diesen Informationen beantworten?
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Welcher Song wurde in einer bestimmten Woche am häufigsten gekauft?</div>
+                            <div class="feedback">Diese Information erhältst du, indem du die Verkäufe pro Song summierst.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Welche Stadt hatte an einem Tag die wenigsten Käufe?</div>
+                            <div class="feedback">Auch das lässt sich durch Summieren der Verkäufe pro Stadt ermitteln.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">In wie vielen Städten wurde ein bestimmter Song in einem Monat gekauft?</div>
+                            <div class="feedback">Dazu listest du alle Städte für diesen Song und Monat auf.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Wie viele Songs hat ein bestimmter Kunde innerhalb eines Jahres gekauft?</div>
+                            <div class="feedback">Richtig, Kundendaten sind in diesem öffentlichen Auszug nicht enthalten.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri4">
+                            <div class="correctResponse" identifier="c4"></div>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+
+	</body>
+</html>

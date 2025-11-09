@@ -72,5 +72,18 @@ Dieses Dokument fasst den bisherigen Übersetzungsprozess zusammen und dient als
 - 2025-10-24: Einheit 4, Labor 3, Seite 1 („Communication and Community“) übersetzt; keine neuen Glossareinträge erforderlich.
 - 2025-10-31: Einheit 5, Labor 1 („Searching Lists“) Seiten 1–8 auf Deutsch; keine zusätzlichen Glossarbegriffe nötig, Snap!-Blocknamen unverändert belassen.
 - 2025-10-31: Einheit 5, Labor 2 („Simulations“) Seiten 1–2 übersetzt; Fokus auf Konsistenz bei Begriffen wie „Simulation“, Snap!-Variablen englisch gelassen, neue Hinweise zu ethischen Aspekten lokalisiert.
+- 2025-10-31: Einheit 5, Labor 3 („Turning Data into Information“) Seiten 1–6 lokalisiert; Gapminder-Hinweise übernommen, AP-Selbsttestfragen übersetzt, Tabellen-/Diagrammbegriffe konsistent, Snap!-Blocknamen unverändert.
+- 2025-10-31: Einheit 5, Labor 4 („Unsolvable and Undecidable Problems“) Seiten 1–2 übertragen; Beweis-via-Widerspruch-Logik in Alltagssprache gefasst, Begriffe wie „unentscheidbar“/„unlösbar“ abgestimmt, Code- und Funktionsnamen unverändert gelassen.
+- 2025-10-31: Einheit 5, Labor 5 („Computing in War“) Seiten 1–3 übersetzt; historische Beispiele lokalisiert, gesellschaftspolitische Diskussionsfragen beibehalten, Bildnachweise angepasst, Tabellenstruktur unverändert.
+- 2025-10-31: Einheit 5, Labor 6 („Tic-Tac-Toe with a Computer Player“) Seiten 1–4 auf Deutsch übertragen; Snap!-Blöcke beibehalten, Strategieregeln präzise formuliert, Hinweise und Dialoge lokalisiert.
+- 2025-10-31: Einheit 5, optionales Labor „Other Programming Languages“ Seiten 1–3 übersetzt; Tabellen zu Python/JavaScript angepasst, Haskell- und Smalltalk-Beschreibungen lokalisiert, bestehende TODO-Hinweise übernommen.
+- 2025-10-31: Einheit 5, optionales Thema „Mutation“ (mutate-vars, swap-list-values, swap-two-list-values) lokalisiert; Erläuterungen zur Variablen-/Listenmutation übertragen, vorhandene Grafiken beibehalten.
+- 2025-10-31: Einheit 5, optionales Projekt „Tic-Tac-Toe“ Seite 2 übersetzt; Hinweise zu Broadcast/Strategie übernommen, Ergänzungen zur Kostümkorrektur lokalisiert.
+- 2025-11-01: Einheit 6, Labor 1 („Abstraction“) Seite 1 auf Deutsch erstellt; Fokus auf konsistente Domänenbegriffe (Software, Digital, Analog) und Aktualisierung der Aufgabenbeschreibung.
+- 2025-11-01: Einheit 6, Labor 1 Seiten 2–10 lokalisiert (Software-Anwendungen/-Sprachen/-Bibliotheken/-OS, digitale Ebenen, Logikgatter, Transistoren); Interaktiv- und Assessment-Texte angepasst, Alt-Texte übersetzt und Zusatzressourcen aktualisiert.
+- 2025-11-01: Einheit 6, Labor 2 Seiten 1–2 („History & Impact“, „Moore’s Law“) übersetzt; Timeline-Inhalte neu formuliert, historische Hinweise aktualisiert, Assessment-Frage lokalisiert.
+- 2025-11-01: Einheit 6, optionale Projekte („Binary Addition with Logic Gates“, „Building a Binary Adder“, „Weather App Project“) lokalisiert; Aufgabenstellungen bereinigt, Hinweise zu URL-Parametern/Gradzeichen ergänzt und deutsche Alt-Texte hinterlegt.
+- 2025-11-01: Einheit 7, Labor 1 („Trees“) Seiten 1–5 übersetzt; Fokus auf Basisfall-Erklärungen, Self-Check-Bewertungen und freie Variationen (inkl. Gravitation/Randomisierung) in konsistenter Terminologie.
+- 2025-11-01: Einheit 7, Labor 2 („Recursion Projects“) Seiten 1–4 lokalisiert (Dreiecksfraktal, Koch-Schneeflocke, Lévy C-Kurve, rekursiver Mondrian); Starterhinweise, Mathematik-Tipps (Pythagoras), Zufalls-/Farberläuterungen und Tough-Stuff-Hinweise auf Deutsch übertragen.
 
 Dieses Dokument wird laufend aktualisiert, sobald neue Begriffe hinzukommen oder Übersetzungsentscheidungen angepasst werden.

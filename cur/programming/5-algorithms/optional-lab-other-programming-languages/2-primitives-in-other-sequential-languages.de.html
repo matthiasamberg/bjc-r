@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 5, Optionales Labor: Andere Programmiersprachen, Seite 2</title>
+	</head>
+
+	<body>
+		<h2>Snap<em>!</em>-Primitive in anderen sequenziellen Sprachen</h2>
+        <!--<div class="learn"><strong>Auf dieser Seite</strong></div>-->
+		<p>
+			Zentrale Sprachelemente für Steuerfluss
+			(<img src="/bjc-r/img/5-algorithms/Control.png" alt="Control" title="Control" />),
+			Datenverwaltung
+			(<img src="/bjc-r/img/5-algorithms/Variables.png" alt="Variables" title="Variables" />
+			und <img src="/bjc-r/img/5-algorithms/Lists.png" alt="Lists" title="Lists" />)
+			und Berechnung
+			(<img src="/bjc-r/img/5-algorithms/Operators.png" alt="Operators" title="Operators" /> sowie einige <img src="/bjc-r/img/5-algorithms/Sensing.png" alt="Sensing" title="Sensing" />-Blöcke)
+			haben in den meisten Sprachen direkte Entsprechungen.
+        </p>
+
+        <div class="forYouToDo">
+            <ol>
+                <li>Sieh dir die folgende Tabelle an. Dort erkennst du, wie Blöcke aus Snap<em>!</em> in zwei anderen sequenziellen Sprachen geschrieben werden.
+                    <table rules="all" frame="box">
+                        <tr><th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Snap<em>!</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th><th>Python</th><th>JavaScript</th></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/for.png" alt="<code>for</code>-Block" title="<code>for</code>-Block" /></td>
+                        <td><pre>for i in range (1, 11):
+            action()</pre></td>
+                        <td><pre>for (i=1; i &lt;= 10; i++) {
+            action()
+        }</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/repeat-until.png" alt="<code>repeat until</code>-Block" title="<code>repeat until</code>-Block" /></td>
+                        <td><pre>while (not condition):
+            action()</pre></td>
+                        <td><pre>while (not condition) {
+            action()
+        }</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/if-else.png" alt="<code>if/else</code>-Block" title="<code>if/else</code>-Block" /></td>
+                        <td><pre>if condition:
+            action1()
+        else:
+            action2()</pre></td>
+                        <td><pre>if (condition) {
+            action1()
+        } else {
+            action2()
+        }</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/reporter-if.png" alt="<code>if/else</code>-Reporter" title="<code>if/else</code>-Reporter" /></td>
+                        <td><pre>yes if condition else no</pre></td>
+                        <td><pre>(condition ? yes : no)</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/report.png" alt="<code>report</code>-Block" title="<code>report</code>-Block" /></td>
+                        <td><pre>return value</pre></td>
+                        <td><pre>return value</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/stop-block.png" alt="<code>stop this block</code>-Block" title="<code>stop this block</code>-Block" /></td>
+                        <td><pre>return</pre></td>
+                        <td><pre>return</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/function-ring.png" alt="<code>function ()</code> im grauen Ring" title="<code>function ()</code> im grauen Ring" /></td>
+                        <td><pre>lambda x : some_function(x)</pre></td>
+                        <td><pre>function (x) {
+            return someFunction(x)
+        }</pre> &nbsp; oder
+                        <pre>(x) =&gt; someFunction(x)</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/times.png" alt="<code>a times b</code>-Block" title="<code>a times b</code>-Block" /></td>
+                        <td><pre>a * b</pre></td>
+                        <td><pre>a * b</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/power.png" alt="<code>a to the power b</code>-Block" title="<code>a to the power b</code>-Block" /></td>
+                        <td><pre>a ** b</pre></td>
+                        <td><pre>a ** b</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/and.png" alt="<code>a and b</code>-Block" title="<code>a and b</code>-Block" /></td>
+                        <td><pre>a and b</pre></td>
+                        <td><pre>a &amp;&amp; b</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/join.png" alt="<code>join (hello) (world)</code>-Block" title="<code>join (hello) (world)</code>-Block" /></td>
+                        <td><pre>" ".join(["hello","world"])</pre> &nbsp; oder <pre>"hello " + "world"</pre></td>
+                        <td><pre>"hello".concat(" ","world")</pre> &nbsp; oder 
+                        <pre>"hello" + " " + "world"</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/split.png" alt="<code>split</code>-Block" title="<code>split</code>-Block" /></td>
+                        <td><pre>"hello world".split(" ")</pre></td>
+                        <td><pre>"hello world".split(" ")</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/map.png" alt="<code>map</code>-Block" title="<code>map</code>-Block" /></td>
+                        <td><pre>list(map(action, data))</pre></td>
+                        <td><pre>data.map(action)</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/keep.png" alt="<code>keep</code>-Block" title="<code>keep</code>-Block" /></td>
+                        <td><pre>list(filter(predicate, data))</pre></td>
+                        <td><pre>data.filter(predicate)</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/combine.png" alt="<code>combine</code>-Block" title="<code>combine</code>-Block" /></td>
+                        <td><pre>functools.reduce(action, data)</pre></td>
+                        <td><pre>data.reduce(action)</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/item.png" alt="<code>item</code>-Block" title="<code>item</code>-Block" /></td>
+                        <td><pre>data[index]</pre></td>
+                        <td><pre>data[index]</pre></td></tr>
+
+                        <tr><td><img src="/bjc-r/img/5-algorithms/add-to-list.png" alt="<code>add</code>-Block" title="<code>add</code>-Block" /></td>
+                        <td><pre>data.append(item)</pre></td>
+                        <td><pre>data.push(item)</pre></td></tr>
+                    </table>
+                </li>
+            </ol>
+        </div>
+
+		<p>Übrigens: Schau dir den Python-Befehl <code>join</code> an. Damit kannst du ein Trennzeichen festlegen, das zwischen die Strings gesetzt wird:</p>
+
+<pre class="indent">&gt;&gt;&gt; <span style="background: orange">" "</span>.join(["John", "Paul", "George", "Ringo"])
+'John Paul George Ringo'
+&gt;&gt;&gt; <span style="background: orange">","</span>.join(["John", "Paul", "George", "Ringo"])
+'John,Paul,George,Ringo'</pre>
+
+		<p>Im ersten Beispiel liefert der String <code>" "</code> das Trennzeichen, im zweiten <code>","</code>. Das ist eine elegante Erweiterung des Join-Konzepts – du musst die Leerzeichen nicht in die Eingabestrings schreiben. (Mit einem leeren String erhältst du genau den Effekt des Snap<em>!</em>-Blocks <code>join</code>.)</p>
+
+		<div class="todo">
+		Auf der anderen Seite: Sieh dir die Python-Version von <code>map</code> an. Warum musst du <code>list(</code>...<code>)</code> um den Aufruf herum schreiben? Guido van Rossum, der Entwickler von Python, mag Higher-Order-Funktionen nicht besonders. Als die Community sie trotzdem verlangte, machte er ihre Nutzung möglichst unbequem. <code>map</code> liefert daher kein Array, sondern ein spezielles Objekt, das du erst in eine Liste umwandeln musst. (Er möchte, dass du stattdessen die Schreibweise <code>for <var>x</var> in</code> verwendest.) Ebenso mag er anonyme Prozeduren nicht – die grauen Ringe aus Snap<em>!</em>. Deshalb erlaubt er nur einzeilige anonyme Reporter, aber keine längeren Reporter oder anonymen Befehlsblöcke. Ohne diese Einschränkungen wäre Python deutlich benutzerfreundlicher.
+		</div>
+
+		<p>Betrachte auch das Python-Äquivalent zu <code>for</code>. Warum bedeutet <code>range(1,11)</code> „Zahlen von 1 bis 10“? Die Idee: Diese Zahlen dienen zum Auswählen von Listenelementen, aber Python nummeriert die <em>Lücken zwischen</em> den Elementen. <code>range(1,11)</code> meint also: „Elemente rechts von Lücke 1 und links von Lücke 11.“ Daran kann man sich gewöhnen, intuitiv ist es nicht. (Etwas nachvollziehbarer wird es, wenn man bei 0 beginnt: <code>range(0,5)</code> wählt fünf Elemente; das kann man zu <code>range(5)</code> abkürzen.)</p>
+
+		<p>Was hältst du davon, Strings mit <code>+</code> zu verbinden? Die Idee ist eine Analogie zur Arithmetik – du „addierst“ einen String zum nächsten. Dasselbe Symbol für verschiedene Zwecke zu verwenden, nennt man „Überladen“. In Python ist das halb so schlimm, da die Sprache streng zwischen Zahlen und Zeichenketten unterscheidet (<code>2+"3"</code> erzeugt einen Fehler). JavaScript hingegen konvertiert – wie Snap<em>!</em> – Zahlen bei Bedarf automatisch in Strings. <code>2+"3"</code> ergibt also „23“, obwohl <code>2+3</code> 5 ist. (Snap<em>!</em> hat damit kein Problem, weil <code>+</code> dort nicht überladen ist.)</p>
+
+		<p>Andere Blockkategorien – etwa Grafik oder Sound – haben in vielen Sprachen keine direkten Entsprechungen. Stattdessen stellen Bibliotheken entsprechende Funktionen zur Verfügung. Wenn du zum Beispiel JavaScript-Entsprechungen zu den Turtle-Grafik-Blöcken (<code>move (n) steps</code> usw.) suchst, hilft eine Suchmaschine: „JavaScript turtle graphics“ führt dich zu <a href="https://github.com/bjpop/js-turtle">https://github.com/bjpop/js-turtle</a>. Von dort kannst du die Datei <code>turtle.js</code> herunterladen und in dein Projekt einbinden. (Allerdings ist der Hauptzweck von JavaScript, Webseiten zu programmieren; grafische Bibliotheken sind daher meist auf Webseiten ausgelegt.)</p>
+
+	</body>
+</html>

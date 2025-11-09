@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 5, Labor 3: Daten in Informationen verwandeln, Seite 3</title>
+    </head>
+
+    <body>
+        <h2>Daten importieren und auswerten</h2>
+        <div class="todo">Füge irgendwo hinzu: „Du kannst einen Listenbeobachter doppelklicken und in einem Dialog öffnen, den du anschließend offen lassen kannst …“ --Jens SnapCon 2023</div>
+        <div class="learn">
+            <div class="ap-standard">DAT-2.D.1, DAT-2.C.1</div>
+            <p>Computer helfen, Daten zu verarbeiten und Informationen daraus zu gewinnen. Wie gut dir das gelingt, hängt sowohl von deinen Fähigkeiten als auch von den verfügbaren Werkzeugen ab.</p>
+            <p><strong>Auf dieser Seite</strong> baust du verschiedene Werkzeuge (Selektoren), um Fragen zu Daten zu beantworten, die dich interessieren.</p>
+            <div class="endnote">Selektoren hast du kennengelernt in <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/2-quizzes.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 2, Seite 2: Quiz-App planen">Einheit 2, Labor 2, Seite 2</a>.</div>
+        </div>
+
+
+        <div class="forYouToDo" id="first">
+
+            <ol>
+				<li><div class="newProject"><span class="text">„U5L3-Data-Processing“</span><img src="/bjc-r/img/icons/new-project-called.png" alt="Neues Projekt namens U5L3-Data-Processing starten" title="Neues Projekt namens U5L3-Data-Processing starten" /></div></li>
+                <li>
+					Besuche das <a href="https://corgis-edu.github.io/corgis/" title="CORGIS Datasets Project" target="_blank">CORGIS Datasets Project</a> oder <a href="https://public.tableau.com/app/learn/sample-data?qt-overview_resources=1#qt-overview_resources" title="Tableau Sample Data Sets" target="_blank">Tableau Sample Data Sets</a> und wähle einen Datensatz, den du untersuchen möchtest. Lade die CSV-Datei dazu herunter.
+					<div class="endnote">Snap<em>!</em> kann Daten im CSV-Format importieren. Du kannst XLS- oder XLSX-Dateien in CSV umwandeln, indem du sie in einem Tabellenprogramm (z. B. Google Sheets) öffnest und als CSV herunterlädst, um sie dann in Snap<em>!</em> zu ziehen. Auf der Tableau-Seite gibt es auch JSON-, PDF- und ZIP-Dateien; diese sind schwieriger zu verarbeiten und nicht für dieses Labor vorgesehen.</div>
+				</li>
+                <li>Öffne Snap<em>!</em> und ziehe die heruntergeladene Datei ins Snap<em>!</em>-Fenster. Es erscheint eine Tabelle mit den Daten. Sieh dir die Daten (inklusive der <em>Spaltenüberschriften</em> in der ersten Zeile) an, um ein Gefühl für die enthaltenen Informationen zu bekommen. Klicke anschließend auf „OK“, um das Fenster zu schließen. Über den Beobachter auf der Snap<em>!</em>-Bühne kannst du die Daten weiter einsehen.</li>
+            </ol>
+        </div>
+
+        <div class="ap-standard">DAT-2.D.5</div>
+        <p>
+            <img class="imageRight" src="/bjc-r/img/5-algorithms/correlation-positive-trend.png" alt="Diagramm mit Datenpunkten, die grob einer fallenden Geraden folgen" title="Diagramm mit Datenpunkten, die grob einer fallenden Geraden folgen" />
+            Tabellenkalkulationen (z. B. Google Sheets, Apple Numbers oder Microsoft Excel) speichern tabellarische Daten in unterschiedlichen Dateiformaten. Sie helfen, Informationen effizient zu organisieren und Trends zu erkennen (wie die Linie rechts). CSV ist ein offenes Tabellenformat, das in all diesen Programmen – und in Snap<em>!</em> – funktioniert.
+        </p>
+        <div class="endnote">
+            <a href="#hint-CSV" data-toggle="collapse" title="Wofür steht CSV?">Wofür steht CSV?</a>
+            <div id="hint-CSV" class="collapse">
+                CSV bedeutet „comma separated values“. Die Daten einer CSV-Datei sind tabellarisch gespeichert, wobei Kommas Elemente in einer Zeile trennen und Zeilenumbrüche neue Zeilen markieren. Öffnest du die Datei in einem Texteditor, siehst du die Kommas und Zeilenumbrüche.
+            </div>
+        </div>
+		<p>Tabellen sind ein häufiger Datentyp, aber nicht der einzige. Die Wortliste aus Labor 1 zur Rechtschreibprüfung ist keine <em>Liste von Listen</em> mit zwei Dimensionen (Zeilen und Spalten), sondern nur eine eindimensionale <em>Liste</em>. „Tabelle“ bezeichnet zweidimensionale Daten mit Zeilen und Spalten. „Datensatz“ ist der allgemeinere Begriff für <em>jede</em> Datensammlung – einfache Listen, Tabellen (Listen von Listen) oder auch komplexere Sammlungen mit mehreren Tabellenblättern.</p>
+
+        <div class="forYouToDo">
+			<ol start="4">
+                <li>Teste verschiedene Eingaben für den Block <img class="inline nopadtb" src="/bjc-r/img/blocks/item.png" alt="item () of 'list input slot'" title="item () of 'list input slot'" />, um unterschiedliche Zeilen des Datensatzes abzurufen.</li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" /> Welche <em>Spaltenüberschriften</em> gibt es in deinen Daten?</li>
+                <li>Baue einen Block <img class="inline nopadtb" src="/bjc-r/img/5-algorithms/field-of-record.png" alt="field (input) of record (input)" title="field (input) of record (input)" />, der dir hilft, bestimmte Werte aus einem Datensatz zu holen.
+                    <div class="endnote">
+                        <a href="#hint-fieldof" data-toggle="collapse" title="Hinweis: field () of record ()">Hinweis zu <code>field () of record ()</code></a>
+                        <div id="hint-fieldof" class="collapse">
+                            <p><code>field () of record ()</code> sollte zwei Eingaben haben: den Spaltenindex und die Zeile. Es liefert dann das Feld aus dieser Spalte.</p>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+        </div>
+
+        <div class="ap-standard">DAT-2.C.3</div>
+        <p><img class="indent" src="/bjc-r/img/5-algorithms/fields-of-record-reporting.png" alt="fields (2, 8, 9, 15) of record (item (1) of data of table (cars)) reporting [1969, 15, 18, 10]" title="fields (2, 8, 9, 15) of record (item (1) of data of table (cars)) reporting [1969, 15, 18, 10]" /></p>
+        <p>Um mehrere Spalten gleichzeitig auszulesen, hilft dir ein Block <code>fields () of record ()</code>. Er nimmt eine Liste mit Spaltennummern und eine Zeile als Eingaben und liefert die entsprechenden Felder.</p>
+
+        <div class="forYouToDo">
+			<ol start="7">
+                <li>Baue <img class="inline nopadtb" src="/bjc-r/img/5-algorithms/fields-of-record.png" alt="fields () of record ()" title="fields () of record ()" /> und teste ihn an einem deiner Datensätze.</li>
+                <li>Schreibe einen Block <img class="inline nopadtb" src="/bjc-r/img/5-algorithms/field-of-table.png" alt="field () of table ()" title="field () of table ()" />, der die erste Zeile (den Tabellenkopf) nutzt, um Feldnamen statt Indizes zu akzeptieren.</li>
+				<li><img class="inline" src="/bjc-r/img/icons/write-out-thoughts.png" alt="Schreibe deine Gedanken auf" title="Schreibe deine Gedanken auf" />Formuliere mindestens drei Fragen, die du mit deinem Datensatz beantworten möchtest, und plane, welche Blöcke du dafür brauchst.</li>
+			</ol>
+        </div>
+
+        <div class="ap-standard">DAT-2.C.4, DAT-2.C.5</div>
+        <p>Datensätze enthalten manchmal mehr Informationen, als du für eine bestimmte Analyse brauchst. Du kannst daher weitere Blöcke bauen, die dir helfen, die Daten effizienter zu filtern oder zu sortieren.</p>
+
+        <div class="forYouToDo">
+			<ol start="10">
+                <li>Schreibe einen Block <img class="inline nopadtb" src="/bjc-r/img/5-algorithms/all-values-of-field.png" alt="all values of field () of table ()" title="all values of field () of table ()" />, der alle Werte einer bestimmten Spalte ausgibt.</li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" />Diskutiert, wie ihr eure Blöcke kombinieren könnt, um eure geplanten Fragen zu beantworten.</li>
+                <li>
+                    <div class="ap-standard">DAT-2.C</div>
+                    <img class="inline" src="/bjc-r/img/icons/write-out-thoughts.png" alt="Schreibe deine Gedanken auf" title="Schreibe deine Gedanken auf" />Beschreibe mögliche Herausforderungen, auf die du stoßen würdest, wenn du die Daten selbst erheben müsstest, um eine deiner Fragen zu beantworten.
+                </li>
+			</ol>
+		</div>
+
+
+        <div class="todo"><p>Diese Bilder und <code>code</code>-Blöcke müssen auf „record“ statt „row“ umgestellt werden. --MF, 27.06.2019</p></div>
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>Beantworte Fragen wie „Welches Automodell hat den höchsten Verbrauch?“ mithilfe eines Blocks <img class="inline nopadtb" src="/bjc-r/img/5-algorithms/row-with-max-of-table.png" alt="row with maximum in column () of table ()" title="row with maximum in column () of table ()" />.
+                    <div class="endnote">
+                        <p><a href="#hint-build" data-toggle="collapse" title="Hinweis: row with maximum in column () of table ()">Hinweis zum Aufbau von <code>row with maximum in column () of table ()</code></a></p>
+                        <div id="hint-build" class="collapse">
+                            <div class="comment">BH, bitte prüfe die Alt-Texte aller fünf Bilder. --MF, 26.06.2019</div>
+                            <p>Eine Möglichkeit, den Block <img class="inline nopadtb" src="/bjc-r/img/5-algorithms/maximum-of-list.png" alt="maximum of 'list input slot'" title="maximum of 'list input slot'" /> für eine einfache Liste zu bauen, siehst du unten. Du kannst einen Block <img class="inline nopadtb" src="/bjc-r/img/5-algorithms/maximum.png" alt="maximum of () and ()" title="maximum of () and ()" /> schreiben, der zwei Eingaben vergleicht, und ihn zusammen mit <code>combine</code> nutzen, um das Maximum einer ganzen Liste zu finden.<br />
+                            <img class="indent" src="/bjc-r/img/5-algorithms/max-operator-definition.png" alt="maximum of (a) and (b) {...}" title="maximum of (a) and (b) {...}" />
+                            <img class="indent" src="/bjc-r/img/5-algorithms/max-of-list-definition.png" alt="maximum of (data) {...}" title="maximum of (data) {...}" /><br />
+                            In deinem aktuellen Projekt kannst du ähnlich vorgehen: Erstelle zunächst einen Block <img class="" src="/bjc-r/img/5-algorithms/row-with-max-between.png" alt="row with maximum in column () between row () and row ()" title="row with maximum in column () between row () and row ()" />, der zwei Datensätze anhand eines Feldes vergleicht und den Datensatz mit dem höheren Wert zurückgibt.</p>
+
+                        </div>
+                        <div class="todo">Formulierung „specific field (column)“ im TIF anpassen. --MF, 27.06.2019</div>
+
+                    </div>
+                </li>
+                <li>
+                    Feldnummern fest in den Code zu schreiben, hat mehrere Nachteile: Es ist fehleranfällig, schwer lesbar und Tabellen können sich über die Zeit ändern (das ist beim Datensatz <var>cars</var> tatsächlich passiert).
+                    <ul>
+                        <li>Schreibe einen Block <img class="inline" src="/bjc-r/img/5-algorithms/field-named.png" alt="field named () from record () of table ()" title="field named () from record () of table ()" />, der im Tabellenkopf den gesuchten Namen findet, die Position ermittelt und damit das Feld aus dem Datensatz liest.</li>
+                        <li>Schreibe außerdem <img class="inline" src="/bjc-r/img/5-algorithms/column-named.png" alt="column named () of table ()" title="column named () of table ()" />, das die gesamte Tabelle (Kopf und Daten) als Eingabe bekommt, aber nur die Daten der gewünschten Spalte zurückgibt (damit du das Ergebnis direkt in Blöcken wie AVERAGE OF LIST nutzen kannst).</li>
+                        <li><img class="inline" src="/bjc-r/img/5-algorithms/index-of.png" alt="index of () in ()" title="index of () in ()" /> kann dabei hilfreich sein.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

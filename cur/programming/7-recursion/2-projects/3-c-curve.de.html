@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 7, Labor 2: Rekursionsprojekte, Seite 3</title>
+	</head>
+
+	<body>
+		<h2>Lévy-C-Kurve</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> setzt du Rekursion ein, um die Lévy-C-Kurve zu zeichnen.</p>
+        </div>
+
+        <div class="sidenote">„Lévy“ sprichst du „lay-VII“.</div>
+        <p>
+            Wie bei der Schneeflocke besteht der Basisfall aus einem einfachen Liniensegment:<br />
+            <img class="indent noshadow" src="/bjc-r/img/7-recursion/c-curve-level01.jpg" alt="Lévy-C-Kurve, Ebene 1" title="Lévy-C-Kurve Ebene 1" />
+            <img class="indent" src="/bjc-r/img/7-recursion/c-curve-level01-block.png" alt="C-curve, level: (1) size: (150)" title="C-curve, level: (1) size: (150)" />
+        </p>
+        <p>
+            In der nächsten Ebene zeichnet der Algorithmus zwei Kopien der Vorstufe – mit einem gewissen Prozentsatz der ursprünglichen Länge – und ordnet sie im rechten Winkel an (rot markiert ist wieder die kleinere Kopie):<br />
+			<img class="indent noshadow" src="/bjc-r/img/7-recursion/c-curve-level02.jpg" alt="Lévy-C-Kurve, Ebene 2" title="Lévy-C-Kurve, Ebene 2" />
+            <img class="indent" src="/bjc-r/img/7-recursion/c-curve-level02-block.png" alt="C-curve, level: (2) size: (150)" title="C-curve, level: (2) size: (150)" />
+        </p>
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Besprich dich mit deiner Partnerin/deinem Partner" title="Besprich dich mit deiner Partnerin/deinem Partner" />
+                    Die ursprüngliche Linie wird durch zwei neue Linien ersetzt. Zusammen würden sie ein rechtwinkliges Dreieck bilden, dessen Hypotenuse die Ausgangslinie ist. Wie lang müssen die Katheten (die beiden neuen Linien) sein?
+                    <div class="endnote">
+                        <a href="#hint-legs" data-toggle="collapse" title="Hinweis zur Länge">Hinweis anzeigen</a>
+                        <div id="hint-legs" class="collapse">
+                            <p>Ist die Hypotenuse (der Basisfall) <var>size</var> lang, welche Länge müssen die rekursiven Aufrufe erhalten? <a href="#hint-legs2" data-toggle="collapse" title="Noch ein Hinweis?">Noch ein Hinweis?</a></p>
+                            <div id="hint-legs2" class="collapse">Nutze den Satz des Pythagoras: <span class="katex">a^2 + b^2 = c^2</span>.</div>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <p>
+            In Ebene 3 ersetzt der Sprite erneut jede Gerade durch zwei Segmente. Insgesamt entstehen vier kürzere Linien. Die beiden mittleren bilden zusammen eine lange Gerade (in Rot sichtbar).<br />
+            <img class="indent noshadow" src="/bjc-r/img/7-recursion/c-curve-level03.jpg" alt="Lévy-C-Kurve, Ebene 3" title="Lévy-C-Kurve, Ebene 3" />
+            <img class="indent" src="/bjc-r/img/7-recursion/c-curve-level03-block.png" alt="C-curve, level: (3) size: (150)" title="C-curve, level: (3) size: (150)" />
+        </p>
+		<p>
+            Dieses einfache Prinzip erzeugt auf höheren Ebenen komplexe Muster:<br />
+        	<img class="indent noshadow" src="/bjc-r/img/7-recursion/c-curve-level04.jpg" alt="Lévy-C-Kurve, Ebene 4" title="Lévy-C-Kurve, Ebene 4" />
+            <img class="indent" src="/bjc-r/img/7-recursion/c-curve-level04-block.png" alt="C-curve, level: (4) size: (150)" title="C-curve, level: (4) size: (150)" /><br />
+        </p>
+        <div class="forYouToDo">
+            <ol start="2">
+                <li>
+                    Entwickle ein Programm, das die Lévy-C-Kurve zeichnet, und speichere es als „U7L2-LevyCCurve“.
+                    <div class="endnote">
+                        <p><a href="#hint-curve1" data-toggle="collapse" title="Braucht ihr einen Hinweis?">Hinweis anzeigen</a></p>
+                        <div id="hint-curve1" class="collapse">
+                            <p>Vergleiche Ebene 2 mit Ebene 3. <a href="#hint-curve2" data-toggle="collapse" title="Noch ein Hinweis?">Noch ein Hinweis?</a></p>
+							<div id="hint-curve2" class="collapse"><p>Für Ebene 3 musst du nach links drehen (wie viele Grad?), eine kleinere Ebene-2-Kurve zeichnen (wie viel kleiner?), wieder drehen (in welche Richtung? wie viel?), eine weitere Ebene-2-Kurve zeichnen und anschließend erneut nach links drehen.</p></div>
+                        </div>
+						<p><a href="#hint-curve-look" data-toggle="collapse" title="So sollte es aussehen">Wie sollte dein Ergebnis aussehen?</a></p>
+						<div id="hint-curve-look" class="collapse">
+							<p>
+								Auf Level 12 sieht die C-Kurve so aus:<br />
+								<img class="indent" src="/bjc-r/img/7-recursion/c-curve-level12-bw.jpg" alt="Lévy-C-Kurve, Ebene 12" title="Lévy-C-Kurve, Ebene 12" />
+							</p>
+						</div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+        <div class="ifTime">
+            <ol start="3">
+                <li>Indem du die Winkel veränderst, kannst du interessante Varianten erzeugen. Probier eigene Ideen aus.<br />
+                <img class="indent noshadow" src="/bjc-r/img/7-recursion/c-curve-variation1.jpg" alt="Variante der Lévy-C-Kurve" title="Variante der Lévy-C-Kurve" />
+                </li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

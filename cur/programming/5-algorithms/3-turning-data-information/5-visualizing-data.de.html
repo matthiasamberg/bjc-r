@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <script type="text/javascript" src="/bjc-r/utilities/gifffer.min.js"></script>
+        <script type="text/javascript">window.onload = function() {Gifffer();}</script>
+        <link rel="stylesheet" type="text/css" href="/bjc-r/css/bjc-gifffer.css">
+		<title>Einheit 5, Labor 3: Daten in Informationen verwandeln, Seite 5</title>
+    </head>
+
+    <body>
+        <h2>Daten visualisieren</h2>
+        <div class="learn">
+            <div class="ap-standard">DAT-2.D.2, DAT-2.D.6 Bullet 4</div>
+            <p>Tabellen, Diagramme, Texte, Charts, Grafiken und andere Visualisierungen helfen, Informationen aus Daten zu gewinnen, zu verändern und zu kommunizieren.</p>
+            <p><strong>Auf dieser Seite</strong> erstellst du Visualisierungen, um Informationen aus deinem Datensatz zu analysieren und zu präsentieren.</p>
+        </div>
+        <h3>Daten gruppieren</h3>
+        <p>
+            <div class="vocab">: <strong>Daten klassifizieren</strong>
+                <div class="ap-standard">DAT-2.E.3 (nur Klassifikation)</div>
+                <p><strong>Daten klassifizieren</strong> bedeutet, sie anhand gemeinsamer Merkmale in Gruppen einzuteilen.</p>
+            </div>
+            In der Datenanalyse werden Daten oft <em>gruppiert</em> (klassifiziert). Hier ist der Datensatz <var>cars</var> nach Hersteller (Spalte 14) gruppiert:<br />
+            <img class="indent" src="/bjc-r/img/5-algorithms/group-data-of-cars-reporting.png" alt="group (data of table (cars)) by field (14)" title="group (data of table (cars)) by field (14)" /><br />
+            <ul>
+                <li>Spalte A zeigt alle Herstellernamen (Feld 14).</li>
+                <li>Spalte B zeigt, wie viele Fahrzeuge pro Hersteller in der Tabelle stehen.</li>
+                <li>Spalte C enthält für jeden Hersteller eine Liste mit den zugehörigen Datensätzen. Durch Doppelklick auf eine Liste öffnest du eine Tabelle mit nur diesen Fahrzeugen.</li>
+            </ul>
+        </p>
+        <div class="endnote">
+            <p>Lass das Eingabefeld <code>by intervals of</code> leer, wenn du nach Text gruppierst. Später auf dieser Seite siehst du, wie Intervalle bei Zahlen genutzt werden.</p>
+        </div>
+
+
+        <div class="forYouToDo" id="first">
+			<ol>
+				<li>Öffne dein U5L3-Data-Processing-Projekt.</li>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" />Formuliere eine Frage, die du durch <strong>Gruppieren</strong> deiner Daten beantworten kannst, und schreibe den passenden Code.
+                    <div class="endnote">
+                        <a href="#hint-grouping" data-toggle="collapse" title="Beispielfragen für Gruppierungen anzeigen.">Beispielfragen zur Gruppierung</a>
+                        <div id="hint-grouping" class="collapse">
+                            <ul>
+                                <li>Wie viele Toyotas enthält die Tabelle?</li>
+                                <li>Welche Marke hat die meisten Modelle?</li>
+                                <li>Wie viele Hyundais des Baujahrs 2010 gibt es? (Hier musst du in eine Liste innerhalb von Spalte C schauen.)</li>
+                            </ul>
+                            <p><code>Pipe</code> kann helfen, wenn du in die inneren Listen der gruppierten Daten (Spalte C) schauen musst.</p>
+                        </div>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+
+        <h3>Daten darstellen</h3>
+        <p>
+			Der Block <code>bar chart</code> funktioniert ähnlich wie <code>group</code>, bietet aber spezielle Optionen für numerische Daten: Du kannst untere/obere Grenzen angeben, Bereiche definieren (z. B. 6–10, 11–15 …) und die Gruppen sortieren. Hier ist <var>cars</var> nach City-MPG (Spalte 9) gruppiert:<br />
+            <img class="indent" src="/bjc-r/img/5-algorithms/histogram-by-mpg.png" alt="bar chart of table (data of table (cars))" title="bar chart of table (data of table (cars))" /><br />
+            <ul>
+                <li>Spalte A zeigt MPG-Bereiche.</li>
+                <li>Spalte B zeigt die Anzahl der Fahrzeuge innerhalb jeder MPG-Gruppe.</li>
+                <li>Spalte C enthält Listen mit den Datensätzen für jede Gruppe.</li>
+            </ul>
+        </p>
+        <div class="endnote">
+            <p>Runde Häufigkeiten auf sinnvolle Werte (z. B. auf ganze Fahrzeuge).</p>
+            <p>Die Eingaben <code>from</code>, <code>to</code> und <code>interval</code> legen fest, welcher Wertebereich visualisiert wird und wie breit die Balken sind. Achte darauf, dass dein Bereich die relevanten Werte abdeckt.</p>
+        </div>
+
+
+        <div class="forYouToDo">
+			<ol start="3">
+                <li>Baue mindestens eine Visualisierung (z. B. Balkendiagramm oder Histogramm), die deine zuvor formulierten Fragen beantwortet. Nutze deine Blöcke zum Filtern/Gruppieren, bevor du visualisierst.</li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" />Vergleicht eine Visualisierung mit einer rein textbasierten Auswertung: Welche Einsichten fallen leichter?</li>
+			</ol>
+		</div>
+
+        <h3>Weitere Visualisierungen</h3>
+        <p>
+            Du kannst aus den gruppierten Daten weitere Diagramme erstellen, indem du Summen, Durchschnitte oder andere Aggregationen berechnest und das Ergebnis visualisierst. Überlege, welche Diagrammtypen (Balken, Linien, Kreis, Boxplot, …) am besten zu deiner Frage passen.
+        </p>
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>Nutze das Ergebnis von <code>group</code>, um ein Balkendiagramm über die Anzahl Fahrzeuge pro Hersteller zu erstellen.</li>
+                <li>Erstelle ein Histogramm für einen anderen numerischen Wert (z. B. Highway-MPG oder Hubraum) und interpretiere das Ergebnis.</li>
+                <li>Experimentiere mit weiteren Bibliotheken in Snap<em>!</em>, um andere Diagrammtypen auszuprobieren.</li>
+            </ol>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 5, Optionales Labor: Andere Programmiersprachen, Seite 3</title>
+	</head>
+
+	<body>
+		<h2>Nicht-sequenzielle Sprachen</h2>
+		<!--<div class="learn"></div>-->
+
+		<p>In den Anfangsjahren waren alle Programmiersprachen sequenziell – so arbeitet schließlich die Hardware – und höherwertige Sprachen wurden hauptsächlich als Kurzform für Maschinencode verstanden, nicht als eigene Abstraktionen. Inzwischen wurden mehrere Abstraktionstypen („Programmierparadigmen“) entwickelt. Die meisten modernen Sprachen kombinieren mehrere Paradigmen; in diesem Abschnitt lernst du Sprachen kennen, die <em>ausschließlich</em> auf einem Paradigma basieren. Es lohnt sich, eine solche Sprache zu lernen, weil du darin vollständig in die Denkweise eintauchst – auch wenn du später meist in gemischten Sprachen wie Snap<em>!</em>, Python oder JavaScript programmierst.</p>
+
+		<h3>Funktionale Programmierung in Haskell</h3>
+
+		<p>Stell dir vor, Snap<em>!</em> hätte nur Reporter und Prädikate, aber keine Befehlsblöcke. Um eine Berechnung auszuführen, würdest du einen Ausdruck im Skriptbereich zusammenstellen und darauf klicken, um das Ergebnis als Sprechblase zu sehen. Du könntest Skriptvariablen anlegen, aber ihnen nur beim Erstellen einen Wert geben und ihn anschließend nicht mehr <em>ändern</em>. Das wäre eine <em>funktionale</em> Programmiersprache.</p>
+
+		<p>Hier ist die Binärsuche – diesmal in Haskell, einer rein funktionalen Sprache:</p>
+
+<pre class="indent">find :: Ord a => Array Int a -> a -> Maybe Int
+find arr x = uncurry (search arr x) (bounds arr)
+
+search :: Ord a => Array Int a -> a -> Int -> Int -> Maybe Int
+search arr x lo hi
+  | hi - lo + 1 == 0 = Nothing
+  | x == el = Just mid
+  | x > el = search arr x (mid+1) hi    -- eliminate half the list
+  | otherwise = search arr x lo (mid-1)
+  where mid = (hi + lo) `div` 2         -- find the middle word
+        el = arr ! mid</pre>
+<p><small>Quelle: <a href="https://exercism.io/tracks/haskell/exercises/binary-search/solutions/1a379e35bf0741109dae902f8ae1096c">exercism.io</a>, CC-BY-SA</small></p>
+
+		<p>Das sieht ganz anders aus als die bisherigen Programme – aber keine Panik. Du sollst Haskell nicht in wenigen Tagen lernen; mit etwas Hilfe kannst du dieses Beispiel dennoch nachvollziehen. Schau zunächst auf Zeile 4, <code>search arr x lo hi</code>; das entspricht dem Hutblock eines Snap<em>!</em>-Skripts, hier mit vier Eingaben.</p>
+
+		<p>Im <code>search</code>-Block zeigt sich der funktionale Stil. Die Snap<em>!</em>-Version nutzt eine <code>repeat until</code>-Schleife, in der <var>low</var>, <var>high</var>, <var>current index</var> und <var>current item</var> bei jedem Durchlauf verändert werden. Wenn Variablen nicht geändert werden dürfen – wie löst man das?</p>
+
+		<p>Die Antwort: <code>search</code> ruft sich rekursiv auf, in den Zeilen</p>
+		<pre class="indent">  | x > el = search arr x (mid+1) hi
+  | otherwise = search arr x lo (mid-1)</pre>
+		<p>In diesen Aufrufen erhalten <var>lo</var> bzw. <var>hi</var> neue Werte. Das ist nicht dasselbe wie „Variable ändern“ – der rekursive Aufruf besitzt <em>eigene lokale Variablen</em> mit denselben Namen. Das wird deutlich, wenn zwei rekursive Aufrufe kombiniert werden, etwa im folgenden Fibonacci-Programm:<br />
+		<div class="commentBig">Warum heißen Funktion und Variable hier im Text-Stil? Bitte mit Snap-Stil nachbauen, Texte anpassen und Alt-/Title-Text für das Bild ergänzen. --MF, 20.12.21</div>
+		<img class="indent" src="/bjc-r/img/5-algorithms/fib.png" alt="Fibonacci-Beispiel in Snap" title="Fibonacci-Beispiel in Snap" />
+		</p>
+		<p>Wenn du versuchst, <code>fib 4</code> nachzuvollziehen und dabei annimmst, alle rekursiven Aufrufe würden dieselbe Variable <var>n</var> teilen, erhältst du das falsche Ergebnis.</p>
+
+		<p>Das <code>where</code> in den letzten beiden Zeilen erstellt Haskell-Skriptvariablen und weist ihnen ihre (konstanten) Werte zu.</p>
+
+		<p>Die vier Zeilen mit senkrechtem Strich (<code>|</code>) entsprechen einer verschachtelten <code>if</code>/<code>else</code>-Struktur: Wenn <var>hi</var> eins kleiner als <var>lo</var> ist, gibt es keinen Treffer. Wenn der gesuchte Wert gleich <code>item <var>mid</var> of <var>arr</var></code> ist, gib <var>mid</var> zurück (dieses Programm liefert also die Position, nicht nur <code>True</code>). Wenn der gesuchte Wert größer als das mittlere Element ist, suche in der oberen Hälfte weiter; sonst in der unteren.</p>
+
+		<div class="endnote">
+			<div class="todo">Dieser Hinweis stammt aus <a href="https://wiki.haskell.org/Anonymous_function" target="_blank">https://wiki.haskell.org/Anonymous_function</a>. Bitte prüfen, ob wir ihn brauchen. --MF, 20.12.21</div>
+			<p>Der Aufruf ganz oben, <code>find arr x</code>, hat nur zwei Eingaben. Die Definition von <code>find</code> zeigt, dass <code>search</code> zuerst currying (Teilapplikation) nutzt: <code>search arr x</code> ist eine Funktion zweier Eingaben, weil <code>arr</code> und <code>x</code> bereits „eingesetzt“ wurden. Currying (benannt nach Haskell Curry) macht aus einer Funktion mit mehreren Eingaben eine Funktion mit weniger Eingaben. <code>uncurry</code> kehrt das wieder um, indem die fehlenden Werte ergänzt werden – hier <code>(bounds arr)</code>, also die unteren und oberen Grenzen des Arrays.</p>
+		</div>
+
+		<p>Auch wenn funktionale Programmierung sehr sinnvoll ist (sie verhindert z. B. Fehler, bei denen unterschiedliche Teile des Programms dieselbe Variable nutzen, und sie lässt sich gut parallelisieren), warum sollte man eine Sprache wählen, die einen dazu <em>zwingt</em>? Viele tun das nicht. Du kannst funktional programmieren, solange deine Sprache höherwertige Funktionen unterstützt – so wie du es im Tic-Tac-Toe-Projekt getan hast, im Teil, der den besten Computerzug berechnet: <img src="/bjc-r/img/5-algorithms/next-move.png" alt="next move for computer" title="next move for computer" /> ruft <img src="/bjc-r/img/5-algorithms/winning-square-for-player.png" alt="winning square for player" title="winning square for player" /> auf, dieser ruft <img src="/bjc-r/img/5-algorithms/winning-triple-for-player.png" alt="winning triple for player" title="winning triple for player" /> auf, dieser wiederum <img src="/bjc-r/img/5-algorithms/status-of-all-winning-triples.png" alt="status of all winning triples" title="status of all winning triples" />, das wiederum <img src="/bjc-r/img/3-lists/status-of-triple.png" alt="status of triple" title="status of triple" /> aufruft. Eine rein funktionale Sprache hilft jedoch, Fehler zu vermeiden – besonders bei Teamarbeit. Außerdem können Compiler die Einschränkungen ausnutzen, um sehr effizienten Code zu erzeugen. Und wenn du eine rein funktionale Sprache <em>lernst</em>, entdeckst du wirklich alle Aspekte dieses Paradigmas.</p>
+
+		<h3>Objektorientierte Programmierung (OOP) in Smalltalk</h3>
+
+		<p>Stell dir vor, du dürftest in Snap<em>!</em> nur sprite-lokale Prozeduren und Variablen erstellen, keine globalen. Stell dir außerdem vor, dass <em>alles</em> in der Sprache so funktioniert wie Sprites. Selbst die Zahl <code>3</code> hätte dann eigene Methoden (z. B. <code>+</code>) und eigene Daten. Ein Objekt ist genau so etwas: etwas mit eigenen Methoden und (oft) eigenen Feldern.</p>
+
+		<p>Unbenutzbar wäre es, wenn du für <code>3</code> und <code>4</code> unterschiedliche <code>+</code>-Methoden schreiben müsstest. Denk aber an das Klonen eines Sprites, wie im Tic-Tac-Toe-Projekt. Jeder Klon <em>erbt</em> die Methoden und Eigenschaften des Original-Sprites. Ähnlich verhält es sich in Smalltalk: Klassen definieren Verhalten, und einzelne Objekte erben dieses Verhalten. Selbst Zahlen oder Strings sind dort Objekte mit eigenen Methoden.</p>
+
+		<p>In Smalltalk werden Nachrichten an Objekte gesendet. Statt <code>a + b</code> schreibst du beispielsweise <code>a + b</code> als Methodenkette, wobei <code>a</code> die Nachricht <code>+</code> mit dem Argument <code>b</code> erhält. Alles ist Objekt – auch Kontrollstrukturen und Sammlungen. Wenn du dich auf diese Denkweise einlässt, bekommst du ein sehr einheitliches System, in dem Daten und Verhalten untrennbar zusammengehören.</p>
+
+		<p>Viele moderne Sprachen kombinieren funktionale und objektorientierte Elemente. Smalltalk (OOP) und Haskell (funktional) führen dich jedoch besonders tief in die jeweiligen Paradigmen ein und schärfen dein Verständnis dafür, wie unterschiedliche Konzepte zu völlig unterschiedlichen Programmierstilen führen.</p>
+
+	</body>
+</html>

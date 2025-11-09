@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 7, Labor 1: Bäume, Seite 3</title>
+	</head>
+
+	<body>
+		<h2>Selbsttest: <code>tree</code>-Eingaben</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> untersuchst du, wie sich verschiedene Eingabewerte für <code>tree</code> auf die Zeichnung auswirken.</p>
+        </div>
+        <p>
+        	Alle Fragen beziehen sich auf diese Version des Blocks <code>tree</code> und auf das Skript, das ihn aufruft. Beachte den rot markierten, leeren <var>level</var>-Eingabeslot im Aufruf. Außerdem wurden im <code>tree</code>-Skript Winkel und Skalierungsfaktoren so angepasst, dass linke und rechte Äste identisch sind – dadurch kann man die Ergebnisse leichter vergleichen.<br />
+            <div class="comment">MARY: Bilder und Alt-Texte müssen überarbeitet werden. --MF, 19.06.2020</div>
+            <img class="indent" src="/bjc-r/img/7-recursion/quiztree.png" alt="tree level: (level #) size: (size #){ if (level = 1) { move (size) steps; move(-1*size) steps } else { move (size) steps; turn ccw 15°; tree level-1 size size*0.75; turn cw 15°; turn cw 15°; tree level-1 size size*0.75; turn ccw 15°; move(-1*size) steps } }" title="Rekursiver Baumblock für die Fragen"/>
+            <img class="indent" src="/bjc-r/img/7-recursion/tree-size-100-call.png" alt="go to x:(0) y:(-140); clear; point in direction(0); pen down; tree level:( ) size:(100)" title="Aufruf von tree mit freiem level-Parameter" />
+        </p>
+
+        <div class="forYouToDo">
+			<ol>
+				<li>
+                    <!-- Frage 1 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="number-of-levels" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="false">
+                        <div class="prompt">
+                            <img class="imageRight noshadow" src="/bjc-r/img/7-recursion/tree-level5.jpg" alt="Baum mit Stamm und vier Ebenen von Ästen" title="Baum mit fünf Ebenen (Stamm + vier Äste)"/>
+                            Welcher Wert muss im Eingabefeld <var>level</var> stehen, damit dieses Bild entsteht?
+                        </div>
+                        <div class="choice" identifier="c0">
+                            <div class="text">6</div>
+                            <div class="feedback">Wie viele verschiedene Längen von Linien siehst du?</div>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">1</div>
+                            <div class="feedback">Wie viele verschiedene Längen von Linien siehst du?</div>
+                        </div>
+                        <div class="choice" identifier="c5">
+                            <div class="text">5</div>
+                            <div class="feedback">Genau! Im Baum tauchen fünf Ebenen auf.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">4</div>
+                            <div class="feedback">Wie viele verschiedene Längen von Linien siehst du?</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c5"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <!-- Frage 2 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="negative-size" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri2" shuffle="false">
+                        <div class="prompt">Was passiert, wenn du den Eingabewert <var>size</var> auf -100 setzt? (Benutze Snap<em>!</em> nicht – überlege es dir.)</div>
+                        <div class="choice" identifier="c0">
+                            <div class="text">Das Programm stoppt nie und zeichnet sehr viele verschiedene Äste.</div>
+                            <div class="feedback">Das Programm hält an. Gehe die Funktion gedanklich Schritt für Schritt durch.</div>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Es stoppt nie und zeichnet nur einen einzigen Ast.</div>
+                            <div class="feedback">Das Programm hält an. Gehe die Funktion gedanklich Schritt für Schritt durch.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Es verhält sich genauso wie bei <var>size</var> = +100.</div>
+                            <div class="feedback">Nicht ganz. Was macht der Block <code>move</code> mit negativen Werten?</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Das Bild wird auf den Kopf gestellt, sieht ansonsten aber identisch aus.</div>
+                            <div class="feedback">Richtig! Bei negativen Werten bewegt sich der Sprite <em>rückwärts</em>.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Es wird gar nichts gezeichnet.</div>
+                            <div class="feedback">Doch, es wird etwas gezeichnet. Gehe die Funktion gedanklich Schritt für Schritt durch.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri2">
+                            <div class="correctResponse" identifier="c3"></div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <!-- Frage 3 -->
+                    <div class="assessment-data" type="multiplechoice" identifier="negative-levels" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri3" shuffle="false">
+                        <div class="prompt">Was passiert, wenn du den Eingabewert <var>level</var> auf -4 setzt? (Benutze Snap<em>!</em> nicht – überlege es dir.)</div>
+                        <div class="choice" identifier="c0">
+                            <div class="text">Das Programm läuft endlos weiter und zeichnet einen Baum mit immer kleineren Ästen.</div>
+                            <div class="feedback">Das Programm läuft tatsächlich weiter. Gehe den Code durch, um zu sehen, wie das Bild aussieht.</div>
+                        </div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Es läuft endlos weiter und zeichnet eine nach links drehende Spirale, während der Sprite in der Luft kreist.</div>
+                            <div class="feedback">Korrekt! Der Fall <code>level = 1</code> wird nie erreicht, also wird nur der linke Zweig-Aufruf ausgeführt.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Es verhält sich genauso wie bei <var>level</var> = +4.</div>
+                            <div class="feedback">Wird die Rekursion jemals Level 1 erreichen?</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Das Bild wird auf den Kopf gestellt, sieht ansonsten aber identisch aus.</div>
+                            <div class="feedback">Beeinflusst <var>level</var> die <code>move</code>-Blöcke?</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Es wird gar nichts gezeichnet.</div>
+                            <div class="feedback">Doch, es wird etwas gezeichnet.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri3">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+                </li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" />Wie könntest du die Definition von <code>tree</code> ändern, damit sie auch bei negativen <var>level</var>-Werten nicht in einer Endlosschleife hängen bleibt?</li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

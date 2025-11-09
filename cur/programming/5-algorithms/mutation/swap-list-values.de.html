@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<!-- put the following in exactly --><script type="text/javascript" src="/bjc-r/llab/loader.js"></script><title>Listenwerte vertauschen</title><!--ORIGINAL NAME: Swap List Values-->
+	</head>
+	<body>
+
+		Wir möchten einen Block bauen, der zwei Zeilen in einer Liste vertauscht. Der Block bekommt zwei Zahlen – die Positionen der Elemente – und eine Liste als Eingabe und tauscht anschließend die Elemente an diesen Positionen.
+
+		<br />
+		<br />
+		<div style="margin-left: 40px;">
+			<img border="0" title="Block „swap rows“" alt="Block „swap rows“" src="/bjc-r/img/list/swap-rows-empty-block-BYOB.gif" origsrc="http://veritas.eecs.berkeley.edu/courses/file.php/17/Images/Lab05/Lists/SwapRows/Empty.gif">
+		</div>
+
+		Damit das funktioniert, müssen wir etwas tun, das wir zuvor noch nicht gebraucht haben: eine Liste als Eingabewert akzeptieren. Die dritte Eingabe <code>list</code> soll eine Liste sein. Klicke auf die Variablen <code>rowX</code> und <code>rowY</code> und lege fest, dass ihre Eingabetypen Zahlen sind. Danach klickst du auf <code>list</code> und setzt den Eingabetyp auf „List“. Das folgende Dialogfenster zeigt die Auswahl.
+
+		<br />
+		<br />
+		<div style="margin-left: 40px;">
+			<img border="0" title="Dialog zum Festlegen des Eingabetypen „List“" alt="Dialog zum Festlegen des Eingabetypen „List“" src="/bjc-r/img/list/edit-input-type-list-BYOB.jpg" origsrc="http://veritas.eecs.berkeley.edu/courses/file.php/17/Images/Lab05/Lists/SwapRows/MakeArgList.jpg">
+		</div>
+
+		Nach einem Klick auf <code>OK</code> siehst du den Block mit zwei runden Zahleneingaben und einem Listen-Eingabefeld.
+
+		<br />
+		<br />
+		<div style="margin-left: 40px;">
+			<img border="0" title="„swap rows“-Block mit Listeneingabe" alt="„swap rows“-Block mit Listeneingabe" src="/bjc-r/img/list/swap-rows-empty-block-list-input-BYOB.gif" origsrc="http://veritas.eecs.berkeley.edu/courses/file.php/17/Images/Lab05/Lists/SwapRows/ListInput.gif">
+		</div>
+
+		Im <code>Block Editor</code> können wir die Variable <code>list</code> dann wie eine normale Liste verwenden, z. B. indem wir der Blockvariablen <code>temp-value</code> das Element an Position <code>rowX</code> aus <code>list</code> zuweisen.
+
+		<br />
+		<br />
+		<div style="margin-left: 40px;">
+			<img border="0" title="Teilskript" alt="Teilskript" src="/bjc-r/img/list/swap-rows-partial-script-BYOB.gif" origsrc="http://veritas.eecs.berkeley.edu/courses/file.php/17/Images/Lab05/Lists/SwapRows/PartialScript.gif">
+		</div>
+
+		Vervollständige nun die Blockdefinition mithilfe des obigen Hinweises. So könnte der Block verwendet werden: Wenn wir ihn mit folgenden Argumenten aufrufen …
+
+		<br />
+		<br />
+		<div style="margin-left: 40px;">
+			<img border="0" src="/bjc-r/img/prog/swap-rows-block-BYOB.gif" alt="Aufruf von „swap rows“" title="Aufruf von „swap rows“" origsrc="http://veritas.eecs.berkeley.edu/courses/file.php/17/Images/Lab05/GameBoard/SwapRowsExample.gif">
+		</div>
+
+		… wobei <code>game board</code> die Liste ist
+
+		<div style="margin-left: 40px;">
+			<img border="0" src="/bjc-r/img/prog/game-board-list-before-swap-BYOB.gif" alt="Liste vor dem Tausch" title="Liste vor dem Tausch" origsrc="http://veritas.eecs.berkeley.edu/courses/file.php/17/Images/Lab05/GameBoard/ListBeforeSwap.gif">
+		</div>
+
+		… dann sollte die Liste anschließend so aussehen:
+
+		<div style="margin-left: 40px;">
+			<img border="0" src="/bjc-r/img/prog/game-board-list-after-swap-BYOB.gif" alt="Liste nach dem Tausch" title="Liste nach dem Tausch" origsrc="http://veritas.eecs.berkeley.edu/courses/file.php/17/Images/Lab05/GameBoard/ListAfterSwap.gif">
+		</div>
+	</body>
+</html>
