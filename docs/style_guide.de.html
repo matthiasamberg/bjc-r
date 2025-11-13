@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>BJC4NYC Style Guide</title>
+    </head>
+    <body>
+        <h2>BJC4NYC Style Guide</h2>
+
+        <div class="sidenote">Siehe auch das <a href="/bjc-r/docs/templates/bjc4nyc_template.html">EDC-Template</a> und die <a href="/bjc-r/docs/best_practices.de.html">Best Practices</a>.</div>
+        <div class="commentBig">
+            <p>Übergreifende Entwickler-Hinweise kommen in <strong>class="todo"</strong>, <strong>class="comment"</strong> oder <strong>class="commentBig"</strong>.</p>
+            <p><em>Bitte veraltete Kommentare entfernen und offene TODOs zeitnah erledigen.</em></p>
+        </div>
+
+		<h3>Inhaltsverzeichnis</h3>
+        <div class="takeNote">
+            <ul>
+                <li><a href="#principles">Didaktische Designprinzipien</a></li>
+                <li><a href="#writing">Schreibkonventionen</a></li>
+                <li><a href="#html">HTML-Richtlinien</a></li>
+                <li><a href="#naming">Datei- & Blockbenennung</a></li>
+                <li><a href="#katex">KaTeX</a></li>
+                <li><a href="#css">CSS-Komponenten (Take Note, FYTD, …)</a></li>
+                <li><a href="#code">Code/Icons/Bilder</a></li>
+                <li><a href="#topic">Topic-Icons & Snap!-XML</a></li>
+                <li><a href="#linking">Links, Anchors & Präsentations-URLs</a></li>
+                <li><a href="#quiz">Multiple-Multiple-Choice-Quiz</a></li>
+            </ul>
+        </div>
+
+        <h3 id="principles">Didaktische Designprinzipien</h3>
+        <ul>
+            <li>Weniger Text und Ablenkung, kürzere Seiten, klare Projektorientierung.</li>
+            <li>Testet Seiten vollständig; jede Anweisung muss Lernende zuverlässig zum Ziel führen.</li>
+            <li>CS-Konzepte nur einsetzen, wenn sie sinnvoll sind; nichts erzwingen.</li>
+            <li>Generalisierungen nur einbauen, wenn ein konkreter Bedarf besteht.</li>
+        </ul>
+
+        <h3 id="writing">Schreibkonventionen</h3>
+        <ul>
+            <li>Keine Berkeley-/CS10-spezifischen Anspielungen; Du-/Ihr-Form verwenden.</li>
+            <li>„fun“ und „let’s“ (außer in Dialogen) vermeiden; Stil zwischen locker und formal.</li>
+            <li>„Block“ = ein Block; gefüllte Reporter sind <strong>Expressions</strong>, Kommandos <strong>Instructions</strong>, mehrere Blöcke = <strong>Script/Program</strong>.</li>
+            <li>Listen haben <em>Items</em>; Reporter <em>reporten</em> Werte.</li>
+            <li>Snap!-UI-Texte in Anführungszeichen; `<span class="snap">snap</span>` verwenden.</li>
+        </ul>
+
+        <h3 id="html">HTML-Richtlinien</h3>
+        <ul>
+            <li>Neue Begriffe per `<strong>` hervorheben, Betonung via `<em>`.</li>
+            <li>Jeder Textblock gehört in `<p>` oder `<div>`; Listen immer eingerahmt ablegen.</li>
+            <li>Grafiken nicht in `div` packen, sondern Klassen wie `imageRight`, `imageLeft`, `indent` nutzen.</li>
+            <li>Keine `height`/`width`-Attribute im `<img>`; Bilder vorab korrekt skalieren.</li>
+            <li>Mit Tabs/4 Leerzeichen einrücken, damit der Code lesbar bleibt.</li>
+        </ul>
+
+        <h3 id="naming">Datei- und Blockbenennung</h3>
+        <div class="sideHOM">Der Server ist case-sensitive – Referenzen müssen exakt passen.</div>
+        <ul>
+            <li><strong>Bilder:</strong> lowercase, keine Leerzeichen/Sonderzeichen, Ablage in passender Unit unter `/img` (Blockshots → `/img/blocks`).</li>
+            <li><strong>Snap!-Projekte:</strong> `UxLy-TitleCase.xml`, gleiche Bezeichnung in Snap! selbst; Datei in `/prog/<unit>/`.</li>
+            <li><strong>Lab-Seiten:</strong> `labpage-title.html`, alles lowercase mit Bindestrichen.</li>
+            <li><strong>TG-Seiten:</strong> gleiches Schema, Start mit Labnummer.</li>
+            <li>Blöcke: sprechende Namen, keine Leerzeichen, Snap!-Palette passend wählen.</li>
+        </ul>
+
+        <h3 id="katex">KaTeX</h3>
+        <div class="comment">
+            <p>Dollar-Delimiters bitte nicht mehr nutzen. Wir setzen auf <a href="https://khan.github.io/KaTeX/" target="_blank">KaTeX</a>.</p>
+        </div>
+        <ul>
+            <li>Inline: `<span class="math">\frac{a}{b}</span>`; Block: `<div class="math"> ... </div>`.</li>
+            <li>Komplexe Formeln in `\text{}` beschriften, damit Screenreader sauber vorlesen.</li>
+        </ul>
+
+        <h3 id="css">CSS-Komponenten & Nummerierung</h3>
+        <p>Die wichtigsten Klassen:</p>
+        <ul>
+            <li><code>div.class="takeNote"</code> – gelbe Hinweisbox.</li>
+            <li><code>div.class="forYouToDo" id="first"</code> – FYTD; weitere FYTDs mit `start="4"` etc.</li>
+            <li><code>div.class="sidenote"</code> / <code>sidenoteBig</code> – Zusatzinfos (20 % / 40 %).</li>
+            <li><code>div.class="endnote"</code> – optionale Lektüre oder Hints (mit `collapse`-Pattern).</li>
+            <li><code>div.class="dialogue"</code> – Dialoge; jede Zeile eigenes `<div>`, Namen im `<span>`.</li>
+            <li><code>div.class="ifTime"</code> – „If There Is Time“, Nummerierung an FYTD fortsetzen.</li>
+            <li><code>div.class="takeItFurther"</code> – „Take It Further“, Großbuchstaben (A, B, …) nutzen; Unterpunkte über CSS (lower-roman).</li>
+            <li><code>div.class="sideHOM"</code> / <code>sideHOMbig</code> – große orange Boxen.</li>
+            <li><code>div.class="vocab"</code> – Vokabelkästen (Begriff fett im Titel, im Text kursiv).</li>
+            <li><code>div.class="todo"</code> – sichtbare TODOs, die vor Release entfernt werden.</li>
+        </ul>
+
+        <h3 id="code">Code, Icons & Bilder</h3>
+        <ul>
+            <li>Code-Fragmente in `<code>`; längere Blöcke mit `<pre><code>...</code></pre>`.</li>
+            <li>Icons (z. B. Tough Stuff) aus `/img/icons/` einbinden; Alt-/Title-Text setzen.</li>
+            <li>Bilder von Blöcken via Smart Pics; Breite max. Inhaltsspalte, sonst `imageRight` einsetzen.</li>
+            <li>Animationen: GIF oder Video mit klarer Beschriftung; alt/title nötig.</li>
+        </ul>
+
+        <h3 id="topic">Topic-Icons & Snap!-XML</h3>
+        <ul>
+            <li>Topic-Seiten nutzen `topic_icons.css` – wähle Icon-Klassen gemäß Referenz.</li>
+            <li>Snap!-XML-Dateien im `/prog`-Baum halten; Metadaten (Titel, Autoren) in Snap! pflegen.</li>
+            <li>Blöcke/Assets, die in mehreren Units vorkommen, zentral ablegen und verlinken.</li>
+        </ul>
+
+        <h3 id="linking">Links, Präsentationen & Anchors</h3>
+        <ul>
+            <li>Projekte über `#present:username=...&project=...`-URLs einbetten.</li>
+            <li>Schalter: `#present&no_run`, `#editMode`, `#cloud` (Projekt aus Cloud laden).</li>
+            <li>Anker: `<a href="#ziel">...</a>` + `<a name="ziel" class="anchor"></a>` (oder `id`).</li>
+            <li>Wenn nur ein Abschnitt verlinkt wird, wähle sprechende IDs (z. B. `#step-3`).</li>
+        </ul>
+
+        <h3 id="quiz">Multiple-Multiple-Choice-Quiz</h3>
+        <p>Beispielvorlage: <a href="https://github.com/beautyjoy/llab/blob/main/docs/example%20quiz.html" target="_blank">example quiz</a>.</p>
+        <ul>
+            <li>Struktur: `<div class="quiz">` mit Fragen, Checkboxen, Feedback-Elementen.</li>
+            <li>Rückmeldungen per `data-correct`/`data-incorrect` und CSS/JS bereitstellen.</li>
+        </ul>
+
+    </body>
+</html>

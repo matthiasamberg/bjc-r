@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <title>Einheit 8, Labor 3: Teilmengen, Seite 2</title>
+    </head>
+
+    <body>
+    	<h2>Teilmengen auflisten</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> verallgemeinerst du die Eis-Idee und listest die Teilmengen <em>beliebiger</em> Mengen.</p>
+        </div>
+
+		<p>Eine Teilmenge enthält null oder mehr Elemente einer Menge, ohne Duplikate. Reihenfolge spielt – wie bei den Eisschalen – keine Rolle.</p>
+
+        <div class="sidenote">{Banane, Apfel} entspricht {Apfel, Banane}.</div>
+
+        <p>Beispiel: Für {Apfel, Orange, Banane} gibt es Ein-Elemnt-Teilmengen wie {Banane} und Zwei-Element-Teilmengen wie {Apfel, Banane}. Auch die Ausgangsmenge selbst sowie die leere Menge {} zählen.</p>
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>Schreibe alle Teilmengen von {Apfel, Orange, Banane} auf. Wie viele sind es?</li>
+                <li>Schreibe alle Teilmengen von {Brezel, Apfel, Orange, Banane} auf. Versuche, möglichst wenig Arbeit zu haben.
+                    <div class="todo">Frage ergänzen, die deutlich macht, dass Aufgabe 2 eine Erweiterung von 1 ist. --MF, 17.06.2020
+                    <img class="imageRight" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" />Beschreibe deinen Ansatz.</div>
+                </li>
+
+                <li>
+                    <div class="todo">MERKE: Schwierig! Im Basisfall (leere Liste) musst du eine Liste zurückgeben, die die leere Liste enthält. Frage ergänzen, die explizit auf den Basisfall eingeht. --Mary</div>
+                    Baue einen Block <code>subsets</code>, der eine Liste entgegennimmt und eine <em>Liste von Listen</em> zurückgibt, in der jede Teilmenge genau einmal vorkommt. Die Reihenfolge der Ergebnisse ist egal.<br />
+                    <img class="indent" src="/bjc-r/img/8-recursive-reporters/subset-example.png" alt="subsets(list{Apple, Orange, Banana}) -> {{},{Banana}, ...}" title="Beispielausgabe für subsets" />
+                    <div class="endnote">
+                        <p>Sitzt du fest? <a href="#hint-subsets" data-toggle="collapse" title="Klick für Hinweise">Klick hier für Hinweise</a>.</p>
+                        <div id="hint-subsets" class="collapse">
+                            <ul>
+                                <li>Wie viele Teilmengen hat die leere Menge {}?</li>
+                                <li>Was muss der Block im Basisfall melden? Das ist tricky!</li>
+                                <li>Wie viele Teilmengen von {Brezel, Apfel, Orange, Banane} enthalten Brezel? Wie viele nicht?</li>
+                                <li>Beschreibe „die Teilmengen mit Brezel“ vs. „ohne Brezel“, ohne „ohne“ zu verwenden.</li>
+                                <li>
+                                    So könnte ein (unvollständiger) Code aussehen:<br />
+                                    <img class="indent" src="/bjc-r/img/8-recursive-reporters/subsets-framework.png" alt="Gerüst für subsets" title="Gerüst für subsets"/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="todo">Folgendes stammt von einer zweiten Seite und muss sauber eingebunden werden. --MF, 17.06.2020</div>
+
+
+        <h3>Teilmengen und Effizienz</h3>
+        <div class="todo">
+            <p>MF: Streichen und ins optionale Projekt am Ende verschieben.</p>
+			<p>Falls wir das Bild behalten, muss es überarbeitet werden. --MF, 22.04.2022</p>
+        </div>
+
+        <p>
+            <a href="#hint-solution" data-toggle="collapse" title="Eine mögliche Lösung">Hier ist ein Lösungsbeispiel.</a>
+            <div id="hint-solution" class="collapse">
+                <img class="indent" src="/bjc-r/img/8-recursive-reporters/subset-slow.png" alt="Vollständige, aber ineffiziente Lösung" title="subsets(set){...}" />
+            </div>
+        </p>
+
+        <p>Diese Lösung ruft <code>subsets</code> zweimal mit derselben Eingabe auf – das ist ineffizient.</p>
+        <div class="forYouToDo">
+            <ol start="4">
+                <li>Zähle (z. B. via <code>count</code>-Variable), wie oft die Prozedur für eine Sechserliste aufgerufen wird.</li>
+                <li>Überlege, wie du doppelte Aufrufe vermeiden und die Effizienz verbessern kannst.</li>
+            </ol>
+        </div>
+    </body>
+</html>

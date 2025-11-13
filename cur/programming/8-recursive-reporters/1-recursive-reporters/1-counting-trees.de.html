@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 8, Labor 1: Rekursive Reporter, Seite 1</title>
+	</head>
+
+    <body>
+        <h2>Äste zählen</h2>
+        <div class="todo">
+            <p>PG: Allgemeine Überarbeitung: Beta hat keinen konsistenten Namen. Mal heißt sie Betty, mal Jasmine. Grundsätzlich wirkt es, als hätten wir kein klares Ziel und keine durchdachte Sequenz. Statt systematisch Rekursion zu lehren, zeigen wir nur, was alles möglich ist. Diese Seite gefällt mir prinzipiell, aber sie konzentriert sich stärker auf Mathematik als darauf, Lernenden zu helfen, einen rekursiven Reporter zu schreiben. Morgans Lösung und die ersten vier Zeilen des TOL sind clever, aber für uns nicht relevant. Wenn wir einen Block „power of 2“ bauen wollen, sollten wir zeigen, wie man genau den rekursiv schreibt. Die hier gezeigte Methode (letzte zwei Zeilen des TOL) macht das zwar irgendwie, aber da der Fokus anderswo liegt (und wir nicht darauf zurückkommen), bleibt sie wohl ein Spezialfall. Wir sehen nicht die richtige Abstraktion, Morgans „eins weniger als eine Zweierpotenz“.</p>
+			<p>BH soll Tim Matthies' Feedback klären: <a href="https://piazza.com/class/h8yx482idav52y?cid=2024" target="_blank">Post 2</a> – MF, 17.06.2020</p>
+			<p>Mary berücksichtigen: <a href="https://piazza.com/class/h8yx482idav52y?cid=2025" target="_blank">Post 1</a></p>
+		</div>
+		<div class="learn>
+            <p><strong>In diesem Labor</strong> entwickelst du rekursive Reporter.</p>
+            <p><strong>Auf dieser Seite</strong> untersuchst du eine Prozedur, die die Segmente eines Fraktalbaums zählt, und baust sie rekursiv neu.</p>
+        </div>
+
+		<p>In Einheit 7 hast du <a href="/bjc-r/cur/programming/7-recursion/1-trees/1-recursive-tree.html?topic=nyc_bjc%2F6-recursion-trees-fractals.topic&course=bjc4nyc.html&novideo&noassignment" title="Rekursiver Baum">rekursive Bäume</a> gebaut. Jeder Baum besteht aus Liniensegmenten.</p>
+        <div class="forYouToDo" id="first">
+    		<img class="imageRight noshadow" src="/bjc-r/img/7-recursion/tree-level9.jpg" alt="Fraktalbaum" title="Fraktalbaum"/>
+            <ol>
+                <li>
+					Öffne dein Projekt „U7L1-Tree“. Wie viele Segmente hat ein Baum in jeder Ebene? Ergänze die Tabelle (per Abschätzen oder indem Snap<em>!</em> für dich zählt).
+					<table class="center bordered" summary="Anzahl der Segmente in einem TREE je Ebene">
+						<tr>
+							<th scope="col" style="font-weight:normal;"><var>level</var></th>
+							<th scope="col" style="font-weight:normal; white-space: nowrap;"><var>segment count</var></th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td>1</td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>3</td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>5</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>6</td>
+							<td>&nbsp;</td>
+						</tr>
+					</table>
+				</li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" />Wie verhält sich die Segmentanzahl einer Ebene im Vergleich zur vorherigen?</li>
+                <li>Baue einen Block, der eine Ebenenzahl entgegennimmt und die Segmentanzahl zurückgibt:
+                    <img class="indent" src="/bjc-r/img/8-recursive-reporters/treecounter.png" alt="segments in tree (7) reporting 127" title="segments in tree (7) reporting 127"/><br />
+                </li>
+            </ol>
+        </div>
+
+        <div class="dialogue">
+            <div class="stagedir">Morgan und Jasmine besprechen ihren Code.</div>
+            <div><span>Morgan:</span> Mir fiel ein Muster auf: Jede Segmentanzahl ist eins weniger als eine Zweierpotenz.</div>
+            <div><span>Jasmine:</span> Wie sieht dein Code aus?</div>
+            <div><span>Morgan:</span> Ich verwende eine <code>for</code>-Schleife, erhöhe die Zweierpotenz und ziehe am Ende 1 ab:<br /></div>
+            <div class="stagedir"><img src="/bjc-r/img/8-recursive-reporters/alphiecode.png" alt="segments in tree(n){...}" title="segments in tree(n){...}"></div>
+            <div><span>Morgan:</span> Am Ende gibt <code>report</code> den endgültigen Wert zurück. Ich habe dieses Skript in einen Reporter gepackt.</div>
+            <div><span>Jasmine:</span> Clever! Ich habe mir <var>n</var> in der Tabelle angeschaut und gemerkt, dass <var>segments</var> immer <span class="katex">2^n - 1</span> ist.</div>
+            <div><span>Morgan:</span> Genau! Und deshalb brauchen wir nur den Exponenten.</div>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="4">
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" />Kannst du einen rekursiven Block bauen, der denselben Output liefert – ohne explizite Schleife?</li>
+            </ol>
+        </div>
+
+        <div class="dialogue">
+            <div class="stagedir">Tony und Sasha suchen nach einem rekursiven Ansatz.</div>
+            <div><span>Tony:</span> Ich habe versucht, <span class="katex">segments(n) = 2 \times segments(n-1) + 1</span> zu verwenden.</div>
+            <div><span>Sasha:</span> Das funktioniert super! Dann ist die Basis <code>segments(1) = 1</code>.</div>
+            <div><span>Tony:</span> Genau. Und für <code>segments(0)</code> muss man 0 melden, weil kein Segment vorhanden ist.</div>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="5">
+                <li>Schreibe Tonys rekursiven Reporter nach.</li>
+                <li>Überprüfe dein Ergebnis mit verschiedenen Ebenen, um sicherzugehen, dass beide Lösungen übereinstimmen.</li>
+            </ol>
+        </div>
+
+        <div class="dialogue">
+            <div class="stagedir">Später vergleichen die Lernenden unterschiedliche rekursive Reporter.</div>
+            <div><span>Tony:</span> Was, wenn wir anstelle von Bäumen andere Formeln haben – etwa <code>segments = 2n + 7</code>?</div>
+            <div><span>Sasha:</span> Dann brauchen wir denselben Ansatz: Basisfall plus rekursiver Schritt, der ein kleineres <var>n</var> nutzt.</div>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="7">
+                <li>Baue Sasha-ähnliche (rekursive) Reporter, die mit diesen linearen Ausdrücken übereinstimmen:
+                    <br /><img src="/bjc-r/img/7-recursive-reporters/q4a.png" alt="2n+7">
+                    <br /><img src="/bjc-r/img/7-recursive-reporters/q4b.png" alt="2n+5">
+                    <br /><img src="/bjc-r/img/7-recursive-reporters/q4c.png" alt="n^2+1">
+                    <br /><img src="/bjc-r/img/7-recursive-reporters/q4d.png" alt="n^2+2">
+                </li>
+                <li>Im vorherigen Schritt kannst du nicht alle Zahlen testen. Gibt es Werte, bei denen dein Block nicht übereinstimmt?</li>
+                <li>Baue Tony-ähnliche Reporter, die mit diesen Ausdrücken übereinstimmen:
+                    <br /><img src="/bjc-r/img/7-recursive-reporters/u.png" alt="q6a">
+                    <br /><img src="/bjc-r/img/7-recursive-reporters/v.png" alt="q6b">
+                    <div class="comment">Lehrer*innen-Feedback: Von expliziten zu rekursiven Formen zu wechseln ist schon bei linearen Funktionen schwer; quadratische Beispiele (Z, X) sind für viele Lernende zu anspruchsvoll und sollten eher „If There Is Time“ sein. --MF</div>
+                    <br /><img src="/bjc-r/img/7-recursive-reporters/z.png" alt="q6c">
+                    <br /><img src="/bjc-r/img/7-recursive-reporters/x.png" alt="q6d">
+                </li>
+            </ol>
+        </div>
+
+	</body>
+</html>

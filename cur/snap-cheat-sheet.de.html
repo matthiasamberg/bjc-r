@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Beauty and Joy of Computing: Snap<em>!</em>-Spickzettel</title>
+	</head>
+
+	<body>
+		<h2>Snap<em>!</em>-Spickzettel</h2>
+        <p>Diese Übersicht zeigt dir, wie die Prozeduren aus der AP-Prüfungssprache als Blöcke in Snap<em>!</em> aussehen. Brauchst du eine schnelle Einführung in Snap<em>!</em>? Dann wirf einen Blick in den <a href="/bjc-r/cur/snap-crash-course.de.html" title="Snap!-Crashkurs">Snap<em>!</em>-Crashkurs</a>.</p>
+		<h3>Zuweisung, Ausgabe und Eingabe</h3>
+        <p>In diesem Abschnitt gibt es <strong>deutliche Unterschiede</strong> zwischen der AP-Prüfungssprache und Snap<em>!</em>.</p>
+        <div class="bordered-table three-col">
+            <div class="header">In der AP-Prüfung</div>
+            <div class="header">In Snap<em>!</em></div>
+            <div class="header">Hinweise</div>
+
+            <div><pre class="inline">a &leftarrow; expression</pre></div>
+            <div><img class="inline" src="/bjc-r/img/ref-guide/set-a-to-expression.png" alt="setze (a) auf (Ausdruck)" title="setze (a) auf (Ausdruck)" /></div>
+            <div>
+                <p>
+                    In Snap<em>!</em> musst du eine Variable erst anlegen, bevor du ihr einen Wert zuweist. Nutze dazu die Schaltfläche <img class="inline" src="/bjc-r/img/sys/make-a-variable.png" alt="Variable erstellen" title="Variable erstellen" /> in der Variablen-Palette für globale Variablen oder <img class="inline" src="/bjc-r/img/blocks/script-variables(a).png" alt="Skriptvariablen (a)" title="Skriptvariablen (a)" /> für lokale (Skript-)Variablen.
+                </p>
+            </div>
+
+            <div><pre class="inline">DISPLAY (expression)</pre></div>
+            <div>
+                <img class="inline" src="/bjc-r/img/ref-guide/say-expression.png" alt="sage (Ausdruck)" title="sage (Ausdruck)" /><br />
+                Varianten von <code>sage</code>:<br />
+                <img class="inline" src="/bjc-r/img/ref-guide/say-hello-for-2-secs.png" alt="sage (Hallo!) für (2) Sek." title="sage (Hallo!) für (2) Sek." /><br />
+                <img class="inline" src="/bjc-r/img/ref-guide/think-hmm.png" alt="denke (Hmm...)" title="denke (Hmm...)" /><br />
+                <img class="inline" src="/bjc-r/img/ref-guide/think-i-wonder-for-5-secs.png" alt="denke (Ich frage mich...) für (5) Sek." title="denke (Ich frage mich...) für (5) Sek." /><br />
+                Weitere Ausgabemöglichkeit:<br /><img class="inline" src="/bjc-r/img/ref-guide/write-welcome-player-size-12.png" alt="schreibe (Willkommen, Spieler*in!) Größe (12)" title="schreibe (Willkommen, Spieler*in!) Größe (12)" /><br />
+            </div>
+            <div>
+                <p>
+                    In Snap<em>!</em> kannst du Daten auf verschiedene Arten anzeigen lassen. Eine Möglichkeit sind Sprechblasen, die von den Figuren auf der Bühne „gesprochen“ werden. So sieht das Ergebnis von <code>sage (Ausdruck)</code> aus:<br />
+                    <img class="indent noshadow" src="/bjc-r/img/ref-guide/sprite-saying-expression.jpg" alt="Pfeil-Sprite mit Sprechblase, die „expression“ anzeigt" title="Pfeil-Sprite mit Sprechblase, die „expression“ anzeigt" />
+                </p>
+                <p>
+                    Es gibt außerdem Varianten des Blocks:
+                    <ul>
+                        <li><code>sage ... für ( ) Sek.</code> blendet den Text nur für eine bestimmte Anzahl an Sekunden ein,</li>
+                        <li><code>denke ( )</code> und <code>denke ( ) für ( ) Sek.</code> zeigen die Nachricht als Denkblasen an, z.&nbsp;B.:<br />
+                    <img class="indent noshadow" src="/bjc-r/img/ref-guide/sprite-thinking-expression.jpg" alt="Pfeil-Sprite mit Denkblase, die „expression“ anzeigt" title="Pfeil-Sprite mit Denkblase, die „expression“ anzeigt" /></li>
+                    </ul>
+                </p>
+                <p>Der Block <code>schreibe</code> funktioniert anders, ist aber ebenfalls eine Ausgabe: Er schreibt den Text aus dem ersten Eingabefeld in der auf Bühne, mit der Schriftgröße aus dem zweiten Eingabefeld.</p>
+            </div>
+
+            <div><pre class="inline">INPUT ()</pre></div>
+            <div>
+                <img class="inline" src="/bjc-r/img/blocks/ask-empty-full-size.png" alt="frage () und warte" title="frage () und warte" /><br />
+                <img class="inline" src="/bjc-r/img/blocks/answer-full-size.png" alt="Antwort" title="Antwort" />
+            </div>
+            <div><p>Eingaben werden in Snap<em>!</em> immer über den Befehl <code>frage ( ) und warte</code> ausgelöst. Die Frage aus dem Eingabefeld erscheint im Dialog, und die Antwort kann anschließend über den Block <code>Antwort</code> verwendet werden – genauso wie eine Variable.</p></div>
+        </div>
+
+
+		<h3>Arithmetic Operators and Numeric Procedures</h3>
+        <p>In diesem Abschnitt gibt es <strong>keine relevanten Unterschiede</strong> zwischen AP-Sprache und Snap<em>!</em>.</p>
+        <div class="bordered-table three-col">
+            <div class="header">On the AP Exam</div>
+            <div class="header">In Snap<em>!</em></div>
+            <div class="header">Notes</div>
+
+            <div>
+                <pre class="inline">a + b</pre><br />
+                <pre class="inline">a – b</pre><br />
+                <pre class="inline">a * b</pre><br />
+                <pre class="inline">a / b</pre>
+            </div>
+            <div>
+                <img class="inline" src="/bjc-r/img/ref-guide/a+b.png" alt="(a) + (b)" title="(a) + (b)" /><br />
+                <img class="inline" src="/bjc-r/img/ref-guide/a-b.png" alt="(a) – (b)" title="(a) – (b)" /><br />
+                <img class="inline" src="/bjc-r/img/ref-guide/axb.png" alt="(a) * (b)" title="(a) * (b)" /><br />
+                <img class="inline" src="/bjc-r/img/ref-guide/adivb.png" alt="(a) / (b)" title="(a) / (b)" />
+            </div>
+            <div><p>Diese Blöcke sind unkompliziert. In die Eingabefelder kannst du beliebige numerische Ausdrücke setzen, z.&nbsp;B. Zahlen oder Variablen: <img class="inline" src="/bjc-r/img/ref-guide/b-over-2.png" alt="(b) / (2)" title="(b) / (2)" /> oder <img class="" src="/bjc-r/img/ref-guide/5c+3.png" alt="((5) × (c)) + (3)" title="((5) × (c)) + (3)" /></p></div>
+
+            <div><pre class="inline">a MOD b</pre></div>
+            <div><img class="inline" src="/bjc-r/img/ref-guide/a-mod-b.png" alt="(a) mod (b)" title="(a) mod (b)" /></div>
+            <div><p>Wie oben: Es können beliebige numerische Ausdrücke als Eingabe dienen, z.&nbsp;B. <img class="" src="/bjc-r/img/ref-guide/5c+3-mod-7.png" alt="(((5) × (c)) + (3)) mod (7)" title="(((5) × (c)) + (3)) mod (7)" /></p></div>
+
+            <div><pre class="inline">RANDOM (a, b)</pre></div>
+            <div><img class="inline" src="/bjc-r/img/ref-guide/pick-random-a-to-b.png" alt="pick random (a) to (b)" title="pick random (a) to (b)" /></div>
+            <div><p>Auch hier gilt: Die Eingaben dürfen beliebige numerische Ausdrücke sein.</p></div>
+        </div>
+
+
+		<h3>Relations- und Boolesche Operatoren</h3>
+        <p>Hier gibt es <strong>einen wichtigen Unterschied</strong> zwischen der AP-Prüfungssprache und Snap<em>!</em>: <strong>Einige Prozeduren musst du bei Bedarf selbst bauen</strong>.</p>
+		<div class="bordered-table three-col">
+            <div class="header">In der AP-Prüfung</div>
+            <div class="header">In Snap<em>!</em></div>
+            <div class="header">Hinweise</div>
+
+            <div>
+                <pre class="inline">a = b</pre><br />
+                <pre class="inline">a &ne; b</pre><br />
+                <pre class="inline">a &gt; b</pre><br />
+                <pre class="inline">a &lt; b</pre><br />
+                <pre class="inline">a &ge; b</pre><br />
+                <pre class="inline">a &le; b</pre><br />
+            </div>
+            <div>
+                <img class="inline" src="/bjc-r/img/ref-guide/a=b.png" alt="(a) = (b)" title="(a) = (b)" /><br />
+                Es gibt keinen <code>&ne;</code>-Block.<br />
+                <img class="inline" src="/bjc-r/img/ref-guide/a-gt-b.png" alt="(a) > (b)" title="(a) > (b)" /><br />
+                <img class="inline" src="/bjc-r/img/ref-guide/a-lt-b.png" alt="(a) &lt; (b)" title="(a) &lt; (b)" /><br />
+                Es gibt keinen <code>&ge;</code>-Block.<br />
+                Es gibt keinen <code>&le;</code>-Block.<br />
+
+            </div>
+            <div>
+                <p>Die hexagonale Blockform kennzeichnet einen <em>Prädikat</em>-Block; er liefert ausschließlich <code>true</code> oder <code>false</code>.</p>
+                <p>
+                    Die Operatoren <code>&ne;</code> (ungleich), <code>&ge;</code> (größer gleich) und <code>&le;</code> (kleiner gleich) sind nicht fest eingebaut, lassen sich aber leicht kombinieren:
+                    <img class="inline" src="/bjc-r/img/ref-guide/not-equal.png" alt="not ((a) = (b))" title="not ((a) = (b))" />,
+                    <img class="inline" src="/bjc-r/img/ref-guide/not-less.png" alt="not ((a) > (b))" title="not ((a) > (b))" />, and
+                    <img class="inline" src="/bjc-r/img/ref-guide/not-more.png" alt="not ((a) < (b))" title="not ((a) < (b))" />.
+                </p>
+            </div>
+
+            <div><pre class="inline">NOT condition</pre></div>
+            <div><img class="inline" src="/bjc-r/img/blocks/not.png" alt="not ()" title="not ()" /></div>
+            <div><p>Hexagonale Eingabefelder zeigen an, dass ein Prädikat erwartet wird – also ein Ausdruck, der <code>true</code> oder <code>false</code> liefert.</p></div>
+
+            <div><pre class="inline">condition1 AND condition2</pre></div>
+            <div><img class="inline" src="/bjc-r/img/blocks/and-full-size.png" alt="() and ()" title="() and ()" /></div>
+            <div><p>Wie oben: Hexagonale Eingaben verlangen Prädikate.</p></div>
+
+            <div><pre class="inline">condition1 OR condition2</pre></div>
+            <div><img class="inline" src="/bjc-r/img/blocks/or.png" alt="() or ()" title="() or ()" /></div>
+            <div><p>Ebenfalls wie oben: Gib zwei Bedingungen bzw. Prädikate an.</p></div>
+        </div>
+
+
+		<h3>Verzweigungen</h3>
+        <p>In diesem Abschnitt gibt es <strong>keine relevanten Unterschiede</strong> zwischen AP-Prüfungssprache und Snap<em>!</em>.</p>
+		<div class="bordered-table three-col">
+            <div class="header">In der AP-Prüfung</div>
+            <div class="header">In Snap<em>!</em></div>
+            <div class="header">Hinweise</div>
+
+            <div><div class="pre-container"><pre class="inline">IF (condition)
+{
+    &lt;block of statements&gt;
+}</pre></div></div>
+            <div><img class="inline" src="/bjc-r/img/blocks/if-full-size.png" alt="wenn" title="wenn" /></div>
+            <div>
+                <p>
+                    So kann eine <code>wenn</code>-Anweisung in Snap<em>!</em> aussehen, wenn sie eine Bedingung und mehrere Befehle umfasst:<br />
+                    <img class="indent" src="/bjc-r/img/ref-guide/if-example.png" alt="if (player score > 100)
+{
+    go to x: (0) y: (0)
+    say (You win!)
+}" title="if (player score > 100)
+{
+    go to x: (0) y: (0)
+    say (You win!)
+}" />
+                </p>
+            </div>
+
+            <div><div class="pre-container"><pre class="inline">IF (condition)
+{
+    &lt;first block of statements&gt;
+}
+ELSE
+{
+    &lt;second block of statements&gt;
+}</pre></div></div>
+            <div><img class="inline" src="/bjc-r/img/blocks/if-else-full-size.png" alt="wenn sonst" title="wenn sonst" /></div>
+            <div>
+                <p>
+                    Und so sieht ein <code>wenn sonst</code> in Snap<em>!</em> aus, wenn zwei mögliche Befehlsfolgen ausgeführt werden:<br />
+                    <img class="indent" src="/bjc-r/img/ref-guide/if-else-example.png" alt="if (player 1 score > player 2 score)
+{
+    go to x: (100) y: (0)
+    say (Player 1 wins!)
+}
+else
+{
+    go to x: (-100) y: (0)
+    say (Player 2 wins!)
+}
+" title="if (player 1 score > player 2 score)
+{
+    go to x: (100) y: (0)
+    say (Player 1 wins!)
+}
+else
+{
+    go to x: (-100) y: (0)
+    say (Player 2 wins!)
+}
+" />
+                </p>
+            </div>
+
+        </div>
+
+
+		<h3>Schleifen</h3>
+        <p>Auch hier gibt es <strong>keine großen Unterschiede</strong> zwischen AP-Sprache und Snap<em>!</em>.</p>
+		<div class="bordered-table three-col">
+            <div class="header">In der AP-Prüfung</div>
+            <div class="header">In Snap<em>!</em></div>
+            <div class="header">Hinweise</div>
+
+            <div><div class="pre-container"><pre class="inline">REPEAT n TIMES
+{
+    &lt;block of statements&gt;
+}</pre></div></div>
+            <div><img class="inline" src="/bjc-r/img/blocks/repeat.png" alt="wiederhole" title="wiederhole" /></div>
+            <div>
+                <p>
+                    So kann eine <code>wiederhole</code>-Schleife in Snap<em>!</em> aussehen, wenn sie eine Zahl und mehrere Befehle enthält:<br />
+                    <img class="indent" src="/bjc-r/img/ref-guide/repeat-example.png" alt="repeat (4) times
+{
+    move (100) steps
+    turn ↻ (90) degrees
+}" title="repeat (4) times
+{
+    move (100) steps
+    turn ↻ (90) degrees
+}" />
+                    <img class="indent noshadow" src="/bjc-r/img/ref-guide/repeat-example-stage.jpg" alt="Pfeil-Sprite hat soeben ein Quadrat gezeichnet" title="Pfeil-Sprite hat soeben ein Quadrat gezeichnet" />
+                </p>
+            </div>
+
+            <div><div class="pre-container"><pre class="inline">REPEAT UNTIL (condition)
+{
+    &lt;block of statements&gt;
+}</pre></div></div>
+            <div><img class="inline" src="/bjc-r/img/blocks/repeat-until.png" alt="wiederhole bis" title="wiederhole bis" /></div>
+            <div>
+                <p>
+                    Beispiel für <code>wiederhole bis</code> mit mehreren Befehlen:<br />
+                    <img class="indent" src="/bjc-r/img/ref-guide/repeat-until-example.png" alt="set (squiral length) to (100)
+repeat until (squiral length) < 30
+{
+    move (squiral length) steps
+    turn ↻ (90) degrees
+    change (squiral length) by (-5)
+}" title="set (squiral length) to (100)
+repeat until (squiral length) < 30
+{
+    move (squiral length) steps
+    turn ↻ (90) degrees
+    change (squiral length) by (-5)
+}" />
+                    <img class="indent noshadow" src="/bjc-r/img/ref-guide/repeat-until-example-stage.jpg" alt="Pfeil-Sprite zeichnet eine Quadratschnecke und stoppt vor dem Zentrum" title="Pfeil-Sprite zeichnet eine Quadratschnecke und stoppt vor dem Zentrum" />
+                </p>
+            </div>
+        </div>
+
+
+		<h3>Listenoperationen</h3>
+        <p>Hier gibt es <strong>nur kleine Unterschiede</strong> in Formulierungen und Aufbau.</p>
+		<div class="bordered-table three-col">
+            <div class="header">In der AP-Prüfung</div>
+            <div class="header">In Snap<em>!</em></div>
+            <div class="header">Hinweise</div>
+
+            <div><pre class="inline">list[i]</pre></div>
+            <div>
+                <img class="inline" src="/bjc-r/img/ref-guide/item-i-of-list.png" alt="Eintrag (i) von (Liste)" title="Eintrag (i) von (Liste)" /><br /><br />
+                Zum Beispiel
+                <img class="indent" src="/bjc-r/img/ref-guide/hello-goodbye.png" alt="Liste (hello) (goodbye) liefert [hello, goodbye]" title="Liste (hello) (goodbye) liefert [hello, goodbye]" /><br />
+                <img class="indent" src="/bjc-r/img/ref-guide/goodbye.png" alt="Eintrag (2) von (Liste (hello) (goodbye)) liefert „goodbye“" title="Eintrag (2) von (Liste (hello) (goodbye)) liefert „goodbye“" />
+            </div>
+            <div>
+                <p>
+                    In Snap<em>!</em> zeigt die Form eines Eingabefelds, welcher Datentyp erwartet wird. Beim Block <img class="inline" src="/bjc-r/img/blocks/item.png" alt="Eintrag () von 'Listeneingabe'" title="Eintrag () von 'Listeneingabe'" /> ist das erste Feld rund (Zahl) und das zweite Feld hat ein Listensymbol: <br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/listpic.png" alt="picture of 2-item list"><br />
+                    Über das Dropdown-Menü kannst du den ersten, letzten oder einen zufälligen Eintrag wählen, ohne eine Zahl einzugeben.
+                </p>
+            </div>
+
+            <div><pre class="inline">list[i] &leftarrow; list[j]</pre></div>
+            <div><img class="inline" src="/bjc-r/img/ref-guide/replace-item-i-of-list-with-item-j-of-list.png" alt="replace item (i) of (list) with (item (j) of (list))" title="replace item (i) of (list) with (item (j) of (list))" /></div>
+            <div>
+                <p>Auf den zweiten Blick ist klar: Dieser Block ersetzt den Eintrag an Position <var>i</var> durch den Eintrag an Position <var>j</var> derselben Liste.</p>
+                <p>
+                    Beispiel:<br />
+                    <img class="indent" src="/bjc-r/img/ref-guide/replace-example.png" alt="replace item (2) of (shopping list) with (rye bread)" title="replace item (2) of (shopping list) with (rye bread)" />
+                </p>
+            </div>
+
+            <div><pre class="inline">list &leftarrow; [value1, value2, value3]</pre></div>
+            <div><img class="inline" src="/bjc-r/img/ref-guide/set-list-to-list-value1-value2-value3.png" alt="set (list) to (list (value1) (value2) (value3))" title="set (list) to (list (value1) (value2) (value3))" /></div>
+            <div>
+                <p>In Snap<em>!</em> solltest du Variablen nicht einfach <var>list</var> nennen, weil es bereits einen gleichnamigen Block gibt. Verwende beschreibende Namen, zum Beispiel:
+                    <img class="inline" src="/bjc-r/img/ref-guide/set-list-example-1.png" alt="set (shopping list) to (list (apples) (bananas) (oranges) (carrots) (bread) (rice))" title="set (shopping list) to (list (apples) (bananas) (oranges) (carrots) (bread) (rice))" />
+                    <img class="inline" src="/bjc-r/img/ref-guide/set-list-example-2.png" alt="set (artist names) to (list (list (Ariana) (Grande)) (list (Bruno) (Mars)) (list (Selena) (Gomez)) )" title="set (artist names) to (list (list (Ariana) (Grande)) (list (Bruno) (Mars)) (list (Selena) (Gomez)) )" />
+                </p>
+            </div>
+
+            <div><div class="pre-container"><pre class="inline">FOR EACH item IN list
+{
+    &lt;block of statements&gt;
+}</pre></div></div>
+            <div><img class="inline" src="/bjc-r/img/ref-guide/for-each-item-in-list.png" alt="for each (item) in (list)" title="for each (item) in (list)" /></div>
+            <div>
+                <p>Per Klick kannst du den Namen der Listenvariable anpassen.</p>
+                <p>
+                    Beispiel für <code>für jedes</code> mit einer echten Liste und einem Befehl:<br />
+                    <img class="inline" src="/bjc-r/img/ref-guide/for-each-example.png" alt="for each (grocery item) in (shopping list) {
+    say (grocery item) for (2) secs
+}" title="" />
+                </p>
+            </div>
+
+            <div><pre class="inline">INSERT (list, i, value)</pre></div>
+            <div><img class="inline" src="/bjc-r/img/ref-guide/insert-value-at-i-of-list.png" alt="insert (value) at (i) of (list)" title="insert (value) at (i) of (list)" /></div>
+            <div><div class="pseudop">Der Befehl <code>insert</code> funktioniert genauso wie <pre class="inline">INSERT</pre> in der AP-Sprache – lediglich die Reihenfolge der Eingaben unterscheidet sich.</div></div>
+
+            <div><pre class="inline">APPEND (list, value)</pre></div>
+            <div><img class="inline" src="/bjc-r/img/ref-guide/add-value-to-list.png" alt="add (value) to (list)" title="add (value) to (list)" /></div>
+            <div><div class="pseudop">Der Snap<em>!</em>-Befehl <code>add</code> entspricht dem AP-<pre class="inline">APPEND</pre>; nur die Eingaben stehen in anderer Reihenfolge.</div></div>
+
+            <div><pre class="inline">REMOVE (list, i)</pre></div>
+            <div><img class="inline" src="/bjc-r/img/ref-guide/delete-i-of-list.png" alt="delete (i) of (list)" title="delete (i) of (list)" /></div>
+            <div><div class="pseudop">Der Snap<em>!</em>-Befehl <code>delete</code> verhält sich wie <pre class="inline">REMOVE</pre>; erneut ist nur die EIngabereihenfolge anders.</div></div>
+
+            <div><pre class="inline">LENGTH (list)</pre></div>
+            <div><img class="inline" src="/bjc-r/img/ref-guide/length-of-list.png" alt="Länge von (Liste)" title="Länge von (Liste)" /></div>
+            <div>
+                <p>
+                    In Snap<em>!</em> gibt es zwei <code>Länge</code>-Blöcke:
+                    <ul>
+                        <li>den grünen Listenblock <img class="inline" src="/bjc-r/img/blocks/length-list.png" alt="Länge von 'Listeneingabe'" title="Länge von 'Listeneingabe'" /></li>
+                        <li>und den orangenen Operatorblock <img class="inline" src="/bjc-r/img/blocks/length-of-blank-operator.png" alt="Länge von 'Texteingabe'" title="Länge von 'Texteingabe'" /></li>
+                    </ul>
+                    Du erkennst sie an Palette, Farbe und Eingabefeld (Listensymbol vs. weißes Texteingabefeld).
+                </p>
+            </div>
+        </div>
+
+
+		<h3>Eigene Blöcke</h3>
+		<div class="bordered-table three-col">
+            <div class="header">In der AP-Prüfung</div>
+            <div class="header">In Snap<em>!</em></div>
+            <div class="header">Hinweise</div>
+
+            <div><div class="pre-container"><pre class="inline">PROCEDURE name (parameter1, parameter2, ...)
+{
+    &lt;instructions&gt;
+}</pre></div></div>
+            <div>Leere <em>Kommando</em>-Definition<img class="inline" src="/bjc-r/img/ref-guide/command-def.png" alt="name (parameter1) (parameter2) {}" title="name (parameter1) (parameter2) {}" /></div>
+            <div>
+                <p>Blöcke, die etwas <em>tun</em>, heißen in Snap<em>!</em> Kommandos. Sie haben die typischen rechteckigen Puzzleformen, damit sie zu Skripten zusammengesteckt werden können.</p>
+                <p>
+                    Beim Erstellen eines Blocks legst du Namen, Eingaben und die Palette (Farbe) fest und baust dann das Skript, das beim Anklicken ausgeführt wird. Beispiel:
+                    <img class="indent" src="/bjc-r/img/ref-guide/draw-square-def.png" alt="draw square, size: (size) {
+    pen down
+    repeat (4) {
+        move (size) steps
+        turn ↻ (90) degrees
+    }
+}" title="draw square, size: (size) {
+    pen down
+    repeat (4) {
+        move (size) steps
+        turn ↻ (90) degrees
+    }
+}" />
+                </p>
+                <p>Weitere Hinweise zum Blockbau findest du in diesem Spickzettel.</p>
+            </div>
+
+            <div><div class="pre-container"><pre class="inline">PROCEDURE name (parameter1, parameter2, ...)
+{
+    &lt;instructions&gt;
+    RETURN expression
+}</pre></div></div>
+            <div>Leere <em>Reporter</em>-Definition<img class="inline" src="/bjc-r/img/ref-guide/reporter-def.png" alt="name (parameter1) (parameter2) {report ()}" title="name (parameter1) (parameter2) {report ()}" /></div>
+            <div>
+                <p>Blöcke, die einen Wert <em>melden</em>, heißen Reporter. Sie sind abgerundet und lassen sich anklicken oder als Eingabe verwenden.</p>
+                <p>Beim Erstellen eines Reporters ist automatisch ein <code>melde</code>-Block enthalten; dessen Eingabe definiert den Rückgabewert.</p>
+                <p>
+                    Beispiel für eine Reporter-Definition:<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/double-block-definition.png" alt="PROCEDURE double (x)
+{
+    RETURN (2 * x)
+}" title="PROCEDURE double (x)
+{
+    RETURN (2 * x)
+}" />
+                </p>
+            </div>
+        </div>
+
+
+		<h3>Robot</h3>
+        <p>Diese Blöcke <strong>gibt es in Snap<em>!</em> nicht</strong>, aber du kannst ihre Wirkung mit Sprite-Bewegungen nachbauen. In der AP-Sprache bewegt sich der Roboter nur auf einem Gitter – also horizontal oder vertikal. Snap<em>!</em>-Sprites sind flexibler, doch mit passenden Blöcken lässt sich das Grid-Verhalten simulieren.</p>
+        <div class="bordered-table two-col">
+            <div class="header">In der AP-Prüfung</div>
+            <div class="header">Hinweise für Snap<em>!</em></div>
+
+            <div><pre class="inline">MOVE_FORWARD ()</pre></div>
+            <div>
+                <p>In Snap<em>!</em> nutzt du dafür <img class="inline" src="/bjc-r/img/blocks/move-empty-full-size.png" alt="gehe ( ) Schritte" title="gehe ( ) Schritte" />.</p>
+                <div class="pseudop">In der Prüfung nimmt <pre class="inline">MOVE_FORWARD ()</pre> keinen Parameter entgegen; für mehrere Felder musst du den Befehl mehrfach aufrufen.</div>
+                <div class="pseudop">In Snap<em>!</em> setzt du als Eingabe einfach die Seitenlänge deines Gitters, um das gleiche Verhalten zu erreichen.</div>
+            </div>
+
+            <div>
+                <pre class="inline">ROTATE_LEFT ()</pre><br />
+                <pre class="inline">ROTATE_RIGHT ()</pre>
+            </div>
+            <div>
+                <p>In Snap<em>!</em> nutzt du <img class="inline" src="/bjc-r/img/blocks/turn-left-90-full-size.png" alt="drehe ↺ (90)°" title="drehe ↺ (90)°" /> bzw. <img class="inline" src="/bjc-r/img/blocks/turn-right-90-full-size.png" alt="drehe ↻ (90)°" title="drehe ↻ (90)°" />.</p>
+                <div class="pseudop">In der Prüfung sind beide Rotationsbefehle auf genau 90° beschränkt.</div>
+                <div class="pseudop">Wähle in Snap<em>!</em> daher einfach 90° als Eingabe, um das Grid-Verhalten zu imitieren.</div>
+            </div>
+
+            <div><pre class="inline">CAN_MOVE (direction)</pre></div>
+            <div>
+                <div class="pseudop">Einen Block wie <pre class="inline">CAN_MOVE (direction)</pre> gibt es nicht, aber du kannst mit verschiedenen Sensorblöcken prüfen, ob der Sprite irgendwo anstößt.</div>
+                <p>
+                    Nützlich sind z.&nbsp;B.:
+                    <img class="inline" src="/bjc-r/img/blocks/touching-color.png" alt="berührt Farbe … ?" title="berührt Farbe … ?" />,
+                    <img class="inline" src="/bjc-r/img/blocks/color-is-touching-color.png" alt="Farbe … berührt Farbe … ?" title="Farbe … berührt Farbe … ?" /> und <br />
+                    <img class="inline" src="/bjc-r/img/blocks/touching-menu-open.png" alt="Block „berührt () ?“ mit geöffnetem Menü" title="Block „berührt () ?“ mit geöffnetem Menü" />
+                </p>
+            </div>
+        </div>
+
+
+	</body>
+</html>

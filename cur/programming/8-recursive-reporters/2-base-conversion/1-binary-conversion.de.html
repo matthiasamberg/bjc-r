@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 8, Labor 2: Basisumrechnung, Seite 1</title>
+	</head>
+
+    <body>
+        <h2>Umrechnung nach Binär</h2>
+        <div class="todo">
+			<p>Brian, Juli 2016: Eine Person hat Dezimal→Binär versucht und eine Lösung mit Potenzen gebaut, weil der Hinweis „von rechts nach links“ übersehen wurde. Sollten wir diesen Hinweis prominenter platzieren? (Die Lösung funktionierte, war aber unnötig kompliziert.)</p>
+			<p>PG: Lieben wir Binär genug, um das zu lassen? Ich liebe die Mathematik, aber die Seite wirkt mehr wie „Aufgabe lösen“ statt „Rekursive Idee abstrahieren“. Ich halte das für YADA („Yet Another Distracting Activity“).</p>
+            <p>BH: Nummer → binär; und die Hint-Seite wieder integrieren (Mary stimmt zu).</p>
+			<p>Seitentitel/Labname müssen überarbeitet werden, damit nichts doppelt ist. --MF, 15.06.2020</p>
+			<p>Brian fragt: Wo ist „binär → Zahl“ (inverse Funktion)? --MF, 06.07.2020</p>
+			<p>Algorithmenbeschreibung ergänzen. --MF, 06.07.2020</p>
+			<p>Block sollte „TO BINARY“ heißen und eine Zahl als Eingabe haben (nicht einen String). --Brian, 22.04.2022</p>
+			<p>Vor Änderung bitte mit Paul abstimmen und gemeinsam anpassen, damit alles konsistent bleibt. --MF, 22.04.2022</p>
+		</div>
+		<div class="learn">
+            <p><strong>In diesem Labor</strong> knüpfst du an <a href="/bjc-r/cur/programming/4-internet/4-representation-compression/5-binary.html?topic=nyc_bjc%2F4-internet.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 4, Labor 4, Seite 5: Binäre Darstellung" target="_blank">Einheit 4</a> an und programmierst Basisumrechnungen in Snap<em>!</em>.</p>
+            <p><strong>Auf dieser Seite</strong> lernst du einen eleganteren Ansatz zur Basisumrechnung kennen.</p>
+        </div>
+
+        <p>
+        	In <a href="/bjc-r/cur/programming/4-internet/4-representation-compression/5-binary.html?topic=nyc_bjc%2F4-internet.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 4, Labor 4, Seite 5: Binäre Darstellung" target="_blank">Einheit 4</a> hast du die Binärdarstellung kennengelernt. Jetzt schreibst du einen Reporter <code>decimal-&gt;binary</code>, der eine <em>dezimal dargestellte Zahl</em> (Snap<em>!</em> speichert Zahlen in dezimaler Form) in eine <em>Zeichenkette aus Nullen und Einsen</em> umwandelt:<br />
+        	<img class="indent" src="/bjc-r/img/8-recursive-reporters/9827.png" alt="decimal->binary (9827) reporting 10011001100011" title="decimal->binary (9827) reporting 10011001100011" />
+        </p>
+		<p>
+            Du brauchst dazu ganzzahlige Division in Quotient und Rest. Beispiel: 17 ÷ 5 = <strong>3</strong> mit Rest <strong>2</strong>. In Snap<em>!</em> findest du Quotient und Rest so:<br />
+       		<img class="indent" src="/bjc-r/img/8-recursive-reporters/quotient.png" alt="(floor of (17/5)) = 3" title="(floor of (17/5)) = 3" />
+            <img class="indent" src="/bjc-r/img/8-recursive-reporters/mod.png" alt="(17) mod (5) = 2" title="(17) mod (5) = 2" />
+        </p>
+		<div class="endnote">
+			<p><code>floor</code> liefert die größte ganze Zahl ≤ Eingabe (z. B. floor(3,87) = 3). Der Block steckt bei den mathematischen Funktionen (<img class="inline nopadtb" src="/bjc-r/img/blocks/sqrt-of-10.png" alt="sqrt Block" title="sqrt Block" />). Wähle im Menü „floor“.</p>
+			<p><code>mod</code> liefert den <em>Rest</em> einer Division. Das kennst du aus <a href="/bjc-r/cur/programming/2-complexity/4-making-computers-do-math/1-mod-operator.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment" title="Einheit 2, Labor 4: Der Mod-Operator">Einheit 2, Labor 4</a>.</p>
+		</div>
+
+        <div class="todo">AC schlug vor, die Lernenden den Integer-Divisionsblock bauen zu lassen. BK hat das verworfen, weil der floor-Block schwer zu finden ist. (Es gibt mehrere Methoden, aber „floor“ ist die klarste mit konstanter Laufzeit.)</div>
+
+        <div class="forYouToDo" id="first">
+        	<div class="todo">
+				<p>Es gibt eine extra Hint-Seite mit Link zu einer alten Seite – warum nicht das normale Hint-Feature verwenden? --Michelle via MF, 22.04.2022</p>
+			</div>
+			<ol>
+            	<li>
+					Schreibe den Block <code>decimal-&gt;binary</code>.
+					<div class="endnote">
+						<p><a href="#hint-dec2bin" data-toggle="collapse" title="Hinweis?">Hinweis anzeigen</a></p>
+						<div id="hint-dec2bin" class="collapse">
+							<p>Wichtigster Tipp: Baue den Binärstring <strong>von rechts nach links</strong> auf. Das rechte Bit ist immer die Einerstelle; das linke Bit hängt von der Gesamtlänge ab.</p>
+							<p><a href="#hint-dec2bin2" data-toggle="collapse" title="Noch ein Hinweis">Mehr Hinweise</a></p>
+							<div id="hint-dec2bin2" class="collapse">
+								<p>Der Eingang ist eine <strong>Zahl</strong>, du rechnest also mit ihr. Das Ergebnis ist eine <strong>Zeichenkette</strong>, daher brauchst du String-Blöcke (z. B. <code>join</code>).</p>
+								<p><a href="#hint-dec2bin3" data-toggle="collapse" title="Noch mehr Unterstützung?">Noch mehr Unterstützung?</a></p>
+								<div id="hint-dec2bin3" class="collapse">
+									<p>Rechne Beispiele per Hand und suche Muster. Dann erkennst du leichter, wie der Code aussehen muss.</p>
+									<img class="imageRight" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deiner Partnerin/deinem Partner" title="Sprich mit deiner Partnerin/deinem Partner" />
+									<ul>
+										<li>Erläutere, warum 13 im Binärsystem 1101 ist.</li>
+										<li>Schreibe 26 und 27 in Binär. Wie hängen sie jeweils mit 13 zusammen?</li>
+										<li>Wie lauten Quotient und Rest bei 27 ÷ 2?</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+				<li><div class="saveAs"><span class="text">„U8L2-Base-Conversion“</span><img src="/bjc-r/img/icons/save-this-as.png" alt="Speichere als U8L2-Base-Conversion" title="Speichere als U8L2-Base-Conversion" /></div></li>
+        	</ol>
+        </div>
+
+    </body>
+</html>

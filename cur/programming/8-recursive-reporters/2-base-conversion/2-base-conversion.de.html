@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 8, Labor 2: Basisumrechnung, Seite 2</title>
+	</head>
+
+    <body>
+        <h2>Basisumrechnung</h2>
+        <div class="todo">
+            <p>MF: Ich möchte das überarbeiten (evtl. gesamtes Labor auf eine Seite?).</p>
+			<p>Labname/Seitennamen müssen überarbeitet werden, damit es keine Doppelungen gibt. --MF, 15.06.2020</p>
+		</div>
+		<div class="learn">
+            <p><strong>Auf dieser Seite</strong> verallgemeinerst du die Binärumrechnung auf <em>beliebige</em> Basen.</p>
+        </div>
+
+        <p>So könnte eine Binärumrechnung für nichtnegative Ganzzahlen aussehen:</p>
+        <p><img class="indent" src="/bjc-r/img/8-recursive-reporters/tobinary.png" alt="decimal->binary(number){...}" title="decimal->binary(number){...}"/></p>
+        <p>Wenn sich eine Zahl mit nur einer Ziffer darstellen lässt, ist das der Basisfall. Im Binärsystem gibt es dafür nur 0 und 1, daher prüfen wir, ob <var>number</var> &lt; 2 ist.</p>
+        <p><div class="sidenote">Überraschend: Wir nutzen keinen arithmetischen Kombinierer, denn das Ergebnis soll ein <em>Ziffernstring</em> sein – daher verwenden wir <code>join</code>.</div>Im rekursiven Fall ist das rechte Bit der Rest bei Division durch 2. Die übrigen Bits stammen aus einem rekursiven Aufruf auf den Quotienten. Der Kombinierer ist <code>join</code>, weil wir Ziffern „zusammenkleben“.</p>
+
+        <div class="forYouToDo" id="first">
+           <ol>
+                <li>
+                    Schreibe einen Block <code>base7</code>, der eine Zahl in Basis 7 darstellt.<br />
+                    <img class="indent" src="/bjc-r/img/8-recursive-reporters/base7example.png" alt="base7(9827) -> 40436" title="base7( 9827) reporting 40436" />
+                </li>
+                <li>
+                    Verallgemeinere das Muster mit einem Block <code>base</code>, der die Basis als zweites Argument erhält:<br />
+                    <img class="indent" src="/bjc-r/img/8-recursive-reporters/base2.png" alt="(9827)base(2) -> 10011001100011" />
+                    <img class="indent" src="/bjc-r/img/8-recursive-reporters/base7.png" alt="(9827)base(7) -> 40436" /><br />
+                    <img class="indent" src="/bjc-r/img/8-recursive-reporters/base8.png" alt="(9827)base(8) -> 23143" />
+                    <img class="indent" src="/bjc-r/img/8-recursive-reporters/base10.png" alt="(9827)base(10) -> 9827" />
+                </li>
+                <li>
+                    <div class="sidenote">Snap<em>!</em> zeigt das Ergebnis in Dezimal – du rechnest aber eine <em>Zahl</em> aus, keinen String.</div>Bau die inverse Funktion <code>from base</code>, die einen Ziffernstring plus Basis entgegennimmt und die entsprechende Zahl zurückgibt.<br />
+                    <img class="indent" src="/bjc-r/img/8-recursive-reporters/frombase.png" alt="(23143) from base (8) -> 9827" />
+                </li>
+            </ol>
+        </div>
+
+        <div class="ifTime">
+            <ol start="4">
+                <li>Erweitere <code>base</code>, damit es bis Basis 36 funktioniert (Ziffern 0–9, dann <code>a</code>–<code>z</code> mit Werten 10–35).<br />
+                <img class="indent" src="/bjc-r/img/8-recursive-reporters/common.png" alt="(32562)base(15) -> 99ac" />
+                    <img class="indent" src="/bjc-r/img/8-recursive-reporters/w00zy.png" alt="(53749006)base(36) -> w00zy" />
+                </li>
+                <li>Erweitere den Block <code>from base</code> ebenfalls für Basen bis 36.</li>
+            </ol>
+        </div>
+
+    </body>
+</html>

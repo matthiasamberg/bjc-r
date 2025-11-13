@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Beauty and Joy of Computing: Snap<em>!</em>-Crashkurs</title>
+	</head>
+
+	<body>
+		<h2>Snap<em>!</em>-Crashkurs</h2>
+        <p>
+            <img class="imageRight" src="/bjc-r/img/ref-guide/repeat-example.png" alt="repeat (4) times {move (100) steps; turn ↻ (90) degrees}" title="repeat (4) times {move (100) steps; turn ↻ (90) degrees}" />
+            Wenn du bereits Erfahrungen mit Programmierung hast, wirst du dich in Snap<em>!</em> schnell zurechtfinden. Alles ist visuell: Blöcke werden zusammengesteckt, Syntaxfehler sind praktisch ausgeschlossen.
+        </p>
+        <p>Diese Seite fasst die wichtigsten Schritte zusammen, damit du sofort loslegen kannst. Lies die Abschnitte nacheinander oder springe direkt zu dem Thema, das du brauchst.</p>
+
+        <h3>1. Wichtige Links</h3>
+        <ul>
+            <li><strong><a href="https://snap.berkeley.edu/run" target="_blank" title="Snap! online">snap.berkeley.edu/run</a></strong> – die Programmierumgebung (merke dir diesen Link!)</li>
+            <li><a href="/bjc-r/cur/snap-cheat-sheet.de.html" title="Snap!-Spickzettel">Snap<em>!</em>-Spickzettel</a> – Zuordnung der AP-Referenzbefehle zu Snap<em>!</em>-Blöcken</li>
+            <li><a href="https://snap.berkeley.edu/snap/help/SnapManual.pdf" target="_blank" title="Snap!-Handbuch">Snap<em>!</em>-Referenzhandbuch</a> – detaillierte Dokumentation, auch über das Snap<em>!</em>-Logo erreichbar</li>
+            <li><a href="https://snap.berkeley.edu/" target="_blank" title="Community">snap.berkeley.edu</a> – Community, Beispielprojekte, Forum</li>
+            <li>Videos: <a href="https://www.youtube.com/watch?v=R0tflxPP27w&feature=youtu.be" target="_blank" title="Einführung in Snap!">Snap<em>!</em> Programming Environment</a> und <a href="https://www.youtube.com/watch?v=YSsG0Iks8HM&feature=youtu.be" target="_blank" title="Tipps">Tips for Using the Snap<em>!</em> Programming Environment</a></li>
+        </ul>
+
+        <h3>2. Accounts, Speichern & Laden</h3>
+        <p>Du <em>kannst</em> einen Snap<em>!</em>-Account anlegen, um Projekte in der Cloud zu speichern. Alternativ speicherst du Dateien lokal und öffnest sie per Drag-&-Drop. Eine Schritt-für-Schritt-Anleitung findest du im BJC-Labor <a href="/bjc-r/cur/programming/1-introduction/1-building-an-app/2-creating-a-snap-account.html" title="Snap!-Account erstellen">Saving Snap<em>!</em> Projects</a>.</p>
+        <ul>
+            <li><strong>Speichern:</strong> Datei → Save (<img src="/bjc-r/img/1-introduction/file_button.png" alt="Datei-Menü" title="Datei-Menü" />) oder Strg/Cmd+S.</li>
+            <li><strong>Laden:</strong> Datei → Open…, eine gespeicherte Datei wählen oder lokal gespeicherte <code>.xml</code>/<code>.sb3</code>-Datei ins Fenster ziehen.</li>
+        </ul>
+
+        <h3>3. Arbeitsoberfläche & Skripte</h3>
+        <p>Ziehe Blöcke aus der Palette in den Skriptbereich und stecke sie zusammen. Per Rechtsklick → „help…“ erhältst du eine Kurzbeschreibung. Jedes Skript gehört zu einem Sprite oder zur Bühne; Begriffe wie „mein“ oder „ich“ beziehen sich auf das aktuell ausgewählte Objekt.</p>
+        <p>Viele Blöcke besitzen Pfeile: Pfeile nach unten öffnen Menüs (z.&nbsp;B. bei <code>item</code>), Pfeile links/rechts fügen Eingabefelder hinzu oder entfernen sie.</p>
+
+        <h4>Blockformen</h4>
+        <ul>
+            <li><strong>Kommandos</strong> (rechteckig) führen Aktionen aus, z.&nbsp;B. <img src="/bjc-r/img/blocks/go-to-x-y.png" alt="gehe zu x/y" title="go to" />.</li>
+            <li><strong>Reporter</strong> (oval) liefern Werte, z.&nbsp;B. <img src="/bjc-r/img/ref-guide/x-position-reporting-103.png" alt="x position" title="x position" />.</li>
+            <li><strong>Prädikate</strong> (hexagonal) liefern nur <code>true</code>/<code>false</code>, z.&nbsp;B. <img src="/bjc-r/img/blocks/greater-than.png" alt=">" title=">" />.</li>
+            <li><strong>Ereignisblöcke</strong> (Hut) starten Skripte, z.&nbsp;B. <img src="/bjc-r/img/blocks/when-i-am-clicked.png" alt="wenn ich angeklickt werde" title="when I am clicked" />.</li>
+        </ul>
+
+        <h3>4. Variablen & Parameter</h3>
+        <ul>
+            <li><strong>Eingabevariablen</strong> (Parameter) erhalten Argumente, z.&nbsp;B. die Größe in einem <code>draw square</code>-Block.</li>
+            <li><strong>Skriptvariablen</strong> (Block <img src="/bjc-r/img/blocks/script-variables(a).png" alt="script variables" title="script variables" />) gelten nur im aktuellen Skript.</li>
+            <li><strong>Iterationsvariablen</strong> in <code>for</code>/<code>for each</code> heißen standardmäßig <var>i</var> bzw. <var>item</var> und lassen sich umbenennen.</li>
+            <li><strong>Globale Variablen</strong> erstellst du über <img src="/bjc-r/img/sys/make-a-variable.png" alt="Variable erstellen" title="Variable erstellen" /> und kannst sie überall verwenden.</li>
+        </ul>
+        <p>Da Snap<em>!</em> visuell arbeitet, kannst du sprechende, mehrteilige Namen verwenden, etwa <code>player 1 score</code>.</p>
+
+        <h3>5. Eigene Blöcke erstellen</h3>
+        <ol>
+            <li><strong>Block anlegen:</strong> „Make a block“ klicken (oder das <b>+</b> in der Palette bzw. Rechtsklick im Skriptbereich).</li>
+            <li><strong>Farbe, Name, Form wählen</strong> und entscheiden, ob der Block für alle Sprites oder nur für das aktuelle gelten soll.</li>
+            <li><strong>Parameter hinzufügen:</strong> Im Hutblock auf „+“ klicken, Namen eingeben, fertig.</li>
+            <li><strong>Skript bauen:</strong> Blöcke zwischen Hut und (falls vorhanden) <code>report</code> setzen. Beim Reporter bestimmt der Input von <code>report</code> den Rückgabewert.</li>
+        </ol>
+        <p>
+            <img class="indent" src="/bjc-r/img/ref-guide/draw-square-def.png" alt="Definition draw square" title="Definition draw square" />
+        </p>
+
+        <h3>6. Weiterführende Tipps</h3>
+        <ul>
+            <li>Nutze den <strong>Stift</strong>, die <strong>Listen</strong> oder <strong>Operatoren</strong>-Paletten, um rasch Prototypen zu bauen.</li>
+            <li>Mit <strong>Rechtsklick → duplicate</strong> kopierst du Blöcke oder ganze Skripte.</li>
+            <li>Halte Projekte klein: Als Faustregel pro Datei ein überschaubares Ziel (z.&nbsp;B. ein einzelnes Spiellevel).</li>
+        </ul>
+
+        <p>Viel Spaß beim Entdecken von Snap<em>!</em>! Sobald du dich sicher fühlst, starte mit den Labs im BJC-Curriculum oder erweitere deine eigenen Projekte.</p>
+	</body>
+</html>

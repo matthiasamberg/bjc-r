@@ -85,5 +85,9 @@ Dieses Dokument fasst den bisherigen Übersetzungsprozess zusammen und dient als
 - 2025-11-01: Einheit 6, optionale Projekte („Binary Addition with Logic Gates“, „Building a Binary Adder“, „Weather App Project“) lokalisiert; Aufgabenstellungen bereinigt, Hinweise zu URL-Parametern/Gradzeichen ergänzt und deutsche Alt-Texte hinterlegt.
 - 2025-11-01: Einheit 7, Labor 1 („Trees“) Seiten 1–5 übersetzt; Fokus auf Basisfall-Erklärungen, Self-Check-Bewertungen und freie Variationen (inkl. Gravitation/Randomisierung) in konsistenter Terminologie.
 - 2025-11-01: Einheit 7, Labor 2 („Recursion Projects“) Seiten 1–4 lokalisiert (Dreiecksfraktal, Koch-Schneeflocke, Lévy C-Kurve, rekursiver Mondrian); Starterhinweise, Mathematik-Tipps (Pythagoras), Zufalls-/Farberläuterungen und Tough-Stuff-Hinweise auf Deutsch übertragen.
+- 2025-11-01: Einheit 8, Labor 1 („Recursive Reporters“) Seiten 1–2 übersetzt; Dialoge/TODO-Hinweise übertragen, Tabellen, Aufgaben und Kombinierer-Erklärungen lokalisiert.
+- 2025-11-01: Einheit 8, Labor 2 („Base Conversion“) Seiten 1–2 auf Deutsch erstellt; Hinweise zu ganzzahliger Division (floor/mod), rekursiven join-Kombinierern und Basis-Generalisierung (inkl. Buchstaben für Basen bis 36) ergänzt.
+- 2025-11-01: Einheit 8, Labor 3 („Subsets“) Seiten 1–2 lokalisiert; Eisschalen-Beispiel, rekursive Hint-Fragen, Effizienz-Notizen und optionale Erweiterungen (Duplikate/Mehrfachkugeln) übertragen.
+- 2025-11-01: Einheit 8, Labor 4 („Building Higher Order Functions“) Seiten 1–3 übersetzt; Rekursionsmuster („Walking Down a List“), Map-Verallgemeinerung sowie rekursive Varianten von `keep`/`combine` lokalisiert, inkl. TODO-Hinweisen und Bibliotheksverweisen.
 
 Dieses Dokument wird laufend aktualisiert, sobald neue Begriffe hinzukommen oder Übersetzungsentscheidungen angepasst werden.

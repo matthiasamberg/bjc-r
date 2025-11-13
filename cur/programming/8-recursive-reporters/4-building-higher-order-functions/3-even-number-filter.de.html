@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <title>Einheit 8, Labor 4: Höherwertige Funktionen bauen, Seite 3</title>
+    </head>
+
+    <body>
+        <h2>Gerade Zahlen und <code>keep</code></h2>
+        <div class="todo">
+            <p>PG: „Wir wollen einen Block, der …“ – warum? Besser wäre ein Kontext, in dem es wirklich gebraucht wird. Vielleicht früher im Kurs? FYTD1 könnte z. B. eher kommen. – Die hier vorgestellten FYTDs sind gut; nur eben in einen echten Kontext setzen.</p>
+            <p>BH: ITIT 5 nach FYTD 4 verschieben, alten FYTD 4 nach 5, damit wir mit dem orangefarbenen Kästchen enden!</p>
+            <p>MF: Die Didaktik nervt. „Male ein Quadrat rekursiv oder funktional. WARUM?!“ Gib ein Problem, bei dem die Technik relevant ist.</p>
+        </div>
+		<div class="learn">
+            <p><strong>Auf dieser Seite</strong> baust du zwei weitere höherwertige Funktionen: <code>keep</code> und <code>combine</code>.</p>
+        </div>
+
+        <p>Wir brauchen einen Block, der eine Zahlenliste entgegennimmt und nur die <strong>geraden</strong> Zahlen zurückgibt.</p>
+        <p>
+            Mit <code>keep</code> kennst du schon eine Lösung. Hier siehst du die rekursive Variante:<br />
+            <div class="todo">Bitte keine „Mach etwas Sinnloses“-Übungen. Es muss einen echten Grund geben. --MF, 26.09.2018</div>
+			<div class="comment">Dieses Bild muss neu erstellt werden. --MF, 22.04.2022</div>
+			<img class="indent" src="/bjc-r/img/8-recursive-reporters/evens.png" alt="Rekursiver evens Block" title="Rekursiver evens Block" />
+        </p>
+        <p>Hier gibt es <em>drei</em> Fälle: Basisfall (leere Liste) und zwei rekursive Fälle – abhängig davon, ob das erste Element gerade ist. Das prüfst du mit Rest-2.</p>
+        <p>Ist die erste Zahl gerade, soll sie im Ergebnis enthalten sein → <code>in front of</code> + rekursiver Aufruf. Ist sie ungerade, liefern wir nur das rekursive Ergebnis.</p>
+
+        <div class="takeNote">Wie <code>plurals</code> zeigt <code>evens</code> ein starkes Muster. Damit kann man z. B. eine Liste ungerader Zahlen, Zahlen mit Endziffer 7 oder Namen mit Anfangs-Buchstabe Z filtern.</div>
+
+        <div class="forYouToDo" id="first">
+            <div class="todo"><strong>Grundsätzliche Sorge:</strong> Warum sollte man ein Quadrat auf diesem Weg zeichnen? Bitte sinnvolle Anwendungen! --MF, 26.09.2018</div>
+            <p><strong>Bearbeite die Aufgaben rekursiv (nicht mit HOFs).</strong></p>
+            <ol>
+                <li>
+                    <div class="sidenote">Nutze den <code>evens</code>-Code als Vorlage.</div>
+                    Schreibe <code>ends-e</code>: Eine Liste hinein, eine Liste aller Wörter hinaus, die auf „e“ enden.<br />
+                    <img class="indent" src="/bjc-r/img/8-recursive-reporters/endse-ex.png" alt="ends-e Beispiel" title="ends-e Beispiel" />
+                </li>
+                <li>
+                    Schreibe <code>numbers</code>: Eingabe = gemischte Liste aus Wörtern und Zahlen, Ausgabe = Liste nur der Zahlen.<br />
+                    <img class="indent" src="/bjc-r/img/8-recursive-reporters/numbers-ex.png" alt="numbers Beispiel" title="numbers Beispiel"/>
+                </li>
+                <li>Verallgemeinere das Muster zu einem <code>keep</code>-Block.</li>
+                <li>Schreibe <code>combine</code>. Hinweis: Basisfall ist eine Liste mit <em>einem</em> Element, nicht die leere Liste.</li>
+            </ol>
+        </div>
+
+        <div class="takeNote">
+			<p><code>map</code>, <code>keep</code> und <code>combine</code> selbst zu bauen, ist ein großer Schritt. Viele Menschen lernen nicht einmal in der Uni, solche HOFs zu <em>verwenden</em>. 🎉 Glückwunsch – du hast BJC geschafft! 🏆</p>
+		</div>
+
+        <div class="takeItFurther">
+    		<ol type="A">
+                <li>Bearbeite das <a href="/bjc-r/cur/programming/8-recursive-reporters/optional-project-sorting/1-sorting-a-list.html?topic=nyc_bjc%2F8-recursive-reporters.topic&course=bjc4nyc.html&novideo&noassignment" title="Optionales Projekt: Sortieren">optionale Sortier-Projekt</a>.</li>
+                <li>
+					Erweitere einen Sortieralgorithmus so, dass er eine Vergleichsfunktion entgegennimmt, z. B.:<br />
+                    <img class="indent" src="/bjc-r/img/8-recursive-reporters/sortusing.png" alt="sort(... ) using (()>())" title="sort(... ) using (()>())" />
+                </li>
+            </ol>
+        </div>
+    </body>
+</html>

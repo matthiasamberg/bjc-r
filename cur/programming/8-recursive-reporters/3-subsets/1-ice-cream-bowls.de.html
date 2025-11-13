@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <title>Einheit 8, Labor 3: Teilmengen, Seite 1</title>
+    </head>
+
+    <body>
+        <h2>Eisschalen zählen</h2>
+        <div class="learn">
+            <p><strong>In diesem Labor</strong> untersuchst du ein klassisches Problem der Informatik: Teilmengen.</p>
+            <p><strong>Auf dieser Seite</strong> startest du mit einem vertrauten Szenario – der Auswahl von Eissorten.</p>
+        </div>
+        <div class="vocabFullWidth">: <strong>Teilmengen</strong>
+            <p>Eine <strong>Teilmengen</strong> ist eine Auswahl von Elementen aus einer Menge – sie kann leer sein, alle Elemente enthalten oder irgendetwas dazwischen.</p>
+        </div>
+        <p>
+            <div class="comment">Woher stammt dieses Bild? Braucht es eine Quellenangabe? --MF, 22.04.2022</div>
+			<img class="imageRight" src="/bjc-r/img/8-recursive-reporters/simplex.gif" height="150px" alt="Simplex-Schloss mit fünf Tasten über einem Türknauf" title="Simplex-Schloss"/>
+            Viele Aufgaben drehen sich um Teilmengen, z. B.:
+            <ul>
+                <li>In einer Klasse sind 20 Schüler*innen, du brauchst ein Vierer-Komitee. Wie viele Kombinationen sind möglich?</li>
+                <li>Ein Simplex-Schloss besitzt fünf Tasten; jede darf höchstens einmal benutzt werden, mehrere Tasten dürfen gleichzeitig gedrückt werden. Wie viele Kombinationen gibt es?</li>
+                <li>Ein Laden bietet acht Eissorten. Wie viele Schalen-Kombinationen gibt es für eine vorgegebene Anzahl an Kugeln?</li>
+            </ul>
+        </p>
+
+        <div class="forYouToDo" id="first">
+            Für den Anfang gilt: Eine Sorte pro Kugel, Reihenfolge egal (Vanille+Schoko = Schoko+Vanille).
+            <ol>
+                <li>Wie viele Zwei-Kugel-Schalen gibt es? Finde eine systematische Auflistung.</li>
+                <li>Überlege, wie sich das Problem rekursiv beschreiben lässt.</li>
+                <li><div class="newProject"><span class="text">„U8L3-Subsets“</span><img src="/bjc-r/img/icons/new-project-called.png" alt="Projekt U8L3-Subsets anlegen" title="Projekt U8L3-Subsets anlegen" /></div></li>
+				<li><div class="sidenoteBig">Vielleicht brauchst du den Block <code>append</code>.</div>Baue einen Block, der bei einer Liste verfügbarer Sorten alle Zwei-Kugel-Schalen zurückgibt. Da eine Schale als Liste von zwei Sorten dargestellt wird, erhältst du eine <em>Liste von Listen</em>.</li>
+            </ol>
+        </div>
+
+        Der Zweier-Block hilft dir beim Dreier-Block.
+
+        <div class="forYouToDo">
+            <ol start="5">
+                <li>Erstelle einen Block, der jede Drei-Kugel-Schale auflistet. Achte darauf, Duplikate zu vermeiden (Reihenfolge egal!).</li>
+                <li><div class="sidenoteBig">Eine Schale enthält Schokolade – oder eben nicht.</div>Verallgemeinere auf einen Block, der alle <em>n</em>-Kugel-Schalen liefert (zusätzliches Eingabefeld für die Kugelanzahl). Hier brauchst du Rekursion!</li>
+            </ol>
+        </div>
+
+        <div class="takeItFurther">
+			<ol type="A">
+				<li>Schreibe eine Prozedur, die bei einer Sortenliste <em>alle</em> möglichen Schalen zurückgibt – unabhängig von der Kugelanzahl.</li>
+				<li>Hebe die Regel auf, dass jede Kugel eine andere Sorte haben muss. „Schokolade, Schokolade, Schokolade“ ist jetzt erlaubt – beachte, dass es dann nicht mehr um Teilmengen im strengen Sinn geht, denn Mengen enthalten kein Element doppelt.</li>
+			</ol>
+        </div>
+
+    </body>
+</html>

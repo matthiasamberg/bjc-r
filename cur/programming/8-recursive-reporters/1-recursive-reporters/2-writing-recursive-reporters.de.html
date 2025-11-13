@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 8, Labor 1: Rekursive Reporter, Seite 2</title>
+	</head>
+
+    <body>
+        <h2>Rekursive Reporter schreiben</h2>
+        <div class="todo">
+            <p>PG: Die Anmerkungen unten streiten über Beispiele. Vorher müssen wir aber klären, warum wir Rekursion überhaupt lehren! Meine Antwort: Sie ist eine mächtige <em>Idee</em>, intellektuell spannend und an natürliche Denkweisen angelehnt, allerdings formalisiert. Ich betone IDEE statt TECHNIK. Fast alles – auch Letter Count – lässt sich mit kürzerem Code lösen, wenn wir passende Werkzeuge bereitstellen. LENGTH OF (LIST TO SENTENCE (list)). Ähnlich frage ich mich, warum MAP/KEEP/COMBINE nur in der Bibliothek und nicht von Anfang an in Snap stecken. Dasselbe gilt hier: Wenn wir Rekursion nur über ihre Nützlichkeit verteidigen, verlieren wir. Die „Probleme“, die sie zwingend erfordert, sind entweder gelöst oder zu schwer. Wir sollten mit kleinen, intuitiven Beispielen beginnen – auch wenn es dafür bereits fertige Blöcke gibt (LETTER COUNT, n^m, Fakultät, Liste durchsuchen, Duplikate entfernen …). Vorteil: Aufbau ist sehr ähnlich, also lernen die Schüler*innen tatsächlich, wie es geht.</p>
+            <p>MF: Muss an den Rest des Curriculums angepasst werden.</p>
+            <p>Außerdem benötigen einige Bilder neue Beschriftungen. --MF, 05.04.2019</p>
+			<p>
+				Brian und Mary sind sich einig, dass diese Seite umstrukturiert werden muss, damit klar wird, warum kombinierende Reporter für Rekursion wichtig sind. --MF, 17.06.2020
+				<ol>
+					<li>Brian integriert den auskommentierten Inhalt wieder und aktualisiert die Bilder. --MF, 04.06.2019</li>
+					<li>Mary schreibt die Seite neu, zeigt mehrere Beispiele (z. B. Fakultät, Wörter verbinden, Pluralbildung) und lässt die Lernenden anschließend Letter Count bauen – mit dem Hinweis, dass dies beim Denken hilft. --MF, 17.06.2020</li>
+				</ol>
+			</p>
+			<p>Einige Bilder auf dieser Seite müssen noch überarbeitet werden. --MF, 22.04.2022</p>
+        </div>
+
+		<div class="learn">
+            <p><strong>Auf dieser Seite</strong> baust du einen rekursiven Fakultäts-Block sowie mehrere rekursive Blöcke, die mit Zeichenketten arbeiten.</p>
+			<div class="todo">Diese Seite braucht offensichtlich Liebe – aber genau das sollen sie hier tun. --MF</div>
+
+        </div>
+
+        <div class="forYouToDo" id="first">
+        	<p>
+            	<div class="sidenote">„9!“ sprichst du „neun Fakultät“ – nicht NINE!</div>
+                Die Fakultätsfunktion <em>n</em>! ist das Produkt aller ganzen Zahlen von 1 bis <em>n</em>.
+            </p>
+            <ol>
+                <li>Der Wert von 9! ist 362 880. Wie groß ist 10!?</li>
+                <li>Beschreibe den Zusammenhang zwischen 37! und 36!.</li>
+                <li>Nutze diese Ideen, um einen rekursiven <code>factorial</code>-Block zu bauen.</li>
+            </ol>
+        </div>
+
+        <div class="todo">Die folgenden Beispielblöcke nutzen Platzhalter – langfristig sollten wir sie ersetzen. --MF, 22.04.2022</div>
+        <p>
+        	Rekursive <em>Befehle</em> sehen oft so aus; im rekursiven Fall stehen mehrere Befehle hintereinander:
+        </p>
+        <div class="sidenote">Manche Prozeduren rufen sich sogar mehrfach pro Ebene auf (z. B. <code>tree</code> mit zwei Aufrufen innerhalb desselben Blocks).</div>
+        <img class="indent" src="/bjc-r/img/8-recursive-reporters/rec-command.png" alt="recursion(input){if base case … else {tu etwas; recursion(kleiner); tu etwas}}" title="Struktur rekursiver Befehle" />
+        <p>
+        	Rekursive <em>Reporter</em> liefern hingegen einen Wert zurück. Sie müssen also die Ausgabe der rekursiven Aufrufe „kombinieren“. Dazu braucht man einen <em>Kombinierer</em> (z. B. eine Addition, Verkettung, logical OR).
+        </p>
+
+        <div class="forYouToDo">
+            <ol start="4">
+                <li>Schreibe einen rekursiven Reporter, der Buchstaben zählt (<code>letter count</code>). Welche Kombination verwendest du nach dem rekursiven Aufruf?</li>
+                <li>Baue weitere rekursive Reporter – z. B. für Potenzen (<span class="katex">n^m</span>), das Zusammenfügen von Wörtern oder das Bilden von Pluralen.</li>
+            </ol>
+        </div>
+
+	</body>
+</html>

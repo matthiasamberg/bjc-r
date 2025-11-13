@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <title>BJC4NYC Best Practices</title>
+    </head>
+    <body>
+        <h2>Best Practices für HTML in BJC4NYC</h2>
+        <div class="sidenote">Siehe auch: <a href="/bjc-r/docs/templates/bjc4nyc_template.html">EDC-Template</a> und <a href="/bjc-r/docs/style_guide.html">Style Guide</a>.</div>
+        <p>Diese Seite hat Mary zusammengestellt, nachdem sie einen Vormittag lang HTML-Fehler gesucht hatte. Es gibt nicht nur eine „richtige“ Art, verschachtelte Tags einzurücken, aber wir sollten gemeinsam lesbaren, konsistenten Code schreiben. Unten steht die Methode, die ich nutze, als Empfehlung. Bitte lesen (und gern Feedback geben) – und haltet euch daran. Danke! :) Mary</p>
+
+        <ol>
+            <li>Schreibe aufgeräumten Code mit <strong>gut lesbarem Format</strong>:
+                <ul style="list-style:disc">
+                    <li>Nutze Zeilenumbrüche, um Codeabschnitte zu trennen – nicht Absätze;</li>
+                    <li>Verwende Tabs/Einrückungen, um verschachtelte Tags sichtbar zu machen (Beispiel: Quellcode dieser Seite oder <a href="http://www.scriptingmaster.com/html/making-html-readable.asp" target="_blank">dieses einfache Beispiel</a>);</li>
+                    <li>Denk beim Formatieren daran, dass Teammitglieder den Code lesen und debuggen müssen. :)</li>
+                </ul>
+            </li>
+            <li>Vor dem Commit auf <strong>valide HTML-Struktur</strong> prüfen:
+                <ul style="list-style:disc">
+                  <li>Stelle sicher, dass alle geöffneten Tags geschlossen werden (außer selbstschließende wie &lt;img /&gt; oder &lt;br /&gt;); bei starker Verschachtelung helfen saubere Einrückungen enorm.</li>
+                  <li>Teste die Seite in mehreren Browsern (bei reinen Textänderungen optional, bei Layout-Änderungen Pflicht).</li>
+                </ul>
+            </li>
+            <li><strong><a href="/bjc-r/docs/style_guide.html">Style Guide</a> befolgen</strong>:
+                <ul style="list-style:disc">
+                    <li>Kopiere HTML/CSS direkt aus dem Style Guide oder überprüften Beispielen (andere Seiten sind weniger sicher, da sie angepasst worden sein könnten).</li>
+                    <li>
+                        Nutze vorhandene Komponenten aus dem Style Guide, statt defekte Elemente zu „ersetzen“. Wenn etwas daraus nicht funktioniert, behebe es, melde ein Issue auf <a href="https://github.com/bjc-edc/bjc-r/issues" target="_blank">GitHub</a> oder frag nach Hilfe. Bitte <em>keine</em> lokalen Workarounds bauen, wenn eigentlich etwas Globales repariert werden sollte.<br />
+                        Beispiele:
+                        <ul style="list-style:square">
+                            <li>
+                                <strong>Beispiel 1:</strong> <code>&lt;div&gt;&lt;span&gt;&lt;strong&gt;Sasha:&lt;/strong&gt;&lt;/span&gt; Ich sehe noch eine Möglichkeit...&lt;/div&gt;</code><br />
+                                Im Dialog-Pattern (<code>&lt;div class="dialogue"&gt;</code>) erzeugt das innere <code>&lt;span&gt;</code> den Fettdruck für den Namen. Wenn das nicht passiert, stimmt etwas im HTML nicht. Bitte das Problem beheben oder melden, statt den Namen manuell fett zu setzen.
+                            </li>
+                            <li>
+                                <strong>Beispiel 2:</strong> <code>&lt;div class="sidenote"&gt;&amp;nbsp;&amp;nbsp; ... &amp;nbsp;Was macht Tonys &lt;code&gt;map&lt;/code&gt;-Block genau?&lt;/div&gt;</code><br />
+                                Wenn du viele geschützte Leerzeichen brauchst, um ein Sticky-Note-Layout zu erzwingen, deutet das auf einen Fehler hin. Bitte repariere ihn, dokumentiere ihn oder gib ihn weiter.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+            	<strong>Dateinamen serverfreundlich halten</strong>: keine Sonderzeichen (z. B. „?“), keine Großbuchstaben und <strong>keine Leerzeichen</strong> (stattdessen „-“). <strong>Der Server ist case-sensitiv</strong>, daher müssen Referenzen exakt zum Dateinamen passen.
+            	<ul style="list-style:disc"><li>z. B. statt „SpaceKeyPressed? 214 × 28 pixels.png“ → „space-key-pressed-214x28.png“ (kleines x statt Multiplikationszeichen)</li></ul>
+            </li>
+        </ol>
+    </body>
+</html>

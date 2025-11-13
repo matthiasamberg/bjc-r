@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 8, Labor 4: Höherwertige Funktionen bauen, Seite 1</title>
+    </head>
+
+    <body>
+        <h2>Eine Liste „heruntergehen“</h2>
+        <div class="todo">
+			<p><strong>Grundsätzliche Sorge:</strong> Die Idee ist wichtig, aber „Mach es ineffizient, weil wir es so wollen“ überzeugt mich nicht. Zeig sinnvolle Anwendungsfälle oder lass es. <code>map</code> wäre für Aufgabe 1 naheliegend. Für Nr. 2 geben wir fast die komplette Lösung vor – wozu? --MF, 26.09.2018
+				<ul><li>Mary, mach es explizit. --MF, 17.06.2020</li></ul>
+			</p>
+			<p>Dieses Projekt sollte Lernende einladen, ihren <code>plural</code>-Block aus den optionalen Projekten in Einheit 2 zu importieren – falls vorhanden. --MF, 17.06.2020</p>
+			<p>Die Verweise auf den Plural-Block stimmen vermutlich nicht mehr und sollten überprüft werden. --Michelle via MF, 22.04.2022</p>
+		</div>
+		<div class="learn">
+            <p><strong>In diesem Labor</strong> nutzt du deine Rekursions-Fähigkeiten, um anspruchsvollere Funktionen zu bauen.</p>
+            <p><strong>Auf dieser Seite</strong> schaust du dir ein häufiges Code-Muster an.</p>
+        </div>
+
+
+        <div class="sidenote">„Einfach s anhängen“ ist natürlich stark vereinfacht. Falls du das optionale Plural-Projekt gemacht hast: Du kannst deinen <code>plural</code>-Block aus <a href="/bjc-r/cur/programming/2-complexity/optional-projects/5-plurals2.html" title="Modelling Language: Plurals, Part 2">Einheit 2</a> importieren.</div>
+
+		<p>
+            Hier siehst du den Block <code>plurals</code> aus Labor 1. Er bekommt eine <em>Wortliste</em> und liefert eine Liste der Pluralformen. Natürlich ließe sich das mit <code>map</code> bauen – aber wir wollen gezielt die rekursive Variante betrachten.<br />
+            <img class="indent" src="/bjc-r/img/8-recursive-reporters/plurals.png" alt="plurals (words){...}" title="plurals (words){...}" />
+        </p>
+		<div class="takeNote">
+            <p>Die Idee: Splitte die Liste in erstes Element und Rest, forme den Plural des ersten Elements, rufe dich rekursiv für den Rest auf. Der Block <code>in front of</code> setzt beide Listen wieder zusammen.</p>
+			<p>Dieses Muster findet sich in vielen rekursiven Reportern mit einfachem Basisfall und einfachem rekursivem Schritt.</p>
+		</div>
+        <div class="forYouToDo" id="first">
+            <p><strong>Löse die folgenden Aufgaben rekursiv – nicht mit höherwertigen Funktionen.</strong></p>
+            <ol>
+                <li>
+                    <div class="sidenote">Passe den Code von <code>plurals</code> an.</div>Baue <code>squares</code>: Eingabe = Liste von Zahlen, Ausgabe = Liste ihrer Quadrate.
+                    <p><img class="indent" src="/bjc-r/img/8-recursive-reporters/squares-ex.png" alt="squares(list{7,8,1}) reporting {49,64,1}" title="squares(list{7,8,1}) reporting {49,64,1}" /></p>
+                </li>
+                <li>
+                    <div class="todo">„Words and Sentences“-Bibliothek importieren und Bild aktualisieren. --MF, 17.06.2020</div>
+                    Baue ein <code>exaggerate</code>, das Zahlen verdoppelt und Wörter wie „good→great“, „bad→terrible“, „like→love“, „dislike→hate“ ersetzt.
+                    <p><img class="indent" src="/bjc-r/img/8-recursive-reporters/ex-ex.png" alt="exaggerate(I ate 6 really good potstickers) -> ... great" title="exaggerate(I ate 6 really good potstickers) -> ... great" /></p>
+                    <p>Importiere dafür die Bibliothek „Words, sentences“ und nutze einen Wrapper:<br />
+                    <img class="indent" src="/bjc-r/img/8-recursive-reporters/exaggerate.png" alt="exaggerate(sentence){...}" title="exaggerate(sentence){...}" /></p>
+                    <div class="sidenote">Was passiert mit allen anderen Wörtern?</div>
+					<p><code>exaggerate wordlist</code> wird dabei rekursiv, und <code>exaggerate word</code> kümmert sich um ein einzelnes Wort (Zahlen erkennen, Wörter ersetzen).</p>
+                </li>
+				<li><div class="saveAs"><span class="text">„U8L4-Building-HOFs“</span><img src="/bjc-r/img/icons/save-this-as.png" alt="Speichere als U8L4-Building-HOFs" title="Speichere als U8L4-Building-HOFs" /></div></li>
+            </ol>
+        </div>
+
+		<div class="todo">AC schlug vor, sowohl iterative als auch rekursive Lösungen zu zeigen. <p>Wir sagen lieber explizit, dass es sie gibt – und warum wir uns hier für Rekursion entscheiden. --MF, 17.06.2020</p></div>
+
+    </body>
+</html>
