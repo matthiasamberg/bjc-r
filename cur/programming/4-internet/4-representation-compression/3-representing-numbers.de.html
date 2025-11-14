@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4 Lab 4 – Datenrepräsentation & Komprimierung, Seite 3</title>
+	</head>
+
+	<body>
+		<h2>Ganze Zahlen darstellen</h2>
+        <div class="learn">
+         	<p><strong>Auf dieser Seite</strong> siehst du, wie Computer nichtnegative ganze Zahlen speichern.</p>
+        </div>
+
+        <p>Zahlen tauchen überall auf – selbst wenn Nutzer*innen nur ein Bild sehen wollen. Jede Liste, jedes Projekt, jeder Pixel baut auf Zahlen auf.</p>
+
+        <div class="forYouToDo" id="first">
+			<ol>
+				<li>
+                    <p>Im Starterprojekt <a class="run" href="/bjc-r/prog/4-internet/U4L4-BigNumbers.xml" target="_blank"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Projekt laden" title="Projekt laden" /></a> findest du einen Block <code>n!</code>, der die <em>Fakultät</em> berechnet. Teste 5!, 10!, 20! und 30!.</p>
+                    <div class="endnote">Die Darstellung kann je nach Prozessor variieren. „e+32“ bedeutet: &times; 10<sup>32</sup>.</div>
+                </li>
+            </ol>
+        </div>
+
+		<h3>Word-Breite</h3>
+        <div class="vocabBig">: <strong>Breite</strong> & <strong>Word</strong>
+         	<p><strong>Breite</strong>: Anzahl der Bits, die die CPU gleichzeitig verarbeitet.</p>
+            <p><strong>Word</strong>: Binärsequenz genau dieser Länge.</p>
+        </div>
+        <p>Warum zeigt Snap<em>!</em> 20! als gewöhnliche Zahl, 30! aber in wissenschaftlicher Notation? Weil Hardware mit einer festen <em>Breite</em> arbeitet. Moderne Rechner sind meist 64-Bit weit; frühe Mikrocomputer hatten nur 4 Bit!</p>
+        <p>Ein 64-Bit-Word repräsentiert 2<sup>64</sup> Werte. Grob die Hälfte ist für negative Zahlen reserviert. Die größte positive Zahl passt in etwa 9 × 10<sup>18</sup> – genug für 20!, aber nicht für 30!. Größere Ergebnisse werden deshalb automatisch anderweitig dargestellt (z. B. als Fließkommazahl).</p>
+
+	</body>
+</html>

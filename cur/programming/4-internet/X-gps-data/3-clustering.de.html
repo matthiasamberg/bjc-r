@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4 – GPS-Daten, Seite 3</title>
+    </head>
+
+    <body>
+    	<h2>GPS-Daten analysieren</h2>
+        <p>Big Burgers will wissen: <em>Wo eröffnen wir?</em> Durch Visualisierung der 223 Punkte haben sie neue Erkenntnisse gewonnen.</p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+				<li>Importiere den <code>average</code>-Block (z. B. <a href="/bjc-r/prog/4-internet/old/average.xml" download>per Library</a>) in dein Projekt.</li>
+                <li>Berechne Durchschnitts-Breite und -Länge.</li>
+                <li>Plotten den Durchschnittspunkt im gleichen Maßstab.</li>
+                <li>Wäre das ein guter Standort? Begründe.</li>
+            </ol>
+        </div>
+
+        <p>Die Visualisierung zeigt drei Cluster:</p>
+        <img class="indent noshadow" src="/bjc-r/img/4-internet/GPS-map.png" alt="GPS-Karte" />
+        <div class="sidenote">Große Datensätze in Gruppen aufzuteilen nennt man <strong>Clusteranalyse</strong>. Visualisierungen helfen dabei.</div>
+
+        <div class="forYouToDo">
+            <ol start="5">
+                <li>Wie entscheidest du, zu welchem Cluster ein Punkt gehört?</li>
+                <li>Erstelle einen <code>zone</code>-Block (Eingabe: Koordinatenpaar; Ausgabe: Zone).</li>
+                <li>Bestimme damit, welche Zone die meisten Kund*innen hat.</li>
+            </ol>
+        </div>
+
+        <p>Jetzt braucht Big Burgers die Koordinaten <em>innerhalb</em> dieser Zone.</p>
+        <div class="forYouToDo">
+            <ol start="8">
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Partnergespräch" />Welche Blöcke helfen?</li>
+                <li>Berechne erneut Durchschnitts-Breite/Länge – diesmal nur für den beliebtesten Cluster.</li>
+                <li>Suche auf der Karte die entsprechende Position. Welche praktischen Einschränkungen gibt es?</li>
+            </ol>
+        </div>
+
+        <div class="ifTime">
+            <ol start="11">
+            	<li>Wenn zwei Filialen möglich sind: Wo wäre Standort Nummer zwei?</li>
+            </ol>
+        </div>
+
+    </body>
+</html>

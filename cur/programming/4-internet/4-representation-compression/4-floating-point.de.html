@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4 Lab 4 – Datenrepräsentation & Komprimierung, Seite 4</title>
+	</head>
+
+	<body>
+		<h2>Fließkommazahlen</h2>
+        <div class="learn">
+         	<p><strong>Auf dieser Seite</strong> geht es darum, wie Computer nicht-ganzzahlige Werte speichern.</p>
+        </div>
+
+        <p>Die Darstellung heißt <em>Floating Point</em>.</p>
+        <div class="vocabFullWidth">: <strong>Floating Point</strong>
+            <p>Wie in der wissenschaftlichen Notation (2,35 × 10<sup>6</sup>) arbeitet Floating Point mit Zweierpotenzen: Mantisse × 2<sup>Exponent</sup>.</p>
+        </div>
+
+        <div class="endnote">
+            <a href="#hint-float" data-toggle="collapse" title="Woher der Name?">Woher der Name?</a>
+            <div id="hint-float" class="collapse">Früher gab es auch <em>Fixed Point</em> (eine feste Anzahl Stellen nach dem Komma). Heute nutzen Computer für Fließkommawerte fast ausschließlich Floating Point.</div>
+        </div>
+
+        <div class="takeNote">
+            <div class="ap-standard">DAT-1.B.3</div>
+            <p>Auch Floating-Point-Zahlen nutzen nur endlich viele Bits. Bereiche außerhalb dieser Grenzen erzeugen <em>Rundungsfehler</em> („round-off errors“).</p>
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>Berechne <img src="/bjc-r/img/4-internet/one-third.png" alt="(1)/(3)" title="(1)/(3)" /> einmal mit aktivierten Bignums (genaue Brüche) und einmal ohne. Was fällt dir auf?</li>
+                <li>Vergleiche <img src="/bjc-r/img/4-internet/0.2+0.4.png" alt="(0.2)+(0.4)" title="(0.2)+(0.4)" /> mit <img src="/bjc-r/img/4-internet/7.6+8.7.png" alt="(7.6)+(8.7)" title="(7.6)+(8.7)" />. Warum liefern sie unterschiedliche Darstellungen?</li>
+            </ol>
+        </div>
+
+        <p>0,2 hat im Dezimalsystem eine endliche Darstellung, im Binären jedoch nicht. Deshalb können 0,2, 0,4 oder 1/3 nur angenähert werden. Wenn viele solcher Rundungen aufeinandertreffen, entstehen unerwartete Ergebnisse.</p>
+
+        <div class="endnote">
+            <a href="#hint-roundoff" data-toggle="collapse" title="Wie entstehen Fehler?">Wie entstehen Fehler?</a>
+            <div id="hint-roundoff" class="collapse">Einige Brüche lassen sich binär exakt darstellen (z. B. 0,5 = 1/2). Andere wie 1/3 oder 0,2 führen zu endlosen Bitfolgen. Floating Point speichert nur die ersten n Bits – der Rest wird abgeschnitten.</div>
+        </div>
+
+        <h3>Datentypen</h3>
+        <p>Snap<em>!</em> ist dynamisch typisiert: Variablen können Zahlen, Texte, Listen, Kostüme usw. speichern. In statisch typisierten Sprachen müssen Entwickler*innen vorab festlegen, ob ein Wert z. B. als Integer oder als Floating Point gespeichert wird. Das beeinflusst, ob man exakte Werte (z. B. Geldbeträge) oder schnelle Näherungen bevorzugt.</p>
+
+        <div class="endnote">
+            <a href="#hint-data-types" data-toggle="collapse" title="Typen in anderen Sprachen">Typen in anderen Sprachen</a>
+            <div id="hint-data-types" class="collapse">
+                <p>Sprachen wie Scheme hängen den Typ an den <em>Wert</em>. Andere (C, Java) hängen ihn an die <em>Variable</em>. Dann muss man sich entscheiden: Entweder exakte Ganzzahlen <em>oder</em> Fließkommawerte im selben Container.</p>
+                <p>In Snap<em>!</em> ist es problemlos, Listen mit unterschiedlichen Typen zu bauen – etwas, das viele andere Sprachen nicht erlauben.</p>
+            </div>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="3">
+                <li><div class="ap-standard">DAT-1.B</div><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Gespräch" title="Gespräch" />Welche Konsequenzen hat es, dass wir Zahlen (oder Listen) mit einer festen Bitanzahl repräsentieren?</li>
+            </ol>
+        </div>
+
+	</body>
+</html>

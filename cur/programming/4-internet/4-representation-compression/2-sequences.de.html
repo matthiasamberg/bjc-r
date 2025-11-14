@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4 Lab 4 – Datenrepräsentation & Komprimierung, Seite 2</title>
+	</head>
+
+	<body>
+		<h2>Binäre Sequenzen</h2>
+		<div class="learn">
+			<p><strong>Auf dieser Seite</strong> vertiefst du, wie größere Informationsmengen als Folgen von Bits gespeichert werden.</p>
+		</div>
+
+		<div class="sidenote">Viele Sprachen beenden jede Textzeichenkette mit einem <em>null</em>-Byte (alle acht Bits = 0). Unser String „<code>Welcome...</code>“ belegt daher 44 statt 43 Byte.</div>
+		<p>Bisher hatten wir es mit kleinen Datenportionen zu tun – von einem Bit (Boolean) bis zu einem Byte (Zeichen). In echten Programmen arbeiten wir jedoch mit längeren <em>Bitsequenzen</em>: Texte („Welcome to the Beauty and Joy of Computing.“ = 43 Bytes) genauso wie große Medien­dateien (Bilder, Musik, Videos).</p>
+		<p>Würden wir die Bits eines Speicherbereichs sehen, sähe er wie eine lange Kette aus Nullen und Einsen aus. Diese Sequenzen bilden die Grundlage für alle höheren Abstraktionen.</p>
+
+		<div class="vocab">: <strong>Binäre Sequenz</strong>
+			<div class="ap-standard">DAT-1.A.6</div>
+			<p>Eine <strong>binäre Sequenz</strong> ist jede endliche Folge von Bits. Dateien, Bilder, E-Mails oder Programme sind nichts anderes als binäre Sequenzen – nur mit zusätzlichen Bedeutungsebenen darüber.</p>
+		</div>
+
+		<p>Um mit Sequenzen zu arbeiten, verwendest du im Starterprojekt drei benutzerdefinierte Blöcke:</p>
+		<ul>
+			<li><code>translate text () to binary sequence</code> – Reporter, der Text in Bits umwandelt,</li>
+			<li><code>translate binary sequence () to text</code> – Reporter für den Rückweg,</li>
+			<li><code>translate binary sequence () to B&W image …</code> – Kommando, das aus Bits ein Schwarz-Weiß-Bild zeichnet (0 = weiß, 1 = schwarz; Breite und Skalierung steuerst du über Eingaben).</li>
+		</ul>
+
+		<div class="forYouToDo" id="first">
+			<ol>
+				<li>
+					<a class="run" href="/bjc-r/prog/4-internet/U4L4-TranslatingBinary.xml" target="_blank"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Starterprojekt laden" title="Starterprojekt laden" /></a>
+					Lade das Starterprojekt, speichere es, und probiere die drei Blöcke mit eigenen Eingaben aus.
+				</li>
+				<li>Übersetze einen kurzen Satz in eine Binärsequenz und dann wieder zurück. Stimmt das Ergebnis?</li>
+				<li>Nutze den Bild-Block, um ein Muster zu zeichnen. Experimentiere mit der Breite und dem Skalierungsfaktor.</li>
+			</ol>
+		</div>
+
+		<h3>Größenordnungen</h3>
+		<p>Wenn wir über Datengrößen sprechen, verwenden wir Präfixe:</p>
+		<table class="byte indent" width="600px" summary="Metrische Präfixe">
+			<tr><th>Präfix</th><th>Bedeutung</th><th>Faktor</th></tr>
+			<tr><td>kilo-</td><td>Tausend</td><td>10³</td></tr>
+			<tr><td>mega-</td><td>Million</td><td>10⁶</td></tr>
+			<tr><td>giga-</td><td>Milliarde</td><td>10⁹</td></tr>
+			<tr><td>tera-</td><td>Billion</td><td>10¹²</td></tr>
+			<tr><td>peta-</td><td>Billiarde</td><td>10¹⁵</td></tr>
+			<tr><td>exa-</td><td>Trillion</td><td>10¹⁸</td></tr>
+		</table>
+		<p>Für Bruchteile nutzen wir milli- (1/1000), mikro- (1/1 000 000), nano- usw. Solche Einheiten beschreiben z. B. Zugriffszeiten (Nanosekunden) oder Leiterbahnabstände (Nanometer).</p>
+
+		<div class="forYouToDo">
+			<ol start="4">
+				<li>Wie viele Bits brauchst du, um ein Bild mit 16×16 Pixeln in Schwarz-Weiß zu codieren?</li>
+				<li>Ein Song ist 4 Minuten lang und als unkomprimiertes Stereo-PCM gespeichert (44,1 kHz, 16 Bit). Schätze die Dateigröße.</li>
+			</ol>
+		</div>
+
+		<div class="endnote">
+			<img class="inline" src="/bjc-r/img/icons/read-more-mini.png" alt="Mehr lesen" title="Mehr lesen" />
+			<a href="#hint-project" data-toggle="collapse" title="Hintergrund zum Projekt">Projekt-Hintergrund</a>
+			<div id="hint-project" class="collapse">
+				<p>Es gibt auch eine Farbvariante (<code>U6L1-TranslatingBinary_color.xml</code>). Sie funktioniert derzeit nicht zuverlässig, weil Snap<em>!</em> einen Bug (#1873) hat. Wer die Bilddaten selbst aus Dateien generieren möchte, findet ein Hilfsskript unter <code>/bjc-r/utilities/colorreader.php</code>.</p>
+			</div>
+		</div>
+
+	</body>
+</html>

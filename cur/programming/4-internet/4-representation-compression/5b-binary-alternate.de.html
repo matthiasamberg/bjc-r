@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4 Lab 4 – Binärkonvertierung (Alternative Methode)</title>
+	</head>
+
+	<body>
+		<h2>Ein weiterer Algorithmus für die Binärkonvertierung</h2>
+        <p>Basierend auf Al’s Notiz, die June an Mary weitergegeben hat:</p>
+        <p><img src="/bjc-r/img/6-computers/base-conversion-(Als-way).png" alt="Basisumwandlung" title="Basisumwandlung" /></p>
+
+        <p>So funktioniert der rekursive Ansatz:</p>
+        <ol>
+            <li>Zerlege die Zahl in „alles außer der letzten Stelle“ (<em>bl</em> für „but last“) und die letzte Ziffer.</li>
+            <li>Der Beitrag der letzten Ziffer entspricht genau ihrem Wert.</li>
+            <li>Nimm rekursiv an, dass du die kleinere Aufgabe (bl) bereits lösen kannst. Das Ergebnis musst du mit der Basis (für uns: 2) multiplizieren, weil der Teilstring eine Stelle nach links verschoben wurde.</li>
+            <li>Addiere anschließend die letzte Ziffer.</li>
+            <li>Basisfall: Eine Stelle → Ergebnis = Eingabe.</li>
+        </ol>
+
+        <p>Der Algorithmus funktioniert nicht nur für Basis 2 ↔ Basis 10, sondern für jede Basis. In dieser Unit bleiben wir bei Binär/Dezimal; wer möchte, kann ihn auf andere Systeme übertragen.</p>
+	</body>
+</html>

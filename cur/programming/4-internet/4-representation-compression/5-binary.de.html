@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4 Lab 4 – Datenrepräsentation & Komprimierung, Seite 5</title>
+    </head>
+
+    <body>
+    	<h2>Binärdarstellung</h2>
+
+        <p>Nun schauen wir uns an, wie ein einzelnes Maschinenwort kodiert wird.</p>
+        <div class="vocab">: <strong>Bit</strong>
+            <div class="ap-standard">DAT-1.A.3</div>
+            <p><strong>Bit</strong> ist die Kurzform von „binary digit“.</p>
+        </div>
+
+        <div class="ap-standard">DAT-1.C.1</div>
+        <p>Menschen schreiben Zahlen meist in Basis 10. Computer verwenden Basis 2.</p>
+
+        <div class="ap-standard">DAT-1.C.3</div>
+		<p>
+            In <strong>Basis 10</strong> hat jede Stelle zehnmal so viel Wert wie die Stelle rechts davon.<br />
+          <img class="indent noshadow" src="/bjc-r/img/4-internet/decimal-places.jpg" alt="Stellenwerte im Dezimalsystem" title="Stellenwerte im Dezimalsystem" />
+        </p>
+        <div class="ap-standard">DAT-1.C.2</div>
+        <p>
+            In <strong>Basis 2</strong> gibt es nur 0 und 1; jede Stelle ist doppelt so viel wert wie die rechts davon.<br />
+            <img class="indent noshadow" src="/bjc-r/img/4-internet/binary-places.jpg" alt="Stellenwerte im Binärsystem" title="Stellenwerte im Binärsystem" />
+        </p>
+        <div class="endnote">Die Schreibweise 1101<sub>2</sub> kennzeichnet Basis 2; Dezimalzahlen brauchen den Index nur bei Bedarf.</div>
+
+        <h3>Binär lesen</h3>
+        <div class="ap-standard">DAT-1.C.5</div>
+        <p>Dezimalschreibweise nutzt Zehnerpotenzen (10<sup>0</sup>, 10<sup>1</sup>, 10<sup>2</sup>, …). Die gleiche Idee gilt für Binärzahlen mit Zweierpotenzen (2<sup>0</sup>, 2<sup>1</sup>, 2<sup>2</sup>, …). Beispiel:</p>
+        <p class="center">10010<sub>2</sub> = 1·2<sup>4</sup> + 0·2<sup>3</sup> + 0·2<sup>2</sup> + 1·2<sup>1</sup> + 0·2<sup>0</sup> = 16 + 2 = 18<sub>10</sub></p>
+
+        <div class="takeNote">
+            <p>Beim Umrechnen von Binär nach Dezimal hilft eine Tabelle: schreibe die Bits auf, verdopple die Stellenwerte von rechts nach links, addiere nur die Spalten mit 1.</p>
+        </div>
+
+        <p>Umgekehrt gehst du so vor:</p>
+        <ol type="a">
+            <li>Finde die größte Zweierpotenz ≤ deiner Zahl und schreibe eine 1 in diese Stelle.</li>
+            <li>Subtrahiere diesen Wert. Prüfe die nächste Potenz; trage 1 oder 0 ein.</li>
+            <li>Wiederhole, bis du bei 2<sup>0</sup> angekommen bist. Die Folge der Bits ist die Binärdarstellung.</li>
+        </ol>
+
+		<div class="forYouToDo">
+            <ol>
+                <div class="ap-standard">DAT-1.C a</div>
+                <li>Wandle folgende Dezimalzahlen in Binärzahlen um: 63, 64, 65, 127, 128, 129.</li>
+                <div class="ap-standard">DAT-1.C b</div>
+                <li>Sortiere diese Binärzahlen, ohne sie in Dezimalzahlen zu konvertieren: 1011001<sub>2</sub>, 11001<sub>2</sub>, 100001<sub>2</sub>, 101011<sub>2</sub>.</li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Partnergespräch" title="Partnergespräch" />Welchen Algorithmus hast du zum Vergleichen benutzt?</li>
+                <li>
+                    AP-CSP-Stilfrage: Ein Programm verwendet 4 Bits für ganze Zahlen. 9 + 7 liefert 0. Warum?
+                    <div class="assessment-data" type="multiplechoice" identifier="overflow-question" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="false">
+                        <div class="prompt">Beste Erklärung?</div>
+                        <div class="choice" identifier="c1"><div class="text">Datenkorruption</div><div class="feedback">Unwahrscheinlich.</div></div>
+                        <div class="choice" identifier="c2"><div class="text">Rundungsfehler</div><div class="feedback">Hier wird nichts gerundet.</div></div>
+                        <div class="choice" identifier="c3"><div class="text">Überlauf</div><div class="feedback">Richtig. 4 Bits → 0–15. 9+7=16 passt nicht hinein und „überschwappt“ zu 0.</div></div>
+                        <div class="choice" identifier="c4"><div class="text">Syntaxfehler</div><div class="feedback">Nicht der Grund.</div></div>
+                        <div class="responseDeclaration" identifier="ri1"><div class="correctResponse" identifier="c3"></div></div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+    </body>
+</html>

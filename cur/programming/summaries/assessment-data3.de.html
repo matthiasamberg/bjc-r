@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Unit 3 – Selbsttestfragen</title>
+	</head>
+
+	<body>
+<h2>Einheit 3: Datenstrukturen</h2>
+<h3>Labor 2: Kontaktliste</h3>
+<div class="assessment-data"  type="multiplechoice" identifier="mapLetterVsItem" hasinlinefeedback="true" maxchoices="1" responseIdentifier="resp1" shuffle="false"><strong> <a href="/bjc-r/cur/programming/3-lists/2-contact-list/5-mapping-over-list.html?topic=nyc_bjc/3-lists.topic&course=bjc4nyc.html&novideo&noassignment" title="/bjc-r/cur/programming/3-lists/2-contact-list/5-mapping-over-list.html">3.2.5</a></strong>
+                        <div class="prompt">
+                            Welche Aussagen treffen auf diese Liste zu?<br />
+                            <img class="indent" src="/bjc-r/img/3-lists/words_numbers.png" alt="set (words and numbers) to {rabbit, 5, benefit, is, 34, kite, 2, 305, the, 61}" title="set (words and numbers) to {rabbit, 5, benefit, is, 34, kite, 2, 305, the, 61}" /><br />
+                        </div>
+
+                        <div class="choice" identifier="c1">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check2mapc1.png" alt="map (letter (1) of ()) over (words and numbers)" title="map (letter (1) of ()) over (words and numbers)" /> liefert die Liste {r, 5, b, i, 3, k, 2, 3, t, 6}.
+                            </div>
+                            <div class="feedback">Richtig.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check2mapc2.png" alt="map (item (1) of ()) over (words and numbers)" title="map (item (1) of ()) over (words and numbers)"> liefert die Liste {rabbit}.
+                            </div>
+                            <div class="feedback">Das leere Eingabefeld von <code>item of</code> erwartet eine Liste, <code>map</code> setzt dort aber jeweils nur das aktuelle Listenelement ein.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Beide Aussagen oben.</div>
+                            <div class="feedback">Die Eingabeliste enthält Textstrings, keine Listen. Das Eingabefeld muss also Text erwarten.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Keine der Aussagen.</div>
+                            <div class="feedback"><code>Map</code> führt die Eingabefunktion nacheinander auf jedem Listenelement aus.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="resp1">
+                            <div class="correctResponse" identifier="c1"></div>
+                        </div>
+                    </div>
+<div class="assessment-data"  type="multiplechoice" identifier="mapLetterVsItem" hasinlinefeedback="true" maxchoices="5" responseIdentifier="resp2" shuffle="false"><strong> <a href="/bjc-r/cur/programming/3-lists/2-contact-list/5-mapping-over-list.html?topic=nyc_bjc/3-lists.topic&course=bjc4nyc.html&novideo&noassignment" title="/bjc-r/cur/programming/3-lists/2-contact-list/5-mapping-over-list.html">3.2.5</a></strong>
+                        <div class="prompt">
+                            Welche Aussagen treffen auf diese Liste zu?<br />
+                            <img class="indent" src="/bjc-r/img/3-lists/check1capitals.png" alt="set (capitals) to {{Augusta, Maine}, {Boise, Idaho}, {Columbia, South Carolina}, {Des Moines, Iowa}}" title="set (capitals) to {{Augusta, Maine}, {Boise, Idaho}, {Columbia, South Carolina}, {Des Moines, Iowa}}" /><br />
+                            Wähle <strong>alle</strong> zutreffenden Aussagen.
+                            <div class="endnote">
+                                <a href="#hint-capital-adt" data-toggle="collapse" title="Warum kein ADT?">Warum kein ADT?</a>
+                                <div id="hint-capital-adt" class="collapse">
+                                    <p>
+                                        Die verschachtelte Liste macht hier die Struktur deutlich, aber in einem richtigen Programm wäre ein abstrakter Datentyp besser geeignet:<br />
+                                        <img class="indent" src="/bjc-r/img/3-lists/capitals-adt-reporting.png" alt="state/capital ADT" title="state/capital ADT" />
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="choice" identifier="c1">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1capc1.png" alt="item (1) of (capitals)" title="item (1) of (capitals)" /> ergibt {Augusta, Maine}.
+                            </div>
+                            <div class="feedback">Richtig.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1capc2.png" alt="map (item (1) of ()) over (capitals)" title="map (item (1) of ()) over (capitals)" /> ergibt {Augusta, Boise, Columbia, Des Moines}.
+                            </div>
+                            <div class="feedback">Richtig.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1capc3.png" alt="map (item (2) of ()) over (capitals)" title="map (item (2) of ()) over (capitals)" /> ergibt {Maine, Idaho, South Carolina, Iowa}.
+                            </div>
+                            <div class="feedback">Richtig.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/check1capc4.png" alt="map (item (3) of ()) over (capitals)" title="map (item (3) of ()) over (capitals)" /> ergibt das leere Feld {}.
+                            </div>
+                            <div class="feedback">Korrekt – die inneren Listen haben nur zwei Einträge.</div>
+                        </div>
+                        <div class="choice" identifier="c5">
+                            <div class="text"><img border="0" src="/bjc-r/img/3-lists/check1capc5.png" alt="capitals" title="capitals" /> hat 8 Elemente.</div>
+                            <div class="feedback">Nein, es sind vier Elemente (jeweils eine Zwei-Liste).</div>
+                        </div>
+                        <div class="choice" identifier="c6">
+                            <div class="text"><img border="0" src="/bjc-r/img/3-lists/check1capc6.png" alt="keep (item (1) of () = 'Augusta') from (capitals)" title="keep (item (1) of () = 'Augusta') from (capitals)" /> ergibt {{Augusta, Maine}}.</div>
+                            <div class="feedback">Richtig.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="resp2">
+                            <div class="correctResponse" identifier="c1"></div>
+                            <div class="correctResponse" identifier="c2"></div>
+                            <div class="correctResponse" identifier="c3"></div>
+                            <div class="correctResponse" identifier="c4"></div>
+                            <div class="correctResponse" identifier="c6"></div>
+                        </div>
+                    </div>
+
+<div class="assessment-data"  type="multiplechoice" identifier="expressionList" hasinlinefeedback="true" maxchoices="5" responseIdentifier="resp3" shuffle="false"><strong> <a href="/bjc-r/cur/programming/3-lists/1-abstraction/5-lists-review.html?topic=nyc_bjc/3-lists.topic&course=bjc4nyc.html&novideo&noassignment" title="/bjc-r/cur/programming/3-lists/1-abstraction/5-lists-review.html">3.1.5</a></strong>
+                        <div class="prompt">
+                            Welche der folgenden Ausdrücke liefern eine Liste?
+                        </div>
+
+                        <div class="choice" identifier="c1">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/expressionList1.png" alt="list (3) (5)" title="list (3) (5)" />
+                            </div>
+                            <div class="feedback">Richtig.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/expressionList2.png" alt="(list (3) (5))" title="(list (3) (5))" />
+                            </div>
+                            <div class="feedback">Richtig.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/expressionList3.png" alt="item (1) of (list (3) (5))" title="item (1) of (list (3) (5))" />
+                            </div>
+                            <div class="feedback">Das liefert nur den Wert 3, keine Liste.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/expressionList4.png" alt="keep ( ) from (list (3) (5))" title="keep ( ) from (list (3) (5))" />
+                            </div>
+                            <div class="feedback">Ja, <code>keep</code> berichtet eine (ggf. leere) Liste.</div>
+                        </div>
+                        <div class="choice" identifier="c5">
+                            <div class="text">
+                                <img border="0" src="/bjc-r/img/3-lists/expressionList5.png" alt="map (square) over (list (3) (5))" title="map (square) over (list (3) (5))" />
+                            </div>
+                            <div class="feedback">Ja, das Ergebnis ist {9, 25}.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="resp3">
+                            <div class="correctResponse" identifier="c1"></div>
+                            <div class="correctResponse" identifier="c2"></div>
+                            <div class="correctResponse" identifier="c4"></div>
+                            <div class="correctResponse" identifier="c5"></div>
+                        </div>
+                    </div>
+    </body>
+</html>

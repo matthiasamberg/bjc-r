@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4 – GPS-Daten, Seite 2</title>
+    </head>
+
+    <body>
+    	<h2>Koordinaten interpretieren</h2>
+        <p>Die ersten Big-Burgers-Koordinaten sind 40.8, −73.94. GPS nutzt ein Paar aus <strong>Breite</strong> (Nord/Süd) und <strong>Länge</strong> (Ost/West).</p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>Liegt 40.8 nördlich oder südlich des Äquators?</li>
+                <li>Der Längengrad −73.94 bedeutet „westlich“ des Nullmeridians. Wie sieht es bei Chicago aus?</li>
+            </ol>
+		</div>
+
+		<img class="indent" src="/bjc-r/img/3-lists/Latitude_and_Longitude_of_the_Earth.svg" alt="Breiten- und Längengrade" />
+        <div class="endnote">Positive Breiten = Norden, negative = Süden. Positive Längen = Osten (Prime Meridian geht durch London).</div>
+
+        <p>Gib Koordinaten bei Google ein, um den Ort zu sehen: <a href="http://www.google.com/#q=40.8,-73.94" target="_blank">google.com/#q=40.8,-73.94</a></p>
+
+        <div class="forYouToDo">
+            <ol start="3">
+                <li>Schätze, wo 40.8 / −73.95 liegt. Prüfe danach: Welche Richtung relativ zum Ausgangspunkt?</li>
+            </ol>
+        </div>
+
+        <p>In Mathe/Snap! bedeutet die erste Koordinate „X“, die zweite „Y“. Bei GPS ist es umgekehrt – achte beim Plotten auf die Reihenfolge.</p>
+        <div class="takeNote">Beim Plotten in Snap<em>!</em>: <strong>(Längengrad, Breitengrad)</strong>.</div>
+
+        <h3>Daten visualisieren</h3>
+        <p>Eine Zahlenliste zeigt wenig Muster – visualisieren hilft.</p>
+        <div class="forYouToDo">
+          <ol start="4">
+                <li>
+                 	<strong>Variante A:</strong> Öffne dein U4L2-Projekt, wähle als Bühnenhintergrund „XY Grid“ und gib dem Sprite ein kleines Punkt-Kostüm.<br />
+                 	<strong>Variante B:</strong> oder nutze das fertige <a class="run" href="/bjc-r/prog/4-internet/U4L2-GPSData.xml">Starterprojekt</a>.
+                </li>
+                <li><div class="sidenote">Plotten als (Longitude, Latitude)!</div>Schreibe ein Skript, das alle 223 Punkte mit <code>stamp</code> einzeichnet. Was siehst du?</li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Partnergespräch" />Warum sind nicht alle Punkte sichtbar?</li>
+            </ol>
+        </div>
+
+        <h3>Daten transformieren</h3>
+        <p>Um Unterschiede zu sehen, verschiebe die Werte: Subtrahiere 74 von allen Längengraden und 40.7 von allen Breitengraden. Nutze Listen-Operationen.</p>
+        <div class="forYouToDo">
+            <ol start="7">
+                <li>Führe die Verschiebung durch und plotte erneut. Was ändert sich?</li>
+                <li>Multipliziere die verschobenen Werte mit einem Faktor („Zoom“). Passe den Faktor an, bis ein Muster erkennbar ist. Was verrät die Darstellung?</li>
+            </ol>
+        </div>
+
+        <div class="ifTime">
+            <p>Baue eine allgemeinere Lösung:</p>
+            <ol start="9">
+                <li>Berechne Mittelwerte für Breite/Länge und zentriere an diesen Werten.</li>
+                <li>Bestimme den Skalierungsfaktor automatisch (z. B. anhand der Spannweite).</li>
+            </ol>
+        </div>
+
+    </body>
+</html>

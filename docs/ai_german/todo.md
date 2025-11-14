@@ -68,6 +68,8 @@
 - [x] `docs/content-authoring.de.md` ergänzt (Hinweise zur Autorenschaft, 2025-11-01).  
 - [x] `docs/style_guide.de.html` erstellt (kompakter deutscher Style Guide, 2025-11-01).  
 - [x] Globale Ressourcen (FAQ, Docs, `docs/*`) – Kern-Dokumente (`best_practices`, `style_guide`, `content-authoring`, `translating`, `why-this-why-heres`, Snippets) lokalisiert; ggf. neue Docs direkt zweisprachig anlegen (Stand 2025-11-01).
+- [x] Term‑1-Projekte (`cur/programming/3.5-T1PP/1-3`, Projekte), Assessments `assessment-data2–6` sowie GPS-/Innovation-Labs (`cur/programming/4-internet/X-*/Y-*`) auf Deutsch (2025-11-01).  
+- [ ] Weitere Alt-/Spezialseiten ohne `.de` (optionale/old-Versionen) → Relevanz klären.
 
 ## Technische Anpassungen
 - [ ] Sprachumschalter weiter testen: Themen ohne `.de`-Datei liefern Fallback → Logging/Fehlermeldung verbessern.  

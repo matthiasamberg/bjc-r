@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4 Lab 4 – Datenrepräsentation & Komprimierung, Seite 1</title>
+    </head>
+
+	<body>
+		<h2>Bits</h2>
+
+        <div class="learn">
+         	<p><strong>In diesem Lab</strong> untersuchst du, wie verschiedene Informationsarten im Computer dargestellt werden.</p>
+         	<p><strong>Auf dieser Seite</strong> lernst du, was <em>Bits</em> sind – die kleinsten Datenbausteine.</p>
+        </div>
+
+        <div class="vocab">: <strong>Bit</strong>
+            <div class="ap-standard">DAT-1.A.3</div>
+            <p>Ein <strong>Bit</strong> ist eine einzelne Informationseinheit mit genau zwei möglichen Zuständen. Üblicherweise bezeichnen wir sie als 0 (aus) und 1 (an).</p>
+        </div>
+
+        <p>Information bewegt sich über Leitungen im Rechner. Jede Leitung ist entweder <em>ein</em> oder <em>aus</em> – Zwischenstufen gibt es nicht. Dieses kleinste Informationspaket heißt <strong>Bit</strong> und ist die elementare Einheit des Digitalen.</p>
+
+        <p>
+            Was <em>bedeutet</em> ein Bit? Konventionell interpretieren wir die Zustände als 0 und 1. Sie müssen jedoch keine Zahlen darstellen. Ein Bit kann auch stehen für:
+            <ul>
+                <li>falsch und wahr</li>
+                <li>aus und an (Lichtschalter)</li>
+                <li>rot und grün (Ampel)</li>
+                <li>… und vieles mehr</li>
+            </ul>
+        </p>
+
+        <p>Braucht die Ampel zusätzlich Gelb, könnte man versucht sein, 0 Volt = Rot, 1 Volt = Gelb, 2 Volt = Grün zu definieren. Frühe Rechner funktionierten teilweise so. Heute bevorzugen wir pro Leitung zwei Zustände – aus gutem Grund.</p>
+
+        <div class="endnote">
+			<img class="inline" src="/bjc-r/img/icons/read-more-mini.png" alt="Mehr lesen" title="Mehr lesen" />
+            <a href="#hint-bistable" data-toggle="collapse" title="Warum nur zwei Werte?">Warum nur zwei Werte?</a>
+            <div id="hint-bistable" class="collapse">
+                <img class="imageLeft" src="/bjc-r/img/6-computers/transistor-curve.png" alt="Transistor-Kennlinie" title="Transistor-Kennlinie" />
+                <p>Die Basis elektronischer Schaltungen ist der <em>Transistor</em>. Er erwartet Eingangsspannungen für „0“ oder „1“. Da reale Schaltungen nie perfekt sind, schwankt die Spannung leicht.</p>
+                <p>Die Grafik zeigt vereinfacht das Ein-/Ausgangsverhalten. Beachte die zwei blauen <em>flachen</em> Bereiche („cutoff“ und „saturation“): Kleine Schwankungen am Eingang verändern die Ausgabe nicht – sie bleibt zuverlässig 0 bzw. 1. Deshalb nutzt man Transistoren als <em>Schalter</em>. Gäbe es drei stabile Plateaus, könnten wir drei Werte pro Leitung verwenden.</p>
+                <p>Im mittleren (rosa) Bereich arbeiten Transistoren als <em>Verstärker</em> – ideal für Audio, nicht für robuste Digitalsignale.</p>
+                <p style="clear: both; height: 0px;"></p>
+            </div>
+        </div>
+
+        <div class="ap-standard">DAT-1.A.2</div>
+        <p>Statt Mehrwert-Leitungen zu definieren, <em>kombinieren wir mehrere Bits</em>, um mehr Zustände abzubilden. Für die Ampel genügen zwei Bits:</p>
+        <table class="byte indent" width="400px" align="center" summary="Bitbelegung für Verkehrsampel">
+            <tr><th>Bit 1</th><th>Bit 0</th><th>Bedeutung</th></tr>
+            <tr><td>0</td><td>0</td><td>Rot</td></tr>
+            <tr><td>0</td><td>1</td><td>Gelb</td></tr>
+            <tr><td>1</td><td>0</td><td>Grün</td></tr>
+            <tr><td>1</td><td>1</td><td>Fehlerzustand / Wartung</td></tr>
+        </table>
+
+        <p>Mit mehreren Bits lassen sich alle Arten von Informationen darstellen – Zahlen, Farben, Text, Audio … du entscheidest, welche Bedeutung du den Bitmustern zuweist.</p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>Welche Bedeutungen (außer Zahlen) fallen dir ein, die man mit nur einem Bit darstellen kann?</li>
+                <li>Welche Geräte oder Anwendungen brauchen mehr als zwei Zustände und damit mehrere Bits?</li>
+            </ol>
+        </div>
+
+        <h3>Bytes und Zeichen</h3>
+        <p>Bits werden zu größeren Einheiten zusammengefasst. Acht Bits bilden ein <strong>Byte</strong>, das historische Standardmaß.</p>
+
+        <div class="forYouToDo">
+            <ol start="3">
+                <li>Wie viele Bits genügen, um die 26 Buchstaben des englischen Alphabets plus die Ziffern 0–9 darzustellen?</li>
+            </ol>
+        </div>
+
+        <div class="sidenote">Dass sich das Acht-Bit-Byte durchgesetzt hat, liegt vor allem an ASCII (ursprünglich 7 Bit + 1 Paritätsbit) und daran, dass Schaltungen gerne in Potenzen von zwei arbeiten.</div>
+
+        <p>Frühe Rechner verwendeten 6-Bit-Zeichencodes. Für Groß- und Kleinbuchstaben plus Satzzeichen braucht man mindestens 7 Bit. ASCII (American Standard Code for Information Interchange) definierte 7 Bit und optional ein achtes Bit zur Fehlererkennung, das später für akzentuierte Zeichen genutzt wurde – etwa im Namen des Snap<em>!</em>-Entwicklers Jens Mönig.</p>
+
+        <p>Mit der globalen Verbreitung von Computern reichte ASCII nicht mehr. Das <em>Unicode</em>-Zeichenset unterstützt rund 1 900 Sprachen, 32 moderne und 107 historische Schriftsysteme – insgesamt 136 755 Zeichen.</p>
+
+        <div class="forYouToDo">
+            <ol start="4">
+                <li>Wie viele Bits brauchst du mindestens, um jedes mögliche Unicode-Zeichen eindeutig zu kodieren?</li>
+            </ol>
+        </div>
+
+        <div class="endnote">
+			<img class="inline" src="/bjc-r/img/icons/read-more-mini.png" alt="Mehr lesen" title="Mehr lesen" />
+            <a href="#hint-unicode" data-toggle="collapse" title="Unicode in der Praxis">Unicode in der Praxis</a>
+            <div id="hint-unicode" class="collapse">
+            	<p>Die naheliegende Variante wäre ein 32-Bit-Wort pro Zeichen. Wegen Speicherbedarf und Kompatibilität nutzt man jedoch meist <em>Mehrbyte-Codierungen</em> wie UTF-8: klassische ASCII-Zeichen belegen 1 Byte, andere bis zu 4. Texteditoren können außerdem explizit auf 1- oder 2-Byte-Codes für bestimmte Schriftsysteme umschalten.</p>
+            </div>
+        </div>
+
+        <div class="forYouToDo">
+			<ol start="5">
+	            <li>
+                	AP-CSP-Style Frage:
+                    <div class="assessment-data" type="multiplechoice" identifier="bit-question" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="false">
+                        <div class="prompt">Welche der folgenden Informationen lässt sich <em>nicht</em> mit einem einzelnen Bit darstellen?</div>
+                        <div class="choice" identifier="c1">
+                            <div class="text">Zustand eines EIN/AUS-Schalters</div>
+                            <div class="feedback">Zwei Zustände → ein Bit reicht.</div>
+                        </div>
+                        <div class="choice" identifier="c2">
+                            <div class="text">Wert einer booleschen Variablen</div>
+                            <div class="feedback">TRUE/FALSE → ebenfalls ein Bit.</div>
+                        </div>
+                        <div class="choice" identifier="c3">
+                            <div class="text">Rest beim Teilen einer positiven Zahl durch 2</div>
+                            <div class="feedback">Nur 0 oder 1 – ein Bit.</div>
+                        </div>
+                        <div class="choice" identifier="c4">
+                            <div class="text">Position des Stundenzeigers auf einer Uhr</div>
+                            <div class="feedback">Korrekt. 12 mögliche Positionen → mindestens 4 Bits.</div>
+                        </div>
+                        <div class="responseDeclaration" identifier="ri1">
+                            <div class="correctResponse" identifier="c4"></div>
+                        </div>
+                    </div>
+				</li>
+            </ol>
+        </div>
+
+	</body>
+</html>

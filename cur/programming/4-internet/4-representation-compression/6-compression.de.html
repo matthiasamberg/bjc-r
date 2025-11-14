@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4 Lab 4 – Datenrepräsentation & Komprimierung, Seite 6</title>
+	</head>
+
+	<body>
+		<h2>Datenkomprimierung</h2>
+
+        <div class="learn"><strong>Auf dieser Seite</strong> lernst du verschiedene <em>Datenkompressionsverfahren</em> kennen.</div>
+        <div class="ap-standard">DAT-1.D.1</div>
+        <p>Die Größe von Daten (Anzahl Bits) bestimmt, wie lange Übertragung und Speicherung dauern. Kompressionsalgorithmen reduzieren die Größe von Bildern, Audio, Videos und mehr.</p>
+
+        <div class="ap-standard">DAT-1.D.3</div>
+        <p>Wie stark sich Daten verkleinern lassen, hängt ab von</p>
+        <ol>
+            <li>der Redundanz im Original und</li>
+            <li>dem gewählten Kompressionsverfahren.</li>
+        </ol>
+
+        <p>Man unterscheidet <em>verlustfreie</em> und <em>verlustbehaftete</em> Verfahren.</p>
+        <div class="vocabFullWidth">: <strong>Lossless Compression</strong>
+            <p><strong>Verlustfreie</strong> Verfahren (z. B. PNG) sind vollständig reversibel: Aus den komprimierten Daten lässt sich das Original exakt rekonstruieren.</p>
+        </div>
+
+        <div class="ap-standard">DAT-1.D.4</div>
+        <p>Lossless-Algorithmen entfernen Redundanz (z. B. Wiederholungen) und sparen so Bits.</p>
+
+        <img class="imageRight" src="/bjc-r/img/6-computers/bjc-logo-original.png" alt="BJC-Logo" title="BJC-Logo" />
+        <p>Ein Beispiel ist <em>Run-Length-Encoding</em> (RLE). Die oberste Zeile des BJC-Logos besteht aus 158 Pixeln: 60× weiß, 5× orange, 93× weiß. Statt jedes Pixel einzeln zu speichern, reicht die Angabe „(60, FFFFFF), (5, E5A84A), (93, FFFFFF)“.</p>
+        <table class="byte indent" width="30%">
+            <tr><th>Pixelanzahl</th><th>Farbcode</th></tr>
+            <tr><td>60</td><td>FFFFFF</td></tr>
+            <tr><td>5</td><td bgcolor="E5A84A">E5A84A</td></tr>
+            <tr><td>93</td><td>FFFFFF</td></tr>
+        </table>
+        <div class="ap-standard">DAT-1.D.2</div>
+        <p>Aus diesen sechs Werten lässt sich die ganze Zeile rekonstruieren – weniger Bits bedeuten also nicht zwangsläufig weniger Information.</p>
+
+        <div class="vocabFullWidth">: <strong>Lossy Compression</strong>
+            <p><strong>Verlustbehaftete</strong> Verfahren liefern nur eine <em>Näherung</em> des Originals (z. B. JPEG).</p>
+        </div>
+        <div class="ap-standard">DAT-1.D.5</div>
+        <p>Lossy-Kompression entfernt Details, die Menschen kaum wahrnehmen. JPEG bewahrt die Helligkeit, mittelt aber Farbanteile. Dadurch schrumpft eine Datei auf einen Bruchteil der Größe.</p>
+        <p>Vergleiche zwei Bilder desselben Motivs (links BMP, rechts JPEG). Siehst du Unterschiede? Oft reicht die komprimierte Version.</p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>Probiere RLE an einem eigenen Muster aus: notiere Abfolgen gleichfarbiger Pixel.</li>
+                <li>Diskutiere, in welchen Situationen Lossy-Kompression akzeptabel ist und wann nicht.</li>
+            </ol>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="3">
+                <li>
+                    <div class="assessment-data" type="multiplechoice" identifier="lossless-def" hasinlinefeedback="true" maxchoices="1" responseIdentifier="ri1" shuffle="false">
+                        <div class="prompt">Warum kann eine lossless-Komprimierung trotz weniger Bits dasselbe Original wiederherstellen?</div>
+                        <div class="choice" identifier="c1"><div class="text">Weil Informationen entfernt werden.</div><div class="feedback">Nein, genau das passiert hier nicht.</div></div>
+                        <div class="choice" identifier="c2"><div class="text">Weil Bits zufällig geraten werden.</div><div class="feedback">Auch nicht.</div></div>
+                        <div class="choice" identifier="c3"><div class="text">Weil ein unendlich genauer Algorithmus genutzt wird.</div><div class="feedback">Nicht der Punkt.</div></div>
+                        <div class="choice" identifier="c4"><div class="text">Weil redundante Muster entfernt werden, ohne Information zu verlieren.</div><div class="feedback">Richtig.</div></div>
+                        <div class="responseDeclaration" identifier="ri1"><div class="correctResponse" identifier="c4"></div></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="assessment-data" type="multiplechoice" identifier="lossless-transform" hasinlinefeedback="true" maxchoices="2" responseIdentifier="ri2" shuffle="true">
+                        <div class="prompt">Welche Bildtransformationen sind verlustfrei? (Wähle zwei.)</div>
+                        <div class="choice" identifier="c1"><div class="text">Negativ erzeugen</div><div class="feedback">Ja, reversibel.</div></div>
+                        <div class="choice" identifier="c2"><div class="text">Kanten weichzeichnen</div><div class="feedback">Nein, Informationen gehen verloren.</div></div>
+                        <div class="choice" identifier="c3"><div class="text">Graustufenbild erstellen</div><div class="feedback">Auch hier gehen Farbanteile verloren.</div></div>
+                        <div class="choice" identifier="c4"><div class="text">Bild vertikal spiegeln</div><div class="feedback">Ja, komplett rückgängig zu machen.</div></div>
+                        <div class="responseDeclaration" identifier="ri2"><div class="correctResponse" identifier="c1"></div><div class="correctResponse" identifier="c4"></div></div>
+                    </div>
+                </li>
+                <li>
+                    <div class="assessment-data" type="multiplechoice" identifier="lossy-ok" hasinlinefeedback="true" maxchoices="2" responseIdentifier="ri3" shuffle="true">
+                        <div class="prompt">Für welche Daten wäre <em>lossy</em> Kompression akzeptabel?</div>
+                        <div class="choice" identifier="c1"><div class="text">HTML-Code dieser Seite</div><div class="feedback">Nein – jedes Zeichen zählt.</div></div>
+                        <div class="choice" identifier="c2"><div class="text">Desktop-Hintergrund</div><div class="feedback">Ja, kleine Fehler sind tolerierbar.</div></div>
+                        <div class="choice" identifier="c3"><div class="text">Netflix-Live-Action-Film</div><div class="feedback">Ja, einzelne fehlerhafte Frames sind unkritisch.</div></div>
+                        <div class="choice" identifier="c4"><div class="text">Netflix-Zeichentrick</div><div class="feedback">Eher nein; Fehler fallen stärker auf.</div></div>
+                        <div class="choice" identifier="c5"><div class="text">E-Book</div><div class="feedback">Nein, Text muss exakt bleiben.</div></div>
+                        <div class="responseDeclaration" identifier="ri3"><div class="correctResponse" identifier="c2"></div><div class="correctResponse" identifier="c3"></div></div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+	</body>
+</html>
