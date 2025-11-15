@@ -69,7 +69,14 @@
 - [x] `docs/style_guide.de.html` erstellt (kompakter deutscher Style Guide, 2025-11-01).  
 - [x] Globale Ressourcen (FAQ, Docs, `docs/*`) – Kern-Dokumente (`best_practices`, `style_guide`, `content-authoring`, `translating`, `why-this-why-heres`, Snippets) lokalisiert; ggf. neue Docs direkt zweisprachig anlegen (Stand 2025-11-01).
 - [x] Term‑1-Projekte (`cur/programming/3.5-T1PP/1-3`, Projekte), Assessments `assessment-data2–6` sowie GPS-/Innovation-Labs (`cur/programming/4-internet/X-*/Y-*`) auf Deutsch (2025-11-01).  
-- [ ] Weitere Alt-/Spezialseiten ohne `.de` (optionale/old-Versionen) → Relevanz klären.
+- [ ] Weitere reguläre Seiten ohne `.de` (Stand 2025-11-01, `/old/*` explizit ausgenommen) – Bedarf & Priorität festlegen:
+  - [x] Performance Tasks (`cur/performance-tasks/*`): AP Create/Explore, Explore Innovation Data, Create Brian sowie die 8-seitige „Create Task“-Strecke – übersetzt am 2025-11-02.
+  - Schüler-Labs außerhalb `/old`: U1 „semi-old“-Zeichnen (7 Seiten) ✅ (2025-11-02), Mini17 (3) ✅ (2025-11-02), optionale Projekt-Hinweise (Sprite Line Art/Pong) ✅ (2025-11-02), U2 „functional-programming“ + `assessment-data2`, optional „future“-Projekte (4) ✅ (2025-11-02), U3 `assessment-data3` + `unused-new-stuff` (3), U4 „new“ (`cloud-computing`, `internet-api`) + optionale Netzprojekte (Binary Counter/TCP/HTML, 5 Seiten), U5 `3-disease-spread-old` (Archiv, aber nicht unter `/old`), U5–U6 Assessments (`assessment-data5`, `assessment-data6`), U8 Zusatzseiten (Managing List Data, Pascal/Soring-Optionals, 6 Seiten).
+  - Event-/Spezialformate: CSTA2019/2020, CSTANE2020 (je 3 Seiten) sowie `cur/programming/new-ideas/*` (3).
+  - Zusammenfassungen/Prüfungen (`cur/programming/summaries/*`): `assessment-data7/8`, `exam3–7`, Vokabelseiten `vocab3–8` inkl. `vocab-index`.
+  - Sozialkontext (`cur/social-context/*`): Such-Apps (4) plus Fachgebiete/Simulationen (12) weiter nur auf Englisch.
+  - Lösungen & Lehrkräfte (`cur/solutions-assessments/*.html`, `cur/teaching-guide/**/*`): 8 Solution-Sets und komplette TG-Struktur (AP, T1PP, U1–U8 inkl. Ressourcen) bisher ohne `.de`.
+  - Meta-Seiten auf Kursebene (`cur/compare.html`, `cur/specifications.html`, `cur/updates.html`) noch einsprachig.
 
 ## Technische Anpassungen
 - [ ] Sprachumschalter weiter testen: Themen ohne `.de`-Datei liefern Fallback → Logging/Fehlermeldung verbessern.  

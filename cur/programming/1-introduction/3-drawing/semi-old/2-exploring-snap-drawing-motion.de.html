@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1 Labor 3: Moderne Kunst mit Polygonen, Seite 2</title>
+	</head>
+
+	<body>
+        <h2>Winkel und Drehungen</h2>
+        <div class="learn">
+            <p>
+                <strong>Auf dieser Seite</strong> lernst du die Drehwinkel der Figur kennen – Grundlage für das Zeichnen von Polygonen. Du beginnst mit verschiedenen Sternformen wie diesen: <br />
+                <img class="indent" src="/bjc-r/img/1-introduction/Three-spikes.png" height="68" alt="Dreistrahliger Stern" title="Dreistrahliger Stern" />
+                <img src="/bjc-r/img/1-introduction/Five-spikes.png" height="82" alt="Fünfstrahliger Stern" title="Fünfstrahliger Stern" />
+                <img src="/bjc-r/img/1-introduction/Eight-spikes.png" height="89" alt="Achtstrahliger Stern" title="Achtstrahliger Stern" />
+            </p>
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <div class="todo">Starter-Projekt ohne WAIT-Blöcke neu schreiben. --MF, 14.05.2019</div>
+                <li><a href="/bjc-r/prog/1-introduction/U1L3-AngleExperiments1.xml" class="run"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Starterprojekt laden und speichern." title="Starterprojekt laden und speichern."></a> <br />Führe die vier Experimente aus, die im Projekt beschrieben sind.</li>
+                <li>
+                    Experimentiere danach mit dem letzten Skript (rechts dargestellt):<br />
+                    <img class="imageRight" src="/bjc-r/img/1-introduction/angles-and-turning.png" alt="repeat (2): {move (100) steps, move (-100) steps, turn (180) degrees}" title="repeat (2): {move (100) steps, move (-100) steps, turn (180) degrees}" />
+                    <ol>
+                        <li>
+                            Experimentiere mit einer <em>Vierteldrehung</em> (90°):
+                            <ol style="list-style-type:lower-roman;">
+                                <li>Ändere die Eingabe des <code>turn</code>-Blocks, indem du auf 180 klickst und 90 eintippst.</li>
+                                <li>
+                                	Stelle die Anzahl der Wiederholungen (<code>repeat</code>) so ein, dass die Figur am Ende wieder in die Ausgangsrichtung zeigt.<br />
+                                    <img data-gifffer="/bjc-r/img/1-introduction/U1ImageVideoAddendum_img/U1L3P2-AngleExperiment-4.gif" height="150" alt="Winkel-Experiment mit 4 Drehungen." title="Winkel-Experiment mit 4 Drehungen."/>
+
+                                </li>
+                            </ol>
+                        </li>
+                        <li>
+                            Experimentiere mit einer <em>Zehnteldrehung</em> (36°).
+                            <ul>
+                                <li>Welche Eingabe braucht der Block <code>repeat</code>, damit die Figur wieder in die Ausgangsrichtung zeigt?</li>
+                            </ul>
+                        </li>
+                        <li>Probiere andere Werte für den Block <code>move</code> <var>-100</var> <code>steps</code> (z. B. -50, -10 oder -90) und wiederhole einige der Dreh-Experimente. Ändert sich dadurch die benötigte Wiederholungszahl?</li>
+                        <li>Entferne den zweiten <code>move</code>-Block komplett (Rechtsklick/Ctrl-Klick → „delete“) und wiederhole einige Experimente.</li>
+                    </ol>
+                </li>
+				<li>
+                	<img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deinem Partner / deiner Partnerin" title="Sprich mit deinem Partner / deiner Partnerin" /> Beschreibt, was ihr über Drehwinkel gelernt habt.
+                </li>
+            </ol>
+        </div>
+
+
+        <div class="takeNote">Eine Drehung um 360° ist eine volle Umdrehung. 180° sind eine halbe Drehung. Ein Viertel von 360° <img src="/bjc-r/img/1-introduction/360-divided-by-4-with-result-90.png" alt="360/4 = 90" title="360/4 = 90"> ergibt eine Vierteldrehung. Du musst nicht selbst dividieren – Snap<em>!</em> kann das übernehmen. Mit <img src="/bjc-r/img/1-introduction/turn-360-divided-by-7-degrees.png" alt="turn 360/7 degrees" title="turn 360/7 degrees"> oder <img src="/bjc-r/img/1-introduction/turn-360-divided-by-3-degrees.png" alt="turn 360/3 degrees" title="turn 360/3 degrees"> erhältst du zum Beispiel eine Siebtel- bzw. Dritteldrehung. </div>
+
+
+        <img class="inline" src="/bjc-r/img/icons/pair-programming-swap.png" alt="Pair Programming – Rollen tauschen" title="Pair Programming – Rollen tauschen" />
+
+		<div class="forYouToDo">
+        	<ol start="4">
+            	<li><a href="/bjc-r/prog/1-introduction/U1L3-AngleExperiments2.xml" class="run"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Starterprojekt laden und speichern." title="Starterprojekt laden und speichern."></a><br />Führe nun Skript (A) im Projekt aus und experimentiere:
+                    <ol>
+                        <li>
+                            Ändere die Eingaben in Skript A, um einen Stern mit
+                            <ol style="list-style-type:lower-roman;">
+                                <li>5 Armen</li>
+                                <li>8 Armen</li>
+                                <li>3 Armen</li>
+                            </ol>
+                            zu zeichnen.
+                        </li>
+                        <li>
+                        	Kopiere dein Skript mit drei Armen (Rechtsklick/Ctrl-Klick → „duplicate“).
+                            <ol style="list-style-type:lower-roman;">
+                                <li>Entferne im Duplikat den Block <code>move</code> <var>-100</var> <code>steps</code>.</li>
+                                <li>Was macht das neue Skript?</li>
+                            </ol>
+                        </li>
+                        <li>
+                            Kopiere erneut dein Dreiarm-Skript und:
+                            <ol style="list-style-type:lower-roman;">
+                                <li>Ändere es zu vier Armen.</li>
+                                <li>Entferne wieder den Block <code>move</code> <var>-100</var> <code>steps</code>.</li>
+                                <li>Was macht dieses Skript?</li>
+                            </ol>
+                        </li>
+            		</ol>
+            	</li>
+            </ol>
+        </div>
+
+
+        <div class="ifTime">
+            <ol start="5">
+                <li>
+                	Skript B aus demselben Projekt zeigt, wie du ein 60-Arm-Skript wie den Sekundenzeiger einer Uhr nutzen kannst. Probiere es aus.
+        			<ul>
+                        <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deinem Partner / deiner Partnerin" title="Sprich mit deinem Partner / deiner Partnerin" />Stellt sicher, dass ihr erklären könnt, <em>warum</em> das Skript funktioniert.</li>
+                        <li>
+                            Warum sind Farb- und Stiftgrößenwechsel hier hilfreich?<br />
+                            <img class="indent" src="/bjc-r/img/1-introduction/turning-angle-clock.png" alt="clear;repeat(60){set pen color to (black); set pensize to (1); move (100) steps; wait (1) secs; set pen color to (white); set pensize to (3); move (-100) steps; turn clockwise(360/60) degrees}" title="clear;repeat(60){set pen color to (black); set pensize to (1); move (100) steps; wait (1) secs; set pen color to (white); set pensize to (3); move (-100) steps; turn clockwise(360/60) degrees}" />
+                        </li>
+        			</ul>
+                </li>
+            </ol>
+		</div>
+
+
+    </body>
+</html>

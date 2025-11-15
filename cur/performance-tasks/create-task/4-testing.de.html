@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>AP CSP Create Task, Seite 4</title>
+	</head>
+
+	<body>
+        <h2>Dein Projekt testen</h2>
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> leitest du aus deinen Spezifikationen einen Testplan ab, führst die Tests durch und behebst Fehler.</p>
+        </div>
+
+        <div class="ap-standard">CRD-2.J.1, CRD-2.J.2, CRD-2.J.3</div>
+        <p>Nachdem du einen Prototyp gebaut hast, musst du ihn testen und anhand der Ergebnisse überarbeiten. Testen bedeutet mehr als „einfach damit spielen“. Gutes Testen ist <em>systematisch</em>. Du beziehst dich auf deine Spezifikationen und identifizierst unterschiedliche Eingaben, die verschiedenes Nutzerverhalten abdecken – inklusive extremer Fälle (sehr lange Wörter, sehr kleine Zahlen, sehr schnelles Klicken …) – und legst fest, welche Ergebnisse du für jede Eingabe erwartest.</p>
+        <div class="forYouToDo">
+			<ol>
+				<div class="ap-standard">CRD-2.J</div>
+                <li>Gehe deine Spezifikationen durch und notiere: welche Eingabetypen dein Programm hat, welche unterschiedlichen/extremen Fälle du testen willst und welches Ergebnis du jeweils erwartest. Halte den Testplan schriftlich fest.</li>
+			</ol>
+		</div>
+        <p>
+            Welche Schritte beim Debuggen nötig sind, hängt von der Fehlerart ab.
+            <div class="vocabFullWidth">
+                <div class="ap-standard">CRD-2.I.1, CRD-2.I.2, CRD-2.I.3, CRD-2.I.4</div>
+                <ul>
+                    <li>Ein <strong>Logikfehler</strong> führt zu falschen Ausgaben (in Snap<em>!</em> am häufigsten).</li>
+                    <li>Ein <strong>Syntaxfehler</strong> verletzt die Sprachregeln. Textbasierte Sprachen sind hier anfälliger (z.&nbsp;B. fehlendes Semikolon). Snap<em>!</em> lässt Blöcke nicht an falschen Stellen fallen, daher treten Syntaxfehler dort seltener auf.</li>
+                    <li>
+						Ein <strong>Laufzeitfehler</strong> passiert während der Programmausführung. In Snap<em>!</em> stoppt das Programm und der fehlerhafte Block bekommt einen roten Halo, z.&nbsp;B.:<br />
+						<img class="indent" src="/bjc-r/img/ap-support/run-time-error.png" alt="item (1) of (1 + 1) meldet 'Hmm... expecting a list but getting a number'" title="item (1) of (1 + 1) meldet 'Hmm... expecting a list but getting a number'" />
+					</li>
+                    <li>Ein <strong>Überlauffehler</strong> entsteht, wenn eine Zahl zu groß oder zu klein für den Computer ist.</li>
+                </ul>
+            </div>
+        </p>
+        <div class="ap-standard">CRD-2.I.5</div>
+        <p>
+            Es gibt viele Strategien zum Finden und Beheben von Fehlern:
+            <ul>
+                <li>Testfälle – extreme Eingaben auswählen und erwartete Ergebnisse festlegen (dein Hauptwerkzeug)</li>
+                <li>Hand-Tracing – den Code <em>per Hand</em> durchgehen und Fälle so testen, als wärst du der Computer</li>
+                <li>Visualisierungen – z.&nbsp;B. Variablenanzeige oder Tabellen, die Eingaben, erwartete und tatsächliche Ergebnisse zeigen</li>
+                <div class="sidenote">Über Visible Stepping hast du auf <a href="/bjc-r/cur/programming/1-introduction/3-drawing/1-exploring-motion.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment">Einheit 1, Labor 3, Seite 1</a> gelernt.</div>
+				<li>Debugger – einige Sprachen bieten eingebaute Debugging-Hilfen (in Snap<em>!</em> z.&nbsp;B. Visible Stepping)</li>
+                <li>Zusätzliche Ausgaben – füge <code>say</code>-Blöcke oder temporäre Variablenbeobachter ein, um Werte an unterschiedlichen Stellen zu prüfen (ebenfalls sehr hilfreich in Snap<em>!</em>)</li>
+            </ul>
+        </p>
+		<div class="endnote">Weitere Debugging-Techniken findest du auf <a href="/bjc-r/cur/programming/3-lists/1-abstraction/6-debugging-recap.html?topic=nyc_bjc%2F3-lists.topic&novideo&noassignment">Einheit 3, Labor 1, Seite 6: Debugging Recap</a>.</div>
+
+        <div class="forYouToDo">
+			<ol start="2">
+				<div class="ap-standard">CRD-2.I Teile a und b</div>
+                <li>Teste dein Programm auf Fehler. Probiere die ausgewählten Eingaben aus und dokumentiere die Ergebnisse. Gab es Abweichungen von den Erwartungen? Behebe die Probleme und teste erneut.</li>
+			</ol>
+		</div>
+
+
+	</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Beauty and Joy of Computing</title>
+	</head>
+
+	<body>
+		<a class="course_link" href="/bjc-r/course/bjc4nyc.html">Zur Inhaltsübersicht</a>
+		<h2>AP CSP Create Task</h2>
+		<div class="learn">
+            <p>Diese Seite hilft dir, die Create-Task-Anweisungen des College Board gründlich zu verstehen.</p>
+        </div>
+        <div class="takeNote">
+            <ul style="list-style-type:disc;">
+                <li><a href="https://apcentral.collegeboard.org/pdf/ap-csp-student-task-directions.pdf?course=ap-computer-science-principles" target="_blank">AP CSP Assessment Overview and Performance Task Directions for Students</a> – Anleitung für Explore- und Create-Task, Formelsammlung und Bewertungsrichtlinien</li>
+                <li><a href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles/exam" target="_blank">AP CSP: The Exam</a> – offizielle College-Board-Seite zur CSP-Prüfung mit Infos, Bewertungsdetails und kommentierten Beispielabgaben</li>
+            </ul>
+        </div>
+
+        <h3>Deinen Code für die AP Create Task zeigen</h3>
+        <p>Snap<em>!</em> bietet zwei praktische Möglichkeiten, einen Teil oder den gesamten Code zu teilen.</p>
+
+        <h4><strong>Script Pics erstellen</strong></h4>
+        <p>
+        	Du kannst ein PNG-Bild jedes Blocks bzw. Skripts herunterladen, indem du ihn/sie mit der rechten Maustaste anklickst (Mac: Ctrl-Klick) und „script pic…“ wählst. Öffnet sich ein neues Fenster mit dem Bild, speichere es über den Befehl „Sichern“ deines Browsers (Datei-Menü). Falls nicht, findest du die Bilddatei im Downloads-Ordner deines Browsers.<br />
+	<table>
+	  <tr>
+	    <td>
+           <img src="/bjc-r/img/ap-support/script-pic.png" alt="Blockdefinition des Windrads mit Kontextmenü und Hinweis auf &quot;script pic...&quot;" title="Blockdefinition des Windrads mit Kontextmenü und Hinweis auf &quot;script pic...&quot;"
+	    caption="Blockdefinition im Block-Editor" />
+	      </td>
+	      <td>
+		<img src="/bjc-r/img/ap-support/toplevel-script-pic.png" alt="Script-Pic eines Top-Level-Skripts" title="Script-Pic eines Top-Level-Skripts"/>
+		</td>
+		<td>
+		  <img src="/bjc-r/img/ap-support/report-result-pic.png" alt="Script-Pic eines Reporter-Blocks mit Ausgabeblase" title="Script-Pic eines Reporter-Blocks mit Ausgabeblase"/>
+		  </td>
+		  </tr>
+		  <tr>
+		    <td>
+		      Blockdefinition im Block-Editor
+		      </td>
+		      <td>
+			Eigenständiges Skript
+			</td>
+			<td>
+			  Wenn du einen <em>Reporter</em>-Block mit gedrückter <em>Shift</em>-Taste rechtsklickst (Mac: Shift-Ctrl-Klick), enthält das Script Pic die Sprechblase mit dem Rückgabewert.
+			  </td>
+			</tr>
+			</table>
+        </p>
+
+        <h4><strong>Alle Bilder auf einmal exportieren</strong></h4>
+        <p>
+        	Du kannst eine HTML-Datei mit allen Blöcken deines Projekts sowie ein Bild der Bühne exportieren, indem du im Snap<em>!</em>-Dateimenü „Export summary…“ wählst (<img class="inline" src="/bjc-r/img/1-introduction/file_button.png" style="height:1.6em;" alt="Datei-Schaltfläche" title="Datei-Schaltfläche"/>). Auch diese HTML-Datei landet im Downloads-Ordner. Öffne sie (im Browser), klicke die benötigten Bilder an (Rechtsklick bzw. Mac: Ctrl-Klick), kopiere sie und füge sie in das Dokument ein, in dem du deinen Code beschreibst.<br />
+            <img class="indent" src="/bjc-r/img/ap-support/export-summary.png" alt="Snap!-Dateimenü mit Maus über &quot;Export summary...&quot;; Hinweis: &quot;open a new browser window with a summary of the project&quot;" title="Snap!-Dateimenü mit Maus über &quot;Export summary...&quot;; Hinweis: &quot;open a new browser window with a summary of the project&quot;" />
+        </p>
+
+        <h3>Abstraktion und Algorithmus für die AP Create Task beschreiben</h3>
+        <p>Du hast das ganze Jahr über Algorithmen entwickelt und Abstraktionen eingesetzt. Für den AP-Test musst du lernen, wie du darauf <em>aufmerksam machst</em> und sie <em>beschreibst</em>.</p>
+
+        <h4><strong>Algorithmus</strong></h4>
+        <p>
+        	In Einheit&nbsp;1 hast du einen Algorithmus entworfen, der diese Windrad-Form zeichnet:<br />
+            <img class="indent noshadow" src="/bjc-r/img/ap-support/pinwheel-shape.png" alt="In Snap! gezeichnetes Windrad" title="In Snap! gezeichnetes Windrad" />
+        </p>
+		<img class="imageRight" src="/bjc-r/img/ap-support/algorithm-without-abstraction.png" alt="Die Blöcke &quot;move (100) steps, move (-70) steps, turn clockwise (45) degrees&quot; achtmal wiederholt" title="Die Blöcke &quot;move (100) steps, move (-70) steps, turn clockwise (45) degrees&quot; achtmal wiederholt" />
+        <p>Die Figur besteht aus acht gleich langen Strecken. Das erste Segment ist 100 Schritte lang. Danach geht die Figur 70 Schritte zurück und dreht sich um 45&deg; nach rechts, bevor das nächste Segment gezeichnet wird. Jedes Segment folgt dem Muster <code>move 100</code>, <code>move -70</code>, <code>turn 45</code>. Du könntest diese drei Blöcke achtmal hintereinander schreiben (wie rechts gezeigt), aber das ist schwer zu lesen. Mit <code>repeat</code> wird der Algorithmus klarer, kürzer und leichter verständlich. So sieht er jetzt aus:<br />
+          <img class="indent" src="/bjc-r/img/ap-support/algorithm-with-repeat.png" alt="repeat (8) {move (100) steps, move (-70) steps, turn clockwise (45) degrees}" title="repeat (8) {move (100) steps, move (-70) steps, turn clockwise (45) degrees}" />
+    	</p>
+        <div class="takeNote">Dein AP-Programm enthält verschiedene Algorithmen (<strong>Codeabschnitte mit einem klaren Zweck</strong>). Jeder dieser Abschnitte kann als Algorithmus-Beispiel dienen.</div>
+
+        <h4><strong>Abstraktion</strong></h4>
+        <p>Auch der letzte Schritt – <code>repeat</code> zu verwenden, um die Struktur zu verdeutlichen – ist eine einfache Abstraktion. Er versteckt Wiederholungen und macht die <em>Struktur</em> sichtbar. Genau diese Art sucht die Create Task jedoch <em>nicht</em>.</p>
+
+        <p>
+        	Du hast außerdem erkannt, dass die 45&deg;-Drehung <span class="katex">\frac{1}{8}</span> von 360&deg; ist, und den Algorithmus entsprechend geschrieben:<br />
+			<img class="indent" src="/bjc-r/img/ap-support/algorithm-with-repeat-and-div.png" alt="repeat (8) {move (100) steps, move (-70) steps, turn clockwise ((360) / (8)) degrees}" title="repeat (8) {move (100) steps, move (-70) steps, turn clockwise ((360) / (8)) degrees}" />
+        </p>
+        <p>
+        	Wenn du beide Achter durch Fünfen ersetzt, erhältst du ein Windrad mit fünf Armen. Statt bei jeder Variante Zahlen zu ändern, hast du einen <em>Block</em> gebaut, der den Algorithmus enthält und nur noch die gewünschte Armzahl als Eingabe braucht:<br />
+            <img class="indent" src="/bjc-r/img/ap-support/pinwheel-block-def.png" alt="Blockdefinition &quot;pinwheel, branches: (number of branches)&quot;" title="Blockdefinition &quot;pinwheel, branches: (number of branches)&quot;" />
+        </p>
+        <div class="takeNote">
+			<p>Genau solche Beispiele erwartet die Create Task: <strong>ein eigener Block, den du mehrfach im Projekt nutzt</strong>. Schleifen sind zwar Abstraktionen, aber die Create Task verlangt eine <em>selbst erstellte</em> Abstraktion statt vorhandener Blöcke wie <code>repeat</code>.</p>
+        </div>
+        <p>
+        	Die Abstraktion <code>pinwheel</code> hilft dir dreifach:
+            <ol>
+                <li>Du musst nicht mehr <em>zwei</em> Zahlen ändern – das reduziert Fehler.</li>
+                <li>
+                    Statt überall den kompletten Code<br />
+                    <img class="indent" src="/bjc-r/img/ap-support/algorithm-with-repeat-and-div.png" alt="repeat (8) {move (100) steps, move (-70) steps, turn clockwise ((360) / (8)) degrees}" title="repeat (8) {move (100) steps, move (-70) steps, turn clockwise ((360) / (8)) degrees}" /><br />
+                    einzufügen, brauchst du nur noch<br />
+                    <img class="indent" src="/bjc-r/img/ap-support/pinwheel.png" alt="pinwheel, branches: (8)" title="pinwheel, branches: (8)" />
+                </li>
+                <li>Dein Code ist leichter zu lesen, weil er <em>beschreibt</em>, was er tut: ein Windrad mit acht Armen zeichnen.</li>
+            </ol>
+        </p>
+        <p>Wenn du einen Block mit einem sprechenden Namen erstellst, baust du eine Abstraktion: Du <em>versteckst Details</em> und zeigst nur den Zweck. Wer deinen Code liest, muss die Details in <code>pinwheel</code> nicht verstehen – der Name verrät, was passiert. <!--Wenn du einen Block mit Eingabe erstellst, der sein Verhalten variiert, nutzt er denselben Algorithmus allgemeiner – auch das ist Abstraktion.--></p>
+
+        <div class="takeNote">
+        	<p>Das komplette Programm in einen einzigen Block zu packen macht die Seite zwar sauberer, ist aber <em>kein</em> gutes Beispiel. Hebe <strong>Codeabschnitte hervor, die du mehrfach nutzt und die dank eines guten Blocknamens klarer werden.</strong> Den Inhalt des Blocks kannst du oft gleichzeitig als Beispiel für den <em>Algorithmus</em> nennen.</p>
+        </div>
+       <h4><strong>Stolperfallen</strong></h4>
+ 		<p>Das College Board ermutigt euch, das Programm gemeinsam zu <em>entwickeln</em> – also zu planen und zu implementieren. <em>Jede Person muss aber mindestens einen Algorithmus allein programmieren</em>, und <em>Video sowie Antworten auf die Fragen müssen individuell entstehen.</em></p>
+
+	<p>Lies unbedingt die <a href="https://apcentral.collegeboard.org/pdf/ap19-sg-csp.pdf">Bewertungsskala</a> (Link zur Anleitung 2019; ist noch aktuell). Einige Punkte sind weniger offensichtlich. Beispiel zu Antwort&nbsp;2b:<br />
+		<img src="/bjc-r/img/ap-support/response-2b.png" alt="Screenshot der Bewertungshinweise zu Antwort 2b" title="Bewertungshinweise zu Antwort 2b"/><br />
+	Sie wollen sehen, dass du <em>mehrfach</em> Änderungen vorgenommen hast, um Bugs zu beheben oder Features hinzuzufügen. Die Anweisungen sagen: „Beschreibe den inkrementellen und iterativen Entwicklungsprozess deines Programms und konzentriere dich auf zwei unterschiedliche Zeitpunkte.“ Gemeint sind <em>zwei unterschiedliche Verbesserungen</em>, <em>nicht</em> zwei Screenshots von vorher/nachher derselben Änderung. Viele Lernende haben diese Punkte verloren.</p>
+
+<p><strong>Antworten 1 und 2a:</strong> Du musst ein maximal einminütiges <strong><em>Video</em></strong> aufnehmen, das (einen Teil) deines Projekts in Aktion zeigt. Es braucht echtes Videomaterial der Interaktion, keine Diashow. Zeige am besten den Algorithmus, den du später beschreibst. Zusätzlich erklärst du dein Projekt – als gesprochene Tonspur, als Untertitel oder schriftlich in Antwort 2a. Beschreibe das Gesamtziel („Unser Projekt soll Drittklässler*innen das Einmaleins beibringen“), erkläre, was im Video zu sehen ist, und nenne Snap<em>!</em> als Programmiersprache.</p>
+
+<p>Bei gesprochenen Erklärungen achte auf ruhige Aufnahmebedingungen (keine anderen Personen, Fenster schließen). Es gibt zwar keinen Punkt für Audioqualität, aber wenn die Bewertungsperson nichts versteht, verlierst du die Punkte für die inhaltlichen Erklärungen.</p>
+
+<p><strong>Antwort 2b:</strong> Beschreibe <em>deinen Entwicklungsprozess</em>: „Zuerst haben wir die Hauptkomponenten festgelegt…“ usw. Beschreibe, wie ihr vor und nach dem Coding zusammengearbeitet habt (reine Projektauswahl zählt nicht). Das College Board möchte sehen, dass ihr <em>iterativ</em> (mehrfach testen/verbessern) und <em>inkrementell</em> (Problem für Problem) gearbeitet habt. Verwende die Wörter „iterativ“ und „inkrementell“, damit klar ist, wo du die Anforderungen erfüllst. Verwechsele <em>iterative Entwicklung</em> nicht mit <em>Iteration</em> (Schleifen).</p>
+
+<p>Bei <em>Schwierigkeiten</em> beschreibe Bugs und wie du sie gelöst hast – nicht „Wir haben die Lehrkraft gefragt“ (während dieser Aufgabe ist Hilfe nicht erlaubt). Eine Schwierigkeit ist ein Programmfehler, und seine Lösung bedeutet Debugging. Hast du z.&nbsp;B. mit <code>pause all</code> Breakpoints gesetzt? Es gibt kein Muss, aber beschreibe ehrlich deine Schritte und Gedanken beim Debuggen.</p>
+
+<p>Eine <em>Opportunity</em> (Gelegenheit) ist eine neue Funktion, die du hinzufügen möchtest. Wenn du das als eine der zwei „difficulties or opportunities“ nutzt, beschreibe, wie du das Feature ergänzt hast: „Wir wollten statt des Einmaleins auch Plusaufgaben erlauben, also haben wir einen Button ergänzt…“ – bis hin zu den betroffenen Prozeduren.</p>
+
+<p><strong>Antwort 2c:</strong> Konzentriere dich hier auf einen Algorithmus, den du <em>allein</em> geschrieben hast.</p>
+
+<p>Sie sind streng, was als Algorithmus zählt. Reine UI-Aktionen reichen nicht; es braucht echte Berechnung. Erkläre <em>sowohl</em>, wie der Algorithmus isoliert funktioniert, <em>als auch</em>, welchen Beitrag er zum Gesamtprogramm leistet.</p>
+
+<p>Außerdem musst du einen <em>komplexen Algorithmus</em> zeigen: eine Prozedur (Block), die mindestens zwei weitere Prozeduren aufruft, die du selbst geschrieben hast. Insgesamt musst du also auf drei Algorithmen eingehen.</p>
+
+<p>Vergiss die Zauberworte <em>sequence, iteration</em> und <em>conditionals</em> nicht. Laut Bewertungsraster zählt reine Funktionskomposition (inkl. Rekursion) nicht als komplexer Algorithmus, daher könntest du gezielt eine Schleife einbauen. Deine Algorithmen müssen <em>mathematische oder logische</em> Konzepte nutzen, also z.&nbsp;B. Arithmetik (implizit in einem <code>for</code>-Block) und <code>if</code>-Abfragen.</p>
+
+<p>Erkläre ausführlich, wie eine der beiden Hilfsprozeduren allein funktioniert – etwa mit Beispielen für Eingaben/Ausgaben – und wie sie sonst im Projekt genutzt wird.</p>
+
+<p>Sorge dafür, dass die besprochenen Prozeduren keine Einzeiler sind. Das ist eine explizite Vorgabe – wieder ein Hinweis, dass das College Board keine Funktionskomposition zählen will. Du darfst Higher-Order-Functions nutzen, aber sie zählen nicht als einer der zwei Teil-Algorithmen, weil sie bereitgestellt wurden. Die Funktion, die du als Argument an die HOF übergibst, kann dagegen zählen, sofern du sie geschrieben hast.</p>
+
+<p><strong>Antwort 2d:</strong> Die Abstraktion muss <em>von dir</em> stammen, also etwa eine selbst geschriebene Prozedur oder ein abstrakter Datentyp – nicht eine HOF aus Snap<em>!</em>. Beschreibe, wie diese Abstraktion den Rest des Programms vereinfacht: „Der abstrakte Datentyp <u>Kontakt</u> ermöglicht es dem restlichen Programm, nach Teilen eines Kontakts zu fragen, ohne deren Position kennen zu müssen.“</p>
+
+<div class="todo">
+  Thinking about adding this as a hinted read-for-more-info:
+  <div class="endnote">
+    <h4>Warum bewerten sie nicht sinnvoller?</h4>
+    <p>Bei hart umkämpften Studienplätzen (und Eltern mit Anwält*innen) ist es für das College Board entscheidend, dass Ergebnisse <em>zuverlässig</em> sind – also unabhängig von der bewertenden Person gleich ausfallen. In der Woche vor dem eigentlichen Scoring gibt es Trainings, in denen ältere Abgaben bewertet werden müssen. Diese Zuverlässigkeit ist bei Ja/Nein-Fragen wie „Gibt es zwei Beispiele für das Verbessern des Programms?“ erreichbar, aber kaum bei breiten Fragen wie „Wie gut funktioniert das Programm?“.</p>
+    </div>
+    </div>
+    <div class="todo">
+      Eigentlich sollten wir diese Tabelle Zeile für Zeile mit richtigen und falschen Antworten durchgehen – aktuell fehlt dafür die Zeit.
+      </div>
+	</body>
+</html>

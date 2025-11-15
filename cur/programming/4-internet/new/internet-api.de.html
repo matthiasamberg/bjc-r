@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+    <title>Einführung in Internet-APIs</title>
+    </head>
+
+    <body>
+        <h2>Einführung in Internet-APIs</h2>
+        <div class="todo">Aus <a href="https://courses.edx.org/courses/BerkeleyX/BJC.3x/1T2016/courseware/80e7df3b6f1d4a458b565a214c5b0145/c068342421a94f70bf77f8f6f3a32edd/" target="_blank">edX</a> (Link evtl. nicht zuverlässig). --MF</div>
+
+        <div class="sidenote">Eine <strong>API</strong> (Application Programming Interface) ist nicht nur fürs Web relevant; sie entspricht dem Abstraktionsgedanken aus Woche 1. Sie definiert, wie ein Service/Programm/Block genutzt wird. Man kann beeindruckende Anwendungen bauen, indem man Web-APIs miteinander „verklebt“.</div>
+
+        <p>Letzte Woche hast du dich gefragt, ob es einen besseren Weg gibt, Daten von Webdiensten (z. B. Wetter für eine PLZ) zu holen. Den gibt es – aber pädagogisch wollten wir dir erst den „schlam­mi­gen“ Weg zeigen, bevor du drüberfliegst.</p>
+        <p>
+            Wie du Bibliotheksblöcke in Snap<em>!</em> aufrufst (<code>map</code>, <code>substring</code> …), kannst du auch Programme im Web mit Parametern versorgen, damit sie
+            <ul>
+                <li>etwas ausführen (Side Effect, wie ein Befehlsblock)</li>
+                <li>einen Wert liefern (Reporterblock)</li>
+                <li>oder beides (z. B. Reporter mit Rückmeldung, ob der Effekt geklappt hat – wie ein Butler: „Jeeves, schalt den TV ein.“ – „Sorry, Fernbedienung nicht gefunden.“)</li>
+            </ul>
+        </p>
+
+        <p>Wir starten mit APIs, die einfache, lesbare Werte liefern – genau jenes API vom letzten Lab.</p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>Öffne einen neuen Tab und nutze den Link <a href="http://ipv4bot.whatismyipaddress.com/" target="_blank"><code>http://ipv4bot.whatismyipaddress.com/</code></a>. Er liefert deine IP-Adresse (wie letzte Woche).</li>
+                <li>Viele APIs benötigen Eingaben. Dieses hier gibt dir zur IP die PLZ zurück: <a href="http://ipinfo.io/207.192.252.171/postal" target="_blank"><code>http://ipinfo.io/207.192.252.171/postal</code></a>.</li>
+                <li>Noch eins? Zufälliges englisches Wort: <a href="http://randomword.setgetgo.com/get.php" target="_blank"><code>http://randomword.setgetgo.com/get.php</code></a>.</li>
+                <li>Starte ein neues Snap<em>!</em>-Projekt, gib deinem Sprite ein Kostüm und lass es beim grünen Flaggenklick sagen: „Klick mich für ein zufälliges Wort!“. Beim Anklicken soll es das Wort aus dem obigen API anzeigen und anbieten, noch eins zu liefern.</li>
+            </ol>
+        </div>
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>Wie könntest du das API „stressen“, um herauszufinden, wie viele Wörter in der Datenbank stecken?</li>
+                <li>Nutze das Zufallswort-API in deiner „Guess a Word“-Hausaufgabe aus BJC.2x, statt Wörter aus einer gespeicherten Liste zu nehmen.</li>
+            </ol>
+        </div>
+
+        <h3 class="hd hd-2 problem-header"> Lab-Quiz </h3>
+        <div class="problem-progress"></div>
+        <div class="problem">
+            <div aria-live="polite">
+                <div>
+                    <p>Hat das Zufallswort-API 100 Wörter und du darfst eins pro Sekunde anfordern: Wie lange dauert es garantiert, bis du alle Wörter gesehen hast?</p>
+                    <span>
+                    <form class="choicegroup capa_inputtype" id="inputtype_i4x-BerkeleyX-BJC_3x-problem-807470ff30074fa08f5255cf12a31a16_2_1">
+                        <fieldset role="radiogroup" aria-label="Hat das Zufallswort-API 100 Wörter und du darfst eins pro Sekunde anfordern: Wie lange dauert es garantiert, bis du alle Wörter gesehen hast?">
+                            <label for="input_i4x-BerkeleyX-BJC_3x-problem-807470ff30074fa08f5255cf12a31a16_2_1_choice_0"> <input type="radio" name="input_i4x-BerkeleyX-BJC_3x-problem-807470ff30074fa08f5255cf12a31a16_2_1" id="

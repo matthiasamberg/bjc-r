@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2 Labor 2: Kunst mit Datenstrukturen – Seite 6</title>
+    </head>
+
+	<body>
+        <div class="todo">Mary wollte den alternativen Ansatz am Seitenende überarbeiten. --MF, 16.12.2018</div>
+    <div class="todo">
+        ST EK-Liste:<br />
+       4.1.1H Verschiedene Algorithmen können dasselbe Problem lösen.<br />
+       5.5.1H Rechnerische Methoden können Listen/Sammlungen nutzen, um Probleme zu lösen.
+        </div>
+        <h2>Klicks als Punkte erfassen</h2>
+        <div class="todo">Seitentitel passt nicht zum Themen-Tab. TG prüfen. --MF, 27.06.2018</div>
+        <div class="todo">
+            <p>PG: Worum geht es hier eigentlich? Computer helfen beim Sammeln von Daten. Manchmal wollen wir Daten aus einem Bild lesen – z. B. aus einem Diagramm, einem Buchstaben, Gesichtsmerkmalen oder Brückenmaßen. Diese Lektion zeigt, wie man ein Bild importiert und Punkte digitalisiert, die später erneut verwendet oder weiterverarbeitet werden können.</p>
+            <p>MF: Kommentare einarbeiten.</p>
+        </div>
+
+        <div class="learn">
+        	In der vorherigen Seite hast du eine Form anhand vorgegebener Punkte gezeichnet. <strong>Hier</strong> automatisierst du das Erfassen von Koordinaten, indem du auf gewünschte Punkte klickst.
+        </div>
+
+
+        <div class="dialogue">
+            <div class="stagedir">Jasmine und Morgan nutzen weiterhin Koordinatenlisten, um Buchstaben zu zeichnen.</div>
+            <img class="imageRight" src="/bjc-r/img/icons/take-turns-speaking-mini.gif" alt="Abwechselnd sprechen" title="Abwechselnd sprechen">
+            <div><span>Morgan:</span> Die ganzen Koordinaten einzutippen nervt. Lass uns ein Programm schreiben, das bei einem Bild die Eckpunkte anklickbar macht und automatisch sammelt.</div>
+			<div class="todo">Morgan: „Wir könnten ein Bild an den Bildschirm tackern.“</div>
+            <div><span>Jasmine:</span> Super Idee. Wir können Bilder als Bühnenhintergrund importieren, also müssen wir nur noch …</div>
+        </div>
+
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>
+                    <a class="run" href="/bjc-r/prog/2-complexity/U2L2-Capturing-Points.xml"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Starter laden und speichern." title="Starter laden und speichern."></a><br />
+                    <img class="imageRight" src="/bjc-r/img/icons/save-mini.png" alt="Speichern" title="Speichern" />
+                    Exportiere deine neuen Zeichenblöcke und den ADT aus „U2L2-DrawShape“, importiere sie in dieses Projekt und speichere erneut.
+                    <div class="todo">
+                        <p>Anleitung (Import/Export) präzisieren und ausgelagerten Inhalt aus „Importing <code>Greet Player</code>…“ ergänzen. --MF, 18.06.2018</p>
+                        <p>Reichen Verweise auf 2.1.4? --MF, 26.09.2018</p>
+                        <p>Müssen die auskommentierten Abschnitte zurück? --MF, 16.12.2018</p>
+                    </div>
+                </li>
+                <li>
+                    <strong>Bühnenhintergrund einstellen</strong>
+                    <div class="narrower">
+                        <h3 class="box-head">Bühnenhintergrund setzen</h3>
+                        <ol type="a">
+                            <li>
+								<strong>Klicke auf die Bühnen-Schaltfläche</strong> unterhalb der Bühne.<br />
+                                <img class="indent" src="/bjc-r/img/2-complexity/stage-button.png" height="200" alt="Stageselector" title="Stageselector">
+                            </li>
+                            <li>
+                                <strong>Wechsle zum Tab „Backgrounds“.</strong><br />
+                                <div class="comment">Bild gekürzt – sonst unnötig lang. --MF, 04.03.2019</div>
+                                <img class="indent" src="/bjc-r/img/2-complexity/backgrounds.png" height="173" alt="Backgrounds-Tab" title="Backgrounds-Tab">
+                            </li>
+                            <li>
+                                <strong>Wähle oder importiere einen Hintergrund.</strong> Dieses Projekt enthält zwei importierte Hintergründe:
+                                <ul>
+                                    <li>Diagramm des medianen US-Haushaltseinkommens (Quelle: Federal Reserve Bank of St. Louis)</li>
+                                    <li>Ein großes „E“ (Century Gothic Bold)</li>
+                                    Das Diagramm steht stellvertretend für Datenverarbeitung (Thema Einheit 3); das E setzt die Aufgabe der vorherigen Seite fort. Wähle einen Hintergrund durch Anklicken.
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+			</ol>
+		</div>
+
+
+        <div class="dialogue">
+            <div><span>Morgan:</span> Wir müssen die Variable <var>point list</var> erst auf eine leere Liste setzen.</div>
+            <div><span>Jasmine:</span> Und wir wissen, wie die Figur der Maus folgt – haben wir in <a href="/bjc-r/cur/programming/1-introduction/5-follow-the-leader/1-following-sprites.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment">Einheit 1</a> gemacht.</div>
+            <div><span>Omar:</span> Genau, und bei jedem Klick sollen wir die Position zur Liste hinzufügen, wie im (entfernten) „Greet Player“-Projekt.</div>
+            <div class="todo">„Greet Player“-Projekt wurde entfernt. --MF, 16.12.2018</div>
+            <div><span>Omar:</span> Außerdem sollten wir Rückmeldung geben, dass der Klick verarbeitet wurde.</div>
+            <div><span>Morgan:</span> Eine Art Klang?</div>
+            <div><span>Omar:</span> Vielleicht – ich dachte eher an Markierungen, damit wir sicher sind, dass der Computer die Klicks registriert.</div>
+            <div><span>Morgan:</span> Es gibt den Block <img src="/bjc-r/img/2-complexity/stamp.png" alt="stamp" title="stamp"> – damit stempeln wir die Figur an der aktuellen Position.</div>
+            <div><span>Omar:</span> Perfekt. Die Turtle stempelt dort, wo geklickt wird.</div>
+            <div class="stagedir">
+                Die drei entwickeln den Code:<br />
+                <img class="center" data-gifffer="/bjc-r/img/2-complexity/U2ImageVideoAddendum_img/drawEAnimation.gif" height="350" alt="Punkte für E eingeben" title="Punkte für E eingeben" />
+            </div>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="3">
+                <li>
+                    Im Starter befinden sich drei unvollständige Skripte – jeweils eines pro Schritt. Ergänze alle.
+					  <div class="narrower">Falls nötig, gehe zurück zum Scripts-Tab und wähle wieder den Sprite-Button, um zu den Sprite-Skripten zu gelangen.</div>
+                    <ol>
+                        <li>Setze <var>point list</var> auf eine leere Liste.</li>
+                        <li>Ersetze im zweiten Skript das <code>forever</code> durch eine Schleife, die endet, wenn die Leertaste gedrückt wird.</li>
+                        <li>Im dritten Skript ist <code>stamp</code> bereits da – schreibe den Code, der die Mausposition mithilfe des ADT zur Liste hinzufügt.<img class="imageRight" src="/bjc-r/img/icons/save-now.png" alt="Jetzt speichern" title="Jetzt speichern" /></li>
+                    </ol>
+                </li>
+
+            </ol>
+        </div>
+
+        <div class="takeItFurther">
+    Für das interaktive Erfassen reicht dieser Ansatz. Für ein robusteres Tool hat er zwei Schwächen:
+    <ul>
+                    <li>Auch nachdem der Sprite der Maus nicht mehr folgt, reagiert das „when I am clicked“-Skript weiter – Klicks direkt auf den Sprite landen in der Liste.</li>
+                    <li>Die Punkteliste liegt immer in derselben globalen Variable; für mehrere Buchstaben ist das unpraktisch.</li>
+                </ul>
+
+		    <ol type="A">
+            	<li>Überlege dir eigene Lösungen für eines oder beide Probleme.</li>
+                <li>Hier ist ein <a href="/bjc-r/cur/programming/2-complexity/old/5-click-points.html" title="Alternative: Punkte anklicken">alternativer Ansatz</a> mit einer interessanten Idee. Er ist etwas aufwendiger, aber das dahinterstehende Konzept ist nützlich.</li>
+            </ol>
+        </div>
+
+    </body>
+</html>

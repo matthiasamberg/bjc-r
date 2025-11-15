@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <title>Einheit 1 Labor 3: Moderne Kunst mit Polygonen, Seite 6</title>
+    </head>
+
+    <body>
+        <h2>Schleifen mit Zähler</h2>
+        <div class="todo">
+            <p>PG: Die pinke Box ist unklar. Vielleicht eher: „Der FOR-Block lässt dich nicht nur wiederholen, sondern die Wiederholungen zählen und diesen Wert zum Variieren nutzen.“</p>
+            <p>BH: Wir benutzen hier eine FOR-Variable. Können wir das Wort „Variable“ vermeiden und z. B. „Prozedurausgabe“ sagen?</p>
+        </div>
+        <div class="todo">Die Aufgaben auf dieser Seite wurden neu nummeriert. Teacher Guide und Lösungen prüfen. --MF, 06.08.2019</div>
+
+        <div class="learn">
+            <p>
+                <strong>Auf dieser Seite</strong> nutzt du <code>for</code>-Schleifen, um Wiederholungen zu zählen und diesen Zähler für Muster zu verwenden…<br />
+                <img class="indent" src="/bjc-r/img/prog/spiral.png" alt="Spirale" title="Spirale" />
+                <img class="indent" src="/bjc-r/img/1-introduction/nested-squares.png" alt="verschachtelte Quadrate" title="verschachtelte Quadrate" />
+            </p>
+        </div>
+
+        <p>
+        	Diese Wiederholungen kennst du bereits:
+			<ul>
+                <div class="sidenoteBig">Der Block <code>forever</code> erzeugt eine <em>Endlosschleife</em>. Das kann ein Bug sein, aber in interaktiven Programmen ist es oft gewollt, bis Nutzer*innen stoppen.</div>
+				<li><img class="inline" src="/bjc-r/img/blocks/forever.png" alt="forever-Block" title="forever-Block" /> wiederholt Befehle <em>für immer</em> (z. B. Alonzo aus Einheit 1 Lab 1).</li>
+                <li><img class="inline" src="/bjc-r/img/1-introduction/repeat.png" alt="repeat-Block" title="repeat-Block" /> wiederholt sie <em>eine bestimmte Anzahl</em> Male (z. B. beim Zeichnen in Einheit 1 Lab 3 Seite 1).</li>
+			</ul>
+        </p>
+
+
+        <div class="vocabFullWidth">: <strong>Iteration</strong>
+            <div class="ap-standard">(AAP-)2.J.1</div>
+            <p>Informatiker*innen sprechen von <em>looping</em>, <em>repetition</em> oder <strong>iteration</strong>.</p>
+            <div class="ap-standard">(AAP-)2.K.1</div>
+            <p>
+                Schleifen können <code>forever</code> laufen, eine feste Anzahl (<code>repeat</code>) oder bis eine Bedingung erfüllt ist (<code>repeat until</code>, siehe Lab 5).<br />
+                <img class="indent" src="/bjc-r/img/1-introduction/repeat-4(move-100-turn-right-90).png" alt="repeat (4) {move 100; turn 90}" title="repeat (4) {move 100; turn 90}" />
+                <img class="indent" src="/bjc-r/img/1-introduction/move-tiny-no-hat.png" alt="repeat until (Leader) { point towards Leader; move (1) }" title="repeat until (Leader) { point towards Leader; move (1) }" />
+            </p>
+        </div>
+
+        <p>
+            Manchmal muss der Code wissen, zum wievielten Mal die Schleife läuft. <img src="/bjc-r/img/prog/for.png" class="imageCenter" alt="for(i)=(1) to (10){}" title="for(i)=(1) to (10){}" /> hilft dabei, denn der Zähler (Standardname <img class="inline" src="/bjc-r/img/blocks/variable-i.png" alt="i" title="i" />) kann im Skript verwendet werden. So ersetzt der <code>for</code>-Block z. B. eine ganze Reihe von <code>say</code>-Blöcken: <br />
+            <img class="indent" src="/bjc-r/img/looping/for-loop-equivalent.png" alt="say 1,2,3,...10" title="say 1,2,3,...10" />
+            &nbsp; &nbsp; &nbsp; durch
+            <img class="noshadow" src="/bjc-r/img/looping/for-loop-drag-i.gif" alt="for i=1 to 10 {say i}" title="for i=1 to 10 {say i}" />
+		</p>
+        <p>Bei jeder Wiederholung setzt der <code>for</code>-Block den Variablennamen auf den aktuellen Wert. Nach der Schleife steht wieder der Endwert dort.</p>
+
+
+        <div class="forYouToDo" id="first">
+			<ol>
+                <li>
+                    <a href="/bjc-r/prog/1-introduction/U1L3-Squiral-code.xml" class="run"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Starter laden" title="Starter laden"></a><br />Untersuche das Beispielprojekt.
+                </li>
+                <li>
+                    <ol>
+                        <li>
+                        	Erstelle folgendes Skript:<br />
+                            <div class="sidenote">Dieses Design heißt „squiral“ = square + spiral.</div>
+                            <img class="indent" src="/bjc-r/img/looping/squirral-script.png" alt="pen down; for length=1 to 100 {move 2*length; turn 90}" title="pen down; for length=1 to 100 {move 2*length; turn 90}"><br />
+						</li>
+                        <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Partnergespräch" title="Partnergespräch" /> Erklärt, warum die Figur nach außen spiralt.</li>
+                        <li>Tauscht im <code>for</code>-Block Start- und Endwert (100 ↔ 1). Was passiert?</li>
+                        <li>Ändert den Drehwinkel auf 92, 126 usw.</li>
+                        <li>
+                        	Passt <code>turn</code>- und <code>move</code>-Eingaben so an, dass die Spirale möglichst glatt wird:<br />
+                        	<img class="indent" src="/bjc-r/img/prog/spiral.png" alt="Spirale" title="Spirale" />
+                        </li>
+                    </ol>
+                </li>
+                <li><div class="saveAs"><span class="text">„U1L3-Squiral“</span><img class="inline" src="/bjc-r/img/icons/save-this-as.png" alt="Speichere als U1L3-Squiral" title="Speichere als U1L3-Squiral" /></div></li>
+			</ol>
+		</div>
+
+        <div class="ifTime">
+            <ol start="4">
+                <li>
+                    Öffne dein U1L3-Pinwheel-Projekt und baue einen Block <code>nest squares</code>, der mithilfe von <code>for</code> und deinem <code>polygon</code>-Block mehrere Quadrate zeichnet. Gib eine Eingabe <var>number of squares</var>, damit sich die Anzahl steuern lässt.<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/nested-squares.png" alt="verschachtelte Quadrate" title="verschachtelte Quadrate" />
+                </li>
+                <li>Baue <code>nest polygons</code> mit Eingaben für Anzahl der Polygone und Seitenzahl.</li>
+                <li>Zeichne 12 reguläre Polygone, wobei jedes eine Seite mehr hat als das vorherige.<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/polygons.png" alt="Polygone" title="Polygone" />
+                </li>
+                <li>Sage voraus, was dieses Skript tut, bevor du es startest:<br /><img class="indent" src="/bjc-r/img/1-introduction/nested-fors.png" alt="verschachtelte for-Schleifen" title="verschachtelte for-Schleifen"></li>
+            </ol>
+        </div>
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>Schreibe ein Skript, das von 100 in Zehnerschritten bis 0 herunterzählt.</li>
+
+                <li>
+                    Nutze <code>for</code>, um Quadrate konzentrisch zu zeichnen. Baue einen Block mit zwei Eingaben: Anzahl der Quadrate und Schrittweite.<br />
+                    <img class="imageRight" src="/bjc-r/img/icons/tough-stuff.png" alt="Anspruchsvoll" title="Anspruchsvoll" />
+                    <img class="indent" src="/bjc-r/img/1-introduction/concentric-squares.png" width="219" height="170" alt="Konzentrische Quadrate" title="Konzentrische Quadrate">
+                </li>
+                <li>
+                	Die beiden Animationen unten verwenden den <code>pinwheel</code>-Block mit Eingaben. Erkunde, wie du eigene Animationen baust.<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/pinwheelArray.gif" height="200" alt="Pinwheel-Array" title="Pinwheel-Array"/>
+                    <img  src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/PinwheelWreathAnimation.gif"  height="200" alt="Pinwheel-Kranz" title="Pinwheel-Kranz"/><br />
+                    <div class="endnote">
+                        <p>Dieser Code gibt dir eine Idee. Der Block <code>warp</code> zeichnet das Pinwheel sofort.</p>
+                        <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/animationCode.png" alt="forever { for(i)=0 to 50 { clear; warp { pinwheel ... }}}" title="forever { for(i)=0 to 50 { clear; warp { pinwheel ... }}}" />
+                    </div>
+                </li>
+                <li>
+                    <img src="/bjc-r/img/icons/tough-stuff-mini.png" alt="Anspruchsvoll" title="Anspruchsvoll" />
+                    <img src="/bjc-r/img/icons/tough-stuff-mini.png" alt="Anspruchsvoll" title="Anspruchsvoll" />
+                    <img src="/bjc-r/img/icons/tough-stuff-mini.png" alt="Anspruchsvoll" title="Anspruchsvoll" />
+                    Dieser Block ähnelt dem Squiral, verändert aber den Drehwinkel statt der Schrittweite:<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/inspi.png" alt="inspi repeat:(num) size:(size) angle:(angle)" title="inspi repeat:(num) size:(size) angle:(angle)" />
+                    <ol>
+                        <li>Skizziere, was bei einem Winkel von 2 entsteht.</li>
+                        <li>
+                            Implementiere den Block und teste die gezeigten Kombinationen.<br />
+                            <div class="sidenote">Stoppe mit <img class="button" src="/bjc-r/img/1-introduction/stop_button.png" alt="Stop" title="Stop"/>, wenn nichts Neues passiert – aber gib dir Zeit!</div>
+                            <img class="indent" src="/bjc-r/img/1-introduction/inspi-tests.png" alt="inspi-Tests" title="inspi-Tests" />
+                        </li>
+                        <li>
+                            Was passiert hier? Entwickle eine Hypothese, wie der Winkel das Muster bestimmt. <a href="#hint-1" data-toggle="collapse" class="collapsed" title="Hinweis">(Nur klicken, wenn nötig.)</a>
+                            <div id="hint-1" class="collapse">Hinweis: Denke über Teilbarkeit nach.</div>
+                        </li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

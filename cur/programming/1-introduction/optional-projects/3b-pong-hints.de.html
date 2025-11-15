@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1 Optionale Projekte – Seite 3 Hinweis</title>
+    </head>
+
+    <body>
+        <h2>Tipps für das Pong-Spiel</h2>
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li><a class="run" href="/bjc-r/prog/1-introduction/U1L5-pong-student.xml" target="_blank"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Starterprojekt laden und speichern." title="Starterprojekt laden und speichern."></a><br /> Schau dir die Vorlage an: Ein rechteckiger Schläger und ein runder Ball sind bereits angelegt.</li>
+                <li>
+                    Programmiere zuerst den Schläger. Er soll sich nur entlang des rechten Bildschirmrands auf und ab bewegen. Wenn die Nutzer*innen die Pfeiltasten hoch/runter drücken, bewegt sich der Schläger um einen festen Betrag, darf den Bildschirmrand aber nicht verlassen. Diese Blöcke helfen dir:<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/Pong_img/PaddleCodeHint.png" width="400"  alt="Schläger-Hinweisblöcke" title="Schläger-Hinweisblöcke"/>
+                </li>
+                <li>
+                	Der Ball ist kniffliger, weil er am Schläger abprallt.
+                    Setze ihn zunächst in die Mitte und gib ihm eine Zufallsrichtung. Prüfe dann, ob er den Rand oder den Schläger berührt. In beiden Fällen muss er abprallen. Snap<em>!</em> bringt bereits einen Block für Rand-Kollisionen mit:<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/Pong_img/edgeBounce.png" width="161" alt="if on edge, bounce" title="if on edge, bounce"/><br/>
+                    Für den Schläger nutze die Idee, dass der Ball mit dem negativen Einfallswinkel zurückspringt. Denk daran: In Snap<em>!</em> werden positive Winkel von 0° (oben) aus im Uhrzeigersinn gemessen, negative gegen den Uhrzeigersinn.<br/>
+                    <img class="indent" src="/bjc-r/img/1-introduction/Pong_img/Bounce.png" height="346" alt="Ball prallt mit spiegelverkehrtem Winkel ab" title="Ball prallt mit spiegelverkehrtem Winkel ab"/>
+                    <img  src="/bjc-r/img/1-introduction/Pong_img/Directions.png" width="517"  alt="Richtungen 0/90/180/270 und 0/-90/-180/-270" title="Richtungen 0/90/180/270 und 0/-90/-180/-270"/><br/>
+                    Schreibe nun den Ball-Code. Diese Blöcke könnten nützlich sein:<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/Pong_img/BallCodeHint.png" width="400" alt="Ball-Hinweisblöcke" title="Ball-Hinweisblöcke"/>
+                </li>
+            </ol>
+        </div>
+
+
+    </body>
+</html>

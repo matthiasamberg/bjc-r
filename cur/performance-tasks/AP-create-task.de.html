@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Beauty and Joy of Computing</title>
+	</head>
+
+	<body>
+		<a class="course_link" href="/bjc-r/course/bjc4nyc.html">Zur Inhaltsübersicht</a>
+		<h2>AP CSP Create Task</h2>
+		<div class="learn">
+            <p>Diese Seite hilft dir, die Create-Task-Anweisungen des College Board gründlich zu verstehen.</p>
+        </div>
+        <div class="takeNote">
+            <ul style="list-style-type:disc;">
+                <li><a href="https://apcentral.collegeboard.org/pdf/ap-csp-student-task-directions.pdf?course=ap-computer-science-principles" title="AP CSP Assessment Overview and Performance Task Directions for Students" target="_blank">AP CSP Assessment Overview and Performance Task Directions for Students</a> – Anleitung für Explore- und Create-Task, Formelsammlung für die Prüfung sowie Bewertungsrichtlinien</li>
+                <li><a href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles/exam" title="AP CSP: The Exam" target="_blank">AP CSP: The Exam</a> – offizielle College-Board-Seite zur CSP-Prüfung mit Infos zur Prüfung/Bewertung und kommentierten Beispielabgaben (hilft dir dabei sicherzustellen, dass deine Einreichung alle Punkte erhält)</li>
+            </ul>
+        </div>
+
+        <h3>Deinen Code für die AP Create Task zeigen</h3>
+        <p>Snap<em>!</em> bietet zwei praktische Möglichkeiten, einen Teil oder den gesamten Code zu teilen.</p>
+
+        <h4><strong>Script Pics erstellen</strong></h4>
+        <p>
+        	Du kannst ein PNG-Bild jedes Blocks bzw. Skripts herunterladen, indem du ihn/sie mit der rechten Maustaste anklickst (Mac: Ctrl-Klick) und „script pic…“ wählst. Die Datei landet im Downloads-Ordner deines Browsers.<br />
+            <div class="sidenote">Wenn du bei einem <em>Reporter</em>-Block mit gedrückter <em>Shift</em>-Taste rechtsklickst (Mac: Shift-Ctrl-Klick), enthält das Script Pic die Sprechblase mit dem Rückgabewert.</div>
+            <img class="indent" src="/bjc-r/img/ap-support/script-pic.png" alt="Blockdefinition des Windrads mit Kontextmenü und Hinweis auf &quot;script pic...&quot;; Sprechblase &quot;open a new window with a picture of this script&quot;" title="Blockdefinition des Windrads mit Kontextmenü und Hinweis auf &quot;script pic...&quot;; Sprechblase &quot;open a new window with a picture of this script&quot;" />
+        </p>
+
+        <h4><strong>Alle Bilder auf einmal exportieren</strong></h4>
+        <p>
+        	Du kannst eine HTML-Zusammenfassung aller Blöcke deines Projekts sowie ein Bild der Bühne exportieren, indem du im Snap<em>!</em>-Dateimenü „Export summary…“ wählst (<img class="inline" src="/bjc-r/img/1-introduction/file_button.png" style="height:1.6em;" alt="Datei-Schaltfläche" title="Datei-Schaltfläche"/>). Diese HTML-Datei landet ebenfalls im Downloads-Ordner. Öffne sie (im Browser), klicke die gewünschten Bilder an (Rechtsklick oder Mac: Ctrl-Klick), kopiere sie und füge sie in das Dokument ein, in dem du deinen Code beschreibst.<br />
+            <img class="indent" src="/bjc-r/img/ap-support/export-summary.png" alt="Snap!-Dateimenü mit Maus über &quot;Export summary...&quot;; Hinweis: &quot;open a new browser window with a summary of the project&quot;" title="Snap!-Dateimenü mit Maus über &quot;Export summary...&quot;; Hinweis: &quot;open a new browser window with a summary of the project&quot;" />
+        </p>
+
+        <h3>Abstraktion und Algorithmus für die AP Create Task beschreiben</h3>
+        <p>Du hast das ganze Jahr über Algorithmen entwickelt und Abstraktionen genutzt. Für den AP-Test musst du nur lernen, wie du darauf <em>aufmerksam machst</em> und sie <em>beschreibst</em>.</p>
+
+        <h4><strong>Algorithmus</strong></h4>
+        <p>
+        	In Einheit&nbsp;1 hast du einen Algorithmus entworfen, der diese Windrad-Form zeichnet:<br />
+            <img class="indent noshadow" src="/bjc-r/img/ap-support/pinwheel-shape.png" alt="In Snap! gezeichnetes Windrad" title="In Snap! gezeichnetes Windrad" />
+        </p>
+		<img class="imageRight" src="/bjc-r/img/ap-support/algorithm-without-abstraction.png" alt="Die drei Blöcke &quot;move (100) steps, move (-70) steps, turn clockwise (45) degrees&quot; achtmal wiederholt" title="Die drei Blöcke &quot;move (100) steps, move (-70) steps, turn clockwise (45) degrees&quot; achtmal wiederholt" />
+        <p>Die Figur besteht aus acht gleich langen Strecken. Das erste Segment ist 100 Schritte lang. Danach geht die Figur 70 Schritte am ersten Segment zurück und dreht sich 45&deg; nach rechts, bevor das nächste Segment gezeichnet wird. Jedes weitere Segment folgt demselben Muster: <code>move 100</code>, <code>move -70</code>, <code>turn 45</code>. Du könntest diese drei Blöcke achtmal hintereinander schreiben (wie rechts gezeigt). Das ist der Algorithmus, aber er ist schwer zu lesen – schon allein, weil man nicht sofort erkennt, ob wirklich alle Blöcke vorhanden sind. Mit <code>repeat</code> wird der Algorithmus klarer, kürzer und leichter lesbar. So sieht er jetzt aus:<br />
+          <img class="indent" src="/bjc-r/img/ap-support/algorithm-with-repeat.png" alt="repeat (8) {move (100) steps, move (-70) steps, turn clockwise (45) degrees}" title="repeat (8) {move (100) steps, move (-70) steps, turn clockwise (45) degrees}" />
+    	</p>
+        <div class="takeNote">Dein AP-Programm wird mehrere Algorithmen enthalten (<strong>Codeabschnitte, die einen bestimmten Zweck erfüllen</strong>). Du kannst auf jeden beliebigen solchen Abschnitt als Beispiel für einen Algorithmus verweisen.</div>
+
+        <h4><strong>Abstraktion</strong></h4>
+        <p>Auch der letzte Schritt – das Verwenden von <code>repeat</code>, um die Struktur zu verdeutlichen – ist bereits eine einfache Form der Abstraktion. Viele Wiederholungen verschwinden und die <em>Struktur</em> wird sichtbar. Genau diese Art von Abstraktion sucht die AP Create Task jedoch <em>nicht</em>.</p>
+
+        <p>
+        	Du hast noch eine weitere Abstraktion verwendet. In Einheit&nbsp;1 hast du erkannt, dass die 45&deg;-Drehung <span class="katex">\frac{1}{8}</span> der gesamten 360&deg;-Drehung ist. Darum hast du den Algorithmus so geschrieben:<br />
+			<img class="indent" src="/bjc-r/img/ap-support/algorithm-with-repeat-and-div.png" alt="repeat (8) {move (100) steps, move (-70) steps, turn clockwise ((360) / (8)) degrees}" title="repeat (8) {move (100) steps, move (-70) steps, turn clockwise ((360) / (8)) degrees}" />
+        </p>
+        <p>
+        	Wenn du beide Achter durch Fünfen ersetzt, entsteht ein Windrad mit fünf Armen. Statt bei jeder Variante Zahlen zu ändern, hast du einen <em>Block</em> gebaut, der den Algorithmus enthält und in den du nur noch die gewünschte Anzahl Arme eingibst:<br />
+            <img class="indent" src="/bjc-r/img/ap-support/pinwheel-block-def.png" alt="Blockdefinition &quot;pinwheel, branches: (number of branches)&quot;" title="Blockdefinition &quot;pinwheel, branches: (number of branches)&quot;" />
+        </p>
+        <div class="takeNote">
+			<p>Genau solche Beispiele erwartet die Create Task: <strong>ein eigener Block, den du mehrfach im Projekt verwendest</strong>. Schleifen sind zwar auch Abstraktionen, aber für die Create Task sollst du eine <em>selbst erstellte</em> Abstraktion zeigen, nicht nur vorhandene Blöcke wie <code>repeat</code>.</p>
+        </div>
+        <p>
+        	Die Abstraktion <code>pinwheel</code> hilft dir dreifach:
+            <ol>
+                <li>Du musst nicht mehr <em>zwei</em> Zahlen ändern, wenn du das Windrad anders gestalten willst – das verhindert Fehler (z.&nbsp;B. nur eine Zahl zu ändern).</li>
+                <li>
+                    Statt überall diesen Code zu platzieren<br />
+                    <img class="indent" src="/bjc-r/img/ap-support/algorithm-with-repeat-and-div.png" alt="repeat (8) {move (100) steps, move (-70) steps, turn clockwise ((360) / (8)) degrees}" title="repeat (8) {move (100) steps, move (-70) steps, turn clockwise ((360) / (8)) degrees}" /><br />
+                    brauchst du nur noch<br />
+                    <img class="indent" src="/bjc-r/img/ap-support/pinwheel.png" alt="pinwheel, branches: (8)" title="pinwheel, branches: (8)" />
+                </li>
+                <li>Dein Code ist für andere leichter zu lesen, weil er jetzt <em>beschreibt, was er tut</em>: Er zeichnet ein Windrad mit acht Armen.</li>
+            </ol>
+        </p>
+        <p>Immer wenn du einen Block erstellst und ihm einen sprechenden Namen gibst, baust du eine Abstraktion. Du <em>versteckst Details</em> und zeigst nur den Zweck. Wenn du den Pinwheel-Block verwendest, wird die <em>Struktur</em> deines Programms klarer. Lesende Personen müssen nicht mehr verstehen, was im Inneren von <code>pinwheel</code> passiert – der Name verrät, dass der Block ein Windrad mit einer bestimmten Anzahl an Armen zeichnet. <!--Wenn du einen Block mit Eingabeparametern erstellst, die sein Verhalten variieren, aber denselben Algorithmus nutzen, machst du ihn allgemeiner – auch das ist Abstraktion.--></p>
+
+        <div class="takeNote">
+        	<p>Beachte: Das komplette Programm in einen einzigen Block zu packen macht die Seite zwar kompakt, ist aber <em>kein</em> gutes Beispiel für Abstraktion. Die besten Beispiele für den AP-Upload sind <strong>Codeabschnitte, die du mehrfach verwendest und die <em>dank</em> eines guten Blocknamens verständlicher werden</strong>. Häufig kannst du den Inhalt dieses Blocks gleichzeitig als Beispiel für den <em>Algorithmus</em> nennen, mit dem der Block seinen Zweck erfüllt.</p>
+        </div>
+
+
+	</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4 Optionale Projekte, Seite 1</title>
+	</head>
+
+	<body>
+
+		<h2>Binärer Timer</h2>
+        <div class="todo">
+            <p>BH: Streichen.</p>
+            <p>MF: Braucht pinke Box; Bild sollte keine grüne Flagge zeigen; möchte überarbeiten; doppelt mit 8.3.4?</p>
+        </div>
+
+		<p>In diesem Projekt baust du einen Timer, der die verstrichenen Sekunden in Dezimal- und Binärdarstellung zeigt.</p>
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>
+                    Sieh dir zunächst diesen Binärtimer an und besprecht, was ihr über Binärzahlen wisst.<br />
+                    <img class="indent" data-gifffer="/bjc-r/img/4-internet/bin-timer-preview.gif" alt="Timer, der Zeit in Dezimal- und Binärsystem zeigt" title="Timer, der Zeit in Dezimal- und Binärsystem zeigt"/>
+				</li>
+                <div class="endnote">
+                    <p>Die Seite <a href="http://www.wikihow.com/Convert-from-Decimal-to-Binary" target="_blank" title="Wikihow: How to Convert from Decimal to Binary">wikihow.com</a> erklärt die Umwandlung von Basis 10 nach Basis 2.</p>
+                    <p>
+                        Dort gibt es zwei Methoden:
+                  <ul>
+                            <li><em>Division durch 2 mit Rest</em> – allgemeiner Ansatz für beliebige Basen.</li>
+                            <li><em>Absteigende Zweierpotenzen und Subtraktion</em> – passend zu einem <a href="http://scratch.mit.edu/discuss/youtube/cDZzsHvi44Q" target="_blank" title="Abstraktion: Basisumrechnung">früheren Video</a>.</li>
+                  </ul>
+                        Wählt eine Methode und formuliert einen kurzen Algorithmus.
+                    </p>
+              </div>
+                <li><a class="run" href="/bjc-r/prog/6-computers/U6-BinaryTimer.xml" target="_blank"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Starter laden und speichern." title="Starter laden und speichern."></a><br />Sprites, Blöcke und Kostüme sind vorbereitet; nur der Block <code>Get Binary Digits</code> (im Timer) benötigt deinen Code. </li>
+            </ol>
+        </div>
+
+        <p>Der Timer-Sprite nutzt den Block <code>timer</code> (Fühlen) als Zeitmesser. Dezimal- und Binärziffern werden berechnet, in Listen gespeichert und dann an die Ziffern-Sprites gesendet, damit sie das passende Kostüm (0/1 bzw. 0–9) anzeigen.</p><br />
+
+            <img class="indent" src="/bjc-r/img/6-computers/BinaryClock_img/TimerCode.png" height="400"  alt="Timer-Skript" title="Timer-Code"/>
+        </p>
+        <p>Der Block <code>warp</code> sorgt dafür, dass alle Berechnungen abgeschlossen sind, bevor die Bühne neu gezeichnet wird.</p>
+        <p>Der Block <code>Get Decimal Digits</code> ist für dich implementiert. Wenn du Methode 2 (absteigende Zweierpotenzen) für <code>Get Binary Digits</code> nutzt, kannst du den Code ignorieren. Nutzt du Methode 1 (Division mit Rest), dient der vorhandene Code als Vorlage.</p>
+
+        <div class="forYouToDo" id="second">
+            <ol start="4">
+                <li>Verstehe den Code der dezimalen Ziffern-Sprites und prüfe, ob der Timer in Dezimalschreibweise funktioniert.</li>
+                <li>Schreibe nun den Block <code>Get Binary Digits</code> mit deiner bevorzugten Methode. Falls nötig, nutze die <a href="/bjc-r/cur/programming/4-internet/optional-projects/1b-binary-counter-hints.html" target="_blank" title="Hints">Hinweise</a>. Kontrolliere anschließend die acht Binär-Ziffern-Sprites und teste den Binärmodus.</li>
+            </ol>
+        </div>
+
+		<div class="ifTime">
+            <ol start="6">
+                <li>
+                    <img class="imageRight" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deinem Partner / deiner Partnerin" title="Sprich mit deinem Partner / deiner Partnerin" />
+                    In diesem Projekt hast du Binärdarstellungen für die Dezimalzahlen 0–255 generiert. Warum braucht 255 im Binärsystem acht Stellen, aber im Dezimalsystem nur drei?
+                </li>
+                <li>Erstelle einen Hexadezimal-Timer in Snap<em>!</em>.</li>
+            </ol>
+		</div>
+
+		<div class="takeItFurther">
+            <div class="sidenoteBig">
+                Nutze ggf. den Block <code>current</code> im Fühlen-Menü:<br />
+                <img class="inline" src="/bjc-r/img/6-computers/BinaryClock_img/CurrentTime.png" alt="current time" title="current time"/>
+            </div>
+            <ol type="A">
+                <li>Baue eine Binäruhr, die die aktuelle Uhrzeit in Basis 2 zeigt (z. B. 07:40:16 → 0111:101000:010000).</li>
+                <li>Erstelle eine Uhr, die die Zeit in Basis 16 ausgibt (z. B. 12:40:59 → C:28:3B).</li>
+                <li>
+					<img class="imageRight" src="/bjc-r/img/icons/tough-stuff-mini.png" alt="Anspruchsvoll" title="Anspruchsvoll" />
+                    Schreibe einen Reporter, der eine Zahl von einer Basis in eine andere umrechnet.<br />
+                    <img class="indent" src="/bjc-r/img/6-computers/BinaryClock_img/BaseConverter.png" height="50" alt="Basisumrechner" title="Basisumrechner"/>
+                </li>
+                <li>Baue einen Zähler, der Zahlen gleichzeitig in den Basen 2 bis 16 darstellt (siehe Animation).<br />
+                <img class="indent" data-gifffer="/bjc-r/img/6-computers/BinaryClock_img/DG_MultibaseClock.gif" height="350" alt="Multibase Clock" title="Multibase Clock"/></li>
+            </ol>
+        </div>
+
+	</body>
+</html>

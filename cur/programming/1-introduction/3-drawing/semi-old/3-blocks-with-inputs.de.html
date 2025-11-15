@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1 Labor 3: Moderne Kunst mit Polygonen, Seite 3</title>
+	</head>
+
+	<body>
+        <h2>Blöcke mit Eingaben</h2>
+        <div class="todo">
+            <p>
+                Lehrkräfte-Feedback 2017–2018:
+                <ul>
+                    <li>Bestimmte Komponenten waren für Lernende schwierig. Einige Lehrkräfte wünschen sich mehr Beispiele oder Varianten, besonders zu Schleifen (inkl. „eigene Schleife schreiben“) sowie zum Zusammenhang zwischen Skriptvariablen und den Werten, die in den Code übergeben werden. Manche berichteten, dass ihre Klassen mit den Anweisungen kämpften oder den Text nicht sorgfältig genug lasen. Typische Stolpersteine: Schleifen, Blöcke mit Eingaben, drei Eingaben entwerfen, jedes Mal Eingaben in neue Blöcke ziehen, sich trauen kreativ zu sein/Fehler zu machen und Interesse an Skripten/Utility-Skripten entwickeln.</li>
+                    <li>Eine Lehrkraft: „Seite 3, Blocks with Inputs, war besonders herausfordernd. Die Kids verstanden den Zusammenhang zwischen Skriptvariablen und den Parametern nicht, die Nutzer*innen übergeben. Vielleicht brauchen sie VOR dieser Seite, auf der sie Wiederholungen und Winkelbeziehungen verstehen müssen, sehr einfache Beispiele. Trotzdem LIEBTEN sie die farbigen Designs und waren stolz. Sie haben lange mit Winkeln und Bildern experimentiert. Seite 6: Die for-Schleife braucht mehr Aufmerksamkeit. Es sollte mehrere Beispiele geben, bevor die Schüler*innen selbst damit arbeiten. Das eine Say-Beispiel reichte nicht. Die Spiral/Squiral mochten sie aber.“</li>
+                </ul>
+                --MF, 06.03.2019
+            </p>
+        </div>
+
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> nutzt du Eingaben, damit ein Block viele Varianten erzeugen kann.</p>
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <div class="comment">Mary und Brian überlegen, wie sie Kindern offen sagen können, warum sie überhaupt Pinwheels bauen. Vielleicht hilft ein Dialog, in dem Kinder ein Polygon falsch machen? --MF, 29.04.2019
+                    <img class="imageRight" data-gifffer="/bjc-r/img/1-introduction/PolygonalRacetracks_img/RaceTrackTracing.gif" height="150" alt="Winkel auf polygonaler Rennstrecke" title="Winkel auf polygonaler Rennstrecke" />
+                </div>
+                <div class="todo"><h1>Die WAIT-Blöcke müssen hier noch raus. --MF, 19.07.2019</h1></div>
+                <li>
+                    <a href="/bjc-r/prog/1-introduction/U1L3-Pinwheel.xml" class="run"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Starterprojekt laden und speichern." title="Starterprojekt laden und speichern."></a><br /> Erstelle 5 Kopien des Skripts und passe sie so an, dass sie Pinwheel-Designs mit 3, 4, 5, 6 und 12 Armen zeichnen:<br />
+                    <img src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/3.png"  height="120" alt="Pinwheel mit 3 Armen" title="Pinwheel mit 3 Armen" />
+                    <img src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/4.png"  height="120" alt="Pinwheel mit 4 Armen" title="Pinwheel mit 4 Armen" />
+                    <img src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/5.png"  height="120" alt="Pinwheel mit 5 Armen" title="Pinwheel mit 5 Armen" />
+                    <img src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/6.png"  height="120" alt="Pinwheel mit 6 Armen" title="Pinwheel mit 6 Armen" />
+                    <img src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/12.png" height="120" alt="Pinwheel mit 12 Armen" title="Pinwheel mit 12 Armen" />
+                </li>
+                <li>Vergleiche zwei deiner Skripte und notiere alle Unterschiede.</li>
+            </ol>
+        </div>
+
+		<p>Die Skripte sind im Kern gleich; nur die <em>Eingabewerte</em> unterscheiden sich. Statt zig Varianten zu pflegen, kannst du ein allgemeines Skript bauen, das alle Designs zeichnet. Dein <code>pinwheel</code>-Block braucht dafür eine Eingabe für die Anzahl der Arme, <img src="/bjc-r/img/1-introduction/pinwheel-block.png" height="40" alt="pinwheel, branches:()" title="pinwheel, branches:()"> genau wie der Block <code>go to</code> Eingaben für x- und y-Wert besitzt <img src="/bjc-r/img/1-introduction/go-to-empty-inputs.png" height="40" alt="go to x:() y:()" title="go to x:() y:()">.</p>
+
+		<div class="forYouToDo">
+            <img class="imageRight" src="/bjc-r/img/icons/pair-programming-swap.png" alt="Pair-Programming-Rollen tauschen" title="Pair-Programming-Rollen tauschen" />
+            <ol start="3">
+                <div class="ap-standard">(AAP-)2.E.1, (AAP-)3.B.3</div>
+                <li>
+                    Erstelle deinen eigenen Block <code>pinwheel</code> mit einer Eingabe <var>number of branches</var>.
+                    <ol>
+                        <li><strong>Öffne den Block-Editor.</strong><br />
+                            <ul>
+                                <li>Klicke auf <img class="inline" src="/bjc-r/img/1-introduction/make-a-block.png" height="36" alt="Make a Block" title="Make a Block" />.</li>
+                                <li>Wähle die Kategorie <strong>Motion</strong>.</li>
+                                <li>Klicke auf <strong>OK</strong>.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Füge die Eingabe hinzu.</strong>
+                            <ul>
+                                <li>Klicke im Block-Editor auf das Plus-Symbol, um einen Eingabeschlitz zu erstellen.</li>
+                                <li>Gib der Eingabe den Namen <var>number of branches</var>.</li>
+                            </ul>
+                            <div class="endnote">
+                                <a href="#hint-input" data-toggle="collapse" title="Bilder zum Benennen der Eingabe anzeigen.">Bilder zum Benennen der Eingabe anzeigen.</a>
+                                <div id="hint-input" class="collapse">
+                                    <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/plusSign.png" height="75" alt="Plus-Symbol" title="Plus-Symbol" />
+                                    <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/inputName.png" height="175" alt="Eingabename erstellen" title="Eingabename erstellen" />
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Ziehe die benötigten Blöcke hinein und nutze die neue Eingabe.</strong>
+                            <ul>
+                                <li>Ziehe eines deiner Pinwheel-Skripte in den Block-Editor und docke es an den <code>pinwheel</code>-Hutblock an.</li>
+                                <li>Ersetze die variablen Zahlenwerte durch die Eingabe <var>number of branches</var>, damit das Skript allgemeiner wird.</li>
+                            </ul>
+                            <div class="endnote">
+                                <a href="#hint-setup-code" data-toggle="collapse" title="Bild zum Einrichten des Codes im Block-Editor anzeigen.">Bild zum Einrichten des Codes im Block-Editor anzeigen.</a>
+                                <div id="hint-setup-code" class="collapse">
+                                    <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/blockwith21.png" alt="pinwheel, branches:(number of branches) {repeat(21){...}}" title="pinwheel, branches:(number of branches) {repeat(21){...}}" />
+                                    <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/numberofbranches.png" alt="pinwheel, branches:(number of branches){repeat(number of branches){...}}" title="pinwheel, branches:(number of branches){repeat(number of branches){...}}" />
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                    <div class="endnote">
+                        <div class="todo">BH, kannst du das Video bitte kürzer, kleiner und ohne WAIT-Blöcke neu aufnehmen? Wir brauchen nicht das komplette Snap-Fenster. Sieh dir mein neues Video auf 1.3.4 #3b als Beispiel an. --MF, 14.05.2019</div>
+                        <a href="#hint-target" data-toggle="collapse" title="Video: gesamten Aufbau des pinwheel-Blocks ansehen.">Video: gesamten Aufbau des <code>pinwheel</code>-Blocks ansehen.</a>
+                        <div id="hint-target" class="collapse">
+                            <img class="indent" data-gifffer="/bjc-r/img/1-introduction/Blockswith-Inputs_img/blocks-with-inputs.gif" alt="Animation: Block mit Eingabe erstellen" title="Animation: Block mit Eingabe erstellen"/>
+                        </div>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <div class="takeNote">
+            <div class="ap-standard">(DAT-)1.A.1</div>
+            <p><strong>Welche Datenarten können Eingaben sein?</strong> Beliebige! In diesem Beispiel soll die Eingabe eine Zahl sein, aber grundsätzlich kann jeder Datentyp als Eingabe dienen. Du hast z. B. gesehen, wie der Block <code>list</code> Text als Eingaben nutzt. In Snap<em>!</em> können Daten jeder Art Eingaben sein, von Blöcken zurückgegeben oder in Listen gespeichert werden.</p>
+        </div>
+
+        <div class="vocabFullWidth">: <strong>Was ist eine Eingabe? Parameter</strong> vs. <strong>Argument</strong>
+            <div class="ap-standard">(AAP-)3.A.3</div>
+            <p>
+                <ul>
+                    <li>
+                        Ein <strong>Parameter</strong> (oder <em>formaler Parameter</em>) ist der Eingabe<strong>name</strong>, z. B. <var>number of branches</var>. Er wird in der Blockdefinition festgelegt.<br />
+                        <img class="indent" src="/bjc-r/img/1-introduction/example-parameter.png" alt="pinwheel-Definition mit Parameter-Markierung" title="pinwheel-Definition mit Parameter-Markierung" />
+                    </li>
+                    <li>
+                        Ein <strong>Argument</strong> (oder <em>tatsächliches Argument</em>) ist der Eingabe<strong>wert</strong>, z. B. 6 für ein sechseckiges Pinwheel. Der Wert wird jedes Mal beim Ausführen gesetzt und kann variieren.<br />
+                        <img class="indent" src="/bjc-r/img/1-introduction/example-argument.png" alt="pinwheel, branches:(6) mit Argument-Markierung" title="pinwheel, branches:(6) mit Argument-Markierung" />
+                    </li>
+                </ul>
+                Wir verwenden „Eingabe“ sowohl für Parameter (Namen) als auch für Argumente (Werte).
+            </p>
+        </div>
+
+        <div class="ap-standard">(AAP-)3.B.4</div>
+        <p>Anfangs hast du fünf Kopien des Pinwheel-Skripts erstellt, um kleine Variationen zu bekommen. Jetzt hast du eine einzige Prozedur, die alle gemeinsamen Teile enthält und mit einem Parameter die Unterschiede abdeckt.</p>
+
+        <div class="forYouToDo">
+			<ol start="4">
+                <img class="imageRight" src="/bjc-r/img/icons/save-mini.png" alt="Speichere deine Arbeit" title="Speichere deine Arbeit" />
+                <li>Kommentiere deinen Code.</li>
+                <div class="takeNote">
+                    <h3 class="box-head">Debugging-Tipp: Code kommentieren</h3>
+                    <div class="todo">
+                        <h4><em><strong>Brian</strong></em> überarbeitet das Video, um seine Bedenken zu adressieren:</h4>
+                        <p>Zur orangefarbenen Box auf 1.3.3: Der Kommentar am Hutblock ist okay, aber der Kommentar am turn-Block ist genau das, was ich nicht machen würde. Vielleicht sollten wir erwähnen, dass man beim <em>Unterrichten</em> Kommentare schreibt, die man für sich allein nicht unbedingt braucht.</p>
+                        <p>Der Hutblock-Kommentar im Video ist zudem keine gute Dokumentation. Er sollte in etwa sagen: „Zeichnet ein REGULÄRES Fünfeck, Seitenlänge wird über die Eingabe gesetzt.“</p>
+                        <p>Gute Kommentare wirken selten überzeugend in kleinen Beispielen. In größeren Projekten macht man z. B. Hinweise wie „FOO wird in Prozedur BAR gesetzt, die in der Initialisierung aufgerufen wird“, wenn eine globale Variable ohne Kontext auftaucht.</p>
+                    </div>
+                    <p>
+                        Kommentare helfen dir und anderen, den Code zu verstehen, und verhindern Bugs, weil sie Klarheit schaffen. In Snap<em>!</em> kannst du per Rechtsklick (Mac: Ctrl-Klick) im Skriptbereich „add comment“ wählen. <a href="#hint-comments" data-toggle="collapse" title="Animation zum Kommentieren ansehen.">Animation zum Kommentieren ansehen.</a>
+                        <div id="hint-comments" class="collapse">
+                            <img class="indent" data-gifffer="/bjc-r/img/2-complexity/Debugging/commenting.gif" alt="Animation: Kommentar hinzufügen" title="Animation: Kommentar hinzufügen"/>
+                        </div>
+                    </p>
+                    <p>Wenn du den Kommentar an den Hutblock hängst, erscheint er als Hilfetext für deinen Block.</p>
+                </div>
+
+		        <li>Erstelle ein Skript, das zwei Pinwheels auf der Bühne zeichnet.</li>
+                <div class="endnote">
+                    Wenn du eine Prozedur (wie <code>pinwheel</code>) in ein Skript einbettest, wird ihr Code komplett ausgeführt, bevor das umgebende Skript weiterläuft.
+                </div>
+            </ol>
+        </div>
+
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>
+                    Diese Bilder wurden mit dem Block <code>pinwheel</code> und <code>set pen color</code> erstellt. Gestalte eigene Kunstwerke.<br />
+                    <!--<img src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/Wreath3.png" height="200" alt="Kranz aus Regenbogen-Pinwheels" title="Kranz aus Regenbogen-Pinwheels"/>-->
+                    <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/Wreath1.png" height="200" alt="Kranz aus Regenbogen-Pinwheels" title="Kranz aus Regenbogen-Pinwheels"/>
+                    <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/Wreath2.png" height="200" alt="Kranz aus Regenbogen-Pinwheels" title="Kranz aus Regenbogen-Pinwheels"/>
+                </li>
+                <li>
+                    Erstelle eine Animation.<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/branchesCycle.gif"  height="200" alt="Branch Cycle Animation" title="Branch Cycle Animation"/>
+                </li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

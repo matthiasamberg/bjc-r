@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1 Labor 3: Moderne Kunst mit Polygonen, Seite 4</title>
+	</head>
+
+	<body>
+        <h2>Dein Pinwheel anpassen</h2>
+        <div class="todo">
+            <p>Lehrkräfte-Feedback 2017–2018: „Seite 4: Manche Lernende braucht es, dass man sie anstößt, damit sie erkennen, wie daraus ein Stern oder Polygon wird. Vielleicht hilft eine Hint-Schaltfläche.“ --MF, 06.03.2019</p>
+        </div>
+        <div class="todo">
+            <p>AC: Auf der vorherigen Seite haben sie mit dem „zweiten move“ experimentiert. Neu hier ist, das Ganze programmatisch zu machen, indem Eingaben hinzukommen. Mit etwas Kontext könnten wir direkt zu #5 springen. Kommt in #5 überhaupt etwas Neues?</p>
+            <ul><li>Spannende Idee zur Vereinfachung. Müssen wir durchdenken, verdient aber Aufmerksamkeit. --MF, 16.05.2018</li></ul>
+            <p>AC: #8 wiederholt sich auf der nächsten Seite. Hier oder dort löschen.</p>
+            <ul><li>Ich finde, sie unterscheiden sich: Hier geht es darum, überhaupt Kreise hinzubekommen. Dort müssen sie über die Bedeutung der Eingabe nachdenken. Lass uns das beachten, wenn wir etwas streichen. --MF, 16.05.2018</li></ul>
+            <p>PG: Vereinfachen. Al hat recht. Die orangefarbene Box ist viel zu viel und zu früh.</p>
+            <ul><li>Wir haben den Text gekürzt und hinter einen Klick gelegt. Besser? Können wir diesen Kommentar löschen? --MF, 12.04.2019</li></ul>
+        </div>
+
+
+        <div class="learn">
+        	<strong>Auf dieser Seite</strong> erweiterst du deinen <code>pinwheel</code>-Block so, dass du viele unterschiedliche Formen zeichnen kannst.<br />
+            <img class="indent" src="/bjc-r/img/1-introduction/assorted-pinwheels.png" alt="verschiedene Pinwheels" title="verschiedene Pinwheels" />
+        </div>
+
+        <h3>Mehrere Eingaben hinzufügen</h3>
+        <p>Du hast dein ursprüngliches Pinwheel verallgemeinert, indem du eine Eingabe <var>branches</var> eingeführt hast, die den Drehwinkel steuert. Mit <em>weiteren</em> Eingaben kannst du andere Aspekte verallgemeinern…</p>
+        <div class="forYouToDo" id="first">
+			<ol>
+                <li>Öffne dein Projekt U1L3-Pinwheel, falls es noch nicht geöffnet ist.</li>
+                <li>
+                    Experimentiere mit der Eingabe für den <em>zweiten</em> <code>move</code>-Block innerhalb von <code>pinwheel</code> (siehe unten).<br />
+                    <ol>
+                    	<li>
+                        	<img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deinem Partner / deiner Partnerin" title="Sprich mit deinem Partner / deiner Partnerin" />
+                        	Macht zuerst eine Vorhersage: Was erwartest du?
+                        </li>
+
+						<img class="indent" src="/bjc-r/img/1-introduction/pinwheel-change-second-move-input.png" alt="Kommentar: mit zweitem move-Eingabewert experimentieren" title="Kommentar: mit zweitem move-Eingabewert experimentieren" />
+                        <li>Teste mehrere Eingaben zwischen -100 und 0.</li>
+                        <li>
+                        	<img class="inline" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deinem Partner / deiner Partnerin" title="Sprich mit deinem Partner / deiner Partnerin" />
+                            Was ist passiert? Wie passt das zu deiner Vorhersage? Wie beeinflusst der Eingabewert das Verhalten der Figur und das Ergebnis auf der Bühne?<br />
+                            <img class="indent" data-gifffer="/bjc-r/img/1-introduction/Blockswith-Inputs_img/asteriskpolygonCycleBW.gif" height="200" alt="Vom Stern zum Polygon" title="Vom Stern zum Polygon"/>
+                        </li>
+                	</ol>
+                </li>
+                <li>
+                    <div class="sidenote">Wie man Eingaben hinzufügt, findest du bei <a href="/bjc-r/cur/programming/1-introduction/3-drawing/3-blocks-with-inputs.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment">Einheit 1, Seite 3</a>.</div>
+                    Füge eine <em>zweite Eingabe</em> hinzu, die steuert, wie weit die Figur nach jedem Arm zurücksetzt.
+                	<ol>
+                        <li>Bearbeite deinen <code>pinwheel</code>-Block, klicke auf das Plus und <strong>füge ein Eingabe-Label über „Title text“ hinzu</strong> („backup:“).</li>
+                        <li>Klicke erneut auf das Plus, um einen Eingabenamen zu ergänzen, nenne ihn <var>backup</var>.</li>
+                        <div class="endnote">
+                            <a href="#hint-input-and-label" data-toggle="collapse" title="Video: Eingabelabel und Eingabefeld ergänzen.">Video: Eingabelabel und Eingabefeld ergänzen.</a>
+                            <div id="hint-input-and-label" class="collapse">
+                                <img class="indent" data-gifffer="/bjc-r/img/1-introduction/Blockswith-Inputs_img/addLabel.gif" alt="Titeltext hinzufügen" title="Titeltext hinzufügen"/>
+                                <img class="indent" data-gifffer="/bjc-r/img/1-introduction/Blockswith-Inputs_img/addInput.gif" alt="Eingabe hinzufügen" title="Eingabe hinzufügen"/>
+                            </div>
+                        </div>
+                    </ol>
+                </li>
+                <li>
+                	<div class="sidenote">Du kannst Eingaben als <img class="inline" src="/bjc-r/img/1-introduction/U1ImageVideoAddendum_img/U1L3-PinwheelwithInputsSlider.png" alt="Slider" title="Slider" /> anlegen, um den Wert bequemer zu ändern.</div>
+                    <p>Dein Block sollte nun so aussehen:</p>
+                    <img class="indent" src="/bjc-r/img/1-introduction/pinwheel-branches-size-backup.png" height="80" alt="pinwheel, branches:() size:() backup:()" title="pinwheel mit drei Eingaben" />
+                </li>
+                <li>
+                	Probiere verschiedene Eingaben für dein <code>pinwheel</code> aus…<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/U1ImageVideoAddendum_img/U1L3-PinwheelwithInputs1.png"  height="50" alt="pinwheel, branches:(6) size:(80) backup:(20)" title="pinwheel, branches:(6) size:(80) backup:(20)" />
+                    <img class="indent" src="/bjc-r/img/1-introduction/pinwheel-80-6-20-result.png" alt="Ergebnis für (6,80,20)" title="Ergebnis für (6,80,20)" /><br />
+                    <div class="todo">Dan möchte ein Beispiel, bei dem <var>size</var> verändert wird. --MF, 20.12.2018</div>
+                    <img class="indent" src="/bjc-r/img/1-introduction/U1ImageVideoAddendum_img/U1L3-PinwheelwithInputs2.png" height="50" alt="pinwheel, branches:(5) size:(80) backup:(60)" title="pinwheel, branches:(5) size:(80) backup:(60)" />
+                    <img class="indent" src="/bjc-r/img/1-introduction/pinwheel-80-5-60-result.png" alt="Ergebnis für (5,80,60)" title="Ergebnis für (5,80,60)" />
+                </li>
+                <div class="todo">Dan: „Mini-Lektion zu Input-Slidern einbauen, wenn wir pinwheel mit backup zeigen.“ BH schlägt eine gelbe Hinweisbox mit Bild vor. --MF, 09.04.2019</div>
+                <div class="examFullWidth">
+                    <div class="ap-standard">(AAP-)3.A.5</div>
+                    <div class="pseudop">Der Aufruf <img class="inline" src="/bjc-r/img/1-introduction/U1ImageVideoAddendum_img/U1L3-PinwheelwithInputs1.png" alt="pinwheel, branches:(6) size:(80) backup:(20)" title="pinwheel, branches:(6) size:(80) backup:(20)" /> würde als <pre class="inline">Pinwheel(6, 80, 20)</pre> oder <img class="nopadtb" src="/bjc-r/img/1-introduction/pinwheel-blocktran.png" alt="PINWHEEL  6, 80, 20" title="PINWHEEL  6, 80, 20" /> geschrieben.</div>
+                    <div class="todo">In den Referenzblättern fehlt ein Block-Beispiel für Prozeduraufrufe. Aktuell nur eine Annahme – muss überprüft werden. --MF, 01.03.2019</div>
+                    <div class="todo">Brian, möchtest du etwas zu Parameterlabels ergänzen und wie sehr sie helfen? --MF, 09.08.2019</div>
+                </div>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deinem Partner / deiner Partnerin" title="Sprich mit deinem Partner / deiner Partnerin" /> Überlegt gemeinsam, welche Eingabekombinationen Polygone bzw. Sterne ergeben.<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/polygon-result.png" alt="Polygon" title="Polygon" />
+                    <img class="indent" src="/bjc-r/img/1-introduction/asterisk-result.png" alt="Stern" title="Stern" />
+                </li>
+                <div class="endnote">Du kannst die Wartezeit im <code>pinwheel</code>-Skript verkürzen, damit die Versuche schneller gehen.</div>
+                <img class="imageRight" src="/bjc-r/img/icons/save-now.png" alt="Jetzt speichern" title="Jetzt speichern" />
+			</ol>
+		</div>
+
+
+
+        <div class="ifTime">
+            <ol start="8">
+				<li>Finde Eingabewerte für <code>pinwheel</code>, mit denen das Ergebnis wie ein Kreis aussieht.</li>
+            </ol>
+        </div>
+
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>
+                    Erstelle ein Bild, das wie ein echtes Windrad aussieht:<br />
+                    <img src="/bjc-r/img/1-introduction/pinwheel.png" height="210" alt="Windrad-Foto" title="Windrad-Foto" /><br />
+                    <small>Copyright 2010 <a href="http://asubtlerevelry.com/a-pinwheel-tutorial-the-easiest-ever/" title="A Pinwheel Tutorial- The Easiest Ever" target="_blank">Victoria Hudgins</a>. Mit Genehmigung.</small>
+                    <p>(Speichere dein Projekt zuerst – du brauchst deinen <code>pinwheel</code>-Block später noch.)</p>
+                    <p>Das Bild muss nicht genau dem Foto entsprechen. Jede Pinwheel-Klinge besteht im Grunde aus zwei Dreiecken. Der Block <img src="/bjc-r/img/1-introduction/fill.png" alt="fill-Block" title="fill-Block" /> kann hilfreich sein.</p>
+                </li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

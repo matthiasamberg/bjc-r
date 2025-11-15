@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 3 Labor 1: Kontaktliste, Seite 5</title>
+    </head>
+
+	<body>
+        <h2>Kontaktdaten: Namen</h2>
+        <div class="learn">
+            <strong>Auf dieser Seite</strong> schaust du dir an, wie viel Komplexität im Feld „Name“ steckt.
+        </div>
+
+        <p>Eine Kontaktliste dreht sich vollständig um <strong>Daten</strong>. In diesem Lab erstellst du den ADT <code>contact</code> mit Bestandteilen wie <code>name</code>, <code>address</code>, <code>phone</code>, <code>birthday</code> usw. – ähnlich wie im <a href="/bjc-r/cur/programming/2-complexity/2-data-structures-art/3-traversing-list.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment">Einheit‑2‑Lab 2</a>, in dem du den ADT <code>quiz item</code> gebaut hast. Hier besteht aber jeder Bestandteil eines <code>contact</code> wiederum aus einem ADT. Wir starten mit den Namen.</p>
+
+        <div class="dialogue">
+            <div><span>Morgan:</span> Im Text steht, dass <code>name</code> ein ADT sein muss – warum? Ein Name ist doch nur eine Zeichenkette: „Morgan Preston“, „Jasmine Williams“, „Sir James Paul McCartney“ …</div>
+            <div>
+                <span>Jasmine:</span> Schau mal in deine Kontaktliste.<br />
+                <img src="/bjc-r/img/3-lists/contacts.png" height="150" alt="Kontaktliste"><br />
+				Die Liste ist nach Nachnamen sortiert, obwohl die Namen nicht mit dem Nachnamen beginnen.
+            </div>
+            <div>
+                <span>Morgan:</span> Also soll <code>name</code> ein ADT aus <code>first name</code> und <code>last name</code> sein? Das wäre wie beim ADT <code>point</code>:<br />
+                <img src="/bjc-r/img/3-lists/point.png" alt="point = list" title="point = list"/>&nbsp;&nbsp;&nbsp;&nbsp;<img src="/bjc-r/img/3-lists/simple-name.png" alt="name, first: (first) last: (last)" title="name, first: (first) last: (last)">
+            </div>
+            <div class="stagedir">Andere Schüler*innen hören mit.</div>
+            <div><span>Mei:</span> Soll die App auch in China funktionieren? Dort steht der Familienname zuerst. Sun Yìxiān gehört also zur Familie Sun und stünde im „S“-Teil der Liste, nicht bei „Y“.</div>
+            <div><span>Morgan:</span> Brauchen wir dann zwei unterschiedliche <code>name</code>-Typen mit je eigenen Konstruktoren und Selektoren?</div>
+            <div><span>Omar:</span> Mindestens zwei. Nach dem Programm erzähle ich dir noch von Island (Vorname zuerst, nach Vornamen sortiert) und Myanmar (kein Nachname)! </div>
+            <div class="stagedir">Morgan stöhnt und hält sich den Kopf.</div>
+            <div><span>Jasmine:</span> So schlimm ist es nicht. Wir haben <em>einen</em> <code>name</code>-Typ mit Varianten und speichern einen <em>type tag</em> zusammen mit Vor- und Familiennamen – etwa <strong>given-first</strong> (wie in den USA) oder <strong>family-first</strong> (wie in China). Weitere Varianten kann Omar später ergänzen.</div>
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>
+                    Baue diesen Block:<br />
+                    <img src="/bjc-r/img/3-lists/typed-name.png" alt="name, type: ( ) given: ( ) family: ( )">
+                </li>
+                <li>
+                    Für <var>type</var> sind nur zwei Werte erlaubt; Nutzer*innen sollen sie nicht eintippen müssen. Richte daher ein Menü ein:<br />
+                    <img src="/bjc-r/img/3-lists/dropdown-block.png" alt="name-Block mit Menü"><br />
+                    So geht’s:
+                    <ol type="a">
+                        <li>Bearbeite den Block <code>name</code> und klicke auf die orangefarbene Variable <var>type</var>.</li>
+                        <li>
+                            Öffne den Typwähler über den Pfeil, dann Rechtsklick → „options…“:<br />
+                            <img src="/bjc-r/img/3-lists/option-context-menu.png" height="460" alt="Kontextmenü Optionen"><br />
+                        </li>
+                        <li>
+                            Gib die Typ-Tags zeilenweise ein:<br />
+                            <img src="/bjc-r/img/3-lists/option-dialog.png" height="460" alt="Menüeinträge „given-first“, „family-first“">
+                        </li>
+                        <li>
+                            Klicke OK, dann erneut Rechtsklick auf den Typwähler und „read-only“ wählen.
+                            <div class="narrower">
+                                Es gibt zwei Menütypen:<br />&nbsp;&nbsp;
+                                <img src="/bjc-r/img/3-lists/dropdown-item.png" alt="nicht schreibgeschütztes Menü"><br />
+                                <img src="/bjc-r/img/3-lists/dropdown-touching.png" alt="schreibgeschütztes Menü"><br />
+                                Hier wollen wir nur die Menüwerte zulassen.
+                            </div>
+                        </li>
+                        <li>Bestätige die Eingabe und den Block-Editor.</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+        <div class="dialogue">
+            <div><span>Morgan:</span> Jetzt brauchen wir Selektoren, oder?</div>
+            <img src="/bjc-r/img/3-lists/name-type.png" alt="name type (name)" title="name type (name)"> <img src="/bjc-r/img/3-lists/given-name.png" alt="given name (name)" title="given name (name)"> <img src="/bjc-r/img/3-lists/family-name.png" alt="family name (name)" title="family name (name)">
+            <div><span>Omar:</span> Nenn den ersten nicht <code>name type</code>. Wir brauchen den gleichen Typ-Selektor auch für andere ADTs – nenn ihn <code>type tag</code>.</div>
+            <div><span>Morgan:</span> Woher willst du das wissen?</div>
+            <div><span>Omar:</span> Ich habe im Curriculum vorausgelesen!</div>
+            <div class="stagedir">Morgan und Jasmine stöhnen.</div>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="3">
+            	<li>Erstelle die drei Selektoren – nutze Omars Namen für den ersten.</li>
+            </ol>
+        </div>
+
+        <div class="dialogue">
+            <div><span>Jasmine:</span> Was bringen Varianten konkret? Meist braucht das Programm den ganzen Namen – entweder zur Anzeige oder zum Sortieren. Brauchen wir nicht Blöcke wie <img src="/bjc-r/img/3-lists/given-first-name-sorted-order.png" alt="given first name in sorted form (name)">?</div>
+            <div><span>Morgan:</span> Stell dir den Block als Selektor für <em>alle</em> Namen vor, z. B. <img src="/bjc-r/img/3-lists/name-sorted-block.png" alt="name (sorted form) ()">. Die Definition ist etwas komplexer, aber der Rest des Programms muss nicht wissen, welche Variante vorliegt.</div>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="4">
+                <li>
+                    Vervollständige diese Definition:<br />
+                    <img src="/bjc-r/img/3-lists/name-sorted-defn.png" alt="name (sorted form) (name): if ..."><br >
+                    Für „given-first“ steht ein Komma zwischen den Namen („Williams, Jasmine“); bei „family-first“ nicht („Sun Yìxiān“).
+                </li>
+                <li>Definiere analog <img src="/bjc-r/img/3-lists/name-display.png" alt="name (display form)" title="name (display form)">.</li>
+            </ol>
+        </div>
+
+        <div class="dialogue">
+            <div>
+                <span>Jasmine:</span> Alles klar! Im restlichen Programm können wir dann einfach<br />
+                <img src="/bjc-r/img/3-lists/foreach-say-name.png" alt="for each contact say name (display form)" title="for each contact say name (display form)">
+                nutzen.
+            </div>
+            <div>
+                <span>Morgan:</span> Noch besser! Hier kommt die eigentliche Magie: Wir geben auch dem ADT <code>contact</code> einen type tag:<br />
+                <img src="/bjc-r/img/3-lists/contact-with-tag.png" alt="contact mit [contact]-Tag" title="contact mit [contact]-Tag"><br />
+                Dann können dieselben Selektoren auch auf Kontakte angewendet werden:<br />
+                <img src="/bjc-r/img/3-lists/display-name-object.png" width="729" height="421" alt="name (display form) (object) ..."><br />
+                Fertig! Dein Code lautet einfach<br />
+                <img src="/bjc-r/img/3-lists/foreach-display-contact.png" alt="for each contact say name (display form) (contact)" title="for each contact say name (display form) (contact)">
+            </div>
+        </div>
+
+
+	</body>
+</html>

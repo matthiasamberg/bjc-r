@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Lab #: Name</title>
+	</head>
+
+	<body>
+		<h3>Funktionale Programmierung</h3>
+
+		<p>In der AP-Notation kann Listeninhalt nur über <em>Befehle</em> verändert werden, also Aktionen, die eine Liste <em>mutieren</em>: <code>Add</code>, <code>Insert</code>, <code>Replace</code>, <code>Delete</code>. Diese Sicht wählen sie, weil sie denken, dass dieser Stil am leichtesten verständlich ist – und weil etwa Scratch nur solche Befehle für Listen kennt. Es gibt aber einen anderen Ansatz: <strong>funktionale Programmierung</strong>. Hier veränderst du keine Datenstruktur, sondern erstellst für neue Werte immer eine neue.</p>
+
+        <div class="todo">Ich bin noch nicht überzeugt, dass das <em>immer</em> besser ist. Manchmal ist es großartig, manchmal ein verwirrender Albtraum. Erinnerst du dich, als du beweisen wolltest, dass <code>draw square</code> funktional gehen muss? (Außerdem muss ich das „sie“ und „am leichtesten“ anpassen, und Scratch ist für viele Nutzende kein Begriff.) --MF, 30.05.2020</div>
+
+        <div class="forYouToDo">
+			<ol start="10">
+				<div class="todo">Wir nutzen diese geschwungenen Klammern selten für Schüler*innen; die College-Board-Notation verwendet eckige Klammern. --MF, 30.05.2020</div>
+                <li>Du hast eine Einkaufsliste und möchtest alle Wörter pluralisieren („apples“ statt „apple“). Anfangswert von <var>shopping list</var> sei <code>{apple, banana}</code>. Betrachte diese fünf Skripte:
+				<div class="todo">Viel zu viel Code auf einmal – das lenkt vom Ziel ab. Lieber ein imperatives und ein funktionales Beispiel zeigen und gezielte Fragen stellen. --MF, 30.05.2020</div>
+                <ol type="A">
+					<li><img src="/bjc-r/img/2-complexity/plurals-1.png" alt="Skript A"></li>
+					<li><img src="/bjc-r/img/2-complexity/plurals-2.png" alt="Skript B"></li>
+					<li><img src="/bjc-r/img/2-complexity/plurals-3.png" alt="Skript C"></li>
+					<li><img src="/bjc-r/img/2-complexity/plurals-4a.png" alt="Skript D1"><br />
+					    <img src="/bjc-r/img/2-complexity/plurals-4b.png" alt="Skript D2"></li>
+					<li><img src="/bjc-r/img/2-complexity/plurals-5.png" alt="Skript E"></li>
+				</ol>
+				Den Block <code>map</code> kennst du noch nicht: Er ist eine Higher-Order-Funktion, die eine neue Liste gleicher Länge erzeugt; jedes Element entsteht, indem die Eingabefunktion auf das jeweilige Listenelement angewendet wird.
+                    <div class="todo">Wir können <code>map</code> hier nicht voraussetzen, bevor es eingeführt wurde.</div>
+			</li><li>
+				<ol type="a">
+				<img class="imageRight" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Mit Partner sprechen">
+					<li>Welchen Wert hat <var>plural shopping list</var> nach jedem Skript?</li>
+					<li>Welchen Wert hat <var>shopping list</var> nach jedem Skript?</li>
+				</ol>
+                <div class="todo">Das ist schon eine gute Richtung – ergänzt Fragen wie „Willst du, dass shopping list ebenfalls verändert wird?“ --MF, 30.05.2020</div>
+			</li>
+            </ol>
+		</div>
+		<p>Die ersten drei – <em>imperative</em> – Skripte erfordern genaue Analyse, um den Endwert von <var>shopping list</var> zu kennen. (Einmal bleibt er gleich, einmal entspricht er <var>plural shopping list</var>, einmal hängt das Ergebnis davon ab, ob du in Snap<em>!</em> oder der AP-Sprache programmierst – siehe den grauen Kasten direkt vor „Functional Programming“.)</p>
+        <div class="todo">„imperativ“ taucht aus dem Nichts auf. Falls wir den Begriff nutzen, braucht es eine Vokabelbox. Auch das Ende des Absatzes ist unklar – worauf bezieht es sich? Vielleicht auf etwas, das hier nicht steht? Wenn wir Unterschiede zwischen Snap<em>!</em> und APtran erklären wollen (was ich nicht empfehle), ginge das, sonst ist es verwirrend. --MF, 30.05.2020</div>
+		<p>Bei den letzten beiden Skripten sollte klar zu sehen sein, dass <var>shopping list</var> unverändert bleibt – sie verwenden funktionale Programmierung: Eine neue Liste entsteht ganz ohne <code>replace</code>- oder <code>add</code>-Befehle.</p>
+        <div class="todo">Bitte nicht „sollte klar“ schreiben, schon gar nicht auf einer schwierigen Seite. --MF, 30.05.2020</div>
+		<p>Für die Prüfung musst du den imperativen Stil erkennen (du musst keinen Code schreiben). Gleichzeitig soll dir die funktionale Arbeitsweise vertraut sein; vielleicht gefällt dir die Eleganz des fünften Skripts: eine Einzeiler-Lösung, die die Pluralliste erzeugt, ohne die Originaldaten anzutasten.</p>
+        <div class="todo">Ich höre hier mit dem Kritisieren auf. Mir fehlt ein klarer Fokus. Seite wirkt gleichzeitig überladen und dennoch vage. Wir brauchen so eine Seite, aber noch ist sie nicht da. --MF, 30.05.2020</div>
+		<div class="takeNote">Früher galt funktionale Programmierung bei „echten“ Programmierer*innen als akademische Spielerei. Heute ist sie wegen Parallel-Hardware populär – ob mit Server-Racks oder Mehrkern-Chips. Wenn Prozesse parallel laufen, könnten zwei gleichzeitig dieselbe Variable ändern, was zu Fehlern führt. In funktionalem Stil passiert das nicht, weil nichts mutiert wird. Es gibt Sprachen, die keine Entsprechung zu <code>set</code> oder <code>replace</code> kennen.<div class="todo">Warum steht das in einer takeNote-Box? Sollte eher eine Endnote sein. --MF, 30.05.2020</div>
+		</div>
+
+        <div class="todo">Wenn wir sprechen, zeig mir bitte die Lösung zur TIF-Aufgabe. Muss sie funktional sein, oder ist das nur ein Hinweis? --MF, 30.05.2020</div>
+        <div class="takeItFurther">
+            <div class="sidenoteBig">Eine „Search“-Button-Figur ist bereits vorhanden. Mit <img class="inline nopadtb" src="/bjc-r/img/blocks/show.png" alt="show" title="show" /> machst du sie sichtbar.</div>
+            <ol type="A">
+                <li>Schreibe ein Skript für den „Search“-Button, das sagt, ob ein Element schon auf der Liste steht. Nutze dazu <img class="inline nopadtb" src="/bjc-r/img/blocks/contains-empty.png" alt="'list input slot' contains ()" title="'list input slot' contains ()" />.</li>
+            </ol>
+            <p style="clear: both; height: 0px;"></p>
+        </div>
+        <div class="todo">Mir fehlen hier die Kernideen: Geht es nur darum, dass FP nicht mutiert? Brauchen wir wirklich die Begriffe „imperativ vs. funktional“, oder reicht es, auf Unterschiede beim Verändern der Original-Liste hinzuweisen und dann „Das nennt man funktional“ zu sagen? Außerdem: War Shopping List tatsächlich der beste Kontext? Vielleicht könnten wir das mit der MAP-Seite aus U3 verzahnen, die Paul und ich ohnehin überarbeiten wollen. --MF, 30.05.2020</div>
+
+
+	</body>
+</html>

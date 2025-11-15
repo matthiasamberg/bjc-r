@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1 Labor 3: Moderne Kunst mit Polygonen, Seite 5</title>
+	</head>
+
+	<body>
+        <h2>Pinwheel remixen</h2>
+        <div class="todo">
+            <h3>Schonungslose Vorschläge von Al</h3>
+            <ul>
+                <li>Ich verstehe den Titel „Remix your pinwheel“ nicht.</li>
+                <ul>
+                  <li>Wo genau liegt das Problem? Sie verändern ihr vorheriges Pinwheel – daher „remix“. --MF, 16.05.2018</li><li>Paul stimmt unten zu. --MF, 14.05.2019</li></ul>
+                <li>Die graue Box ist viel mehr als Vokabular – sie ist richtig wichtig.</li>
+                <ul><li>Finde ich auch, aber deshalb darf sie trotzdem im Vokab-Kasten stehen. Wir schreiben keine Boxen, die unwichtig sind. Würde es lassen. --MF, 16.05.2018</li><li>BH, Grund dagegen? --MF, 14.05.2019</li></ul>
+                <li>Aufgabe 4 löschen. Manchmal braucht man Zusatzcode für Allgemeingültigkeit. Und <strong>Polygonal Racetrack</strong> ist doch offline?</li>
+                <ul><li>Mag ich, wäre aber auch als „If There Is Time“ ok. Bin mir nicht sicher, was du mit der Racetrack-Anmerkung meinst; möchte Brians/Pauls Einschätzung, ob die Seite wirklich nötig ist. --MF, 16.05.2018</li></ul>
+                <li>#5: Was bedeutet „size“ bei einem Kreis? Vielleicht streichen.</li>
+                <ul><li>Vermutlich absichtlich offen gelassen, damit sie selbst entscheiden. Radius führt zu einer nicht ganz einfachen Rechnung. Bin nicht gegen Streichen. --MF, 16.05.2018</li></ul>
+                <li>„Take it Further“ löschen. Scheint nur lose zur Seite zu passen.</li>
+                <ul>
+                  <li>Bin grundsätzlich dafür, nur Themen zu behalten, die zur Story des Kurses gehören. --MF, 16.05.2018</li>
+                    <li>BH, passt das für dich? --MF, 14.05.2019</li>
+                </ul>
+            </ul>
+        </div>
+        <div class="todo">
+            <p>Lehrkräfte-Feedback 2017–2018: „Auf Seite 5 sieht das Asterisk-Bild nicht wie ihr Ergebnis aus – es sollte einfarbig sein und gleichmäßig verteilt. Das hat alle verwirrt. Auf Seite 7 beim Rechteck-Block hätten sie Schleifen nutzen sollen; gute Chance, ihre Bedeutung zu zeigen. Viele hatten Probleme mit Parametern; ich musste eine Mini-Lektion halten. Vielleicht brauchen wir hier mehr Beispiele/Erklärungen – der kurze Text hat nicht gereicht.“ --MF, 06.03.2019</p>
+        </div>
+        <div class="todo">
+            <p>PG: Warum ist „Remix“ hier sinnvoll? Editieren? Modifizieren?</p>
+        </div>
+
+
+        <div class="learn">
+        	<strong>Auf dieser Seite</strong> nutzt du deinen <code>pinwheel</code>-Block, um <code>asterisk</code>- und <code>polygon</code>-Blöcke zu bauen.<br />
+            <img class="indent" src="/bjc-r/img/1-introduction/Blockswith-Inputs_img/asteriskpolygonCycle.gif" height="250" alt="Animation vom Stern zum Polygon" title="Animation vom Stern zum Polygon"/>
+        </div>
+
+		<p>Dein <em>allgemeiner</em> Pinwheel-Block kann als Grundlage für andere, speziellere Prozeduren dienen, die jeweils eine konkrete Aufgabe übernehmen.</p>
+
+        <div class="forYouToDo" id="first">
+            <img class="imageRight" src="/bjc-r/img/1-introduction/asterisk-new.png" height="250" alt="Asterisk mit 12 Armen" title="Asterisk mit 12 Armen"/>
+        	<ol>
+				<li>Öffne dein U1L3-Pinwheel-Projekt.</li>
+                <li>
+                    Erstelle auf Basis deines <code>pinwheel</code>-Blocks einen spezialisierten Block <code>asterisk</code>.
+                    <ol>
+                        <li><strong>Erzeuge einen neuen Block.</strong> Gib ihm Namen und Farbe deiner Wahl.</li>
+                        <li><strong>Füge Eingaben hinzu</strong> (z. B. <var>branches</var>, <var>size</var>, <var>backup</var>) und nutze sie im Inneren, indem du deinen Pinwheel-Block mit passenden Werten aufrufst.</li>
+                        <li><strong>Teste verschiedene Eingaben</strong>, um sicherzugehen, dass dein Block korrekt funktioniert.</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+		<img class="inline" src="/bjc-r/img/icons/pair-programming-swap.png" alt="Pair-Programming-Rollen tauschen" title="Pair-Programming-Rollen tauschen" />
+
+        <div class="forYouToDo">
+			<ol start="3">
+                <li>Schreibe analog einen Block <code>polygon</code>, der mithilfe von <code>pinwheel</code> Polygone mit gewünschter Seitenzahl und Seitenlänge zeichnet.</li>
+			</ol>
+		</div>
+
+        <div class="vocabFullWidth">: <strong>Abstraktion durch Verallgemeinerung</strong>
+            <div class="endnote">
+                <p>Auf <a href="/bjc-r/cur/programming/1-introduction/2-gossip-and-greet/2-gossip.html?topic=nyc_bjc%2F1-intro-loops.topic&course=bjc4nyc.html&novideo&noassignment">Einheit 1 Lab 2, Seite 2</a> hast du <em>prozedurale Abstraktion</em> kennengelernt: Code benennen, damit man ihn mehrfach aufrufen kann.</p>
+            </div>
+            <div class="ap-standard">(AAP-)3.B.4, DAT-1.A.5</div>
+            <p>Hier siehst du eine weitere Form der <strong>Abstraktion</strong>: Erkennen, dass <code>asterisk</code> und <code>polygon</code> Varianten desselben Pinwheels sind, und daher einen allgemeinen Block <code>pinwheel</code> mit Eingaben zu bauen, der alle Varianten abdeckt.</p>
+            <div class="ap-standard">(AAP-)3.B.5</div>
+            <p>Das nennt man <em>Abstraktion durch Verallgemeinerung</em>: Man betrachtet ähnlich aufgebauten Code und schreibt einen einzigen Block, der mithilfe von Eingaben die Unterschiede handhabt.</p>
+        </div>
+
+		<div class="forYouToDo">
+			<ol start="4">
+                <li>Wenn du in <code>pinwheel</code> hineinschaust und siehst, wie du ihn in <code>polygon</code> nutzt, merkst du, dass einige Schritte für Polygone überflüssig sind. Schreibe daher eine Version von <code>polygon</code>, die nur Grundblöcke (<code>move</code>, <code>turn</code> usw.) verwendet. Wie kompakt bekommst du sie?</li>
+                <div class="endnote">
+                    <div class="comment">AP-3.B.6</div>
+                    Solange dein <code>polygon</code>-Block das richtige Bild liefert, ist es dem Rest des Projekts egal, wie er implementiert ist.
+                </div>
+			</ol>
+		</div>
+
+		<img class="inline" src="/bjc-r/img/icons/save-now.png" alt="Jetzt speichern" title="Jetzt speichern" />
+
+        <div class="ifTime">
+            <ol start="5">
+                <li>Nutze deinen <code>pinwheel</code>-Block ein letztes Mal, um einen Block <code>circle</code> zu bauen, der eine Eingabe für die Größe bekommt.</li>
+                <li>
+                    Verwende den Block <code>random</code> zusammen mit <code>set pen color</code> und <code>set pen size</code>, um unterschiedliche Formen zu zeichnen.<br />
+					<img class="indent" src="/bjc-r/img/1-introduction/assorted-pinwheels.png" alt="verschiedene Pinwheels" title="verschiedene Pinwheels" />
+                </li>
+            </ol>
+        </div>
+
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>
+                    <strong>Challenge:</strong> Baue ein Skript, das zuerst ein blaues Quadrat (Größe 100) und dann einen roten Kreis zeichnet, der genau hineinpasst.<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/red-circle-in-blue-square.png" alt="Roter Kreis im blauen Quadrat" title="Roter Kreis im blauen Quadrat" /><br />
+                </li>
+                <li>
+                    Schreibe für die folgenden Puzzle Bilder Code, der ein Auto vom Start (A) zum Ziel führt. Klicke auf die Bilder, um die Snap<em>!</em>-Projekte zu laden.<br />
+                    <a class="run" href="/bjc-r/prog/1-introduction/U1L6-archimedean-racetrack1-student.xml" target="_blank"><img class="indent" src="/bjc-r/img/1-introduction/PolygonalRacetracks_img/ArchTess1.png"  height="250" alt="Rennstrecke: Dreiecke und Quadrate" title="Rennstrecke: Dreiecke und Quadrate"/></a>
+                    <a class="run" href="/bjc-r/prog/1-introduction/U1L6-archimedean-racetrack2-student.xml" target="_blank"><img src="/bjc-r/img/1-introduction/PolygonalRacetracks_img/ArchTess2.png"  height="250" alt="Rennstrecke: Dreieck-Quadrat-Sechseck" title="Rennstrecke: Dreieck-Quadrat-Sechseck"/></a>
+                    <a class="run" href="/bjc-r/prog/1-introduction/U1L6-archimedean-racetrack3-student.xml" target="_blank"><img src="/bjc-r/img/1-introduction/PolygonalRacetracks_img/ArchTess3.png"  height="250" alt="Rennstrecke: Achteck und Quadrat" title="Rennstrecke: Achteck und Quadrat"/></a>
+                </li>
+
+            </ol>
+        </div>
+
+
+		</body>
+</html>

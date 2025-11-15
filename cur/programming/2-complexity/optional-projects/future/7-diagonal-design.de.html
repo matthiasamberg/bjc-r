@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2 Labor 2: Kunst mit Datenstrukturen – Seite XX</title>
+	</head>
+
+    <body>
+        <h2>Diagonal-Design</h2>
+		<div class="todo">
+			Titel hier geändert, aber nicht im Themen-Tab etc. Pinke Box usw. ebenfalls angepasst. -bh
+            <p>Inhaltlich ok, Formulierung noch holprig. --MF, 31.05.2019</p>
+		</div>
+        <div class="todo">
+            <p>Lehrkräfte-Feedback 2017–2018: Mandala-Lab sei ein großer Denksprung. --MF, 06.03.2019</p>
+        </div>
+        <div class="todo">
+            <p>PG: „Auf dieser Seite machst du eine ‚Mandala‘-Grafik – ob du willst oder nicht – und wir sagen dir nicht warum!“ Design ist schön, aber Lernziel fehlt. Vielleicht: „Du kannst auch Koordinaten speichern, die dein Programm erzeugt.“ Außerdem ist das kein „Mandala“. Es gibt Mandalas, dieses sieht ähnlich aus, aber es ist nicht allgemein so benannt. TIF B wirkt als Kulturhinweis aufgesetzt.</p>
+            <p>BH: TIF B streichen, stattdessen neue TIF dazu, wie man doppelte Linien vermeidet.</p>
+            <p>MF: Wirkt eher wie ein Optional Project – brauchen wir es? Debug-Block ist nett, ebenso die Wiederverwendung von <code>POLYGON</code>, aber es passt eher zu den optionalen Projekten.</p>
+	        <p>BH: Die Technik, sich zu merken, wo man war, ist nützlich – deshalb mag ich es.</p>
+        </div>
+
+        <div class="todo">„Problem Decomposition“ durch „Modularity“ ersetzen (AAP-3.B.2). Siehe Vokabelbox auf <a href="/bjc-r/cur/programming/3-lists/2-contact-list/4-looking-up-data.html?topic=nyc_bjc%2F3-lists.topic&course=bjc4nyc.html&novideo&noassignment">3.2.4</a>. Betrifft u. a. diese Seite. --MF, 09.04.2019</div>
+
+
+		<div class="learn">
+			<strong>Auf dieser Seite</strong> erzeugst du ein komplexes Design, indem eine Prozedur „weiß“, was sie zuvor getan hat.
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+				<li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Mit Partner sprechen" title="Mit Partner sprechen" />
+                    Überlegt, bevor ihr Snap<em>!</em> öffnet, welchen Algorithmus ihr nutzen würdet, um dieses Design zu zeichnen:<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/Mandala_img/10-gon-with-diagonals.png" height="200" alt="Zehneck mit Diagonalen" title="Zehneck mit Diagonalen" />
+                </li>
+            </ol>
+        </div>
+
+        <div class="dialogue"> <a name="mandala" class="anchor">&nbsp;</a>
+            <div>
+                <span>Morgan:</span> Außen sehen wir ein Zehneck. Den Block zum Zeichnen haben wir bereits – aber die Eckpunkte zu verbinden wird aufwendig.<br />
+            </div>
+            <div class="stagedir">
+                Morgan öffnet das Polygon-Projekt.<br />
+                <div class="comment">Ich bin nicht sicher, ob ihr Polygon-Code so aussieht. Vielleicht egal …? --MF, 25.03.2019</div>
+                <img class="indent" src="/bjc-r/img/2-complexity/polygonCode.png" height="180" alt="polygon-Block" title="polygon-Block" />
+            </div>
+            <div class="comment">Die Kursivtexte wirken verwirrend und helfen nicht beim Lesen. --MF, 25.03.2019</div>
+            <div><span>Jasmine:</span> Lass uns den Block <code>polygon</code> so erweitern, dass er beim Zeichnen jedes Eckpunkt als <code>point</code>-ADT speichert. Bisher haben wir Punkte beim Klicken gesammelt – jetzt generiert das Programm die Punkte.</div>
+            <div class="todo">Vielleicht sollte hier der Begriff ADT fallen. --MF, 25.03.2019</div>
+            <div><span>Omar:</span> Genau! Wir legen vorher eine leere Liste an und nutzen <code>add</code> im Block.</div>
+            <div class="todo">Kein Grund, das Bild statt <code>add</code> zu verwenden. --MF, 25.03.2019</div>
+            <div><span>Morgan:</span> Globale oder Skript-Variable?</div>
+            <div><span>Omar:</span> Sie wird im <code>polygon</code>-Block und im eigentlichen Zeichenskript genutzt – also global, damit mehrere Skripte zugreifen können.</div>
+            <div><span>Jasmine:</span> Ich hab eine Idee für das Zeichnen der Diagonalen.</div>
+            <div class="stagedir">
+			<div class="comment">Technisch ist eine Polygonseite keine Diagonale. -bh<p>Hier geht es doch um die inneren Linien, also Diagonalen? --MF, 31.05.2019</p></div>
+            Jasmine skizziert: <img src="/bjc-r/img/2-complexity/Mandala_img/Stage2.png" height="160" alt="Zwischenschritt" title="Zwischenschritt" />
+            </div>
+            <div><span>Omar:</span> Clever! Wir zeichnen erst alle Diagonalen von <em>einem</em> Eckpunkt.</div>
+            <div><span>Morgan:</span> Perfekt! Wähle ein Eck, nutze <code>for each</code>, um es mit allen anderen Punkten zu verbinden. Danach verwenden wir denselben Block für jedes Eck.</div>
+        </div>
+
+        <div class="vocabFullWidth">
+            <p><strong>Problem Decomposition</strong> bedeutet, ein komplexes Problem durch kleinere Werkzeuge zu lösen und diese zu kombinieren.</p>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="2">
+                <li>Baue nun dein eigenes Programm, das das Zehneck mit Diagonalen zeichnet, indem du das Problem in kleine Schritte zerlegst.</li>
+            </ol>
+		</div>
+
+        <div class="takeItFurther">
+            <ol type="A">
+				<li>Aktuell wird jede Diagonale doppelt gezeichnet. Überarbeite das Programm, sodass jede Diagonale nur einmal erscheint.</li>
+                <li>Passe das Programm an, sodass es Diagramme mit beliebiger Seitenzahl zeichnet:<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/Mandala_img/Mandala4b.png" height="200" alt="Dichtes Muster" title="Dichtes Muster" />
+                </li>
+				<li>Beim Zehneck treffen sich mehrere Diagonalen im Zentrum. Gilt das für jede Seitenzahl? Falls nicht, für welche?</li>
+            </ol>
+        </div>
+		<div class="ifTime">
+			<ol start="3">
+				<li>Erweitere dein Programm für größere Designs:<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/Mandala_img/Mandala2.png" height="200" alt="Vier Mandalas" title="Vier Mandalas" />
+                    <img class="indent" src="/bjc-r/img/2-complexity/Mandala_img/Mandala3b.png" height="200" alt="Mandala-Ring" title="Mandala-Ring"/>
+                    <img class="indent" src="/bjc-r/img/2-complexity/Mandala_img/ColorMandala3.png" height="200" alt="Farbiger Ring" title="Farbiger Ring" />
+                    <img class="indent" src="/bjc-r/img/2-complexity/Mandala_img/ColorMandala2.png" height="200" alt="Vier farbige Mandalas" title="Vier farbige Mandalas" />
+				</li>
+			</ol>
+		</div>
+    </body>
+</html>

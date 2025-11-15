@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 1 Labor 3: Moderne Kunst mit Polygonen, Seite 1</title>
+    </head>
+
+    <body>
+        <h2>Bewegungen erkunden</h2>
+        <div class="todo">
+            <p>PG: Wir versprechen hier etwas, das wir nur so halb halten. Ich würde die Seite größtenteils behalten, aber die pinke Box anpassen. Außerdem sollten wir den Albers-Algorithmus (momentan optionales Projekt, Seite 5) irgendwo zurückbringen. Dafür sind nicht einmal Winkel nötig und man erhält eine große Vielfalt an einfarbigen Formen—Rechtecke, Dreiecke, Kreise, „Hot-Dogs“—sowie die Möglichkeit mit Farben zu experimentieren. NUTZEN, ANPASSEN, kreativ sein.</p>
+            <p>BH: Ich würde alle WAIT-Blöcke entfernen. Wenn das das einzige Problem bleibt, sage ich BEHALTEN.</p>
+            <ul><li>Falls wir die Zeit haben und es Priorität hat, finden Brian und Mary, dass wir Visual Stepping (momentan auf <a href="/bjc-r/cur/programming/2-complexity/4-abstraction/2-fractal-art.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment">2.4.2</a>) lieber hier statt all der <code>wait</code>-Blöcke lehren sollten. Das würde Änderungen in großen Teilen von 1.3 und seinen Bildern erfordern sowie Anpassungen an <a href="/bjc-r/cur/programming/2-complexity/4-abstraction/2-fractal-art.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment">2.4.2</a> und kleinere Änderungen an <a href="/bjc-r/cur/programming/2-complexity/4-abstraction/5-debugging-recap.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment">2.4.5</a>. --MF, 18.12.2018</li></ul>
+        </div>
+        <div class="todo">BH möchte dieses Labor neu schreiben:
+
+        <pre>S.1  Quadrat.  Kunst: mehrere Quadrate ineinander, aber nicht konzentrisch.
+
+2.  Ein gleichseitiges Dreieck zeichnen. Mit einem anderen Team diskutieren. ALLES notieren, was ihr ausprobiert.
+
+So kannst du über Drehwinkel nachdenken: Sternformen.  Wie groß ist der Drehwinkel bei einem 3-strahligen Stern?
+
+Kunst: Schneeflocken-Kunst.
+
+3.  Zusammenhang zwischen Sternwinkel und Polygonwinkel: Pinwheel erfinden.
+Abstraktion: ein Muster verallgemeinern.
+
+das Video.
+
+Kunst: Albers.  (Dicker Stift.)
+
+4. Weitere Verallgemeinerung. Kreise/Kandinsky
+
+5. Poly/Star als spezielle Fälle von Pinwheel benennen.
+
+6. FOR.  Nochmals Albers?  Squiral.
+TIF: Mondrian.</pre></div>
+        <div class="learn">
+            <p>Diese Werke stammen von Josef Albers, Maya Hayuk, Wassily Kandinsky, Atta Kwami, Kasimir Malewitsch, Carlos Mérida, Piet Mondrian, Alma Thomas und Theo van Doesburg. Die Stile unterscheiden sich, doch allen liegt die Arbeit mit Polygonen oder Kreisen zugrunde.</p>
+            <p>
+                <img src="/bjc-r/img/1-introduction/Josef_Albers's_painting_'Homage_to_the_Square',_1965.jpg" height="130" alt="Gemälde von Josef Albers" title="Gemälde von Josef Albers" />
+                <img src="/bjc-r/img/1-introduction/GraphicArt_img/MayaHayuk1.jpg" height="150" alt="Maya Hayuk" title="Maya Hayuk"/>
+                <img src="/bjc-r/img/1-introduction/kandinsky-several-circles.jpg" height="180" alt="Gemälde von Kandinsky" title="Gemälde von Kandinsky" />
+                <img src="/bjc-r/img/1-introduction/GraphicArt_img/AttaKwami_bobbo.jpg" height="150" alt="Atta Kwami" title="Atta Kwami"/>
+                <img src="/bjc-r/img/1-introduction/1024px-Suprematist_Composition_-_Kazimir_Malevich.jpg" height="180" alt="Gemälde von Malewitsch" title="Gemälde von Malewitsch" />
+                <img src="/bjc-r/img/1-introduction/GraphicArt_img/CarlosMerida1.jpg" height="150" alt="Carlos Mérida" title="Carlos Mérida"/>
+                <img src="/bjc-r/img/1-introduction/Piet_Mondrian_-_Lozenge_Composition_with_Yellow,_Black,_Blue,_Red,_and_Gray_-_1921_-_The_Art_Institute_of_Chicago.jpg" height="180" alt="Gemälde von Mondrian" title="Gemälde von Mondrian" />
+                <img src="/bjc-r/img/1-introduction/GraphicArt_img/AlmaThomas2.jpg" height="150" alt="Alma Thomas" title="Alma Thomas"/>
+                <img src="/bjc-r/img/1-introduction/Theo_van_Doesburg_Composition_VII_(the_three_graces).jpg" height="130" alt="Gemälde von van Doesburg" title="Gemälde von van Doesburg" />
+			</p>
+            <p>
+                <strong>In diesem Labor</strong> zeichnest du Polygone, um eigene Kunstwerke zu erschaffen:
+                <img class="noshadow" src="/bjc-r/img/1-introduction/polygon-row.png" width="20%" alt="reguläre Polygone" title="reguläre Polygone" /><br />
+                <img class="indent" src="/bjc-r/img/1-introduction/GraphicArt_img/ColoredSquareMesh.png" height="200" alt="zufällig gefärbte Quadrate auf schwarzem Hintergrund" title="zufällig gefärbte Quadrate auf schwarzem Hintergrund" />
+            </p>
+            <p><strong>Auf dieser Seite</strong> erkundest du die Grundlagen des Zeichnens in Snap<em>!</em>, indem du mit dem Block <code>repeat</code> denselben Code mehrfach ausführen lässt.</p>
+		</div>
+
+        <div class="AP-only">
+		<div class="vocabFullWidth"><strong>: Algorithmus</strong> und <strong>Pseudocode</strong>
+            <div class="ap-standard">(AAP-)2.A.1, AAP-2.A.3, AAP-2.A.5, AAP-2.A.6</div>
+            <p>Wenn du ein Programm planst, schreibst du einen <strong>Algorithmus</strong>, indem du die Schritte beschreibst, die das Programm ausführen soll. Der Algorithmus für das Quadrat oben ist:</p>
+            <ol>
+                <li>Gehe 50 Schritte</li>
+                <li>Drehe dich um 90° nach rechts</li>
+                <li>Wiederhole die Schritte 1 und 2 noch dreimal</li>
+            </ol>
+            <p>
+                Normalerweise schreibst du Algorithmen als Liste, damit eine andere Person sie ausführen oder den Algorithmus in einer Programmiersprache wie Snap<em>!</em> umsetzen kann. Diese Art, Algorithmen aufzuschreiben, nennt man <strong>Pseudocode</strong>. Der Pseudocode für obigen Algorithmus siehst du links unten.
+                <div class="endnote">Python-Programmierer*innen würden denselben Algorithmus so schreiben:<br />
+                    <code>for i in range(4):<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;move(50)<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;turn_right(90)</code>
+                </div>
+            </p>
+		</div>
+        </div>
+
+        <div class="forYouToDo">
+            <h3>Quadrate zeichnen</h3>
+			<ol>
+                <li>
+                    <p>Wähle den Malstift aus (klicke auf den roten Kreis rechts in der Bühnenansicht) und stelle die Stiftgröße mit <img class="inline" src="/bjc-r/img/blocks/set-pen-size-to-1.png" height="36" alt="set pen size to (1)" title="set pen size to (1)" /> auf 1 zurück. Dann zeichne ein Quadrat mit folgendem Skript:</p>
+                    <img class="indent" src="/bjc-r/img/1-introduction/move-turn-repeat.png" alt="repeat (4) { move (50) steps; turn clockwise (90) degrees }" title="repeat (4) { move (50) steps; turn clockwise (90) degrees }" />
+                </li>
+				<li>
+                    <div class="sidenote">In Snap<em>!</em> kannst du die meisten Blöcke anklicken, um sie auszuführen.</div>
+                    <p>Aktiviere dieses Skript:</p>
+                    <img class="indent" src="/bjc-r/img/1-introduction/pen-up-down.png" height="90" alt="when green flag clicked, pen down, move (100) steps, pen up" title="when green flag clicked, pen down, move (100) steps, pen up" /><br />
+                    <p>Was macht es?</p>
+                </li>
+				<li>
+                    <p>Ändere den Wert im Block <img class="inline" src="/bjc-r/img/1-introduction/move-50.png" height="36" alt="move (50) steps" title="move (50) steps" /> und führe das Skript erneut aus. Beschreibe, was passiert.</p>
+                </li>
+                <li>
+                    <p>Ändere den Wert im Block <img class="inline" src="/bjc-r/img/1-introduction/turn-right-90.png" height="36" alt="turn clockwise (90) degrees" title="turn clockwise (90) degrees"> und führe das Skript wiederholt aus. Was geschieht?</p>
+                </li>
+				<li>
+                    <p>Ändere den Wert im Block <img class="inline" src="/bjc-r/img/1-introduction/repeat-4.png" alt="repeat (4){}" title="repeat (4){}" />.</p>
+                </li>
+				<li>
+                    <p>Experimentiere mit den Zahlen für <code>turn</code> und <code>repeat</code>. Versuche, ein Dreieck zu zeichnen.</p>
+                </li>
+				<li>
+                    <p>Nutze <span class="center"><img class="inline" src="/bjc-r/img/blocks/set-pen-size-to-blank.png" height="36" alt="set pen size to ()" title="set pen size to ()" /></span>, um die Stiftgröße auf 4, 10 oder sogar 50 zu setzen, und zeichne dann etwas.</p>
+                    <div class="endnote">Damit die Stiftgröße übernommen wird, musst du den Block <code>set pen size</code> anklicken, nachdem du die Zahl eingetragen hast.</div>
+				</li>
+			</ol>
+		</div>
+
+        <div class="ifTime">
+            <ol start="6">
+                <li>
+                	Experiment: Was hinterlässt Spuren?
+                    <ol>
+                        <li>Bewege die Figur, indem du sie an eine andere Stelle ziehst. Bleibt eine Spur zurück?</li>
+                        <li>Bewege die Figur mit <img class="inline" src="/bjc-r/img/1-introduction/move-50.png" height="36"  alt="move (50) steps" title="move (50) steps">. Bleibt eine Spur zurück?</li>
+                        <li>Klicke auf <img class="inline" src="/bjc-r/img/blocks/go-to-x-y-0-0.png" height="36"  alt="go to x:(0) y:(0)" title="go to x:(0) y:(0)" />. Bleibt eine Spur zurück?</li>
+                        <div class="endnote">Mit <img class="inline" src="/bjc-r/img/blocks/go-to-x-y-0-0.png" height="36"  alt="go to x:(0) y:(0)" title="go to x:(0) y:(0)" />holst du die Figur zurück, wenn sie aus dem Bild gelaufen ist.</div>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+
+
+	</body>
+</html>

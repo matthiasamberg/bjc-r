@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <title>Einheit 3 Labor 2: Sortieren, Seite 1</title>
+	</head>
+
+	<body>
+		<h2>Vorbereiten auf das Sortieren</h2>
+        <div class="todo">Muss für Integration in L2 überarbeitet werden – MF, 17.06.2017</div>
+
+		<div class="learn">
+            <strong>Auf dieser Seite</strong> passt du deinen <code>contact</code>-Konstruktor so an, dass das Feld <code>name</code> unterschiedliche ADTs aufnehmen kann.
+            <img class="indent" src="/bjc-r/img/3-lists/name-display-result.png" alt="name (display form) --&gt; Abraham Lincoln" title="name (display form) --&gt; Abraham Lincoln"><br />
+            <img class="indent" src="/bjc-r/img/3-lists/name-sorting-result.png" alt="name (sorting form) --&gt; Lincoln, Abraham" title="name (sorting form) --&gt; Lincoln, Abraham">
+        </div>
+
+        <div class="dialogue">
+            <div><span>Omar:</span> Aktuell speichern wir den Namen eines Kontakts als <em>eine</em> Textzeichenkette, aber viele Leute haben mehrere Namen.</div>
+            <div><span>Jasmine:</span> Das stört beim Suchen erst mal nicht.</div>
+            <div><span>Omar:</span> Für die Anzeige passt das, aber wir wollen die Kontakte nach Nachnamen <em>sortieren</em>.</div>
+            <div><span>Jasmine:</span> Dann trennen wir Vor- und Nachname in einer weiteren Liste.</div>
+            <div><span>Omar:</span> Wenn wir das ADT ändern, müssen wir alle Blöcke aktualisieren, die es nutzen …</div>
+			<div><span>Jasmine:</span> Kein Problem. Statt eines Selektors für den Namen bauen wir zwei: einer liefert „Vorname Nachname“ für die Anzeige, der andere „Nachname, Vorname“ für den Sortieralgorithmus.</div>
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+				<li>
+                    Passe das Skript „Add Contact“ (bzw. den Block <img src="/bjc-r/img/3-lists/get-name.png" alt="get name" title="get name" />, falls vorhanden) an, damit beide Schreibweisen entstehen. Dein Skript soll:
+                    <ul>
+                        <li>Vorname(n) und Nachname separat abfragen.</li>
+                        <li>Einen Kontakt zur <var>contact list</var> hinzufügen, dessen Name eine Zweierliste ist.</li>
+                    </ul>
+                </li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deinem Partner / deiner Partnerin" title="Sprich mit deinem Partner / deiner Partnerin" />Teste, wie sich der neue Kontakt verhält. Wie erscheint er in der Liste? Funktionieren alle Blöcke/Skripte noch?</li>
+                <li>
+                    Erstelle statt eines <code>contact name</code>-Selektors zwei neue Selektoren für die beiden Schreibweisen.<br />
+					<img class="indent" src="/bjc-r/img/3-lists/name-display-result.png" alt="name (display form) --&gt; Abraham Lincoln" title="name (display form) --&gt; Abraham Lincoln"><br />
+                    <img class="indent" src="/bjc-r/img/3-lists/name-sorting-result.png" alt="name (sorting form) --&gt; Lincoln, Abraham" title="name (sorting form) --&gt; Lincoln, Abraham"><br />
+                </li>
+                <li>Überprüfe, ob dein Block <img src="/bjc-r/img/3-lists/search-contacts-for.png" alt="search contacts for name like ()" title="search contacts for name like ()" /> noch funktioniert. Nutze den Selektor <code>contact name (display form)</code>, um Probleme zu beheben.</li>
+                <li>Leere die Kontaktliste und füge einige Einträge im neuen Format hinzu. Prüfe, ob das Anlegen wie erwartet funktioniert.<img class="imageRight" src="/bjc-r/img/icons/save-now.png" alt="Speichern" title="Speichern" /></li>
+			</ol>
+        </div>
+
+        <div class="endnote">Den Selektor <code>contact name (sorting form)</code> brauchst du im <a href="/bjc-r/cur/programming/3-lists/old/2-sorting/1-recursion.html?topic=nyc_bjc%2F3-lists.topic&course=bjc4nyc.html&novideo&noassignment">nächsten Lab</a>.</div>
+
+        <div class="ifTime">
+            <ol start="6">
+				<li>
+                    Stelle den Eingabeschlitz <var>name</var> so ein, dass er eine Liste erwartet:<br />
+                    <img class="indent" src="/bjc-r/img/3-lists/contact-constructor-name-typed.png" alt="contact name: () address: () phone: ()" title="contact name: () address: () phone: ()" />
+                </li>
+                <li>
+                    Passe das Skript „Add Contact“ erneut an (bzw. den Block <img src="/bjc-r/img/3-lists/get-address.png" alt="get address" title="get address" />), damit Straße, Stadt, Bundesland und Postleitzahl getrennt abgefragt werden.
+                    <ul>
+                        <li>
+                        	Lass auch <var>address</var> eine Liste erwarten und <var>phone</var> einen Text, wie hier gezeigt:<br />
+                            <img class="indent" src="/bjc-r/img/3-lists/contact-constructor.png" alt="contact name: () address: () phone: ()" title="contact name: () address: () phone: ()" />
+                        </li>
+                        <li>Erstelle die passenden Selektoren.</li>
+                        <li>Teste erneut deinen Suchblock und korrigiere ihn bei Bedarf.</li>
+                        <li>Leere die Kontaktliste, füge neue Einträge hinzu und behebe auftretende Bugs.</li>
+                    </ul>
+                </li>
+
+			</ol>
+		</div>
+
+
+	</body>
+</html>

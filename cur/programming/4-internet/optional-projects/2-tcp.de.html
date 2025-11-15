@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 4 Labor 2: Kommunikationsprotokolle, Seite 2</title>
+    </head>
+
+    <body>
+        <h2>Zuverlässige Übertragung über unzuverlässige Netze: TCP</h2>
+        <div class="todo">
+            <p>BH: Video gefällt mir nicht. Rest ok. TCP sollte aus dem TIF raus – ist ja die Hauptaktivität!</p>
+            <p>MF: Brian will dieses Projekt verbessern – könnte es ein optionales Projekt werden? Wir haben noch keins für U4.</p>
+        </div>
+
+        <div class="learn">
+            <p><strong>Auf dieser Seite</strong> lernst du, wie Kommunikation im Internet <em>zuverlässig</em> bleibt.</p>
+        </div>
+
+        <div class="todo">
+            <p><strong>Du wirst:</strong> ein Video schauen, lesen und eine Simulation unzuverlässiger IP-Übertragungen erkunden.</p>
+            <p><strong>Du lernst:</strong> wie das Internet über Protokolle zuverlässige Datenübertragung ermöglicht.</p>
+            <p><strong>Auf Wunsch:</strong> Implementiere dein eigenes Transmission Control Protocol.</p>
+        </div>
+
+        <p>Computer, Server und Router sind meist stabil, aber gelegentlich geht ein Paket verloren – Geräte im Netz müssen damit umgehen. Eine Möglichkeit: Es ist egal (z. B. verlorene Videoframe). Die andere (TCP): Pakete werden so lange gesendet, bis sie bestätigt sind. <strong>TCP (Transmission Control Protocol)</strong> garantiert <em>zuverlässige</em> Übertragung, indem es verfolgt, welche Pakete angekommen sind, fehlende oder beschädigte erneut sendet und die Reihenfolge fürs Zusammensetzen vorgibt.</p>
+        <div class="vocabFullWidth">
+            <p><strong>TCP/IP</strong> ist ein Protokollpaar, das eine Abstraktion bereitstellt. <strong>IP</strong> lässt deinen Rechner so tun, als hätte er eine <em>direkte</em> Verbindung zu einem anderen. <strong>TCP</strong> lässt ihn glauben, diese Verbindung sei <em>zuverlässig</em>.</p>
+        </div>
+        <br />
+
+        <img class="imageRight" src="/bjc-r/img/icons/headphones.png" alt="Kopfhörer nutzen" title="Kopfhörer nutzen" />
+		<div class="sidenote">Falls YouTube blockiert ist, <a href="http://scratch.mit.edu/discuss/youtube/AYdF7b3nMto" target="_blank" title="The Internet: Packets, Routing & Reliability">findest du das Video hier</a>.</div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/AYdF7b3nMto?rel=0" frameborder="0" allowfullscreen class="indent"></iframe>
+
+		<div class="takeNote">
+            <p>
+				Das TCP/IP-Ende-zu-Ende-Design ist eine Abstraktion:
+				<ul>
+                    <li>Endgeräte (inkl. Server) führen TCP aus und sorgen für Zuverlässigkeit.</li>
+					<li>Router auf allen Verbindungen führen IP aus und leiten Pakete weiter.</li>
+				</ul>
+            </p>
+            <p>Router wissen nichts über den Inhalt; sie übertragen nur. Nur Sender und Empfänger kümmern sich um die Bedeutung. Neue Anwendungen erfordern somit keine neuen Router – für sie sind alles nur Bits.</p>
+        </div>
+
+        <div class="forYouToDo">
+            <ol>
+                <li>
+                    <a class="run" href="/bjc-r/prog/4-internet/U4L1-TCP.xml#present"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Starter laden und speichern." title="Starter laden und speichern."></a><br />
+                    Dieses Projekt simuliert unzuverlässige IP-Übertragung.
+                    <ul>
+                        <li><strong>Klicke die grüne Flagge</strong>, um <var>incoming transmission</var> vor jedem Test zurückzusetzen.</li>
+                        <li><strong>Klicke eine Figur</strong>, gib eine Nachricht ein, die an die andere geschickt wird.</li>
+                	</ul>
+                </li>
+				<div class="sidenote">Hier besteht die Nachricht aus einzelnen Zeichen. In Realität sind Pakete länger und Nachrichten oft größer.</div>
+				<a class="run" href="/bjc-r/prog/4-internet/U4L1-TCP.xml"><img class="indent" src="/bjc-r/img/4-internet/TCP.png" alt="Abbildung des TCP-Projekts"></a>
+                <li>
+                    <img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deinem Partner / deiner Partnerin" title="Sprich mit deinem Partner / deiner Partnerin" />
+                    Vergleicht Ergebnis und Original. Welche Probleme seht ihr?
+                </li>
+			</ol>
+    	</div>
+        <p>TCP ergänzt jedes Paket um Infos, damit der Empfänger verfolgen kann, was angekommen ist, fehlende Pakete nachfordern und alles korrekt zusammensetzen. In dieser Simulation kommt ein Paket entweder korrekt (evtl. in falscher Reihenfolge) an oder gar nicht. Im echten Internet können Pakete fehlerhaft eintreffen, daher prüft TCP auch die Inhalte und fordert fehlerhafte erneut an.</p>
+
+	<div class="ifTime">
+            <ol start="3">
+                <li>Lies <a href="http://www.bitsbook.com/wp-content/uploads/2008/12/B2B_3.pdf#page=324" target="_blank" title="Blown to Bits: IP Addresses and Crimes"><em>Blown to Bits</em>, S. 306–309</a>.</li>
+            </ol>
+        </div>
+
+
+        <div class="takeItFurther">
+            <img class="imageRight" src="/bjc-r/img/icons/tough-stuff.png" alt="Anspruchsvoll" title="Anspruchsvoll" />
+            <ol type="A">
+				<li>
+                    Implementiere ein einfaches TCP. Sorge dafür, dass Nachrichten trotz unzuverlässiger IP-Pakete zuverlässig ankommen.
+                    <strong>Ändere dazu</strong> die Definitionen von:
+                    <ul>
+                        <li><img src="/bjc-r/img/4-internet/internet-transmit.png" alt="internet transmit () to ()" title="internet transmit () to ()" /></li>
+                        <li><img src="/bjc-r/img/4-internet/read-internet-data.png" alt="read internet data with ()" title="read internet data with ()" /></li>
+                    </ul>
+                    <div class="endnote"><strong>Ändere nicht</strong> <img src="/bjc-r/img/4-internet/send-IP.png" alt="send IP packet () to (sprite)" title="send IP packet () to (sprite)"> – dieser Block simuliert das unzuverlässige Netz. Ihn zu perfektionieren würde das Ziel verfehlen.</div>
+                    Du brauchst eine Möglichkeit, die Reihenfolge zu kennen <em>und</em> fehlende Pakete nachzufordern:
+                    <ul>
+                        <li>Löse zunächst das Problem der falschen Reihenfolge. Füge zusätzliche <strong>Header</strong>-Informationen hinzu, damit der Empfänger die Nachricht rekonstruieren kann. (Änderungen an beiden grauen Blöcken nötig.)</li>
+                        <li>Löse dann das Problem fehlender Pakete, sodass die Übertragung trotz IP-Verlusten zuverlässig ist. Auch das erfordert Anpassungen an Sender und Empfänger.</li>
+                    </ul>
+				</li>
+			</ol>
+        </div>
+
+
+	</body>
+</html>

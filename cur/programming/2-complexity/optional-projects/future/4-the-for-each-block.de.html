@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2 Labor 2: Listen erstellen – Seite 4</title>
+    </head>
+
+	<body>
+        <h2>Alle Listenelemente verarbeiten</h2>
+        <div class="todo">
+            <h3>Schonungslose Vorschläge von Al</h3>
+            <ul>
+                <li>Lab-Titel: „Using Variables and Data Structures to Make Art“ – Datenstrukturen kommen vor, „Variables“ eigentlich nicht. Radikale Idee: Vielleicht sollten wir „Variable“ nur für zugewiesene Werte (state) nutzen und „Input“ für alles, was an einen Block übergeben wird?</li>
+                <ul>
+                  <li>Der Titel ist bereits geändert; Kommentar bleibt, weil die Frage wichtig ist. Meinung, Brian? --MF, 16.05.2018</li></ul>
+                <li>Radikale Idee: Müssen wir Datentypen angeben? Das ist zusätzlicher Ballast.</li>
+                <ul>
+                    <li>Nein, aber wir tun es in unseren Blöcken und wollten zeigen, wie das geht. Ich würde es in eine gelbe Box packen. Brian, warum ist sie grün? --MF, 16.05.2018</li>
+                    <li>PG: Vereinfachen. Inhalt wirkt wichtig. Ich stimme Mary zu. Vermutlich war ich es, nicht Brian, der grün gewählt hat – nicht weil es nötig war. Gelb ist OK. Am liebsten in einem „Klick mich“-Block, dessen Oberfläche den Unterschied zeigt und z. B. sagt „Wenn du wissen willst…“</li>
+                </ul>
+                <li>#1: „Load and build their go to point block“ – was bedeutet das? Beim Laden sehe ich eine Liste.</li>
+                <ul><li>Braucht wohl nur mehr Kontext. --MF, 16.05.2018</li></ul>
+            </ul>
+        </div>
+        <div class="todo">
+            <p>Seite ist lang – eventuell zwischen Aufgabe 2 und TOL sowie zwischen TIF und Punkt 7 teilen → drei Seiten. --MF, 26.09.2018</p>
+        </div>
+        <div class="todo">„Problem Decomposition“ muss gemäß AAP-3.B.2/AAP-3.B.2 durch „Modularity“ ersetzt werden. Siehe Vokabelbox auf <a href="/bjc-r/cur/programming/3-lists/2-contact-list/4-looking-up-data.html?topic=nyc_bjc%2F3-lists.topic&course=bjc4nyc.html&novideo&noassignment">3.2.4</a>. (Erwähnt in: U2 future OP Diagonal Design (Mandala); 3.1.4 Brick Wall; 2.OP.4 Plurals 1; TG für 2.2 und 2.OP.) --MF, 09.04.2019</div>
+
+
+        <div class="todo">
+            <hr />
+            <h1>Grobe Skizze für neue Version</h1>
+            <hr />
+        </div>
+
+        <div class="learn">
+            <p><strong>In diesem Lab</strong> baust du Werkzeuge, um komplexe Designs aus Punktlisten zu zeichnen – wir nutzen Modularity, also das Zerlegen in kleinere Teilaufgaben. </p>
+            <p><strong>Auf dieser Seite</strong> schreibst du ein Skript, das die Punkte (aus einer Liste) verbindet, um den Buchstaben A zu zeichnen. </p>
+        </div>
+
+        <div class="dialogue"> <a name="seta" class="anchor">&nbsp;</a>
+            <div class="stagedir">
+                <p>
+                    Morgan und Jasmine entwickeln ein Programm, das eine Punktliste erhält und die Punkte verbindet. Sie skizzierten das „A“ auf Millimeterpapier und notierten die Eckpunkte.<br />
+                    <img src="/bjc-r/img/2-complexity/U2ImageVideoAddendum_img/AonGraphPaper2.PNG"  height="300" alt="A auf kariertem Papier" title="A auf kariertem Papier"/><img src="/bjc-r/img/2-complexity/U2ImageVideoAddendum_img/AonGraphPaper3.PNG"  height="300" alt="Eckpunkte" title="Eckpunkte"/>
+                </p>
+            </div>
+        </div>
+
+        <div class="todo">
+            Inhalt aus 1.2 muss irgendwo eingebaut werden. --MF, 17.05.2019
+            <div class="endnote">
+                Positionen auf der Bühne (weißer Bereich) werden durch <strong>Koordinaten</strong> angegeben. Zentrum = (0,0); linke/rechte Kante x = -240/240, unten/oben y = -180/180.<br />
+                <img class="indent" src="/bjc-r/img/1-introduction/xy-grid.png" alt="Koordinatensystem" title="Koordinatensystem" />
+            </div>
+        </div>
+
+        <div class="todo"><h3>Ich mag diesen Text – vielleicht woanders nutzen:</h3>
+                <p>Ja, <em>deine</em> Blöcke können zeigen, welche Daten sie erwarten: Zahl, Liste etc. Manche Sprachen verlangen das; in Snap<em>!</em> ist es optional. Nicht nötig, aber wie eine Blockfarbe kann es helfen, sich zu erinnern. Eingabefelder haben unterschiedliche Formen je nach erwarteter Datenart.</p>
+        </div>
+
+        <div class="dialogue">
+            <div><span>Morgan:</span> Wir brauchen einen Block <code>go to point</code>, der eine Zweierliste (x,y) akzeptiert.</div>
+            <div><span>Jasmine:</span> Wir können einfach <img src="/bjc-r/img/2-complexity/go-to-point(list(-50)(20)).png" height="41" alt="go to point (list (-50) (20))" title="go to point (list (-50) (20))" /> schreiben und darin <img src="/bjc-r/img/2-complexity/go-to-x()-y().png" height="41" alt="go to x:() y:()" title="go to x:() y:()" /> bzw. <img src="/bjc-r/img/2-complexity/glide(.5)secs-to-x()-y().png" height="41" alt="glide (.5) secs..." title="glide (.5) secs..." /> verwenden – aber wir müssen die Liste <img src="/bjc-r/img/2-complexity/list(-50)(20).png" height="37" alt="list(-50)(20)" title="list(-50)(20)" /> aufteilen.</div>
+            <div><span>Omar:</span> Klar, das geht mit <img src="/bjc-r/img/2-complexity/item()of(list).png" height="35" alt="item() of (list)" title="item() of (list)"> – erster Input = Nummer, zweiter = Liste.</div>
+            <div><span>Morgan:</span> Vielleicht können wir unseren Block sogar so gestalten, dass er explizit „Liste“ erwartet …</div>
+        </div>
+
+        <div class="todo">
+            (Koordinaten-Info s. o.) --MF, 17.05.2019
+        </div>
+
+        <p>Du kannst Eingabetypen angeben (Zahl, Liste, Boolean …). Manche Sprachen verlangen das, in Snap<em>!</em> ist es optional – aber wie eine Farbcodierung erinnert es an Zweck und Datentyp. Du hast bereits verschiedene Eingabeformen gesehen.</p>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li><a class="run" href="/bjc-r/prog/2-complexity/U2L2-DrawShape.xml"><img class="inline" src="/bjc-r/img/icons/load-save.png" alt="Starter laden/speichern" title="Starter laden/speichern"></a><br />
+                Die Punktliste für „A“ ist enthalten, aber du musst den Block <code>go to point</code> bauen.</li>
+                <div class="narrower">
+                    <h3 class="box-head">Eingabetyp festlegen</h3>
+                    Diese Animation zeigt, wie du einen Listentyp (<img class="inline" src="/bjc-r/img/3-lists/list_input_slot.png" alt="Listen-Eingabe" title="Listen-Eingabe">) auswählst. Andere Typen funktionieren analog.<br />
+                    <img class="indent" data-gifffer="/bjc-r/img/2-complexity/U2ImageVideoAddendum_img/gotopointAnimation.gif" height="400" alt="Listentyp wählen" title="Listentyp wählen" />
+                    <div class="endnote">
+                        In der Animation siehst du viele Typen (Text, Number, Boolean …). Für <code>point</code> wählen wir „list“, weil ein Punkt aus zwei Koordinaten besteht.<br />
+                        <img class="indent" src="/bjc-r/img/2-complexity/U2ImageVideoAddendum_img/inputTypes.png"  height="150" alt="Eingabetypen" title="Eingabetypen"/>
+                    </div>
+                    Nachdem du Titel und Eingabenamen erstellt hast,
+                    <ol style="list-style-type:lower-alpha">
+                        <li>Klicke auf den Pfeil rechts neben dem Eingabenamen.<br />
+                            <img class="indent" src="/bjc-r/img/2-complexity/create-input-name-right_arrow.png" height="125" alt="Pfeil" title="Pfeil" />
+                        </li>
+                        <li>Wähle den gewünschten Datentyp.</li>
+                        <li>Klicke auf OK.</li>
+                    </ol>
+                </div>
+                <li>Fertige den Block <code>go to point</code> und <strong>teste</strong> ihn mit einigen Punkten.</li>
+            </ol>
+        </div>
+
+        <div class="examFullWidth">
+            <ul>
+                <div class="ap-standard">Erste zwei Stichpunkte aus AAP-2.N.1</div>
+                <li>Der Ausdruck <img class="inline" src="/bjc-r/img/2-complexity/example-list-accessing.png" alt="item (2) of (point)" title="item (2) of (point)" /> lautet <pre class="inline">point[2]</pre>.</li>
+                <li>Die Zuweisung <img class="inline" src="/bjc-r/img/2-complexity/example-list-accessing-assignment.png" alt="set (verticalPosition) to ..." title="set (verticalPosition) to ..."> wird als <pre class="inline">verticalPosition &leftarrow; point[2]</pre> geschrieben.</li>
+                <div class="todo">APblocktran-Beispiele ergänzen. --MF, 19.04.2019</div>
+            </ul>
+        </div>
+
+
+        <div class="todo"><h2>Seitenumbruch vorgeschlagen.</h2><p>Brian ist nun auch dafür. Gleichzeitig sollten wir überlegen, ob wir Snap<em>!</em>s Fähigkeit nutzen wollen, Listen direkt in GO TO zu übergeben.</p></div>
+
+        <div class="dialogue">
+            <div><span>Morgan:</span> Super! Jetzt können wir unseren Block für jeden Punkt verwenden.</div>
+            <div><span>Jasmine:</span> Wir nutzen einfach <img src="/bjc-r/img/2-complexity/for-each-(item)-of().png" height="68" alt="for each (item) of ()" title="for each (item) of ()">.</div>
+            <div class="stagedir">
+                <p>Sie entwerfen dieses Skript, um jeden Punkt automatisch anzusteuern:</p>
+                <p><img src="/bjc-r/img/2-complexity/new-for-each-point-script.png"  alt="pen down; for each (item) of (A) { go to point (item) }" title="pen down; for each (item) of (A) { go to point (item) }"></p>
+                <p>Dann testen sie es.</p>
+            </div>
+            <div><span>Morgan:</span> Genau was wir wollten! Es gibt nur zwei Bugs.</div>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="3">
+                <li>Baue und teste das Skript.</li>
+                <li>Behebe Morgans zwei Bugs.</li>
+                <li><div class="saveAs"><span class="text">„U2L2-DrawShape“</span><img src="/bjc-r/img/icons/save-this-as.png" alt="Speichere als U2L2-DrawShape" title="Speichere als U2L2-DrawShape" /></div></li>
+                <li>
+                    <strong>Denk-/Schreibaufgabe:</strong>
+                    <ul>
+                        <li>Wann würdest du den ersten und letzten Punkt <em>nicht</em> verbinden?</li>
+                        <li>Wann sollte der Stift nur beim Markieren eines Punkts unten sein, nicht beim Bewegen dazwischen?</li>
+						<div class="comment">Ich würde die Frage andersherum stellen – warum überhaupt gleiten? -bh</div>
+                        <li>Wann bevorzugst du <code>go to</code> gegenüber <code>glide</code>?</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>
+                    Erstelle<a name="further" class="anchor">&nbsp;</a> drei zusätzliche Punkte und ein Skript, das das gesamte A zeichnet. Du musst in der Liste kennzeichnen, dass nicht alle Punkte verbunden werden.<br />
+                    <div class="sidenote">Koordinaten wählst du selbst.</div>
+                    <img class="indent" src="/bjc-r/img/2-complexity/complete-drawing-of-letter-a.png"  alt="Vollständiges A" title="Vollständiges A">
+                </li>
+            </ol>
+        </div>
+
+	</body>
+</html>

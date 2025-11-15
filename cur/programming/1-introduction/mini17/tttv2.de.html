@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+        <title>Einheit 2 Labor x: Spiele</title>
+</head>
+
+<body>
+<h3>Tic-Tac-Toe: Nach Siegen suchen</h3>
+<p>In früheren Labs hast du Züge auf dem Tic-Tac-Toe-Brett angezeigt und sie in der Variable <var>board</var> gespeichert – einer Liste von neun Einträgen (pro Feld) mit <code>X</code>, <code>O</code> oder leer:<br />
+<img src="/bjc-r/img/1-introduction/ttt-board-and-list.png" alt="Tic-Tac-Toe-Brett und BOARD-Liste" /><br />
+Jetzt soll der Computer nach jedem Zug prüfen, ob die Spielerfigur gewonnen hat. Dazu muss er erkennen, ob drei gleiche Zeichen in einer Zeile/Spalte/Diagonal stehen. Dein Ziel ist ein Block <img src="/bjc-r/img/1-introduction/has-player-won.png" alt="has player ( ) won?">; die Eingabe ist <code>X</code> oder <code>O</code> (die Figur, die gerade gezogen hat).</p>
+<div class="forYouToDo" id="first"><ol>
+<li>Wie viele Gewinnmöglichkeiten gibt es? Notiert alle Dreier-Kombinationen (z. B. {4,5,6} für die zweite Zeile oder {3,5,7} für eine Diagonale).</li>
+<li>Lade <a class="run" href="/bjc-r/prog/1-introduction/mini-ttt.xml">dieses Projekt</a>. Im Block <code>wins</code> sind zwei Beispiele eingetragen – ergänze die restlichen Tripel.<br />
+  <img src="/bjc-r/img/1-introduction/wins.png" width="50%" alt="wins" /><br />
+  </li></ol></div>
+<p>Nehmen wir an, X hat gerade gezogen. Wir wollen wissen, ob X gewonnen hat – also ob es eine Gewinnkombination mit drei X gibt. Wir gehen in zwei Schritten vor: zuerst prüfen wir einen bestimmten Dreier, danach alle Dreier.</p>
+<p>Aus einem Dreier wie <code>{4,5,6}</code> wollen wir die entsprechenden Einträge aus <var>board</var> holen, also <code>{_,X,_}</code> (Unterstriche stehen für leere Felder).</p>
+<p>Man könnte z. B. schreiben:<br /><img src="/bjc-r/img/2-complexity/list-456.png" alt="list (item 4 of board) ..."><br />
+… aber das wäre mühsam für alle Tripel. Wir möchten <code>item ??? of board</code> mit jedem Eintrag aus <code>{4,5,6}</code> aufrufen.</p>
+
+Computationen über jedes Listenelement sind häufig, daher hat Snap<em>!</em> ein passendes Werkzeug.
+
+<div class="takeNote">
+<h4>Map</h4>
+<div class="forYouToDo"><ol start="3">
+  <li>Probiere:
+
+      <img class="indent" src="/bjc-r/img/3-lists/map-example-2.png" alt="map (join ( ) (s))..." /><br />
+    <img class="indent" src="/bjc-r/img/2-complexity/map-plus2-over-list-reporting.png" alt="map (( )+2)..." /><br />
+In jeder Funktion (grüne Blöcke) gibt es ein leeres Eingabefeld.</li>
+</ol>
+</div>
+<p><code>map</code> ruft die Funktion (1. Eingabe) auf jedes Element der Liste (2. Eingabe) auf und liefert eine Liste der Ergebnisse.</p>
+</div>
+
+<div class="forYouToDo">
+                <img class="imageRight" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deinem Partner / deiner Partnerin" title="Sprich mit deinem Partner / deiner Partnerin" />
+<ol start="4">
+<li>Welche Liste statt <code>{_,X,_}</code> würde bedeuten, dass X gewonnen hat?</li>
+<li>Fülle einen der beiden Eingabeschlitze in <br /><img src="/bjc-r/img/1-introduction/map-over-456.png" alt="map [item ( ) of ( )] over (list 4 5 6)">
+sodass <code>{_,X,_}</code> entsteht.</li>
+<li>Schreibe den Reporter
+<img src="/bjc-r/img/1-introduction/filled-triple-empty.png" alt="filled triple of ( )">
+mit folgendem Verhalten:<br />
+<img src="/bjc-r/img/1-introduction/filled-triple-example.png" alt="filled triple (list 4 5 6)"></li>
+<li>Ergänze den Ausdruck so, dass er <code>true</code> liefert, falls X diesen Dreier gewonnen hat:<br /><img src="/bjc-r/img/1-introduction/filled-triple-equals-what.png" alt="(filled triple (list 4 5 6)) = ( )">
+</ol></div>
+<div class="takeItFurther"><ol type="A">
+<li>Vervollständige diesen Ausdruck, sodass er das angezeigte Ergebnis liefert, und nutze ihn für einen Block <code>filled wins</code>:<br />
+<img src="/bjc-r/img/1-introduction/filled-wins.png" alt="map [filled triple ...] over ( )"></li></ol></div>
+<p>Jetzt kannst du prüfen, ob X einen bestimmten Dreier gewonnen hat. Um herauszufinden, ob X auf <em>irgendeinem</em> Dreier gewonnen hat, musst du nach Triple suchen, die diese Bedingung erfüllen. Snap<em>!</em> bietet dafür einen Mechanismus: Elemente auswählen, für die ein Prädikat wahr ist.</p>
+<div class="takeNote">
+<h4>Keep</h4>
+<div class="forYouToDo">
+<ol start="8"><li>Testbeispiele:<br />
+<img src="/bjc-r/img/3-lists/keep-example-1.png" alt="keep numbers" /><br />
+<img src="/bjc-r/img/1-introduction/keep-starts-e.png" width="687" height="132" alt="keep items starting with e"></li>
+</ol></div></div>
+<div class="forYouToDo">
+<ol start="9">
+<li>Nutze das Ergebnis aus Aufgabe 7 und vervollständige den Ausdruck, um alle Tripel zu finden, die X tatsächlich gewonnen hat:<br />
+<img src="/bjc-r/img/1-introduction/keep-xxx.png"  alt="keep items such that [...] from ( )"><br />
+Was liefert der Ausdruck, wenn X gewonnen hat? Was, wenn nicht?</li>
+<li>Schreibe den Block <code>has player ___ won?</code>.</li>
+
+
+</body>
+</html>

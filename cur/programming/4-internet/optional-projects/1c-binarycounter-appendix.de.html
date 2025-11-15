@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+    	<title>Einheit 4 Optionale Projekte – Seite 1 Anhang</title>
+	</head>
+
+    <body>
+        <h2>Anhang zum Binär-Timer</h2>
+        <h3>Basisumrechnung mit Methode 1 (<em>Division durch 2 mit Rest</em>)</h3>
+        <p>Zur Erinnerung: So extrahierst du die Dezimalziffern einer Zahl.</p>
+        <p>
+        	<strong>Beispiel:</strong> Für die Zahl 527 gehst du so vor:<br />
+            <img class="indent" src="/bjc-r/img/6-computers/BinaryClock_img/527.png" width="459" alt="Dezimalziffern extrahieren"><br />
+            (Die Funktion <code>floor()</code> rundet nach unten.)
+            <ol>
+                <li>
+                    Einerstelle = Rest von 527 ÷ 10:<br />
+                    527 mod 10 = <strong>7</strong><br />
+                    Quotient:<br />
+                    floor(527/10)= 52
+                </li>
+                <li>
+                    Zehnerstelle = Rest von 52 ÷ 10:<br />
+                    52 mod 10 = <strong>2</strong><br />
+                    Quotient:<br />
+                    floor(52/10) = 5
+                </li>
+                <li>
+                    Hunderterstelle = Rest von 5 ÷ 10:<br />
+                    5 mod 10 = <strong>5</strong><br />
+                    Quotient:<br />
+                    floor(5/10) = 0
+                </li>
+            </ol>
+        </p>
+        <p>Hier stoppen wir. 527 = <strong>5</strong>·100 + <strong>2</strong>·10 + <strong>7</strong>·1. Beachte, dass wir die Ziffern von rechts nach links gewinnen (7, dann 2, dann 5).</p>
+
+        <p>
+        	<strong>Beispiel:</strong> Wenden wir das Verfahren auf die Binärdarstellung von 25 an:<br />
+        	<img class="indent" src="/bjc-r/img/6-computers/BinaryClock_img/25.png" width="747" alt="Binärziffern extrahieren"><br />
+            <ol>
+                <li>Einerstelle: 25 mod 2 = <strong>1</strong>, Quotient floor(25/2)=12</li>
+                <li>Zweierstelle: 12 mod 2 = <strong>0</strong>, Quotient 6</li>
+                <li>Viererstelle: 6 mod 2 = <strong>0</strong>, Quotient 3</li>
+                <li>Achterstelle: 3 mod 2 = <strong>1</strong>, Quotient 1</li>
+                <li>Sechzehnerstelle: 1 mod 2 = <strong>1</strong>, Quotient 0 → fertig</li>
+            </ol>
+        </p>
+        <p>Ergebnis: 25 = <strong>1</strong>·16 + <strong>1</strong>·8 + <strong>0</strong>·4 + <strong>0</strong>·2 + <strong>1</strong>·1 = (<strong>11001</strong>)<sub>2</sub>. Entwickle so einen Algorithmus für beliebige Zahlen.</p>
+
+		<h3>Basisumrechnung mit Methode 2 (<em>Absteigende Zweierpotenzen</em>)</h3>
+		<p><strong>Beispiel:</strong> Für 25 prüfst du nacheinander die Zweierpotenzen:<br>
+		<img  class="indent" src="/bjc-r/img/6-computers/BinaryClock_img/powersOfTwo.png" width="192" alt="Zweierpotenzen"><br>
+<pre style="width:400px">
+Ist 2^4 = 16 in 25 enthalten? ja → <b>1</b>
+25-16=9
+Ist 2^3 = 8 in 9 enthalten? ja → <b>1</b>
+9-8=1
+Ist 2^2 = 4 in 1 enthalten? nein → <b>0</b>
+Ist 2^1 = 2 in 1 enthalten? nein → <b>0</b>
+Ist 2^0 = 1 in 1 enthalten? ja → <b>1</b>
+1-1=0 fertig
+</pre>
+		<img class="indent" src="/bjc-r/img/6-computers/BinaryClock_img/BinaryConversion.png" width="195"  alt="Binärumrechnung">
+
+    </body>
+</html>

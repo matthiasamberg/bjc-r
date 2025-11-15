@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+        <script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2: Verschachtelte Wiederholungen</title>
+    </head>
+
+    <body>
+        <img class="imageRight" src="/bjc-r/img/icons/teachers-choice.png" alt="Lehrerwahl" title="Lehrerwahl" />
+        <h2>Verschachtelte Wiederholungen</h2>
+		<div class="todo">
+        	<ul>
+                <li>GH-Feedback 30.08.15: Frage – Soll die Dreiecksübung etwas sein, das eingesammelt wird? Erscheint recht umfangreich und ein gutes Beispiel für Abstraktion.</li>
+            </ul>
+        </div>
+        <p>
+        	Man kann einen <code>repeat</code>-Block in einen anderen <em>verschachteln</em>. Da <span class="snap">Snap!</span> Skripte von oben nach unten ausführt, startet der äußere <code>repeat</code>-Block zuerst, und der innere <code>repeat</code> muss alle Wiederholungen abschließen, bevor der äußere weiterläuft.<br />
+            <img class="indent" src="/bjc-r/img/1-introduction/two-color-sierpinski-code.png" alt="repeat (3) {set pen color to (red); move (100); repeat (3) {...}; turn 120°}" title="repeat (3) {set pen color to (red); move (100); repeat (3) {...}; turn 120°}" />
+        </p>
+        <div class="forYouToDo" id="first">
+            <ol>
+	            <li>
+                	Baue ein Skript, das ein rotes Dreieck zeichnet, dupliziere es zweimal und passe die Kopien so an, dass sie ein kleineres blaues bzw. noch kleineres grünes Dreieck zeichnen.
+                    <ul>
+                    	<li>Zum Duplizieren Rechtsklick (Mac: Ctrl-Klick) auf den ersten Block des Skripts (hier <code>repeat</code>) und „duplicate“ wählen.</li>
+                        <li>
+                            Passe anschließend die Eingaben wie im Video gezeigt an:<br />
+                            <img class="indent" data-gifffer="/bjc-r/img/1-introduction/duplicating-a-script.gif" alt="Skript duplizieren">
+                        </li>
+                    </ul>
+                </li>
+                <li>Teste jedes Skript einzeln, damit du weißt, was es tut. Leere danach die Bühne.</li>
+                <li>
+                    Füge nun das komplette Skript für das blaue Dreieck zwischen <code>move</code>- und <code>turn</code>-Block des roten Skripts ein.<br />
+                    <img class="indent" data-gifffer="/bjc-r/img/1-introduction/embedding-one-script-in-another.gif" alt="Blaues Skript in rotes einbetten">
+                    <img class="imageRight" src="/bjc-r/img/icons/pair-programming-swap.png" alt="Pair-Programming-Wechsel" title="Pair-Programming-Wechsel" />
+                </li>
+                <li><img class="inline" src="/bjc-r/img/icons/talk-with-your-partner.png" alt="Sprich mit deinem Partner / deiner Partnerin" title="Sprich mit deinem Partner / deiner Partnerin" />
+ Prognostiziert gemeinsam, was das Skript tun wird.</li>
+                <li>Führe das Skript aus und beobachte das Ergebnis.</li>
+                <li>
+                    Nutzt die vorhandenen Skripte, um dieses Bild zu erzeugen:<br />
+                    <img class="indent" src="/bjc-r/img/1-introduction/three-color-sierpinski.png" alt="Rotes Dreieck mit blauen Kindern und grünen Enkeln" title="Rotes Dreieck mit blauen Kindern und grünen Enkeln" />
+                </li>
+            </ol>
+        </div>
+
+        <div class="ifTime"><a name="further" class="anchor">&nbsp;</a>
+        	<ol start="7">
+            	<li>Wenn du magst, bette noch ein weiteres Dreieck ein, halb so groß wie das letzte.</li>
+            </ol>
+        </div>
+
+        <div class="forYouToDo">
+            <ol start="8">
+            <li>Das ständige Kopieren/Einfügen fühlt sich merkwürdig an – und du kennst eine bessere Lösung: Abstraktion. In Einheit 1 hast du <code>pinwheel</code> genutzt, um <code>asterisk</code> und <code>polygon</code> umzusetzen, statt den Code zu duplizieren.
+            <ol type="a">
+            	<li>Erstelle einen Block <code>triangle</code> mit Eingaben <var>size</var> und <var>color</var>. Nutze dein ursprüngliches Dreieckskript als Vorlage. Um eine Farbe per Eingabe zu setzen, brauchst du den numerischen Block <img src="/bjc-r/img/1-introduction/setpc-num.png" alt="set pen color to (number)"> statt des Farbwählers <img src="/bjc-r/img/1-introduction/setpc-pick.png" alt="set pen color to (color square)">.</li>
+              <li>Klicke im Block-Editor auf „Apply“.</li>
+              <li>Wo du sonst eine Skriptkopie eingefügt hättest, ziehst du nun einen <code>triangle</code>-Block hinein. <var>size</var> soll halb so groß sein wie zuvor, <var>color</var> zehn größer als der aktuelle Wert.</li>
+              <li>Damit sich die Dreiecke nicht unendlich verkleinern, umschließt du die Definition mit <img src="/bjc-r/img/1-introduction/end-test.png" alt="if (size > 2)">.</li>
+              <li>Teste <code>triangle</code> mit Größe 100 und Farbnr. 0.</li>
+              </ol></li></ol></div>
+            <div class="ifTime">
+            <ol start="9">
+            	<li>
+                    Die Animation zeigt ein weiteres Beispiel dafür, wie ein Skript in ein ähnliches eingebettet wird (bitte erst vorhersagen, dann bauen).<br />
+                    <img class="indent" data-gifffer="/bjc-r/img/1-introduction/embedding-scripts-for-squares.gif" alt="Quadrat-Skripte einbetten" title="Quadrat-Skripte einbetten" />
+                    <ol type="a">
+                        <li>Skizziere, was jedes der beiden einzelnen Skripte zeichnet, bevor sie kombiniert werden.</li>
+                        <li>Wie viele blaue Formen zeichnet das kombinierte Skript?</li>
+                        <li>Skizziere die Gesamtausgabe.</li>
+                        <li>Baue das kombinierte Skript und probiere es aus.</li>
+                        <li><strong>Experiment:</strong> Betten noch ein Quadrat ein, halb so groß wie das letzte. Wie viele kleinste Quadrate entstehen? Hättest du die Zahl vorhersagen können?</li>
+                        <li><strong>Vorhersage & Experiment:</strong> Betten ein weiteres halb so großes Quadrat ein. Versuche, die Anzahl der winzigen Quadrate vorherzusagen, bevor du es testest.</li>
+                    </ol>
+                </li>
+            </ol>
+		</div>
+
+    </body>
+</html>

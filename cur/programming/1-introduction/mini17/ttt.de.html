@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/mini17/bjc-r/llab/loader.js"></script>
+        <title>Einheit 2 Labor x: Spiele</title>
+</head>
+
+<body>
+<h3>Tic-Tac-Toe: Nach Siegen suchen</h3>
+<p>In früheren Labs hast du Steine auf einem Tic-Tac-Toe-Brett angezeigt und sie in der Variable <var>board</var> gespeichert – einer Liste aus neun Einträgen (je Feld), die <code>X</code>, <code>O</code> oder leer sein können:<br />
+<img src="/bjc-r/img/1-introduction/ttt-board-and-list.png" alt="Tic-Tac-Toe-Brett und BOARD-Liste" /><br />
+Nun soll der Computer selbst spielen und z. B. Muster erkennen können wie „Ich kann im nächsten Zug gewinnen“.</p>
+<div class="forYouToDo" id="first"><ol><li>Wie viele Gewinnmöglichkeiten gibt es? Welche Dreier-Kombinationen bedeuten Sieg? Erstellt gemeinsam eine Liste auf Papier.</li>
+<li>Lade <a class="run" href="/bjc-r/prog/1-introduction/mini-ttt.xml">dieses Projekt</a>. Wir haben einen Block <code>wins</code> vorbereitet, der alle Gewinn-Dreier meldet:<br />
+  <img src="/bjc-r/img/1-introduction/wins.png" width="368" height="253" alt="wins" /><br />
+  </li>
+  <li>Probiere Folgendes:
+              <img class="indent" src="/bjc-r/img/3-lists/map-example-1.png" alt="map (( )-(1)) over (list (96) (-100) (4.7)) reporting" title="map (( )-(1)) over (list (96) (-100) (4.7)) reporting" /><br />
+            <img class="indent" src="/bjc-r/img/3-lists/map-example-2.png" alt="map (join ( ) (s)) over (list (cat) (dog) (bird)) reporting" title="map (join ( ) (s)) over (list (cat) (dog) (bird)) reporting" /><br />
+            <img class="indent" src="/bjc-r/img/3-lists/map-example-3.png" alt="map (round ( )) over (list (3.14159) (87) (5.4)) reporting" title="map (round ( )) over (list (3.14159) (87) (5.4)) reporting" /><br />
+Beachte, dass jede Funktion (grüne Blöcke) ein leeres Eingabefeld hat.</li>
+</ol>
+</div>
+Lies diese Blockdefinition:<br />
+<img src="/bjc-r/img/1-introduction/is-triple-a-win.png" alt="is triple (triple) a win for player (player) ?" />
+<img src="/bjc-r/img/1-introduction/triple-win-false.png" alt="is triple {4,5,6} a win for player X?  --&gt;  false" /><br />
+
+<img src="/bjc-r/img/1-introduction/triple-win-true.png" alt="is triple {3,5,7} a win for player X?  --&gt;  true" />
+<div class="forYouToDo">
+                <img class="imageLeft" src="/bjc-r/img/icons/talk-with-your-partner-mini.png" alt="Sprich mit deinem Partner / deiner Partnerin" title="Sprich mit deinem Partner / deiner Partnerin" />
+<ol start="4">
+<li>Wenn <var>triple</var> <code>{4,5,6}</code> ist und <var>board</var> wie oben aussieht, welchen Wert hat <var>occupied</var> nach dem <code>set</code>-Block?</li>
+<li>Der <code>report</code>-Block gibt<br />
+<img src="/bjc-r/img/1-introduction/2-and-0.png" alt="(etwas = 2) and (etwas = 0)" /><br />
+zurück. Formuliere, was sinnvoll wäre: Zwei von was, null von was braucht es für einen Sieg?</li>
+<li>Schau dir den Code an: Was macht der Block <code>keep</code>? Hier ein einfacheres Beispiel:<br />
+<img src="/bjc-r/img/1-introduction/keep-starts-e.png" alt="keep items such that (letter 1 of ( )) = e from {…}" /></li>
+<li>Schreibe einen Block
+  <img src="/bjc-r/img/1-introduction/find-winning-triples.png" alt="find winning triples for player ( )" />
+der alle Gewinn-Dreier für diese Spielerfigur meldet – verwende die Liste aus <code>wins</code>.</li></ol></div>
+<div class="ifTime">
+<ol start=8>
+<li>Wenn der Computer gewinnen kann, sollte er das tun. Kann der Gegner gewinnen, sollte er blocken. Wenn beides nicht gilt, sollte er zumindest ein Feld in einem Dreierzug wählen, in dem schon die eigene Figur steht und der Gegner nicht, z. B. <code>{4,5,6}</code> für X. Schreibe <img src="/bjc-r/img/1-introduction/okay-move.png" alt="is triple ( ) an okay move for player ( ) ?" /></li></ol></div>
+<div class="takeItFurther">
+<ol type="a">
+<li>Im Beispiel ist eigentlich O am Zug. Es gibt zwar keinen Gewinnzug für O laut Aufgabe 7, aber ein hervorragendes Feld. Welches?</li>
+<li>Schreibe eine Prozedur, die so einen Zug findet.</li></ol></div>
+</body>
+</html>

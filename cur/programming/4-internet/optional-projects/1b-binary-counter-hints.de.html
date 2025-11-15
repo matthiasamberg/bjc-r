@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+    	<title>Einheit 4 Optionale Projekte – Seite 1 Hinweis</title>
+    </head>
+
+    <body>
+        <h3>Tipps zum Binär-Timer</h3>
+        <p>Wenn du dir die <a href="http://www.wikihow.com/Convert-from-Decimal-to-Binary" target="_blank" title="Wikihow: How to Convert from Decimal to Binary">Beispiele</a> ansiehst, erkennst du, dass Methode 2 (<em>absteigende Zweierpotenzen</em>) zum <a href="http://scratch.mit.edu/discuss/youtube/cDZzsHvi44Q" target="_blank" title="Abstraktion: Basisumrechnung">Video</a> aus einem früheren Abschnitt passt – probiere sie zuerst für <code>Get Binary Digits</code>. Der Algorithmus:</p>
+        <p class="indent"><em>Starte bei der größten Zweierpotenz und gehe bis zur kleinsten (hier 2<sup>7</sup> bis 2<sup>0</sup>, weil wir acht Binärstellen haben). Prüfe, ob die aktuelle Potenz im Wert enthalten ist (Zahl ≥ Potenz). Falls ja, schreibe 1 für diese Stelle und ziehe die Potenz vom Wert ab. Sonst schreibe 0.</em></p>
+        Hinweis: Im Starter findest du im Operator-Menü einen Block <img src="/bjc-r/img/6-computers/BinaryClock_img/2^3.png"  height="50" alt="2^(3) = 8" title="2^(3) = 8"> zum Berechnen von Potenzen.
+
+        <p>Wenn du Methode 1 (<em>Division durch 2 mit Rest</em>) nutzt, benötigst du viele Reste und Quotienten; verwende dafür die Operatoren <code>mod</code> und <code>floor</code>. Der Code ähnelt <code>Get Decimal Digits</code>.</p>
+
+        <p>Egal welche Methode du wählst: <code>Get Binary Digits</code> soll die <var>Binary Digits List</var> mit der passenden Null-/Eins-Sequenz füllen und bei Bedarf vorne mit Nullen ergänzen. Die restliche Anwendung kümmert sich um die Darstellung.</p>
+
+        <p>Weitere Beispiele findest du im <a href="/bjc-r/cur/programming/6-computers/optional-projects/1c-binarycounter-appendix.html" target="_blank" title="Anhang">Anhang</a>.</p>
+    </body>
+</html>

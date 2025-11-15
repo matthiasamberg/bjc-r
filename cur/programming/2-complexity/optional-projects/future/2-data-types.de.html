@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="/bjc-r/llab/loader.js"></script>
+		<title>Einheit 2 Labor 2: Kunst mit Datenstrukturen – Seite 5</title>
+    </head>
+
+    <body>
+        <h2>Abstrakte Datentypen</h2>
+        <div class="todo">
+			<h3>Dateinamen anpassen.</h3>
+            <h3>Schonungslose Vorschläge von Al</h3>
+            <ul>
+                <li>Kommentar: Genau so etwas würde ich gern öfter sehen – Methode in 2.2.2 vorstellen und anschließend mit 2.2.3 eine abstraktere Variante zeigen. Wenn das zum festen Prinzip wird, spart es insgesamt Zeit. <strong>Sorry: Ich meinte den Übergang von 2.2.1 zu 2.2.2.</strong> Tolles Designprinzip.</li>
+                <ul>
+                  <li>Bin etwas unsicher, was du genau meinst. 2.2.2 wirkt wie die abstraktere Version von 2.2.1, aber dein Prinzip würde ich gern verstehen. Machen wir das noch irgendwo – als weiteres Beispiel? --MF, 16.05.2018</li></ul>
+            </ul>
+        </div>
+        <div class="todo">
+            <p>Lehrkräfte-Feedback 2017–2018: Trotz der klaren Intention (ADT verstehen und einen point-Block bauen) war das für Lernende sehr schwer. Sie konnten sich nicht damit identifizieren, verloren das Interesse und verstanden das „Warum“ nicht. --MF, 06.03.2019</p>
+        </div>
+        <div class="todo">
+            <p>PG: Bitte aufräumen.</p>
+        </div>
+
+		<div class="learn">
+			<strong>Auf dieser Seite</strong> erstellst du den abstrakten Datentyp <code>point</code>, damit dein U2L2-DrawShape-Code leichter zu lesen, zu debuggen und zu verwenden ist:<br />
+			<img class="indent" src="/bjc-r/img/2-complexity/U2ImageVideoAddendum_img/drawShapewithPointList.png" height="125" alt="draw shape(list{point(-50)(20), …})" title="draw shape(list{point(-50)(20), …})" />
+
+        </div>
+
+		<div class="todo">
+            <h2>Auf neue erste Seite verschoben</h2>
+        <p>
+            Wie der Name sagt, beschreibt ein <strong>Datentyp</strong>, welche Art von Daten vorliegt (Zahl, Text, Liste usw.). Jede Sprache liefert einige <strong>primitive</strong> (eingebaute) Datentypen. Snap<em>!</em> stellt Zahlen, Text, Listen, Booleans und weitere – bisher nicht genutzte – Typen bereit:<br />
+            <div class="sidenote">Das Pulldown des Blocks zeigt alle primitiven Snap<em>!</em>-Typen.</div>
+            <div class="comment"><a href="https://piazza.com/class/h8yx482idav52y?cid=2409" target="_blank">BILD AKTUALISIEREN</a> --MF, 18.10.2018</div>
+            <img class="indent" src="/bjc-r/img/3-lists/isa-menu.png" alt="primitive types: number, text, Boolean, list, sprite, command, reporter, predicate" title="primitive types: number, text, Boolean, list, sprite, command, reporter, predicate"/>
+        </p>
+
+		<div class="takeNote">
+            <p>Ein <strong>abstrakter Datentyp</strong> (<strong>ADT</strong>) ist eine für dein Programm sinnvolle Datenart, die nicht Teil der Sprache ist – du entwickelst sie selbst. </p>
+            <p>
+                In diesem Lab baust du z. B. den Datentyp <em>point</em> mit:
+                <ul>
+                    <li><img class="inline" src="/bjc-r/img/3-lists/point()().png" alt="point()()" title="point()()"> zum <em>Konstruktieren</em></li>
+                    <li> <img class="inline" src="/bjc-r/img/2-complexity/U2ImageVideoAddendum_img/xcoordinateof.png" height="35" alt="x coordinate of ()" title="x coordinate of ()"> und <img class="inline" src="/bjc-r/img/2-complexity/U2ImageVideoAddendum_img/ycoordinateof.png" height="35" alt="y coordinate of ()" title="y coordinate of ()"> zum <em>Auswählen</em> der Koordinaten</li>
+                </ul>
+            </p>
+        </div>
+        <div class="endnote">
+            <p>„Abstrakt“ bedeutet in der Informatik nicht „kompliziert“, sondern das Gegenteil: ADTs erschaffst du, um Programme für dich und andere verständlicher, leichter zu testen und zu erweitern.</p>
+        </div>
+        </div>
+
+        <div class="forYouToDo" id="first">
+            <ol>
+                <li>Öffne dein U2L2-DrawShape-Projekt.</li>
+                <li>Verbessere deinen Block <code>go to point</code> (<a href="/bjc-r/cur/programming/2-complexity/optional-projects/future/4-the-for-each-block.html?topic=nyc_bjc%2F2-conditionals-abstraction.topic&course=bjc4nyc.html&novideo&noassignment">aus „U2L2-DrawShape“</a>), indem du – wie Jasmine und Omar – Selektoren im Inneren verwendest.</li>
+                <li>
+                    <img class="imageRight" src="/bjc-r/img/icons/save-mini.png" alt="Speichern" title="Speichern" />
+                    Wandelt das Skript in einen allgemeinen Block <img class="inline" src="/bjc-r/img/2-complexity/drawShape.png" height="45" alt="drawShape()" title="drawShape()"> um, der eine Liste von Punkten entgegennimmt und die Form zeichnet.
+                </li>
+            </ol>
+        </div>
+
+        <div class="ifTime"><a name="further" class="anchor">&nbsp;</a>
+            <ol start="4">
+            	<li>Lege eine neue Punkteliste für ein weiteres Zeichen oder eine andere Form an. Verwende diesmal den <code>point</code>-Konstruktor beim Erstellen der Liste. Prüfe, ob <code>draw shape ()</code> damit funktioniert.</li>
+                <li>
+                	Wenn du mehrere Buchstaben gebaut hast, schreibe einen Block <code>draw message ()</code>, der eine <em>Liste von Buchstaben</em> erhält und <code>draw shape ()</code> mehrfach aufruft, um eine Nachricht zu zeichnen.<br />
+                    <div class="sidenoteBig">
+                        Beachte die Abstraktion: Die Nachricht „HI“ als <img src="/bjc-r/img/3-lists/list-h-i.png" alt="list (H)(I)" title="list (H)(I)" /> zu speichern versteckt die komplexen Koordinatenlisten.
+                    </div>
+                    <img class="indent" data-gifffer="/bjc-r/img/3-lists/hi_new.gif" alt="Animation: H, danach I" title="Animation: H, danach I" />
+                </li>
+        	</ol>
+        </div>
+
+        <img class="imageRight" src="/bjc-r/img/icons/save-now.png" alt="Jetzt speichern" title="Jetzt speichern" />
+
+        <div class="takeItFurther">
+            <ol type="A">
+                <li>
+                  Passe dein Projekt so an, dass <code>draw message</code> die Buchstaben nebeneinander zeichnet statt einen Buchstaben durch den nächsten zu ersetzen:<br />
+                    <img class="indent" src="/bjc-r/img/2-complexity/HI.png" alt="HI" title="HI" />
+                </li>
+            </ol>
+        </div>
+
+   </body>
+</html>
